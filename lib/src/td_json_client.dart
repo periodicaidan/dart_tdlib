@@ -89,12 +89,12 @@ class JsonClient {
   }
 
   /// Execute a TDLib request
-  Map<String, dynamic> execute(String request) {
+  Map<String, dynamic> execute(Map<String, dynamic> request) {
     assert (active);
     final jsonClientExecute = _dylib
         .lookupFunction<c_tdJsonClientExecute, JsonClientExecute>("td_json_client_execute");
 
-    final result = jsonClientExecute(_client, Utf8.toUtf8(request));
+    final result = jsonClientExecute(_client, Utf8.toUtf8(json.encode(request)));
     var res_json = Utf8.fromUtf8(result);
     return json.decode(res_json);
   }
