@@ -18,6 +18,28 @@ You'll need to download and build TDLib yourself. You can figure out how to do t
 don't change the language option). Make sure you are in the `lib` folder when you clone 
 the TDLib repository.
 
+The general structure of a program using this library is something like this:
+
+```dart
+import "package:tdlib/tdlib.dart";
+
+main() {
+  // Create a client
+  final client = JsonClient.create();
+  
+  while (true) {
+    // Fetch a request
+    Map event = client.receive();
+    if (event.isNotEmpty) {
+      // Handle the request...
+    }
+  }
+  
+  // Finally, be sure to destroy the client
+  client.destroy();
+}
+```
+
 ## Todo
 
 So far I've just implemented the `td_json_client.h` functions and wrapped them in a `JsonClient`
