@@ -3,7 +3,7 @@ TDLib for Dart (WIP)
 
 A port of the Telegram Database Library (TDLib) for Dart
 
-#### Update (October 29, 2019)
+#### Update (November 1, 2019)
 The Dart team made a bunch of breaking changes to `dart:ffi` since I first made this so
 I've had to up the minimum required Dart SDK version from 2.6.0 to 2.6.0-dev.8.2.
 I've also had to upgrade the `package:ffi` version to 0.1.4 (which isn't on pub so I had
