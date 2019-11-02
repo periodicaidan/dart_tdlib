@@ -3,6 +3,14 @@ TDLib for Dart (WIP)
 
 A port of the Telegram Database Library (TDLib) for Dart
 
+#### Update (October 29, 2019)
+The Dart team made a bunch of breaking changes to `dart:ffi` since I first made this so
+I've had to up the minimum required Dart SDK version from 2.6.0 to 2.6.0-dev.8.2.
+I've also had to upgrade the `package:ffi` version to 0.1.4 (which isn't on pub so I had
+to pull it straight from the git repo). Please upgrade your Dart SDK version accordingly!
+(You'll have to be on the dev channel.) Once `dart:ffi` becomes a stable feature,
+hopefully this won't be a problem :)
+
 ## Motivation
 
 Last year I wanted to make a Telegram client for Flutter, but at the time Dart didn't have
@@ -11,12 +19,12 @@ Telegram servers, which would have been a huge pain in the ass. But on September
 the Dart team announced an FFI for Dart so I can finally make my Telegram app. Though I'll
 need to set up the interface with a library.
 
-## How To Use
+## How To Use It
 
 You'll need to download and build TDLib yourself. You can figure out how to do that 
 [here](https://tdlib.github.io/td/build.html?language=Other) (just select your OS, 
-don't change the language option). Make sure you are in the `lib` folder when you clone 
-the TDLib repository.
+don't change the language option). I recommend you either build it in the `lib` folder
+or include a symlink to the resulting `td` directory in the `lib` folder
 
 The general structure of a program using this library is something like this:
 

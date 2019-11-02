@@ -57,7 +57,10 @@ class JsonClient {
 
   JsonClient.create() {
     // Get the path to the td_json_client dynamic library
-    final dlDir = path.dirname(path.dirname(Platform.script.toFilePath())); // in the lib folder
+    final dlDir = path.join(
+      path.dirname(path.dirname(Platform.script.toFilePath())),
+      "lib/td/tdlib/lib"
+    ); // in the lib folder
     final dlPath = platformPath(dlDir);
 
     _dylib = DynamicLibrary.open(dlPath);
