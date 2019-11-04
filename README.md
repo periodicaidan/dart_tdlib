@@ -45,7 +45,7 @@ static code to work like dart:mirrors. But you will have to generate the reflect
 yourself. To do this, you can use build runner, and in the root directory of this 
 project, run `pub run build_runner build`. It should Just Work&trade;.
 
-### 4 Now You're Ready to Rock and Roll
+### 4: Now You're Ready to Rock and Roll
 
 The general structure of a program using this library is something like this:
 
