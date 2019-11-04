@@ -1,7 +1,7 @@
 TDLib for Dart (WIP)
 ===
 
-A port of the Telegram Database Library (TDLib) for Dart
+A port of the Telegram Database Library (TDLib) for Dart.
 
 #### Update (November 1, 2019)
 The Dart team made a bunch of breaking changes to `dart:ffi` since I first made this so
@@ -21,38 +21,58 @@ need to set up the interface with a library.
 
 ## How To Use It
 
+### 1: Building TDLib
+
 You'll need to download and build TDLib yourself. You can figure out how to do that 
 [here](https://tdlib.github.io/td/build.html?language=Other) (just select your OS, 
-don't change the language option). I recommend you either build it in the `lib` folder
-or include a symlink to the resulting `td` directory in the `lib` folder
+don't change the language option). It doesn't especially matter where you build it, as
+the `JsonClient.create()` constructor requires a path to the root directory of TDLib.
+
+### 2: Including This Project
+
+As it's incomplete and requires a lot of setup, I'm not putting this on pub just yet.
+Instead, clone the repository and copy the `lib` directory into your own project folder
+for now. You could also try specifying this repository in pubspec.yaml, but I don't know 
+if that'll work :p.
+
+### 3: Generating Reflectors
+
+This library has a small reliance on reflection, which won't actually work in Flutter
+because Flutter does "tree shaking" to eliminate unused classes, which wouldn't work
+if there is code that's dynamically parsed and run from strings, as it wouldn't be able
+to safely eliminate anything. So it makes use of package:reflectable, which generates
+static code to work like dart:mirrors. But you will have to generate the reflectables
+yourself. To do this, you can use build runner, and in the root directory of this 
+project, run `pub run build_runner build`. It should Just Work&trade;.
+
+### 4 Now You're Ready to Rock and Roll
 
 The general structure of a program using this library is something like this:
 
 ```dart
-import "package:tdlib/tdlib.dart";
+import "tdlib/tdlib.dart";
 
 main() {
   // Create a client
-  final client = JsonClient.create();
+  final client = JsonClient.create("path/to/td");
   
-  while (true) {
-    // Fetch a request
-    Map event = client.receive();
-    if (event.isNotEmpty) {
-      // Handle the request...
+  try {
+    while (true) {
+      // Fetch a request
+      Map event = client.receive();
+      if (event.isNotEmpty) {
+        // Handle the request...
+      }
     }
+  } finally {
+    // Be sure to destroy the client
+    client.destroy();
   }
-  
-  // Finally, be sure to destroy the client
-  client.destroy();
 }
 ```
 
 ## Todo
 
-So far I've just implemented the `td_json_client.h` functions and wrapped them in a `JsonClient`
-class, which has a nice public interface. While this is all that is strictly necessary to get 
-TDLib to work, it's not very convenient. The messages are all `Map<String, dynamic>`s so the
-programmer has to work with all the responses and requests through map acceses and key checks.
-Ideally, I'd like to make basically all the Telegram messages into classes that are easy to
-create and work with.
+Classes are done and (as far as I can tell) working. Gotta implement functions next, 
+which shouldn't be too hard. I could probably copy-paste my class-generating code, make 
+a few tweaks, and have the it spit out all the TDLib functions.

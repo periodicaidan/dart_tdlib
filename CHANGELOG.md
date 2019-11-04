@@ -1,3 +1,7 @@
+## 0.1.2
+
+Used code generation to create all of the classes from the TDLib API documentation.
+
 ## 0.1.1
 
 Increased the minimum required Dart SDK version from 2.6.0 to 2.6.0-dev.8.2, as the Dart team

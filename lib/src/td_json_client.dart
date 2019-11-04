@@ -16,6 +16,7 @@ import "dart:io" show Platform;
 import "package:ffi/ffi.dart";
 import "package:path/path.dart" as path;
 import "utils.dart";
+import "api/base_classes.dart";
 
 /// Creates a new instance of TDLib client.
 ///
@@ -55,12 +56,8 @@ class JsonClient {
   // to this class' methods will fail with an assertion error
   bool active;
 
-  JsonClient.create() {
+  JsonClient.create(String dlDir) {
     // Get the path to the td_json_client dynamic library
-    final dlDir = path.join(
-      path.dirname(path.dirname(Platform.script.toFilePath())),
-      "lib/td/tdlib/lib"
-    ); // in the lib folder
     final dlPath = platformPath(dlDir);
 
     _dylib = DynamicLibrary.open(dlPath);
