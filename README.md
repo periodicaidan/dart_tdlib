@@ -6,7 +6,7 @@ A port of the Telegram Database Library (TDLib) for Dart.
 #### Update (November 1, 2019)
 The Dart team made a bunch of breaking changes to `dart:ffi` since I first made this so
 I've had to up the minimum required Dart SDK version from 2.6.0 to 2.6.0-dev.8.2.
-I've also had to upgrade the `package:ffi` version to 0.1.4 (which isn't on pub so I had
+I've also had to upgrade the [`package:ffi`](https://pub.dev/packages/ffi) version to 0.1.4 (which isn't on pub so I had
 to pull it straight from the git repo). Please upgrade your Dart SDK version accordingly!
 (You'll have to be on the dev channel.) Once `dart:ffi` becomes a stable feature,
 hopefully this won't be a problem :)
@@ -37,12 +37,12 @@ if that'll work :p.
 
 ### 3: Generating Reflectors
 
-This library has a small reliance on reflection, which won't actually work in Flutter
+This library has a small reliance on reflection, which isn't allowed in Flutter
 because Flutter does "tree shaking" to eliminate unused classes, which wouldn't work
 if there is code that's dynamically parsed and run from strings, as it wouldn't be able
-to safely eliminate anything. So it makes use of package:reflectable, which generates
-static code to work like dart:mirrors. But you will have to generate the reflectables
-yourself. To do this, you can use build runner, and in the root directory of this 
+to safely eliminate anything. So it makes use of [reflectable](https://pub.dev/packages/reflectable), which generates
+static code ahead of time to work like dart:mirrors. But you will have to generate the reflectables
+yourself. To do this, you can use [build runner](https://pub.dev/packages/build_runner), and in the root directory of this 
 project, run `pub run build_runner build`. It should Just Work&trade;.
 
 ### 4: Now You're Ready to Rock and Roll
@@ -50,9 +50,12 @@ project, run `pub run build_runner build`. It should Just Work&trade;.
 The general structure of a program using this library is something like this:
 
 ```dart
-import "tdlib/tdlib.dart";
+import "package:tdlib/tdlib.dart";
+import "main.reflectable.dart";
 
 main() {
+  initializeReflectable();
+  
   // Create a client
   final client = JsonClient.create("path/to/td");
   
@@ -70,9 +73,3 @@ main() {
   }
 }
 ```
-
-## Todo
-
-Classes are done and (as far as I can tell) working. Gotta implement functions next, 
-which shouldn't be too hard. I could probably copy-paste my class-generating code, make 
-a few tweaks, and have the it spit out all the TDLib functions.

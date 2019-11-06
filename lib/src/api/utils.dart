@@ -1,6 +1,13 @@
-import "classes.dart";
+import "objects.dart";
 //import "dart:mirrors";
 import "package:reflectable/reflectable.dart";
+
+class Reflector extends Reflectable {
+  const Reflector() :
+    super(typeCapability, instanceInvokeCapability, newInstanceCapability);
+}
+
+const reflector = Reflector();
 
 dynamic tryParse(dynamic obj) {
   if (obj is Map) {

@@ -1,7 +1,7 @@
 import "dart:io" show Platform;
 import "dart:convert" show json;
 import "package:path/path.dart" as path;
-import "api/base_classes.dart" show TlObject;
+import "api/base_classes.dart";
 import "api/utils.dart" show classIndex;
 
 String platformPath([String dlPath = ""]) {
@@ -13,7 +13,9 @@ String platformPath([String dlPath = ""]) {
   throw Exception("Platform Not Supported: ${Platform.operatingSystem}");
 }
 
-String serialize(TlObject obj) => json.encode({
-  "@type": obj.tlType,
-  ...obj.params.map((k, v) => MapEntry(k, v is TlObject ? serialize(v) : v)),
-});
+String serialize(TlObject obj) => json.encode(_serialize(obj));
+
+Map<String, dynamic> _serialize(TlObject obj) => {
+  "@type": obj is TdObject ? obj.tdType : (obj as TdFunction).returnType,
+  ...obj.params.map((k, v) => MapEntry(k, v is TlObject ? _serialize(v) : v)),
+};

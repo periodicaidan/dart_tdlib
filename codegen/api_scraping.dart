@@ -3,25 +3,19 @@ import "dart:io";
 import "package:http/http.dart";
 import "utils.dart";
 
-/// Scrapes the tdlib HTML docs for class information and writes it to a JSON
-/// file
-//Future<Map<String, dynamic>> getApi() async {
-//
-//}
-
 /// Parses a line of Telegram's Typed Language (TL) schema language
-/// It's basically a language for describing C++ classes, and it's how the
-/// TDLib classes are documented. Beats scraping the API docs :p
+/// It's basically a language for describing functions and class constructors,
+/// and it's how the TDLib classes and functions are documented.
 ///
 /// Looks something like this:
-/// className field1:Type1 field2:Type2 ... = Superclass
+/// combinatorName field1:Type1 field2:Type2 ... = ReturnType
 ///
-/// Returns a map entry for the class' fields and stuff
+/// Returns a map entry for the class'/function's fields and stuff
 MapEntry<String, Map> parseTlLine(String line) {
-  final classAndSuperclass = line.split("=");
-  final classWithFields = classAndSuperclass[0].split(" ");
-  final className = classWithFields[0];
-  final fields = classWithFields.getRange(1, classWithFields.length);
+  final combinatorAndType = line.split("=");
+  final combinatorWithFields = combinatorAndType[0].split(" ");
+  final combinatorName = combinatorWithFields[0];
+  final fields = combinatorWithFields.getRange(1, combinatorWithFields.length);
   var fieldInfo = <String, String>{};
   for (var field in fields) {
     if (field.isEmpty) continue;
@@ -32,8 +26,8 @@ MapEntry<String, Map> parseTlLine(String line) {
     fieldInfo.addAll({fieldAndType[0].trim(): type});
   }
 
-  return MapEntry(className, {
-    "superclass": classAndSuperclass[1].trim().replaceAll(";", ""),
+  return MapEntry(combinatorName, {
+    "superclass": combinatorAndType[1].trim().replaceAll(";", ""),
     "fields": fieldInfo,
   });
 }
@@ -83,22 +77,45 @@ main() async {
   final apiIndex = (await client.get(apiUrl)).body;
 
   final lines = apiIndex.split("\n");
-  Map<String, dynamic> api = {};
+  Map<String, dynamic> classes = {};
+  Map<String, dynamic> functions = {};
 
+  var parseAsFunction = false;
   for (var line in lines.getRange(17, lines.length)) {
-    if (line.contains("---functions---")) break;
+    if (line.contains("---functions---")) {
+      parseAsFunction = true;
+      continue;
+    } else if (line.contains("---types---")) {
+      parseAsFunction = false;
+      continue;
+    }
+
     if (line.isEmpty || line.startsWith("//")) continue;
 
     var combinator = parseTlLine(line);
-    var superclass = combinator.value["superclass"];
-    if (!api.containsKey(superclass)) {
-      api.addAll({superclass: {}});
+    if (parseAsFunction) {
+      var returnType = combinator.value["superclass"];
+      if (!functions.containsKey(returnType)) {
+        functions.addAll({returnType: {}});
+      }
+      (functions[returnType] as Map).addEntries([combinator]);
+    } else {
+      var superclass = combinator.value["superclass"];
+      if (!classes.containsKey(superclass)) {
+        classes.addAll({superclass: {}});
+      }
+      (classes[superclass] as Map).addEntries([combinator]);
     }
-
-    (api[superclass] as Map).addEntries([combinator]);
   }
 
-  File("./tl_api.json").openWrite().write(json.encode(api));
+  var api = {
+    "types": classes,
+    "functions": functions,
+  };
+
+  File("./tl_api.json")
+    .openWrite()
+    .write(json.encode(api));
 
   client.close();
 }

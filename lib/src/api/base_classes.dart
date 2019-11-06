@@ -1,9 +1,11 @@
 abstract class TlObject {
-  static const TYPE = "tlObject";
-  String get tlType => TYPE;
-
   Map<String, dynamic> get params;
 }
 
-abstract class TdObject extends TlObject {}
-abstract class TdFunction extends TlObject {}
+abstract class TdObject extends TlObject {
+  String get tdType;
+}
+
+abstract class TdFunction extends TlObject {
+  Type get returnType;
+}

@@ -1,19 +1,10 @@
-/// This file was automatically generated. Don't fucking touch it.
-
 import "base_classes.dart";
 import "utils.dart";
-import "package:reflectable/reflectable.dart";
-
-class Reflector extends Reflectable {
-  const Reflector() :
-    super(typeCapability, instanceInvokeCapability, newInstanceCapability);
-}
-
-const reflector = Reflector();
 
 @reflector
 class Error extends TdObject {
-  static const TYPE = "error";
+  @override
+  String get tdType => "error";
 
   int code;
   String message;
@@ -32,16 +23,19 @@ class Error extends TdObject {
 
 @reflector
 class Ok extends TdObject {
-  static const TYPE = "ok";
-
+  @override
+  String get tdType => "ok";
 
   @override
   Map<String, dynamic> get params => {};
-  Ok(Map<String, dynamic> json);}
+
+  Ok(Map<String, dynamic> json);
+}
 
 @reflector
 class TdlibParameters extends TdObject {
-  static const TYPE = "tdlibParameters";
+  @override
+  String get tdType => "tdlibParameters";
 
   bool useTestDc;
   String databaseDirectory;
@@ -101,7 +95,8 @@ abstract class AuthenticationCodeType extends TdObject {}
 
 @reflector
 class AuthenticationCodeTypeTelegramMessage extends AuthenticationCodeType {
-  static const TYPE = "authenticationCodeTypeTelegramMessage";
+  @override
+  String get tdType => "authenticationCodeTypeTelegramMessage";
 
   int length;
 
@@ -117,7 +112,8 @@ class AuthenticationCodeTypeTelegramMessage extends AuthenticationCodeType {
 
 @reflector
 class AuthenticationCodeTypeSms extends AuthenticationCodeType {
-  static const TYPE = "authenticationCodeTypeSms";
+  @override
+  String get tdType => "authenticationCodeTypeSms";
 
   int length;
 
@@ -133,7 +129,8 @@ class AuthenticationCodeTypeSms extends AuthenticationCodeType {
 
 @reflector
 class AuthenticationCodeTypeCall extends AuthenticationCodeType {
-  static const TYPE = "authenticationCodeTypeCall";
+  @override
+  String get tdType => "authenticationCodeTypeCall";
 
   int length;
 
@@ -149,7 +146,8 @@ class AuthenticationCodeTypeCall extends AuthenticationCodeType {
 
 @reflector
 class AuthenticationCodeTypeFlashCall extends AuthenticationCodeType {
-  static const TYPE = "authenticationCodeTypeFlashCall";
+  @override
+  String get tdType => "authenticationCodeTypeFlashCall";
 
   String pattern;
 
@@ -165,7 +163,8 @@ class AuthenticationCodeTypeFlashCall extends AuthenticationCodeType {
 
 @reflector
 class AuthenticationCodeInfo extends TdObject {
-  static const TYPE = "authenticationCodeInfo";
+  @override
+  String get tdType => "authenticationCodeInfo";
 
   String phoneNumber;
   AuthenticationCodeType type;
@@ -190,7 +189,8 @@ class AuthenticationCodeInfo extends TdObject {
 
 @reflector
 class EmailAddressAuthenticationCodeInfo extends TdObject {
-  static const TYPE = "emailAddressAuthenticationCodeInfo";
+  @override
+  String get tdType => "emailAddressAuthenticationCodeInfo";
 
   String emailAddressPattern;
   int length;
@@ -209,7 +209,8 @@ class EmailAddressAuthenticationCodeInfo extends TdObject {
 
 @reflector
 class TextEntity extends TdObject {
-  static const TYPE = "textEntity";
+  @override
+  String get tdType => "textEntity";
 
   int offset;
   int length;
@@ -231,7 +232,8 @@ class TextEntity extends TdObject {
 
 @reflector
 class TextEntities extends TdObject {
-  static const TYPE = "textEntities";
+  @override
+  String get tdType => "textEntities";
 
   List<TextEntity> entities;
 
@@ -247,7 +249,8 @@ class TextEntities extends TdObject {
 
 @reflector
 class FormattedText extends TdObject {
-  static const TYPE = "formattedText";
+  @override
+  String get tdType => "formattedText";
 
   String text;
   List<TextEntity> entities;
@@ -266,7 +269,8 @@ class FormattedText extends TdObject {
 
 @reflector
 class TermsOfService extends TdObject {
-  static const TYPE = "termsOfService";
+  @override
+  String get tdType => "termsOfService";
 
   FormattedText text;
   int minUserAge;
@@ -290,16 +294,19 @@ abstract class AuthorizationState extends TdObject {}
 
 @reflector
 class AuthorizationStateWaitTdlibParameters extends AuthorizationState {
-  static const TYPE = "authorizationStateWaitTdlibParameters";
-
+  @override
+  String get tdType => "authorizationStateWaitTdlibParameters";
 
   @override
   Map<String, dynamic> get params => {};
-  AuthorizationStateWaitTdlibParameters(Map<String, dynamic> json);}
+
+  AuthorizationStateWaitTdlibParameters(Map<String, dynamic> json);
+}
 
 @reflector
 class AuthorizationStateWaitEncryptionKey extends AuthorizationState {
-  static const TYPE = "authorizationStateWaitEncryptionKey";
+  @override
+  String get tdType => "authorizationStateWaitEncryptionKey";
 
   bool isEncrypted;
 
@@ -315,16 +322,19 @@ class AuthorizationStateWaitEncryptionKey extends AuthorizationState {
 
 @reflector
 class AuthorizationStateWaitPhoneNumber extends AuthorizationState {
-  static const TYPE = "authorizationStateWaitPhoneNumber";
-
+  @override
+  String get tdType => "authorizationStateWaitPhoneNumber";
 
   @override
   Map<String, dynamic> get params => {};
-  AuthorizationStateWaitPhoneNumber(Map<String, dynamic> json);}
+
+  AuthorizationStateWaitPhoneNumber(Map<String, dynamic> json);
+}
 
 @reflector
 class AuthorizationStateWaitCode extends AuthorizationState {
-  static const TYPE = "authorizationStateWaitCode";
+  @override
+  String get tdType => "authorizationStateWaitCode";
 
   AuthenticationCodeInfo codeInfo;
 
@@ -340,7 +350,8 @@ class AuthorizationStateWaitCode extends AuthorizationState {
 
 @reflector
 class AuthorizationStateWaitRegistration extends AuthorizationState {
-  static const TYPE = "authorizationStateWaitRegistration";
+  @override
+  String get tdType => "authorizationStateWaitRegistration";
 
   TermsOfService termsOfService;
 
@@ -356,7 +367,8 @@ class AuthorizationStateWaitRegistration extends AuthorizationState {
 
 @reflector
 class AuthorizationStateWaitPassword extends AuthorizationState {
-  static const TYPE = "authorizationStateWaitPassword";
+  @override
+  String get tdType => "authorizationStateWaitPassword";
 
   String passwordHint;
   bool hasRecoveryEmailAddress;
@@ -378,43 +390,52 @@ class AuthorizationStateWaitPassword extends AuthorizationState {
 
 @reflector
 class AuthorizationStateReady extends AuthorizationState {
-  static const TYPE = "authorizationStateReady";
-
+  @override
+  String get tdType => "authorizationStateReady";
 
   @override
   Map<String, dynamic> get params => {};
-  AuthorizationStateReady(Map<String, dynamic> json);}
+
+  AuthorizationStateReady(Map<String, dynamic> json);
+}
 
 @reflector
 class AuthorizationStateLoggingOut extends AuthorizationState {
-  static const TYPE = "authorizationStateLoggingOut";
-
+  @override
+  String get tdType => "authorizationStateLoggingOut";
 
   @override
   Map<String, dynamic> get params => {};
-  AuthorizationStateLoggingOut(Map<String, dynamic> json);}
+
+  AuthorizationStateLoggingOut(Map<String, dynamic> json);
+}
 
 @reflector
 class AuthorizationStateClosing extends AuthorizationState {
-  static const TYPE = "authorizationStateClosing";
-
+  @override
+  String get tdType => "authorizationStateClosing";
 
   @override
   Map<String, dynamic> get params => {};
-  AuthorizationStateClosing(Map<String, dynamic> json);}
+
+  AuthorizationStateClosing(Map<String, dynamic> json);
+}
 
 @reflector
 class AuthorizationStateClosed extends AuthorizationState {
-  static const TYPE = "authorizationStateClosed";
-
+  @override
+  String get tdType => "authorizationStateClosed";
 
   @override
   Map<String, dynamic> get params => {};
-  AuthorizationStateClosed(Map<String, dynamic> json);}
+
+  AuthorizationStateClosed(Map<String, dynamic> json);
+}
 
 @reflector
 class PasswordState extends TdObject {
-  static const TYPE = "passwordState";
+  @override
+  String get tdType => "passwordState";
 
   bool hasPassword;
   String passwordHint;
@@ -442,7 +463,8 @@ class PasswordState extends TdObject {
 
 @reflector
 class RecoveryEmailAddress extends TdObject {
-  static const TYPE = "recoveryEmailAddress";
+  @override
+  String get tdType => "recoveryEmailAddress";
 
   String recoveryEmailAddress;
 
@@ -458,7 +480,8 @@ class RecoveryEmailAddress extends TdObject {
 
 @reflector
 class TemporaryPasswordState extends TdObject {
-  static const TYPE = "temporaryPasswordState";
+  @override
+  String get tdType => "temporaryPasswordState";
 
   bool hasPassword;
   int validFor;
@@ -477,7 +500,8 @@ class TemporaryPasswordState extends TdObject {
 
 @reflector
 class LocalFile extends TdObject {
-  static const TYPE = "localFile";
+  @override
+  String get tdType => "localFile";
 
   String path;
   bool canBeDownloaded;
@@ -514,7 +538,8 @@ class LocalFile extends TdObject {
 
 @reflector
 class RemoteFile extends TdObject {
-  static const TYPE = "remoteFile";
+  @override
+  String get tdType => "remoteFile";
 
   String id;
   bool isUploadingActive;
@@ -539,7 +564,8 @@ class RemoteFile extends TdObject {
 
 @reflector
 class File extends TdObject {
-  static const TYPE = "file";
+  @override
+  String get tdType => "file";
 
   int id;
   int size;
@@ -569,7 +595,8 @@ abstract class InputFile extends TdObject {}
 
 @reflector
 class InputFileId extends InputFile {
-  static const TYPE = "inputFileId";
+  @override
+  String get tdType => "inputFileId";
 
   int id;
 
@@ -585,7 +612,8 @@ class InputFileId extends InputFile {
 
 @reflector
 class InputFileRemote extends InputFile {
-  static const TYPE = "inputFileRemote";
+  @override
+  String get tdType => "inputFileRemote";
 
   String id;
 
@@ -601,7 +629,8 @@ class InputFileRemote extends InputFile {
 
 @reflector
 class InputFileLocal extends InputFile {
-  static const TYPE = "inputFileLocal";
+  @override
+  String get tdType => "inputFileLocal";
 
   String path;
 
@@ -617,7 +646,8 @@ class InputFileLocal extends InputFile {
 
 @reflector
 class InputFileGenerated extends InputFile {
-  static const TYPE = "inputFileGenerated";
+  @override
+  String get tdType => "inputFileGenerated";
 
   String originalPath;
   String conversion;
@@ -639,7 +669,8 @@ class InputFileGenerated extends InputFile {
 
 @reflector
 class PhotoSize extends TdObject {
-  static const TYPE = "photoSize";
+  @override
+  String get tdType => "photoSize";
 
   String type;
   File photo;
@@ -664,7 +695,8 @@ class PhotoSize extends TdObject {
 
 @reflector
 class Minithumbnail extends TdObject {
-  static const TYPE = "minithumbnail";
+  @override
+  String get tdType => "minithumbnail";
 
   int width;
   int height;
@@ -688,43 +720,52 @@ abstract class MaskPoint extends TdObject {}
 
 @reflector
 class MaskPointForehead extends MaskPoint {
-  static const TYPE = "maskPointForehead";
-
+  @override
+  String get tdType => "maskPointForehead";
 
   @override
   Map<String, dynamic> get params => {};
-  MaskPointForehead(Map<String, dynamic> json);}
+
+  MaskPointForehead(Map<String, dynamic> json);
+}
 
 @reflector
 class MaskPointEyes extends MaskPoint {
-  static const TYPE = "maskPointEyes";
-
+  @override
+  String get tdType => "maskPointEyes";
 
   @override
   Map<String, dynamic> get params => {};
-  MaskPointEyes(Map<String, dynamic> json);}
+
+  MaskPointEyes(Map<String, dynamic> json);
+}
 
 @reflector
 class MaskPointMouth extends MaskPoint {
-  static const TYPE = "maskPointMouth";
-
+  @override
+  String get tdType => "maskPointMouth";
 
   @override
   Map<String, dynamic> get params => {};
-  MaskPointMouth(Map<String, dynamic> json);}
+
+  MaskPointMouth(Map<String, dynamic> json);
+}
 
 @reflector
 class MaskPointChin extends MaskPoint {
-  static const TYPE = "maskPointChin";
-
+  @override
+  String get tdType => "maskPointChin";
 
   @override
   Map<String, dynamic> get params => {};
-  MaskPointChin(Map<String, dynamic> json);}
+
+  MaskPointChin(Map<String, dynamic> json);
+}
 
 @reflector
 class MaskPosition extends TdObject {
-  static const TYPE = "maskPosition";
+  @override
+  String get tdType => "maskPosition";
 
   MaskPoint point;
   double xShift;
@@ -749,7 +790,8 @@ class MaskPosition extends TdObject {
 
 @reflector
 class PollOption extends TdObject {
-  static const TYPE = "pollOption";
+  @override
+  String get tdType => "pollOption";
 
   String text;
   int voterCount;
@@ -777,7 +819,8 @@ class PollOption extends TdObject {
 
 @reflector
 class Animation extends TdObject {
-  static const TYPE = "animation";
+  @override
+  String get tdType => "animation";
 
   int duration;
   int width;
@@ -814,7 +857,8 @@ class Animation extends TdObject {
 
 @reflector
 class Audio extends TdObject {
-  static const TYPE = "audio";
+  @override
+  String get tdType => "audio";
 
   int duration;
   String title;
@@ -851,7 +895,8 @@ class Audio extends TdObject {
 
 @reflector
 class Document extends TdObject {
-  static const TYPE = "document";
+  @override
+  String get tdType => "document";
 
   String fileName;
   String mimeType;
@@ -879,7 +924,8 @@ class Document extends TdObject {
 
 @reflector
 class Photo extends TdObject {
-  static const TYPE = "photo";
+  @override
+  String get tdType => "photo";
 
   bool hasStickers;
   Minithumbnail minithumbnail;
@@ -901,7 +947,8 @@ class Photo extends TdObject {
 
 @reflector
 class Sticker extends TdObject {
-  static const TYPE = "sticker";
+  @override
+  String get tdType => "sticker";
 
   int setId;
   int width;
@@ -941,7 +988,8 @@ class Sticker extends TdObject {
 
 @reflector
 class Video extends TdObject {
-  static const TYPE = "video";
+  @override
+  String get tdType => "video";
 
   int duration;
   int width;
@@ -984,7 +1032,8 @@ class Video extends TdObject {
 
 @reflector
 class VideoNote extends TdObject {
-  static const TYPE = "videoNote";
+  @override
+  String get tdType => "videoNote";
 
   int duration;
   int length;
@@ -1012,7 +1061,8 @@ class VideoNote extends TdObject {
 
 @reflector
 class VoiceNote extends TdObject {
-  static const TYPE = "voiceNote";
+  @override
+  String get tdType => "voiceNote";
 
   int duration;
   List<int> waveform;
@@ -1037,7 +1087,8 @@ class VoiceNote extends TdObject {
 
 @reflector
 class Contact extends TdObject {
-  static const TYPE = "contact";
+  @override
+  String get tdType => "contact";
 
   String phoneNumber;
   String firstName;
@@ -1065,7 +1116,8 @@ class Contact extends TdObject {
 
 @reflector
 class Location extends TdObject {
-  static const TYPE = "location";
+  @override
+  String get tdType => "location";
 
   double latitude;
   double longitude;
@@ -1084,7 +1136,8 @@ class Location extends TdObject {
 
 @reflector
 class Venue extends TdObject {
-  static const TYPE = "venue";
+  @override
+  String get tdType => "venue";
 
   Location location;
   String title;
@@ -1115,7 +1168,8 @@ class Venue extends TdObject {
 
 @reflector
 class Game extends TdObject {
-  static const TYPE = "game";
+  @override
+  String get tdType => "game";
 
   int id;
   String shortName;
@@ -1149,7 +1203,8 @@ class Game extends TdObject {
 
 @reflector
 class Poll extends TdObject {
-  static const TYPE = "poll";
+  @override
+  String get tdType => "poll";
 
   int id;
   String question;
@@ -1177,7 +1232,8 @@ class Poll extends TdObject {
 
 @reflector
 class ProfilePhoto extends TdObject {
-  static const TYPE = "profilePhoto";
+  @override
+  String get tdType => "profilePhoto";
 
   int id;
   File small;
@@ -1199,7 +1255,8 @@ class ProfilePhoto extends TdObject {
 
 @reflector
 class ChatPhoto extends TdObject {
-  static const TYPE = "chatPhoto";
+  @override
+  String get tdType => "chatPhoto";
 
   File small;
   File big;
@@ -1220,54 +1277,65 @@ abstract class LinkState extends TdObject {}
 
 @reflector
 class LinkStateNone extends LinkState {
-  static const TYPE = "linkStateNone";
-
+  @override
+  String get tdType => "linkStateNone";
 
   @override
   Map<String, dynamic> get params => {};
-  LinkStateNone(Map<String, dynamic> json);}
+
+  LinkStateNone(Map<String, dynamic> json);
+}
 
 @reflector
 class LinkStateKnowsPhoneNumber extends LinkState {
-  static const TYPE = "linkStateKnowsPhoneNumber";
-
+  @override
+  String get tdType => "linkStateKnowsPhoneNumber";
 
   @override
   Map<String, dynamic> get params => {};
-  LinkStateKnowsPhoneNumber(Map<String, dynamic> json);}
+
+  LinkStateKnowsPhoneNumber(Map<String, dynamic> json);
+}
 
 @reflector
 class LinkStateIsContact extends LinkState {
-  static const TYPE = "linkStateIsContact";
-
+  @override
+  String get tdType => "linkStateIsContact";
 
   @override
   Map<String, dynamic> get params => {};
-  LinkStateIsContact(Map<String, dynamic> json);}
+
+  LinkStateIsContact(Map<String, dynamic> json);
+}
 
 abstract class UserType extends TdObject {}
 
 @reflector
 class UserTypeRegular extends UserType {
-  static const TYPE = "userTypeRegular";
-
+  @override
+  String get tdType => "userTypeRegular";
 
   @override
   Map<String, dynamic> get params => {};
-  UserTypeRegular(Map<String, dynamic> json);}
+
+  UserTypeRegular(Map<String, dynamic> json);
+}
 
 @reflector
 class UserTypeDeleted extends UserType {
-  static const TYPE = "userTypeDeleted";
-
+  @override
+  String get tdType => "userTypeDeleted";
 
   @override
   Map<String, dynamic> get params => {};
-  UserTypeDeleted(Map<String, dynamic> json);}
+
+  UserTypeDeleted(Map<String, dynamic> json);
+}
 
 @reflector
 class UserTypeBot extends UserType {
-  static const TYPE = "userTypeBot";
+  @override
+  String get tdType => "userTypeBot";
 
   bool canJoinGroups;
   bool canReadAllGroupMessages;
@@ -1295,16 +1363,19 @@ class UserTypeBot extends UserType {
 
 @reflector
 class UserTypeUnknown extends UserType {
-  static const TYPE = "userTypeUnknown";
-
+  @override
+  String get tdType => "userTypeUnknown";
 
   @override
   Map<String, dynamic> get params => {};
-  UserTypeUnknown(Map<String, dynamic> json);}
+
+  UserTypeUnknown(Map<String, dynamic> json);
+}
 
 @reflector
 class BotCommand extends TdObject {
-  static const TYPE = "botCommand";
+  @override
+  String get tdType => "botCommand";
 
   String command;
   String description;
@@ -1323,7 +1394,8 @@ class BotCommand extends TdObject {
 
 @reflector
 class BotInfo extends TdObject {
-  static const TYPE = "botInfo";
+  @override
+  String get tdType => "botInfo";
 
   String description;
   List<BotCommand> commands;
@@ -1342,7 +1414,8 @@ class BotInfo extends TdObject {
 
 @reflector
 class User extends TdObject {
-  static const TYPE = "user";
+  @override
+  String get tdType => "user";
 
   int id;
   String firstName;
@@ -1403,7 +1476,8 @@ class User extends TdObject {
 
 @reflector
 class UserFullInfo extends TdObject {
-  static const TYPE = "userFullInfo";
+  @override
+  String get tdType => "userFullInfo";
 
   bool isBlocked;
   bool canBeCalled;
@@ -1437,7 +1511,8 @@ class UserFullInfo extends TdObject {
 
 @reflector
 class UserProfilePhoto extends TdObject {
-  static const TYPE = "userProfilePhoto";
+  @override
+  String get tdType => "userProfilePhoto";
 
   int id;
   int addedDate;
@@ -1459,7 +1534,8 @@ class UserProfilePhoto extends TdObject {
 
 @reflector
 class UserProfilePhotos extends TdObject {
-  static const TYPE = "userProfilePhotos";
+  @override
+  String get tdType => "userProfilePhotos";
 
   int totalCount;
   List<UserProfilePhoto> photos;
@@ -1478,7 +1554,8 @@ class UserProfilePhotos extends TdObject {
 
 @reflector
 class Users extends TdObject {
-  static const TYPE = "users";
+  @override
+  String get tdType => "users";
 
   int totalCount;
   List<int> userIds;
@@ -1497,7 +1574,8 @@ class Users extends TdObject {
 
 @reflector
 class ChatPermissions extends TdObject {
-  static const TYPE = "chatPermissions";
+  @override
+  String get tdType => "chatPermissions";
 
   bool canSendMessages;
   bool canSendMediaMessages;
@@ -1536,7 +1614,8 @@ abstract class ChatMemberStatus extends TdObject {}
 
 @reflector
 class ChatMemberStatusCreator extends ChatMemberStatus {
-  static const TYPE = "chatMemberStatusCreator";
+  @override
+  String get tdType => "chatMemberStatusCreator";
 
   bool isMember;
 
@@ -1552,7 +1631,8 @@ class ChatMemberStatusCreator extends ChatMemberStatus {
 
 @reflector
 class ChatMemberStatusAdministrator extends ChatMemberStatus {
-  static const TYPE = "chatMemberStatusAdministrator";
+  @override
+  String get tdType => "chatMemberStatusAdministrator";
 
   bool canBeEdited;
   bool canChangeInfo;
@@ -1592,16 +1672,19 @@ class ChatMemberStatusAdministrator extends ChatMemberStatus {
 
 @reflector
 class ChatMemberStatusMember extends ChatMemberStatus {
-  static const TYPE = "chatMemberStatusMember";
-
+  @override
+  String get tdType => "chatMemberStatusMember";
 
   @override
   Map<String, dynamic> get params => {};
-  ChatMemberStatusMember(Map<String, dynamic> json);}
+
+  ChatMemberStatusMember(Map<String, dynamic> json);
+}
 
 @reflector
 class ChatMemberStatusRestricted extends ChatMemberStatus {
-  static const TYPE = "chatMemberStatusRestricted";
+  @override
+  String get tdType => "chatMemberStatusRestricted";
 
   bool isMember;
   int restrictedUntilDate;
@@ -1623,16 +1706,19 @@ class ChatMemberStatusRestricted extends ChatMemberStatus {
 
 @reflector
 class ChatMemberStatusLeft extends ChatMemberStatus {
-  static const TYPE = "chatMemberStatusLeft";
-
+  @override
+  String get tdType => "chatMemberStatusLeft";
 
   @override
   Map<String, dynamic> get params => {};
-  ChatMemberStatusLeft(Map<String, dynamic> json);}
+
+  ChatMemberStatusLeft(Map<String, dynamic> json);
+}
 
 @reflector
 class ChatMemberStatusBanned extends ChatMemberStatus {
-  static const TYPE = "chatMemberStatusBanned";
+  @override
+  String get tdType => "chatMemberStatusBanned";
 
   int bannedUntilDate;
 
@@ -1648,7 +1734,8 @@ class ChatMemberStatusBanned extends ChatMemberStatus {
 
 @reflector
 class ChatMember extends TdObject {
-  static const TYPE = "chatMember";
+  @override
+  String get tdType => "chatMember";
 
   int userId;
   int inviterUserId;
@@ -1676,7 +1763,8 @@ class ChatMember extends TdObject {
 
 @reflector
 class ChatMembers extends TdObject {
-  static const TYPE = "chatMembers";
+  @override
+  String get tdType => "chatMembers";
 
   int totalCount;
   List<ChatMember> members;
@@ -1697,72 +1785,87 @@ abstract class ChatMembersFilter extends TdObject {}
 
 @reflector
 class ChatMembersFilterContacts extends ChatMembersFilter {
-  static const TYPE = "chatMembersFilterContacts";
-
+  @override
+  String get tdType => "chatMembersFilterContacts";
 
   @override
   Map<String, dynamic> get params => {};
-  ChatMembersFilterContacts(Map<String, dynamic> json);}
+
+  ChatMembersFilterContacts(Map<String, dynamic> json);
+}
 
 @reflector
 class ChatMembersFilterAdministrators extends ChatMembersFilter {
-  static const TYPE = "chatMembersFilterAdministrators";
-
+  @override
+  String get tdType => "chatMembersFilterAdministrators";
 
   @override
   Map<String, dynamic> get params => {};
-  ChatMembersFilterAdministrators(Map<String, dynamic> json);}
+
+  ChatMembersFilterAdministrators(Map<String, dynamic> json);
+}
 
 @reflector
 class ChatMembersFilterMembers extends ChatMembersFilter {
-  static const TYPE = "chatMembersFilterMembers";
-
+  @override
+  String get tdType => "chatMembersFilterMembers";
 
   @override
   Map<String, dynamic> get params => {};
-  ChatMembersFilterMembers(Map<String, dynamic> json);}
+
+  ChatMembersFilterMembers(Map<String, dynamic> json);
+}
 
 @reflector
 class ChatMembersFilterRestricted extends ChatMembersFilter {
-  static const TYPE = "chatMembersFilterRestricted";
-
+  @override
+  String get tdType => "chatMembersFilterRestricted";
 
   @override
   Map<String, dynamic> get params => {};
-  ChatMembersFilterRestricted(Map<String, dynamic> json);}
+
+  ChatMembersFilterRestricted(Map<String, dynamic> json);
+}
 
 @reflector
 class ChatMembersFilterBanned extends ChatMembersFilter {
-  static const TYPE = "chatMembersFilterBanned";
-
+  @override
+  String get tdType => "chatMembersFilterBanned";
 
   @override
   Map<String, dynamic> get params => {};
-  ChatMembersFilterBanned(Map<String, dynamic> json);}
+
+  ChatMembersFilterBanned(Map<String, dynamic> json);
+}
 
 @reflector
 class ChatMembersFilterBots extends ChatMembersFilter {
-  static const TYPE = "chatMembersFilterBots";
-
+  @override
+  String get tdType => "chatMembersFilterBots";
 
   @override
   Map<String, dynamic> get params => {};
-  ChatMembersFilterBots(Map<String, dynamic> json);}
+
+  ChatMembersFilterBots(Map<String, dynamic> json);
+}
 
 abstract class SupergroupMembersFilter extends TdObject {}
 
 @reflector
 class SupergroupMembersFilterRecent extends SupergroupMembersFilter {
-  static const TYPE = "supergroupMembersFilterRecent";
-
+  @override
+  String get tdType => "supergroupMembersFilterRecent";
 
   @override
   Map<String, dynamic> get params => {};
-  SupergroupMembersFilterRecent(Map<String, dynamic> json);}
+
+  SupergroupMembersFilterRecent(Map<String, dynamic> json);
+}
 
 @reflector
 class SupergroupMembersFilterContacts extends SupergroupMembersFilter {
-  static const TYPE = "supergroupMembersFilterContacts";
+  @override
+  String get tdType => "supergroupMembersFilterContacts";
 
   String query;
 
@@ -1778,16 +1881,19 @@ class SupergroupMembersFilterContacts extends SupergroupMembersFilter {
 
 @reflector
 class SupergroupMembersFilterAdministrators extends SupergroupMembersFilter {
-  static const TYPE = "supergroupMembersFilterAdministrators";
-
+  @override
+  String get tdType => "supergroupMembersFilterAdministrators";
 
   @override
   Map<String, dynamic> get params => {};
-  SupergroupMembersFilterAdministrators(Map<String, dynamic> json);}
+
+  SupergroupMembersFilterAdministrators(Map<String, dynamic> json);
+}
 
 @reflector
 class SupergroupMembersFilterSearch extends SupergroupMembersFilter {
-  static const TYPE = "supergroupMembersFilterSearch";
+  @override
+  String get tdType => "supergroupMembersFilterSearch";
 
   String query;
 
@@ -1803,7 +1909,8 @@ class SupergroupMembersFilterSearch extends SupergroupMembersFilter {
 
 @reflector
 class SupergroupMembersFilterRestricted extends SupergroupMembersFilter {
-  static const TYPE = "supergroupMembersFilterRestricted";
+  @override
+  String get tdType => "supergroupMembersFilterRestricted";
 
   String query;
 
@@ -1819,7 +1926,8 @@ class SupergroupMembersFilterRestricted extends SupergroupMembersFilter {
 
 @reflector
 class SupergroupMembersFilterBanned extends SupergroupMembersFilter {
-  static const TYPE = "supergroupMembersFilterBanned";
+  @override
+  String get tdType => "supergroupMembersFilterBanned";
 
   String query;
 
@@ -1835,16 +1943,19 @@ class SupergroupMembersFilterBanned extends SupergroupMembersFilter {
 
 @reflector
 class SupergroupMembersFilterBots extends SupergroupMembersFilter {
-  static const TYPE = "supergroupMembersFilterBots";
-
+  @override
+  String get tdType => "supergroupMembersFilterBots";
 
   @override
   Map<String, dynamic> get params => {};
-  SupergroupMembersFilterBots(Map<String, dynamic> json);}
+
+  SupergroupMembersFilterBots(Map<String, dynamic> json);
+}
 
 @reflector
 class BasicGroup extends TdObject {
-  static const TYPE = "basicGroup";
+  @override
+  String get tdType => "basicGroup";
 
   int id;
   int memberCount;
@@ -1872,7 +1983,8 @@ class BasicGroup extends TdObject {
 
 @reflector
 class BasicGroupFullInfo extends TdObject {
-  static const TYPE = "basicGroupFullInfo";
+  @override
+  String get tdType => "basicGroupFullInfo";
 
   String description;
   int creatorUserId;
@@ -1897,7 +2009,8 @@ class BasicGroupFullInfo extends TdObject {
 
 @reflector
 class Supergroup extends TdObject {
-  static const TYPE = "supergroup";
+  @override
+  String get tdType => "supergroup";
 
   int id;
   String username;
@@ -1940,7 +2053,8 @@ class Supergroup extends TdObject {
 
 @reflector
 class SupergroupFullInfo extends TdObject {
-  static const TYPE = "supergroupFullInfo";
+  @override
+  String get tdType => "supergroupFullInfo";
 
   String description;
   int memberCount;
@@ -1997,34 +2111,41 @@ abstract class SecretChatState extends TdObject {}
 
 @reflector
 class SecretChatStatePending extends SecretChatState {
-  static const TYPE = "secretChatStatePending";
-
+  @override
+  String get tdType => "secretChatStatePending";
 
   @override
   Map<String, dynamic> get params => {};
-  SecretChatStatePending(Map<String, dynamic> json);}
+
+  SecretChatStatePending(Map<String, dynamic> json);
+}
 
 @reflector
 class SecretChatStateReady extends SecretChatState {
-  static const TYPE = "secretChatStateReady";
-
+  @override
+  String get tdType => "secretChatStateReady";
 
   @override
   Map<String, dynamic> get params => {};
-  SecretChatStateReady(Map<String, dynamic> json);}
+
+  SecretChatStateReady(Map<String, dynamic> json);
+}
 
 @reflector
 class SecretChatStateClosed extends SecretChatState {
-  static const TYPE = "secretChatStateClosed";
-
+  @override
+  String get tdType => "secretChatStateClosed";
 
   @override
   Map<String, dynamic> get params => {};
-  SecretChatStateClosed(Map<String, dynamic> json);}
+
+  SecretChatStateClosed(Map<String, dynamic> json);
+}
 
 @reflector
 class SecretChat extends TdObject {
-  static const TYPE = "secretChat";
+  @override
+  String get tdType => "secretChat";
 
   int id;
   int userId;
@@ -2060,7 +2181,8 @@ abstract class MessageForwardOrigin extends TdObject {}
 
 @reflector
 class MessageForwardOriginUser extends MessageForwardOrigin {
-  static const TYPE = "messageForwardOriginUser";
+  @override
+  String get tdType => "messageForwardOriginUser";
 
   int senderUserId;
 
@@ -2076,7 +2198,8 @@ class MessageForwardOriginUser extends MessageForwardOrigin {
 
 @reflector
 class MessageForwardOriginHiddenUser extends MessageForwardOrigin {
-  static const TYPE = "messageForwardOriginHiddenUser";
+  @override
+  String get tdType => "messageForwardOriginHiddenUser";
 
   String senderName;
 
@@ -2092,7 +2215,8 @@ class MessageForwardOriginHiddenUser extends MessageForwardOrigin {
 
 @reflector
 class MessageForwardOriginChannel extends MessageForwardOrigin {
-  static const TYPE = "messageForwardOriginChannel";
+  @override
+  String get tdType => "messageForwardOriginChannel";
 
   int chatId;
   int messageId;
@@ -2114,7 +2238,8 @@ class MessageForwardOriginChannel extends MessageForwardOrigin {
 
 @reflector
 class MessageForwardInfo extends TdObject {
-  static const TYPE = "messageForwardInfo";
+  @override
+  String get tdType => "messageForwardInfo";
 
   MessageForwardOrigin origin;
   int date;
@@ -2141,16 +2266,19 @@ abstract class MessageSendingState extends TdObject {}
 
 @reflector
 class MessageSendingStatePending extends MessageSendingState {
-  static const TYPE = "messageSendingStatePending";
-
+  @override
+  String get tdType => "messageSendingStatePending";
 
   @override
   Map<String, dynamic> get params => {};
-  MessageSendingStatePending(Map<String, dynamic> json);}
+
+  MessageSendingStatePending(Map<String, dynamic> json);
+}
 
 @reflector
 class MessageSendingStateFailed extends MessageSendingState {
-  static const TYPE = "messageSendingStateFailed";
+  @override
+  String get tdType => "messageSendingStateFailed";
 
   int errorCode;
   String errorMessage;
@@ -2175,7 +2303,8 @@ class MessageSendingStateFailed extends MessageSendingState {
 
 @reflector
 class Message extends TdObject {
-  static const TYPE = "message";
+  @override
+  String get tdType => "message";
 
   int id;
   int senderUserId;
@@ -2257,7 +2386,8 @@ class Message extends TdObject {
 
 @reflector
 class Messages extends TdObject {
-  static const TYPE = "messages";
+  @override
+  String get tdType => "messages";
 
   int totalCount;
   List<Message> messages;
@@ -2276,7 +2406,8 @@ class Messages extends TdObject {
 
 @reflector
 class FoundMessages extends TdObject {
-  static const TYPE = "foundMessages";
+  @override
+  String get tdType => "foundMessages";
 
   List<Message> messages;
   int nextFromSearchId;
@@ -2297,34 +2428,41 @@ abstract class NotificationSettingsScope extends TdObject {}
 
 @reflector
 class NotificationSettingsScopePrivateChats extends NotificationSettingsScope {
-  static const TYPE = "notificationSettingsScopePrivateChats";
-
+  @override
+  String get tdType => "notificationSettingsScopePrivateChats";
 
   @override
   Map<String, dynamic> get params => {};
-  NotificationSettingsScopePrivateChats(Map<String, dynamic> json);}
+
+  NotificationSettingsScopePrivateChats(Map<String, dynamic> json);
+}
 
 @reflector
 class NotificationSettingsScopeGroupChats extends NotificationSettingsScope {
-  static const TYPE = "notificationSettingsScopeGroupChats";
-
+  @override
+  String get tdType => "notificationSettingsScopeGroupChats";
 
   @override
   Map<String, dynamic> get params => {};
-  NotificationSettingsScopeGroupChats(Map<String, dynamic> json);}
+
+  NotificationSettingsScopeGroupChats(Map<String, dynamic> json);
+}
 
 @reflector
 class NotificationSettingsScopeChannelChats extends NotificationSettingsScope {
-  static const TYPE = "notificationSettingsScopeChannelChats";
-
+  @override
+  String get tdType => "notificationSettingsScopeChannelChats";
 
   @override
   Map<String, dynamic> get params => {};
-  NotificationSettingsScopeChannelChats(Map<String, dynamic> json);}
+
+  NotificationSettingsScopeChannelChats(Map<String, dynamic> json);
+}
 
 @reflector
 class ChatNotificationSettings extends TdObject {
-  static const TYPE = "chatNotificationSettings";
+  @override
+  String get tdType => "chatNotificationSettings";
 
   bool useDefaultMuteFor;
   int muteFor;
@@ -2367,7 +2505,8 @@ class ChatNotificationSettings extends TdObject {
 
 @reflector
 class ScopeNotificationSettings extends TdObject {
-  static const TYPE = "scopeNotificationSettings";
+  @override
+  String get tdType => "scopeNotificationSettings";
 
   int muteFor;
   String sound;
@@ -2395,7 +2534,8 @@ class ScopeNotificationSettings extends TdObject {
 
 @reflector
 class DraftMessage extends TdObject {
-  static const TYPE = "draftMessage";
+  @override
+  String get tdType => "draftMessage";
 
   int replyToMessageId;
   InputMessageContent inputMessageText;
@@ -2416,7 +2556,8 @@ abstract class ChatType extends TdObject {}
 
 @reflector
 class ChatTypePrivate extends ChatType {
-  static const TYPE = "chatTypePrivate";
+  @override
+  String get tdType => "chatTypePrivate";
 
   int userId;
 
@@ -2432,7 +2573,8 @@ class ChatTypePrivate extends ChatType {
 
 @reflector
 class ChatTypeBasicGroup extends ChatType {
-  static const TYPE = "chatTypeBasicGroup";
+  @override
+  String get tdType => "chatTypeBasicGroup";
 
   int basicGroupId;
 
@@ -2448,7 +2590,8 @@ class ChatTypeBasicGroup extends ChatType {
 
 @reflector
 class ChatTypeSupergroup extends ChatType {
-  static const TYPE = "chatTypeSupergroup";
+  @override
+  String get tdType => "chatTypeSupergroup";
 
   int supergroupId;
   bool isChannel;
@@ -2467,7 +2610,8 @@ class ChatTypeSupergroup extends ChatType {
 
 @reflector
 class ChatTypeSecret extends ChatType {
-  static const TYPE = "chatTypeSecret";
+  @override
+  String get tdType => "chatTypeSecret";
 
   int secretChatId;
   int userId;
@@ -2486,7 +2630,8 @@ class ChatTypeSecret extends ChatType {
 
 @reflector
 class Chat extends TdObject {
-  static const TYPE = "chat";
+  @override
+  String get tdType => "chat";
 
   int id;
   ChatType type;
@@ -2568,7 +2713,8 @@ class Chat extends TdObject {
 
 @reflector
 class Chats extends TdObject {
-  static const TYPE = "chats";
+  @override
+  String get tdType => "chats";
 
   List<int> chatIds;
 
@@ -2584,7 +2730,8 @@ class Chats extends TdObject {
 
 @reflector
 class ChatInviteLink extends TdObject {
-  static const TYPE = "chatInviteLink";
+  @override
+  String get tdType => "chatInviteLink";
 
   String inviteLink;
 
@@ -2600,7 +2747,8 @@ class ChatInviteLink extends TdObject {
 
 @reflector
 class ChatInviteLinkInfo extends TdObject {
-  static const TYPE = "chatInviteLinkInfo";
+  @override
+  String get tdType => "chatInviteLinkInfo";
 
   int chatId;
   ChatType type;
@@ -2636,34 +2784,41 @@ abstract class KeyboardButtonType extends TdObject {}
 
 @reflector
 class KeyboardButtonTypeText extends KeyboardButtonType {
-  static const TYPE = "keyboardButtonTypeText";
-
+  @override
+  String get tdType => "keyboardButtonTypeText";
 
   @override
   Map<String, dynamic> get params => {};
-  KeyboardButtonTypeText(Map<String, dynamic> json);}
+
+  KeyboardButtonTypeText(Map<String, dynamic> json);
+}
 
 @reflector
 class KeyboardButtonTypeRequestPhoneNumber extends KeyboardButtonType {
-  static const TYPE = "keyboardButtonTypeRequestPhoneNumber";
-
+  @override
+  String get tdType => "keyboardButtonTypeRequestPhoneNumber";
 
   @override
   Map<String, dynamic> get params => {};
-  KeyboardButtonTypeRequestPhoneNumber(Map<String, dynamic> json);}
+
+  KeyboardButtonTypeRequestPhoneNumber(Map<String, dynamic> json);
+}
 
 @reflector
 class KeyboardButtonTypeRequestLocation extends KeyboardButtonType {
-  static const TYPE = "keyboardButtonTypeRequestLocation";
-
+  @override
+  String get tdType => "keyboardButtonTypeRequestLocation";
 
   @override
   Map<String, dynamic> get params => {};
-  KeyboardButtonTypeRequestLocation(Map<String, dynamic> json);}
+
+  KeyboardButtonTypeRequestLocation(Map<String, dynamic> json);
+}
 
 @reflector
 class KeyboardButton extends TdObject {
-  static const TYPE = "keyboardButton";
+  @override
+  String get tdType => "keyboardButton";
 
   String text;
   KeyboardButtonType type;
@@ -2684,7 +2839,8 @@ abstract class InlineKeyboardButtonType extends TdObject {}
 
 @reflector
 class InlineKeyboardButtonTypeUrl extends InlineKeyboardButtonType {
-  static const TYPE = "inlineKeyboardButtonTypeUrl";
+  @override
+  String get tdType => "inlineKeyboardButtonTypeUrl";
 
   String url;
 
@@ -2700,7 +2856,8 @@ class InlineKeyboardButtonTypeUrl extends InlineKeyboardButtonType {
 
 @reflector
 class InlineKeyboardButtonTypeLoginUrl extends InlineKeyboardButtonType {
-  static const TYPE = "inlineKeyboardButtonTypeLoginUrl";
+  @override
+  String get tdType => "inlineKeyboardButtonTypeLoginUrl";
 
   String url;
   int id;
@@ -2722,7 +2879,8 @@ class InlineKeyboardButtonTypeLoginUrl extends InlineKeyboardButtonType {
 
 @reflector
 class InlineKeyboardButtonTypeCallback extends InlineKeyboardButtonType {
-  static const TYPE = "inlineKeyboardButtonTypeCallback";
+  @override
+  String get tdType => "inlineKeyboardButtonTypeCallback";
 
   List<int> data;
 
@@ -2738,16 +2896,19 @@ class InlineKeyboardButtonTypeCallback extends InlineKeyboardButtonType {
 
 @reflector
 class InlineKeyboardButtonTypeCallbackGame extends InlineKeyboardButtonType {
-  static const TYPE = "inlineKeyboardButtonTypeCallbackGame";
-
+  @override
+  String get tdType => "inlineKeyboardButtonTypeCallbackGame";
 
   @override
   Map<String, dynamic> get params => {};
-  InlineKeyboardButtonTypeCallbackGame(Map<String, dynamic> json);}
+
+  InlineKeyboardButtonTypeCallbackGame(Map<String, dynamic> json);
+}
 
 @reflector
 class InlineKeyboardButtonTypeSwitchInline extends InlineKeyboardButtonType {
-  static const TYPE = "inlineKeyboardButtonTypeSwitchInline";
+  @override
+  String get tdType => "inlineKeyboardButtonTypeSwitchInline";
 
   String query;
   bool inCurrentChat;
@@ -2766,16 +2927,19 @@ class InlineKeyboardButtonTypeSwitchInline extends InlineKeyboardButtonType {
 
 @reflector
 class InlineKeyboardButtonTypeBuy extends InlineKeyboardButtonType {
-  static const TYPE = "inlineKeyboardButtonTypeBuy";
-
+  @override
+  String get tdType => "inlineKeyboardButtonTypeBuy";
 
   @override
   Map<String, dynamic> get params => {};
-  InlineKeyboardButtonTypeBuy(Map<String, dynamic> json);}
+
+  InlineKeyboardButtonTypeBuy(Map<String, dynamic> json);
+}
 
 @reflector
 class InlineKeyboardButton extends TdObject {
-  static const TYPE = "inlineKeyboardButton";
+  @override
+  String get tdType => "inlineKeyboardButton";
 
   String text;
   InlineKeyboardButtonType type;
@@ -2796,7 +2960,8 @@ abstract class ReplyMarkup extends TdObject {}
 
 @reflector
 class ReplyMarkupRemoveKeyboard extends ReplyMarkup {
-  static const TYPE = "replyMarkupRemoveKeyboard";
+  @override
+  String get tdType => "replyMarkupRemoveKeyboard";
 
   bool isPersonal;
 
@@ -2812,7 +2977,8 @@ class ReplyMarkupRemoveKeyboard extends ReplyMarkup {
 
 @reflector
 class ReplyMarkupForceReply extends ReplyMarkup {
-  static const TYPE = "replyMarkupForceReply";
+  @override
+  String get tdType => "replyMarkupForceReply";
 
   bool isPersonal;
 
@@ -2828,7 +2994,8 @@ class ReplyMarkupForceReply extends ReplyMarkup {
 
 @reflector
 class ReplyMarkupShowKeyboard extends ReplyMarkup {
-  static const TYPE = "replyMarkupShowKeyboard";
+  @override
+  String get tdType => "replyMarkupShowKeyboard";
 
   List<List<KeyboardButton>> rows;
   bool resizeKeyboard;
@@ -2853,7 +3020,8 @@ class ReplyMarkupShowKeyboard extends ReplyMarkup {
 
 @reflector
 class ReplyMarkupInlineKeyboard extends ReplyMarkup {
-  static const TYPE = "replyMarkupInlineKeyboard";
+  @override
+  String get tdType => "replyMarkupInlineKeyboard";
 
   List<List<InlineKeyboardButton>> rows;
 
@@ -2871,7 +3039,8 @@ abstract class RichText extends TdObject {}
 
 @reflector
 class RichTextPlain extends RichText {
-  static const TYPE = "richTextPlain";
+  @override
+  String get tdType => "richTextPlain";
 
   String text;
 
@@ -2887,7 +3056,8 @@ class RichTextPlain extends RichText {
 
 @reflector
 class RichTextBold extends RichText {
-  static const TYPE = "richTextBold";
+  @override
+  String get tdType => "richTextBold";
 
   RichText text;
 
@@ -2903,7 +3073,8 @@ class RichTextBold extends RichText {
 
 @reflector
 class RichTextItalic extends RichText {
-  static const TYPE = "richTextItalic";
+  @override
+  String get tdType => "richTextItalic";
 
   RichText text;
 
@@ -2919,7 +3090,8 @@ class RichTextItalic extends RichText {
 
 @reflector
 class RichTextUnderline extends RichText {
-  static const TYPE = "richTextUnderline";
+  @override
+  String get tdType => "richTextUnderline";
 
   RichText text;
 
@@ -2935,7 +3107,8 @@ class RichTextUnderline extends RichText {
 
 @reflector
 class RichTextStrikethrough extends RichText {
-  static const TYPE = "richTextStrikethrough";
+  @override
+  String get tdType => "richTextStrikethrough";
 
   RichText text;
 
@@ -2951,7 +3124,8 @@ class RichTextStrikethrough extends RichText {
 
 @reflector
 class RichTextFixed extends RichText {
-  static const TYPE = "richTextFixed";
+  @override
+  String get tdType => "richTextFixed";
 
   RichText text;
 
@@ -2967,7 +3141,8 @@ class RichTextFixed extends RichText {
 
 @reflector
 class RichTextUrl extends RichText {
-  static const TYPE = "richTextUrl";
+  @override
+  String get tdType => "richTextUrl";
 
   RichText text;
   String url;
@@ -2989,7 +3164,8 @@ class RichTextUrl extends RichText {
 
 @reflector
 class RichTextEmailAddress extends RichText {
-  static const TYPE = "richTextEmailAddress";
+  @override
+  String get tdType => "richTextEmailAddress";
 
   RichText text;
   String emailAddress;
@@ -3008,7 +3184,8 @@ class RichTextEmailAddress extends RichText {
 
 @reflector
 class RichTextSubscript extends RichText {
-  static const TYPE = "richTextSubscript";
+  @override
+  String get tdType => "richTextSubscript";
 
   RichText text;
 
@@ -3024,7 +3201,8 @@ class RichTextSubscript extends RichText {
 
 @reflector
 class RichTextSuperscript extends RichText {
-  static const TYPE = "richTextSuperscript";
+  @override
+  String get tdType => "richTextSuperscript";
 
   RichText text;
 
@@ -3040,7 +3218,8 @@ class RichTextSuperscript extends RichText {
 
 @reflector
 class RichTextMarked extends RichText {
-  static const TYPE = "richTextMarked";
+  @override
+  String get tdType => "richTextMarked";
 
   RichText text;
 
@@ -3056,7 +3235,8 @@ class RichTextMarked extends RichText {
 
 @reflector
 class RichTextPhoneNumber extends RichText {
-  static const TYPE = "richTextPhoneNumber";
+  @override
+  String get tdType => "richTextPhoneNumber";
 
   RichText text;
   String phoneNumber;
@@ -3075,7 +3255,8 @@ class RichTextPhoneNumber extends RichText {
 
 @reflector
 class RichTextIcon extends RichText {
-  static const TYPE = "richTextIcon";
+  @override
+  String get tdType => "richTextIcon";
 
   Document document;
   int width;
@@ -3097,7 +3278,8 @@ class RichTextIcon extends RichText {
 
 @reflector
 class RichTextAnchor extends RichText {
-  static const TYPE = "richTextAnchor";
+  @override
+  String get tdType => "richTextAnchor";
 
   RichText text;
   String name;
@@ -3116,7 +3298,8 @@ class RichTextAnchor extends RichText {
 
 @reflector
 class RichTexts extends RichText {
-  static const TYPE = "richTexts";
+  @override
+  String get tdType => "richTexts";
 
   List<RichText> texts;
 
@@ -3132,7 +3315,8 @@ class RichTexts extends RichText {
 
 @reflector
 class PageBlockCaption extends TdObject {
-  static const TYPE = "pageBlockCaption";
+  @override
+  String get tdType => "pageBlockCaption";
 
   RichText text;
   RichText credit;
@@ -3151,7 +3335,8 @@ class PageBlockCaption extends TdObject {
 
 @reflector
 class PageBlockListItem extends TdObject {
-  static const TYPE = "pageBlockListItem";
+  @override
+  String get tdType => "pageBlockListItem";
 
   String label;
   List<PageBlock> pageBlocks;
@@ -3172,63 +3357,76 @@ abstract class PageBlockHorizontalAlignment extends TdObject {}
 
 @reflector
 class PageBlockHorizontalAlignmentLeft extends PageBlockHorizontalAlignment {
-  static const TYPE = "pageBlockHorizontalAlignmentLeft";
-
+  @override
+  String get tdType => "pageBlockHorizontalAlignmentLeft";
 
   @override
   Map<String, dynamic> get params => {};
-  PageBlockHorizontalAlignmentLeft(Map<String, dynamic> json);}
+
+  PageBlockHorizontalAlignmentLeft(Map<String, dynamic> json);
+}
 
 @reflector
 class PageBlockHorizontalAlignmentCenter extends PageBlockHorizontalAlignment {
-  static const TYPE = "pageBlockHorizontalAlignmentCenter";
-
+  @override
+  String get tdType => "pageBlockHorizontalAlignmentCenter";
 
   @override
   Map<String, dynamic> get params => {};
-  PageBlockHorizontalAlignmentCenter(Map<String, dynamic> json);}
+
+  PageBlockHorizontalAlignmentCenter(Map<String, dynamic> json);
+}
 
 @reflector
 class PageBlockHorizontalAlignmentRight extends PageBlockHorizontalAlignment {
-  static const TYPE = "pageBlockHorizontalAlignmentRight";
-
+  @override
+  String get tdType => "pageBlockHorizontalAlignmentRight";
 
   @override
   Map<String, dynamic> get params => {};
-  PageBlockHorizontalAlignmentRight(Map<String, dynamic> json);}
+
+  PageBlockHorizontalAlignmentRight(Map<String, dynamic> json);
+}
 
 abstract class PageBlockVerticalAlignment extends TdObject {}
 
 @reflector
 class PageBlockVerticalAlignmentTop extends PageBlockVerticalAlignment {
-  static const TYPE = "pageBlockVerticalAlignmentTop";
-
+  @override
+  String get tdType => "pageBlockVerticalAlignmentTop";
 
   @override
   Map<String, dynamic> get params => {};
-  PageBlockVerticalAlignmentTop(Map<String, dynamic> json);}
+
+  PageBlockVerticalAlignmentTop(Map<String, dynamic> json);
+}
 
 @reflector
 class PageBlockVerticalAlignmentMiddle extends PageBlockVerticalAlignment {
-  static const TYPE = "pageBlockVerticalAlignmentMiddle";
-
+  @override
+  String get tdType => "pageBlockVerticalAlignmentMiddle";
 
   @override
   Map<String, dynamic> get params => {};
-  PageBlockVerticalAlignmentMiddle(Map<String, dynamic> json);}
+
+  PageBlockVerticalAlignmentMiddle(Map<String, dynamic> json);
+}
 
 @reflector
 class PageBlockVerticalAlignmentBottom extends PageBlockVerticalAlignment {
-  static const TYPE = "pageBlockVerticalAlignmentBottom";
-
+  @override
+  String get tdType => "pageBlockVerticalAlignmentBottom";
 
   @override
   Map<String, dynamic> get params => {};
-  PageBlockVerticalAlignmentBottom(Map<String, dynamic> json);}
+
+  PageBlockVerticalAlignmentBottom(Map<String, dynamic> json);
+}
 
 @reflector
 class PageBlockTableCell extends TdObject {
-  static const TYPE = "pageBlockTableCell";
+  @override
+  String get tdType => "pageBlockTableCell";
 
   RichText text;
   bool isHeader;
@@ -3259,7 +3457,8 @@ class PageBlockTableCell extends TdObject {
 
 @reflector
 class PageBlockRelatedArticle extends TdObject {
-  static const TYPE = "pageBlockRelatedArticle";
+  @override
+  String get tdType => "pageBlockRelatedArticle";
 
   String url;
   String title;
@@ -3292,7 +3491,8 @@ abstract class PageBlock extends TdObject {}
 
 @reflector
 class PageBlockTitle extends PageBlock {
-  static const TYPE = "pageBlockTitle";
+  @override
+  String get tdType => "pageBlockTitle";
 
   RichText title;
 
@@ -3308,7 +3508,8 @@ class PageBlockTitle extends PageBlock {
 
 @reflector
 class PageBlockSubtitle extends PageBlock {
-  static const TYPE = "pageBlockSubtitle";
+  @override
+  String get tdType => "pageBlockSubtitle";
 
   RichText subtitle;
 
@@ -3324,7 +3525,8 @@ class PageBlockSubtitle extends PageBlock {
 
 @reflector
 class PageBlockAuthorDate extends PageBlock {
-  static const TYPE = "pageBlockAuthorDate";
+  @override
+  String get tdType => "pageBlockAuthorDate";
 
   RichText author;
   int publishDate;
@@ -3343,7 +3545,8 @@ class PageBlockAuthorDate extends PageBlock {
 
 @reflector
 class PageBlockHeader extends PageBlock {
-  static const TYPE = "pageBlockHeader";
+  @override
+  String get tdType => "pageBlockHeader";
 
   RichText header;
 
@@ -3359,7 +3562,8 @@ class PageBlockHeader extends PageBlock {
 
 @reflector
 class PageBlockSubheader extends PageBlock {
-  static const TYPE = "pageBlockSubheader";
+  @override
+  String get tdType => "pageBlockSubheader";
 
   RichText subheader;
 
@@ -3375,7 +3579,8 @@ class PageBlockSubheader extends PageBlock {
 
 @reflector
 class PageBlockKicker extends PageBlock {
-  static const TYPE = "pageBlockKicker";
+  @override
+  String get tdType => "pageBlockKicker";
 
   RichText kicker;
 
@@ -3391,7 +3596,8 @@ class PageBlockKicker extends PageBlock {
 
 @reflector
 class PageBlockParagraph extends PageBlock {
-  static const TYPE = "pageBlockParagraph";
+  @override
+  String get tdType => "pageBlockParagraph";
 
   RichText text;
 
@@ -3407,7 +3613,8 @@ class PageBlockParagraph extends PageBlock {
 
 @reflector
 class PageBlockPreformatted extends PageBlock {
-  static const TYPE = "pageBlockPreformatted";
+  @override
+  String get tdType => "pageBlockPreformatted";
 
   RichText text;
   String language;
@@ -3426,7 +3633,8 @@ class PageBlockPreformatted extends PageBlock {
 
 @reflector
 class PageBlockFooter extends PageBlock {
-  static const TYPE = "pageBlockFooter";
+  @override
+  String get tdType => "pageBlockFooter";
 
   RichText footer;
 
@@ -3442,16 +3650,19 @@ class PageBlockFooter extends PageBlock {
 
 @reflector
 class PageBlockDivider extends PageBlock {
-  static const TYPE = "pageBlockDivider";
-
+  @override
+  String get tdType => "pageBlockDivider";
 
   @override
   Map<String, dynamic> get params => {};
-  PageBlockDivider(Map<String, dynamic> json);}
+
+  PageBlockDivider(Map<String, dynamic> json);
+}
 
 @reflector
 class PageBlockAnchor extends PageBlock {
-  static const TYPE = "pageBlockAnchor";
+  @override
+  String get tdType => "pageBlockAnchor";
 
   String name;
 
@@ -3467,7 +3678,8 @@ class PageBlockAnchor extends PageBlock {
 
 @reflector
 class PageBlockList extends PageBlock {
-  static const TYPE = "pageBlockList";
+  @override
+  String get tdType => "pageBlockList";
 
   List<PageBlockListItem> items;
 
@@ -3483,7 +3695,8 @@ class PageBlockList extends PageBlock {
 
 @reflector
 class PageBlockBlockQuote extends PageBlock {
-  static const TYPE = "pageBlockBlockQuote";
+  @override
+  String get tdType => "pageBlockBlockQuote";
 
   RichText text;
   RichText credit;
@@ -3502,7 +3715,8 @@ class PageBlockBlockQuote extends PageBlock {
 
 @reflector
 class PageBlockPullQuote extends PageBlock {
-  static const TYPE = "pageBlockPullQuote";
+  @override
+  String get tdType => "pageBlockPullQuote";
 
   RichText text;
   RichText credit;
@@ -3521,7 +3735,8 @@ class PageBlockPullQuote extends PageBlock {
 
 @reflector
 class PageBlockAnimation extends PageBlock {
-  static const TYPE = "pageBlockAnimation";
+  @override
+  String get tdType => "pageBlockAnimation";
 
   Animation animation;
   PageBlockCaption caption;
@@ -3543,7 +3758,8 @@ class PageBlockAnimation extends PageBlock {
 
 @reflector
 class PageBlockAudio extends PageBlock {
-  static const TYPE = "pageBlockAudio";
+  @override
+  String get tdType => "pageBlockAudio";
 
   Audio audio;
   PageBlockCaption caption;
@@ -3562,7 +3778,8 @@ class PageBlockAudio extends PageBlock {
 
 @reflector
 class PageBlockPhoto extends PageBlock {
-  static const TYPE = "pageBlockPhoto";
+  @override
+  String get tdType => "pageBlockPhoto";
 
   Photo photo;
   PageBlockCaption caption;
@@ -3584,7 +3801,8 @@ class PageBlockPhoto extends PageBlock {
 
 @reflector
 class PageBlockVideo extends PageBlock {
-  static const TYPE = "pageBlockVideo";
+  @override
+  String get tdType => "pageBlockVideo";
 
   Video video;
   PageBlockCaption caption;
@@ -3609,7 +3827,8 @@ class PageBlockVideo extends PageBlock {
 
 @reflector
 class PageBlockVoiceNote extends PageBlock {
-  static const TYPE = "pageBlockVoiceNote";
+  @override
+  String get tdType => "pageBlockVoiceNote";
 
   VoiceNote voiceNote;
   PageBlockCaption caption;
@@ -3628,7 +3847,8 @@ class PageBlockVoiceNote extends PageBlock {
 
 @reflector
 class PageBlockCover extends PageBlock {
-  static const TYPE = "pageBlockCover";
+  @override
+  String get tdType => "pageBlockCover";
 
   PageBlock cover;
 
@@ -3644,7 +3864,8 @@ class PageBlockCover extends PageBlock {
 
 @reflector
 class PageBlockEmbedded extends PageBlock {
-  static const TYPE = "pageBlockEmbedded";
+  @override
+  String get tdType => "pageBlockEmbedded";
 
   String url;
   String html;
@@ -3681,7 +3902,8 @@ class PageBlockEmbedded extends PageBlock {
 
 @reflector
 class PageBlockEmbeddedPost extends PageBlock {
-  static const TYPE = "pageBlockEmbeddedPost";
+  @override
+  String get tdType => "pageBlockEmbeddedPost";
 
   String url;
   String author;
@@ -3712,7 +3934,8 @@ class PageBlockEmbeddedPost extends PageBlock {
 
 @reflector
 class PageBlockCollage extends PageBlock {
-  static const TYPE = "pageBlockCollage";
+  @override
+  String get tdType => "pageBlockCollage";
 
   List<PageBlock> pageBlocks;
   PageBlockCaption caption;
@@ -3731,7 +3954,8 @@ class PageBlockCollage extends PageBlock {
 
 @reflector
 class PageBlockSlideshow extends PageBlock {
-  static const TYPE = "pageBlockSlideshow";
+  @override
+  String get tdType => "pageBlockSlideshow";
 
   List<PageBlock> pageBlocks;
   PageBlockCaption caption;
@@ -3750,7 +3974,8 @@ class PageBlockSlideshow extends PageBlock {
 
 @reflector
 class PageBlockChatLink extends PageBlock {
-  static const TYPE = "pageBlockChatLink";
+  @override
+  String get tdType => "pageBlockChatLink";
 
   String title;
   ChatPhoto photo;
@@ -3772,7 +3997,8 @@ class PageBlockChatLink extends PageBlock {
 
 @reflector
 class PageBlockTable extends PageBlock {
-  static const TYPE = "pageBlockTable";
+  @override
+  String get tdType => "pageBlockTable";
 
   RichText caption;
   List<List<PageBlockTableCell>> cells;
@@ -3797,7 +4023,8 @@ class PageBlockTable extends PageBlock {
 
 @reflector
 class PageBlockDetails extends PageBlock {
-  static const TYPE = "pageBlockDetails";
+  @override
+  String get tdType => "pageBlockDetails";
 
   RichText header;
   List<PageBlock> pageBlocks;
@@ -3819,7 +4046,8 @@ class PageBlockDetails extends PageBlock {
 
 @reflector
 class PageBlockRelatedArticles extends PageBlock {
-  static const TYPE = "pageBlockRelatedArticles";
+  @override
+  String get tdType => "pageBlockRelatedArticles";
 
   RichText header;
   List<PageBlockRelatedArticle> articles;
@@ -3838,7 +4066,8 @@ class PageBlockRelatedArticles extends PageBlock {
 
 @reflector
 class PageBlockMap extends PageBlock {
-  static const TYPE = "pageBlockMap";
+  @override
+  String get tdType => "pageBlockMap";
 
   Location location;
   int zoom;
@@ -3866,7 +4095,8 @@ class PageBlockMap extends PageBlock {
 
 @reflector
 class WebPageInstantView extends TdObject {
-  static const TYPE = "webPageInstantView";
+  @override
+  String get tdType => "webPageInstantView";
 
   List<PageBlock> pageBlocks;
   int version;
@@ -3894,7 +4124,8 @@ class WebPageInstantView extends TdObject {
 
 @reflector
 class WebPage extends TdObject {
-  static const TYPE = "webPage";
+  @override
+  String get tdType => "webPage";
 
   String url;
   String displayUrl;
@@ -3970,7 +4201,8 @@ class WebPage extends TdObject {
 
 @reflector
 class Address extends TdObject {
-  static const TYPE = "address";
+  @override
+  String get tdType => "address";
 
   String countryCode;
   String state;
@@ -4001,7 +4233,8 @@ class Address extends TdObject {
 
 @reflector
 class LabeledPricePart extends TdObject {
-  static const TYPE = "labeledPricePart";
+  @override
+  String get tdType => "labeledPricePart";
 
   String label;
   int amount;
@@ -4020,7 +4253,8 @@ class LabeledPricePart extends TdObject {
 
 @reflector
 class Invoice extends TdObject {
-  static const TYPE = "invoice";
+  @override
+  String get tdType => "invoice";
 
   String currency;
   List<LabeledPricePart> priceParts;
@@ -4063,7 +4297,8 @@ class Invoice extends TdObject {
 
 @reflector
 class OrderInfo extends TdObject {
-  static const TYPE = "orderInfo";
+  @override
+  String get tdType => "orderInfo";
 
   String name;
   String phoneNumber;
@@ -4088,7 +4323,8 @@ class OrderInfo extends TdObject {
 
 @reflector
 class ShippingOption extends TdObject {
-  static const TYPE = "shippingOption";
+  @override
+  String get tdType => "shippingOption";
 
   String id;
   String title;
@@ -4110,7 +4346,8 @@ class ShippingOption extends TdObject {
 
 @reflector
 class SavedCredentials extends TdObject {
-  static const TYPE = "savedCredentials";
+  @override
+  String get tdType => "savedCredentials";
 
   String id;
   String title;
@@ -4131,7 +4368,8 @@ abstract class InputCredentials extends TdObject {}
 
 @reflector
 class InputCredentialsSaved extends InputCredentials {
-  static const TYPE = "inputCredentialsSaved";
+  @override
+  String get tdType => "inputCredentialsSaved";
 
   String savedCredentialsId;
 
@@ -4147,7 +4385,8 @@ class InputCredentialsSaved extends InputCredentials {
 
 @reflector
 class InputCredentialsNew extends InputCredentials {
-  static const TYPE = "inputCredentialsNew";
+  @override
+  String get tdType => "inputCredentialsNew";
 
   String data;
   bool allowSave;
@@ -4166,7 +4405,8 @@ class InputCredentialsNew extends InputCredentials {
 
 @reflector
 class InputCredentialsAndroidPay extends InputCredentials {
-  static const TYPE = "inputCredentialsAndroidPay";
+  @override
+  String get tdType => "inputCredentialsAndroidPay";
 
   String data;
 
@@ -4182,7 +4422,8 @@ class InputCredentialsAndroidPay extends InputCredentials {
 
 @reflector
 class InputCredentialsApplePay extends InputCredentials {
-  static const TYPE = "inputCredentialsApplePay";
+  @override
+  String get tdType => "inputCredentialsApplePay";
 
   String data;
 
@@ -4198,7 +4439,8 @@ class InputCredentialsApplePay extends InputCredentials {
 
 @reflector
 class PaymentsProviderStripe extends TdObject {
-  static const TYPE = "paymentsProviderStripe";
+  @override
+  String get tdType => "paymentsProviderStripe";
 
   String publishableKey;
   bool needCountry;
@@ -4223,7 +4465,8 @@ class PaymentsProviderStripe extends TdObject {
 
 @reflector
 class PaymentForm extends TdObject {
-  static const TYPE = "paymentForm";
+  @override
+  String get tdType => "paymentForm";
 
   Invoice invoice;
   String url;
@@ -4257,7 +4500,8 @@ class PaymentForm extends TdObject {
 
 @reflector
 class ValidatedOrderInfo extends TdObject {
-  static const TYPE = "validatedOrderInfo";
+  @override
+  String get tdType => "validatedOrderInfo";
 
   String orderInfoId;
   List<ShippingOption> shippingOptions;
@@ -4276,7 +4520,8 @@ class ValidatedOrderInfo extends TdObject {
 
 @reflector
 class PaymentResult extends TdObject {
-  static const TYPE = "paymentResult";
+  @override
+  String get tdType => "paymentResult";
 
   bool success;
   String verificationUrl;
@@ -4295,7 +4540,8 @@ class PaymentResult extends TdObject {
 
 @reflector
 class PaymentReceipt extends TdObject {
-  static const TYPE = "paymentReceipt";
+  @override
+  String get tdType => "paymentReceipt";
 
   int date;
   int paymentsProviderUserId;
@@ -4326,7 +4572,8 @@ class PaymentReceipt extends TdObject {
 
 @reflector
 class DatedFile extends TdObject {
-  static const TYPE = "datedFile";
+  @override
+  String get tdType => "datedFile";
 
   File file;
   int date;
@@ -4347,124 +4594,151 @@ abstract class PassportElementType extends TdObject {}
 
 @reflector
 class PassportElementTypePersonalDetails extends PassportElementType {
-  static const TYPE = "passportElementTypePersonalDetails";
-
+  @override
+  String get tdType => "passportElementTypePersonalDetails";
 
   @override
   Map<String, dynamic> get params => {};
-  PassportElementTypePersonalDetails(Map<String, dynamic> json);}
+
+  PassportElementTypePersonalDetails(Map<String, dynamic> json);
+}
 
 @reflector
 class PassportElementTypePassport extends PassportElementType {
-  static const TYPE = "passportElementTypePassport";
-
+  @override
+  String get tdType => "passportElementTypePassport";
 
   @override
   Map<String, dynamic> get params => {};
-  PassportElementTypePassport(Map<String, dynamic> json);}
+
+  PassportElementTypePassport(Map<String, dynamic> json);
+}
 
 @reflector
 class PassportElementTypeDriverLicense extends PassportElementType {
-  static const TYPE = "passportElementTypeDriverLicense";
-
+  @override
+  String get tdType => "passportElementTypeDriverLicense";
 
   @override
   Map<String, dynamic> get params => {};
-  PassportElementTypeDriverLicense(Map<String, dynamic> json);}
+
+  PassportElementTypeDriverLicense(Map<String, dynamic> json);
+}
 
 @reflector
 class PassportElementTypeIdentityCard extends PassportElementType {
-  static const TYPE = "passportElementTypeIdentityCard";
-
+  @override
+  String get tdType => "passportElementTypeIdentityCard";
 
   @override
   Map<String, dynamic> get params => {};
-  PassportElementTypeIdentityCard(Map<String, dynamic> json);}
+
+  PassportElementTypeIdentityCard(Map<String, dynamic> json);
+}
 
 @reflector
 class PassportElementTypeInternalPassport extends PassportElementType {
-  static const TYPE = "passportElementTypeInternalPassport";
-
+  @override
+  String get tdType => "passportElementTypeInternalPassport";
 
   @override
   Map<String, dynamic> get params => {};
-  PassportElementTypeInternalPassport(Map<String, dynamic> json);}
+
+  PassportElementTypeInternalPassport(Map<String, dynamic> json);
+}
 
 @reflector
 class PassportElementTypeAddress extends PassportElementType {
-  static const TYPE = "passportElementTypeAddress";
-
+  @override
+  String get tdType => "passportElementTypeAddress";
 
   @override
   Map<String, dynamic> get params => {};
-  PassportElementTypeAddress(Map<String, dynamic> json);}
+
+  PassportElementTypeAddress(Map<String, dynamic> json);
+}
 
 @reflector
 class PassportElementTypeUtilityBill extends PassportElementType {
-  static const TYPE = "passportElementTypeUtilityBill";
-
+  @override
+  String get tdType => "passportElementTypeUtilityBill";
 
   @override
   Map<String, dynamic> get params => {};
-  PassportElementTypeUtilityBill(Map<String, dynamic> json);}
+
+  PassportElementTypeUtilityBill(Map<String, dynamic> json);
+}
 
 @reflector
 class PassportElementTypeBankStatement extends PassportElementType {
-  static const TYPE = "passportElementTypeBankStatement";
-
+  @override
+  String get tdType => "passportElementTypeBankStatement";
 
   @override
   Map<String, dynamic> get params => {};
-  PassportElementTypeBankStatement(Map<String, dynamic> json);}
+
+  PassportElementTypeBankStatement(Map<String, dynamic> json);
+}
 
 @reflector
 class PassportElementTypeRentalAgreement extends PassportElementType {
-  static const TYPE = "passportElementTypeRentalAgreement";
-
+  @override
+  String get tdType => "passportElementTypeRentalAgreement";
 
   @override
   Map<String, dynamic> get params => {};
-  PassportElementTypeRentalAgreement(Map<String, dynamic> json);}
+
+  PassportElementTypeRentalAgreement(Map<String, dynamic> json);
+}
 
 @reflector
 class PassportElementTypePassportRegistration extends PassportElementType {
-  static const TYPE = "passportElementTypePassportRegistration";
-
+  @override
+  String get tdType => "passportElementTypePassportRegistration";
 
   @override
   Map<String, dynamic> get params => {};
-  PassportElementTypePassportRegistration(Map<String, dynamic> json);}
+
+  PassportElementTypePassportRegistration(Map<String, dynamic> json);
+}
 
 @reflector
 class PassportElementTypeTemporaryRegistration extends PassportElementType {
-  static const TYPE = "passportElementTypeTemporaryRegistration";
-
+  @override
+  String get tdType => "passportElementTypeTemporaryRegistration";
 
   @override
   Map<String, dynamic> get params => {};
-  PassportElementTypeTemporaryRegistration(Map<String, dynamic> json);}
+
+  PassportElementTypeTemporaryRegistration(Map<String, dynamic> json);
+}
 
 @reflector
 class PassportElementTypePhoneNumber extends PassportElementType {
-  static const TYPE = "passportElementTypePhoneNumber";
-
+  @override
+  String get tdType => "passportElementTypePhoneNumber";
 
   @override
   Map<String, dynamic> get params => {};
-  PassportElementTypePhoneNumber(Map<String, dynamic> json);}
+
+  PassportElementTypePhoneNumber(Map<String, dynamic> json);
+}
 
 @reflector
 class PassportElementTypeEmailAddress extends PassportElementType {
-  static const TYPE = "passportElementTypeEmailAddress";
-
+  @override
+  String get tdType => "passportElementTypeEmailAddress";
 
   @override
   Map<String, dynamic> get params => {};
-  PassportElementTypeEmailAddress(Map<String, dynamic> json);}
+
+  PassportElementTypeEmailAddress(Map<String, dynamic> json);
+}
 
 @reflector
 class Date extends TdObject {
-  static const TYPE = "date";
+  @override
+  String get tdType => "date";
 
   int day;
   int month;
@@ -4486,7 +4760,8 @@ class Date extends TdObject {
 
 @reflector
 class PersonalDetails extends TdObject {
-  static const TYPE = "personalDetails";
+  @override
+  String get tdType => "personalDetails";
 
   String firstName;
   String middleName;
@@ -4529,7 +4804,8 @@ class PersonalDetails extends TdObject {
 
 @reflector
 class IdentityDocument extends TdObject {
-  static const TYPE = "identityDocument";
+  @override
+  String get tdType => "identityDocument";
 
   String number;
   Date expiryDate;
@@ -4560,7 +4836,8 @@ class IdentityDocument extends TdObject {
 
 @reflector
 class InputIdentityDocument extends TdObject {
-  static const TYPE = "inputIdentityDocument";
+  @override
+  String get tdType => "inputIdentityDocument";
 
   String number;
   Date expiryDate;
@@ -4591,7 +4868,8 @@ class InputIdentityDocument extends TdObject {
 
 @reflector
 class PersonalDocument extends TdObject {
-  static const TYPE = "personalDocument";
+  @override
+  String get tdType => "personalDocument";
 
   List<DatedFile> files;
   List<DatedFile> translation;
@@ -4610,7 +4888,8 @@ class PersonalDocument extends TdObject {
 
 @reflector
 class InputPersonalDocument extends TdObject {
-  static const TYPE = "inputPersonalDocument";
+  @override
+  String get tdType => "inputPersonalDocument";
 
   List<InputFile> files;
   List<InputFile> translation;
@@ -4631,7 +4910,8 @@ abstract class PassportElement extends TdObject {}
 
 @reflector
 class PassportElementPersonalDetails extends PassportElement {
-  static const TYPE = "passportElementPersonalDetails";
+  @override
+  String get tdType => "passportElementPersonalDetails";
 
   PersonalDetails personalDetails;
 
@@ -4647,7 +4927,8 @@ class PassportElementPersonalDetails extends PassportElement {
 
 @reflector
 class PassportElementPassport extends PassportElement {
-  static const TYPE = "passportElementPassport";
+  @override
+  String get tdType => "passportElementPassport";
 
   IdentityDocument passport;
 
@@ -4663,7 +4944,8 @@ class PassportElementPassport extends PassportElement {
 
 @reflector
 class PassportElementDriverLicense extends PassportElement {
-  static const TYPE = "passportElementDriverLicense";
+  @override
+  String get tdType => "passportElementDriverLicense";
 
   IdentityDocument driverLicense;
 
@@ -4679,7 +4961,8 @@ class PassportElementDriverLicense extends PassportElement {
 
 @reflector
 class PassportElementIdentityCard extends PassportElement {
-  static const TYPE = "passportElementIdentityCard";
+  @override
+  String get tdType => "passportElementIdentityCard";
 
   IdentityDocument identityCard;
 
@@ -4695,7 +4978,8 @@ class PassportElementIdentityCard extends PassportElement {
 
 @reflector
 class PassportElementInternalPassport extends PassportElement {
-  static const TYPE = "passportElementInternalPassport";
+  @override
+  String get tdType => "passportElementInternalPassport";
 
   IdentityDocument internalPassport;
 
@@ -4711,7 +4995,8 @@ class PassportElementInternalPassport extends PassportElement {
 
 @reflector
 class PassportElementAddress extends PassportElement {
-  static const TYPE = "passportElementAddress";
+  @override
+  String get tdType => "passportElementAddress";
 
   Address address;
 
@@ -4727,7 +5012,8 @@ class PassportElementAddress extends PassportElement {
 
 @reflector
 class PassportElementUtilityBill extends PassportElement {
-  static const TYPE = "passportElementUtilityBill";
+  @override
+  String get tdType => "passportElementUtilityBill";
 
   PersonalDocument utilityBill;
 
@@ -4743,7 +5029,8 @@ class PassportElementUtilityBill extends PassportElement {
 
 @reflector
 class PassportElementBankStatement extends PassportElement {
-  static const TYPE = "passportElementBankStatement";
+  @override
+  String get tdType => "passportElementBankStatement";
 
   PersonalDocument bankStatement;
 
@@ -4759,7 +5046,8 @@ class PassportElementBankStatement extends PassportElement {
 
 @reflector
 class PassportElementRentalAgreement extends PassportElement {
-  static const TYPE = "passportElementRentalAgreement";
+  @override
+  String get tdType => "passportElementRentalAgreement";
 
   PersonalDocument rentalAgreement;
 
@@ -4775,7 +5063,8 @@ class PassportElementRentalAgreement extends PassportElement {
 
 @reflector
 class PassportElementPassportRegistration extends PassportElement {
-  static const TYPE = "passportElementPassportRegistration";
+  @override
+  String get tdType => "passportElementPassportRegistration";
 
   PersonalDocument passportRegistration;
 
@@ -4791,7 +5080,8 @@ class PassportElementPassportRegistration extends PassportElement {
 
 @reflector
 class PassportElementTemporaryRegistration extends PassportElement {
-  static const TYPE = "passportElementTemporaryRegistration";
+  @override
+  String get tdType => "passportElementTemporaryRegistration";
 
   PersonalDocument temporaryRegistration;
 
@@ -4807,7 +5097,8 @@ class PassportElementTemporaryRegistration extends PassportElement {
 
 @reflector
 class PassportElementPhoneNumber extends PassportElement {
-  static const TYPE = "passportElementPhoneNumber";
+  @override
+  String get tdType => "passportElementPhoneNumber";
 
   String phoneNumber;
 
@@ -4823,7 +5114,8 @@ class PassportElementPhoneNumber extends PassportElement {
 
 @reflector
 class PassportElementEmailAddress extends PassportElement {
-  static const TYPE = "passportElementEmailAddress";
+  @override
+  String get tdType => "passportElementEmailAddress";
 
   String emailAddress;
 
@@ -4841,7 +5133,8 @@ abstract class InputPassportElement extends TdObject {}
 
 @reflector
 class InputPassportElementPersonalDetails extends InputPassportElement {
-  static const TYPE = "inputPassportElementPersonalDetails";
+  @override
+  String get tdType => "inputPassportElementPersonalDetails";
 
   PersonalDetails personalDetails;
 
@@ -4857,7 +5150,8 @@ class InputPassportElementPersonalDetails extends InputPassportElement {
 
 @reflector
 class InputPassportElementPassport extends InputPassportElement {
-  static const TYPE = "inputPassportElementPassport";
+  @override
+  String get tdType => "inputPassportElementPassport";
 
   InputIdentityDocument passport;
 
@@ -4873,7 +5167,8 @@ class InputPassportElementPassport extends InputPassportElement {
 
 @reflector
 class InputPassportElementDriverLicense extends InputPassportElement {
-  static const TYPE = "inputPassportElementDriverLicense";
+  @override
+  String get tdType => "inputPassportElementDriverLicense";
 
   InputIdentityDocument driverLicense;
 
@@ -4889,7 +5184,8 @@ class InputPassportElementDriverLicense extends InputPassportElement {
 
 @reflector
 class InputPassportElementIdentityCard extends InputPassportElement {
-  static const TYPE = "inputPassportElementIdentityCard";
+  @override
+  String get tdType => "inputPassportElementIdentityCard";
 
   InputIdentityDocument identityCard;
 
@@ -4905,7 +5201,8 @@ class InputPassportElementIdentityCard extends InputPassportElement {
 
 @reflector
 class InputPassportElementInternalPassport extends InputPassportElement {
-  static const TYPE = "inputPassportElementInternalPassport";
+  @override
+  String get tdType => "inputPassportElementInternalPassport";
 
   InputIdentityDocument internalPassport;
 
@@ -4921,7 +5218,8 @@ class InputPassportElementInternalPassport extends InputPassportElement {
 
 @reflector
 class InputPassportElementAddress extends InputPassportElement {
-  static const TYPE = "inputPassportElementAddress";
+  @override
+  String get tdType => "inputPassportElementAddress";
 
   Address address;
 
@@ -4937,7 +5235,8 @@ class InputPassportElementAddress extends InputPassportElement {
 
 @reflector
 class InputPassportElementUtilityBill extends InputPassportElement {
-  static const TYPE = "inputPassportElementUtilityBill";
+  @override
+  String get tdType => "inputPassportElementUtilityBill";
 
   InputPersonalDocument utilityBill;
 
@@ -4953,7 +5252,8 @@ class InputPassportElementUtilityBill extends InputPassportElement {
 
 @reflector
 class InputPassportElementBankStatement extends InputPassportElement {
-  static const TYPE = "inputPassportElementBankStatement";
+  @override
+  String get tdType => "inputPassportElementBankStatement";
 
   InputPersonalDocument bankStatement;
 
@@ -4969,7 +5269,8 @@ class InputPassportElementBankStatement extends InputPassportElement {
 
 @reflector
 class InputPassportElementRentalAgreement extends InputPassportElement {
-  static const TYPE = "inputPassportElementRentalAgreement";
+  @override
+  String get tdType => "inputPassportElementRentalAgreement";
 
   InputPersonalDocument rentalAgreement;
 
@@ -4985,7 +5286,8 @@ class InputPassportElementRentalAgreement extends InputPassportElement {
 
 @reflector
 class InputPassportElementPassportRegistration extends InputPassportElement {
-  static const TYPE = "inputPassportElementPassportRegistration";
+  @override
+  String get tdType => "inputPassportElementPassportRegistration";
 
   InputPersonalDocument passportRegistration;
 
@@ -5001,7 +5303,8 @@ class InputPassportElementPassportRegistration extends InputPassportElement {
 
 @reflector
 class InputPassportElementTemporaryRegistration extends InputPassportElement {
-  static const TYPE = "inputPassportElementTemporaryRegistration";
+  @override
+  String get tdType => "inputPassportElementTemporaryRegistration";
 
   InputPersonalDocument temporaryRegistration;
 
@@ -5017,7 +5320,8 @@ class InputPassportElementTemporaryRegistration extends InputPassportElement {
 
 @reflector
 class InputPassportElementPhoneNumber extends InputPassportElement {
-  static const TYPE = "inputPassportElementPhoneNumber";
+  @override
+  String get tdType => "inputPassportElementPhoneNumber";
 
   String phoneNumber;
 
@@ -5033,7 +5337,8 @@ class InputPassportElementPhoneNumber extends InputPassportElement {
 
 @reflector
 class InputPassportElementEmailAddress extends InputPassportElement {
-  static const TYPE = "inputPassportElementEmailAddress";
+  @override
+  String get tdType => "inputPassportElementEmailAddress";
 
   String emailAddress;
 
@@ -5049,7 +5354,8 @@ class InputPassportElementEmailAddress extends InputPassportElement {
 
 @reflector
 class PassportElements extends TdObject {
-  static const TYPE = "passportElements";
+  @override
+  String get tdType => "passportElements";
 
   List<PassportElement> elements;
 
@@ -5067,16 +5373,19 @@ abstract class PassportElementErrorSource extends TdObject {}
 
 @reflector
 class PassportElementErrorSourceUnspecified extends PassportElementErrorSource {
-  static const TYPE = "passportElementErrorSourceUnspecified";
-
+  @override
+  String get tdType => "passportElementErrorSourceUnspecified";
 
   @override
   Map<String, dynamic> get params => {};
-  PassportElementErrorSourceUnspecified(Map<String, dynamic> json);}
+
+  PassportElementErrorSourceUnspecified(Map<String, dynamic> json);
+}
 
 @reflector
 class PassportElementErrorSourceDataField extends PassportElementErrorSource {
-  static const TYPE = "passportElementErrorSourceDataField";
+  @override
+  String get tdType => "passportElementErrorSourceDataField";
 
   String fieldName;
 
@@ -5092,34 +5401,41 @@ class PassportElementErrorSourceDataField extends PassportElementErrorSource {
 
 @reflector
 class PassportElementErrorSourceFrontSide extends PassportElementErrorSource {
-  static const TYPE = "passportElementErrorSourceFrontSide";
-
+  @override
+  String get tdType => "passportElementErrorSourceFrontSide";
 
   @override
   Map<String, dynamic> get params => {};
-  PassportElementErrorSourceFrontSide(Map<String, dynamic> json);}
+
+  PassportElementErrorSourceFrontSide(Map<String, dynamic> json);
+}
 
 @reflector
 class PassportElementErrorSourceReverseSide extends PassportElementErrorSource {
-  static const TYPE = "passportElementErrorSourceReverseSide";
-
+  @override
+  String get tdType => "passportElementErrorSourceReverseSide";
 
   @override
   Map<String, dynamic> get params => {};
-  PassportElementErrorSourceReverseSide(Map<String, dynamic> json);}
+
+  PassportElementErrorSourceReverseSide(Map<String, dynamic> json);
+}
 
 @reflector
 class PassportElementErrorSourceSelfie extends PassportElementErrorSource {
-  static const TYPE = "passportElementErrorSourceSelfie";
-
+  @override
+  String get tdType => "passportElementErrorSourceSelfie";
 
   @override
   Map<String, dynamic> get params => {};
-  PassportElementErrorSourceSelfie(Map<String, dynamic> json);}
+
+  PassportElementErrorSourceSelfie(Map<String, dynamic> json);
+}
 
 @reflector
 class PassportElementErrorSourceTranslationFile extends PassportElementErrorSource {
-  static const TYPE = "passportElementErrorSourceTranslationFile";
+  @override
+  String get tdType => "passportElementErrorSourceTranslationFile";
 
   int fileIndex;
 
@@ -5135,16 +5451,19 @@ class PassportElementErrorSourceTranslationFile extends PassportElementErrorSour
 
 @reflector
 class PassportElementErrorSourceTranslationFiles extends PassportElementErrorSource {
-  static const TYPE = "passportElementErrorSourceTranslationFiles";
-
+  @override
+  String get tdType => "passportElementErrorSourceTranslationFiles";
 
   @override
   Map<String, dynamic> get params => {};
-  PassportElementErrorSourceTranslationFiles(Map<String, dynamic> json);}
+
+  PassportElementErrorSourceTranslationFiles(Map<String, dynamic> json);
+}
 
 @reflector
 class PassportElementErrorSourceFile extends PassportElementErrorSource {
-  static const TYPE = "passportElementErrorSourceFile";
+  @override
+  String get tdType => "passportElementErrorSourceFile";
 
   int fileIndex;
 
@@ -5160,16 +5479,19 @@ class PassportElementErrorSourceFile extends PassportElementErrorSource {
 
 @reflector
 class PassportElementErrorSourceFiles extends PassportElementErrorSource {
-  static const TYPE = "passportElementErrorSourceFiles";
-
+  @override
+  String get tdType => "passportElementErrorSourceFiles";
 
   @override
   Map<String, dynamic> get params => {};
-  PassportElementErrorSourceFiles(Map<String, dynamic> json);}
+
+  PassportElementErrorSourceFiles(Map<String, dynamic> json);
+}
 
 @reflector
 class PassportElementError extends TdObject {
-  static const TYPE = "passportElementError";
+  @override
+  String get tdType => "passportElementError";
 
   PassportElementType type;
   String message;
@@ -5191,7 +5513,8 @@ class PassportElementError extends TdObject {
 
 @reflector
 class PassportSuitableElement extends TdObject {
-  static const TYPE = "passportSuitableElement";
+  @override
+  String get tdType => "passportSuitableElement";
 
   PassportElementType type;
   bool isSelfieRequired;
@@ -5216,7 +5539,8 @@ class PassportSuitableElement extends TdObject {
 
 @reflector
 class PassportRequiredElement extends TdObject {
-  static const TYPE = "passportRequiredElement";
+  @override
+  String get tdType => "passportRequiredElement";
 
   List<PassportSuitableElement> suitableElements;
 
@@ -5232,7 +5556,8 @@ class PassportRequiredElement extends TdObject {
 
 @reflector
 class PassportAuthorizationForm extends TdObject {
-  static const TYPE = "passportAuthorizationForm";
+  @override
+  String get tdType => "passportAuthorizationForm";
 
   int id;
   List<PassportRequiredElement> requiredElements;
@@ -5254,7 +5579,8 @@ class PassportAuthorizationForm extends TdObject {
 
 @reflector
 class PassportElementsWithErrors extends TdObject {
-  static const TYPE = "passportElementsWithErrors";
+  @override
+  String get tdType => "passportElementsWithErrors";
 
   List<PassportElement> elements;
   List<PassportElementError> errors;
@@ -5273,7 +5599,8 @@ class PassportElementsWithErrors extends TdObject {
 
 @reflector
 class EncryptedCredentials extends TdObject {
-  static const TYPE = "encryptedCredentials";
+  @override
+  String get tdType => "encryptedCredentials";
 
   List<int> data;
   List<int> hash;
@@ -5295,7 +5622,8 @@ class EncryptedCredentials extends TdObject {
 
 @reflector
 class EncryptedPassportElement extends TdObject {
-  static const TYPE = "encryptedPassportElement";
+  @override
+  String get tdType => "encryptedPassportElement";
 
   PassportElementType type;
   List<int> data;
@@ -5337,7 +5665,8 @@ abstract class InputPassportElementErrorSource extends TdObject {}
 
 @reflector
 class InputPassportElementErrorSourceUnspecified extends InputPassportElementErrorSource {
-  static const TYPE = "inputPassportElementErrorSourceUnspecified";
+  @override
+  String get tdType => "inputPassportElementErrorSourceUnspecified";
 
   List<int> elementHash;
 
@@ -5353,7 +5682,8 @@ class InputPassportElementErrorSourceUnspecified extends InputPassportElementErr
 
 @reflector
 class InputPassportElementErrorSourceDataField extends InputPassportElementErrorSource {
-  static const TYPE = "inputPassportElementErrorSourceDataField";
+  @override
+  String get tdType => "inputPassportElementErrorSourceDataField";
 
   String fieldName;
   List<int> dataHash;
@@ -5372,7 +5702,8 @@ class InputPassportElementErrorSourceDataField extends InputPassportElementError
 
 @reflector
 class InputPassportElementErrorSourceFrontSide extends InputPassportElementErrorSource {
-  static const TYPE = "inputPassportElementErrorSourceFrontSide";
+  @override
+  String get tdType => "inputPassportElementErrorSourceFrontSide";
 
   List<int> fileHash;
 
@@ -5388,7 +5719,8 @@ class InputPassportElementErrorSourceFrontSide extends InputPassportElementError
 
 @reflector
 class InputPassportElementErrorSourceReverseSide extends InputPassportElementErrorSource {
-  static const TYPE = "inputPassportElementErrorSourceReverseSide";
+  @override
+  String get tdType => "inputPassportElementErrorSourceReverseSide";
 
   List<int> fileHash;
 
@@ -5404,7 +5736,8 @@ class InputPassportElementErrorSourceReverseSide extends InputPassportElementErr
 
 @reflector
 class InputPassportElementErrorSourceSelfie extends InputPassportElementErrorSource {
-  static const TYPE = "inputPassportElementErrorSourceSelfie";
+  @override
+  String get tdType => "inputPassportElementErrorSourceSelfie";
 
   List<int> fileHash;
 
@@ -5420,7 +5753,8 @@ class InputPassportElementErrorSourceSelfie extends InputPassportElementErrorSou
 
 @reflector
 class InputPassportElementErrorSourceTranslationFile extends InputPassportElementErrorSource {
-  static const TYPE = "inputPassportElementErrorSourceTranslationFile";
+  @override
+  String get tdType => "inputPassportElementErrorSourceTranslationFile";
 
   List<int> fileHash;
 
@@ -5436,7 +5770,8 @@ class InputPassportElementErrorSourceTranslationFile extends InputPassportElemen
 
 @reflector
 class InputPassportElementErrorSourceTranslationFiles extends InputPassportElementErrorSource {
-  static const TYPE = "inputPassportElementErrorSourceTranslationFiles";
+  @override
+  String get tdType => "inputPassportElementErrorSourceTranslationFiles";
 
   List<List<int>> fileHashes;
 
@@ -5452,7 +5787,8 @@ class InputPassportElementErrorSourceTranslationFiles extends InputPassportEleme
 
 @reflector
 class InputPassportElementErrorSourceFile extends InputPassportElementErrorSource {
-  static const TYPE = "inputPassportElementErrorSourceFile";
+  @override
+  String get tdType => "inputPassportElementErrorSourceFile";
 
   List<int> fileHash;
 
@@ -5468,7 +5804,8 @@ class InputPassportElementErrorSourceFile extends InputPassportElementErrorSourc
 
 @reflector
 class InputPassportElementErrorSourceFiles extends InputPassportElementErrorSource {
-  static const TYPE = "inputPassportElementErrorSourceFiles";
+  @override
+  String get tdType => "inputPassportElementErrorSourceFiles";
 
   List<List<int>> fileHashes;
 
@@ -5484,7 +5821,8 @@ class InputPassportElementErrorSourceFiles extends InputPassportElementErrorSour
 
 @reflector
 class InputPassportElementError extends TdObject {
-  static const TYPE = "inputPassportElementError";
+  @override
+  String get tdType => "inputPassportElementError";
 
   PassportElementType type;
   String message;
@@ -5508,7 +5846,8 @@ abstract class MessageContent extends TdObject {}
 
 @reflector
 class MessageText extends MessageContent {
-  static const TYPE = "messageText";
+  @override
+  String get tdType => "messageText";
 
   FormattedText text;
   WebPage webPage;
@@ -5527,7 +5866,8 @@ class MessageText extends MessageContent {
 
 @reflector
 class MessageAnimation extends MessageContent {
-  static const TYPE = "messageAnimation";
+  @override
+  String get tdType => "messageAnimation";
 
   Animation animation;
   FormattedText caption;
@@ -5549,7 +5889,8 @@ class MessageAnimation extends MessageContent {
 
 @reflector
 class MessageAudio extends MessageContent {
-  static const TYPE = "messageAudio";
+  @override
+  String get tdType => "messageAudio";
 
   Audio audio;
   FormattedText caption;
@@ -5568,7 +5909,8 @@ class MessageAudio extends MessageContent {
 
 @reflector
 class MessageDocument extends MessageContent {
-  static const TYPE = "messageDocument";
+  @override
+  String get tdType => "messageDocument";
 
   Document document;
   FormattedText caption;
@@ -5587,7 +5929,8 @@ class MessageDocument extends MessageContent {
 
 @reflector
 class MessagePhoto extends MessageContent {
-  static const TYPE = "messagePhoto";
+  @override
+  String get tdType => "messagePhoto";
 
   Photo photo;
   FormattedText caption;
@@ -5609,16 +5952,19 @@ class MessagePhoto extends MessageContent {
 
 @reflector
 class MessageExpiredPhoto extends MessageContent {
-  static const TYPE = "messageExpiredPhoto";
-
+  @override
+  String get tdType => "messageExpiredPhoto";
 
   @override
   Map<String, dynamic> get params => {};
-  MessageExpiredPhoto(Map<String, dynamic> json);}
+
+  MessageExpiredPhoto(Map<String, dynamic> json);
+}
 
 @reflector
 class MessageSticker extends MessageContent {
-  static const TYPE = "messageSticker";
+  @override
+  String get tdType => "messageSticker";
 
   Sticker sticker;
 
@@ -5634,7 +5980,8 @@ class MessageSticker extends MessageContent {
 
 @reflector
 class MessageVideo extends MessageContent {
-  static const TYPE = "messageVideo";
+  @override
+  String get tdType => "messageVideo";
 
   Video video;
   FormattedText caption;
@@ -5656,16 +6003,19 @@ class MessageVideo extends MessageContent {
 
 @reflector
 class MessageExpiredVideo extends MessageContent {
-  static const TYPE = "messageExpiredVideo";
-
+  @override
+  String get tdType => "messageExpiredVideo";
 
   @override
   Map<String, dynamic> get params => {};
-  MessageExpiredVideo(Map<String, dynamic> json);}
+
+  MessageExpiredVideo(Map<String, dynamic> json);
+}
 
 @reflector
 class MessageVideoNote extends MessageContent {
-  static const TYPE = "messageVideoNote";
+  @override
+  String get tdType => "messageVideoNote";
 
   VideoNote videoNote;
   bool isViewed;
@@ -5687,7 +6037,8 @@ class MessageVideoNote extends MessageContent {
 
 @reflector
 class MessageVoiceNote extends MessageContent {
-  static const TYPE = "messageVoiceNote";
+  @override
+  String get tdType => "messageVoiceNote";
 
   VoiceNote voiceNote;
   FormattedText caption;
@@ -5709,7 +6060,8 @@ class MessageVoiceNote extends MessageContent {
 
 @reflector
 class MessageLocation extends MessageContent {
-  static const TYPE = "messageLocation";
+  @override
+  String get tdType => "messageLocation";
 
   Location location;
   int livePeriod;
@@ -5731,7 +6083,8 @@ class MessageLocation extends MessageContent {
 
 @reflector
 class MessageVenue extends MessageContent {
-  static const TYPE = "messageVenue";
+  @override
+  String get tdType => "messageVenue";
 
   Venue venue;
 
@@ -5747,7 +6100,8 @@ class MessageVenue extends MessageContent {
 
 @reflector
 class MessageContact extends MessageContent {
-  static const TYPE = "messageContact";
+  @override
+  String get tdType => "messageContact";
 
   Contact contact;
 
@@ -5763,7 +6117,8 @@ class MessageContact extends MessageContent {
 
 @reflector
 class MessageGame extends MessageContent {
-  static const TYPE = "messageGame";
+  @override
+  String get tdType => "messageGame";
 
   Game game;
 
@@ -5779,7 +6134,8 @@ class MessageGame extends MessageContent {
 
 @reflector
 class MessagePoll extends MessageContent {
-  static const TYPE = "messagePoll";
+  @override
+  String get tdType => "messagePoll";
 
   Poll poll;
 
@@ -5795,7 +6151,8 @@ class MessagePoll extends MessageContent {
 
 @reflector
 class MessageInvoice extends MessageContent {
-  static const TYPE = "messageInvoice";
+  @override
+  String get tdType => "messageInvoice";
 
   String title;
   String description;
@@ -5835,7 +6192,8 @@ class MessageInvoice extends MessageContent {
 
 @reflector
 class MessageCall extends MessageContent {
-  static const TYPE = "messageCall";
+  @override
+  String get tdType => "messageCall";
 
   CallDiscardReason discardReason;
   int duration;
@@ -5854,7 +6212,8 @@ class MessageCall extends MessageContent {
 
 @reflector
 class MessageBasicGroupChatCreate extends MessageContent {
-  static const TYPE = "messageBasicGroupChatCreate";
+  @override
+  String get tdType => "messageBasicGroupChatCreate";
 
   String title;
   List<int> memberUserIds;
@@ -5873,7 +6232,8 @@ class MessageBasicGroupChatCreate extends MessageContent {
 
 @reflector
 class MessageSupergroupChatCreate extends MessageContent {
-  static const TYPE = "messageSupergroupChatCreate";
+  @override
+  String get tdType => "messageSupergroupChatCreate";
 
   String title;
 
@@ -5889,7 +6249,8 @@ class MessageSupergroupChatCreate extends MessageContent {
 
 @reflector
 class MessageChatChangeTitle extends MessageContent {
-  static const TYPE = "messageChatChangeTitle";
+  @override
+  String get tdType => "messageChatChangeTitle";
 
   String title;
 
@@ -5905,7 +6266,8 @@ class MessageChatChangeTitle extends MessageContent {
 
 @reflector
 class MessageChatChangePhoto extends MessageContent {
-  static const TYPE = "messageChatChangePhoto";
+  @override
+  String get tdType => "messageChatChangePhoto";
 
   Photo photo;
 
@@ -5921,16 +6283,19 @@ class MessageChatChangePhoto extends MessageContent {
 
 @reflector
 class MessageChatDeletePhoto extends MessageContent {
-  static const TYPE = "messageChatDeletePhoto";
-
+  @override
+  String get tdType => "messageChatDeletePhoto";
 
   @override
   Map<String, dynamic> get params => {};
-  MessageChatDeletePhoto(Map<String, dynamic> json);}
+
+  MessageChatDeletePhoto(Map<String, dynamic> json);
+}
 
 @reflector
 class MessageChatAddMembers extends MessageContent {
-  static const TYPE = "messageChatAddMembers";
+  @override
+  String get tdType => "messageChatAddMembers";
 
   List<int> memberUserIds;
 
@@ -5946,16 +6311,19 @@ class MessageChatAddMembers extends MessageContent {
 
 @reflector
 class MessageChatJoinByLink extends MessageContent {
-  static const TYPE = "messageChatJoinByLink";
-
+  @override
+  String get tdType => "messageChatJoinByLink";
 
   @override
   Map<String, dynamic> get params => {};
-  MessageChatJoinByLink(Map<String, dynamic> json);}
+
+  MessageChatJoinByLink(Map<String, dynamic> json);
+}
 
 @reflector
 class MessageChatDeleteMember extends MessageContent {
-  static const TYPE = "messageChatDeleteMember";
+  @override
+  String get tdType => "messageChatDeleteMember";
 
   int userId;
 
@@ -5971,7 +6339,8 @@ class MessageChatDeleteMember extends MessageContent {
 
 @reflector
 class MessageChatUpgradeTo extends MessageContent {
-  static const TYPE = "messageChatUpgradeTo";
+  @override
+  String get tdType => "messageChatUpgradeTo";
 
   int supergroupId;
 
@@ -5987,7 +6356,8 @@ class MessageChatUpgradeTo extends MessageContent {
 
 @reflector
 class MessageChatUpgradeFrom extends MessageContent {
-  static const TYPE = "messageChatUpgradeFrom";
+  @override
+  String get tdType => "messageChatUpgradeFrom";
 
   String title;
   int basicGroupId;
@@ -6006,7 +6376,8 @@ class MessageChatUpgradeFrom extends MessageContent {
 
 @reflector
 class MessagePinMessage extends MessageContent {
-  static const TYPE = "messagePinMessage";
+  @override
+  String get tdType => "messagePinMessage";
 
   int messageId;
 
@@ -6022,16 +6393,19 @@ class MessagePinMessage extends MessageContent {
 
 @reflector
 class MessageScreenshotTaken extends MessageContent {
-  static const TYPE = "messageScreenshotTaken";
-
+  @override
+  String get tdType => "messageScreenshotTaken";
 
   @override
   Map<String, dynamic> get params => {};
-  MessageScreenshotTaken(Map<String, dynamic> json);}
+
+  MessageScreenshotTaken(Map<String, dynamic> json);
+}
 
 @reflector
 class MessageChatSetTtl extends MessageContent {
-  static const TYPE = "messageChatSetTtl";
+  @override
+  String get tdType => "messageChatSetTtl";
 
   int ttl;
 
@@ -6047,7 +6421,8 @@ class MessageChatSetTtl extends MessageContent {
 
 @reflector
 class MessageCustomServiceAction extends MessageContent {
-  static const TYPE = "messageCustomServiceAction";
+  @override
+  String get tdType => "messageCustomServiceAction";
 
   String text;
 
@@ -6063,7 +6438,8 @@ class MessageCustomServiceAction extends MessageContent {
 
 @reflector
 class MessageGameScore extends MessageContent {
-  static const TYPE = "messageGameScore";
+  @override
+  String get tdType => "messageGameScore";
 
   int gameMessageId;
   int gameId;
@@ -6085,7 +6461,8 @@ class MessageGameScore extends MessageContent {
 
 @reflector
 class MessagePaymentSuccessful extends MessageContent {
-  static const TYPE = "messagePaymentSuccessful";
+  @override
+  String get tdType => "messagePaymentSuccessful";
 
   int invoiceMessageId;
   String currency;
@@ -6107,7 +6484,8 @@ class MessagePaymentSuccessful extends MessageContent {
 
 @reflector
 class MessagePaymentSuccessfulBot extends MessageContent {
-  static const TYPE = "messagePaymentSuccessfulBot";
+  @override
+  String get tdType => "messagePaymentSuccessfulBot";
 
   int invoiceMessageId;
   String currency;
@@ -6144,16 +6522,19 @@ class MessagePaymentSuccessfulBot extends MessageContent {
 
 @reflector
 class MessageContactRegistered extends MessageContent {
-  static const TYPE = "messageContactRegistered";
-
+  @override
+  String get tdType => "messageContactRegistered";
 
   @override
   Map<String, dynamic> get params => {};
-  MessageContactRegistered(Map<String, dynamic> json);}
+
+  MessageContactRegistered(Map<String, dynamic> json);
+}
 
 @reflector
 class MessageWebsiteConnected extends MessageContent {
-  static const TYPE = "messageWebsiteConnected";
+  @override
+  String get tdType => "messageWebsiteConnected";
 
   String domainName;
 
@@ -6169,7 +6550,8 @@ class MessageWebsiteConnected extends MessageContent {
 
 @reflector
 class MessagePassportDataSent extends MessageContent {
-  static const TYPE = "messagePassportDataSent";
+  @override
+  String get tdType => "messagePassportDataSent";
 
   List<PassportElementType> types;
 
@@ -6185,7 +6567,8 @@ class MessagePassportDataSent extends MessageContent {
 
 @reflector
 class MessagePassportDataReceived extends MessageContent {
-  static const TYPE = "messagePassportDataReceived";
+  @override
+  String get tdType => "messagePassportDataReceived";
 
   List<EncryptedPassportElement> elements;
   EncryptedCredentials credentials;
@@ -6204,108 +6587,131 @@ class MessagePassportDataReceived extends MessageContent {
 
 @reflector
 class MessageUnsupported extends MessageContent {
-  static const TYPE = "messageUnsupported";
-
+  @override
+  String get tdType => "messageUnsupported";
 
   @override
   Map<String, dynamic> get params => {};
-  MessageUnsupported(Map<String, dynamic> json);}
+
+  MessageUnsupported(Map<String, dynamic> json);
+}
 
 abstract class TextEntityType extends TdObject {}
 
 @reflector
 class TextEntityTypeMention extends TextEntityType {
-  static const TYPE = "textEntityTypeMention";
-
+  @override
+  String get tdType => "textEntityTypeMention";
 
   @override
   Map<String, dynamic> get params => {};
-  TextEntityTypeMention(Map<String, dynamic> json);}
+
+  TextEntityTypeMention(Map<String, dynamic> json);
+}
 
 @reflector
 class TextEntityTypeHashtag extends TextEntityType {
-  static const TYPE = "textEntityTypeHashtag";
-
+  @override
+  String get tdType => "textEntityTypeHashtag";
 
   @override
   Map<String, dynamic> get params => {};
-  TextEntityTypeHashtag(Map<String, dynamic> json);}
+
+  TextEntityTypeHashtag(Map<String, dynamic> json);
+}
 
 @reflector
 class TextEntityTypeCashtag extends TextEntityType {
-  static const TYPE = "textEntityTypeCashtag";
-
+  @override
+  String get tdType => "textEntityTypeCashtag";
 
   @override
   Map<String, dynamic> get params => {};
-  TextEntityTypeCashtag(Map<String, dynamic> json);}
+
+  TextEntityTypeCashtag(Map<String, dynamic> json);
+}
 
 @reflector
 class TextEntityTypeBotCommand extends TextEntityType {
-  static const TYPE = "textEntityTypeBotCommand";
-
+  @override
+  String get tdType => "textEntityTypeBotCommand";
 
   @override
   Map<String, dynamic> get params => {};
-  TextEntityTypeBotCommand(Map<String, dynamic> json);}
+
+  TextEntityTypeBotCommand(Map<String, dynamic> json);
+}
 
 @reflector
 class TextEntityTypeUrl extends TextEntityType {
-  static const TYPE = "textEntityTypeUrl";
-
+  @override
+  String get tdType => "textEntityTypeUrl";
 
   @override
   Map<String, dynamic> get params => {};
-  TextEntityTypeUrl(Map<String, dynamic> json);}
+
+  TextEntityTypeUrl(Map<String, dynamic> json);
+}
 
 @reflector
 class TextEntityTypeEmailAddress extends TextEntityType {
-  static const TYPE = "textEntityTypeEmailAddress";
-
+  @override
+  String get tdType => "textEntityTypeEmailAddress";
 
   @override
   Map<String, dynamic> get params => {};
-  TextEntityTypeEmailAddress(Map<String, dynamic> json);}
+
+  TextEntityTypeEmailAddress(Map<String, dynamic> json);
+}
 
 @reflector
 class TextEntityTypeBold extends TextEntityType {
-  static const TYPE = "textEntityTypeBold";
-
+  @override
+  String get tdType => "textEntityTypeBold";
 
   @override
   Map<String, dynamic> get params => {};
-  TextEntityTypeBold(Map<String, dynamic> json);}
+
+  TextEntityTypeBold(Map<String, dynamic> json);
+}
 
 @reflector
 class TextEntityTypeItalic extends TextEntityType {
-  static const TYPE = "textEntityTypeItalic";
-
+  @override
+  String get tdType => "textEntityTypeItalic";
 
   @override
   Map<String, dynamic> get params => {};
-  TextEntityTypeItalic(Map<String, dynamic> json);}
+
+  TextEntityTypeItalic(Map<String, dynamic> json);
+}
 
 @reflector
 class TextEntityTypeCode extends TextEntityType {
-  static const TYPE = "textEntityTypeCode";
-
+  @override
+  String get tdType => "textEntityTypeCode";
 
   @override
   Map<String, dynamic> get params => {};
-  TextEntityTypeCode(Map<String, dynamic> json);}
+
+  TextEntityTypeCode(Map<String, dynamic> json);
+}
 
 @reflector
 class TextEntityTypePre extends TextEntityType {
-  static const TYPE = "textEntityTypePre";
-
+  @override
+  String get tdType => "textEntityTypePre";
 
   @override
   Map<String, dynamic> get params => {};
-  TextEntityTypePre(Map<String, dynamic> json);}
+
+  TextEntityTypePre(Map<String, dynamic> json);
+}
 
 @reflector
 class TextEntityTypePreCode extends TextEntityType {
-  static const TYPE = "textEntityTypePreCode";
+  @override
+  String get tdType => "textEntityTypePreCode";
 
   String language;
 
@@ -6321,7 +6727,8 @@ class TextEntityTypePreCode extends TextEntityType {
 
 @reflector
 class TextEntityTypeTextUrl extends TextEntityType {
-  static const TYPE = "textEntityTypeTextUrl";
+  @override
+  String get tdType => "textEntityTypeTextUrl";
 
   String url;
 
@@ -6337,7 +6744,8 @@ class TextEntityTypeTextUrl extends TextEntityType {
 
 @reflector
 class TextEntityTypeMentionName extends TextEntityType {
-  static const TYPE = "textEntityTypeMentionName";
+  @override
+  String get tdType => "textEntityTypeMentionName";
 
   int userId;
 
@@ -6353,16 +6761,19 @@ class TextEntityTypeMentionName extends TextEntityType {
 
 @reflector
 class TextEntityTypePhoneNumber extends TextEntityType {
-  static const TYPE = "textEntityTypePhoneNumber";
-
+  @override
+  String get tdType => "textEntityTypePhoneNumber";
 
   @override
   Map<String, dynamic> get params => {};
-  TextEntityTypePhoneNumber(Map<String, dynamic> json);}
+
+  TextEntityTypePhoneNumber(Map<String, dynamic> json);
+}
 
 @reflector
 class InputThumbnail extends TdObject {
-  static const TYPE = "inputThumbnail";
+  @override
+  String get tdType => "inputThumbnail";
 
   InputFile thumbnail;
   int width;
@@ -6386,7 +6797,8 @@ abstract class InputMessageContent extends TdObject {}
 
 @reflector
 class InputMessageText extends InputMessageContent {
-  static const TYPE = "inputMessageText";
+  @override
+  String get tdType => "inputMessageText";
 
   FormattedText text;
   bool disableWebPagePreview;
@@ -6408,7 +6820,8 @@ class InputMessageText extends InputMessageContent {
 
 @reflector
 class InputMessageAnimation extends InputMessageContent {
-  static const TYPE = "inputMessageAnimation";
+  @override
+  String get tdType => "inputMessageAnimation";
 
   InputFile animation;
   InputThumbnail thumbnail;
@@ -6439,7 +6852,8 @@ class InputMessageAnimation extends InputMessageContent {
 
 @reflector
 class InputMessageAudio extends InputMessageContent {
-  static const TYPE = "inputMessageAudio";
+  @override
+  String get tdType => "inputMessageAudio";
 
   InputFile audio;
   InputThumbnail albumCoverThumbnail;
@@ -6470,7 +6884,8 @@ class InputMessageAudio extends InputMessageContent {
 
 @reflector
 class InputMessageDocument extends InputMessageContent {
-  static const TYPE = "inputMessageDocument";
+  @override
+  String get tdType => "inputMessageDocument";
 
   InputFile document;
   InputThumbnail thumbnail;
@@ -6492,7 +6907,8 @@ class InputMessageDocument extends InputMessageContent {
 
 @reflector
 class InputMessagePhoto extends InputMessageContent {
-  static const TYPE = "inputMessagePhoto";
+  @override
+  String get tdType => "inputMessagePhoto";
 
   InputFile photo;
   InputThumbnail thumbnail;
@@ -6526,7 +6942,8 @@ class InputMessagePhoto extends InputMessageContent {
 
 @reflector
 class InputMessageSticker extends InputMessageContent {
-  static const TYPE = "inputMessageSticker";
+  @override
+  String get tdType => "inputMessageSticker";
 
   InputFile sticker;
   InputThumbnail thumbnail;
@@ -6551,7 +6968,8 @@ class InputMessageSticker extends InputMessageContent {
 
 @reflector
 class InputMessageVideo extends InputMessageContent {
-  static const TYPE = "inputMessageVideo";
+  @override
+  String get tdType => "inputMessageVideo";
 
   InputFile video;
   InputThumbnail thumbnail;
@@ -6591,7 +7009,8 @@ class InputMessageVideo extends InputMessageContent {
 
 @reflector
 class InputMessageVideoNote extends InputMessageContent {
-  static const TYPE = "inputMessageVideoNote";
+  @override
+  String get tdType => "inputMessageVideoNote";
 
   InputFile videoNote;
   InputThumbnail thumbnail;
@@ -6616,7 +7035,8 @@ class InputMessageVideoNote extends InputMessageContent {
 
 @reflector
 class InputMessageVoiceNote extends InputMessageContent {
-  static const TYPE = "inputMessageVoiceNote";
+  @override
+  String get tdType => "inputMessageVoiceNote";
 
   InputFile voiceNote;
   int duration;
@@ -6641,7 +7061,8 @@ class InputMessageVoiceNote extends InputMessageContent {
 
 @reflector
 class InputMessageLocation extends InputMessageContent {
-  static const TYPE = "inputMessageLocation";
+  @override
+  String get tdType => "inputMessageLocation";
 
   Location location;
   int livePeriod;
@@ -6660,7 +7081,8 @@ class InputMessageLocation extends InputMessageContent {
 
 @reflector
 class InputMessageVenue extends InputMessageContent {
-  static const TYPE = "inputMessageVenue";
+  @override
+  String get tdType => "inputMessageVenue";
 
   Venue venue;
 
@@ -6676,7 +7098,8 @@ class InputMessageVenue extends InputMessageContent {
 
 @reflector
 class InputMessageContact extends InputMessageContent {
-  static const TYPE = "inputMessageContact";
+  @override
+  String get tdType => "inputMessageContact";
 
   Contact contact;
 
@@ -6692,7 +7115,8 @@ class InputMessageContact extends InputMessageContent {
 
 @reflector
 class InputMessageGame extends InputMessageContent {
-  static const TYPE = "inputMessageGame";
+  @override
+  String get tdType => "inputMessageGame";
 
   int botUserId;
   String gameShortName;
@@ -6711,7 +7135,8 @@ class InputMessageGame extends InputMessageContent {
 
 @reflector
 class InputMessageInvoice extends InputMessageContent {
-  static const TYPE = "inputMessageInvoice";
+  @override
+  String get tdType => "inputMessageInvoice";
 
   Invoice invoice;
   String title;
@@ -6757,7 +7182,8 @@ class InputMessageInvoice extends InputMessageContent {
 
 @reflector
 class InputMessagePoll extends InputMessageContent {
-  static const TYPE = "inputMessagePoll";
+  @override
+  String get tdType => "inputMessagePoll";
 
   String question;
   List<String> options;
@@ -6776,7 +7202,8 @@ class InputMessagePoll extends InputMessageContent {
 
 @reflector
 class InputMessageForwarded extends InputMessageContent {
-  static const TYPE = "inputMessageForwarded";
+  @override
+  String get tdType => "inputMessageForwarded";
 
   int fromChatId;
   int messageId;
@@ -6806,171 +7233,208 @@ abstract class SearchMessagesFilter extends TdObject {}
 
 @reflector
 class SearchMessagesFilterEmpty extends SearchMessagesFilter {
-  static const TYPE = "searchMessagesFilterEmpty";
-
+  @override
+  String get tdType => "searchMessagesFilterEmpty";
 
   @override
   Map<String, dynamic> get params => {};
-  SearchMessagesFilterEmpty(Map<String, dynamic> json);}
+
+  SearchMessagesFilterEmpty(Map<String, dynamic> json);
+}
 
 @reflector
 class SearchMessagesFilterAnimation extends SearchMessagesFilter {
-  static const TYPE = "searchMessagesFilterAnimation";
-
+  @override
+  String get tdType => "searchMessagesFilterAnimation";
 
   @override
   Map<String, dynamic> get params => {};
-  SearchMessagesFilterAnimation(Map<String, dynamic> json);}
+
+  SearchMessagesFilterAnimation(Map<String, dynamic> json);
+}
 
 @reflector
 class SearchMessagesFilterAudio extends SearchMessagesFilter {
-  static const TYPE = "searchMessagesFilterAudio";
-
+  @override
+  String get tdType => "searchMessagesFilterAudio";
 
   @override
   Map<String, dynamic> get params => {};
-  SearchMessagesFilterAudio(Map<String, dynamic> json);}
+
+  SearchMessagesFilterAudio(Map<String, dynamic> json);
+}
 
 @reflector
 class SearchMessagesFilterDocument extends SearchMessagesFilter {
-  static const TYPE = "searchMessagesFilterDocument";
-
+  @override
+  String get tdType => "searchMessagesFilterDocument";
 
   @override
   Map<String, dynamic> get params => {};
-  SearchMessagesFilterDocument(Map<String, dynamic> json);}
+
+  SearchMessagesFilterDocument(Map<String, dynamic> json);
+}
 
 @reflector
 class SearchMessagesFilterPhoto extends SearchMessagesFilter {
-  static const TYPE = "searchMessagesFilterPhoto";
-
+  @override
+  String get tdType => "searchMessagesFilterPhoto";
 
   @override
   Map<String, dynamic> get params => {};
-  SearchMessagesFilterPhoto(Map<String, dynamic> json);}
+
+  SearchMessagesFilterPhoto(Map<String, dynamic> json);
+}
 
 @reflector
 class SearchMessagesFilterVideo extends SearchMessagesFilter {
-  static const TYPE = "searchMessagesFilterVideo";
-
+  @override
+  String get tdType => "searchMessagesFilterVideo";
 
   @override
   Map<String, dynamic> get params => {};
-  SearchMessagesFilterVideo(Map<String, dynamic> json);}
+
+  SearchMessagesFilterVideo(Map<String, dynamic> json);
+}
 
 @reflector
 class SearchMessagesFilterVoiceNote extends SearchMessagesFilter {
-  static const TYPE = "searchMessagesFilterVoiceNote";
-
+  @override
+  String get tdType => "searchMessagesFilterVoiceNote";
 
   @override
   Map<String, dynamic> get params => {};
-  SearchMessagesFilterVoiceNote(Map<String, dynamic> json);}
+
+  SearchMessagesFilterVoiceNote(Map<String, dynamic> json);
+}
 
 @reflector
 class SearchMessagesFilterPhotoAndVideo extends SearchMessagesFilter {
-  static const TYPE = "searchMessagesFilterPhotoAndVideo";
-
+  @override
+  String get tdType => "searchMessagesFilterPhotoAndVideo";
 
   @override
   Map<String, dynamic> get params => {};
-  SearchMessagesFilterPhotoAndVideo(Map<String, dynamic> json);}
+
+  SearchMessagesFilterPhotoAndVideo(Map<String, dynamic> json);
+}
 
 @reflector
 class SearchMessagesFilterUrl extends SearchMessagesFilter {
-  static const TYPE = "searchMessagesFilterUrl";
-
+  @override
+  String get tdType => "searchMessagesFilterUrl";
 
   @override
   Map<String, dynamic> get params => {};
-  SearchMessagesFilterUrl(Map<String, dynamic> json);}
+
+  SearchMessagesFilterUrl(Map<String, dynamic> json);
+}
 
 @reflector
 class SearchMessagesFilterChatPhoto extends SearchMessagesFilter {
-  static const TYPE = "searchMessagesFilterChatPhoto";
-
+  @override
+  String get tdType => "searchMessagesFilterChatPhoto";
 
   @override
   Map<String, dynamic> get params => {};
-  SearchMessagesFilterChatPhoto(Map<String, dynamic> json);}
+
+  SearchMessagesFilterChatPhoto(Map<String, dynamic> json);
+}
 
 @reflector
 class SearchMessagesFilterCall extends SearchMessagesFilter {
-  static const TYPE = "searchMessagesFilterCall";
-
+  @override
+  String get tdType => "searchMessagesFilterCall";
 
   @override
   Map<String, dynamic> get params => {};
-  SearchMessagesFilterCall(Map<String, dynamic> json);}
+
+  SearchMessagesFilterCall(Map<String, dynamic> json);
+}
 
 @reflector
 class SearchMessagesFilterMissedCall extends SearchMessagesFilter {
-  static const TYPE = "searchMessagesFilterMissedCall";
-
+  @override
+  String get tdType => "searchMessagesFilterMissedCall";
 
   @override
   Map<String, dynamic> get params => {};
-  SearchMessagesFilterMissedCall(Map<String, dynamic> json);}
+
+  SearchMessagesFilterMissedCall(Map<String, dynamic> json);
+}
 
 @reflector
 class SearchMessagesFilterVideoNote extends SearchMessagesFilter {
-  static const TYPE = "searchMessagesFilterVideoNote";
-
+  @override
+  String get tdType => "searchMessagesFilterVideoNote";
 
   @override
   Map<String, dynamic> get params => {};
-  SearchMessagesFilterVideoNote(Map<String, dynamic> json);}
+
+  SearchMessagesFilterVideoNote(Map<String, dynamic> json);
+}
 
 @reflector
 class SearchMessagesFilterVoiceAndVideoNote extends SearchMessagesFilter {
-  static const TYPE = "searchMessagesFilterVoiceAndVideoNote";
-
+  @override
+  String get tdType => "searchMessagesFilterVoiceAndVideoNote";
 
   @override
   Map<String, dynamic> get params => {};
-  SearchMessagesFilterVoiceAndVideoNote(Map<String, dynamic> json);}
+
+  SearchMessagesFilterVoiceAndVideoNote(Map<String, dynamic> json);
+}
 
 @reflector
 class SearchMessagesFilterMention extends SearchMessagesFilter {
-  static const TYPE = "searchMessagesFilterMention";
-
+  @override
+  String get tdType => "searchMessagesFilterMention";
 
   @override
   Map<String, dynamic> get params => {};
-  SearchMessagesFilterMention(Map<String, dynamic> json);}
+
+  SearchMessagesFilterMention(Map<String, dynamic> json);
+}
 
 @reflector
 class SearchMessagesFilterUnreadMention extends SearchMessagesFilter {
-  static const TYPE = "searchMessagesFilterUnreadMention";
-
+  @override
+  String get tdType => "searchMessagesFilterUnreadMention";
 
   @override
   Map<String, dynamic> get params => {};
-  SearchMessagesFilterUnreadMention(Map<String, dynamic> json);}
+
+  SearchMessagesFilterUnreadMention(Map<String, dynamic> json);
+}
 
 abstract class ChatAction extends TdObject {}
 
 @reflector
 class ChatActionTyping extends ChatAction {
-  static const TYPE = "chatActionTyping";
-
+  @override
+  String get tdType => "chatActionTyping";
 
   @override
   Map<String, dynamic> get params => {};
-  ChatActionTyping(Map<String, dynamic> json);}
+
+  ChatActionTyping(Map<String, dynamic> json);
+}
 
 @reflector
 class ChatActionRecordingVideo extends ChatAction {
-  static const TYPE = "chatActionRecordingVideo";
-
+  @override
+  String get tdType => "chatActionRecordingVideo";
 
   @override
   Map<String, dynamic> get params => {};
-  ChatActionRecordingVideo(Map<String, dynamic> json);}
+
+  ChatActionRecordingVideo(Map<String, dynamic> json);
+}
 
 @reflector
 class ChatActionUploadingVideo extends ChatAction {
-  static const TYPE = "chatActionUploadingVideo";
+  @override
+  String get tdType => "chatActionUploadingVideo";
 
   int progress;
 
@@ -6986,16 +7450,19 @@ class ChatActionUploadingVideo extends ChatAction {
 
 @reflector
 class ChatActionRecordingVoiceNote extends ChatAction {
-  static const TYPE = "chatActionRecordingVoiceNote";
-
+  @override
+  String get tdType => "chatActionRecordingVoiceNote";
 
   @override
   Map<String, dynamic> get params => {};
-  ChatActionRecordingVoiceNote(Map<String, dynamic> json);}
+
+  ChatActionRecordingVoiceNote(Map<String, dynamic> json);
+}
 
 @reflector
 class ChatActionUploadingVoiceNote extends ChatAction {
-  static const TYPE = "chatActionUploadingVoiceNote";
+  @override
+  String get tdType => "chatActionUploadingVoiceNote";
 
   int progress;
 
@@ -7011,7 +7478,8 @@ class ChatActionUploadingVoiceNote extends ChatAction {
 
 @reflector
 class ChatActionUploadingPhoto extends ChatAction {
-  static const TYPE = "chatActionUploadingPhoto";
+  @override
+  String get tdType => "chatActionUploadingPhoto";
 
   int progress;
 
@@ -7027,7 +7495,8 @@ class ChatActionUploadingPhoto extends ChatAction {
 
 @reflector
 class ChatActionUploadingDocument extends ChatAction {
-  static const TYPE = "chatActionUploadingDocument";
+  @override
+  String get tdType => "chatActionUploadingDocument";
 
   int progress;
 
@@ -7043,43 +7512,52 @@ class ChatActionUploadingDocument extends ChatAction {
 
 @reflector
 class ChatActionChoosingLocation extends ChatAction {
-  static const TYPE = "chatActionChoosingLocation";
-
+  @override
+  String get tdType => "chatActionChoosingLocation";
 
   @override
   Map<String, dynamic> get params => {};
-  ChatActionChoosingLocation(Map<String, dynamic> json);}
+
+  ChatActionChoosingLocation(Map<String, dynamic> json);
+}
 
 @reflector
 class ChatActionChoosingContact extends ChatAction {
-  static const TYPE = "chatActionChoosingContact";
-
+  @override
+  String get tdType => "chatActionChoosingContact";
 
   @override
   Map<String, dynamic> get params => {};
-  ChatActionChoosingContact(Map<String, dynamic> json);}
+
+  ChatActionChoosingContact(Map<String, dynamic> json);
+}
 
 @reflector
 class ChatActionStartPlayingGame extends ChatAction {
-  static const TYPE = "chatActionStartPlayingGame";
-
+  @override
+  String get tdType => "chatActionStartPlayingGame";
 
   @override
   Map<String, dynamic> get params => {};
-  ChatActionStartPlayingGame(Map<String, dynamic> json);}
+
+  ChatActionStartPlayingGame(Map<String, dynamic> json);
+}
 
 @reflector
 class ChatActionRecordingVideoNote extends ChatAction {
-  static const TYPE = "chatActionRecordingVideoNote";
-
+  @override
+  String get tdType => "chatActionRecordingVideoNote";
 
   @override
   Map<String, dynamic> get params => {};
-  ChatActionRecordingVideoNote(Map<String, dynamic> json);}
+
+  ChatActionRecordingVideoNote(Map<String, dynamic> json);
+}
 
 @reflector
 class ChatActionUploadingVideoNote extends ChatAction {
-  static const TYPE = "chatActionUploadingVideoNote";
+  @override
+  String get tdType => "chatActionUploadingVideoNote";
 
   int progress;
 
@@ -7095,27 +7573,32 @@ class ChatActionUploadingVideoNote extends ChatAction {
 
 @reflector
 class ChatActionCancel extends ChatAction {
-  static const TYPE = "chatActionCancel";
-
+  @override
+  String get tdType => "chatActionCancel";
 
   @override
   Map<String, dynamic> get params => {};
-  ChatActionCancel(Map<String, dynamic> json);}
+
+  ChatActionCancel(Map<String, dynamic> json);
+}
 
 abstract class UserStatus extends TdObject {}
 
 @reflector
 class UserStatusEmpty extends UserStatus {
-  static const TYPE = "userStatusEmpty";
-
+  @override
+  String get tdType => "userStatusEmpty";
 
   @override
   Map<String, dynamic> get params => {};
-  UserStatusEmpty(Map<String, dynamic> json);}
+
+  UserStatusEmpty(Map<String, dynamic> json);
+}
 
 @reflector
 class UserStatusOnline extends UserStatus {
-  static const TYPE = "userStatusOnline";
+  @override
+  String get tdType => "userStatusOnline";
 
   int expires;
 
@@ -7131,7 +7614,8 @@ class UserStatusOnline extends UserStatus {
 
 @reflector
 class UserStatusOffline extends UserStatus {
-  static const TYPE = "userStatusOffline";
+  @override
+  String get tdType => "userStatusOffline";
 
   int wasOnline;
 
@@ -7147,34 +7631,41 @@ class UserStatusOffline extends UserStatus {
 
 @reflector
 class UserStatusRecently extends UserStatus {
-  static const TYPE = "userStatusRecently";
-
+  @override
+  String get tdType => "userStatusRecently";
 
   @override
   Map<String, dynamic> get params => {};
-  UserStatusRecently(Map<String, dynamic> json);}
+
+  UserStatusRecently(Map<String, dynamic> json);
+}
 
 @reflector
 class UserStatusLastWeek extends UserStatus {
-  static const TYPE = "userStatusLastWeek";
-
+  @override
+  String get tdType => "userStatusLastWeek";
 
   @override
   Map<String, dynamic> get params => {};
-  UserStatusLastWeek(Map<String, dynamic> json);}
+
+  UserStatusLastWeek(Map<String, dynamic> json);
+}
 
 @reflector
 class UserStatusLastMonth extends UserStatus {
-  static const TYPE = "userStatusLastMonth";
-
+  @override
+  String get tdType => "userStatusLastMonth";
 
   @override
   Map<String, dynamic> get params => {};
-  UserStatusLastMonth(Map<String, dynamic> json);}
+
+  UserStatusLastMonth(Map<String, dynamic> json);
+}
 
 @reflector
 class Stickers extends TdObject {
-  static const TYPE = "stickers";
+  @override
+  String get tdType => "stickers";
 
   List<Sticker> stickers;
 
@@ -7190,7 +7681,8 @@ class Stickers extends TdObject {
 
 @reflector
 class Emojis extends TdObject {
-  static const TYPE = "emojis";
+  @override
+  String get tdType => "emojis";
 
   List<String> emojis;
 
@@ -7206,7 +7698,8 @@ class Emojis extends TdObject {
 
 @reflector
 class StickerSet extends TdObject {
-  static const TYPE = "stickerSet";
+  @override
+  String get tdType => "stickerSet";
 
   int id;
   String title;
@@ -7255,7 +7748,8 @@ class StickerSet extends TdObject {
 
 @reflector
 class StickerSetInfo extends TdObject {
-  static const TYPE = "stickerSetInfo";
+  @override
+  String get tdType => "stickerSetInfo";
 
   int id;
   String title;
@@ -7304,7 +7798,8 @@ class StickerSetInfo extends TdObject {
 
 @reflector
 class StickerSets extends TdObject {
-  static const TYPE = "stickerSets";
+  @override
+  String get tdType => "stickerSets";
 
   int totalCount;
   List<StickerSetInfo> sets;
@@ -7325,52 +7820,63 @@ abstract class CallDiscardReason extends TdObject {}
 
 @reflector
 class CallDiscardReasonEmpty extends CallDiscardReason {
-  static const TYPE = "callDiscardReasonEmpty";
-
+  @override
+  String get tdType => "callDiscardReasonEmpty";
 
   @override
   Map<String, dynamic> get params => {};
-  CallDiscardReasonEmpty(Map<String, dynamic> json);}
+
+  CallDiscardReasonEmpty(Map<String, dynamic> json);
+}
 
 @reflector
 class CallDiscardReasonMissed extends CallDiscardReason {
-  static const TYPE = "callDiscardReasonMissed";
-
+  @override
+  String get tdType => "callDiscardReasonMissed";
 
   @override
   Map<String, dynamic> get params => {};
-  CallDiscardReasonMissed(Map<String, dynamic> json);}
+
+  CallDiscardReasonMissed(Map<String, dynamic> json);
+}
 
 @reflector
 class CallDiscardReasonDeclined extends CallDiscardReason {
-  static const TYPE = "callDiscardReasonDeclined";
-
+  @override
+  String get tdType => "callDiscardReasonDeclined";
 
   @override
   Map<String, dynamic> get params => {};
-  CallDiscardReasonDeclined(Map<String, dynamic> json);}
+
+  CallDiscardReasonDeclined(Map<String, dynamic> json);
+}
 
 @reflector
 class CallDiscardReasonDisconnected extends CallDiscardReason {
-  static const TYPE = "callDiscardReasonDisconnected";
-
+  @override
+  String get tdType => "callDiscardReasonDisconnected";
 
   @override
   Map<String, dynamic> get params => {};
-  CallDiscardReasonDisconnected(Map<String, dynamic> json);}
+
+  CallDiscardReasonDisconnected(Map<String, dynamic> json);
+}
 
 @reflector
 class CallDiscardReasonHungUp extends CallDiscardReason {
-  static const TYPE = "callDiscardReasonHungUp";
-
+  @override
+  String get tdType => "callDiscardReasonHungUp";
 
   @override
   Map<String, dynamic> get params => {};
-  CallDiscardReasonHungUp(Map<String, dynamic> json);}
+
+  CallDiscardReasonHungUp(Map<String, dynamic> json);
+}
 
 @reflector
 class CallProtocol extends TdObject {
-  static const TYPE = "callProtocol";
+  @override
+  String get tdType => "callProtocol";
 
   bool udpP2p;
   bool udpReflector;
@@ -7395,7 +7901,8 @@ class CallProtocol extends TdObject {
 
 @reflector
 class CallConnection extends TdObject {
-  static const TYPE = "callConnection";
+  @override
+  String get tdType => "callConnection";
 
   int id;
   String ip;
@@ -7423,7 +7930,8 @@ class CallConnection extends TdObject {
 
 @reflector
 class CallId extends TdObject {
-  static const TYPE = "callId";
+  @override
+  String get tdType => "callId";
 
   int id;
 
@@ -7441,7 +7949,8 @@ abstract class CallState extends TdObject {}
 
 @reflector
 class CallStatePending extends CallState {
-  static const TYPE = "callStatePending";
+  @override
+  String get tdType => "callStatePending";
 
   bool isCreated;
   bool isReceived;
@@ -7460,16 +7969,19 @@ class CallStatePending extends CallState {
 
 @reflector
 class CallStateExchangingKeys extends CallState {
-  static const TYPE = "callStateExchangingKeys";
-
+  @override
+  String get tdType => "callStateExchangingKeys";
 
   @override
   Map<String, dynamic> get params => {};
-  CallStateExchangingKeys(Map<String, dynamic> json);}
+
+  CallStateExchangingKeys(Map<String, dynamic> json);
+}
 
 @reflector
 class CallStateReady extends CallState {
-  static const TYPE = "callStateReady";
+  @override
+  String get tdType => "callStateReady";
 
   CallProtocol protocol;
   List<CallConnection> connections;
@@ -7500,16 +8012,19 @@ class CallStateReady extends CallState {
 
 @reflector
 class CallStateHangingUp extends CallState {
-  static const TYPE = "callStateHangingUp";
-
+  @override
+  String get tdType => "callStateHangingUp";
 
   @override
   Map<String, dynamic> get params => {};
-  CallStateHangingUp(Map<String, dynamic> json);}
+
+  CallStateHangingUp(Map<String, dynamic> json);
+}
 
 @reflector
 class CallStateDiscarded extends CallState {
-  static const TYPE = "callStateDiscarded";
+  @override
+  String get tdType => "callStateDiscarded";
 
   CallDiscardReason reason;
   bool needRating;
@@ -7531,7 +8046,8 @@ class CallStateDiscarded extends CallState {
 
 @reflector
 class CallStateError extends CallState {
-  static const TYPE = "callStateError";
+  @override
+  String get tdType => "callStateError";
 
   Error error;
 
@@ -7549,70 +8065,85 @@ abstract class CallProblem extends TdObject {}
 
 @reflector
 class CallProblemEcho extends CallProblem {
-  static const TYPE = "callProblemEcho";
-
+  @override
+  String get tdType => "callProblemEcho";
 
   @override
   Map<String, dynamic> get params => {};
-  CallProblemEcho(Map<String, dynamic> json);}
+
+  CallProblemEcho(Map<String, dynamic> json);
+}
 
 @reflector
 class CallProblemNoise extends CallProblem {
-  static const TYPE = "callProblemNoise";
-
+  @override
+  String get tdType => "callProblemNoise";
 
   @override
   Map<String, dynamic> get params => {};
-  CallProblemNoise(Map<String, dynamic> json);}
+
+  CallProblemNoise(Map<String, dynamic> json);
+}
 
 @reflector
 class CallProblemInterruptions extends CallProblem {
-  static const TYPE = "callProblemInterruptions";
-
+  @override
+  String get tdType => "callProblemInterruptions";
 
   @override
   Map<String, dynamic> get params => {};
-  CallProblemInterruptions(Map<String, dynamic> json);}
+
+  CallProblemInterruptions(Map<String, dynamic> json);
+}
 
 @reflector
 class CallProblemDistortedSpeech extends CallProblem {
-  static const TYPE = "callProblemDistortedSpeech";
-
+  @override
+  String get tdType => "callProblemDistortedSpeech";
 
   @override
   Map<String, dynamic> get params => {};
-  CallProblemDistortedSpeech(Map<String, dynamic> json);}
+
+  CallProblemDistortedSpeech(Map<String, dynamic> json);
+}
 
 @reflector
 class CallProblemSilentLocal extends CallProblem {
-  static const TYPE = "callProblemSilentLocal";
-
+  @override
+  String get tdType => "callProblemSilentLocal";
 
   @override
   Map<String, dynamic> get params => {};
-  CallProblemSilentLocal(Map<String, dynamic> json);}
+
+  CallProblemSilentLocal(Map<String, dynamic> json);
+}
 
 @reflector
 class CallProblemSilentRemote extends CallProblem {
-  static const TYPE = "callProblemSilentRemote";
-
+  @override
+  String get tdType => "callProblemSilentRemote";
 
   @override
   Map<String, dynamic> get params => {};
-  CallProblemSilentRemote(Map<String, dynamic> json);}
+
+  CallProblemSilentRemote(Map<String, dynamic> json);
+}
 
 @reflector
 class CallProblemDropped extends CallProblem {
-  static const TYPE = "callProblemDropped";
-
+  @override
+  String get tdType => "callProblemDropped";
 
   @override
   Map<String, dynamic> get params => {};
-  CallProblemDropped(Map<String, dynamic> json);}
+
+  CallProblemDropped(Map<String, dynamic> json);
+}
 
 @reflector
 class Call extends TdObject {
-  static const TYPE = "call";
+  @override
+  String get tdType => "call";
 
   int id;
   int userId;
@@ -7637,7 +8168,8 @@ class Call extends TdObject {
 
 @reflector
 class PhoneNumberAuthenticationSettings extends TdObject {
-  static const TYPE = "phoneNumberAuthenticationSettings";
+  @override
+  String get tdType => "phoneNumberAuthenticationSettings";
 
   bool allowFlashCall;
   bool isCurrentPhoneNumber;
@@ -7659,7 +8191,8 @@ class PhoneNumberAuthenticationSettings extends TdObject {
 
 @reflector
 class Animations extends TdObject {
-  static const TYPE = "animations";
+  @override
+  String get tdType => "animations";
 
   List<Animation> animations;
 
@@ -7675,7 +8208,8 @@ class Animations extends TdObject {
 
 @reflector
 class ImportedContacts extends TdObject {
-  static const TYPE = "importedContacts";
+  @override
+  String get tdType => "importedContacts";
 
   List<int> userIds;
   List<int> importerCount;
@@ -7694,7 +8228,8 @@ class ImportedContacts extends TdObject {
 
 @reflector
 class HttpUrl extends TdObject {
-  static const TYPE = "httpUrl";
+  @override
+  String get tdType => "httpUrl";
 
   String url;
 
@@ -7712,7 +8247,8 @@ abstract class InputInlineQueryResult extends TdObject {}
 
 @reflector
 class InputInlineQueryResultAnimatedGif extends InputInlineQueryResult {
-  static const TYPE = "inputInlineQueryResultAnimatedGif";
+  @override
+  String get tdType => "inputInlineQueryResultAnimatedGif";
 
   String id;
   String title;
@@ -7752,7 +8288,8 @@ class InputInlineQueryResultAnimatedGif extends InputInlineQueryResult {
 
 @reflector
 class InputInlineQueryResultAnimatedMpeg4 extends InputInlineQueryResult {
-  static const TYPE = "inputInlineQueryResultAnimatedMpeg4";
+  @override
+  String get tdType => "inputInlineQueryResultAnimatedMpeg4";
 
   String id;
   String title;
@@ -7792,7 +8329,8 @@ class InputInlineQueryResultAnimatedMpeg4 extends InputInlineQueryResult {
 
 @reflector
 class InputInlineQueryResultArticle extends InputInlineQueryResult {
-  static const TYPE = "inputInlineQueryResultArticle";
+  @override
+  String get tdType => "inputInlineQueryResultArticle";
 
   String id;
   String url;
@@ -7835,7 +8373,8 @@ class InputInlineQueryResultArticle extends InputInlineQueryResult {
 
 @reflector
 class InputInlineQueryResultAudio extends InputInlineQueryResult {
-  static const TYPE = "inputInlineQueryResultAudio";
+  @override
+  String get tdType => "inputInlineQueryResultAudio";
 
   String id;
   String title;
@@ -7869,7 +8408,8 @@ class InputInlineQueryResultAudio extends InputInlineQueryResult {
 
 @reflector
 class InputInlineQueryResultContact extends InputInlineQueryResult {
-  static const TYPE = "inputInlineQueryResultContact";
+  @override
+  String get tdType => "inputInlineQueryResultContact";
 
   String id;
   Contact contact;
@@ -7903,7 +8443,8 @@ class InputInlineQueryResultContact extends InputInlineQueryResult {
 
 @reflector
 class InputInlineQueryResultDocument extends InputInlineQueryResult {
-  static const TYPE = "inputInlineQueryResultDocument";
+  @override
+  String get tdType => "inputInlineQueryResultDocument";
 
   String id;
   String title;
@@ -7946,7 +8487,8 @@ class InputInlineQueryResultDocument extends InputInlineQueryResult {
 
 @reflector
 class InputInlineQueryResultGame extends InputInlineQueryResult {
-  static const TYPE = "inputInlineQueryResultGame";
+  @override
+  String get tdType => "inputInlineQueryResultGame";
 
   String id;
   String gameShortName;
@@ -7968,7 +8510,8 @@ class InputInlineQueryResultGame extends InputInlineQueryResult {
 
 @reflector
 class InputInlineQueryResultLocation extends InputInlineQueryResult {
-  static const TYPE = "inputInlineQueryResultLocation";
+  @override
+  String get tdType => "inputInlineQueryResultLocation";
 
   String id;
   Location location;
@@ -8008,7 +8551,8 @@ class InputInlineQueryResultLocation extends InputInlineQueryResult {
 
 @reflector
 class InputInlineQueryResultPhoto extends InputInlineQueryResult {
-  static const TYPE = "inputInlineQueryResultPhoto";
+  @override
+  String get tdType => "inputInlineQueryResultPhoto";
 
   String id;
   String title;
@@ -8048,7 +8592,8 @@ class InputInlineQueryResultPhoto extends InputInlineQueryResult {
 
 @reflector
 class InputInlineQueryResultSticker extends InputInlineQueryResult {
-  static const TYPE = "inputInlineQueryResultSticker";
+  @override
+  String get tdType => "inputInlineQueryResultSticker";
 
   String id;
   String thumbnailUrl;
@@ -8082,7 +8627,8 @@ class InputInlineQueryResultSticker extends InputInlineQueryResult {
 
 @reflector
 class InputInlineQueryResultVenue extends InputInlineQueryResult {
-  static const TYPE = "inputInlineQueryResultVenue";
+  @override
+  String get tdType => "inputInlineQueryResultVenue";
 
   String id;
   Venue venue;
@@ -8116,7 +8662,8 @@ class InputInlineQueryResultVenue extends InputInlineQueryResult {
 
 @reflector
 class InputInlineQueryResultVideo extends InputInlineQueryResult {
-  static const TYPE = "inputInlineQueryResultVideo";
+  @override
+  String get tdType => "inputInlineQueryResultVideo";
 
   String id;
   String title;
@@ -8162,7 +8709,8 @@ class InputInlineQueryResultVideo extends InputInlineQueryResult {
 
 @reflector
 class InputInlineQueryResultVoiceNote extends InputInlineQueryResult {
-  static const TYPE = "inputInlineQueryResultVoiceNote";
+  @override
+  String get tdType => "inputInlineQueryResultVoiceNote";
 
   String id;
   String title;
@@ -8195,7 +8743,8 @@ abstract class InlineQueryResult extends TdObject {}
 
 @reflector
 class InlineQueryResultArticle extends InlineQueryResult {
-  static const TYPE = "inlineQueryResultArticle";
+  @override
+  String get tdType => "inlineQueryResultArticle";
 
   String id;
   String url;
@@ -8226,7 +8775,8 @@ class InlineQueryResultArticle extends InlineQueryResult {
 
 @reflector
 class InlineQueryResultContact extends InlineQueryResult {
-  static const TYPE = "inlineQueryResultContact";
+  @override
+  String get tdType => "inlineQueryResultContact";
 
   String id;
   Contact contact;
@@ -8248,7 +8798,8 @@ class InlineQueryResultContact extends InlineQueryResult {
 
 @reflector
 class InlineQueryResultLocation extends InlineQueryResult {
-  static const TYPE = "inlineQueryResultLocation";
+  @override
+  String get tdType => "inlineQueryResultLocation";
 
   String id;
   Location location;
@@ -8273,7 +8824,8 @@ class InlineQueryResultLocation extends InlineQueryResult {
 
 @reflector
 class InlineQueryResultVenue extends InlineQueryResult {
-  static const TYPE = "inlineQueryResultVenue";
+  @override
+  String get tdType => "inlineQueryResultVenue";
 
   String id;
   Venue venue;
@@ -8295,7 +8847,8 @@ class InlineQueryResultVenue extends InlineQueryResult {
 
 @reflector
 class InlineQueryResultGame extends InlineQueryResult {
-  static const TYPE = "inlineQueryResultGame";
+  @override
+  String get tdType => "inlineQueryResultGame";
 
   String id;
   Game game;
@@ -8314,7 +8867,8 @@ class InlineQueryResultGame extends InlineQueryResult {
 
 @reflector
 class InlineQueryResultAnimation extends InlineQueryResult {
-  static const TYPE = "inlineQueryResultAnimation";
+  @override
+  String get tdType => "inlineQueryResultAnimation";
 
   String id;
   Animation animation;
@@ -8336,7 +8890,8 @@ class InlineQueryResultAnimation extends InlineQueryResult {
 
 @reflector
 class InlineQueryResultAudio extends InlineQueryResult {
-  static const TYPE = "inlineQueryResultAudio";
+  @override
+  String get tdType => "inlineQueryResultAudio";
 
   String id;
   Audio audio;
@@ -8355,7 +8910,8 @@ class InlineQueryResultAudio extends InlineQueryResult {
 
 @reflector
 class InlineQueryResultDocument extends InlineQueryResult {
-  static const TYPE = "inlineQueryResultDocument";
+  @override
+  String get tdType => "inlineQueryResultDocument";
 
   String id;
   Document document;
@@ -8380,7 +8936,8 @@ class InlineQueryResultDocument extends InlineQueryResult {
 
 @reflector
 class InlineQueryResultPhoto extends InlineQueryResult {
-  static const TYPE = "inlineQueryResultPhoto";
+  @override
+  String get tdType => "inlineQueryResultPhoto";
 
   String id;
   Photo photo;
@@ -8405,7 +8962,8 @@ class InlineQueryResultPhoto extends InlineQueryResult {
 
 @reflector
 class InlineQueryResultSticker extends InlineQueryResult {
-  static const TYPE = "inlineQueryResultSticker";
+  @override
+  String get tdType => "inlineQueryResultSticker";
 
   String id;
   Sticker sticker;
@@ -8424,7 +8982,8 @@ class InlineQueryResultSticker extends InlineQueryResult {
 
 @reflector
 class InlineQueryResultVideo extends InlineQueryResult {
-  static const TYPE = "inlineQueryResultVideo";
+  @override
+  String get tdType => "inlineQueryResultVideo";
 
   String id;
   Video video;
@@ -8449,7 +9008,8 @@ class InlineQueryResultVideo extends InlineQueryResult {
 
 @reflector
 class InlineQueryResultVoiceNote extends InlineQueryResult {
-  static const TYPE = "inlineQueryResultVoiceNote";
+  @override
+  String get tdType => "inlineQueryResultVoiceNote";
 
   String id;
   VoiceNote voiceNote;
@@ -8471,7 +9031,8 @@ class InlineQueryResultVoiceNote extends InlineQueryResult {
 
 @reflector
 class InlineQueryResults extends TdObject {
-  static const TYPE = "inlineQueryResults";
+  @override
+  String get tdType => "inlineQueryResults";
 
   int inlineQueryId;
   String nextOffset;
@@ -8501,7 +9062,8 @@ abstract class CallbackQueryPayload extends TdObject {}
 
 @reflector
 class CallbackQueryPayloadData extends CallbackQueryPayload {
-  static const TYPE = "callbackQueryPayloadData";
+  @override
+  String get tdType => "callbackQueryPayloadData";
 
   List<int> data;
 
@@ -8517,7 +9079,8 @@ class CallbackQueryPayloadData extends CallbackQueryPayload {
 
 @reflector
 class CallbackQueryPayloadGame extends CallbackQueryPayload {
-  static const TYPE = "callbackQueryPayloadGame";
+  @override
+  String get tdType => "callbackQueryPayloadGame";
 
   String gameShortName;
 
@@ -8533,7 +9096,8 @@ class CallbackQueryPayloadGame extends CallbackQueryPayload {
 
 @reflector
 class CallbackQueryAnswer extends TdObject {
-  static const TYPE = "callbackQueryAnswer";
+  @override
+  String get tdType => "callbackQueryAnswer";
 
   String text;
   bool showAlert;
@@ -8555,7 +9119,8 @@ class CallbackQueryAnswer extends TdObject {
 
 @reflector
 class CustomRequestResult extends TdObject {
-  static const TYPE = "customRequestResult";
+  @override
+  String get tdType => "customRequestResult";
 
   String result;
 
@@ -8571,7 +9136,8 @@ class CustomRequestResult extends TdObject {
 
 @reflector
 class GameHighScore extends TdObject {
-  static const TYPE = "gameHighScore";
+  @override
+  String get tdType => "gameHighScore";
 
   int position;
   int userId;
@@ -8593,7 +9159,8 @@ class GameHighScore extends TdObject {
 
 @reflector
 class GameHighScores extends TdObject {
-  static const TYPE = "gameHighScores";
+  @override
+  String get tdType => "gameHighScores";
 
   List<GameHighScore> scores;
 
@@ -8609,7 +9176,8 @@ class GameHighScores extends TdObject {
 
 @reflector
 class TonLiteServerResponse extends TdObject {
-  static const TYPE = "tonLiteServerResponse";
+  @override
+  String get tdType => "tonLiteServerResponse";
 
   List<int> response;
 
@@ -8625,7 +9193,8 @@ class TonLiteServerResponse extends TdObject {
 
 @reflector
 class TonWalletPasswordSalt extends TdObject {
-  static const TYPE = "tonWalletPasswordSalt";
+  @override
+  String get tdType => "tonWalletPasswordSalt";
 
   List<int> salt;
 
@@ -8643,7 +9212,8 @@ abstract class ChatEventAction extends TdObject {}
 
 @reflector
 class ChatEventMessageEdited extends ChatEventAction {
-  static const TYPE = "chatEventMessageEdited";
+  @override
+  String get tdType => "chatEventMessageEdited";
 
   Message oldMessage;
   Message newMessage;
@@ -8662,7 +9232,8 @@ class ChatEventMessageEdited extends ChatEventAction {
 
 @reflector
 class ChatEventMessageDeleted extends ChatEventAction {
-  static const TYPE = "chatEventMessageDeleted";
+  @override
+  String get tdType => "chatEventMessageDeleted";
 
   Message message;
 
@@ -8678,7 +9249,8 @@ class ChatEventMessageDeleted extends ChatEventAction {
 
 @reflector
 class ChatEventPollStopped extends ChatEventAction {
-  static const TYPE = "chatEventPollStopped";
+  @override
+  String get tdType => "chatEventPollStopped";
 
   Message message;
 
@@ -8694,7 +9266,8 @@ class ChatEventPollStopped extends ChatEventAction {
 
 @reflector
 class ChatEventMessagePinned extends ChatEventAction {
-  static const TYPE = "chatEventMessagePinned";
+  @override
+  String get tdType => "chatEventMessagePinned";
 
   Message message;
 
@@ -8710,34 +9283,41 @@ class ChatEventMessagePinned extends ChatEventAction {
 
 @reflector
 class ChatEventMessageUnpinned extends ChatEventAction {
-  static const TYPE = "chatEventMessageUnpinned";
-
+  @override
+  String get tdType => "chatEventMessageUnpinned";
 
   @override
   Map<String, dynamic> get params => {};
-  ChatEventMessageUnpinned(Map<String, dynamic> json);}
+
+  ChatEventMessageUnpinned(Map<String, dynamic> json);
+}
 
 @reflector
 class ChatEventMemberJoined extends ChatEventAction {
-  static const TYPE = "chatEventMemberJoined";
-
+  @override
+  String get tdType => "chatEventMemberJoined";
 
   @override
   Map<String, dynamic> get params => {};
-  ChatEventMemberJoined(Map<String, dynamic> json);}
+
+  ChatEventMemberJoined(Map<String, dynamic> json);
+}
 
 @reflector
 class ChatEventMemberLeft extends ChatEventAction {
-  static const TYPE = "chatEventMemberLeft";
-
+  @override
+  String get tdType => "chatEventMemberLeft";
 
   @override
   Map<String, dynamic> get params => {};
-  ChatEventMemberLeft(Map<String, dynamic> json);}
+
+  ChatEventMemberLeft(Map<String, dynamic> json);
+}
 
 @reflector
 class ChatEventMemberInvited extends ChatEventAction {
-  static const TYPE = "chatEventMemberInvited";
+  @override
+  String get tdType => "chatEventMemberInvited";
 
   int userId;
   ChatMemberStatus status;
@@ -8756,7 +9336,8 @@ class ChatEventMemberInvited extends ChatEventAction {
 
 @reflector
 class ChatEventMemberPromoted extends ChatEventAction {
-  static const TYPE = "chatEventMemberPromoted";
+  @override
+  String get tdType => "chatEventMemberPromoted";
 
   int userId;
   ChatMemberStatus oldStatus;
@@ -8778,7 +9359,8 @@ class ChatEventMemberPromoted extends ChatEventAction {
 
 @reflector
 class ChatEventMemberRestricted extends ChatEventAction {
-  static const TYPE = "chatEventMemberRestricted";
+  @override
+  String get tdType => "chatEventMemberRestricted";
 
   int userId;
   ChatMemberStatus oldStatus;
@@ -8800,7 +9382,8 @@ class ChatEventMemberRestricted extends ChatEventAction {
 
 @reflector
 class ChatEventTitleChanged extends ChatEventAction {
-  static const TYPE = "chatEventTitleChanged";
+  @override
+  String get tdType => "chatEventTitleChanged";
 
   String oldTitle;
   String newTitle;
@@ -8819,7 +9402,8 @@ class ChatEventTitleChanged extends ChatEventAction {
 
 @reflector
 class ChatEventPermissionsChanged extends ChatEventAction {
-  static const TYPE = "chatEventPermissionsChanged";
+  @override
+  String get tdType => "chatEventPermissionsChanged";
 
   ChatPermissions oldPermissions;
   ChatPermissions newPermissions;
@@ -8838,7 +9422,8 @@ class ChatEventPermissionsChanged extends ChatEventAction {
 
 @reflector
 class ChatEventDescriptionChanged extends ChatEventAction {
-  static const TYPE = "chatEventDescriptionChanged";
+  @override
+  String get tdType => "chatEventDescriptionChanged";
 
   String oldDescription;
   String newDescription;
@@ -8857,7 +9442,8 @@ class ChatEventDescriptionChanged extends ChatEventAction {
 
 @reflector
 class ChatEventUsernameChanged extends ChatEventAction {
-  static const TYPE = "chatEventUsernameChanged";
+  @override
+  String get tdType => "chatEventUsernameChanged";
 
   String oldUsername;
   String newUsername;
@@ -8876,7 +9462,8 @@ class ChatEventUsernameChanged extends ChatEventAction {
 
 @reflector
 class ChatEventPhotoChanged extends ChatEventAction {
-  static const TYPE = "chatEventPhotoChanged";
+  @override
+  String get tdType => "chatEventPhotoChanged";
 
   Photo oldPhoto;
   Photo newPhoto;
@@ -8895,7 +9482,8 @@ class ChatEventPhotoChanged extends ChatEventAction {
 
 @reflector
 class ChatEventInvitesToggled extends ChatEventAction {
-  static const TYPE = "chatEventInvitesToggled";
+  @override
+  String get tdType => "chatEventInvitesToggled";
 
   bool canInviteUsers;
 
@@ -8911,7 +9499,8 @@ class ChatEventInvitesToggled extends ChatEventAction {
 
 @reflector
 class ChatEventSignMessagesToggled extends ChatEventAction {
-  static const TYPE = "chatEventSignMessagesToggled";
+  @override
+  String get tdType => "chatEventSignMessagesToggled";
 
   bool signMessages;
 
@@ -8927,7 +9516,8 @@ class ChatEventSignMessagesToggled extends ChatEventAction {
 
 @reflector
 class ChatEventStickerSetChanged extends ChatEventAction {
-  static const TYPE = "chatEventStickerSetChanged";
+  @override
+  String get tdType => "chatEventStickerSetChanged";
 
   int oldStickerSetId;
   int newStickerSetId;
@@ -8946,7 +9536,8 @@ class ChatEventStickerSetChanged extends ChatEventAction {
 
 @reflector
 class ChatEventIsAllHistoryAvailableToggled extends ChatEventAction {
-  static const TYPE = "chatEventIsAllHistoryAvailableToggled";
+  @override
+  String get tdType => "chatEventIsAllHistoryAvailableToggled";
 
   bool isAllHistoryAvailable;
 
@@ -8962,7 +9553,8 @@ class ChatEventIsAllHistoryAvailableToggled extends ChatEventAction {
 
 @reflector
 class ChatEvent extends TdObject {
-  static const TYPE = "chatEvent";
+  @override
+  String get tdType => "chatEvent";
 
   int id;
   int date;
@@ -8987,7 +9579,8 @@ class ChatEvent extends TdObject {
 
 @reflector
 class ChatEvents extends TdObject {
-  static const TYPE = "chatEvents";
+  @override
+  String get tdType => "chatEvents";
 
   List<ChatEvent> events;
 
@@ -9003,7 +9596,8 @@ class ChatEvents extends TdObject {
 
 @reflector
 class ChatEventLogFilters extends TdObject {
-  static const TYPE = "chatEventLogFilters";
+  @override
+  String get tdType => "chatEventLogFilters";
 
   bool messageEdits;
   bool messageDeletions;
@@ -9048,7 +9642,8 @@ abstract class LanguagePackStringValue extends TdObject {}
 
 @reflector
 class LanguagePackStringValueOrdinary extends LanguagePackStringValue {
-  static const TYPE = "languagePackStringValueOrdinary";
+  @override
+  String get tdType => "languagePackStringValueOrdinary";
 
   String value;
 
@@ -9064,7 +9659,8 @@ class LanguagePackStringValueOrdinary extends LanguagePackStringValue {
 
 @reflector
 class LanguagePackStringValuePluralized extends LanguagePackStringValue {
-  static const TYPE = "languagePackStringValuePluralized";
+  @override
+  String get tdType => "languagePackStringValuePluralized";
 
   String zeroValue;
   String oneValue;
@@ -9095,16 +9691,19 @@ class LanguagePackStringValuePluralized extends LanguagePackStringValue {
 
 @reflector
 class LanguagePackStringValueDeleted extends LanguagePackStringValue {
-  static const TYPE = "languagePackStringValueDeleted";
-
+  @override
+  String get tdType => "languagePackStringValueDeleted";
 
   @override
   Map<String, dynamic> get params => {};
-  LanguagePackStringValueDeleted(Map<String, dynamic> json);}
+
+  LanguagePackStringValueDeleted(Map<String, dynamic> json);
+}
 
 @reflector
 class LanguagePackString extends TdObject {
-  static const TYPE = "languagePackString";
+  @override
+  String get tdType => "languagePackString";
 
   String key;
   LanguagePackStringValue value;
@@ -9123,7 +9722,8 @@ class LanguagePackString extends TdObject {
 
 @reflector
 class LanguagePackStrings extends TdObject {
-  static const TYPE = "languagePackStrings";
+  @override
+  String get tdType => "languagePackStrings";
 
   List<LanguagePackString> strings;
 
@@ -9139,7 +9739,8 @@ class LanguagePackStrings extends TdObject {
 
 @reflector
 class LanguagePackInfo extends TdObject {
-  static const TYPE = "languagePackInfo";
+  @override
+  String get tdType => "languagePackInfo";
 
   String id;
   String baseLanguagePackId;
@@ -9191,7 +9792,8 @@ class LanguagePackInfo extends TdObject {
 
 @reflector
 class LocalizationTargetInfo extends TdObject {
-  static const TYPE = "localizationTargetInfo";
+  @override
+  String get tdType => "localizationTargetInfo";
 
   List<LanguagePackInfo> languagePacks;
 
@@ -9209,7 +9811,8 @@ abstract class DeviceToken extends TdObject {}
 
 @reflector
 class DeviceTokenFirebaseCloudMessaging extends DeviceToken {
-  static const TYPE = "deviceTokenFirebaseCloudMessaging";
+  @override
+  String get tdType => "deviceTokenFirebaseCloudMessaging";
 
   String token;
   bool encrypt;
@@ -9228,7 +9831,8 @@ class DeviceTokenFirebaseCloudMessaging extends DeviceToken {
 
 @reflector
 class DeviceTokenApplePush extends DeviceToken {
-  static const TYPE = "deviceTokenApplePush";
+  @override
+  String get tdType => "deviceTokenApplePush";
 
   String deviceToken;
   bool isAppSandbox;
@@ -9247,7 +9851,8 @@ class DeviceTokenApplePush extends DeviceToken {
 
 @reflector
 class DeviceTokenApplePushVoIP extends DeviceToken {
-  static const TYPE = "deviceTokenApplePushVoIP";
+  @override
+  String get tdType => "deviceTokenApplePushVoIP";
 
   String deviceToken;
   bool isAppSandbox;
@@ -9269,7 +9874,8 @@ class DeviceTokenApplePushVoIP extends DeviceToken {
 
 @reflector
 class DeviceTokenWindowsPush extends DeviceToken {
-  static const TYPE = "deviceTokenWindowsPush";
+  @override
+  String get tdType => "deviceTokenWindowsPush";
 
   String accessToken;
 
@@ -9285,7 +9891,8 @@ class DeviceTokenWindowsPush extends DeviceToken {
 
 @reflector
 class DeviceTokenMicrosoftPush extends DeviceToken {
-  static const TYPE = "deviceTokenMicrosoftPush";
+  @override
+  String get tdType => "deviceTokenMicrosoftPush";
 
   String channelUri;
 
@@ -9301,7 +9908,8 @@ class DeviceTokenMicrosoftPush extends DeviceToken {
 
 @reflector
 class DeviceTokenMicrosoftPushVoIP extends DeviceToken {
-  static const TYPE = "deviceTokenMicrosoftPushVoIP";
+  @override
+  String get tdType => "deviceTokenMicrosoftPushVoIP";
 
   String channelUri;
 
@@ -9317,7 +9925,8 @@ class DeviceTokenMicrosoftPushVoIP extends DeviceToken {
 
 @reflector
 class DeviceTokenWebPush extends DeviceToken {
-  static const TYPE = "deviceTokenWebPush";
+  @override
+  String get tdType => "deviceTokenWebPush";
 
   String endpoint;
   String p256dhBase64url;
@@ -9339,7 +9948,8 @@ class DeviceTokenWebPush extends DeviceToken {
 
 @reflector
 class DeviceTokenSimplePush extends DeviceToken {
-  static const TYPE = "deviceTokenSimplePush";
+  @override
+  String get tdType => "deviceTokenSimplePush";
 
   String endpoint;
 
@@ -9355,7 +9965,8 @@ class DeviceTokenSimplePush extends DeviceToken {
 
 @reflector
 class DeviceTokenUbuntuPush extends DeviceToken {
-  static const TYPE = "deviceTokenUbuntuPush";
+  @override
+  String get tdType => "deviceTokenUbuntuPush";
 
   String token;
 
@@ -9371,7 +9982,8 @@ class DeviceTokenUbuntuPush extends DeviceToken {
 
 @reflector
 class DeviceTokenBlackBerryPush extends DeviceToken {
-  static const TYPE = "deviceTokenBlackBerryPush";
+  @override
+  String get tdType => "deviceTokenBlackBerryPush";
 
   String token;
 
@@ -9387,7 +9999,8 @@ class DeviceTokenBlackBerryPush extends DeviceToken {
 
 @reflector
 class DeviceTokenTizenPush extends DeviceToken {
-  static const TYPE = "deviceTokenTizenPush";
+  @override
+  String get tdType => "deviceTokenTizenPush";
 
   String regId;
 
@@ -9403,7 +10016,8 @@ class DeviceTokenTizenPush extends DeviceToken {
 
 @reflector
 class PushReceiverId extends TdObject {
-  static const TYPE = "pushReceiverId";
+  @override
+  String get tdType => "pushReceiverId";
 
   int id;
 
@@ -9421,7 +10035,8 @@ abstract class BackgroundType extends TdObject {}
 
 @reflector
 class BackgroundTypeWallpaper extends BackgroundType {
-  static const TYPE = "backgroundTypeWallpaper";
+  @override
+  String get tdType => "backgroundTypeWallpaper";
 
   bool isBlurred;
   bool isMoving;
@@ -9440,7 +10055,8 @@ class BackgroundTypeWallpaper extends BackgroundType {
 
 @reflector
 class BackgroundTypePattern extends BackgroundType {
-  static const TYPE = "backgroundTypePattern";
+  @override
+  String get tdType => "backgroundTypePattern";
 
   bool isMoving;
   int color;
@@ -9462,7 +10078,8 @@ class BackgroundTypePattern extends BackgroundType {
 
 @reflector
 class BackgroundTypeSolid extends BackgroundType {
-  static const TYPE = "backgroundTypeSolid";
+  @override
+  String get tdType => "backgroundTypeSolid";
 
   int color;
 
@@ -9478,7 +10095,8 @@ class BackgroundTypeSolid extends BackgroundType {
 
 @reflector
 class Background extends TdObject {
-  static const TYPE = "background";
+  @override
+  String get tdType => "background";
 
   int id;
   bool isDefault;
@@ -9509,7 +10127,8 @@ class Background extends TdObject {
 
 @reflector
 class Backgrounds extends TdObject {
-  static const TYPE = "backgrounds";
+  @override
+  String get tdType => "backgrounds";
 
   List<Background> backgrounds;
 
@@ -9527,7 +10146,8 @@ abstract class InputBackground extends TdObject {}
 
 @reflector
 class InputBackgroundLocal extends InputBackground {
-  static const TYPE = "inputBackgroundLocal";
+  @override
+  String get tdType => "inputBackgroundLocal";
 
   InputFile background;
 
@@ -9543,7 +10163,8 @@ class InputBackgroundLocal extends InputBackground {
 
 @reflector
 class InputBackgroundRemote extends InputBackground {
-  static const TYPE = "inputBackgroundRemote";
+  @override
+  String get tdType => "inputBackgroundRemote";
 
   int backgroundId;
 
@@ -9559,7 +10180,8 @@ class InputBackgroundRemote extends InputBackground {
 
 @reflector
 class Hashtags extends TdObject {
-  static const TYPE = "hashtags";
+  @override
+  String get tdType => "hashtags";
 
   List<String> hashtags;
 
@@ -9577,54 +10199,65 @@ abstract class CheckChatUsernameResult extends TdObject {}
 
 @reflector
 class CheckChatUsernameResultOk extends CheckChatUsernameResult {
-  static const TYPE = "checkChatUsernameResultOk";
-
+  @override
+  String get tdType => "checkChatUsernameResultOk";
 
   @override
   Map<String, dynamic> get params => {};
-  CheckChatUsernameResultOk(Map<String, dynamic> json);}
+
+  CheckChatUsernameResultOk(Map<String, dynamic> json);
+}
 
 @reflector
 class CheckChatUsernameResultUsernameInvalid extends CheckChatUsernameResult {
-  static const TYPE = "checkChatUsernameResultUsernameInvalid";
-
+  @override
+  String get tdType => "checkChatUsernameResultUsernameInvalid";
 
   @override
   Map<String, dynamic> get params => {};
-  CheckChatUsernameResultUsernameInvalid(Map<String, dynamic> json);}
+
+  CheckChatUsernameResultUsernameInvalid(Map<String, dynamic> json);
+}
 
 @reflector
 class CheckChatUsernameResultUsernameOccupied extends CheckChatUsernameResult {
-  static const TYPE = "checkChatUsernameResultUsernameOccupied";
-
+  @override
+  String get tdType => "checkChatUsernameResultUsernameOccupied";
 
   @override
   Map<String, dynamic> get params => {};
-  CheckChatUsernameResultUsernameOccupied(Map<String, dynamic> json);}
+
+  CheckChatUsernameResultUsernameOccupied(Map<String, dynamic> json);
+}
 
 @reflector
 class CheckChatUsernameResultPublicChatsTooMuch extends CheckChatUsernameResult {
-  static const TYPE = "checkChatUsernameResultPublicChatsTooMuch";
-
+  @override
+  String get tdType => "checkChatUsernameResultPublicChatsTooMuch";
 
   @override
   Map<String, dynamic> get params => {};
-  CheckChatUsernameResultPublicChatsTooMuch(Map<String, dynamic> json);}
+
+  CheckChatUsernameResultPublicChatsTooMuch(Map<String, dynamic> json);
+}
 
 @reflector
 class CheckChatUsernameResultPublicGroupsUnavailable extends CheckChatUsernameResult {
-  static const TYPE = "checkChatUsernameResultPublicGroupsUnavailable";
-
+  @override
+  String get tdType => "checkChatUsernameResultPublicGroupsUnavailable";
 
   @override
   Map<String, dynamic> get params => {};
-  CheckChatUsernameResultPublicGroupsUnavailable(Map<String, dynamic> json);}
+
+  CheckChatUsernameResultPublicGroupsUnavailable(Map<String, dynamic> json);
+}
 
 abstract class PushMessageContent extends TdObject {}
 
 @reflector
 class PushMessageContentHidden extends PushMessageContent {
-  static const TYPE = "pushMessageContentHidden";
+  @override
+  String get tdType => "pushMessageContentHidden";
 
   bool isPinned;
 
@@ -9640,7 +10273,8 @@ class PushMessageContentHidden extends PushMessageContent {
 
 @reflector
 class PushMessageContentAnimation extends PushMessageContent {
-  static const TYPE = "pushMessageContentAnimation";
+  @override
+  String get tdType => "pushMessageContentAnimation";
 
   Animation animation;
   String caption;
@@ -9662,7 +10296,8 @@ class PushMessageContentAnimation extends PushMessageContent {
 
 @reflector
 class PushMessageContentAudio extends PushMessageContent {
-  static const TYPE = "pushMessageContentAudio";
+  @override
+  String get tdType => "pushMessageContentAudio";
 
   Audio audio;
   bool isPinned;
@@ -9681,7 +10316,8 @@ class PushMessageContentAudio extends PushMessageContent {
 
 @reflector
 class PushMessageContentContact extends PushMessageContent {
-  static const TYPE = "pushMessageContentContact";
+  @override
+  String get tdType => "pushMessageContentContact";
 
   String name;
   bool isPinned;
@@ -9700,16 +10336,19 @@ class PushMessageContentContact extends PushMessageContent {
 
 @reflector
 class PushMessageContentContactRegistered extends PushMessageContent {
-  static const TYPE = "pushMessageContentContactRegistered";
-
+  @override
+  String get tdType => "pushMessageContentContactRegistered";
 
   @override
   Map<String, dynamic> get params => {};
-  PushMessageContentContactRegistered(Map<String, dynamic> json);}
+
+  PushMessageContentContactRegistered(Map<String, dynamic> json);
+}
 
 @reflector
 class PushMessageContentDocument extends PushMessageContent {
-  static const TYPE = "pushMessageContentDocument";
+  @override
+  String get tdType => "pushMessageContentDocument";
 
   Document document;
   bool isPinned;
@@ -9728,7 +10367,8 @@ class PushMessageContentDocument extends PushMessageContent {
 
 @reflector
 class PushMessageContentGame extends PushMessageContent {
-  static const TYPE = "pushMessageContentGame";
+  @override
+  String get tdType => "pushMessageContentGame";
 
   String title;
   bool isPinned;
@@ -9747,7 +10387,8 @@ class PushMessageContentGame extends PushMessageContent {
 
 @reflector
 class PushMessageContentGameScore extends PushMessageContent {
-  static const TYPE = "pushMessageContentGameScore";
+  @override
+  String get tdType => "pushMessageContentGameScore";
 
   String title;
   int score;
@@ -9769,7 +10410,8 @@ class PushMessageContentGameScore extends PushMessageContent {
 
 @reflector
 class PushMessageContentInvoice extends PushMessageContent {
-  static const TYPE = "pushMessageContentInvoice";
+  @override
+  String get tdType => "pushMessageContentInvoice";
 
   String price;
   bool isPinned;
@@ -9788,7 +10430,8 @@ class PushMessageContentInvoice extends PushMessageContent {
 
 @reflector
 class PushMessageContentLocation extends PushMessageContent {
-  static const TYPE = "pushMessageContentLocation";
+  @override
+  String get tdType => "pushMessageContentLocation";
 
   bool isLive;
   bool isPinned;
@@ -9807,7 +10450,8 @@ class PushMessageContentLocation extends PushMessageContent {
 
 @reflector
 class PushMessageContentPhoto extends PushMessageContent {
-  static const TYPE = "pushMessageContentPhoto";
+  @override
+  String get tdType => "pushMessageContentPhoto";
 
   Photo photo;
   String caption;
@@ -9832,7 +10476,8 @@ class PushMessageContentPhoto extends PushMessageContent {
 
 @reflector
 class PushMessageContentPoll extends PushMessageContent {
-  static const TYPE = "pushMessageContentPoll";
+  @override
+  String get tdType => "pushMessageContentPoll";
 
   String question;
   bool isPinned;
@@ -9851,16 +10496,19 @@ class PushMessageContentPoll extends PushMessageContent {
 
 @reflector
 class PushMessageContentScreenshotTaken extends PushMessageContent {
-  static const TYPE = "pushMessageContentScreenshotTaken";
-
+  @override
+  String get tdType => "pushMessageContentScreenshotTaken";
 
   @override
   Map<String, dynamic> get params => {};
-  PushMessageContentScreenshotTaken(Map<String, dynamic> json);}
+
+  PushMessageContentScreenshotTaken(Map<String, dynamic> json);
+}
 
 @reflector
 class PushMessageContentSticker extends PushMessageContent {
-  static const TYPE = "pushMessageContentSticker";
+  @override
+  String get tdType => "pushMessageContentSticker";
 
   Sticker sticker;
   String emoji;
@@ -9882,7 +10530,8 @@ class PushMessageContentSticker extends PushMessageContent {
 
 @reflector
 class PushMessageContentText extends PushMessageContent {
-  static const TYPE = "pushMessageContentText";
+  @override
+  String get tdType => "pushMessageContentText";
 
   String text;
   bool isPinned;
@@ -9901,7 +10550,8 @@ class PushMessageContentText extends PushMessageContent {
 
 @reflector
 class PushMessageContentVideo extends PushMessageContent {
-  static const TYPE = "pushMessageContentVideo";
+  @override
+  String get tdType => "pushMessageContentVideo";
 
   Video video;
   String caption;
@@ -9926,7 +10576,8 @@ class PushMessageContentVideo extends PushMessageContent {
 
 @reflector
 class PushMessageContentVideoNote extends PushMessageContent {
-  static const TYPE = "pushMessageContentVideoNote";
+  @override
+  String get tdType => "pushMessageContentVideoNote";
 
   VideoNote videoNote;
   bool isPinned;
@@ -9945,7 +10596,8 @@ class PushMessageContentVideoNote extends PushMessageContent {
 
 @reflector
 class PushMessageContentVoiceNote extends PushMessageContent {
-  static const TYPE = "pushMessageContentVoiceNote";
+  @override
+  String get tdType => "pushMessageContentVoiceNote";
 
   VoiceNote voiceNote;
   bool isPinned;
@@ -9964,16 +10616,19 @@ class PushMessageContentVoiceNote extends PushMessageContent {
 
 @reflector
 class PushMessageContentBasicGroupChatCreate extends PushMessageContent {
-  static const TYPE = "pushMessageContentBasicGroupChatCreate";
-
+  @override
+  String get tdType => "pushMessageContentBasicGroupChatCreate";
 
   @override
   Map<String, dynamic> get params => {};
-  PushMessageContentBasicGroupChatCreate(Map<String, dynamic> json);}
+
+  PushMessageContentBasicGroupChatCreate(Map<String, dynamic> json);
+}
 
 @reflector
 class PushMessageContentChatAddMembers extends PushMessageContent {
-  static const TYPE = "pushMessageContentChatAddMembers";
+  @override
+  String get tdType => "pushMessageContentChatAddMembers";
 
   String memberName;
   bool isCurrentUser;
@@ -9995,16 +10650,19 @@ class PushMessageContentChatAddMembers extends PushMessageContent {
 
 @reflector
 class PushMessageContentChatChangePhoto extends PushMessageContent {
-  static const TYPE = "pushMessageContentChatChangePhoto";
-
+  @override
+  String get tdType => "pushMessageContentChatChangePhoto";
 
   @override
   Map<String, dynamic> get params => {};
-  PushMessageContentChatChangePhoto(Map<String, dynamic> json);}
+
+  PushMessageContentChatChangePhoto(Map<String, dynamic> json);
+}
 
 @reflector
 class PushMessageContentChatChangeTitle extends PushMessageContent {
-  static const TYPE = "pushMessageContentChatChangeTitle";
+  @override
+  String get tdType => "pushMessageContentChatChangeTitle";
 
   String title;
 
@@ -10020,7 +10678,8 @@ class PushMessageContentChatChangeTitle extends PushMessageContent {
 
 @reflector
 class PushMessageContentChatDeleteMember extends PushMessageContent {
-  static const TYPE = "pushMessageContentChatDeleteMember";
+  @override
+  String get tdType => "pushMessageContentChatDeleteMember";
 
   String memberName;
   bool isCurrentUser;
@@ -10042,16 +10701,19 @@ class PushMessageContentChatDeleteMember extends PushMessageContent {
 
 @reflector
 class PushMessageContentChatJoinByLink extends PushMessageContent {
-  static const TYPE = "pushMessageContentChatJoinByLink";
-
+  @override
+  String get tdType => "pushMessageContentChatJoinByLink";
 
   @override
   Map<String, dynamic> get params => {};
-  PushMessageContentChatJoinByLink(Map<String, dynamic> json);}
+
+  PushMessageContentChatJoinByLink(Map<String, dynamic> json);
+}
 
 @reflector
 class PushMessageContentMessageForwards extends PushMessageContent {
-  static const TYPE = "pushMessageContentMessageForwards";
+  @override
+  String get tdType => "pushMessageContentMessageForwards";
 
   int totalCount;
 
@@ -10067,7 +10729,8 @@ class PushMessageContentMessageForwards extends PushMessageContent {
 
 @reflector
 class PushMessageContentMediaAlbum extends PushMessageContent {
-  static const TYPE = "pushMessageContentMediaAlbum";
+  @override
+  String get tdType => "pushMessageContentMediaAlbum";
 
   int totalCount;
   bool hasPhotos;
@@ -10091,7 +10754,8 @@ abstract class NotificationType extends TdObject {}
 
 @reflector
 class NotificationTypeNewMessage extends NotificationType {
-  static const TYPE = "notificationTypeNewMessage";
+  @override
+  String get tdType => "notificationTypeNewMessage";
 
   Message message;
 
@@ -10107,16 +10771,19 @@ class NotificationTypeNewMessage extends NotificationType {
 
 @reflector
 class NotificationTypeNewSecretChat extends NotificationType {
-  static const TYPE = "notificationTypeNewSecretChat";
-
+  @override
+  String get tdType => "notificationTypeNewSecretChat";
 
   @override
   Map<String, dynamic> get params => {};
-  NotificationTypeNewSecretChat(Map<String, dynamic> json);}
+
+  NotificationTypeNewSecretChat(Map<String, dynamic> json);
+}
 
 @reflector
 class NotificationTypeNewCall extends NotificationType {
-  static const TYPE = "notificationTypeNewCall";
+  @override
+  String get tdType => "notificationTypeNewCall";
 
   int callId;
 
@@ -10132,7 +10799,8 @@ class NotificationTypeNewCall extends NotificationType {
 
 @reflector
 class NotificationTypeNewPushMessage extends NotificationType {
-  static const TYPE = "notificationTypeNewPushMessage";
+  @override
+  String get tdType => "notificationTypeNewPushMessage";
 
   int messageId;
   int senderUserId;
@@ -10156,43 +10824,52 @@ abstract class NotificationGroupType extends TdObject {}
 
 @reflector
 class NotificationGroupTypeMessages extends NotificationGroupType {
-  static const TYPE = "notificationGroupTypeMessages";
-
+  @override
+  String get tdType => "notificationGroupTypeMessages";
 
   @override
   Map<String, dynamic> get params => {};
-  NotificationGroupTypeMessages(Map<String, dynamic> json);}
+
+  NotificationGroupTypeMessages(Map<String, dynamic> json);
+}
 
 @reflector
 class NotificationGroupTypeMentions extends NotificationGroupType {
-  static const TYPE = "notificationGroupTypeMentions";
-
+  @override
+  String get tdType => "notificationGroupTypeMentions";
 
   @override
   Map<String, dynamic> get params => {};
-  NotificationGroupTypeMentions(Map<String, dynamic> json);}
+
+  NotificationGroupTypeMentions(Map<String, dynamic> json);
+}
 
 @reflector
 class NotificationGroupTypeSecretChat extends NotificationGroupType {
-  static const TYPE = "notificationGroupTypeSecretChat";
-
+  @override
+  String get tdType => "notificationGroupTypeSecretChat";
 
   @override
   Map<String, dynamic> get params => {};
-  NotificationGroupTypeSecretChat(Map<String, dynamic> json);}
+
+  NotificationGroupTypeSecretChat(Map<String, dynamic> json);
+}
 
 @reflector
 class NotificationGroupTypeCalls extends NotificationGroupType {
-  static const TYPE = "notificationGroupTypeCalls";
-
+  @override
+  String get tdType => "notificationGroupTypeCalls";
 
   @override
   Map<String, dynamic> get params => {};
-  NotificationGroupTypeCalls(Map<String, dynamic> json);}
+
+  NotificationGroupTypeCalls(Map<String, dynamic> json);
+}
 
 @reflector
 class Notification extends TdObject {
-  static const TYPE = "notification";
+  @override
+  String get tdType => "notification";
 
   int id;
   int date;
@@ -10217,7 +10894,8 @@ class Notification extends TdObject {
 
 @reflector
 class NotificationGroup extends TdObject {
-  static const TYPE = "notificationGroup";
+  @override
+  String get tdType => "notificationGroup";
 
   int id;
   NotificationGroupType type;
@@ -10247,7 +10925,8 @@ abstract class OptionValue extends TdObject {}
 
 @reflector
 class OptionValueBoolean extends OptionValue {
-  static const TYPE = "optionValueBoolean";
+  @override
+  String get tdType => "optionValueBoolean";
 
   bool value;
 
@@ -10263,16 +10942,19 @@ class OptionValueBoolean extends OptionValue {
 
 @reflector
 class OptionValueEmpty extends OptionValue {
-  static const TYPE = "optionValueEmpty";
-
+  @override
+  String get tdType => "optionValueEmpty";
 
   @override
   Map<String, dynamic> get params => {};
-  OptionValueEmpty(Map<String, dynamic> json);}
+
+  OptionValueEmpty(Map<String, dynamic> json);
+}
 
 @reflector
 class OptionValueInteger extends OptionValue {
-  static const TYPE = "optionValueInteger";
+  @override
+  String get tdType => "optionValueInteger";
 
   int value;
 
@@ -10288,7 +10970,8 @@ class OptionValueInteger extends OptionValue {
 
 @reflector
 class OptionValueString extends OptionValue {
-  static const TYPE = "optionValueString";
+  @override
+  String get tdType => "optionValueString";
 
   String value;
 
@@ -10304,7 +10987,8 @@ class OptionValueString extends OptionValue {
 
 @reflector
 class JsonObjectMember extends TdObject {
-  static const TYPE = "jsonObjectMember";
+  @override
+  String get tdType => "jsonObjectMember";
 
   String key;
   JsonValue value;
@@ -10325,16 +11009,19 @@ abstract class JsonValue extends TdObject {}
 
 @reflector
 class JsonValueNull extends JsonValue {
-  static const TYPE = "jsonValueNull";
-
+  @override
+  String get tdType => "jsonValueNull";
 
   @override
   Map<String, dynamic> get params => {};
-  JsonValueNull(Map<String, dynamic> json);}
+
+  JsonValueNull(Map<String, dynamic> json);
+}
 
 @reflector
 class JsonValueBoolean extends JsonValue {
-  static const TYPE = "jsonValueBoolean";
+  @override
+  String get tdType => "jsonValueBoolean";
 
   bool value;
 
@@ -10350,7 +11037,8 @@ class JsonValueBoolean extends JsonValue {
 
 @reflector
 class JsonValueNumber extends JsonValue {
-  static const TYPE = "jsonValueNumber";
+  @override
+  String get tdType => "jsonValueNumber";
 
   double value;
 
@@ -10366,7 +11054,8 @@ class JsonValueNumber extends JsonValue {
 
 @reflector
 class JsonValueString extends JsonValue {
-  static const TYPE = "jsonValueString";
+  @override
+  String get tdType => "jsonValueString";
 
   String value;
 
@@ -10382,7 +11071,8 @@ class JsonValueString extends JsonValue {
 
 @reflector
 class JsonValueArray extends JsonValue {
-  static const TYPE = "jsonValueArray";
+  @override
+  String get tdType => "jsonValueArray";
 
   List<JsonValue> values;
 
@@ -10398,7 +11088,8 @@ class JsonValueArray extends JsonValue {
 
 @reflector
 class JsonValueObject extends JsonValue {
-  static const TYPE = "jsonValueObject";
+  @override
+  String get tdType => "jsonValueObject";
 
   List<JsonObjectMember> members;
 
@@ -10416,25 +11107,30 @@ abstract class UserPrivacySettingRule extends TdObject {}
 
 @reflector
 class UserPrivacySettingRuleAllowAll extends UserPrivacySettingRule {
-  static const TYPE = "userPrivacySettingRuleAllowAll";
-
+  @override
+  String get tdType => "userPrivacySettingRuleAllowAll";
 
   @override
   Map<String, dynamic> get params => {};
-  UserPrivacySettingRuleAllowAll(Map<String, dynamic> json);}
+
+  UserPrivacySettingRuleAllowAll(Map<String, dynamic> json);
+}
 
 @reflector
 class UserPrivacySettingRuleAllowContacts extends UserPrivacySettingRule {
-  static const TYPE = "userPrivacySettingRuleAllowContacts";
-
+  @override
+  String get tdType => "userPrivacySettingRuleAllowContacts";
 
   @override
   Map<String, dynamic> get params => {};
-  UserPrivacySettingRuleAllowContacts(Map<String, dynamic> json);}
+
+  UserPrivacySettingRuleAllowContacts(Map<String, dynamic> json);
+}
 
 @reflector
 class UserPrivacySettingRuleAllowUsers extends UserPrivacySettingRule {
-  static const TYPE = "userPrivacySettingRuleAllowUsers";
+  @override
+  String get tdType => "userPrivacySettingRuleAllowUsers";
 
   List<int> userIds;
 
@@ -10450,25 +11146,30 @@ class UserPrivacySettingRuleAllowUsers extends UserPrivacySettingRule {
 
 @reflector
 class UserPrivacySettingRuleRestrictAll extends UserPrivacySettingRule {
-  static const TYPE = "userPrivacySettingRuleRestrictAll";
-
+  @override
+  String get tdType => "userPrivacySettingRuleRestrictAll";
 
   @override
   Map<String, dynamic> get params => {};
-  UserPrivacySettingRuleRestrictAll(Map<String, dynamic> json);}
+
+  UserPrivacySettingRuleRestrictAll(Map<String, dynamic> json);
+}
 
 @reflector
 class UserPrivacySettingRuleRestrictContacts extends UserPrivacySettingRule {
-  static const TYPE = "userPrivacySettingRuleRestrictContacts";
-
+  @override
+  String get tdType => "userPrivacySettingRuleRestrictContacts";
 
   @override
   Map<String, dynamic> get params => {};
-  UserPrivacySettingRuleRestrictContacts(Map<String, dynamic> json);}
+
+  UserPrivacySettingRuleRestrictContacts(Map<String, dynamic> json);
+}
 
 @reflector
 class UserPrivacySettingRuleRestrictUsers extends UserPrivacySettingRule {
-  static const TYPE = "userPrivacySettingRuleRestrictUsers";
+  @override
+  String get tdType => "userPrivacySettingRuleRestrictUsers";
 
   List<int> userIds;
 
@@ -10484,7 +11185,8 @@ class UserPrivacySettingRuleRestrictUsers extends UserPrivacySettingRule {
 
 @reflector
 class UserPrivacySettingRules extends TdObject {
-  static const TYPE = "userPrivacySettingRules";
+  @override
+  String get tdType => "userPrivacySettingRules";
 
   List<UserPrivacySettingRule> rules;
 
@@ -10502,61 +11204,74 @@ abstract class UserPrivacySetting extends TdObject {}
 
 @reflector
 class UserPrivacySettingShowStatus extends UserPrivacySetting {
-  static const TYPE = "userPrivacySettingShowStatus";
-
+  @override
+  String get tdType => "userPrivacySettingShowStatus";
 
   @override
   Map<String, dynamic> get params => {};
-  UserPrivacySettingShowStatus(Map<String, dynamic> json);}
+
+  UserPrivacySettingShowStatus(Map<String, dynamic> json);
+}
 
 @reflector
 class UserPrivacySettingShowProfilePhoto extends UserPrivacySetting {
-  static const TYPE = "userPrivacySettingShowProfilePhoto";
-
+  @override
+  String get tdType => "userPrivacySettingShowProfilePhoto";
 
   @override
   Map<String, dynamic> get params => {};
-  UserPrivacySettingShowProfilePhoto(Map<String, dynamic> json);}
+
+  UserPrivacySettingShowProfilePhoto(Map<String, dynamic> json);
+}
 
 @reflector
 class UserPrivacySettingShowLinkInForwardedMessages extends UserPrivacySetting {
-  static const TYPE = "userPrivacySettingShowLinkInForwardedMessages";
-
+  @override
+  String get tdType => "userPrivacySettingShowLinkInForwardedMessages";
 
   @override
   Map<String, dynamic> get params => {};
-  UserPrivacySettingShowLinkInForwardedMessages(Map<String, dynamic> json);}
+
+  UserPrivacySettingShowLinkInForwardedMessages(Map<String, dynamic> json);
+}
 
 @reflector
 class UserPrivacySettingAllowChatInvites extends UserPrivacySetting {
-  static const TYPE = "userPrivacySettingAllowChatInvites";
-
+  @override
+  String get tdType => "userPrivacySettingAllowChatInvites";
 
   @override
   Map<String, dynamic> get params => {};
-  UserPrivacySettingAllowChatInvites(Map<String, dynamic> json);}
+
+  UserPrivacySettingAllowChatInvites(Map<String, dynamic> json);
+}
 
 @reflector
 class UserPrivacySettingAllowCalls extends UserPrivacySetting {
-  static const TYPE = "userPrivacySettingAllowCalls";
-
+  @override
+  String get tdType => "userPrivacySettingAllowCalls";
 
   @override
   Map<String, dynamic> get params => {};
-  UserPrivacySettingAllowCalls(Map<String, dynamic> json);}
+
+  UserPrivacySettingAllowCalls(Map<String, dynamic> json);
+}
 
 @reflector
 class UserPrivacySettingAllowPeerToPeerCalls extends UserPrivacySetting {
-  static const TYPE = "userPrivacySettingAllowPeerToPeerCalls";
-
+  @override
+  String get tdType => "userPrivacySettingAllowPeerToPeerCalls";
 
   @override
   Map<String, dynamic> get params => {};
-  UserPrivacySettingAllowPeerToPeerCalls(Map<String, dynamic> json);}
+
+  UserPrivacySettingAllowPeerToPeerCalls(Map<String, dynamic> json);
+}
 
 @reflector
 class AccountTtl extends TdObject {
-  static const TYPE = "accountTtl";
+  @override
+  String get tdType => "accountTtl";
 
   int days;
 
@@ -10572,7 +11287,8 @@ class AccountTtl extends TdObject {
 
 @reflector
 class Session extends TdObject {
-  static const TYPE = "session";
+  @override
+  String get tdType => "session";
 
   int id;
   bool isCurrent;
@@ -10630,7 +11346,8 @@ class Session extends TdObject {
 
 @reflector
 class Sessions extends TdObject {
-  static const TYPE = "sessions";
+  @override
+  String get tdType => "sessions";
 
   List<Session> sessions;
 
@@ -10646,7 +11363,8 @@ class Sessions extends TdObject {
 
 @reflector
 class ConnectedWebsite extends TdObject {
-  static const TYPE = "connectedWebsite";
+  @override
+  String get tdType => "connectedWebsite";
 
   int id;
   String domainName;
@@ -10686,7 +11404,8 @@ class ConnectedWebsite extends TdObject {
 
 @reflector
 class ConnectedWebsites extends TdObject {
-  static const TYPE = "connectedWebsites";
+  @override
+  String get tdType => "connectedWebsites";
 
   List<ConnectedWebsite> websites;
 
@@ -10702,7 +11421,8 @@ class ConnectedWebsites extends TdObject {
 
 @reflector
 class ChatReportSpamState extends TdObject {
-  static const TYPE = "chatReportSpamState";
+  @override
+  String get tdType => "chatReportSpamState";
 
   bool canReportSpam;
 
@@ -10720,52 +11440,63 @@ abstract class ChatReportReason extends TdObject {}
 
 @reflector
 class ChatReportReasonSpam extends ChatReportReason {
-  static const TYPE = "chatReportReasonSpam";
-
+  @override
+  String get tdType => "chatReportReasonSpam";
 
   @override
   Map<String, dynamic> get params => {};
-  ChatReportReasonSpam(Map<String, dynamic> json);}
+
+  ChatReportReasonSpam(Map<String, dynamic> json);
+}
 
 @reflector
 class ChatReportReasonViolence extends ChatReportReason {
-  static const TYPE = "chatReportReasonViolence";
-
+  @override
+  String get tdType => "chatReportReasonViolence";
 
   @override
   Map<String, dynamic> get params => {};
-  ChatReportReasonViolence(Map<String, dynamic> json);}
+
+  ChatReportReasonViolence(Map<String, dynamic> json);
+}
 
 @reflector
 class ChatReportReasonPornography extends ChatReportReason {
-  static const TYPE = "chatReportReasonPornography";
-
+  @override
+  String get tdType => "chatReportReasonPornography";
 
   @override
   Map<String, dynamic> get params => {};
-  ChatReportReasonPornography(Map<String, dynamic> json);}
+
+  ChatReportReasonPornography(Map<String, dynamic> json);
+}
 
 @reflector
 class ChatReportReasonChildAbuse extends ChatReportReason {
-  static const TYPE = "chatReportReasonChildAbuse";
-
+  @override
+  String get tdType => "chatReportReasonChildAbuse";
 
   @override
   Map<String, dynamic> get params => {};
-  ChatReportReasonChildAbuse(Map<String, dynamic> json);}
+
+  ChatReportReasonChildAbuse(Map<String, dynamic> json);
+}
 
 @reflector
 class ChatReportReasonCopyright extends ChatReportReason {
-  static const TYPE = "chatReportReasonCopyright";
-
+  @override
+  String get tdType => "chatReportReasonCopyright";
 
   @override
   Map<String, dynamic> get params => {};
-  ChatReportReasonCopyright(Map<String, dynamic> json);}
+
+  ChatReportReasonCopyright(Map<String, dynamic> json);
+}
 
 @reflector
 class ChatReportReasonCustom extends ChatReportReason {
-  static const TYPE = "chatReportReasonCustom";
+  @override
+  String get tdType => "chatReportReasonCustom";
 
   String text;
 
@@ -10781,7 +11512,8 @@ class ChatReportReasonCustom extends ChatReportReason {
 
 @reflector
 class PublicMessageLink extends TdObject {
-  static const TYPE = "publicMessageLink";
+  @override
+  String get tdType => "publicMessageLink";
 
   String link;
   String html;
@@ -10800,7 +11532,8 @@ class PublicMessageLink extends TdObject {
 
 @reflector
 class MessageLinkInfo extends TdObject {
-  static const TYPE = "messageLinkInfo";
+  @override
+  String get tdType => "messageLinkInfo";
 
   bool isPublic;
   int chatId;
@@ -10825,7 +11558,8 @@ class MessageLinkInfo extends TdObject {
 
 @reflector
 class FilePart extends TdObject {
-  static const TYPE = "filePart";
+  @override
+  String get tdType => "filePart";
 
   List<int> data;
 
@@ -10843,151 +11577,184 @@ abstract class FileType extends TdObject {}
 
 @reflector
 class FileTypeNone extends FileType {
-  static const TYPE = "fileTypeNone";
-
+  @override
+  String get tdType => "fileTypeNone";
 
   @override
   Map<String, dynamic> get params => {};
-  FileTypeNone(Map<String, dynamic> json);}
+
+  FileTypeNone(Map<String, dynamic> json);
+}
 
 @reflector
 class FileTypeAnimation extends FileType {
-  static const TYPE = "fileTypeAnimation";
-
+  @override
+  String get tdType => "fileTypeAnimation";
 
   @override
   Map<String, dynamic> get params => {};
-  FileTypeAnimation(Map<String, dynamic> json);}
+
+  FileTypeAnimation(Map<String, dynamic> json);
+}
 
 @reflector
 class FileTypeAudio extends FileType {
-  static const TYPE = "fileTypeAudio";
-
+  @override
+  String get tdType => "fileTypeAudio";
 
   @override
   Map<String, dynamic> get params => {};
-  FileTypeAudio(Map<String, dynamic> json);}
+
+  FileTypeAudio(Map<String, dynamic> json);
+}
 
 @reflector
 class FileTypeDocument extends FileType {
-  static const TYPE = "fileTypeDocument";
-
+  @override
+  String get tdType => "fileTypeDocument";
 
   @override
   Map<String, dynamic> get params => {};
-  FileTypeDocument(Map<String, dynamic> json);}
+
+  FileTypeDocument(Map<String, dynamic> json);
+}
 
 @reflector
 class FileTypePhoto extends FileType {
-  static const TYPE = "fileTypePhoto";
-
+  @override
+  String get tdType => "fileTypePhoto";
 
   @override
   Map<String, dynamic> get params => {};
-  FileTypePhoto(Map<String, dynamic> json);}
+
+  FileTypePhoto(Map<String, dynamic> json);
+}
 
 @reflector
 class FileTypeProfilePhoto extends FileType {
-  static const TYPE = "fileTypeProfilePhoto";
-
+  @override
+  String get tdType => "fileTypeProfilePhoto";
 
   @override
   Map<String, dynamic> get params => {};
-  FileTypeProfilePhoto(Map<String, dynamic> json);}
+
+  FileTypeProfilePhoto(Map<String, dynamic> json);
+}
 
 @reflector
 class FileTypeSecret extends FileType {
-  static const TYPE = "fileTypeSecret";
-
+  @override
+  String get tdType => "fileTypeSecret";
 
   @override
   Map<String, dynamic> get params => {};
-  FileTypeSecret(Map<String, dynamic> json);}
+
+  FileTypeSecret(Map<String, dynamic> json);
+}
 
 @reflector
 class FileTypeSecretThumbnail extends FileType {
-  static const TYPE = "fileTypeSecretThumbnail";
-
+  @override
+  String get tdType => "fileTypeSecretThumbnail";
 
   @override
   Map<String, dynamic> get params => {};
-  FileTypeSecretThumbnail(Map<String, dynamic> json);}
+
+  FileTypeSecretThumbnail(Map<String, dynamic> json);
+}
 
 @reflector
 class FileTypeSecure extends FileType {
-  static const TYPE = "fileTypeSecure";
-
+  @override
+  String get tdType => "fileTypeSecure";
 
   @override
   Map<String, dynamic> get params => {};
-  FileTypeSecure(Map<String, dynamic> json);}
+
+  FileTypeSecure(Map<String, dynamic> json);
+}
 
 @reflector
 class FileTypeSticker extends FileType {
-  static const TYPE = "fileTypeSticker";
-
+  @override
+  String get tdType => "fileTypeSticker";
 
   @override
   Map<String, dynamic> get params => {};
-  FileTypeSticker(Map<String, dynamic> json);}
+
+  FileTypeSticker(Map<String, dynamic> json);
+}
 
 @reflector
 class FileTypeThumbnail extends FileType {
-  static const TYPE = "fileTypeThumbnail";
-
+  @override
+  String get tdType => "fileTypeThumbnail";
 
   @override
   Map<String, dynamic> get params => {};
-  FileTypeThumbnail(Map<String, dynamic> json);}
+
+  FileTypeThumbnail(Map<String, dynamic> json);
+}
 
 @reflector
 class FileTypeUnknown extends FileType {
-  static const TYPE = "fileTypeUnknown";
-
+  @override
+  String get tdType => "fileTypeUnknown";
 
   @override
   Map<String, dynamic> get params => {};
-  FileTypeUnknown(Map<String, dynamic> json);}
+
+  FileTypeUnknown(Map<String, dynamic> json);
+}
 
 @reflector
 class FileTypeVideo extends FileType {
-  static const TYPE = "fileTypeVideo";
-
+  @override
+  String get tdType => "fileTypeVideo";
 
   @override
   Map<String, dynamic> get params => {};
-  FileTypeVideo(Map<String, dynamic> json);}
+
+  FileTypeVideo(Map<String, dynamic> json);
+}
 
 @reflector
 class FileTypeVideoNote extends FileType {
-  static const TYPE = "fileTypeVideoNote";
-
+  @override
+  String get tdType => "fileTypeVideoNote";
 
   @override
   Map<String, dynamic> get params => {};
-  FileTypeVideoNote(Map<String, dynamic> json);}
+
+  FileTypeVideoNote(Map<String, dynamic> json);
+}
 
 @reflector
 class FileTypeVoiceNote extends FileType {
-  static const TYPE = "fileTypeVoiceNote";
-
+  @override
+  String get tdType => "fileTypeVoiceNote";
 
   @override
   Map<String, dynamic> get params => {};
-  FileTypeVoiceNote(Map<String, dynamic> json);}
+
+  FileTypeVoiceNote(Map<String, dynamic> json);
+}
 
 @reflector
 class FileTypeWallpaper extends FileType {
-  static const TYPE = "fileTypeWallpaper";
-
+  @override
+  String get tdType => "fileTypeWallpaper";
 
   @override
   Map<String, dynamic> get params => {};
-  FileTypeWallpaper(Map<String, dynamic> json);}
+
+  FileTypeWallpaper(Map<String, dynamic> json);
+}
 
 @reflector
 class StorageStatisticsByFileType extends TdObject {
-  static const TYPE = "storageStatisticsByFileType";
+  @override
+  String get tdType => "storageStatisticsByFileType";
 
   FileType fileType;
   int size;
@@ -11009,7 +11776,8 @@ class StorageStatisticsByFileType extends TdObject {
 
 @reflector
 class StorageStatisticsByChat extends TdObject {
-  static const TYPE = "storageStatisticsByChat";
+  @override
+  String get tdType => "storageStatisticsByChat";
 
   int chatId;
   int size;
@@ -11034,7 +11802,8 @@ class StorageStatisticsByChat extends TdObject {
 
 @reflector
 class StorageStatistics extends TdObject {
-  static const TYPE = "storageStatistics";
+  @override
+  String get tdType => "storageStatistics";
 
   int size;
   int count;
@@ -11056,7 +11825,8 @@ class StorageStatistics extends TdObject {
 
 @reflector
 class StorageStatisticsFast extends TdObject {
-  static const TYPE = "storageStatisticsFast";
+  @override
+  String get tdType => "storageStatisticsFast";
 
   int filesSize;
   int fileCount;
@@ -11084,7 +11854,8 @@ class StorageStatisticsFast extends TdObject {
 
 @reflector
 class DatabaseStatistics extends TdObject {
-  static const TYPE = "databaseStatistics";
+  @override
+  String get tdType => "databaseStatistics";
 
   String statistics;
 
@@ -11102,54 +11873,65 @@ abstract class NetworkType extends TdObject {}
 
 @reflector
 class NetworkTypeNone extends NetworkType {
-  static const TYPE = "networkTypeNone";
-
+  @override
+  String get tdType => "networkTypeNone";
 
   @override
   Map<String, dynamic> get params => {};
-  NetworkTypeNone(Map<String, dynamic> json);}
+
+  NetworkTypeNone(Map<String, dynamic> json);
+}
 
 @reflector
 class NetworkTypeMobile extends NetworkType {
-  static const TYPE = "networkTypeMobile";
-
+  @override
+  String get tdType => "networkTypeMobile";
 
   @override
   Map<String, dynamic> get params => {};
-  NetworkTypeMobile(Map<String, dynamic> json);}
+
+  NetworkTypeMobile(Map<String, dynamic> json);
+}
 
 @reflector
 class NetworkTypeMobileRoaming extends NetworkType {
-  static const TYPE = "networkTypeMobileRoaming";
-
+  @override
+  String get tdType => "networkTypeMobileRoaming";
 
   @override
   Map<String, dynamic> get params => {};
-  NetworkTypeMobileRoaming(Map<String, dynamic> json);}
+
+  NetworkTypeMobileRoaming(Map<String, dynamic> json);
+}
 
 @reflector
 class NetworkTypeWiFi extends NetworkType {
-  static const TYPE = "networkTypeWiFi";
-
+  @override
+  String get tdType => "networkTypeWiFi";
 
   @override
   Map<String, dynamic> get params => {};
-  NetworkTypeWiFi(Map<String, dynamic> json);}
+
+  NetworkTypeWiFi(Map<String, dynamic> json);
+}
 
 @reflector
 class NetworkTypeOther extends NetworkType {
-  static const TYPE = "networkTypeOther";
-
+  @override
+  String get tdType => "networkTypeOther";
 
   @override
   Map<String, dynamic> get params => {};
-  NetworkTypeOther(Map<String, dynamic> json);}
+
+  NetworkTypeOther(Map<String, dynamic> json);
+}
 
 abstract class NetworkStatisticsEntry extends TdObject {}
 
 @reflector
 class NetworkStatisticsEntryFile extends NetworkStatisticsEntry {
-  static const TYPE = "networkStatisticsEntryFile";
+  @override
+  String get tdType => "networkStatisticsEntryFile";
 
   FileType fileType;
   NetworkType networkType;
@@ -11174,7 +11956,8 @@ class NetworkStatisticsEntryFile extends NetworkStatisticsEntry {
 
 @reflector
 class NetworkStatisticsEntryCall extends NetworkStatisticsEntry {
-  static const TYPE = "networkStatisticsEntryCall";
+  @override
+  String get tdType => "networkStatisticsEntryCall";
 
   NetworkType networkType;
   int sentBytes;
@@ -11199,7 +11982,8 @@ class NetworkStatisticsEntryCall extends NetworkStatisticsEntry {
 
 @reflector
 class NetworkStatistics extends TdObject {
-  static const TYPE = "networkStatistics";
+  @override
+  String get tdType => "networkStatistics";
 
   int sinceDate;
   List<NetworkStatisticsEntry> entries;
@@ -11218,7 +12002,8 @@ class NetworkStatistics extends TdObject {
 
 @reflector
 class AutoDownloadSettings extends TdObject {
-  static const TYPE = "autoDownloadSettings";
+  @override
+  String get tdType => "autoDownloadSettings";
 
   bool isAutoDownloadEnabled;
   int maxPhotoFileSize;
@@ -11252,7 +12037,8 @@ class AutoDownloadSettings extends TdObject {
 
 @reflector
 class AutoDownloadSettingsPresets extends TdObject {
-  static const TYPE = "autoDownloadSettingsPresets";
+  @override
+  String get tdType => "autoDownloadSettingsPresets";
 
   AutoDownloadSettings low;
   AutoDownloadSettings medium;
@@ -11276,110 +12062,133 @@ abstract class ConnectionState extends TdObject {}
 
 @reflector
 class ConnectionStateWaitingForNetwork extends ConnectionState {
-  static const TYPE = "connectionStateWaitingForNetwork";
-
+  @override
+  String get tdType => "connectionStateWaitingForNetwork";
 
   @override
   Map<String, dynamic> get params => {};
-  ConnectionStateWaitingForNetwork(Map<String, dynamic> json);}
+
+  ConnectionStateWaitingForNetwork(Map<String, dynamic> json);
+}
 
 @reflector
 class ConnectionStateConnectingToProxy extends ConnectionState {
-  static const TYPE = "connectionStateConnectingToProxy";
-
+  @override
+  String get tdType => "connectionStateConnectingToProxy";
 
   @override
   Map<String, dynamic> get params => {};
-  ConnectionStateConnectingToProxy(Map<String, dynamic> json);}
+
+  ConnectionStateConnectingToProxy(Map<String, dynamic> json);
+}
 
 @reflector
 class ConnectionStateConnecting extends ConnectionState {
-  static const TYPE = "connectionStateConnecting";
-
+  @override
+  String get tdType => "connectionStateConnecting";
 
   @override
   Map<String, dynamic> get params => {};
-  ConnectionStateConnecting(Map<String, dynamic> json);}
+
+  ConnectionStateConnecting(Map<String, dynamic> json);
+}
 
 @reflector
 class ConnectionStateUpdating extends ConnectionState {
-  static const TYPE = "connectionStateUpdating";
-
+  @override
+  String get tdType => "connectionStateUpdating";
 
   @override
   Map<String, dynamic> get params => {};
-  ConnectionStateUpdating(Map<String, dynamic> json);}
+
+  ConnectionStateUpdating(Map<String, dynamic> json);
+}
 
 @reflector
 class ConnectionStateReady extends ConnectionState {
-  static const TYPE = "connectionStateReady";
-
+  @override
+  String get tdType => "connectionStateReady";
 
   @override
   Map<String, dynamic> get params => {};
-  ConnectionStateReady(Map<String, dynamic> json);}
+
+  ConnectionStateReady(Map<String, dynamic> json);
+}
 
 abstract class TopChatCategory extends TdObject {}
 
 @reflector
 class TopChatCategoryUsers extends TopChatCategory {
-  static const TYPE = "topChatCategoryUsers";
-
+  @override
+  String get tdType => "topChatCategoryUsers";
 
   @override
   Map<String, dynamic> get params => {};
-  TopChatCategoryUsers(Map<String, dynamic> json);}
+
+  TopChatCategoryUsers(Map<String, dynamic> json);
+}
 
 @reflector
 class TopChatCategoryBots extends TopChatCategory {
-  static const TYPE = "topChatCategoryBots";
-
+  @override
+  String get tdType => "topChatCategoryBots";
 
   @override
   Map<String, dynamic> get params => {};
-  TopChatCategoryBots(Map<String, dynamic> json);}
+
+  TopChatCategoryBots(Map<String, dynamic> json);
+}
 
 @reflector
 class TopChatCategoryGroups extends TopChatCategory {
-  static const TYPE = "topChatCategoryGroups";
-
+  @override
+  String get tdType => "topChatCategoryGroups";
 
   @override
   Map<String, dynamic> get params => {};
-  TopChatCategoryGroups(Map<String, dynamic> json);}
+
+  TopChatCategoryGroups(Map<String, dynamic> json);
+}
 
 @reflector
 class TopChatCategoryChannels extends TopChatCategory {
-  static const TYPE = "topChatCategoryChannels";
-
+  @override
+  String get tdType => "topChatCategoryChannels";
 
   @override
   Map<String, dynamic> get params => {};
-  TopChatCategoryChannels(Map<String, dynamic> json);}
+
+  TopChatCategoryChannels(Map<String, dynamic> json);
+}
 
 @reflector
 class TopChatCategoryInlineBots extends TopChatCategory {
-  static const TYPE = "topChatCategoryInlineBots";
-
+  @override
+  String get tdType => "topChatCategoryInlineBots";
 
   @override
   Map<String, dynamic> get params => {};
-  TopChatCategoryInlineBots(Map<String, dynamic> json);}
+
+  TopChatCategoryInlineBots(Map<String, dynamic> json);
+}
 
 @reflector
 class TopChatCategoryCalls extends TopChatCategory {
-  static const TYPE = "topChatCategoryCalls";
-
+  @override
+  String get tdType => "topChatCategoryCalls";
 
   @override
   Map<String, dynamic> get params => {};
-  TopChatCategoryCalls(Map<String, dynamic> json);}
+
+  TopChatCategoryCalls(Map<String, dynamic> json);
+}
 
 abstract class TMeUrlType extends TdObject {}
 
 @reflector
 class TMeUrlTypeUser extends TMeUrlType {
-  static const TYPE = "tMeUrlTypeUser";
+  @override
+  String get tdType => "tMeUrlTypeUser";
 
   int userId;
 
@@ -11395,7 +12204,8 @@ class TMeUrlTypeUser extends TMeUrlType {
 
 @reflector
 class TMeUrlTypeSupergroup extends TMeUrlType {
-  static const TYPE = "tMeUrlTypeSupergroup";
+  @override
+  String get tdType => "tMeUrlTypeSupergroup";
 
   int supergroupId;
 
@@ -11411,7 +12221,8 @@ class TMeUrlTypeSupergroup extends TMeUrlType {
 
 @reflector
 class TMeUrlTypeChatInvite extends TMeUrlType {
-  static const TYPE = "tMeUrlTypeChatInvite";
+  @override
+  String get tdType => "tMeUrlTypeChatInvite";
 
   ChatInviteLinkInfo info;
 
@@ -11427,7 +12238,8 @@ class TMeUrlTypeChatInvite extends TMeUrlType {
 
 @reflector
 class TMeUrlTypeStickerSet extends TMeUrlType {
-  static const TYPE = "tMeUrlTypeStickerSet";
+  @override
+  String get tdType => "tMeUrlTypeStickerSet";
 
   int stickerSetId;
 
@@ -11443,7 +12255,8 @@ class TMeUrlTypeStickerSet extends TMeUrlType {
 
 @reflector
 class TMeUrl extends TdObject {
-  static const TYPE = "tMeUrl";
+  @override
+  String get tdType => "tMeUrl";
 
   String url;
   TMeUrlType type;
@@ -11462,7 +12275,8 @@ class TMeUrl extends TdObject {
 
 @reflector
 class TMeUrls extends TdObject {
-  static const TYPE = "tMeUrls";
+  @override
+  String get tdType => "tMeUrls";
 
   List<TMeUrl> urls;
 
@@ -11478,7 +12292,8 @@ class TMeUrls extends TdObject {
 
 @reflector
 class Count extends TdObject {
-  static const TYPE = "count";
+  @override
+  String get tdType => "count";
 
   int count;
 
@@ -11494,7 +12309,8 @@ class Count extends TdObject {
 
 @reflector
 class Text extends TdObject {
-  static const TYPE = "text";
+  @override
+  String get tdType => "text";
 
   String text;
 
@@ -11510,7 +12326,8 @@ class Text extends TdObject {
 
 @reflector
 class Seconds extends TdObject {
-  static const TYPE = "seconds";
+  @override
+  String get tdType => "seconds";
 
   double seconds;
 
@@ -11526,7 +12343,8 @@ class Seconds extends TdObject {
 
 @reflector
 class DeepLinkInfo extends TdObject {
-  static const TYPE = "deepLinkInfo";
+  @override
+  String get tdType => "deepLinkInfo";
 
   FormattedText text;
   bool needUpdateApplication;
@@ -11547,27 +12365,32 @@ abstract class TextParseMode extends TdObject {}
 
 @reflector
 class TextParseModeMarkdown extends TextParseMode {
-  static const TYPE = "textParseModeMarkdown";
-
+  @override
+  String get tdType => "textParseModeMarkdown";
 
   @override
   Map<String, dynamic> get params => {};
-  TextParseModeMarkdown(Map<String, dynamic> json);}
+
+  TextParseModeMarkdown(Map<String, dynamic> json);
+}
 
 @reflector
 class TextParseModeHTML extends TextParseMode {
-  static const TYPE = "textParseModeHTML";
-
+  @override
+  String get tdType => "textParseModeHTML";
 
   @override
   Map<String, dynamic> get params => {};
-  TextParseModeHTML(Map<String, dynamic> json);}
+
+  TextParseModeHTML(Map<String, dynamic> json);
+}
 
 abstract class ProxyType extends TdObject {}
 
 @reflector
 class ProxyTypeSocks5 extends ProxyType {
-  static const TYPE = "proxyTypeSocks5";
+  @override
+  String get tdType => "proxyTypeSocks5";
 
   String username;
   String password;
@@ -11586,7 +12409,8 @@ class ProxyTypeSocks5 extends ProxyType {
 
 @reflector
 class ProxyTypeHttp extends ProxyType {
-  static const TYPE = "proxyTypeHttp";
+  @override
+  String get tdType => "proxyTypeHttp";
 
   String username;
   String password;
@@ -11608,7 +12432,8 @@ class ProxyTypeHttp extends ProxyType {
 
 @reflector
 class ProxyTypeMtproto extends ProxyType {
-  static const TYPE = "proxyTypeMtproto";
+  @override
+  String get tdType => "proxyTypeMtproto";
 
   String secret;
 
@@ -11624,7 +12449,8 @@ class ProxyTypeMtproto extends ProxyType {
 
 @reflector
 class Proxy extends TdObject {
-  static const TYPE = "proxy";
+  @override
+  String get tdType => "proxy";
 
   int id;
   String server;
@@ -11655,7 +12481,8 @@ class Proxy extends TdObject {
 
 @reflector
 class Proxies extends TdObject {
-  static const TYPE = "proxies";
+  @override
+  String get tdType => "proxies";
 
   List<Proxy> proxies;
 
@@ -11671,7 +12498,8 @@ class Proxies extends TdObject {
 
 @reflector
 class InputSticker extends TdObject {
-  static const TYPE = "inputSticker";
+  @override
+  String get tdType => "inputSticker";
 
   InputFile pngSticker;
   String emojis;
@@ -11695,7 +12523,8 @@ abstract class Update extends TdObject {}
 
 @reflector
 class UpdateAuthorizationState extends Update {
-  static const TYPE = "updateAuthorizationState";
+  @override
+  String get tdType => "updateAuthorizationState";
 
   AuthorizationState authorizationState;
 
@@ -11711,7 +12540,8 @@ class UpdateAuthorizationState extends Update {
 
 @reflector
 class UpdateNewMessage extends Update {
-  static const TYPE = "updateNewMessage";
+  @override
+  String get tdType => "updateNewMessage";
 
   Message message;
 
@@ -11727,7 +12557,8 @@ class UpdateNewMessage extends Update {
 
 @reflector
 class UpdateMessageSendAcknowledged extends Update {
-  static const TYPE = "updateMessageSendAcknowledged";
+  @override
+  String get tdType => "updateMessageSendAcknowledged";
 
   int chatId;
   int messageId;
@@ -11746,7 +12577,8 @@ class UpdateMessageSendAcknowledged extends Update {
 
 @reflector
 class UpdateMessageSendSucceeded extends Update {
-  static const TYPE = "updateMessageSendSucceeded";
+  @override
+  String get tdType => "updateMessageSendSucceeded";
 
   Message message;
   int oldMessageId;
@@ -11765,7 +12597,8 @@ class UpdateMessageSendSucceeded extends Update {
 
 @reflector
 class UpdateMessageSendFailed extends Update {
-  static const TYPE = "updateMessageSendFailed";
+  @override
+  String get tdType => "updateMessageSendFailed";
 
   Message message;
   int oldMessageId;
@@ -11790,7 +12623,8 @@ class UpdateMessageSendFailed extends Update {
 
 @reflector
 class UpdateMessageContent extends Update {
-  static const TYPE = "updateMessageContent";
+  @override
+  String get tdType => "updateMessageContent";
 
   int chatId;
   int messageId;
@@ -11812,7 +12646,8 @@ class UpdateMessageContent extends Update {
 
 @reflector
 class UpdateMessageEdited extends Update {
-  static const TYPE = "updateMessageEdited";
+  @override
+  String get tdType => "updateMessageEdited";
 
   int chatId;
   int messageId;
@@ -11837,7 +12672,8 @@ class UpdateMessageEdited extends Update {
 
 @reflector
 class UpdateMessageViews extends Update {
-  static const TYPE = "updateMessageViews";
+  @override
+  String get tdType => "updateMessageViews";
 
   int chatId;
   int messageId;
@@ -11859,7 +12695,8 @@ class UpdateMessageViews extends Update {
 
 @reflector
 class UpdateMessageContentOpened extends Update {
-  static const TYPE = "updateMessageContentOpened";
+  @override
+  String get tdType => "updateMessageContentOpened";
 
   int chatId;
   int messageId;
@@ -11878,7 +12715,8 @@ class UpdateMessageContentOpened extends Update {
 
 @reflector
 class UpdateMessageMentionRead extends Update {
-  static const TYPE = "updateMessageMentionRead";
+  @override
+  String get tdType => "updateMessageMentionRead";
 
   int chatId;
   int messageId;
@@ -11900,7 +12738,8 @@ class UpdateMessageMentionRead extends Update {
 
 @reflector
 class UpdateNewChat extends Update {
-  static const TYPE = "updateNewChat";
+  @override
+  String get tdType => "updateNewChat";
 
   Chat chat;
 
@@ -11916,7 +12755,8 @@ class UpdateNewChat extends Update {
 
 @reflector
 class UpdateChatTitle extends Update {
-  static const TYPE = "updateChatTitle";
+  @override
+  String get tdType => "updateChatTitle";
 
   int chatId;
   String title;
@@ -11935,7 +12775,8 @@ class UpdateChatTitle extends Update {
 
 @reflector
 class UpdateChatPhoto extends Update {
-  static const TYPE = "updateChatPhoto";
+  @override
+  String get tdType => "updateChatPhoto";
 
   int chatId;
   ChatPhoto photo;
@@ -11954,7 +12795,8 @@ class UpdateChatPhoto extends Update {
 
 @reflector
 class UpdateChatPermissions extends Update {
-  static const TYPE = "updateChatPermissions";
+  @override
+  String get tdType => "updateChatPermissions";
 
   int chatId;
   ChatPermissions permissions;
@@ -11973,7 +12815,8 @@ class UpdateChatPermissions extends Update {
 
 @reflector
 class UpdateChatLastMessage extends Update {
-  static const TYPE = "updateChatLastMessage";
+  @override
+  String get tdType => "updateChatLastMessage";
 
   int chatId;
   Message lastMessage;
@@ -11995,7 +12838,8 @@ class UpdateChatLastMessage extends Update {
 
 @reflector
 class UpdateChatOrder extends Update {
-  static const TYPE = "updateChatOrder";
+  @override
+  String get tdType => "updateChatOrder";
 
   int chatId;
   int order;
@@ -12014,7 +12858,8 @@ class UpdateChatOrder extends Update {
 
 @reflector
 class UpdateChatIsPinned extends Update {
-  static const TYPE = "updateChatIsPinned";
+  @override
+  String get tdType => "updateChatIsPinned";
 
   int chatId;
   bool isPinned;
@@ -12036,7 +12881,8 @@ class UpdateChatIsPinned extends Update {
 
 @reflector
 class UpdateChatIsMarkedAsUnread extends Update {
-  static const TYPE = "updateChatIsMarkedAsUnread";
+  @override
+  String get tdType => "updateChatIsMarkedAsUnread";
 
   int chatId;
   bool isMarkedAsUnread;
@@ -12055,7 +12901,8 @@ class UpdateChatIsMarkedAsUnread extends Update {
 
 @reflector
 class UpdateChatIsSponsored extends Update {
-  static const TYPE = "updateChatIsSponsored";
+  @override
+  String get tdType => "updateChatIsSponsored";
 
   int chatId;
   bool isSponsored;
@@ -12077,7 +12924,8 @@ class UpdateChatIsSponsored extends Update {
 
 @reflector
 class UpdateChatDefaultDisableNotification extends Update {
-  static const TYPE = "updateChatDefaultDisableNotification";
+  @override
+  String get tdType => "updateChatDefaultDisableNotification";
 
   int chatId;
   bool defaultDisableNotification;
@@ -12096,7 +12944,8 @@ class UpdateChatDefaultDisableNotification extends Update {
 
 @reflector
 class UpdateChatReadInbox extends Update {
-  static const TYPE = "updateChatReadInbox";
+  @override
+  String get tdType => "updateChatReadInbox";
 
   int chatId;
   int lastReadInboxMessageId;
@@ -12118,7 +12967,8 @@ class UpdateChatReadInbox extends Update {
 
 @reflector
 class UpdateChatReadOutbox extends Update {
-  static const TYPE = "updateChatReadOutbox";
+  @override
+  String get tdType => "updateChatReadOutbox";
 
   int chatId;
   int lastReadOutboxMessageId;
@@ -12137,7 +12987,8 @@ class UpdateChatReadOutbox extends Update {
 
 @reflector
 class UpdateChatUnreadMentionCount extends Update {
-  static const TYPE = "updateChatUnreadMentionCount";
+  @override
+  String get tdType => "updateChatUnreadMentionCount";
 
   int chatId;
   int unreadMentionCount;
@@ -12156,7 +13007,8 @@ class UpdateChatUnreadMentionCount extends Update {
 
 @reflector
 class UpdateChatNotificationSettings extends Update {
-  static const TYPE = "updateChatNotificationSettings";
+  @override
+  String get tdType => "updateChatNotificationSettings";
 
   int chatId;
   ChatNotificationSettings notificationSettings;
@@ -12175,7 +13027,8 @@ class UpdateChatNotificationSettings extends Update {
 
 @reflector
 class UpdateScopeNotificationSettings extends Update {
-  static const TYPE = "updateScopeNotificationSettings";
+  @override
+  String get tdType => "updateScopeNotificationSettings";
 
   NotificationSettingsScope scope;
   ScopeNotificationSettings notificationSettings;
@@ -12194,7 +13047,8 @@ class UpdateScopeNotificationSettings extends Update {
 
 @reflector
 class UpdateChatPinnedMessage extends Update {
-  static const TYPE = "updateChatPinnedMessage";
+  @override
+  String get tdType => "updateChatPinnedMessage";
 
   int chatId;
   int pinnedMessageId;
@@ -12213,7 +13067,8 @@ class UpdateChatPinnedMessage extends Update {
 
 @reflector
 class UpdateChatReplyMarkup extends Update {
-  static const TYPE = "updateChatReplyMarkup";
+  @override
+  String get tdType => "updateChatReplyMarkup";
 
   int chatId;
   int replyMarkupMessageId;
@@ -12232,7 +13087,8 @@ class UpdateChatReplyMarkup extends Update {
 
 @reflector
 class UpdateChatDraftMessage extends Update {
-  static const TYPE = "updateChatDraftMessage";
+  @override
+  String get tdType => "updateChatDraftMessage";
 
   int chatId;
   DraftMessage draftMessage;
@@ -12254,7 +13110,8 @@ class UpdateChatDraftMessage extends Update {
 
 @reflector
 class UpdateChatOnlineMemberCount extends Update {
-  static const TYPE = "updateChatOnlineMemberCount";
+  @override
+  String get tdType => "updateChatOnlineMemberCount";
 
   int chatId;
   int onlineMemberCount;
@@ -12273,7 +13130,8 @@ class UpdateChatOnlineMemberCount extends Update {
 
 @reflector
 class UpdateNotification extends Update {
-  static const TYPE = "updateNotification";
+  @override
+  String get tdType => "updateNotification";
 
   int notificationGroupId;
   Notification notification;
@@ -12292,7 +13150,8 @@ class UpdateNotification extends Update {
 
 @reflector
 class UpdateNotificationGroup extends Update {
-  static const TYPE = "updateNotificationGroup";
+  @override
+  String get tdType => "updateNotificationGroup";
 
   int notificationGroupId;
   NotificationGroupType type;
@@ -12329,7 +13188,8 @@ class UpdateNotificationGroup extends Update {
 
 @reflector
 class UpdateActiveNotifications extends Update {
-  static const TYPE = "updateActiveNotifications";
+  @override
+  String get tdType => "updateActiveNotifications";
 
   List<NotificationGroup> groups;
 
@@ -12345,7 +13205,8 @@ class UpdateActiveNotifications extends Update {
 
 @reflector
 class UpdateHavePendingNotifications extends Update {
-  static const TYPE = "updateHavePendingNotifications";
+  @override
+  String get tdType => "updateHavePendingNotifications";
 
   bool haveDelayedNotifications;
   bool haveUnreceivedNotifications;
@@ -12364,7 +13225,8 @@ class UpdateHavePendingNotifications extends Update {
 
 @reflector
 class UpdateDeleteMessages extends Update {
-  static const TYPE = "updateDeleteMessages";
+  @override
+  String get tdType => "updateDeleteMessages";
 
   int chatId;
   List<int> messageIds;
@@ -12389,7 +13251,8 @@ class UpdateDeleteMessages extends Update {
 
 @reflector
 class UpdateUserChatAction extends Update {
-  static const TYPE = "updateUserChatAction";
+  @override
+  String get tdType => "updateUserChatAction";
 
   int chatId;
   int userId;
@@ -12411,7 +13274,8 @@ class UpdateUserChatAction extends Update {
 
 @reflector
 class UpdateUserStatus extends Update {
-  static const TYPE = "updateUserStatus";
+  @override
+  String get tdType => "updateUserStatus";
 
   int userId;
   UserStatus status;
@@ -12430,7 +13294,8 @@ class UpdateUserStatus extends Update {
 
 @reflector
 class UpdateUser extends Update {
-  static const TYPE = "updateUser";
+  @override
+  String get tdType => "updateUser";
 
   User user;
 
@@ -12446,7 +13311,8 @@ class UpdateUser extends Update {
 
 @reflector
 class UpdateBasicGroup extends Update {
-  static const TYPE = "updateBasicGroup";
+  @override
+  String get tdType => "updateBasicGroup";
 
   BasicGroup basicGroup;
 
@@ -12462,7 +13328,8 @@ class UpdateBasicGroup extends Update {
 
 @reflector
 class UpdateSupergroup extends Update {
-  static const TYPE = "updateSupergroup";
+  @override
+  String get tdType => "updateSupergroup";
 
   Supergroup supergroup;
 
@@ -12478,7 +13345,8 @@ class UpdateSupergroup extends Update {
 
 @reflector
 class UpdateSecretChat extends Update {
-  static const TYPE = "updateSecretChat";
+  @override
+  String get tdType => "updateSecretChat";
 
   SecretChat secretChat;
 
@@ -12494,7 +13362,8 @@ class UpdateSecretChat extends Update {
 
 @reflector
 class UpdateUserFullInfo extends Update {
-  static const TYPE = "updateUserFullInfo";
+  @override
+  String get tdType => "updateUserFullInfo";
 
   int userId;
   UserFullInfo userFullInfo;
@@ -12513,7 +13382,8 @@ class UpdateUserFullInfo extends Update {
 
 @reflector
 class UpdateBasicGroupFullInfo extends Update {
-  static const TYPE = "updateBasicGroupFullInfo";
+  @override
+  String get tdType => "updateBasicGroupFullInfo";
 
   int basicGroupId;
   BasicGroupFullInfo basicGroupFullInfo;
@@ -12532,7 +13402,8 @@ class UpdateBasicGroupFullInfo extends Update {
 
 @reflector
 class UpdateSupergroupFullInfo extends Update {
-  static const TYPE = "updateSupergroupFullInfo";
+  @override
+  String get tdType => "updateSupergroupFullInfo";
 
   int supergroupId;
   SupergroupFullInfo supergroupFullInfo;
@@ -12551,7 +13422,8 @@ class UpdateSupergroupFullInfo extends Update {
 
 @reflector
 class UpdateServiceNotification extends Update {
-  static const TYPE = "updateServiceNotification";
+  @override
+  String get tdType => "updateServiceNotification";
 
   String type;
   MessageContent content;
@@ -12570,7 +13442,8 @@ class UpdateServiceNotification extends Update {
 
 @reflector
 class UpdateFile extends Update {
-  static const TYPE = "updateFile";
+  @override
+  String get tdType => "updateFile";
 
   File file;
 
@@ -12586,7 +13459,8 @@ class UpdateFile extends Update {
 
 @reflector
 class UpdateFileGenerationStart extends Update {
-  static const TYPE = "updateFileGenerationStart";
+  @override
+  String get tdType => "updateFileGenerationStart";
 
   int generationId;
   String originalPath;
@@ -12611,7 +13485,8 @@ class UpdateFileGenerationStart extends Update {
 
 @reflector
 class UpdateFileGenerationStop extends Update {
-  static const TYPE = "updateFileGenerationStop";
+  @override
+  String get tdType => "updateFileGenerationStop";
 
   int generationId;
 
@@ -12627,7 +13502,8 @@ class UpdateFileGenerationStop extends Update {
 
 @reflector
 class UpdateCall extends Update {
-  static const TYPE = "updateCall";
+  @override
+  String get tdType => "updateCall";
 
   Call call;
 
@@ -12643,7 +13519,8 @@ class UpdateCall extends Update {
 
 @reflector
 class UpdateUserPrivacySettingRules extends Update {
-  static const TYPE = "updateUserPrivacySettingRules";
+  @override
+  String get tdType => "updateUserPrivacySettingRules";
 
   UserPrivacySetting setting;
   UserPrivacySettingRules rules;
@@ -12662,7 +13539,8 @@ class UpdateUserPrivacySettingRules extends Update {
 
 @reflector
 class UpdateUnreadMessageCount extends Update {
-  static const TYPE = "updateUnreadMessageCount";
+  @override
+  String get tdType => "updateUnreadMessageCount";
 
   int unreadCount;
   int unreadUnmutedCount;
@@ -12681,7 +13559,8 @@ class UpdateUnreadMessageCount extends Update {
 
 @reflector
 class UpdateUnreadChatCount extends Update {
-  static const TYPE = "updateUnreadChatCount";
+  @override
+  String get tdType => "updateUnreadChatCount";
 
   int unreadCount;
   int unreadUnmutedCount;
@@ -12706,7 +13585,8 @@ class UpdateUnreadChatCount extends Update {
 
 @reflector
 class UpdateOption extends Update {
-  static const TYPE = "updateOption";
+  @override
+  String get tdType => "updateOption";
 
   String name;
   OptionValue value;
@@ -12725,7 +13605,8 @@ class UpdateOption extends Update {
 
 @reflector
 class UpdateInstalledStickerSets extends Update {
-  static const TYPE = "updateInstalledStickerSets";
+  @override
+  String get tdType => "updateInstalledStickerSets";
 
   bool isMasks;
   List<int> stickerSetIds;
@@ -12744,7 +13625,8 @@ class UpdateInstalledStickerSets extends Update {
 
 @reflector
 class UpdateTrendingStickerSets extends Update {
-  static const TYPE = "updateTrendingStickerSets";
+  @override
+  String get tdType => "updateTrendingStickerSets";
 
   StickerSets stickerSets;
 
@@ -12760,7 +13642,8 @@ class UpdateTrendingStickerSets extends Update {
 
 @reflector
 class UpdateRecentStickers extends Update {
-  static const TYPE = "updateRecentStickers";
+  @override
+  String get tdType => "updateRecentStickers";
 
   bool isAttached;
   List<int> stickerIds;
@@ -12779,7 +13662,8 @@ class UpdateRecentStickers extends Update {
 
 @reflector
 class UpdateFavoriteStickers extends Update {
-  static const TYPE = "updateFavoriteStickers";
+  @override
+  String get tdType => "updateFavoriteStickers";
 
   List<int> stickerIds;
 
@@ -12795,7 +13679,8 @@ class UpdateFavoriteStickers extends Update {
 
 @reflector
 class UpdateSavedAnimations extends Update {
-  static const TYPE = "updateSavedAnimations";
+  @override
+  String get tdType => "updateSavedAnimations";
 
   List<int> animationIds;
 
@@ -12811,7 +13696,8 @@ class UpdateSavedAnimations extends Update {
 
 @reflector
 class UpdateSelectedBackground extends Update {
-  static const TYPE = "updateSelectedBackground";
+  @override
+  String get tdType => "updateSelectedBackground";
 
   bool forDarkTheme;
   Background background;
@@ -12830,7 +13716,8 @@ class UpdateSelectedBackground extends Update {
 
 @reflector
 class UpdateLanguagePackStrings extends Update {
-  static const TYPE = "updateLanguagePackStrings";
+  @override
+  String get tdType => "updateLanguagePackStrings";
 
   String localizationTarget;
   String languagePackId;
@@ -12852,7 +13739,8 @@ class UpdateLanguagePackStrings extends Update {
 
 @reflector
 class UpdateConnectionState extends Update {
-  static const TYPE = "updateConnectionState";
+  @override
+  String get tdType => "updateConnectionState";
 
   ConnectionState state;
 
@@ -12868,7 +13756,8 @@ class UpdateConnectionState extends Update {
 
 @reflector
 class UpdateTermsOfService extends Update {
-  static const TYPE = "updateTermsOfService";
+  @override
+  String get tdType => "updateTermsOfService";
 
   String termsOfServiceId;
   TermsOfService termsOfService;
@@ -12887,7 +13776,8 @@ class UpdateTermsOfService extends Update {
 
 @reflector
 class UpdateNewInlineQuery extends Update {
-  static const TYPE = "updateNewInlineQuery";
+  @override
+  String get tdType => "updateNewInlineQuery";
 
   int id;
   int senderUserId;
@@ -12915,7 +13805,8 @@ class UpdateNewInlineQuery extends Update {
 
 @reflector
 class UpdateNewChosenInlineResult extends Update {
-  static const TYPE = "updateNewChosenInlineResult";
+  @override
+  String get tdType => "updateNewChosenInlineResult";
 
   int senderUserId;
   Location userLocation;
@@ -12943,7 +13834,8 @@ class UpdateNewChosenInlineResult extends Update {
 
 @reflector
 class UpdateNewCallbackQuery extends Update {
-  static const TYPE = "updateNewCallbackQuery";
+  @override
+  String get tdType => "updateNewCallbackQuery";
 
   int id;
   int senderUserId;
@@ -12974,7 +13866,8 @@ class UpdateNewCallbackQuery extends Update {
 
 @reflector
 class UpdateNewInlineCallbackQuery extends Update {
-  static const TYPE = "updateNewInlineCallbackQuery";
+  @override
+  String get tdType => "updateNewInlineCallbackQuery";
 
   int id;
   int senderUserId;
@@ -13002,7 +13895,8 @@ class UpdateNewInlineCallbackQuery extends Update {
 
 @reflector
 class UpdateNewShippingQuery extends Update {
-  static const TYPE = "updateNewShippingQuery";
+  @override
+  String get tdType => "updateNewShippingQuery";
 
   int id;
   int senderUserId;
@@ -13027,7 +13921,8 @@ class UpdateNewShippingQuery extends Update {
 
 @reflector
 class UpdateNewPreCheckoutQuery extends Update {
-  static const TYPE = "updateNewPreCheckoutQuery";
+  @override
+  String get tdType => "updateNewPreCheckoutQuery";
 
   int id;
   int senderUserId;
@@ -13061,7 +13956,8 @@ class UpdateNewPreCheckoutQuery extends Update {
 
 @reflector
 class UpdateNewCustomEvent extends Update {
-  static const TYPE = "updateNewCustomEvent";
+  @override
+  String get tdType => "updateNewCustomEvent";
 
   String event;
 
@@ -13077,7 +13973,8 @@ class UpdateNewCustomEvent extends Update {
 
 @reflector
 class UpdateNewCustomQuery extends Update {
-  static const TYPE = "updateNewCustomQuery";
+  @override
+  String get tdType => "updateNewCustomQuery";
 
   int id;
   String data;
@@ -13099,7 +13996,8 @@ class UpdateNewCustomQuery extends Update {
 
 @reflector
 class UpdatePoll extends Update {
-  static const TYPE = "updatePoll";
+  @override
+  String get tdType => "updatePoll";
 
   Poll poll;
 
@@ -13115,7 +14013,8 @@ class UpdatePoll extends Update {
 
 @reflector
 class Updates extends TdObject {
-  static const TYPE = "updates";
+  @override
+  String get tdType => "updates";
 
   List<Update> updates;
 
@@ -13133,16 +14032,19 @@ abstract class LogStream extends TdObject {}
 
 @reflector
 class LogStreamDefault extends LogStream {
-  static const TYPE = "logStreamDefault";
-
+  @override
+  String get tdType => "logStreamDefault";
 
   @override
   Map<String, dynamic> get params => {};
-  LogStreamDefault(Map<String, dynamic> json);}
+
+  LogStreamDefault(Map<String, dynamic> json);
+}
 
 @reflector
 class LogStreamFile extends LogStream {
-  static const TYPE = "logStreamFile";
+  @override
+  String get tdType => "logStreamFile";
 
   String path;
   int maxFileSize;
@@ -13161,16 +14063,19 @@ class LogStreamFile extends LogStream {
 
 @reflector
 class LogStreamEmpty extends LogStream {
-  static const TYPE = "logStreamEmpty";
-
+  @override
+  String get tdType => "logStreamEmpty";
 
   @override
   Map<String, dynamic> get params => {};
-  LogStreamEmpty(Map<String, dynamic> json);}
+
+  LogStreamEmpty(Map<String, dynamic> json);
+}
 
 @reflector
 class LogVerbosityLevel extends TdObject {
-  static const TYPE = "logVerbosityLevel";
+  @override
+  String get tdType => "logVerbosityLevel";
 
   int verbosityLevel;
 
@@ -13186,7 +14091,8 @@ class LogVerbosityLevel extends TdObject {
 
 @reflector
 class LogTags extends TdObject {
-  static const TYPE = "logTags";
+  @override
+  String get tdType => "logTags";
 
   List<String> tags;
 
@@ -13202,7 +14108,8 @@ class LogTags extends TdObject {
 
 @reflector
 class TestInt extends TdObject {
-  static const TYPE = "testInt";
+  @override
+  String get tdType => "testInt";
 
   int value;
 
@@ -13218,7 +14125,8 @@ class TestInt extends TdObject {
 
 @reflector
 class TestString extends TdObject {
-  static const TYPE = "testString";
+  @override
+  String get tdType => "testString";
 
   String value;
 
@@ -13234,7 +14142,8 @@ class TestString extends TdObject {
 
 @reflector
 class TestBytes extends TdObject {
-  static const TYPE = "testBytes";
+  @override
+  String get tdType => "testBytes";
 
   List<int> value;
 
@@ -13250,7 +14159,8 @@ class TestBytes extends TdObject {
 
 @reflector
 class TestVectorInt extends TdObject {
-  static const TYPE = "testVectorInt";
+  @override
+  String get tdType => "testVectorInt";
 
   List<int> value;
 
@@ -13266,7 +14176,8 @@ class TestVectorInt extends TdObject {
 
 @reflector
 class TestVectorIntObject extends TdObject {
-  static const TYPE = "testVectorIntObject";
+  @override
+  String get tdType => "testVectorIntObject";
 
   List<TestInt> value;
 
@@ -13282,7 +14193,8 @@ class TestVectorIntObject extends TdObject {
 
 @reflector
 class TestVectorString extends TdObject {
-  static const TYPE = "testVectorString";
+  @override
+  String get tdType => "testVectorString";
 
   List<String> value;
 
@@ -13298,7 +14210,8 @@ class TestVectorString extends TdObject {
 
 @reflector
 class TestVectorStringObject extends TdObject {
-  static const TYPE = "testVectorStringObject";
+  @override
+  String get tdType => "testVectorStringObject";
 
   List<TestString> value;
 
