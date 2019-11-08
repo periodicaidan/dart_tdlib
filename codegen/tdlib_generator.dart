@@ -25,14 +25,17 @@ class ApiClass {
 
   /// Returns Dart code for this class.
   ///
+  /// @reflector
   /// class $name extends $superclass {
-  ///   static const TYPE = $type;
+  ///   @override
+  ///   String get tdType => "$type";
   ///
   ///   ${members[0].type} ${members[0].fieldName};
   ///   ${members[1].type} ${members[1].fieldName};
   ///   ...
   ///
-  ///   get params => {
+  ///   @override
+  ///   Map<String, dynamic> get params => {
   ///     "${members[0].paramName}": "${members[0].fieldName}",
   ///     "${members[1].paramName}": "${members[1].fieldName}",
   ///     ...,
@@ -104,6 +107,7 @@ class ApiFunction {
   ///
   /// @reflector
   /// class $name extends TdFunction {
+  ///   @override
   ///   String get returnType => "$returnType";
   ///
   ///   final ${params[0].type} ${params[0].fieldName};
@@ -197,6 +201,7 @@ main() async {
   List<ApiClass> classes = [];
   List<ApiFunction> functions = [];
 
+  // TODO: Clean up whatever the hell this is, or at least document it
   (api["types"] as Map).forEach((k, v) {
     if ((v as Map).length == 1 && (v as Map).containsKey(pascalToCamelCase(k))) {
       classes.add(ApiClass(
