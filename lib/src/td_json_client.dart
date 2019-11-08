@@ -12,11 +12,8 @@
 
 import "dart:ffi";
 import "dart:convert";
-import "dart:io" show Platform;
 import "package:ffi/ffi.dart";
-import "package:path/path.dart" as path;
 import "utils.dart";
-import "api/base_classes.dart";
 
 /// Creates a new instance of TDLib client.
 ///
@@ -71,6 +68,8 @@ class JsonClient {
   }
 
   /// Send a request to the Telegram API
+  /// This is an async version of [execute], which the TDLib docs don't make
+  /// immediately clear :p
   send(Map<String, dynamic> request) {
     assert (active);
     var reqJson = json.encode(request);
@@ -92,8 +91,10 @@ class JsonClient {
     return json.decode(resString);
   }
 
-  /// Execute a TDLib request synchronously
-  /// TODO: Make it asynchronous, if possible
+  /// Execute a TDLib function synchronously
+  /// If you need to execute a function asynchronously (for example, you get an
+  /// error along the lines of "Function can't be executed synchronously"), use
+  /// [send] instead.
   Map<String, dynamic> execute(Map<String, dynamic> request) {
     assert (active);
     final jsonClientExecute = _dylib

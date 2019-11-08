@@ -700,7 +700,7 @@ class Minithumbnail extends TdObject {
 
   int width;
   int height;
-  List<int> data;
+  String data;
 
   @override
   Map<String, dynamic> get params => {
@@ -1065,7 +1065,7 @@ class VoiceNote extends TdObject {
   String get tdType => "voiceNote";
 
   int duration;
-  List<int> waveform;
+  String waveform;
   String mimeType;
   File voice;
 
@@ -2152,7 +2152,7 @@ class SecretChat extends TdObject {
   SecretChatState state;
   bool isOutbound;
   int ttl;
-  List<int> keyHash;
+  String keyHash;
   int layer;
 
   @override
@@ -2882,7 +2882,7 @@ class InlineKeyboardButtonTypeCallback extends InlineKeyboardButtonType {
   @override
   String get tdType => "inlineKeyboardButtonTypeCallback";
 
-  List<int> data;
+  String data;
 
   @override
   Map<String, dynamic> get params => {
@@ -5602,9 +5602,9 @@ class EncryptedCredentials extends TdObject {
   @override
   String get tdType => "encryptedCredentials";
 
-  List<int> data;
-  List<int> hash;
-  List<int> secret;
+  String data;
+  String hash;
+  String secret;
 
   @override
   Map<String, dynamic> get params => {
@@ -5626,7 +5626,7 @@ class EncryptedPassportElement extends TdObject {
   String get tdType => "encryptedPassportElement";
 
   PassportElementType type;
-  List<int> data;
+  String data;
   DatedFile frontSide;
   DatedFile reverseSide;
   DatedFile selfie;
@@ -5668,7 +5668,7 @@ class InputPassportElementErrorSourceUnspecified extends InputPassportElementErr
   @override
   String get tdType => "inputPassportElementErrorSourceUnspecified";
 
-  List<int> elementHash;
+  String elementHash;
 
   @override
   Map<String, dynamic> get params => {
@@ -5686,7 +5686,7 @@ class InputPassportElementErrorSourceDataField extends InputPassportElementError
   String get tdType => "inputPassportElementErrorSourceDataField";
 
   String fieldName;
-  List<int> dataHash;
+  String dataHash;
 
   @override
   Map<String, dynamic> get params => {
@@ -5705,7 +5705,7 @@ class InputPassportElementErrorSourceFrontSide extends InputPassportElementError
   @override
   String get tdType => "inputPassportElementErrorSourceFrontSide";
 
-  List<int> fileHash;
+  String fileHash;
 
   @override
   Map<String, dynamic> get params => {
@@ -5722,7 +5722,7 @@ class InputPassportElementErrorSourceReverseSide extends InputPassportElementErr
   @override
   String get tdType => "inputPassportElementErrorSourceReverseSide";
 
-  List<int> fileHash;
+  String fileHash;
 
   @override
   Map<String, dynamic> get params => {
@@ -5739,7 +5739,7 @@ class InputPassportElementErrorSourceSelfie extends InputPassportElementErrorSou
   @override
   String get tdType => "inputPassportElementErrorSourceSelfie";
 
-  List<int> fileHash;
+  String fileHash;
 
   @override
   Map<String, dynamic> get params => {
@@ -5756,7 +5756,7 @@ class InputPassportElementErrorSourceTranslationFile extends InputPassportElemen
   @override
   String get tdType => "inputPassportElementErrorSourceTranslationFile";
 
-  List<int> fileHash;
+  String fileHash;
 
   @override
   Map<String, dynamic> get params => {
@@ -5773,7 +5773,7 @@ class InputPassportElementErrorSourceTranslationFiles extends InputPassportEleme
   @override
   String get tdType => "inputPassportElementErrorSourceTranslationFiles";
 
-  List<List<int>> fileHashes;
+  List<String> fileHashes;
 
   @override
   Map<String, dynamic> get params => {
@@ -5790,7 +5790,7 @@ class InputPassportElementErrorSourceFile extends InputPassportElementErrorSourc
   @override
   String get tdType => "inputPassportElementErrorSourceFile";
 
-  List<int> fileHash;
+  String fileHash;
 
   @override
   Map<String, dynamic> get params => {
@@ -5807,7 +5807,7 @@ class InputPassportElementErrorSourceFiles extends InputPassportElementErrorSour
   @override
   String get tdType => "inputPassportElementErrorSourceFiles";
 
-  List<List<int>> fileHashes;
+  List<String> fileHashes;
 
   @override
   Map<String, dynamic> get params => {
@@ -6490,7 +6490,7 @@ class MessagePaymentSuccessfulBot extends MessageContent {
   int invoiceMessageId;
   String currency;
   int totalAmount;
-  List<int> invoicePayload;
+  String invoicePayload;
   String shippingOptionId;
   OrderInfo orderInfo;
   String telegramPaymentChargeId;
@@ -7040,7 +7040,7 @@ class InputMessageVoiceNote extends InputMessageContent {
 
   InputFile voiceNote;
   int duration;
-  List<int> waveform;
+  String waveform;
   FormattedText caption;
 
   @override
@@ -7145,7 +7145,7 @@ class InputMessageInvoice extends InputMessageContent {
   int photoSize;
   int photoWidth;
   int photoHeight;
-  List<int> payload;
+  String payload;
   String providerToken;
   String providerData;
   String startParameter;
@@ -7908,7 +7908,7 @@ class CallConnection extends TdObject {
   String ip;
   String ipv6;
   int port;
-  List<int> peerTag;
+  String peerTag;
 
   @override
   Map<String, dynamic> get params => {
@@ -7986,7 +7986,7 @@ class CallStateReady extends CallState {
   CallProtocol protocol;
   List<CallConnection> connections;
   String config;
-  List<int> encryptionKey;
+  String encryptionKey;
   List<String> emojis;
   bool allowP2p;
 
@@ -9065,7 +9065,7 @@ class CallbackQueryPayloadData extends CallbackQueryPayload {
   @override
   String get tdType => "callbackQueryPayloadData";
 
-  List<int> data;
+  String data;
 
   @override
   Map<String, dynamic> get params => {
@@ -9179,7 +9179,7 @@ class TonLiteServerResponse extends TdObject {
   @override
   String get tdType => "tonLiteServerResponse";
 
-  List<int> response;
+  String response;
 
   @override
   Map<String, dynamic> get params => {
@@ -9196,7 +9196,7 @@ class TonWalletPasswordSalt extends TdObject {
   @override
   String get tdType => "tonWalletPasswordSalt";
 
-  List<int> salt;
+  String salt;
 
   @override
   Map<String, dynamic> get params => {
@@ -11561,7 +11561,7 @@ class FilePart extends TdObject {
   @override
   String get tdType => "filePart";
 
-  List<int> data;
+  String data;
 
   @override
   Map<String, dynamic> get params => {
@@ -13928,7 +13928,7 @@ class UpdateNewPreCheckoutQuery extends Update {
   int senderUserId;
   String currency;
   int totalAmount;
-  List<int> invoicePayload;
+  String invoicePayload;
   String shippingOptionId;
   OrderInfo orderInfo;
 
@@ -14145,7 +14145,7 @@ class TestBytes extends TdObject {
   @override
   String get tdType => "testBytes";
 
-  List<int> value;
+  String value;
 
   @override
   Map<String, dynamic> get params => {

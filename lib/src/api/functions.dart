@@ -8,6 +8,8 @@ class GetAuthorizationState extends TdFunction {
   Type get returnType => AuthorizationState;
 
   @override
+  String get tdType => "getAuthorizationState";
+  @override
   Map<String, dynamic> get params => {};
 
   GetAuthorizationState();
@@ -15,8 +17,11 @@ class GetAuthorizationState extends TdFunction {
 
 @reflector
 class SetTdlibParameters extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "setTdlibParameters";
   final TdlibParameters parameters;
 
   @override
@@ -31,9 +36,12 @@ class SetTdlibParameters extends TdFunction {
 
 @reflector
 class CheckDatabaseEncryptionKey extends TdFunction {
+  @override
   Type get returnType => Ok;
 
-  final List<int> encryptionKey;
+  @override
+  String get tdType => "checkDatabaseEncryptionKey";
+  final String encryptionKey;
 
   @override
   Map<String, dynamic> get params => {
@@ -47,8 +55,11 @@ class CheckDatabaseEncryptionKey extends TdFunction {
 
 @reflector
 class SetAuthenticationPhoneNumber extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "setAuthenticationPhoneNumber";
   final String phoneNumber;
   final PhoneNumberAuthenticationSettings settings;
 
@@ -70,6 +81,8 @@ class ResendAuthenticationCode extends TdFunction {
   Type get returnType => Ok;
 
   @override
+  String get tdType => "resendAuthenticationCode";
+  @override
   Map<String, dynamic> get params => {};
 
   ResendAuthenticationCode();
@@ -77,8 +90,11 @@ class ResendAuthenticationCode extends TdFunction {
 
 @reflector
 class CheckAuthenticationCode extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "checkAuthenticationCode";
   final String code;
 
   @override
@@ -93,8 +109,11 @@ class CheckAuthenticationCode extends TdFunction {
 
 @reflector
 class RegisterUser extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "registerUser";
   final String firstName;
   final String lastName;
 
@@ -112,8 +131,11 @@ class RegisterUser extends TdFunction {
 
 @reflector
 class CheckAuthenticationPassword extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "checkAuthenticationPassword";
   final String password;
 
   @override
@@ -132,6 +154,8 @@ class RequestAuthenticationPasswordRecovery extends TdFunction {
   Type get returnType => Ok;
 
   @override
+  String get tdType => "requestAuthenticationPasswordRecovery";
+  @override
   Map<String, dynamic> get params => {};
 
   RequestAuthenticationPasswordRecovery();
@@ -139,8 +163,11 @@ class RequestAuthenticationPasswordRecovery extends TdFunction {
 
 @reflector
 class RecoverAuthenticationPassword extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "recoverAuthenticationPassword";
   final String recoveryCode;
 
   @override
@@ -155,8 +182,11 @@ class RecoverAuthenticationPassword extends TdFunction {
 
 @reflector
 class CheckAuthenticationBotToken extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "checkAuthenticationBotToken";
   final String token;
 
   @override
@@ -175,6 +205,8 @@ class LogOut extends TdFunction {
   Type get returnType => Ok;
 
   @override
+  String get tdType => "logOut";
+  @override
   Map<String, dynamic> get params => {};
 
   LogOut();
@@ -185,6 +217,8 @@ class Close extends TdFunction {
   @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "close";
   @override
   Map<String, dynamic> get params => {};
 
@@ -197,6 +231,8 @@ class Destroy extends TdFunction {
   Type get returnType => Ok;
 
   @override
+  String get tdType => "destroy";
+  @override
   Map<String, dynamic> get params => {};
 
   Destroy();
@@ -204,9 +240,12 @@ class Destroy extends TdFunction {
 
 @reflector
 class SetDatabaseEncryptionKey extends TdFunction {
+  @override
   Type get returnType => Ok;
 
-  final List<int> newEncryptionKey;
+  @override
+  String get tdType => "setDatabaseEncryptionKey";
+  final String newEncryptionKey;
 
   @override
   Map<String, dynamic> get params => {
@@ -220,8 +259,11 @@ class SetDatabaseEncryptionKey extends TdFunction {
 
 @reflector
 class RemoveTopChat extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "removeTopChat";
   final TopChatCategory category;
   final int chatId;
 
@@ -239,8 +281,11 @@ class RemoveTopChat extends TdFunction {
 
 @reflector
 class AddRecentlyFoundChat extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "addRecentlyFoundChat";
   final int chatId;
 
   @override
@@ -255,8 +300,11 @@ class AddRecentlyFoundChat extends TdFunction {
 
 @reflector
 class RemoveRecentlyFoundChat extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "removeRecentlyFoundChat";
   final int chatId;
 
   @override
@@ -275,6 +323,8 @@ class ClearRecentlyFoundChats extends TdFunction {
   Type get returnType => Ok;
 
   @override
+  String get tdType => "clearRecentlyFoundChats";
+  @override
   Map<String, dynamic> get params => {};
 
   ClearRecentlyFoundChats();
@@ -282,8 +332,11 @@ class ClearRecentlyFoundChats extends TdFunction {
 
 @reflector
 class DeleteChatHistory extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "deleteChatHistory";
   final int chatId;
   final bool removeFromChatList;
   final bool revoke;
@@ -304,8 +357,11 @@ class DeleteChatHistory extends TdFunction {
 
 @reflector
 class RemoveNotification extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "removeNotification";
   final int notificationGroupId;
   final int notificationId;
 
@@ -323,8 +379,11 @@ class RemoveNotification extends TdFunction {
 
 @reflector
 class RemoveNotificationGroup extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "removeNotificationGroup";
   final int notificationGroupId;
   final int maxNotificationId;
 
@@ -342,8 +401,11 @@ class RemoveNotificationGroup extends TdFunction {
 
 @reflector
 class SendChatScreenshotTakenNotification extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "sendChatScreenshotTakenNotification";
   final int chatId;
 
   @override
@@ -358,8 +420,11 @@ class SendChatScreenshotTakenNotification extends TdFunction {
 
 @reflector
 class DeleteMessages extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "deleteMessages";
   final int chatId;
   final List<int> messageIds;
   final bool revoke;
@@ -380,8 +445,11 @@ class DeleteMessages extends TdFunction {
 
 @reflector
 class DeleteChatMessagesFromUser extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "deleteChatMessagesFromUser";
   final int chatId;
   final int userId;
 
@@ -399,8 +467,11 @@ class DeleteChatMessagesFromUser extends TdFunction {
 
 @reflector
 class EditInlineMessageText extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "editInlineMessageText";
   final String inlineMessageId;
   final ReplyMarkup replyMarkup;
   final InputMessageContent inputMessageContent;
@@ -421,8 +492,11 @@ class EditInlineMessageText extends TdFunction {
 
 @reflector
 class EditInlineMessageLiveLocation extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "editInlineMessageLiveLocation";
   final String inlineMessageId;
   final ReplyMarkup replyMarkup;
   final Location location;
@@ -443,8 +517,11 @@ class EditInlineMessageLiveLocation extends TdFunction {
 
 @reflector
 class EditInlineMessageMedia extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "editInlineMessageMedia";
   final String inlineMessageId;
   final ReplyMarkup replyMarkup;
   final InputMessageContent inputMessageContent;
@@ -465,8 +542,11 @@ class EditInlineMessageMedia extends TdFunction {
 
 @reflector
 class EditInlineMessageCaption extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "editInlineMessageCaption";
   final String inlineMessageId;
   final ReplyMarkup replyMarkup;
   final FormattedText caption;
@@ -487,8 +567,11 @@ class EditInlineMessageCaption extends TdFunction {
 
 @reflector
 class EditInlineMessageReplyMarkup extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "editInlineMessageReplyMarkup";
   final String inlineMessageId;
   final ReplyMarkup replyMarkup;
 
@@ -506,8 +589,11 @@ class EditInlineMessageReplyMarkup extends TdFunction {
 
 @reflector
 class SetPollAnswer extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "setPollAnswer";
   final int chatId;
   final int messageId;
   final List<int> optionIds;
@@ -528,8 +614,11 @@ class SetPollAnswer extends TdFunction {
 
 @reflector
 class StopPoll extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "stopPoll";
   final int chatId;
   final int messageId;
   final ReplyMarkup replyMarkup;
@@ -550,8 +639,11 @@ class StopPoll extends TdFunction {
 
 @reflector
 class AnswerInlineQuery extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "answerInlineQuery";
   final int inlineQueryId;
   final bool isPersonal;
   final List<InputInlineQueryResult> results;
@@ -584,8 +676,11 @@ class AnswerInlineQuery extends TdFunction {
 
 @reflector
 class AnswerCallbackQuery extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "answerCallbackQuery";
   final int callbackQueryId;
   final String text;
   final bool showAlert;
@@ -612,8 +707,11 @@ class AnswerCallbackQuery extends TdFunction {
 
 @reflector
 class AnswerShippingQuery extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "answerShippingQuery";
   final int shippingQueryId;
   final List<ShippingOption> shippingOptions;
   final String errorMessage;
@@ -634,8 +732,11 @@ class AnswerShippingQuery extends TdFunction {
 
 @reflector
 class AnswerPreCheckoutQuery extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "answerPreCheckoutQuery";
   final int preCheckoutQueryId;
   final String errorMessage;
 
@@ -653,8 +754,11 @@ class AnswerPreCheckoutQuery extends TdFunction {
 
 @reflector
 class SetInlineGameScore extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "setInlineGameScore";
   final String inlineMessageId;
   final bool editMessage;
   final int userId;
@@ -681,8 +785,11 @@ class SetInlineGameScore extends TdFunction {
 
 @reflector
 class DeleteChatReplyMarkup extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "deleteChatReplyMarkup";
   final int chatId;
   final int messageId;
 
@@ -700,8 +807,11 @@ class DeleteChatReplyMarkup extends TdFunction {
 
 @reflector
 class SendChatAction extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "sendChatAction";
   final int chatId;
   final ChatAction action;
 
@@ -719,8 +829,11 @@ class SendChatAction extends TdFunction {
 
 @reflector
 class OpenChat extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "openChat";
   final int chatId;
 
   @override
@@ -735,8 +848,11 @@ class OpenChat extends TdFunction {
 
 @reflector
 class CloseChat extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "closeChat";
   final int chatId;
 
   @override
@@ -751,8 +867,11 @@ class CloseChat extends TdFunction {
 
 @reflector
 class ViewMessages extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "viewMessages";
   final int chatId;
   final List<int> messageIds;
   final bool forceRead;
@@ -773,8 +892,11 @@ class ViewMessages extends TdFunction {
 
 @reflector
 class OpenMessageContent extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "openMessageContent";
   final int chatId;
   final int messageId;
 
@@ -792,8 +914,11 @@ class OpenMessageContent extends TdFunction {
 
 @reflector
 class ReadAllChatMentions extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "readAllChatMentions";
   final int chatId;
 
   @override
@@ -808,8 +933,11 @@ class ReadAllChatMentions extends TdFunction {
 
 @reflector
 class SetChatTitle extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "setChatTitle";
   final int chatId;
   final String title;
 
@@ -827,8 +955,11 @@ class SetChatTitle extends TdFunction {
 
 @reflector
 class SetChatPhoto extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "setChatPhoto";
   final int chatId;
   final InputFile photo;
 
@@ -846,8 +977,11 @@ class SetChatPhoto extends TdFunction {
 
 @reflector
 class SetChatPermissions extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "setChatPermissions";
   final int chatId;
   final ChatPermissions permissions;
 
@@ -865,8 +999,11 @@ class SetChatPermissions extends TdFunction {
 
 @reflector
 class SetChatDraftMessage extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "setChatDraftMessage";
   final int chatId;
   final DraftMessage draftMessage;
 
@@ -884,8 +1021,11 @@ class SetChatDraftMessage extends TdFunction {
 
 @reflector
 class SetChatNotificationSettings extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "setChatNotificationSettings";
   final int chatId;
   final ChatNotificationSettings notificationSettings;
 
@@ -903,8 +1043,11 @@ class SetChatNotificationSettings extends TdFunction {
 
 @reflector
 class ToggleChatIsPinned extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "toggleChatIsPinned";
   final int chatId;
   final bool isPinned;
 
@@ -922,8 +1065,11 @@ class ToggleChatIsPinned extends TdFunction {
 
 @reflector
 class ToggleChatIsMarkedAsUnread extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "toggleChatIsMarkedAsUnread";
   final int chatId;
   final bool isMarkedAsUnread;
 
@@ -941,8 +1087,11 @@ class ToggleChatIsMarkedAsUnread extends TdFunction {
 
 @reflector
 class ToggleChatDefaultDisableNotification extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "toggleChatDefaultDisableNotification";
   final int chatId;
   final bool defaultDisableNotification;
 
@@ -960,8 +1109,11 @@ class ToggleChatDefaultDisableNotification extends TdFunction {
 
 @reflector
 class SetChatClientData extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "setChatClientData";
   final int chatId;
   final String clientData;
 
@@ -979,8 +1131,11 @@ class SetChatClientData extends TdFunction {
 
 @reflector
 class SetChatDescription extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "setChatDescription";
   final int chatId;
   final String description;
 
@@ -998,8 +1153,11 @@ class SetChatDescription extends TdFunction {
 
 @reflector
 class PinChatMessage extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "pinChatMessage";
   final int chatId;
   final int messageId;
   final bool disableNotification;
@@ -1020,8 +1178,11 @@ class PinChatMessage extends TdFunction {
 
 @reflector
 class UnpinChatMessage extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "unpinChatMessage";
   final int chatId;
 
   @override
@@ -1036,8 +1197,11 @@ class UnpinChatMessage extends TdFunction {
 
 @reflector
 class JoinChat extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "joinChat";
   final int chatId;
 
   @override
@@ -1052,8 +1216,11 @@ class JoinChat extends TdFunction {
 
 @reflector
 class LeaveChat extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "leaveChat";
   final int chatId;
 
   @override
@@ -1068,8 +1235,11 @@ class LeaveChat extends TdFunction {
 
 @reflector
 class AddChatMember extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "addChatMember";
   final int chatId;
   final int userId;
   final int forwardLimit;
@@ -1090,8 +1260,11 @@ class AddChatMember extends TdFunction {
 
 @reflector
 class AddChatMembers extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "addChatMembers";
   final int chatId;
   final List<int> userIds;
 
@@ -1109,8 +1282,11 @@ class AddChatMembers extends TdFunction {
 
 @reflector
 class SetChatMemberStatus extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "setChatMemberStatus";
   final int chatId;
   final int userId;
   final ChatMemberStatus status;
@@ -1131,8 +1307,11 @@ class SetChatMemberStatus extends TdFunction {
 
 @reflector
 class ClearAllDraftMessages extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "clearAllDraftMessages";
   final bool excludeSecretChats;
 
   @override
@@ -1147,8 +1326,11 @@ class ClearAllDraftMessages extends TdFunction {
 
 @reflector
 class SetScopeNotificationSettings extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "setScopeNotificationSettings";
   final NotificationSettingsScope scope;
   final ScopeNotificationSettings notificationSettings;
 
@@ -1170,6 +1352,8 @@ class ResetAllNotificationSettings extends TdFunction {
   Type get returnType => Ok;
 
   @override
+  String get tdType => "resetAllNotificationSettings";
+  @override
   Map<String, dynamic> get params => {};
 
   ResetAllNotificationSettings();
@@ -1177,8 +1361,11 @@ class ResetAllNotificationSettings extends TdFunction {
 
 @reflector
 class SetPinnedChats extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "setPinnedChats";
   final List<int> chatIds;
 
   @override
@@ -1193,8 +1380,11 @@ class SetPinnedChats extends TdFunction {
 
 @reflector
 class CancelDownloadFile extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "cancelDownloadFile";
   final int fileId;
   final bool onlyIfPending;
 
@@ -1212,8 +1402,11 @@ class CancelDownloadFile extends TdFunction {
 
 @reflector
 class CancelUploadFile extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "cancelUploadFile";
   final int fileId;
 
   @override
@@ -1228,11 +1421,14 @@ class CancelUploadFile extends TdFunction {
 
 @reflector
 class WriteGeneratedFilePart extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "writeGeneratedFilePart";
   final int generationId;
   final int offset;
-  final List<int> data;
+  final String data;
 
   @override
   Map<String, dynamic> get params => {
@@ -1250,8 +1446,11 @@ class WriteGeneratedFilePart extends TdFunction {
 
 @reflector
 class SetFileGenerationProgress extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "setFileGenerationProgress";
   final int generationId;
   final int expectedSize;
   final int localPrefixSize;
@@ -1272,8 +1471,11 @@ class SetFileGenerationProgress extends TdFunction {
 
 @reflector
 class FinishFileGeneration extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "finishFileGeneration";
   final int generationId;
   final Error error;
 
@@ -1291,8 +1493,11 @@ class FinishFileGeneration extends TdFunction {
 
 @reflector
 class DeleteFile extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "deleteFile";
   final int fileId;
 
   @override
@@ -1307,8 +1512,11 @@ class DeleteFile extends TdFunction {
 
 @reflector
 class AcceptCall extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "acceptCall";
   final int callId;
   final CallProtocol protocol;
 
@@ -1326,8 +1534,11 @@ class AcceptCall extends TdFunction {
 
 @reflector
 class DiscardCall extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "discardCall";
   final int callId;
   final bool isDisconnected;
   final int duration;
@@ -1351,8 +1562,11 @@ class DiscardCall extends TdFunction {
 
 @reflector
 class SendCallRating extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "sendCallRating";
   final int callId;
   final int rating;
   final String comment;
@@ -1376,8 +1590,11 @@ class SendCallRating extends TdFunction {
 
 @reflector
 class SendCallDebugInformation extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "sendCallDebugInformation";
   final int callId;
   final String debugInformation;
 
@@ -1395,8 +1612,11 @@ class SendCallDebugInformation extends TdFunction {
 
 @reflector
 class BlockUser extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "blockUser";
   final int userId;
 
   @override
@@ -1411,8 +1631,11 @@ class BlockUser extends TdFunction {
 
 @reflector
 class UnblockUser extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "unblockUser";
   final int userId;
 
   @override
@@ -1427,8 +1650,11 @@ class UnblockUser extends TdFunction {
 
 @reflector
 class RemoveContacts extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "removeContacts";
   final List<int> userIds;
 
   @override
@@ -1447,6 +1673,8 @@ class ClearImportedContacts extends TdFunction {
   Type get returnType => Ok;
 
   @override
+  String get tdType => "clearImportedContacts";
+  @override
   Map<String, dynamic> get params => {};
 
   ClearImportedContacts();
@@ -1454,8 +1682,11 @@ class ClearImportedContacts extends TdFunction {
 
 @reflector
 class ChangeStickerSet extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "changeStickerSet";
   final int setId;
   final bool isInstalled;
   final bool isArchived;
@@ -1476,8 +1707,11 @@ class ChangeStickerSet extends TdFunction {
 
 @reflector
 class ViewTrendingStickerSets extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "viewTrendingStickerSets";
   final List<int> stickerSetIds;
 
   @override
@@ -1492,8 +1726,11 @@ class ViewTrendingStickerSets extends TdFunction {
 
 @reflector
 class ReorderInstalledStickerSets extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "reorderInstalledStickerSets";
   final bool isMasks;
   final List<int> stickerSetIds;
 
@@ -1511,8 +1748,11 @@ class ReorderInstalledStickerSets extends TdFunction {
 
 @reflector
 class RemoveRecentSticker extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "removeRecentSticker";
   final bool isAttached;
   final InputFile sticker;
 
@@ -1530,8 +1770,11 @@ class RemoveRecentSticker extends TdFunction {
 
 @reflector
 class ClearRecentStickers extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "clearRecentStickers";
   final bool isAttached;
 
   @override
@@ -1546,8 +1789,11 @@ class ClearRecentStickers extends TdFunction {
 
 @reflector
 class AddFavoriteSticker extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "addFavoriteSticker";
   final InputFile sticker;
 
   @override
@@ -1562,8 +1808,11 @@ class AddFavoriteSticker extends TdFunction {
 
 @reflector
 class RemoveFavoriteSticker extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "removeFavoriteSticker";
   final InputFile sticker;
 
   @override
@@ -1578,8 +1827,11 @@ class RemoveFavoriteSticker extends TdFunction {
 
 @reflector
 class AddSavedAnimation extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "addSavedAnimation";
   final InputFile animation;
 
   @override
@@ -1594,8 +1846,11 @@ class AddSavedAnimation extends TdFunction {
 
 @reflector
 class RemoveSavedAnimation extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "removeSavedAnimation";
   final InputFile animation;
 
   @override
@@ -1610,8 +1865,11 @@ class RemoveSavedAnimation extends TdFunction {
 
 @reflector
 class RemoveRecentHashtag extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "removeRecentHashtag";
   final String hashtag;
 
   @override
@@ -1626,8 +1884,11 @@ class RemoveRecentHashtag extends TdFunction {
 
 @reflector
 class SetProfilePhoto extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "setProfilePhoto";
   final InputFile photo;
 
   @override
@@ -1642,8 +1903,11 @@ class SetProfilePhoto extends TdFunction {
 
 @reflector
 class DeleteProfilePhoto extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "deleteProfilePhoto";
   final int profilePhotoId;
 
   @override
@@ -1658,8 +1922,11 @@ class DeleteProfilePhoto extends TdFunction {
 
 @reflector
 class SetName extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "setName";
   final String firstName;
   final String lastName;
 
@@ -1677,8 +1944,11 @@ class SetName extends TdFunction {
 
 @reflector
 class SetBio extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "setBio";
   final String bio;
 
   @override
@@ -1693,8 +1963,11 @@ class SetBio extends TdFunction {
 
 @reflector
 class SetUsername extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "setUsername";
   final String username;
 
   @override
@@ -1709,8 +1982,11 @@ class SetUsername extends TdFunction {
 
 @reflector
 class CheckChangePhoneNumberCode extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "checkChangePhoneNumberCode";
   final String code;
 
   @override
@@ -1725,8 +2001,11 @@ class CheckChangePhoneNumberCode extends TdFunction {
 
 @reflector
 class TerminateSession extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "terminateSession";
   final int sessionId;
 
   @override
@@ -1745,6 +2024,8 @@ class TerminateAllOtherSessions extends TdFunction {
   Type get returnType => Ok;
 
   @override
+  String get tdType => "terminateAllOtherSessions";
+  @override
   Map<String, dynamic> get params => {};
 
   TerminateAllOtherSessions();
@@ -1752,8 +2033,11 @@ class TerminateAllOtherSessions extends TdFunction {
 
 @reflector
 class DisconnectWebsite extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "disconnectWebsite";
   final int websiteId;
 
   @override
@@ -1772,6 +2056,8 @@ class DisconnectAllWebsites extends TdFunction {
   Type get returnType => Ok;
 
   @override
+  String get tdType => "disconnectAllWebsites";
+  @override
   Map<String, dynamic> get params => {};
 
   DisconnectAllWebsites();
@@ -1779,8 +2065,11 @@ class DisconnectAllWebsites extends TdFunction {
 
 @reflector
 class SetSupergroupUsername extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "setSupergroupUsername";
   final int supergroupId;
   final String username;
 
@@ -1798,8 +2087,11 @@ class SetSupergroupUsername extends TdFunction {
 
 @reflector
 class SetSupergroupStickerSet extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "setSupergroupStickerSet";
   final int supergroupId;
   final int stickerSetId;
 
@@ -1817,8 +2109,11 @@ class SetSupergroupStickerSet extends TdFunction {
 
 @reflector
 class ToggleSupergroupSignMessages extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "toggleSupergroupSignMessages";
   final int supergroupId;
   final bool signMessages;
 
@@ -1836,8 +2131,11 @@ class ToggleSupergroupSignMessages extends TdFunction {
 
 @reflector
 class ToggleSupergroupIsAllHistoryAvailable extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "toggleSupergroupIsAllHistoryAvailable";
   final int supergroupId;
   final bool isAllHistoryAvailable;
 
@@ -1855,8 +2153,11 @@ class ToggleSupergroupIsAllHistoryAvailable extends TdFunction {
 
 @reflector
 class ReportSupergroupSpam extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "reportSupergroupSpam";
   final int supergroupId;
   final int userId;
   final List<int> messageIds;
@@ -1877,8 +2178,11 @@ class ReportSupergroupSpam extends TdFunction {
 
 @reflector
 class DeleteSupergroup extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "deleteSupergroup";
   final int supergroupId;
 
   @override
@@ -1893,8 +2197,11 @@ class DeleteSupergroup extends TdFunction {
 
 @reflector
 class CloseSecretChat extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "closeSecretChat";
   final int secretChatId;
 
   @override
@@ -1913,6 +2220,8 @@ class DeleteSavedOrderInfo extends TdFunction {
   Type get returnType => Ok;
 
   @override
+  String get tdType => "deleteSavedOrderInfo";
+  @override
   Map<String, dynamic> get params => {};
 
   DeleteSavedOrderInfo();
@@ -1924,6 +2233,8 @@ class DeleteSavedCredentials extends TdFunction {
   Type get returnType => Ok;
 
   @override
+  String get tdType => "deleteSavedCredentials";
+  @override
   Map<String, dynamic> get params => {};
 
   DeleteSavedCredentials();
@@ -1931,8 +2242,11 @@ class DeleteSavedCredentials extends TdFunction {
 
 @reflector
 class RemoveBackground extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "removeBackground";
   final int backgroundId;
 
   @override
@@ -1951,6 +2265,8 @@ class ResetBackgrounds extends TdFunction {
   Type get returnType => Ok;
 
   @override
+  String get tdType => "resetBackgrounds";
+  @override
   Map<String, dynamic> get params => {};
 
   ResetBackgrounds();
@@ -1958,8 +2274,11 @@ class ResetBackgrounds extends TdFunction {
 
 @reflector
 class SynchronizeLanguagePack extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "synchronizeLanguagePack";
   final String languagePackId;
 
   @override
@@ -1974,8 +2293,11 @@ class SynchronizeLanguagePack extends TdFunction {
 
 @reflector
 class AddCustomServerLanguagePack extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "addCustomServerLanguagePack";
   final String languagePackId;
 
   @override
@@ -1990,8 +2312,11 @@ class AddCustomServerLanguagePack extends TdFunction {
 
 @reflector
 class SetCustomLanguagePack extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "setCustomLanguagePack";
   final LanguagePackInfo info;
   final List<LanguagePackString> strings;
 
@@ -2009,8 +2334,11 @@ class SetCustomLanguagePack extends TdFunction {
 
 @reflector
 class EditCustomLanguagePackInfo extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "editCustomLanguagePackInfo";
   final LanguagePackInfo info;
 
   @override
@@ -2025,8 +2353,11 @@ class EditCustomLanguagePackInfo extends TdFunction {
 
 @reflector
 class SetCustomLanguagePackString extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "setCustomLanguagePackString";
   final String languagePackId;
   final LanguagePackString newString;
 
@@ -2044,8 +2375,11 @@ class SetCustomLanguagePackString extends TdFunction {
 
 @reflector
 class DeleteLanguagePack extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "deleteLanguagePack";
   final String languagePackId;
 
   @override
@@ -2060,8 +2394,11 @@ class DeleteLanguagePack extends TdFunction {
 
 @reflector
 class ProcessPushNotification extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "processPushNotification";
   final String payload;
 
   @override
@@ -2076,8 +2413,11 @@ class ProcessPushNotification extends TdFunction {
 
 @reflector
 class SetUserPrivacySettingRules extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "setUserPrivacySettingRules";
   final UserPrivacySetting setting;
   final UserPrivacySettingRules rules;
 
@@ -2095,8 +2435,11 @@ class SetUserPrivacySettingRules extends TdFunction {
 
 @reflector
 class SetOption extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "setOption";
   final String name;
   final OptionValue value;
 
@@ -2114,8 +2457,11 @@ class SetOption extends TdFunction {
 
 @reflector
 class SetAccountTtl extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "setAccountTtl";
   final AccountTtl ttl;
 
   @override
@@ -2130,8 +2476,11 @@ class SetAccountTtl extends TdFunction {
 
 @reflector
 class DeleteAccount extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "deleteAccount";
   final String reason;
 
   @override
@@ -2146,8 +2495,11 @@ class DeleteAccount extends TdFunction {
 
 @reflector
 class ChangeChatReportSpamState extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "changeChatReportSpamState";
   final int chatId;
   final bool isSpamChat;
 
@@ -2165,8 +2517,11 @@ class ChangeChatReportSpamState extends TdFunction {
 
 @reflector
 class ReportChat extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "reportChat";
   final int chatId;
   final ChatReportReason reason;
   final List<int> messageIds;
@@ -2187,8 +2542,11 @@ class ReportChat extends TdFunction {
 
 @reflector
 class SetNetworkType extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "setNetworkType";
   final NetworkType type;
 
   @override
@@ -2203,8 +2561,11 @@ class SetNetworkType extends TdFunction {
 
 @reflector
 class AddNetworkStatistics extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "addNetworkStatistics";
   final NetworkStatisticsEntry entry;
 
   @override
@@ -2223,6 +2584,8 @@ class ResetNetworkStatistics extends TdFunction {
   Type get returnType => Ok;
 
   @override
+  String get tdType => "resetNetworkStatistics";
+  @override
   Map<String, dynamic> get params => {};
 
   ResetNetworkStatistics();
@@ -2230,8 +2593,11 @@ class ResetNetworkStatistics extends TdFunction {
 
 @reflector
 class SetAutoDownloadSettings extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "setAutoDownloadSettings";
   final AutoDownloadSettings settings;
   final NetworkType type;
 
@@ -2249,8 +2615,11 @@ class SetAutoDownloadSettings extends TdFunction {
 
 @reflector
 class DeletePassportElement extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "deletePassportElement";
   final PassportElementType type;
 
   @override
@@ -2265,8 +2634,11 @@ class DeletePassportElement extends TdFunction {
 
 @reflector
 class SetPassportElementErrors extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "setPassportElementErrors";
   final int userId;
   final List<InputPassportElementError> errors;
 
@@ -2284,8 +2656,11 @@ class SetPassportElementErrors extends TdFunction {
 
 @reflector
 class CheckPhoneNumberVerificationCode extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "checkPhoneNumberVerificationCode";
   final String code;
 
   @override
@@ -2300,8 +2675,11 @@ class CheckPhoneNumberVerificationCode extends TdFunction {
 
 @reflector
 class CheckEmailAddressVerificationCode extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "checkEmailAddressVerificationCode";
   final String code;
 
   @override
@@ -2316,8 +2694,11 @@ class CheckEmailAddressVerificationCode extends TdFunction {
 
 @reflector
 class SendPassportAuthorizationForm extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "sendPassportAuthorizationForm";
   final int autorizationFormId;
   final List<PassportElementType> types;
 
@@ -2335,8 +2716,11 @@ class SendPassportAuthorizationForm extends TdFunction {
 
 @reflector
 class CheckPhoneNumberConfirmationCode extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "checkPhoneNumberConfirmationCode";
   final String code;
 
   @override
@@ -2351,8 +2735,11 @@ class CheckPhoneNumberConfirmationCode extends TdFunction {
 
 @reflector
 class SetBotUpdatesStatus extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "setBotUpdatesStatus";
   final int pendingUpdateCount;
   final String errorMessage;
 
@@ -2370,8 +2757,11 @@ class SetBotUpdatesStatus extends TdFunction {
 
 @reflector
 class SetStickerPositionInSet extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "setStickerPositionInSet";
   final InputFile sticker;
   final int position;
 
@@ -2389,8 +2779,11 @@ class SetStickerPositionInSet extends TdFunction {
 
 @reflector
 class RemoveStickerFromSet extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "removeStickerFromSet";
   final InputFile sticker;
 
   @override
@@ -2405,8 +2798,11 @@ class RemoveStickerFromSet extends TdFunction {
 
 @reflector
 class AcceptTermsOfService extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "acceptTermsOfService";
   final String termsOfServiceId;
 
   @override
@@ -2421,8 +2817,11 @@ class AcceptTermsOfService extends TdFunction {
 
 @reflector
 class AnswerCustomQuery extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "answerCustomQuery";
   final int customQueryId;
   final String data;
 
@@ -2440,8 +2839,11 @@ class AnswerCustomQuery extends TdFunction {
 
 @reflector
 class SetAlarm extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "setAlarm";
   final double seconds;
 
   @override
@@ -2456,8 +2858,11 @@ class SetAlarm extends TdFunction {
 
 @reflector
 class SaveApplicationLogEvent extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "saveApplicationLogEvent";
   final String type;
   final int chatId;
   final JsonValue data;
@@ -2478,8 +2883,11 @@ class SaveApplicationLogEvent extends TdFunction {
 
 @reflector
 class EnableProxy extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "enableProxy";
   final int proxyId;
 
   @override
@@ -2498,6 +2906,8 @@ class DisableProxy extends TdFunction {
   Type get returnType => Ok;
 
   @override
+  String get tdType => "disableProxy";
+  @override
   Map<String, dynamic> get params => {};
 
   DisableProxy();
@@ -2505,8 +2915,11 @@ class DisableProxy extends TdFunction {
 
 @reflector
 class RemoveProxy extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "removeProxy";
   final int proxyId;
 
   @override
@@ -2521,8 +2934,11 @@ class RemoveProxy extends TdFunction {
 
 @reflector
 class SetLogStream extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "setLogStream";
   final LogStream logStream;
 
   @override
@@ -2537,8 +2953,11 @@ class SetLogStream extends TdFunction {
 
 @reflector
 class SetLogVerbosityLevel extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "setLogVerbosityLevel";
   final int newVerbosityLevel;
 
   @override
@@ -2553,8 +2972,11 @@ class SetLogVerbosityLevel extends TdFunction {
 
 @reflector
 class SetLogTagVerbosityLevel extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "setLogTagVerbosityLevel";
   final String tag;
   final int newVerbosityLevel;
 
@@ -2572,8 +2994,11 @@ class SetLogTagVerbosityLevel extends TdFunction {
 
 @reflector
 class AddLogMessage extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "addLogMessage";
   final int verbosityLevel;
   final String text;
 
@@ -2595,6 +3020,8 @@ class TestCallEmpty extends TdFunction {
   Type get returnType => Ok;
 
   @override
+  String get tdType => "testCallEmpty";
+  @override
   Map<String, dynamic> get params => {};
 
   TestCallEmpty();
@@ -2606,6 +3033,8 @@ class TestNetwork extends TdFunction {
   Type get returnType => Ok;
 
   @override
+  String get tdType => "testNetwork";
+  @override
   Map<String, dynamic> get params => {};
 
   TestNetwork();
@@ -2613,8 +3042,11 @@ class TestNetwork extends TdFunction {
 
 @reflector
 class TestProxy extends TdFunction {
+  @override
   Type get returnType => Ok;
 
+  @override
+  String get tdType => "testProxy";
   final String server;
   final int port;
   final ProxyType type;
@@ -2645,6 +3077,8 @@ class TestGetDifference extends TdFunction {
   Type get returnType => Ok;
 
   @override
+  String get tdType => "testGetDifference";
+  @override
   Map<String, dynamic> get params => {};
 
   TestGetDifference();
@@ -2655,6 +3089,8 @@ class GetCurrentState extends TdFunction {
   @override
   Type get returnType => Updates;
 
+  @override
+  String get tdType => "getCurrentState";
   @override
   Map<String, dynamic> get params => {};
 
@@ -2667,6 +3103,8 @@ class GetPasswordState extends TdFunction {
   Type get returnType => PasswordState;
 
   @override
+  String get tdType => "getPasswordState";
+  @override
   Map<String, dynamic> get params => {};
 
   GetPasswordState();
@@ -2674,8 +3112,11 @@ class GetPasswordState extends TdFunction {
 
 @reflector
 class SetPassword extends TdFunction {
+  @override
   Type get returnType => PasswordState;
 
+  @override
+  String get tdType => "setPassword";
   final String oldPassword;
   final String newPassword;
   final String newHint;
@@ -2702,8 +3143,11 @@ class SetPassword extends TdFunction {
 
 @reflector
 class SetRecoveryEmailAddress extends TdFunction {
+  @override
   Type get returnType => PasswordState;
 
+  @override
+  String get tdType => "setRecoveryEmailAddress";
   final String password;
   final String newRecoveryEmailAddress;
 
@@ -2721,8 +3165,11 @@ class SetRecoveryEmailAddress extends TdFunction {
 
 @reflector
 class CheckRecoveryEmailAddressCode extends TdFunction {
+  @override
   Type get returnType => PasswordState;
 
+  @override
+  String get tdType => "checkRecoveryEmailAddressCode";
   final String code;
 
   @override
@@ -2741,6 +3188,8 @@ class ResendRecoveryEmailAddressCode extends TdFunction {
   Type get returnType => PasswordState;
 
   @override
+  String get tdType => "resendRecoveryEmailAddressCode";
+  @override
   Map<String, dynamic> get params => {};
 
   ResendRecoveryEmailAddressCode();
@@ -2748,8 +3197,11 @@ class ResendRecoveryEmailAddressCode extends TdFunction {
 
 @reflector
 class RecoverPassword extends TdFunction {
+  @override
   Type get returnType => PasswordState;
 
+  @override
+  String get tdType => "recoverPassword";
   final String recoveryCode;
 
   @override
@@ -2764,8 +3216,11 @@ class RecoverPassword extends TdFunction {
 
 @reflector
 class GetRecoveryEmailAddress extends TdFunction {
+  @override
   Type get returnType => RecoveryEmailAddress;
 
+  @override
+  String get tdType => "getRecoveryEmailAddress";
   final String password;
 
   @override
@@ -2784,6 +3239,8 @@ class RequestPasswordRecovery extends TdFunction {
   Type get returnType => EmailAddressAuthenticationCodeInfo;
 
   @override
+  String get tdType => "requestPasswordRecovery";
+  @override
   Map<String, dynamic> get params => {};
 
   RequestPasswordRecovery();
@@ -2791,8 +3248,11 @@ class RequestPasswordRecovery extends TdFunction {
 
 @reflector
 class SendEmailAddressVerificationCode extends TdFunction {
+  @override
   Type get returnType => EmailAddressAuthenticationCodeInfo;
 
+  @override
+  String get tdType => "sendEmailAddressVerificationCode";
   final String emailAddress;
 
   @override
@@ -2811,6 +3271,8 @@ class ResendEmailAddressVerificationCode extends TdFunction {
   Type get returnType => EmailAddressAuthenticationCodeInfo;
 
   @override
+  String get tdType => "resendEmailAddressVerificationCode";
+  @override
   Map<String, dynamic> get params => {};
 
   ResendEmailAddressVerificationCode();
@@ -2818,8 +3280,11 @@ class ResendEmailAddressVerificationCode extends TdFunction {
 
 @reflector
 class CreateTemporaryPassword extends TdFunction {
+  @override
   Type get returnType => TemporaryPasswordState;
 
+  @override
+  String get tdType => "createTemporaryPassword";
   final String password;
   final int validFor;
 
@@ -2841,6 +3306,8 @@ class GetTemporaryPasswordState extends TdFunction {
   Type get returnType => TemporaryPasswordState;
 
   @override
+  String get tdType => "getTemporaryPasswordState";
+  @override
   Map<String, dynamic> get params => {};
 
   GetTemporaryPasswordState();
@@ -2852,6 +3319,8 @@ class GetMe extends TdFunction {
   Type get returnType => User;
 
   @override
+  String get tdType => "getMe";
+  @override
   Map<String, dynamic> get params => {};
 
   GetMe();
@@ -2859,8 +3328,11 @@ class GetMe extends TdFunction {
 
 @reflector
 class GetUser extends TdFunction {
+  @override
   Type get returnType => User;
 
+  @override
+  String get tdType => "getUser";
   final int userId;
 
   @override
@@ -2879,6 +3351,8 @@ class GetSupportUser extends TdFunction {
   Type get returnType => User;
 
   @override
+  String get tdType => "getSupportUser";
+  @override
   Map<String, dynamic> get params => {};
 
   GetSupportUser();
@@ -2886,8 +3360,11 @@ class GetSupportUser extends TdFunction {
 
 @reflector
 class GetUserFullInfo extends TdFunction {
+  @override
   Type get returnType => UserFullInfo;
 
+  @override
+  String get tdType => "getUserFullInfo";
   final int userId;
 
   @override
@@ -2902,8 +3379,11 @@ class GetUserFullInfo extends TdFunction {
 
 @reflector
 class GetBasicGroup extends TdFunction {
+  @override
   Type get returnType => BasicGroup;
 
+  @override
+  String get tdType => "getBasicGroup";
   final int basicGroupId;
 
   @override
@@ -2918,8 +3398,11 @@ class GetBasicGroup extends TdFunction {
 
 @reflector
 class GetBasicGroupFullInfo extends TdFunction {
+  @override
   Type get returnType => BasicGroupFullInfo;
 
+  @override
+  String get tdType => "getBasicGroupFullInfo";
   final int basicGroupId;
 
   @override
@@ -2934,8 +3417,11 @@ class GetBasicGroupFullInfo extends TdFunction {
 
 @reflector
 class GetSupergroup extends TdFunction {
+  @override
   Type get returnType => Supergroup;
 
+  @override
+  String get tdType => "getSupergroup";
   final int supergroupId;
 
   @override
@@ -2950,8 +3436,11 @@ class GetSupergroup extends TdFunction {
 
 @reflector
 class GetSupergroupFullInfo extends TdFunction {
+  @override
   Type get returnType => SupergroupFullInfo;
 
+  @override
+  String get tdType => "getSupergroupFullInfo";
   final int supergroupId;
 
   @override
@@ -2966,8 +3455,11 @@ class GetSupergroupFullInfo extends TdFunction {
 
 @reflector
 class GetSecretChat extends TdFunction {
+  @override
   Type get returnType => SecretChat;
 
+  @override
+  String get tdType => "getSecretChat";
   final int secretChatId;
 
   @override
@@ -2982,8 +3474,11 @@ class GetSecretChat extends TdFunction {
 
 @reflector
 class GetChat extends TdFunction {
+  @override
   Type get returnType => Chat;
 
+  @override
+  String get tdType => "getChat";
   final int chatId;
 
   @override
@@ -2998,8 +3493,11 @@ class GetChat extends TdFunction {
 
 @reflector
 class SearchPublicChat extends TdFunction {
+  @override
   Type get returnType => Chat;
 
+  @override
+  String get tdType => "searchPublicChat";
   final String username;
 
   @override
@@ -3014,8 +3512,11 @@ class SearchPublicChat extends TdFunction {
 
 @reflector
 class CreatePrivateChat extends TdFunction {
+  @override
   Type get returnType => Chat;
 
+  @override
+  String get tdType => "createPrivateChat";
   final int userId;
   final bool force;
 
@@ -3033,8 +3534,11 @@ class CreatePrivateChat extends TdFunction {
 
 @reflector
 class CreateBasicGroupChat extends TdFunction {
+  @override
   Type get returnType => Chat;
 
+  @override
+  String get tdType => "createBasicGroupChat";
   final int basicGroupId;
   final bool force;
 
@@ -3052,8 +3556,11 @@ class CreateBasicGroupChat extends TdFunction {
 
 @reflector
 class CreateSupergroupChat extends TdFunction {
+  @override
   Type get returnType => Chat;
 
+  @override
+  String get tdType => "createSupergroupChat";
   final int supergroupId;
   final bool force;
 
@@ -3071,8 +3578,11 @@ class CreateSupergroupChat extends TdFunction {
 
 @reflector
 class CreateSecretChat extends TdFunction {
+  @override
   Type get returnType => Chat;
 
+  @override
+  String get tdType => "createSecretChat";
   final int secretChatId;
 
   @override
@@ -3087,8 +3597,11 @@ class CreateSecretChat extends TdFunction {
 
 @reflector
 class CreateNewBasicGroupChat extends TdFunction {
+  @override
   Type get returnType => Chat;
 
+  @override
+  String get tdType => "createNewBasicGroupChat";
   final List<int> userIds;
   final String title;
 
@@ -3106,8 +3619,11 @@ class CreateNewBasicGroupChat extends TdFunction {
 
 @reflector
 class CreateNewSupergroupChat extends TdFunction {
+  @override
   Type get returnType => Chat;
 
+  @override
+  String get tdType => "createNewSupergroupChat";
   final String title;
   final bool isChannel;
   final String description;
@@ -3128,8 +3644,11 @@ class CreateNewSupergroupChat extends TdFunction {
 
 @reflector
 class CreateNewSecretChat extends TdFunction {
+  @override
   Type get returnType => Chat;
 
+  @override
+  String get tdType => "createNewSecretChat";
   final int userId;
 
   @override
@@ -3144,8 +3663,11 @@ class CreateNewSecretChat extends TdFunction {
 
 @reflector
 class UpgradeBasicGroupChatToSupergroupChat extends TdFunction {
+  @override
   Type get returnType => Chat;
 
+  @override
+  String get tdType => "upgradeBasicGroupChatToSupergroupChat";
   final int chatId;
 
   @override
@@ -3160,8 +3682,11 @@ class UpgradeBasicGroupChatToSupergroupChat extends TdFunction {
 
 @reflector
 class JoinChatByInviteLink extends TdFunction {
+  @override
   Type get returnType => Chat;
 
+  @override
+  String get tdType => "joinChatByInviteLink";
   final String inviteLink;
 
   @override
@@ -3176,8 +3701,11 @@ class JoinChatByInviteLink extends TdFunction {
 
 @reflector
 class GetMessage extends TdFunction {
+  @override
   Type get returnType => Message;
 
+  @override
+  String get tdType => "getMessage";
   final int chatId;
   final int messageId;
 
@@ -3195,8 +3723,11 @@ class GetMessage extends TdFunction {
 
 @reflector
 class GetMessageLocally extends TdFunction {
+  @override
   Type get returnType => Message;
 
+  @override
+  String get tdType => "getMessageLocally";
   final int chatId;
   final int messageId;
 
@@ -3214,8 +3745,11 @@ class GetMessageLocally extends TdFunction {
 
 @reflector
 class GetRepliedMessage extends TdFunction {
+  @override
   Type get returnType => Message;
 
+  @override
+  String get tdType => "getRepliedMessage";
   final int chatId;
   final int messageId;
 
@@ -3233,8 +3767,11 @@ class GetRepliedMessage extends TdFunction {
 
 @reflector
 class GetChatPinnedMessage extends TdFunction {
+  @override
   Type get returnType => Message;
 
+  @override
+  String get tdType => "getChatPinnedMessage";
   final int chatId;
 
   @override
@@ -3249,8 +3786,11 @@ class GetChatPinnedMessage extends TdFunction {
 
 @reflector
 class GetChatMessageByDate extends TdFunction {
+  @override
   Type get returnType => Message;
 
+  @override
+  String get tdType => "getChatMessageByDate";
   final int chatId;
   final int date;
 
@@ -3268,8 +3808,11 @@ class GetChatMessageByDate extends TdFunction {
 
 @reflector
 class SendMessage extends TdFunction {
+  @override
   Type get returnType => Message;
 
+  @override
+  String get tdType => "sendMessage";
   final int chatId;
   final int replyToMessageId;
   final bool disableNotification;
@@ -3299,8 +3842,11 @@ class SendMessage extends TdFunction {
 
 @reflector
 class SendBotStartMessage extends TdFunction {
+  @override
   Type get returnType => Message;
 
+  @override
+  String get tdType => "sendBotStartMessage";
   final int botUserId;
   final int chatId;
   final String parameter;
@@ -3321,8 +3867,11 @@ class SendBotStartMessage extends TdFunction {
 
 @reflector
 class SendInlineQueryResultMessage extends TdFunction {
+  @override
   Type get returnType => Message;
 
+  @override
+  String get tdType => "sendInlineQueryResultMessage";
   final int chatId;
   final int replyToMessageId;
   final bool disableNotification;
@@ -3355,8 +3904,11 @@ class SendInlineQueryResultMessage extends TdFunction {
 
 @reflector
 class SendChatSetTtlMessage extends TdFunction {
+  @override
   Type get returnType => Message;
 
+  @override
+  String get tdType => "sendChatSetTtlMessage";
   final int chatId;
   final int ttl;
 
@@ -3374,8 +3926,11 @@ class SendChatSetTtlMessage extends TdFunction {
 
 @reflector
 class AddLocalMessage extends TdFunction {
+  @override
   Type get returnType => Message;
 
+  @override
+  String get tdType => "addLocalMessage";
   final int chatId;
   final int senderUserId;
   final int replyToMessageId;
@@ -3402,8 +3957,11 @@ class AddLocalMessage extends TdFunction {
 
 @reflector
 class EditMessageText extends TdFunction {
+  @override
   Type get returnType => Message;
 
+  @override
+  String get tdType => "editMessageText";
   final int chatId;
   final int messageId;
   final ReplyMarkup replyMarkup;
@@ -3427,8 +3985,11 @@ class EditMessageText extends TdFunction {
 
 @reflector
 class EditMessageLiveLocation extends TdFunction {
+  @override
   Type get returnType => Message;
 
+  @override
+  String get tdType => "editMessageLiveLocation";
   final int chatId;
   final int messageId;
   final ReplyMarkup replyMarkup;
@@ -3452,8 +4013,11 @@ class EditMessageLiveLocation extends TdFunction {
 
 @reflector
 class EditMessageMedia extends TdFunction {
+  @override
   Type get returnType => Message;
 
+  @override
+  String get tdType => "editMessageMedia";
   final int chatId;
   final int messageId;
   final ReplyMarkup replyMarkup;
@@ -3477,8 +4041,11 @@ class EditMessageMedia extends TdFunction {
 
 @reflector
 class EditMessageCaption extends TdFunction {
+  @override
   Type get returnType => Message;
 
+  @override
+  String get tdType => "editMessageCaption";
   final int chatId;
   final int messageId;
   final ReplyMarkup replyMarkup;
@@ -3502,8 +4069,11 @@ class EditMessageCaption extends TdFunction {
 
 @reflector
 class EditMessageReplyMarkup extends TdFunction {
+  @override
   Type get returnType => Message;
 
+  @override
+  String get tdType => "editMessageReplyMarkup";
   final int chatId;
   final int messageId;
   final ReplyMarkup replyMarkup;
@@ -3524,8 +4094,11 @@ class EditMessageReplyMarkup extends TdFunction {
 
 @reflector
 class SetGameScore extends TdFunction {
+  @override
   Type get returnType => Message;
 
+  @override
+  String get tdType => "setGameScore";
   final int chatId;
   final int messageId;
   final bool editMessage;
@@ -3555,8 +4128,11 @@ class SetGameScore extends TdFunction {
 
 @reflector
 class GetMessages extends TdFunction {
+  @override
   Type get returnType => Messages;
 
+  @override
+  String get tdType => "getMessages";
   final int chatId;
   final List<int> messageIds;
 
@@ -3574,8 +4150,11 @@ class GetMessages extends TdFunction {
 
 @reflector
 class GetChatHistory extends TdFunction {
+  @override
   Type get returnType => Messages;
 
+  @override
+  String get tdType => "getChatHistory";
   final int chatId;
   final int fromMessageId;
   final int offset;
@@ -3602,8 +4181,11 @@ class GetChatHistory extends TdFunction {
 
 @reflector
 class SearchChatMessages extends TdFunction {
+  @override
   Type get returnType => Messages;
 
+  @override
+  String get tdType => "searchChatMessages";
   final int chatId;
   final String query;
   final int senderUserId;
@@ -3636,8 +4218,11 @@ class SearchChatMessages extends TdFunction {
 
 @reflector
 class SearchMessages extends TdFunction {
+  @override
   Type get returnType => Messages;
 
+  @override
+  String get tdType => "searchMessages";
   final String query;
   final int offsetDate;
   final int offsetChatId;
@@ -3664,8 +4249,11 @@ class SearchMessages extends TdFunction {
 
 @reflector
 class SearchCallMessages extends TdFunction {
+  @override
   Type get returnType => Messages;
 
+  @override
+  String get tdType => "searchCallMessages";
   final int fromMessageId;
   final int limit;
   final bool onlyMissed;
@@ -3686,8 +4274,11 @@ class SearchCallMessages extends TdFunction {
 
 @reflector
 class SearchChatRecentLocationMessages extends TdFunction {
+  @override
   Type get returnType => Messages;
 
+  @override
+  String get tdType => "searchChatRecentLocationMessages";
   final int chatId;
   final int limit;
 
@@ -3709,6 +4300,8 @@ class GetActiveLiveLocationMessages extends TdFunction {
   Type get returnType => Messages;
 
   @override
+  String get tdType => "getActiveLiveLocationMessages";
+  @override
   Map<String, dynamic> get params => {};
 
   GetActiveLiveLocationMessages();
@@ -3716,8 +4309,11 @@ class GetActiveLiveLocationMessages extends TdFunction {
 
 @reflector
 class SendMessageAlbum extends TdFunction {
+  @override
   Type get returnType => Messages;
 
+  @override
+  String get tdType => "sendMessageAlbum";
   final int chatId;
   final int replyToMessageId;
   final bool disableNotification;
@@ -3744,8 +4340,11 @@ class SendMessageAlbum extends TdFunction {
 
 @reflector
 class ForwardMessages extends TdFunction {
+  @override
   Type get returnType => Messages;
 
+  @override
+  String get tdType => "forwardMessages";
   final int chatId;
   final int fromChatId;
   final List<int> messageIds;
@@ -3781,8 +4380,11 @@ class ForwardMessages extends TdFunction {
 
 @reflector
 class ResendMessages extends TdFunction {
+  @override
   Type get returnType => Messages;
 
+  @override
+  String get tdType => "resendMessages";
   final int chatId;
   final List<int> messageIds;
 
@@ -3800,8 +4402,11 @@ class ResendMessages extends TdFunction {
 
 @reflector
 class GetFile extends TdFunction {
+  @override
   Type get returnType => File;
 
+  @override
+  String get tdType => "getFile";
   final int fileId;
 
   @override
@@ -3816,8 +4421,11 @@ class GetFile extends TdFunction {
 
 @reflector
 class GetRemoteFile extends TdFunction {
+  @override
   Type get returnType => File;
 
+  @override
+  String get tdType => "getRemoteFile";
   final String remoteFileId;
   final FileType fileType;
 
@@ -3835,8 +4443,11 @@ class GetRemoteFile extends TdFunction {
 
 @reflector
 class DownloadFile extends TdFunction {
+  @override
   Type get returnType => File;
 
+  @override
+  String get tdType => "downloadFile";
   final int fileId;
   final int priority;
   final int offset;
@@ -3863,8 +4474,11 @@ class DownloadFile extends TdFunction {
 
 @reflector
 class UploadFile extends TdFunction {
+  @override
   Type get returnType => File;
 
+  @override
+  String get tdType => "uploadFile";
   final InputFile file;
   final FileType fileType;
   final int priority;
@@ -3885,8 +4499,11 @@ class UploadFile extends TdFunction {
 
 @reflector
 class UploadStickerFile extends TdFunction {
+  @override
   Type get returnType => File;
 
+  @override
+  String get tdType => "uploadStickerFile";
   final int userId;
   final InputFile pngSticker;
 
@@ -3904,8 +4521,11 @@ class UploadStickerFile extends TdFunction {
 
 @reflector
 class GetMapThumbnailFile extends TdFunction {
+  @override
   Type get returnType => File;
 
+  @override
+  String get tdType => "getMapThumbnailFile";
   final Location location;
   final int zoom;
   final int width;
@@ -3935,8 +4555,11 @@ class GetMapThumbnailFile extends TdFunction {
 
 @reflector
 class GetChats extends TdFunction {
+  @override
   Type get returnType => Chats;
 
+  @override
+  String get tdType => "getChats";
   final int offsetOrder;
   final int offsetChatId;
   final int limit;
@@ -3957,8 +4580,11 @@ class GetChats extends TdFunction {
 
 @reflector
 class SearchPublicChats extends TdFunction {
+  @override
   Type get returnType => Chats;
 
+  @override
+  String get tdType => "searchPublicChats";
   final String query;
 
   @override
@@ -3973,8 +4599,11 @@ class SearchPublicChats extends TdFunction {
 
 @reflector
 class SearchChats extends TdFunction {
+  @override
   Type get returnType => Chats;
 
+  @override
+  String get tdType => "searchChats";
   final String query;
   final int limit;
 
@@ -3992,8 +4621,11 @@ class SearchChats extends TdFunction {
 
 @reflector
 class SearchChatsOnServer extends TdFunction {
+  @override
   Type get returnType => Chats;
 
+  @override
+  String get tdType => "searchChatsOnServer";
   final String query;
   final int limit;
 
@@ -4011,8 +4643,11 @@ class SearchChatsOnServer extends TdFunction {
 
 @reflector
 class GetTopChats extends TdFunction {
+  @override
   Type get returnType => Chats;
 
+  @override
+  String get tdType => "getTopChats";
   final TopChatCategory category;
   final int limit;
 
@@ -4034,6 +4669,8 @@ class GetCreatedPublicChats extends TdFunction {
   Type get returnType => Chats;
 
   @override
+  String get tdType => "getCreatedPublicChats";
+  @override
   Map<String, dynamic> get params => {};
 
   GetCreatedPublicChats();
@@ -4041,8 +4678,11 @@ class GetCreatedPublicChats extends TdFunction {
 
 @reflector
 class GetGroupsInCommon extends TdFunction {
+  @override
   Type get returnType => Chats;
 
+  @override
+  String get tdType => "getGroupsInCommon";
   final int userId;
   final int offsetChatId;
   final int limit;
@@ -4063,8 +4703,11 @@ class GetGroupsInCommon extends TdFunction {
 
 @reflector
 class GetChatNotificationSettingsExceptions extends TdFunction {
+  @override
   Type get returnType => Chats;
 
+  @override
+  String get tdType => "getChatNotificationSettingsExceptions";
   final NotificationSettingsScope scope;
   final bool compareSound;
 
@@ -4082,8 +4725,11 @@ class GetChatNotificationSettingsExceptions extends TdFunction {
 
 @reflector
 class CheckChatUsername extends TdFunction {
+  @override
   Type get returnType => CheckChatUsernameResult;
 
+  @override
+  String get tdType => "checkChatUsername";
   final int chatId;
   final String username;
 
@@ -4101,8 +4747,11 @@ class CheckChatUsername extends TdFunction {
 
 @reflector
 class SearchSecretMessages extends TdFunction {
+  @override
   Type get returnType => FoundMessages;
 
+  @override
+  String get tdType => "searchSecretMessages";
   final int chatId;
   final String query;
   final int fromSearchId;
@@ -4129,8 +4778,11 @@ class SearchSecretMessages extends TdFunction {
 
 @reflector
 class GetChatMessageCount extends TdFunction {
+  @override
   Type get returnType => Count;
 
+  @override
+  String get tdType => "getChatMessageCount";
   final int chatId;
   final SearchMessagesFilter filter;
   final bool returnLocal;
@@ -4151,8 +4803,11 @@ class GetChatMessageCount extends TdFunction {
 
 @reflector
 class GetFileDownloadedPrefixSize extends TdFunction {
+  @override
   Type get returnType => Count;
 
+  @override
+  String get tdType => "getFileDownloadedPrefixSize";
   final int fileId;
   final int offset;
 
@@ -4174,6 +4829,8 @@ class GetImportedContactCount extends TdFunction {
   Type get returnType => Count;
 
   @override
+  String get tdType => "getImportedContactCount";
+  @override
   Map<String, dynamic> get params => {};
 
   GetImportedContactCount();
@@ -4181,8 +4838,11 @@ class GetImportedContactCount extends TdFunction {
 
 @reflector
 class GetPublicMessageLink extends TdFunction {
+  @override
   Type get returnType => PublicMessageLink;
 
+  @override
+  String get tdType => "getPublicMessageLink";
   final int chatId;
   final int messageId;
   final bool forAlbum;
@@ -4203,8 +4863,11 @@ class GetPublicMessageLink extends TdFunction {
 
 @reflector
 class GetMessageLink extends TdFunction {
+  @override
   Type get returnType => HttpUrl;
 
+  @override
+  String get tdType => "getMessageLink";
   final int chatId;
   final int messageId;
 
@@ -4222,8 +4885,11 @@ class GetMessageLink extends TdFunction {
 
 @reflector
 class GetEmojiSuggestionsUrl extends TdFunction {
+  @override
   Type get returnType => HttpUrl;
 
+  @override
+  String get tdType => "getEmojiSuggestionsUrl";
   final String languageCode;
 
   @override
@@ -4238,8 +4904,11 @@ class GetEmojiSuggestionsUrl extends TdFunction {
 
 @reflector
 class GetBackgroundUrl extends TdFunction {
+  @override
   Type get returnType => HttpUrl;
 
+  @override
+  String get tdType => "getBackgroundUrl";
   final String name;
   final BackgroundType type;
 
@@ -4257,8 +4926,11 @@ class GetBackgroundUrl extends TdFunction {
 
 @reflector
 class GetChatStatisticsUrl extends TdFunction {
+  @override
   Type get returnType => HttpUrl;
 
+  @override
+  String get tdType => "getChatStatisticsUrl";
   final int chatId;
   final String parameters;
   final bool isDark;
@@ -4279,8 +4951,11 @@ class GetChatStatisticsUrl extends TdFunction {
 
 @reflector
 class GetMessageLinkInfo extends TdFunction {
+  @override
   Type get returnType => MessageLinkInfo;
 
+  @override
+  String get tdType => "getMessageLinkInfo";
   final String url;
 
   @override
@@ -4295,8 +4970,11 @@ class GetMessageLinkInfo extends TdFunction {
 
 @reflector
 class GetTextEntities extends TdFunction {
+  @override
   Type get returnType => TextEntities;
 
+  @override
+  String get tdType => "getTextEntities";
   final String text;
 
   @override
@@ -4311,8 +4989,11 @@ class GetTextEntities extends TdFunction {
 
 @reflector
 class ParseTextEntities extends TdFunction {
+  @override
   Type get returnType => FormattedText;
 
+  @override
+  String get tdType => "parseTextEntities";
   final String text;
   final TextParseMode parseMode;
 
@@ -4330,8 +5011,11 @@ class ParseTextEntities extends TdFunction {
 
 @reflector
 class GetFileMimeType extends TdFunction {
+  @override
   Type get returnType => Text;
 
+  @override
+  String get tdType => "getFileMimeType";
   final String fileName;
 
   @override
@@ -4346,8 +5030,11 @@ class GetFileMimeType extends TdFunction {
 
 @reflector
 class GetFileExtension extends TdFunction {
+  @override
   Type get returnType => Text;
 
+  @override
+  String get tdType => "getFileExtension";
   final String mimeType;
 
   @override
@@ -4362,8 +5049,11 @@ class GetFileExtension extends TdFunction {
 
 @reflector
 class CleanFileName extends TdFunction {
+  @override
   Type get returnType => Text;
 
+  @override
+  String get tdType => "cleanFileName";
   final String fileName;
 
   @override
@@ -4378,8 +5068,11 @@ class CleanFileName extends TdFunction {
 
 @reflector
 class GetJsonString extends TdFunction {
+  @override
   Type get returnType => Text;
 
+  @override
+  String get tdType => "getJsonString";
   final JsonValue jsonValue;
 
   @override
@@ -4394,8 +5087,11 @@ class GetJsonString extends TdFunction {
 
 @reflector
 class GetPreferredCountryLanguage extends TdFunction {
+  @override
   Type get returnType => Text;
 
+  @override
+  String get tdType => "getPreferredCountryLanguage";
   final String countryCode;
 
   @override
@@ -4414,6 +5110,8 @@ class GetCountryCode extends TdFunction {
   Type get returnType => Text;
 
   @override
+  String get tdType => "getCountryCode";
+  @override
   Map<String, dynamic> get params => {};
 
   GetCountryCode();
@@ -4425,6 +5123,8 @@ class GetInviteText extends TdFunction {
   Type get returnType => Text;
 
   @override
+  String get tdType => "getInviteText";
+  @override
   Map<String, dynamic> get params => {};
 
   GetInviteText();
@@ -4432,8 +5132,11 @@ class GetInviteText extends TdFunction {
 
 @reflector
 class GetProxyLink extends TdFunction {
+  @override
   Type get returnType => Text;
 
+  @override
+  String get tdType => "getProxyLink";
   final int proxyId;
 
   @override
@@ -4448,8 +5151,11 @@ class GetProxyLink extends TdFunction {
 
 @reflector
 class GetLanguagePackString extends TdFunction {
+  @override
   Type get returnType => LanguagePackStringValue;
 
+  @override
+  String get tdType => "getLanguagePackString";
   final String languagePackDatabasePath;
   final String localizationTarget;
   final String languagePackId;
@@ -4473,8 +5179,11 @@ class GetLanguagePackString extends TdFunction {
 
 @reflector
 class GetJsonValue extends TdFunction {
+  @override
   Type get returnType => JsonValue;
 
+  @override
+  String get tdType => "getJsonValue";
   final String json;
 
   @override
@@ -4493,6 +5202,8 @@ class GetApplicationConfig extends TdFunction {
   Type get returnType => JsonValue;
 
   @override
+  String get tdType => "getApplicationConfig";
+  @override
   Map<String, dynamic> get params => {};
 
   GetApplicationConfig();
@@ -4500,8 +5211,11 @@ class GetApplicationConfig extends TdFunction {
 
 @reflector
 class GetInlineQueryResults extends TdFunction {
+  @override
   Type get returnType => InlineQueryResults;
 
+  @override
+  String get tdType => "getInlineQueryResults";
   final int botUserId;
   final int chatId;
   final Location userLocation;
@@ -4528,8 +5242,11 @@ class GetInlineQueryResults extends TdFunction {
 
 @reflector
 class GetCallbackQueryAnswer extends TdFunction {
+  @override
   Type get returnType => CallbackQueryAnswer;
 
+  @override
+  String get tdType => "getCallbackQueryAnswer";
   final int chatId;
   final int messageId;
   final CallbackQueryPayload payload;
@@ -4550,8 +5267,11 @@ class GetCallbackQueryAnswer extends TdFunction {
 
 @reflector
 class GetGameHighScores extends TdFunction {
+  @override
   Type get returnType => GameHighScores;
 
+  @override
+  String get tdType => "getGameHighScores";
   final int chatId;
   final int messageId;
   final int userId;
@@ -4572,8 +5292,11 @@ class GetGameHighScores extends TdFunction {
 
 @reflector
 class GetInlineGameHighScores extends TdFunction {
+  @override
   Type get returnType => GameHighScores;
 
+  @override
+  String get tdType => "getInlineGameHighScores";
   final String inlineMessageId;
   final int userId;
 
@@ -4591,8 +5314,11 @@ class GetInlineGameHighScores extends TdFunction {
 
 @reflector
 class GetChatMember extends TdFunction {
+  @override
   Type get returnType => ChatMember;
 
+  @override
+  String get tdType => "getChatMember";
   final int chatId;
   final int userId;
 
@@ -4610,8 +5336,11 @@ class GetChatMember extends TdFunction {
 
 @reflector
 class SearchChatMembers extends TdFunction {
+  @override
   Type get returnType => ChatMembers;
 
+  @override
+  String get tdType => "searchChatMembers";
   final int chatId;
   final String query;
   final int limit;
@@ -4635,8 +5364,11 @@ class SearchChatMembers extends TdFunction {
 
 @reflector
 class GetSupergroupMembers extends TdFunction {
+  @override
   Type get returnType => ChatMembers;
 
+  @override
+  String get tdType => "getSupergroupMembers";
   final int supergroupId;
   final SupergroupMembersFilter filter;
   final int offset;
@@ -4660,8 +5392,11 @@ class GetSupergroupMembers extends TdFunction {
 
 @reflector
 class GetChatAdministrators extends TdFunction {
+  @override
   Type get returnType => Users;
 
+  @override
+  String get tdType => "getChatAdministrators";
   final int chatId;
 
   @override
@@ -4676,8 +5411,11 @@ class GetChatAdministrators extends TdFunction {
 
 @reflector
 class GetBlockedUsers extends TdFunction {
+  @override
   Type get returnType => Users;
 
+  @override
+  String get tdType => "getBlockedUsers";
   final int offset;
   final int limit;
 
@@ -4699,6 +5437,8 @@ class GetContacts extends TdFunction {
   Type get returnType => Users;
 
   @override
+  String get tdType => "getContacts";
+  @override
   Map<String, dynamic> get params => {};
 
   GetContacts();
@@ -4706,8 +5446,11 @@ class GetContacts extends TdFunction {
 
 @reflector
 class SearchContacts extends TdFunction {
+  @override
   Type get returnType => Users;
 
+  @override
+  String get tdType => "searchContacts";
   final String query;
   final int limit;
 
@@ -4729,6 +5472,8 @@ class GetRecentInlineBots extends TdFunction {
   Type get returnType => Users;
 
   @override
+  String get tdType => "getRecentInlineBots";
+  @override
   Map<String, dynamic> get params => {};
 
   GetRecentInlineBots();
@@ -4736,8 +5481,11 @@ class GetRecentInlineBots extends TdFunction {
 
 @reflector
 class GetScopeNotificationSettings extends TdFunction {
+  @override
   Type get returnType => ScopeNotificationSettings;
 
+  @override
+  String get tdType => "getScopeNotificationSettings";
   final NotificationSettingsScope scope;
 
   @override
@@ -4752,8 +5500,11 @@ class GetScopeNotificationSettings extends TdFunction {
 
 @reflector
 class ReadFilePart extends TdFunction {
+  @override
   Type get returnType => FilePart;
 
+  @override
+  String get tdType => "readFilePart";
   final int fileId;
   final int offset;
   final int count;
@@ -4774,8 +5525,11 @@ class ReadFilePart extends TdFunction {
 
 @reflector
 class GenerateChatInviteLink extends TdFunction {
+  @override
   Type get returnType => ChatInviteLink;
 
+  @override
+  String get tdType => "generateChatInviteLink";
   final int chatId;
 
   @override
@@ -4790,8 +5544,11 @@ class GenerateChatInviteLink extends TdFunction {
 
 @reflector
 class CheckChatInviteLink extends TdFunction {
+  @override
   Type get returnType => ChatInviteLinkInfo;
 
+  @override
+  String get tdType => "checkChatInviteLink";
   final String inviteLink;
 
   @override
@@ -4806,8 +5563,11 @@ class CheckChatInviteLink extends TdFunction {
 
 @reflector
 class CreateCall extends TdFunction {
+  @override
   Type get returnType => CallId;
 
+  @override
+  String get tdType => "createCall";
   final int userId;
   final CallProtocol protocol;
 
@@ -4825,8 +5585,11 @@ class CreateCall extends TdFunction {
 
 @reflector
 class ImportContacts extends TdFunction {
+  @override
   Type get returnType => ImportedContacts;
 
+  @override
+  String get tdType => "importContacts";
   final List<Contact> contacts;
 
   @override
@@ -4841,8 +5604,11 @@ class ImportContacts extends TdFunction {
 
 @reflector
 class ChangeImportedContacts extends TdFunction {
+  @override
   Type get returnType => ImportedContacts;
 
+  @override
+  String get tdType => "changeImportedContacts";
   final List<Contact> contacts;
 
   @override
@@ -4857,8 +5623,11 @@ class ChangeImportedContacts extends TdFunction {
 
 @reflector
 class GetUserProfilePhotos extends TdFunction {
+  @override
   Type get returnType => UserProfilePhotos;
 
+  @override
+  String get tdType => "getUserProfilePhotos";
   final int userId;
   final int offset;
   final int limit;
@@ -4879,8 +5648,11 @@ class GetUserProfilePhotos extends TdFunction {
 
 @reflector
 class GetStickers extends TdFunction {
+  @override
   Type get returnType => Stickers;
 
+  @override
+  String get tdType => "getStickers";
   final String emoji;
   final int limit;
 
@@ -4898,8 +5670,11 @@ class GetStickers extends TdFunction {
 
 @reflector
 class SearchStickers extends TdFunction {
+  @override
   Type get returnType => Stickers;
 
+  @override
+  String get tdType => "searchStickers";
   final String emoji;
   final int limit;
 
@@ -4917,8 +5692,11 @@ class SearchStickers extends TdFunction {
 
 @reflector
 class GetRecentStickers extends TdFunction {
+  @override
   Type get returnType => Stickers;
 
+  @override
+  String get tdType => "getRecentStickers";
   final bool isAttached;
 
   @override
@@ -4933,8 +5711,11 @@ class GetRecentStickers extends TdFunction {
 
 @reflector
 class AddRecentSticker extends TdFunction {
+  @override
   Type get returnType => Stickers;
 
+  @override
+  String get tdType => "addRecentSticker";
   final bool isAttached;
   final InputFile sticker;
 
@@ -4956,6 +5737,8 @@ class GetFavoriteStickers extends TdFunction {
   Type get returnType => Stickers;
 
   @override
+  String get tdType => "getFavoriteStickers";
+  @override
   Map<String, dynamic> get params => {};
 
   GetFavoriteStickers();
@@ -4963,8 +5746,11 @@ class GetFavoriteStickers extends TdFunction {
 
 @reflector
 class GetInstalledStickerSets extends TdFunction {
+  @override
   Type get returnType => StickerSets;
 
+  @override
+  String get tdType => "getInstalledStickerSets";
   final bool isMasks;
 
   @override
@@ -4979,8 +5765,11 @@ class GetInstalledStickerSets extends TdFunction {
 
 @reflector
 class GetArchivedStickerSets extends TdFunction {
+  @override
   Type get returnType => StickerSets;
 
+  @override
+  String get tdType => "getArchivedStickerSets";
   final bool isMasks;
   final int offsetStickerSetId;
   final int limit;
@@ -5005,6 +5794,8 @@ class GetTrendingStickerSets extends TdFunction {
   Type get returnType => StickerSets;
 
   @override
+  String get tdType => "getTrendingStickerSets";
+  @override
   Map<String, dynamic> get params => {};
 
   GetTrendingStickerSets();
@@ -5012,8 +5803,11 @@ class GetTrendingStickerSets extends TdFunction {
 
 @reflector
 class GetAttachedStickerSets extends TdFunction {
+  @override
   Type get returnType => StickerSets;
 
+  @override
+  String get tdType => "getAttachedStickerSets";
   final int fileId;
 
   @override
@@ -5028,8 +5822,11 @@ class GetAttachedStickerSets extends TdFunction {
 
 @reflector
 class SearchInstalledStickerSets extends TdFunction {
+  @override
   Type get returnType => StickerSets;
 
+  @override
+  String get tdType => "searchInstalledStickerSets";
   final bool isMasks;
   final String query;
   final int limit;
@@ -5050,8 +5847,11 @@ class SearchInstalledStickerSets extends TdFunction {
 
 @reflector
 class SearchStickerSets extends TdFunction {
+  @override
   Type get returnType => StickerSets;
 
+  @override
+  String get tdType => "searchStickerSets";
   final String query;
 
   @override
@@ -5066,8 +5866,11 @@ class SearchStickerSets extends TdFunction {
 
 @reflector
 class GetStickerSet extends TdFunction {
+  @override
   Type get returnType => StickerSet;
 
+  @override
+  String get tdType => "getStickerSet";
   final int setId;
 
   @override
@@ -5082,8 +5885,11 @@ class GetStickerSet extends TdFunction {
 
 @reflector
 class SearchStickerSet extends TdFunction {
+  @override
   Type get returnType => StickerSet;
 
+  @override
+  String get tdType => "searchStickerSet";
   final String name;
 
   @override
@@ -5098,8 +5904,11 @@ class SearchStickerSet extends TdFunction {
 
 @reflector
 class CreateNewStickerSet extends TdFunction {
+  @override
   Type get returnType => StickerSet;
 
+  @override
+  String get tdType => "createNewStickerSet";
   final int userId;
   final String title;
   final String name;
@@ -5126,8 +5935,11 @@ class CreateNewStickerSet extends TdFunction {
 
 @reflector
 class AddStickerToSet extends TdFunction {
+  @override
   Type get returnType => StickerSet;
 
+  @override
+  String get tdType => "addStickerToSet";
   final int userId;
   final String name;
   final InputSticker sticker;
@@ -5148,8 +5960,11 @@ class AddStickerToSet extends TdFunction {
 
 @reflector
 class GetStickerEmojis extends TdFunction {
+  @override
   Type get returnType => Emojis;
 
+  @override
+  String get tdType => "getStickerEmojis";
   final InputFile sticker;
 
   @override
@@ -5164,8 +5979,11 @@ class GetStickerEmojis extends TdFunction {
 
 @reflector
 class SearchEmojis extends TdFunction {
+  @override
   Type get returnType => Emojis;
 
+  @override
+  String get tdType => "searchEmojis";
   final String text;
   final bool exactMatch;
 
@@ -5187,6 +6005,8 @@ class GetSavedAnimations extends TdFunction {
   Type get returnType => Animations;
 
   @override
+  String get tdType => "getSavedAnimations";
+  @override
   Map<String, dynamic> get params => {};
 
   GetSavedAnimations();
@@ -5194,8 +6014,11 @@ class GetSavedAnimations extends TdFunction {
 
 @reflector
 class SearchHashtags extends TdFunction {
+  @override
   Type get returnType => Hashtags;
 
+  @override
+  String get tdType => "searchHashtags";
   final String prefix;
   final int limit;
 
@@ -5213,8 +6036,11 @@ class SearchHashtags extends TdFunction {
 
 @reflector
 class GetWebPagePreview extends TdFunction {
+  @override
   Type get returnType => WebPage;
 
+  @override
+  String get tdType => "getWebPagePreview";
   final FormattedText text;
 
   @override
@@ -5229,8 +6055,11 @@ class GetWebPagePreview extends TdFunction {
 
 @reflector
 class GetWebPageInstantView extends TdFunction {
+  @override
   Type get returnType => WebPageInstantView;
 
+  @override
+  String get tdType => "getWebPageInstantView";
   final String url;
   final bool forceFull;
 
@@ -5248,8 +6077,11 @@ class GetWebPageInstantView extends TdFunction {
 
 @reflector
 class ChangePhoneNumber extends TdFunction {
+  @override
   Type get returnType => AuthenticationCodeInfo;
 
+  @override
+  String get tdType => "changePhoneNumber";
   final String phoneNumber;
   final PhoneNumberAuthenticationSettings settings;
 
@@ -5271,6 +6103,8 @@ class ResendChangePhoneNumberCode extends TdFunction {
   Type get returnType => AuthenticationCodeInfo;
 
   @override
+  String get tdType => "resendChangePhoneNumberCode";
+  @override
   Map<String, dynamic> get params => {};
 
   ResendChangePhoneNumberCode();
@@ -5278,8 +6112,11 @@ class ResendChangePhoneNumberCode extends TdFunction {
 
 @reflector
 class SendPhoneNumberVerificationCode extends TdFunction {
+  @override
   Type get returnType => AuthenticationCodeInfo;
 
+  @override
+  String get tdType => "sendPhoneNumberVerificationCode";
   final String phoneNumber;
   final PhoneNumberAuthenticationSettings settings;
 
@@ -5301,6 +6138,8 @@ class ResendPhoneNumberVerificationCode extends TdFunction {
   Type get returnType => AuthenticationCodeInfo;
 
   @override
+  String get tdType => "resendPhoneNumberVerificationCode";
+  @override
   Map<String, dynamic> get params => {};
 
   ResendPhoneNumberVerificationCode();
@@ -5308,8 +6147,11 @@ class ResendPhoneNumberVerificationCode extends TdFunction {
 
 @reflector
 class SendPhoneNumberConfirmationCode extends TdFunction {
+  @override
   Type get returnType => AuthenticationCodeInfo;
 
+  @override
+  String get tdType => "sendPhoneNumberConfirmationCode";
   final String hash;
   final String phoneNumber;
   final PhoneNumberAuthenticationSettings settings;
@@ -5334,6 +6176,8 @@ class ResendPhoneNumberConfirmationCode extends TdFunction {
   Type get returnType => AuthenticationCodeInfo;
 
   @override
+  String get tdType => "resendPhoneNumberConfirmationCode";
+  @override
   Map<String, dynamic> get params => {};
 
   ResendPhoneNumberConfirmationCode();
@@ -5344,6 +6188,8 @@ class GetActiveSessions extends TdFunction {
   @override
   Type get returnType => Sessions;
 
+  @override
+  String get tdType => "getActiveSessions";
   @override
   Map<String, dynamic> get params => {};
 
@@ -5356,6 +6202,8 @@ class GetConnectedWebsites extends TdFunction {
   Type get returnType => ConnectedWebsites;
 
   @override
+  String get tdType => "getConnectedWebsites";
+  @override
   Map<String, dynamic> get params => {};
 
   GetConnectedWebsites();
@@ -5363,8 +6211,11 @@ class GetConnectedWebsites extends TdFunction {
 
 @reflector
 class GetChatEventLog extends TdFunction {
+  @override
   Type get returnType => ChatEvents;
 
+  @override
+  String get tdType => "getChatEventLog";
   final int chatId;
   final String query;
   final int fromEventId;
@@ -5394,8 +6245,11 @@ class GetChatEventLog extends TdFunction {
 
 @reflector
 class GetPaymentForm extends TdFunction {
+  @override
   Type get returnType => PaymentForm;
 
+  @override
+  String get tdType => "getPaymentForm";
   final int chatId;
   final int messageId;
 
@@ -5413,8 +6267,11 @@ class GetPaymentForm extends TdFunction {
 
 @reflector
 class ValidateOrderInfo extends TdFunction {
+  @override
   Type get returnType => ValidatedOrderInfo;
 
+  @override
+  String get tdType => "validateOrderInfo";
   final int chatId;
   final int messageId;
   final OrderInfo orderInfo;
@@ -5438,8 +6295,11 @@ class ValidateOrderInfo extends TdFunction {
 
 @reflector
 class SendPaymentForm extends TdFunction {
+  @override
   Type get returnType => PaymentResult;
 
+  @override
+  String get tdType => "sendPaymentForm";
   final int chatId;
   final int messageId;
   final String orderInfoId;
@@ -5466,8 +6326,11 @@ class SendPaymentForm extends TdFunction {
 
 @reflector
 class GetPaymentReceipt extends TdFunction {
+  @override
   Type get returnType => PaymentReceipt;
 
+  @override
+  String get tdType => "getPaymentReceipt";
   final int chatId;
   final int messageId;
 
@@ -5489,6 +6352,8 @@ class GetSavedOrderInfo extends TdFunction {
   Type get returnType => OrderInfo;
 
   @override
+  String get tdType => "getSavedOrderInfo";
+  @override
   Map<String, dynamic> get params => {};
 
   GetSavedOrderInfo();
@@ -5496,8 +6361,11 @@ class GetSavedOrderInfo extends TdFunction {
 
 @reflector
 class GetBackgrounds extends TdFunction {
+  @override
   Type get returnType => Backgrounds;
 
+  @override
+  String get tdType => "getBackgrounds";
   final bool forDarkTheme;
 
   @override
@@ -5512,8 +6380,11 @@ class GetBackgrounds extends TdFunction {
 
 @reflector
 class SearchBackground extends TdFunction {
+  @override
   Type get returnType => Background;
 
+  @override
+  String get tdType => "searchBackground";
   final String name;
 
   @override
@@ -5528,8 +6399,11 @@ class SearchBackground extends TdFunction {
 
 @reflector
 class SetBackground extends TdFunction {
+  @override
   Type get returnType => Background;
 
+  @override
+  String get tdType => "setBackground";
   final InputBackground background;
   final BackgroundType type;
   final bool forDarkTheme;
@@ -5550,8 +6424,11 @@ class SetBackground extends TdFunction {
 
 @reflector
 class GetLocalizationTargetInfo extends TdFunction {
+  @override
   Type get returnType => LocalizationTargetInfo;
 
+  @override
+  String get tdType => "getLocalizationTargetInfo";
   final bool onlyLocal;
 
   @override
@@ -5566,8 +6443,11 @@ class GetLocalizationTargetInfo extends TdFunction {
 
 @reflector
 class GetLanguagePackInfo extends TdFunction {
+  @override
   Type get returnType => LanguagePackInfo;
 
+  @override
+  String get tdType => "getLanguagePackInfo";
   final String languagePackId;
 
   @override
@@ -5582,8 +6462,11 @@ class GetLanguagePackInfo extends TdFunction {
 
 @reflector
 class GetLanguagePackStrings extends TdFunction {
+  @override
   Type get returnType => LanguagePackStrings;
 
+  @override
+  String get tdType => "getLanguagePackStrings";
   final String languagePackId;
   final List<String> keys;
 
@@ -5601,8 +6484,11 @@ class GetLanguagePackStrings extends TdFunction {
 
 @reflector
 class RegisterDevice extends TdFunction {
+  @override
   Type get returnType => PushReceiverId;
 
+  @override
+  String get tdType => "registerDevice";
   final DeviceToken deviceToken;
   final List<int> otherUserIds;
 
@@ -5620,8 +6506,11 @@ class RegisterDevice extends TdFunction {
 
 @reflector
 class GetPushReceiverId extends TdFunction {
+  @override
   Type get returnType => PushReceiverId;
 
+  @override
+  String get tdType => "getPushReceiverId";
   final String payload;
 
   @override
@@ -5636,8 +6525,11 @@ class GetPushReceiverId extends TdFunction {
 
 @reflector
 class GetRecentlyVisitedTMeUrls extends TdFunction {
+  @override
   Type get returnType => TMeUrls;
 
+  @override
+  String get tdType => "getRecentlyVisitedTMeUrls";
   final String referrer;
 
   @override
@@ -5652,8 +6544,11 @@ class GetRecentlyVisitedTMeUrls extends TdFunction {
 
 @reflector
 class GetUserPrivacySettingRules extends TdFunction {
+  @override
   Type get returnType => UserPrivacySettingRules;
 
+  @override
+  String get tdType => "getUserPrivacySettingRules";
   final UserPrivacySetting setting;
 
   @override
@@ -5668,8 +6563,11 @@ class GetUserPrivacySettingRules extends TdFunction {
 
 @reflector
 class GetOption extends TdFunction {
+  @override
   Type get returnType => OptionValue;
 
+  @override
+  String get tdType => "getOption";
   final String name;
 
   @override
@@ -5688,6 +6586,8 @@ class GetAccountTtl extends TdFunction {
   Type get returnType => AccountTtl;
 
   @override
+  String get tdType => "getAccountTtl";
+  @override
   Map<String, dynamic> get params => {};
 
   GetAccountTtl();
@@ -5695,8 +6595,11 @@ class GetAccountTtl extends TdFunction {
 
 @reflector
 class GetChatReportSpamState extends TdFunction {
+  @override
   Type get returnType => ChatReportSpamState;
 
+  @override
+  String get tdType => "getChatReportSpamState";
   final int chatId;
 
   @override
@@ -5711,8 +6614,11 @@ class GetChatReportSpamState extends TdFunction {
 
 @reflector
 class GetStorageStatistics extends TdFunction {
+  @override
   Type get returnType => StorageStatistics;
 
+  @override
+  String get tdType => "getStorageStatistics";
   final int chatLimit;
 
   @override
@@ -5727,8 +6633,11 @@ class GetStorageStatistics extends TdFunction {
 
 @reflector
 class OptimizeStorage extends TdFunction {
+  @override
   Type get returnType => StorageStatistics;
 
+  @override
+  String get tdType => "optimizeStorage";
   final int size;
   final int ttl;
   final int count;
@@ -5768,6 +6677,8 @@ class GetStorageStatisticsFast extends TdFunction {
   Type get returnType => StorageStatisticsFast;
 
   @override
+  String get tdType => "getStorageStatisticsFast";
+  @override
   Map<String, dynamic> get params => {};
 
   GetStorageStatisticsFast();
@@ -5779,6 +6690,8 @@ class GetDatabaseStatistics extends TdFunction {
   Type get returnType => DatabaseStatistics;
 
   @override
+  String get tdType => "getDatabaseStatistics";
+  @override
   Map<String, dynamic> get params => {};
 
   GetDatabaseStatistics();
@@ -5786,8 +6699,11 @@ class GetDatabaseStatistics extends TdFunction {
 
 @reflector
 class GetNetworkStatistics extends TdFunction {
+  @override
   Type get returnType => NetworkStatistics;
 
+  @override
+  String get tdType => "getNetworkStatistics";
   final bool onlyCurrent;
 
   @override
@@ -5806,6 +6722,8 @@ class GetAutoDownloadSettingsPresets extends TdFunction {
   Type get returnType => AutoDownloadSettingsPresets;
 
   @override
+  String get tdType => "getAutoDownloadSettingsPresets";
+  @override
   Map<String, dynamic> get params => {};
 
   GetAutoDownloadSettingsPresets();
@@ -5813,8 +6731,11 @@ class GetAutoDownloadSettingsPresets extends TdFunction {
 
 @reflector
 class GetPassportElement extends TdFunction {
+  @override
   Type get returnType => PassportElement;
 
+  @override
+  String get tdType => "getPassportElement";
   final PassportElementType type;
   final String password;
 
@@ -5832,8 +6753,11 @@ class GetPassportElement extends TdFunction {
 
 @reflector
 class SetPassportElement extends TdFunction {
+  @override
   Type get returnType => PassportElement;
 
+  @override
+  String get tdType => "setPassportElement";
   final InputPassportElement element;
   final String password;
 
@@ -5851,8 +6775,11 @@ class SetPassportElement extends TdFunction {
 
 @reflector
 class GetAllPassportElements extends TdFunction {
+  @override
   Type get returnType => PassportElements;
 
+  @override
+  String get tdType => "getAllPassportElements";
   final String password;
 
   @override
@@ -5867,8 +6794,11 @@ class GetAllPassportElements extends TdFunction {
 
 @reflector
 class GetPassportAuthorizationForm extends TdFunction {
+  @override
   Type get returnType => PassportAuthorizationForm;
 
+  @override
+  String get tdType => "getPassportAuthorizationForm";
   final int botUserId;
   final String scope;
   final String publicKey;
@@ -5892,8 +6822,11 @@ class GetPassportAuthorizationForm extends TdFunction {
 
 @reflector
 class GetPassportAuthorizationFormAvailableElements extends TdFunction {
+  @override
   Type get returnType => PassportElementsWithErrors;
 
+  @override
+  String get tdType => "getPassportAuthorizationFormAvailableElements";
   final int autorizationFormId;
   final String password;
 
@@ -5911,8 +6844,11 @@ class GetPassportAuthorizationFormAvailableElements extends TdFunction {
 
 @reflector
 class SendCustomRequest extends TdFunction {
+  @override
   Type get returnType => CustomRequestResult;
 
+  @override
+  String get tdType => "sendCustomRequest";
   final String method;
   final String parameters;
 
@@ -5930,9 +6866,12 @@ class SendCustomRequest extends TdFunction {
 
 @reflector
 class SendTonLiteServerRequest extends TdFunction {
+  @override
   Type get returnType => TonLiteServerResponse;
 
-  final List<int> request;
+  @override
+  String get tdType => "sendTonLiteServerRequest";
+  final String request;
 
   @override
   Map<String, dynamic> get params => {
@@ -5950,6 +6889,8 @@ class GetTonWalletPasswordSalt extends TdFunction {
   Type get returnType => TonWalletPasswordSalt;
 
   @override
+  String get tdType => "getTonWalletPasswordSalt";
+  @override
   Map<String, dynamic> get params => {};
 
   GetTonWalletPasswordSalt();
@@ -5957,8 +6898,11 @@ class GetTonWalletPasswordSalt extends TdFunction {
 
 @reflector
 class GetDeepLinkInfo extends TdFunction {
+  @override
   Type get returnType => DeepLinkInfo;
 
+  @override
+  String get tdType => "getDeepLinkInfo";
   final String link;
 
   @override
@@ -5973,8 +6917,11 @@ class GetDeepLinkInfo extends TdFunction {
 
 @reflector
 class AddProxy extends TdFunction {
+  @override
   Type get returnType => Proxy;
 
+  @override
+  String get tdType => "addProxy";
   final String server;
   final int port;
   final bool enable;
@@ -5998,8 +6945,11 @@ class AddProxy extends TdFunction {
 
 @reflector
 class EditProxy extends TdFunction {
+  @override
   Type get returnType => Proxy;
 
+  @override
+  String get tdType => "editProxy";
   final int proxyId;
   final String server;
   final int port;
@@ -6030,6 +6980,8 @@ class GetProxies extends TdFunction {
   Type get returnType => Proxies;
 
   @override
+  String get tdType => "getProxies";
+  @override
   Map<String, dynamic> get params => {};
 
   GetProxies();
@@ -6037,8 +6989,11 @@ class GetProxies extends TdFunction {
 
 @reflector
 class PingProxy extends TdFunction {
+  @override
   Type get returnType => Seconds;
 
+  @override
+  String get tdType => "pingProxy";
   final int proxyId;
 
   @override
@@ -6057,6 +7012,8 @@ class GetLogStream extends TdFunction {
   Type get returnType => LogStream;
 
   @override
+  String get tdType => "getLogStream";
+  @override
   Map<String, dynamic> get params => {};
 
   GetLogStream();
@@ -6068,6 +7025,8 @@ class GetLogVerbosityLevel extends TdFunction {
   Type get returnType => LogVerbosityLevel;
 
   @override
+  String get tdType => "getLogVerbosityLevel";
+  @override
   Map<String, dynamic> get params => {};
 
   GetLogVerbosityLevel();
@@ -6075,8 +7034,11 @@ class GetLogVerbosityLevel extends TdFunction {
 
 @reflector
 class GetLogTagVerbosityLevel extends TdFunction {
+  @override
   Type get returnType => LogVerbosityLevel;
 
+  @override
+  String get tdType => "getLogTagVerbosityLevel";
   final String tag;
 
   @override
@@ -6095,6 +7057,8 @@ class GetLogTags extends TdFunction {
   Type get returnType => LogTags;
 
   @override
+  String get tdType => "getLogTags";
+  @override
   Map<String, dynamic> get params => {};
 
   GetLogTags();
@@ -6102,8 +7066,11 @@ class GetLogTags extends TdFunction {
 
 @reflector
 class TestCallString extends TdFunction {
+  @override
   Type get returnType => TestString;
 
+  @override
+  String get tdType => "testCallString";
   final String x;
 
   @override
@@ -6118,9 +7085,12 @@ class TestCallString extends TdFunction {
 
 @reflector
 class TestCallBytes extends TdFunction {
+  @override
   Type get returnType => TestBytes;
 
-  final List<int> x;
+  @override
+  String get tdType => "testCallBytes";
+  final String x;
 
   @override
   Map<String, dynamic> get params => {
@@ -6134,8 +7104,11 @@ class TestCallBytes extends TdFunction {
 
 @reflector
 class TestCallVectorInt extends TdFunction {
+  @override
   Type get returnType => TestVectorInt;
 
+  @override
+  String get tdType => "testCallVectorInt";
   final List<int> x;
 
   @override
@@ -6150,8 +7123,11 @@ class TestCallVectorInt extends TdFunction {
 
 @reflector
 class TestCallVectorIntObject extends TdFunction {
+  @override
   Type get returnType => TestVectorIntObject;
 
+  @override
+  String get tdType => "testCallVectorIntObject";
   final List<TestInt> x;
 
   @override
@@ -6166,8 +7142,11 @@ class TestCallVectorIntObject extends TdFunction {
 
 @reflector
 class TestCallVectorString extends TdFunction {
+  @override
   Type get returnType => TestVectorString;
 
+  @override
+  String get tdType => "testCallVectorString";
   final List<String> x;
 
   @override
@@ -6182,8 +7161,11 @@ class TestCallVectorString extends TdFunction {
 
 @reflector
 class TestCallVectorStringObject extends TdFunction {
+  @override
   Type get returnType => TestVectorStringObject;
 
+  @override
+  String get tdType => "testCallVectorStringObject";
   final List<TestString> x;
 
   @override
@@ -6198,8 +7180,11 @@ class TestCallVectorStringObject extends TdFunction {
 
 @reflector
 class TestSquareInt extends TdFunction {
+  @override
   Type get returnType => TestInt;
 
+  @override
+  String get tdType => "testSquareInt";
   final int x;
 
   @override
@@ -6218,6 +7203,8 @@ class TestUseUpdate extends TdFunction {
   Type get returnType => Update;
 
   @override
+  String get tdType => "testUseUpdate";
+  @override
   Map<String, dynamic> get params => {};
 
   TestUseUpdate();
@@ -6225,8 +7212,11 @@ class TestUseUpdate extends TdFunction {
 
 @reflector
 class TestReturnError extends TdFunction {
+  @override
   Type get returnType => Error;
 
+  @override
+  String get tdType => "testReturnError";
   final Error error;
 
   @override

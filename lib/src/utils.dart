@@ -1,8 +1,6 @@
 import "dart:io" show Platform;
-import "dart:convert" show json;
 import "package:path/path.dart" as path;
 import "api/base_classes.dart";
-import "api/utils.dart" show classIndex;
 
 String platformPath([String dlPath = ""]) {
   dlPath = path.join(dlPath, "td/tdlib/lib");
@@ -13,9 +11,16 @@ String platformPath([String dlPath = ""]) {
   throw Exception("Platform Not Supported: ${Platform.operatingSystem}");
 }
 
-String serialize(TlObject obj) => json.encode(_serialize(obj));
-
-Map<String, dynamic> _serialize(TlObject obj) => {
-  "@type": obj is TdObject ? obj.tdType : (obj as TdFunction).returnType,
-  ...obj.params.map((k, v) => MapEntry(k, v is TlObject ? _serialize(v) : v)),
+Map<String, dynamic> serialize(TlObject obj) => {
+  "@type": pascalToCamelCase(obj.tdType),
+//  "@type": obj is TdObject ? pascalToCamelCase(obj.tdType) : (obj as TdFunction).returnType.toString(),
+  ...obj.params.map((k, v) => MapEntry(k, v is TlObject ? serialize(v) : v)),
 };
+
+String pascalToCamelCase(String string) {
+  return string.replaceFirst(string[0], string[0].toLowerCase());
+}
+
+String camelToPascalCase(String string) {
+  return string.replaceFirst(string[0], string[0].toUpperCase());
+}

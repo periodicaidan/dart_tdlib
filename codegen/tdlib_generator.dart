@@ -133,6 +133,9 @@ class ApiFunction {
         "  Type get returnType => $returnType;",
         "",
         "  @override",
+        "  String get tdType => \"${pascalToCamelCase(name)}\";"
+        "",
+        "  @override",
         "  Map<String, dynamic> get params => {};",
         "",
         "  $name();",
@@ -143,7 +146,11 @@ class ApiFunction {
       buf.writeAll([
         "@reflector",
         "class $name extends TdFunction {",
+        "  @override",
         "  Type get returnType => $returnType;",
+        "",
+        "  @override",
+        "  String get tdType => \"${pascalToCamelCase(name)}\";"
         "",
         ...params.map((field) => "  final ${field.type} ${field.fieldName};"),
         "",

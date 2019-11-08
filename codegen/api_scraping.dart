@@ -48,7 +48,7 @@ String tlTypeToDartType(String tlType) {
       break;
 
     case "bytes":
-      dartType = "List<int>";
+      dartType = "String";
       break;
 
     case "Bool":
