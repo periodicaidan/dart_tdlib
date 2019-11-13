@@ -70,7 +70,7 @@ class JsonClient {
   /// Send a request to the Telegram API
   /// This is an async version of [execute], which the TDLib docs don't make
   /// immediately clear :p
-  send(Map<String, dynamic> request) {
+  void send(Map<String, dynamic> request) {
     assert (active);
     var reqJson = json.encode(request);
     final jsonClientSend = _dylib

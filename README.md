@@ -50,26 +50,39 @@ project, run `pub run build_runner build`. It should Just Work&trade;.
 The general structure of a program using this library is something like this:
 
 ```dart
-import "package:tdlib/tdlib.dart";
+import "package:tdlib/tdlib.dart" as td;
 import "main.reflectable.dart";
 
-main() {
+main() async {
   initializeReflectable();
   
   // Create a client
-  final client = JsonClient.create("path/to/td");
+  final client = td.Client("path/to/td");
+  
+  // Starts the client, performing some basic authentication
+  client.start(
+    // Put TDLib parameters here
+  );
   
   try {
     while (true) {
       // Fetch a request
-      Map event = client.receive();
-      if (event.isNotEmpty) {
-        // Handle the request...
-      }
+      update = client.receive();
+      if (update is td.UpdateAuthorizationState) {
+        // The following are some common authorization requests
+        switch (update.authorizationState.runtimeType) {
+          case td.AuthorizationStateWaitPhoneNumber:
+            var setPhoneNumber = td.SetAuthenticationPhoneNumber("+16175551234");
+            await client.execute(setPhoneNumber);
+          break;
+          
+          // Handle other cases
+        }
+      } // Handle other updates
     }
   } finally {
-    // Be sure to destroy the client
-    client.destroy();
+    // Be sure to close the client
+    client.close();
   }
 }
 ```
