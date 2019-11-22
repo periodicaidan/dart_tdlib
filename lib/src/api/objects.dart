@@ -16,8 +16,8 @@ class Error extends TdObject {
   };
 
   Error(Map<String, dynamic> json) {
-    code = tryParse(json["code"]);
-    message = tryParse(json["message"]);
+    code = tryConvertToTdObject(json["code"]);
+    message = tryConvertToTdObject(json["message"]);
   }
 }
 
@@ -73,21 +73,21 @@ class TdlibParameters extends TdObject {
   };
 
   TdlibParameters(Map<String, dynamic> json) {
-    useTestDc = tryParse(json["use_test_dc"]);
-    databaseDirectory = tryParse(json["database_directory"]);
-    filesDirectory = tryParse(json["files_directory"]);
-    useFileDatabase = tryParse(json["use_file_database"]);
-    useChatInfoDatabase = tryParse(json["use_chat_info_database"]);
-    useMessageDatabase = tryParse(json["use_message_database"]);
-    useSecretChats = tryParse(json["use_secret_chats"]);
-    apiId = tryParse(json["api_id"]);
-    apiHash = tryParse(json["api_hash"]);
-    systemLanguageCode = tryParse(json["system_language_code"]);
-    deviceModel = tryParse(json["device_model"]);
-    systemVersion = tryParse(json["system_version"]);
-    applicationVersion = tryParse(json["application_version"]);
-    enableStorageOptimizer = tryParse(json["enable_storage_optimizer"]);
-    ignoreFileNames = tryParse(json["ignore_file_names"]);
+    useTestDc = tryConvertToTdObject(json["use_test_dc"]);
+    databaseDirectory = tryConvertToTdObject(json["database_directory"]);
+    filesDirectory = tryConvertToTdObject(json["files_directory"]);
+    useFileDatabase = tryConvertToTdObject(json["use_file_database"]);
+    useChatInfoDatabase = tryConvertToTdObject(json["use_chat_info_database"]);
+    useMessageDatabase = tryConvertToTdObject(json["use_message_database"]);
+    useSecretChats = tryConvertToTdObject(json["use_secret_chats"]);
+    apiId = tryConvertToTdObject(json["api_id"]);
+    apiHash = tryConvertToTdObject(json["api_hash"]);
+    systemLanguageCode = tryConvertToTdObject(json["system_language_code"]);
+    deviceModel = tryConvertToTdObject(json["device_model"]);
+    systemVersion = tryConvertToTdObject(json["system_version"]);
+    applicationVersion = tryConvertToTdObject(json["application_version"]);
+    enableStorageOptimizer = tryConvertToTdObject(json["enable_storage_optimizer"]);
+    ignoreFileNames = tryConvertToTdObject(json["ignore_file_names"]);
   }
 }
 
@@ -106,7 +106,7 @@ class AuthenticationCodeTypeTelegramMessage extends AuthenticationCodeType {
   };
 
   AuthenticationCodeTypeTelegramMessage(Map<String, dynamic> json) {
-    length = tryParse(json["length"]);
+    length = tryConvertToTdObject(json["length"]);
   }
 }
 
@@ -123,7 +123,7 @@ class AuthenticationCodeTypeSms extends AuthenticationCodeType {
   };
 
   AuthenticationCodeTypeSms(Map<String, dynamic> json) {
-    length = tryParse(json["length"]);
+    length = tryConvertToTdObject(json["length"]);
   }
 }
 
@@ -140,7 +140,7 @@ class AuthenticationCodeTypeCall extends AuthenticationCodeType {
   };
 
   AuthenticationCodeTypeCall(Map<String, dynamic> json) {
-    length = tryParse(json["length"]);
+    length = tryConvertToTdObject(json["length"]);
   }
 }
 
@@ -157,7 +157,7 @@ class AuthenticationCodeTypeFlashCall extends AuthenticationCodeType {
   };
 
   AuthenticationCodeTypeFlashCall(Map<String, dynamic> json) {
-    pattern = tryParse(json["pattern"]);
+    pattern = tryConvertToTdObject(json["pattern"]);
   }
 }
 
@@ -180,10 +180,10 @@ class AuthenticationCodeInfo extends TdObject {
   };
 
   AuthenticationCodeInfo(Map<String, dynamic> json) {
-    phoneNumber = tryParse(json["phone_number"]);
-    type = tryParse(json["type"]);
-    nextType = tryParse(json["next_type"]);
-    timeout = tryParse(json["timeout"]);
+    phoneNumber = tryConvertToTdObject(json["phone_number"]);
+    type = tryConvertToTdObject(json["type"]);
+    nextType = tryConvertToTdObject(json["next_type"]);
+    timeout = tryConvertToTdObject(json["timeout"]);
   }
 }
 
@@ -202,8 +202,8 @@ class EmailAddressAuthenticationCodeInfo extends TdObject {
   };
 
   EmailAddressAuthenticationCodeInfo(Map<String, dynamic> json) {
-    emailAddressPattern = tryParse(json["email_address_pattern"]);
-    length = tryParse(json["length"]);
+    emailAddressPattern = tryConvertToTdObject(json["email_address_pattern"]);
+    length = tryConvertToTdObject(json["length"]);
   }
 }
 
@@ -224,9 +224,9 @@ class TextEntity extends TdObject {
   };
 
   TextEntity(Map<String, dynamic> json) {
-    offset = tryParse(json["offset"]);
-    length = tryParse(json["length"]);
-    type = tryParse(json["type"]);
+    offset = tryConvertToTdObject(json["offset"]);
+    length = tryConvertToTdObject(json["length"]);
+    type = tryConvertToTdObject(json["type"]);
   }
 }
 
@@ -243,7 +243,7 @@ class TextEntities extends TdObject {
   };
 
   TextEntities(Map<String, dynamic> json) {
-    entities = tryParse(json["entities"]);
+    entities = tryConvertToTdObject(json["entities"]);
   }
 }
 
@@ -262,8 +262,8 @@ class FormattedText extends TdObject {
   };
 
   FormattedText(Map<String, dynamic> json) {
-    text = tryParse(json["text"]);
-    entities = tryParse(json["entities"]);
+    text = tryConvertToTdObject(json["text"]);
+    entities = tryConvertToTdObject(json["entities"]);
   }
 }
 
@@ -284,9 +284,9 @@ class TermsOfService extends TdObject {
   };
 
   TermsOfService(Map<String, dynamic> json) {
-    text = tryParse(json["text"]);
-    minUserAge = tryParse(json["min_user_age"]);
-    showPopup = tryParse(json["show_popup"]);
+    text = tryConvertToTdObject(json["text"]);
+    minUserAge = tryConvertToTdObject(json["min_user_age"]);
+    showPopup = tryConvertToTdObject(json["show_popup"]);
   }
 }
 
@@ -316,7 +316,7 @@ class AuthorizationStateWaitEncryptionKey extends AuthorizationState {
   };
 
   AuthorizationStateWaitEncryptionKey(Map<String, dynamic> json) {
-    isEncrypted = tryParse(json["is_encrypted"]);
+    isEncrypted = tryConvertToTdObject(json["is_encrypted"]);
   }
 }
 
@@ -344,7 +344,7 @@ class AuthorizationStateWaitCode extends AuthorizationState {
   };
 
   AuthorizationStateWaitCode(Map<String, dynamic> json) {
-    codeInfo = tryParse(json["code_info"]);
+    codeInfo = tryConvertToTdObject(json["code_info"]);
   }
 }
 
@@ -361,7 +361,7 @@ class AuthorizationStateWaitRegistration extends AuthorizationState {
   };
 
   AuthorizationStateWaitRegistration(Map<String, dynamic> json) {
-    termsOfService = tryParse(json["terms_of_service"]);
+    termsOfService = tryConvertToTdObject(json["terms_of_service"]);
   }
 }
 
@@ -382,9 +382,9 @@ class AuthorizationStateWaitPassword extends AuthorizationState {
   };
 
   AuthorizationStateWaitPassword(Map<String, dynamic> json) {
-    passwordHint = tryParse(json["password_hint"]);
-    hasRecoveryEmailAddress = tryParse(json["has_recovery_email_address"]);
-    recoveryEmailAddressPattern = tryParse(json["recovery_email_address_pattern"]);
+    passwordHint = tryConvertToTdObject(json["password_hint"]);
+    hasRecoveryEmailAddress = tryConvertToTdObject(json["has_recovery_email_address"]);
+    recoveryEmailAddressPattern = tryConvertToTdObject(json["recovery_email_address_pattern"]);
   }
 }
 
@@ -453,11 +453,11 @@ class PasswordState extends TdObject {
   };
 
   PasswordState(Map<String, dynamic> json) {
-    hasPassword = tryParse(json["has_password"]);
-    passwordHint = tryParse(json["password_hint"]);
-    hasRecoveryEmailAddress = tryParse(json["has_recovery_email_address"]);
-    hasPassportData = tryParse(json["has_passport_data"]);
-    recoveryEmailAddressCodeInfo = tryParse(json["recovery_email_address_code_info"]);
+    hasPassword = tryConvertToTdObject(json["has_password"]);
+    passwordHint = tryConvertToTdObject(json["password_hint"]);
+    hasRecoveryEmailAddress = tryConvertToTdObject(json["has_recovery_email_address"]);
+    hasPassportData = tryConvertToTdObject(json["has_passport_data"]);
+    recoveryEmailAddressCodeInfo = tryConvertToTdObject(json["recovery_email_address_code_info"]);
   }
 }
 
@@ -474,7 +474,7 @@ class RecoveryEmailAddress extends TdObject {
   };
 
   RecoveryEmailAddress(Map<String, dynamic> json) {
-    recoveryEmailAddress = tryParse(json["recovery_email_address"]);
+    recoveryEmailAddress = tryConvertToTdObject(json["recovery_email_address"]);
   }
 }
 
@@ -493,8 +493,8 @@ class TemporaryPasswordState extends TdObject {
   };
 
   TemporaryPasswordState(Map<String, dynamic> json) {
-    hasPassword = tryParse(json["has_password"]);
-    validFor = tryParse(json["valid_for"]);
+    hasPassword = tryConvertToTdObject(json["has_password"]);
+    validFor = tryConvertToTdObject(json["valid_for"]);
   }
 }
 
@@ -525,14 +525,14 @@ class LocalFile extends TdObject {
   };
 
   LocalFile(Map<String, dynamic> json) {
-    path = tryParse(json["path"]);
-    canBeDownloaded = tryParse(json["can_be_downloaded"]);
-    canBeDeleted = tryParse(json["can_be_deleted"]);
-    isDownloadingActive = tryParse(json["is_downloading_active"]);
-    isDownloadingCompleted = tryParse(json["is_downloading_completed"]);
-    downloadOffset = tryParse(json["download_offset"]);
-    downloadedPrefixSize = tryParse(json["downloaded_prefix_size"]);
-    downloadedSize = tryParse(json["downloaded_size"]);
+    path = tryConvertToTdObject(json["path"]);
+    canBeDownloaded = tryConvertToTdObject(json["can_be_downloaded"]);
+    canBeDeleted = tryConvertToTdObject(json["can_be_deleted"]);
+    isDownloadingActive = tryConvertToTdObject(json["is_downloading_active"]);
+    isDownloadingCompleted = tryConvertToTdObject(json["is_downloading_completed"]);
+    downloadOffset = tryConvertToTdObject(json["download_offset"]);
+    downloadedPrefixSize = tryConvertToTdObject(json["downloaded_prefix_size"]);
+    downloadedSize = tryConvertToTdObject(json["downloaded_size"]);
   }
 }
 
@@ -555,10 +555,10 @@ class RemoteFile extends TdObject {
   };
 
   RemoteFile(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    isUploadingActive = tryParse(json["is_uploading_active"]);
-    isUploadingCompleted = tryParse(json["is_uploading_completed"]);
-    uploadedSize = tryParse(json["uploaded_size"]);
+    id = tryConvertToTdObject(json["id"]);
+    isUploadingActive = tryConvertToTdObject(json["is_uploading_active"]);
+    isUploadingCompleted = tryConvertToTdObject(json["is_uploading_completed"]);
+    uploadedSize = tryConvertToTdObject(json["uploaded_size"]);
   }
 }
 
@@ -583,11 +583,11 @@ class File extends TdObject {
   };
 
   File(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    size = tryParse(json["size"]);
-    expectedSize = tryParse(json["expected_size"]);
-    local = tryParse(json["local"]);
-    remote = tryParse(json["remote"]);
+    id = tryConvertToTdObject(json["id"]);
+    size = tryConvertToTdObject(json["size"]);
+    expectedSize = tryConvertToTdObject(json["expected_size"]);
+    local = tryConvertToTdObject(json["local"]);
+    remote = tryConvertToTdObject(json["remote"]);
   }
 }
 
@@ -606,7 +606,7 @@ class InputFileId extends InputFile {
   };
 
   InputFileId(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
+    id = tryConvertToTdObject(json["id"]);
   }
 }
 
@@ -623,7 +623,7 @@ class InputFileRemote extends InputFile {
   };
 
   InputFileRemote(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
+    id = tryConvertToTdObject(json["id"]);
   }
 }
 
@@ -640,7 +640,7 @@ class InputFileLocal extends InputFile {
   };
 
   InputFileLocal(Map<String, dynamic> json) {
-    path = tryParse(json["path"]);
+    path = tryConvertToTdObject(json["path"]);
   }
 }
 
@@ -661,9 +661,9 @@ class InputFileGenerated extends InputFile {
   };
 
   InputFileGenerated(Map<String, dynamic> json) {
-    originalPath = tryParse(json["original_path"]);
-    conversion = tryParse(json["conversion"]);
-    expectedSize = tryParse(json["expected_size"]);
+    originalPath = tryConvertToTdObject(json["original_path"]);
+    conversion = tryConvertToTdObject(json["conversion"]);
+    expectedSize = tryConvertToTdObject(json["expected_size"]);
   }
 }
 
@@ -686,10 +686,10 @@ class PhotoSize extends TdObject {
   };
 
   PhotoSize(Map<String, dynamic> json) {
-    type = tryParse(json["type"]);
-    photo = tryParse(json["photo"]);
-    width = tryParse(json["width"]);
-    height = tryParse(json["height"]);
+    type = tryConvertToTdObject(json["type"]);
+    photo = tryConvertToTdObject(json["photo"]);
+    width = tryConvertToTdObject(json["width"]);
+    height = tryConvertToTdObject(json["height"]);
   }
 }
 
@@ -710,9 +710,9 @@ class Minithumbnail extends TdObject {
   };
 
   Minithumbnail(Map<String, dynamic> json) {
-    width = tryParse(json["width"]);
-    height = tryParse(json["height"]);
-    data = tryParse(json["data"]);
+    width = tryConvertToTdObject(json["width"]);
+    height = tryConvertToTdObject(json["height"]);
+    data = tryConvertToTdObject(json["data"]);
   }
 }
 
@@ -781,10 +781,10 @@ class MaskPosition extends TdObject {
   };
 
   MaskPosition(Map<String, dynamic> json) {
-    point = tryParse(json["point"]);
-    xShift = tryParse(json["x_shift"]);
-    yShift = tryParse(json["y_shift"]);
-    scale = tryParse(json["scale"]);
+    point = tryConvertToTdObject(json["point"]);
+    xShift = tryConvertToTdObject(json["x_shift"]);
+    yShift = tryConvertToTdObject(json["y_shift"]);
+    scale = tryConvertToTdObject(json["scale"]);
   }
 }
 
@@ -809,11 +809,11 @@ class PollOption extends TdObject {
   };
 
   PollOption(Map<String, dynamic> json) {
-    text = tryParse(json["text"]);
-    voterCount = tryParse(json["voter_count"]);
-    votePercentage = tryParse(json["vote_percentage"]);
-    isChosen = tryParse(json["is_chosen"]);
-    isBeingChosen = tryParse(json["is_being_chosen"]);
+    text = tryConvertToTdObject(json["text"]);
+    voterCount = tryConvertToTdObject(json["voter_count"]);
+    votePercentage = tryConvertToTdObject(json["vote_percentage"]);
+    isChosen = tryConvertToTdObject(json["is_chosen"]);
+    isBeingChosen = tryConvertToTdObject(json["is_being_chosen"]);
   }
 }
 
@@ -844,14 +844,14 @@ class Animation extends TdObject {
   };
 
   Animation(Map<String, dynamic> json) {
-    duration = tryParse(json["duration"]);
-    width = tryParse(json["width"]);
-    height = tryParse(json["height"]);
-    fileName = tryParse(json["file_name"]);
-    mimeType = tryParse(json["mime_type"]);
-    minithumbnail = tryParse(json["minithumbnail"]);
-    thumbnail = tryParse(json["thumbnail"]);
-    animation = tryParse(json["animation"]);
+    duration = tryConvertToTdObject(json["duration"]);
+    width = tryConvertToTdObject(json["width"]);
+    height = tryConvertToTdObject(json["height"]);
+    fileName = tryConvertToTdObject(json["file_name"]);
+    mimeType = tryConvertToTdObject(json["mime_type"]);
+    minithumbnail = tryConvertToTdObject(json["minithumbnail"]);
+    thumbnail = tryConvertToTdObject(json["thumbnail"]);
+    animation = tryConvertToTdObject(json["animation"]);
   }
 }
 
@@ -882,14 +882,14 @@ class Audio extends TdObject {
   };
 
   Audio(Map<String, dynamic> json) {
-    duration = tryParse(json["duration"]);
-    title = tryParse(json["title"]);
-    performer = tryParse(json["performer"]);
-    fileName = tryParse(json["file_name"]);
-    mimeType = tryParse(json["mime_type"]);
-    albumCoverMinithumbnail = tryParse(json["album_cover_minithumbnail"]);
-    albumCoverThumbnail = tryParse(json["album_cover_thumbnail"]);
-    audio = tryParse(json["audio"]);
+    duration = tryConvertToTdObject(json["duration"]);
+    title = tryConvertToTdObject(json["title"]);
+    performer = tryConvertToTdObject(json["performer"]);
+    fileName = tryConvertToTdObject(json["file_name"]);
+    mimeType = tryConvertToTdObject(json["mime_type"]);
+    albumCoverMinithumbnail = tryConvertToTdObject(json["album_cover_minithumbnail"]);
+    albumCoverThumbnail = tryConvertToTdObject(json["album_cover_thumbnail"]);
+    audio = tryConvertToTdObject(json["audio"]);
   }
 }
 
@@ -914,11 +914,11 @@ class Document extends TdObject {
   };
 
   Document(Map<String, dynamic> json) {
-    fileName = tryParse(json["file_name"]);
-    mimeType = tryParse(json["mime_type"]);
-    minithumbnail = tryParse(json["minithumbnail"]);
-    thumbnail = tryParse(json["thumbnail"]);
-    document = tryParse(json["document"]);
+    fileName = tryConvertToTdObject(json["file_name"]);
+    mimeType = tryConvertToTdObject(json["mime_type"]);
+    minithumbnail = tryConvertToTdObject(json["minithumbnail"]);
+    thumbnail = tryConvertToTdObject(json["thumbnail"]);
+    document = tryConvertToTdObject(json["document"]);
   }
 }
 
@@ -939,9 +939,9 @@ class Photo extends TdObject {
   };
 
   Photo(Map<String, dynamic> json) {
-    hasStickers = tryParse(json["has_stickers"]);
-    minithumbnail = tryParse(json["minithumbnail"]);
-    sizes = tryParse(json["sizes"]);
+    hasStickers = tryConvertToTdObject(json["has_stickers"]);
+    minithumbnail = tryConvertToTdObject(json["minithumbnail"]);
+    sizes = tryConvertToTdObject(json["sizes"]);
   }
 }
 
@@ -974,15 +974,15 @@ class Sticker extends TdObject {
   };
 
   Sticker(Map<String, dynamic> json) {
-    setId = tryParse(json["set_id"]);
-    width = tryParse(json["width"]);
-    height = tryParse(json["height"]);
-    emoji = tryParse(json["emoji"]);
-    isAnimated = tryParse(json["is_animated"]);
-    isMask = tryParse(json["is_mask"]);
-    maskPosition = tryParse(json["mask_position"]);
-    thumbnail = tryParse(json["thumbnail"]);
-    sticker = tryParse(json["sticker"]);
+    setId = tryConvertToTdObject(json["set_id"]);
+    width = tryConvertToTdObject(json["width"]);
+    height = tryConvertToTdObject(json["height"]);
+    emoji = tryConvertToTdObject(json["emoji"]);
+    isAnimated = tryConvertToTdObject(json["is_animated"]);
+    isMask = tryConvertToTdObject(json["is_mask"]);
+    maskPosition = tryConvertToTdObject(json["mask_position"]);
+    thumbnail = tryConvertToTdObject(json["thumbnail"]);
+    sticker = tryConvertToTdObject(json["sticker"]);
   }
 }
 
@@ -1017,16 +1017,16 @@ class Video extends TdObject {
   };
 
   Video(Map<String, dynamic> json) {
-    duration = tryParse(json["duration"]);
-    width = tryParse(json["width"]);
-    height = tryParse(json["height"]);
-    fileName = tryParse(json["file_name"]);
-    mimeType = tryParse(json["mime_type"]);
-    hasStickers = tryParse(json["has_stickers"]);
-    supportsStreaming = tryParse(json["supports_streaming"]);
-    minithumbnail = tryParse(json["minithumbnail"]);
-    thumbnail = tryParse(json["thumbnail"]);
-    video = tryParse(json["video"]);
+    duration = tryConvertToTdObject(json["duration"]);
+    width = tryConvertToTdObject(json["width"]);
+    height = tryConvertToTdObject(json["height"]);
+    fileName = tryConvertToTdObject(json["file_name"]);
+    mimeType = tryConvertToTdObject(json["mime_type"]);
+    hasStickers = tryConvertToTdObject(json["has_stickers"]);
+    supportsStreaming = tryConvertToTdObject(json["supports_streaming"]);
+    minithumbnail = tryConvertToTdObject(json["minithumbnail"]);
+    thumbnail = tryConvertToTdObject(json["thumbnail"]);
+    video = tryConvertToTdObject(json["video"]);
   }
 }
 
@@ -1051,11 +1051,11 @@ class VideoNote extends TdObject {
   };
 
   VideoNote(Map<String, dynamic> json) {
-    duration = tryParse(json["duration"]);
-    length = tryParse(json["length"]);
-    minithumbnail = tryParse(json["minithumbnail"]);
-    thumbnail = tryParse(json["thumbnail"]);
-    video = tryParse(json["video"]);
+    duration = tryConvertToTdObject(json["duration"]);
+    length = tryConvertToTdObject(json["length"]);
+    minithumbnail = tryConvertToTdObject(json["minithumbnail"]);
+    thumbnail = tryConvertToTdObject(json["thumbnail"]);
+    video = tryConvertToTdObject(json["video"]);
   }
 }
 
@@ -1078,10 +1078,10 @@ class VoiceNote extends TdObject {
   };
 
   VoiceNote(Map<String, dynamic> json) {
-    duration = tryParse(json["duration"]);
-    waveform = tryParse(json["waveform"]);
-    mimeType = tryParse(json["mime_type"]);
-    voice = tryParse(json["voice"]);
+    duration = tryConvertToTdObject(json["duration"]);
+    waveform = tryConvertToTdObject(json["waveform"]);
+    mimeType = tryConvertToTdObject(json["mime_type"]);
+    voice = tryConvertToTdObject(json["voice"]);
   }
 }
 
@@ -1106,11 +1106,11 @@ class Contact extends TdObject {
   };
 
   Contact(Map<String, dynamic> json) {
-    phoneNumber = tryParse(json["phone_number"]);
-    firstName = tryParse(json["first_name"]);
-    lastName = tryParse(json["last_name"]);
-    vcard = tryParse(json["vcard"]);
-    userId = tryParse(json["user_id"]);
+    phoneNumber = tryConvertToTdObject(json["phone_number"]);
+    firstName = tryConvertToTdObject(json["first_name"]);
+    lastName = tryConvertToTdObject(json["last_name"]);
+    vcard = tryConvertToTdObject(json["vcard"]);
+    userId = tryConvertToTdObject(json["user_id"]);
   }
 }
 
@@ -1129,8 +1129,8 @@ class Location extends TdObject {
   };
 
   Location(Map<String, dynamic> json) {
-    latitude = tryParse(json["latitude"]);
-    longitude = tryParse(json["longitude"]);
+    latitude = tryConvertToTdObject(json["latitude"]);
+    longitude = tryConvertToTdObject(json["longitude"]);
   }
 }
 
@@ -1157,12 +1157,12 @@ class Venue extends TdObject {
   };
 
   Venue(Map<String, dynamic> json) {
-    location = tryParse(json["location"]);
-    title = tryParse(json["title"]);
-    address = tryParse(json["address"]);
-    provider = tryParse(json["provider"]);
-    id = tryParse(json["id"]);
-    type = tryParse(json["type"]);
+    location = tryConvertToTdObject(json["location"]);
+    title = tryConvertToTdObject(json["title"]);
+    address = tryConvertToTdObject(json["address"]);
+    provider = tryConvertToTdObject(json["provider"]);
+    id = tryConvertToTdObject(json["id"]);
+    type = tryConvertToTdObject(json["type"]);
   }
 }
 
@@ -1191,13 +1191,13 @@ class Game extends TdObject {
   };
 
   Game(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    shortName = tryParse(json["short_name"]);
-    title = tryParse(json["title"]);
-    text = tryParse(json["text"]);
-    description = tryParse(json["description"]);
-    photo = tryParse(json["photo"]);
-    animation = tryParse(json["animation"]);
+    id = tryConvertToTdObject(json["id"]);
+    shortName = tryConvertToTdObject(json["short_name"]);
+    title = tryConvertToTdObject(json["title"]);
+    text = tryConvertToTdObject(json["text"]);
+    description = tryConvertToTdObject(json["description"]);
+    photo = tryConvertToTdObject(json["photo"]);
+    animation = tryConvertToTdObject(json["animation"]);
   }
 }
 
@@ -1222,11 +1222,11 @@ class Poll extends TdObject {
   };
 
   Poll(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    question = tryParse(json["question"]);
-    options = tryParse(json["options"]);
-    totalVoterCount = tryParse(json["total_voter_count"]);
-    isClosed = tryParse(json["is_closed"]);
+    id = tryConvertToTdObject(json["id"]);
+    question = tryConvertToTdObject(json["question"]);
+    options = tryConvertToTdObject(json["options"]);
+    totalVoterCount = tryConvertToTdObject(json["total_voter_count"]);
+    isClosed = tryConvertToTdObject(json["is_closed"]);
   }
 }
 
@@ -1247,9 +1247,9 @@ class ProfilePhoto extends TdObject {
   };
 
   ProfilePhoto(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    small = tryParse(json["small"]);
-    big = tryParse(json["big"]);
+    id = tryConvertToTdObject(json["id"]);
+    small = tryConvertToTdObject(json["small"]);
+    big = tryConvertToTdObject(json["big"]);
   }
 }
 
@@ -1268,8 +1268,8 @@ class ChatPhoto extends TdObject {
   };
 
   ChatPhoto(Map<String, dynamic> json) {
-    small = tryParse(json["small"]);
-    big = tryParse(json["big"]);
+    small = tryConvertToTdObject(json["small"]);
+    big = tryConvertToTdObject(json["big"]);
   }
 }
 
@@ -1353,11 +1353,11 @@ class UserTypeBot extends UserType {
   };
 
   UserTypeBot(Map<String, dynamic> json) {
-    canJoinGroups = tryParse(json["can_join_groups"]);
-    canReadAllGroupMessages = tryParse(json["can_read_all_group_messages"]);
-    isInline = tryParse(json["is_inline"]);
-    inlineQueryPlaceholder = tryParse(json["inline_query_placeholder"]);
-    needLocation = tryParse(json["need_location"]);
+    canJoinGroups = tryConvertToTdObject(json["can_join_groups"]);
+    canReadAllGroupMessages = tryConvertToTdObject(json["can_read_all_group_messages"]);
+    isInline = tryConvertToTdObject(json["is_inline"]);
+    inlineQueryPlaceholder = tryConvertToTdObject(json["inline_query_placeholder"]);
+    needLocation = tryConvertToTdObject(json["need_location"]);
   }
 }
 
@@ -1387,8 +1387,8 @@ class BotCommand extends TdObject {
   };
 
   BotCommand(Map<String, dynamic> json) {
-    command = tryParse(json["command"]);
-    description = tryParse(json["description"]);
+    command = tryConvertToTdObject(json["command"]);
+    description = tryConvertToTdObject(json["description"]);
   }
 }
 
@@ -1407,8 +1407,8 @@ class BotInfo extends TdObject {
   };
 
   BotInfo(Map<String, dynamic> json) {
-    description = tryParse(json["description"]);
-    commands = tryParse(json["commands"]);
+    description = tryConvertToTdObject(json["description"]);
+    commands = tryConvertToTdObject(json["commands"]);
   }
 }
 
@@ -1455,22 +1455,22 @@ class User extends TdObject {
   };
 
   User(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    firstName = tryParse(json["first_name"]);
-    lastName = tryParse(json["last_name"]);
-    username = tryParse(json["username"]);
-    phoneNumber = tryParse(json["phone_number"]);
-    status = tryParse(json["status"]);
-    profilePhoto = tryParse(json["profile_photo"]);
-    outgoingLink = tryParse(json["outgoing_link"]);
-    incomingLink = tryParse(json["incoming_link"]);
-    isVerified = tryParse(json["is_verified"]);
-    isSupport = tryParse(json["is_support"]);
-    restrictionReason = tryParse(json["restriction_reason"]);
-    isScam = tryParse(json["is_scam"]);
-    haveAccess = tryParse(json["have_access"]);
-    type = tryParse(json["type"]);
-    languageCode = tryParse(json["language_code"]);
+    id = tryConvertToTdObject(json["id"]);
+    firstName = tryConvertToTdObject(json["first_name"]);
+    lastName = tryConvertToTdObject(json["last_name"]);
+    username = tryConvertToTdObject(json["username"]);
+    phoneNumber = tryConvertToTdObject(json["phone_number"]);
+    status = tryConvertToTdObject(json["status"]);
+    profilePhoto = tryConvertToTdObject(json["profile_photo"]);
+    outgoingLink = tryConvertToTdObject(json["outgoing_link"]);
+    incomingLink = tryConvertToTdObject(json["incoming_link"]);
+    isVerified = tryConvertToTdObject(json["is_verified"]);
+    isSupport = tryConvertToTdObject(json["is_support"]);
+    restrictionReason = tryConvertToTdObject(json["restriction_reason"]);
+    isScam = tryConvertToTdObject(json["is_scam"]);
+    haveAccess = tryConvertToTdObject(json["have_access"]);
+    type = tryConvertToTdObject(json["type"]);
+    languageCode = tryConvertToTdObject(json["language_code"]);
   }
 }
 
@@ -1499,13 +1499,13 @@ class UserFullInfo extends TdObject {
   };
 
   UserFullInfo(Map<String, dynamic> json) {
-    isBlocked = tryParse(json["is_blocked"]);
-    canBeCalled = tryParse(json["can_be_called"]);
-    hasPrivateCalls = tryParse(json["has_private_calls"]);
-    bio = tryParse(json["bio"]);
-    shareText = tryParse(json["share_text"]);
-    groupInCommonCount = tryParse(json["group_in_common_count"]);
-    botInfo = tryParse(json["bot_info"]);
+    isBlocked = tryConvertToTdObject(json["is_blocked"]);
+    canBeCalled = tryConvertToTdObject(json["can_be_called"]);
+    hasPrivateCalls = tryConvertToTdObject(json["has_private_calls"]);
+    bio = tryConvertToTdObject(json["bio"]);
+    shareText = tryConvertToTdObject(json["share_text"]);
+    groupInCommonCount = tryConvertToTdObject(json["group_in_common_count"]);
+    botInfo = tryConvertToTdObject(json["bot_info"]);
   }
 }
 
@@ -1526,9 +1526,9 @@ class UserProfilePhoto extends TdObject {
   };
 
   UserProfilePhoto(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    addedDate = tryParse(json["added_date"]);
-    sizes = tryParse(json["sizes"]);
+    id = tryConvertToTdObject(json["id"]);
+    addedDate = tryConvertToTdObject(json["added_date"]);
+    sizes = tryConvertToTdObject(json["sizes"]);
   }
 }
 
@@ -1547,8 +1547,8 @@ class UserProfilePhotos extends TdObject {
   };
 
   UserProfilePhotos(Map<String, dynamic> json) {
-    totalCount = tryParse(json["total_count"]);
-    photos = tryParse(json["photos"]);
+    totalCount = tryConvertToTdObject(json["total_count"]);
+    photos = tryConvertToTdObject(json["photos"]);
   }
 }
 
@@ -1567,8 +1567,8 @@ class Users extends TdObject {
   };
 
   Users(Map<String, dynamic> json) {
-    totalCount = tryParse(json["total_count"]);
-    userIds = tryParse(json["user_ids"]);
+    totalCount = tryConvertToTdObject(json["total_count"]);
+    userIds = tryConvertToTdObject(json["user_ids"]);
   }
 }
 
@@ -1599,14 +1599,14 @@ class ChatPermissions extends TdObject {
   };
 
   ChatPermissions(Map<String, dynamic> json) {
-    canSendMessages = tryParse(json["can_send_messages"]);
-    canSendMediaMessages = tryParse(json["can_send_media_messages"]);
-    canSendPolls = tryParse(json["can_send_polls"]);
-    canSendOtherMessages = tryParse(json["can_send_other_messages"]);
-    canAddWebPagePreviews = tryParse(json["can_add_web_page_previews"]);
-    canChangeInfo = tryParse(json["can_change_info"]);
-    canInviteUsers = tryParse(json["can_invite_users"]);
-    canPinMessages = tryParse(json["can_pin_messages"]);
+    canSendMessages = tryConvertToTdObject(json["can_send_messages"]);
+    canSendMediaMessages = tryConvertToTdObject(json["can_send_media_messages"]);
+    canSendPolls = tryConvertToTdObject(json["can_send_polls"]);
+    canSendOtherMessages = tryConvertToTdObject(json["can_send_other_messages"]);
+    canAddWebPagePreviews = tryConvertToTdObject(json["can_add_web_page_previews"]);
+    canChangeInfo = tryConvertToTdObject(json["can_change_info"]);
+    canInviteUsers = tryConvertToTdObject(json["can_invite_users"]);
+    canPinMessages = tryConvertToTdObject(json["can_pin_messages"]);
   }
 }
 
@@ -1625,7 +1625,7 @@ class ChatMemberStatusCreator extends ChatMemberStatus {
   };
 
   ChatMemberStatusCreator(Map<String, dynamic> json) {
-    isMember = tryParse(json["is_member"]);
+    isMember = tryConvertToTdObject(json["is_member"]);
   }
 }
 
@@ -1658,15 +1658,15 @@ class ChatMemberStatusAdministrator extends ChatMemberStatus {
   };
 
   ChatMemberStatusAdministrator(Map<String, dynamic> json) {
-    canBeEdited = tryParse(json["can_be_edited"]);
-    canChangeInfo = tryParse(json["can_change_info"]);
-    canPostMessages = tryParse(json["can_post_messages"]);
-    canEditMessages = tryParse(json["can_edit_messages"]);
-    canDeleteMessages = tryParse(json["can_delete_messages"]);
-    canInviteUsers = tryParse(json["can_invite_users"]);
-    canRestrictMembers = tryParse(json["can_restrict_members"]);
-    canPinMessages = tryParse(json["can_pin_messages"]);
-    canPromoteMembers = tryParse(json["can_promote_members"]);
+    canBeEdited = tryConvertToTdObject(json["can_be_edited"]);
+    canChangeInfo = tryConvertToTdObject(json["can_change_info"]);
+    canPostMessages = tryConvertToTdObject(json["can_post_messages"]);
+    canEditMessages = tryConvertToTdObject(json["can_edit_messages"]);
+    canDeleteMessages = tryConvertToTdObject(json["can_delete_messages"]);
+    canInviteUsers = tryConvertToTdObject(json["can_invite_users"]);
+    canRestrictMembers = tryConvertToTdObject(json["can_restrict_members"]);
+    canPinMessages = tryConvertToTdObject(json["can_pin_messages"]);
+    canPromoteMembers = tryConvertToTdObject(json["can_promote_members"]);
   }
 }
 
@@ -1698,9 +1698,9 @@ class ChatMemberStatusRestricted extends ChatMemberStatus {
   };
 
   ChatMemberStatusRestricted(Map<String, dynamic> json) {
-    isMember = tryParse(json["is_member"]);
-    restrictedUntilDate = tryParse(json["restricted_until_date"]);
-    permissions = tryParse(json["permissions"]);
+    isMember = tryConvertToTdObject(json["is_member"]);
+    restrictedUntilDate = tryConvertToTdObject(json["restricted_until_date"]);
+    permissions = tryConvertToTdObject(json["permissions"]);
   }
 }
 
@@ -1728,7 +1728,7 @@ class ChatMemberStatusBanned extends ChatMemberStatus {
   };
 
   ChatMemberStatusBanned(Map<String, dynamic> json) {
-    bannedUntilDate = tryParse(json["banned_until_date"]);
+    bannedUntilDate = tryConvertToTdObject(json["banned_until_date"]);
   }
 }
 
@@ -1753,11 +1753,11 @@ class ChatMember extends TdObject {
   };
 
   ChatMember(Map<String, dynamic> json) {
-    userId = tryParse(json["user_id"]);
-    inviterUserId = tryParse(json["inviter_user_id"]);
-    joinedChatDate = tryParse(json["joined_chat_date"]);
-    status = tryParse(json["status"]);
-    botInfo = tryParse(json["bot_info"]);
+    userId = tryConvertToTdObject(json["user_id"]);
+    inviterUserId = tryConvertToTdObject(json["inviter_user_id"]);
+    joinedChatDate = tryConvertToTdObject(json["joined_chat_date"]);
+    status = tryConvertToTdObject(json["status"]);
+    botInfo = tryConvertToTdObject(json["bot_info"]);
   }
 }
 
@@ -1776,8 +1776,8 @@ class ChatMembers extends TdObject {
   };
 
   ChatMembers(Map<String, dynamic> json) {
-    totalCount = tryParse(json["total_count"]);
-    members = tryParse(json["members"]);
+    totalCount = tryConvertToTdObject(json["total_count"]);
+    members = tryConvertToTdObject(json["members"]);
   }
 }
 
@@ -1875,7 +1875,7 @@ class SupergroupMembersFilterContacts extends SupergroupMembersFilter {
   };
 
   SupergroupMembersFilterContacts(Map<String, dynamic> json) {
-    query = tryParse(json["query"]);
+    query = tryConvertToTdObject(json["query"]);
   }
 }
 
@@ -1903,7 +1903,7 @@ class SupergroupMembersFilterSearch extends SupergroupMembersFilter {
   };
 
   SupergroupMembersFilterSearch(Map<String, dynamic> json) {
-    query = tryParse(json["query"]);
+    query = tryConvertToTdObject(json["query"]);
   }
 }
 
@@ -1920,7 +1920,7 @@ class SupergroupMembersFilterRestricted extends SupergroupMembersFilter {
   };
 
   SupergroupMembersFilterRestricted(Map<String, dynamic> json) {
-    query = tryParse(json["query"]);
+    query = tryConvertToTdObject(json["query"]);
   }
 }
 
@@ -1937,7 +1937,7 @@ class SupergroupMembersFilterBanned extends SupergroupMembersFilter {
   };
 
   SupergroupMembersFilterBanned(Map<String, dynamic> json) {
-    query = tryParse(json["query"]);
+    query = tryConvertToTdObject(json["query"]);
   }
 }
 
@@ -1973,11 +1973,11 @@ class BasicGroup extends TdObject {
   };
 
   BasicGroup(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    memberCount = tryParse(json["member_count"]);
-    status = tryParse(json["status"]);
-    isActive = tryParse(json["is_active"]);
-    upgradedToSupergroupId = tryParse(json["upgraded_to_supergroup_id"]);
+    id = tryConvertToTdObject(json["id"]);
+    memberCount = tryConvertToTdObject(json["member_count"]);
+    status = tryConvertToTdObject(json["status"]);
+    isActive = tryConvertToTdObject(json["is_active"]);
+    upgradedToSupergroupId = tryConvertToTdObject(json["upgraded_to_supergroup_id"]);
   }
 }
 
@@ -2000,10 +2000,10 @@ class BasicGroupFullInfo extends TdObject {
   };
 
   BasicGroupFullInfo(Map<String, dynamic> json) {
-    description = tryParse(json["description"]);
-    creatorUserId = tryParse(json["creator_user_id"]);
-    members = tryParse(json["members"]);
-    inviteLink = tryParse(json["invite_link"]);
+    description = tryConvertToTdObject(json["description"]);
+    creatorUserId = tryConvertToTdObject(json["creator_user_id"]);
+    members = tryConvertToTdObject(json["members"]);
+    inviteLink = tryConvertToTdObject(json["invite_link"]);
   }
 }
 
@@ -2038,16 +2038,16 @@ class Supergroup extends TdObject {
   };
 
   Supergroup(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    username = tryParse(json["username"]);
-    date = tryParse(json["date"]);
-    status = tryParse(json["status"]);
-    memberCount = tryParse(json["member_count"]);
-    signMessages = tryParse(json["sign_messages"]);
-    isChannel = tryParse(json["is_channel"]);
-    isVerified = tryParse(json["is_verified"]);
-    restrictionReason = tryParse(json["restriction_reason"]);
-    isScam = tryParse(json["is_scam"]);
+    id = tryConvertToTdObject(json["id"]);
+    username = tryConvertToTdObject(json["username"]);
+    date = tryConvertToTdObject(json["date"]);
+    status = tryConvertToTdObject(json["status"]);
+    memberCount = tryConvertToTdObject(json["member_count"]);
+    signMessages = tryConvertToTdObject(json["sign_messages"]);
+    isChannel = tryConvertToTdObject(json["is_channel"]);
+    isVerified = tryConvertToTdObject(json["is_verified"]);
+    restrictionReason = tryConvertToTdObject(json["restriction_reason"]);
+    isScam = tryConvertToTdObject(json["is_scam"]);
   }
 }
 
@@ -2090,20 +2090,20 @@ class SupergroupFullInfo extends TdObject {
   };
 
   SupergroupFullInfo(Map<String, dynamic> json) {
-    description = tryParse(json["description"]);
-    memberCount = tryParse(json["member_count"]);
-    administratorCount = tryParse(json["administrator_count"]);
-    restrictedCount = tryParse(json["restricted_count"]);
-    bannedCount = tryParse(json["banned_count"]);
-    canGetMembers = tryParse(json["can_get_members"]);
-    canSetUsername = tryParse(json["can_set_username"]);
-    canSetStickerSet = tryParse(json["can_set_sticker_set"]);
-    canViewStatistics = tryParse(json["can_view_statistics"]);
-    isAllHistoryAvailable = tryParse(json["is_all_history_available"]);
-    stickerSetId = tryParse(json["sticker_set_id"]);
-    inviteLink = tryParse(json["invite_link"]);
-    upgradedFromBasicGroupId = tryParse(json["upgraded_from_basic_group_id"]);
-    upgradedFromMaxMessageId = tryParse(json["upgraded_from_max_message_id"]);
+    description = tryConvertToTdObject(json["description"]);
+    memberCount = tryConvertToTdObject(json["member_count"]);
+    administratorCount = tryConvertToTdObject(json["administrator_count"]);
+    restrictedCount = tryConvertToTdObject(json["restricted_count"]);
+    bannedCount = tryConvertToTdObject(json["banned_count"]);
+    canGetMembers = tryConvertToTdObject(json["can_get_members"]);
+    canSetUsername = tryConvertToTdObject(json["can_set_username"]);
+    canSetStickerSet = tryConvertToTdObject(json["can_set_sticker_set"]);
+    canViewStatistics = tryConvertToTdObject(json["can_view_statistics"]);
+    isAllHistoryAvailable = tryConvertToTdObject(json["is_all_history_available"]);
+    stickerSetId = tryConvertToTdObject(json["sticker_set_id"]);
+    inviteLink = tryConvertToTdObject(json["invite_link"]);
+    upgradedFromBasicGroupId = tryConvertToTdObject(json["upgraded_from_basic_group_id"]);
+    upgradedFromMaxMessageId = tryConvertToTdObject(json["upgraded_from_max_message_id"]);
   }
 }
 
@@ -2167,13 +2167,13 @@ class SecretChat extends TdObject {
   };
 
   SecretChat(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    userId = tryParse(json["user_id"]);
-    state = tryParse(json["state"]);
-    isOutbound = tryParse(json["is_outbound"]);
-    ttl = tryParse(json["ttl"]);
-    keyHash = tryParse(json["key_hash"]);
-    layer = tryParse(json["layer"]);
+    id = tryConvertToTdObject(json["id"]);
+    userId = tryConvertToTdObject(json["user_id"]);
+    state = tryConvertToTdObject(json["state"]);
+    isOutbound = tryConvertToTdObject(json["is_outbound"]);
+    ttl = tryConvertToTdObject(json["ttl"]);
+    keyHash = tryConvertToTdObject(json["key_hash"]);
+    layer = tryConvertToTdObject(json["layer"]);
   }
 }
 
@@ -2192,7 +2192,7 @@ class MessageForwardOriginUser extends MessageForwardOrigin {
   };
 
   MessageForwardOriginUser(Map<String, dynamic> json) {
-    senderUserId = tryParse(json["sender_user_id"]);
+    senderUserId = tryConvertToTdObject(json["sender_user_id"]);
   }
 }
 
@@ -2209,7 +2209,7 @@ class MessageForwardOriginHiddenUser extends MessageForwardOrigin {
   };
 
   MessageForwardOriginHiddenUser(Map<String, dynamic> json) {
-    senderName = tryParse(json["sender_name"]);
+    senderName = tryConvertToTdObject(json["sender_name"]);
   }
 }
 
@@ -2230,9 +2230,9 @@ class MessageForwardOriginChannel extends MessageForwardOrigin {
   };
 
   MessageForwardOriginChannel(Map<String, dynamic> json) {
-    chatId = tryParse(json["chat_id"]);
-    messageId = tryParse(json["message_id"]);
-    authorSignature = tryParse(json["author_signature"]);
+    chatId = tryConvertToTdObject(json["chat_id"]);
+    messageId = tryConvertToTdObject(json["message_id"]);
+    authorSignature = tryConvertToTdObject(json["author_signature"]);
   }
 }
 
@@ -2255,10 +2255,10 @@ class MessageForwardInfo extends TdObject {
   };
 
   MessageForwardInfo(Map<String, dynamic> json) {
-    origin = tryParse(json["origin"]);
-    date = tryParse(json["date"]);
-    fromChatId = tryParse(json["from_chat_id"]);
-    fromMessageId = tryParse(json["from_message_id"]);
+    origin = tryConvertToTdObject(json["origin"]);
+    date = tryConvertToTdObject(json["date"]);
+    fromChatId = tryConvertToTdObject(json["from_chat_id"]);
+    fromMessageId = tryConvertToTdObject(json["from_message_id"]);
   }
 }
 
@@ -2294,10 +2294,10 @@ class MessageSendingStateFailed extends MessageSendingState {
   };
 
   MessageSendingStateFailed(Map<String, dynamic> json) {
-    errorCode = tryParse(json["error_code"]);
-    errorMessage = tryParse(json["error_message"]);
-    canRetry = tryParse(json["can_retry"]);
-    retryAfter = tryParse(json["retry_after"]);
+    errorCode = tryConvertToTdObject(json["error_code"]);
+    errorMessage = tryConvertToTdObject(json["error_message"]);
+    canRetry = tryConvertToTdObject(json["can_retry"]);
+    retryAfter = tryConvertToTdObject(json["retry_after"]);
   }
 }
 
@@ -2358,29 +2358,29 @@ class Message extends TdObject {
   };
 
   Message(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    senderUserId = tryParse(json["sender_user_id"]);
-    chatId = tryParse(json["chat_id"]);
-    sendingState = tryParse(json["sending_state"]);
-    isOutgoing = tryParse(json["is_outgoing"]);
-    canBeEdited = tryParse(json["can_be_edited"]);
-    canBeForwarded = tryParse(json["can_be_forwarded"]);
-    canBeDeletedOnlyForSelf = tryParse(json["can_be_deleted_only_for_self"]);
-    canBeDeletedForAllUsers = tryParse(json["can_be_deleted_for_all_users"]);
-    isChannelPost = tryParse(json["is_channel_post"]);
-    containsUnreadMention = tryParse(json["contains_unread_mention"]);
-    date = tryParse(json["date"]);
-    editDate = tryParse(json["edit_date"]);
-    forwardInfo = tryParse(json["forward_info"]);
-    replyToMessageId = tryParse(json["reply_to_message_id"]);
-    ttl = tryParse(json["ttl"]);
-    ttlExpiresIn = tryParse(json["ttl_expires_in"]);
-    viaBotUserId = tryParse(json["via_bot_user_id"]);
-    authorSignature = tryParse(json["author_signature"]);
-    views = tryParse(json["views"]);
-    mediaAlbumId = tryParse(json["media_album_id"]);
-    content = tryParse(json["content"]);
-    replyMarkup = tryParse(json["reply_markup"]);
+    id = tryConvertToTdObject(json["id"]);
+    senderUserId = tryConvertToTdObject(json["sender_user_id"]);
+    chatId = tryConvertToTdObject(json["chat_id"]);
+    sendingState = tryConvertToTdObject(json["sending_state"]);
+    isOutgoing = tryConvertToTdObject(json["is_outgoing"]);
+    canBeEdited = tryConvertToTdObject(json["can_be_edited"]);
+    canBeForwarded = tryConvertToTdObject(json["can_be_forwarded"]);
+    canBeDeletedOnlyForSelf = tryConvertToTdObject(json["can_be_deleted_only_for_self"]);
+    canBeDeletedForAllUsers = tryConvertToTdObject(json["can_be_deleted_for_all_users"]);
+    isChannelPost = tryConvertToTdObject(json["is_channel_post"]);
+    containsUnreadMention = tryConvertToTdObject(json["contains_unread_mention"]);
+    date = tryConvertToTdObject(json["date"]);
+    editDate = tryConvertToTdObject(json["edit_date"]);
+    forwardInfo = tryConvertToTdObject(json["forward_info"]);
+    replyToMessageId = tryConvertToTdObject(json["reply_to_message_id"]);
+    ttl = tryConvertToTdObject(json["ttl"]);
+    ttlExpiresIn = tryConvertToTdObject(json["ttl_expires_in"]);
+    viaBotUserId = tryConvertToTdObject(json["via_bot_user_id"]);
+    authorSignature = tryConvertToTdObject(json["author_signature"]);
+    views = tryConvertToTdObject(json["views"]);
+    mediaAlbumId = tryConvertToTdObject(json["media_album_id"]);
+    content = tryConvertToTdObject(json["content"]);
+    replyMarkup = tryConvertToTdObject(json["reply_markup"]);
   }
 }
 
@@ -2399,8 +2399,8 @@ class Messages extends TdObject {
   };
 
   Messages(Map<String, dynamic> json) {
-    totalCount = tryParse(json["total_count"]);
-    messages = tryParse(json["messages"]);
+    totalCount = tryConvertToTdObject(json["total_count"]);
+    messages = tryConvertToTdObject(json["messages"]);
   }
 }
 
@@ -2419,8 +2419,8 @@ class FoundMessages extends TdObject {
   };
 
   FoundMessages(Map<String, dynamic> json) {
-    messages = tryParse(json["messages"]);
-    nextFromSearchId = tryParse(json["next_from_search_id"]);
+    messages = tryConvertToTdObject(json["messages"]);
+    nextFromSearchId = tryConvertToTdObject(json["next_from_search_id"]);
   }
 }
 
@@ -2490,16 +2490,16 @@ class ChatNotificationSettings extends TdObject {
   };
 
   ChatNotificationSettings(Map<String, dynamic> json) {
-    useDefaultMuteFor = tryParse(json["use_default_mute_for"]);
-    muteFor = tryParse(json["mute_for"]);
-    useDefaultSound = tryParse(json["use_default_sound"]);
-    sound = tryParse(json["sound"]);
-    useDefaultShowPreview = tryParse(json["use_default_show_preview"]);
-    showPreview = tryParse(json["show_preview"]);
-    useDefaultDisablePinnedMessageNotifications = tryParse(json["use_default_disable_pinned_message_notifications"]);
-    disablePinnedMessageNotifications = tryParse(json["disable_pinned_message_notifications"]);
-    useDefaultDisableMentionNotifications = tryParse(json["use_default_disable_mention_notifications"]);
-    disableMentionNotifications = tryParse(json["disable_mention_notifications"]);
+    useDefaultMuteFor = tryConvertToTdObject(json["use_default_mute_for"]);
+    muteFor = tryConvertToTdObject(json["mute_for"]);
+    useDefaultSound = tryConvertToTdObject(json["use_default_sound"]);
+    sound = tryConvertToTdObject(json["sound"]);
+    useDefaultShowPreview = tryConvertToTdObject(json["use_default_show_preview"]);
+    showPreview = tryConvertToTdObject(json["show_preview"]);
+    useDefaultDisablePinnedMessageNotifications = tryConvertToTdObject(json["use_default_disable_pinned_message_notifications"]);
+    disablePinnedMessageNotifications = tryConvertToTdObject(json["disable_pinned_message_notifications"]);
+    useDefaultDisableMentionNotifications = tryConvertToTdObject(json["use_default_disable_mention_notifications"]);
+    disableMentionNotifications = tryConvertToTdObject(json["disable_mention_notifications"]);
   }
 }
 
@@ -2524,11 +2524,11 @@ class ScopeNotificationSettings extends TdObject {
   };
 
   ScopeNotificationSettings(Map<String, dynamic> json) {
-    muteFor = tryParse(json["mute_for"]);
-    sound = tryParse(json["sound"]);
-    showPreview = tryParse(json["show_preview"]);
-    disablePinnedMessageNotifications = tryParse(json["disable_pinned_message_notifications"]);
-    disableMentionNotifications = tryParse(json["disable_mention_notifications"]);
+    muteFor = tryConvertToTdObject(json["mute_for"]);
+    sound = tryConvertToTdObject(json["sound"]);
+    showPreview = tryConvertToTdObject(json["show_preview"]);
+    disablePinnedMessageNotifications = tryConvertToTdObject(json["disable_pinned_message_notifications"]);
+    disableMentionNotifications = tryConvertToTdObject(json["disable_mention_notifications"]);
   }
 }
 
@@ -2547,8 +2547,8 @@ class DraftMessage extends TdObject {
   };
 
   DraftMessage(Map<String, dynamic> json) {
-    replyToMessageId = tryParse(json["reply_to_message_id"]);
-    inputMessageText = tryParse(json["input_message_text"]);
+    replyToMessageId = tryConvertToTdObject(json["reply_to_message_id"]);
+    inputMessageText = tryConvertToTdObject(json["input_message_text"]);
   }
 }
 
@@ -2567,7 +2567,7 @@ class ChatTypePrivate extends ChatType {
   };
 
   ChatTypePrivate(Map<String, dynamic> json) {
-    userId = tryParse(json["user_id"]);
+    userId = tryConvertToTdObject(json["user_id"]);
   }
 }
 
@@ -2584,7 +2584,7 @@ class ChatTypeBasicGroup extends ChatType {
   };
 
   ChatTypeBasicGroup(Map<String, dynamic> json) {
-    basicGroupId = tryParse(json["basic_group_id"]);
+    basicGroupId = tryConvertToTdObject(json["basic_group_id"]);
   }
 }
 
@@ -2603,8 +2603,8 @@ class ChatTypeSupergroup extends ChatType {
   };
 
   ChatTypeSupergroup(Map<String, dynamic> json) {
-    supergroupId = tryParse(json["supergroup_id"]);
-    isChannel = tryParse(json["is_channel"]);
+    supergroupId = tryConvertToTdObject(json["supergroup_id"]);
+    isChannel = tryConvertToTdObject(json["is_channel"]);
   }
 }
 
@@ -2623,8 +2623,8 @@ class ChatTypeSecret extends ChatType {
   };
 
   ChatTypeSecret(Map<String, dynamic> json) {
-    secretChatId = tryParse(json["secret_chat_id"]);
-    userId = tryParse(json["user_id"]);
+    secretChatId = tryConvertToTdObject(json["secret_chat_id"]);
+    userId = tryConvertToTdObject(json["user_id"]);
   }
 }
 
@@ -2685,29 +2685,29 @@ class Chat extends TdObject {
   };
 
   Chat(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    type = tryParse(json["type"]);
-    title = tryParse(json["title"]);
-    photo = tryParse(json["photo"]);
-    permissions = tryParse(json["permissions"]);
-    lastMessage = tryParse(json["last_message"]);
-    order = tryParse(json["order"]);
-    isPinned = tryParse(json["is_pinned"]);
-    isMarkedAsUnread = tryParse(json["is_marked_as_unread"]);
-    isSponsored = tryParse(json["is_sponsored"]);
-    canBeDeletedOnlyForSelf = tryParse(json["can_be_deleted_only_for_self"]);
-    canBeDeletedForAllUsers = tryParse(json["can_be_deleted_for_all_users"]);
-    canBeReported = tryParse(json["can_be_reported"]);
-    defaultDisableNotification = tryParse(json["default_disable_notification"]);
-    unreadCount = tryParse(json["unread_count"]);
-    lastReadInboxMessageId = tryParse(json["last_read_inbox_message_id"]);
-    lastReadOutboxMessageId = tryParse(json["last_read_outbox_message_id"]);
-    unreadMentionCount = tryParse(json["unread_mention_count"]);
-    notificationSettings = tryParse(json["notification_settings"]);
-    pinnedMessageId = tryParse(json["pinned_message_id"]);
-    replyMarkupMessageId = tryParse(json["reply_markup_message_id"]);
-    draftMessage = tryParse(json["draft_message"]);
-    clientData = tryParse(json["client_data"]);
+    id = tryConvertToTdObject(json["id"]);
+    type = tryConvertToTdObject(json["type"]);
+    title = tryConvertToTdObject(json["title"]);
+    photo = tryConvertToTdObject(json["photo"]);
+    permissions = tryConvertToTdObject(json["permissions"]);
+    lastMessage = tryConvertToTdObject(json["last_message"]);
+    order = tryConvertToTdObject(json["order"]);
+    isPinned = tryConvertToTdObject(json["is_pinned"]);
+    isMarkedAsUnread = tryConvertToTdObject(json["is_marked_as_unread"]);
+    isSponsored = tryConvertToTdObject(json["is_sponsored"]);
+    canBeDeletedOnlyForSelf = tryConvertToTdObject(json["can_be_deleted_only_for_self"]);
+    canBeDeletedForAllUsers = tryConvertToTdObject(json["can_be_deleted_for_all_users"]);
+    canBeReported = tryConvertToTdObject(json["can_be_reported"]);
+    defaultDisableNotification = tryConvertToTdObject(json["default_disable_notification"]);
+    unreadCount = tryConvertToTdObject(json["unread_count"]);
+    lastReadInboxMessageId = tryConvertToTdObject(json["last_read_inbox_message_id"]);
+    lastReadOutboxMessageId = tryConvertToTdObject(json["last_read_outbox_message_id"]);
+    unreadMentionCount = tryConvertToTdObject(json["unread_mention_count"]);
+    notificationSettings = tryConvertToTdObject(json["notification_settings"]);
+    pinnedMessageId = tryConvertToTdObject(json["pinned_message_id"]);
+    replyMarkupMessageId = tryConvertToTdObject(json["reply_markup_message_id"]);
+    draftMessage = tryConvertToTdObject(json["draft_message"]);
+    clientData = tryConvertToTdObject(json["client_data"]);
   }
 }
 
@@ -2724,7 +2724,7 @@ class Chats extends TdObject {
   };
 
   Chats(Map<String, dynamic> json) {
-    chatIds = tryParse(json["chat_ids"]);
+    chatIds = tryConvertToTdObject(json["chat_ids"]);
   }
 }
 
@@ -2741,7 +2741,7 @@ class ChatInviteLink extends TdObject {
   };
 
   ChatInviteLink(Map<String, dynamic> json) {
-    inviteLink = tryParse(json["invite_link"]);
+    inviteLink = tryConvertToTdObject(json["invite_link"]);
   }
 }
 
@@ -2770,13 +2770,13 @@ class ChatInviteLinkInfo extends TdObject {
   };
 
   ChatInviteLinkInfo(Map<String, dynamic> json) {
-    chatId = tryParse(json["chat_id"]);
-    type = tryParse(json["type"]);
-    title = tryParse(json["title"]);
-    photo = tryParse(json["photo"]);
-    memberCount = tryParse(json["member_count"]);
-    memberUserIds = tryParse(json["member_user_ids"]);
-    isPublic = tryParse(json["is_public"]);
+    chatId = tryConvertToTdObject(json["chat_id"]);
+    type = tryConvertToTdObject(json["type"]);
+    title = tryConvertToTdObject(json["title"]);
+    photo = tryConvertToTdObject(json["photo"]);
+    memberCount = tryConvertToTdObject(json["member_count"]);
+    memberUserIds = tryConvertToTdObject(json["member_user_ids"]);
+    isPublic = tryConvertToTdObject(json["is_public"]);
   }
 }
 
@@ -2830,8 +2830,8 @@ class KeyboardButton extends TdObject {
   };
 
   KeyboardButton(Map<String, dynamic> json) {
-    text = tryParse(json["text"]);
-    type = tryParse(json["type"]);
+    text = tryConvertToTdObject(json["text"]);
+    type = tryConvertToTdObject(json["type"]);
   }
 }
 
@@ -2850,7 +2850,7 @@ class InlineKeyboardButtonTypeUrl extends InlineKeyboardButtonType {
   };
 
   InlineKeyboardButtonTypeUrl(Map<String, dynamic> json) {
-    url = tryParse(json["url"]);
+    url = tryConvertToTdObject(json["url"]);
   }
 }
 
@@ -2871,9 +2871,9 @@ class InlineKeyboardButtonTypeLoginUrl extends InlineKeyboardButtonType {
   };
 
   InlineKeyboardButtonTypeLoginUrl(Map<String, dynamic> json) {
-    url = tryParse(json["url"]);
-    id = tryParse(json["id"]);
-    forwardText = tryParse(json["forward_text"]);
+    url = tryConvertToTdObject(json["url"]);
+    id = tryConvertToTdObject(json["id"]);
+    forwardText = tryConvertToTdObject(json["forward_text"]);
   }
 }
 
@@ -2890,7 +2890,7 @@ class InlineKeyboardButtonTypeCallback extends InlineKeyboardButtonType {
   };
 
   InlineKeyboardButtonTypeCallback(Map<String, dynamic> json) {
-    data = tryParse(json["data"]);
+    data = tryConvertToTdObject(json["data"]);
   }
 }
 
@@ -2920,8 +2920,8 @@ class InlineKeyboardButtonTypeSwitchInline extends InlineKeyboardButtonType {
   };
 
   InlineKeyboardButtonTypeSwitchInline(Map<String, dynamic> json) {
-    query = tryParse(json["query"]);
-    inCurrentChat = tryParse(json["in_current_chat"]);
+    query = tryConvertToTdObject(json["query"]);
+    inCurrentChat = tryConvertToTdObject(json["in_current_chat"]);
   }
 }
 
@@ -2951,8 +2951,8 @@ class InlineKeyboardButton extends TdObject {
   };
 
   InlineKeyboardButton(Map<String, dynamic> json) {
-    text = tryParse(json["text"]);
-    type = tryParse(json["type"]);
+    text = tryConvertToTdObject(json["text"]);
+    type = tryConvertToTdObject(json["type"]);
   }
 }
 
@@ -2971,7 +2971,7 @@ class ReplyMarkupRemoveKeyboard extends ReplyMarkup {
   };
 
   ReplyMarkupRemoveKeyboard(Map<String, dynamic> json) {
-    isPersonal = tryParse(json["is_personal"]);
+    isPersonal = tryConvertToTdObject(json["is_personal"]);
   }
 }
 
@@ -2988,7 +2988,7 @@ class ReplyMarkupForceReply extends ReplyMarkup {
   };
 
   ReplyMarkupForceReply(Map<String, dynamic> json) {
-    isPersonal = tryParse(json["is_personal"]);
+    isPersonal = tryConvertToTdObject(json["is_personal"]);
   }
 }
 
@@ -3011,10 +3011,10 @@ class ReplyMarkupShowKeyboard extends ReplyMarkup {
   };
 
   ReplyMarkupShowKeyboard(Map<String, dynamic> json) {
-    rows = tryParse(json["rows"]);
-    resizeKeyboard = tryParse(json["resize_keyboard"]);
-    oneTime = tryParse(json["one_time"]);
-    isPersonal = tryParse(json["is_personal"]);
+    rows = tryConvertToTdObject(json["rows"]);
+    resizeKeyboard = tryConvertToTdObject(json["resize_keyboard"]);
+    oneTime = tryConvertToTdObject(json["one_time"]);
+    isPersonal = tryConvertToTdObject(json["is_personal"]);
   }
 }
 
@@ -3031,7 +3031,7 @@ class ReplyMarkupInlineKeyboard extends ReplyMarkup {
   };
 
   ReplyMarkupInlineKeyboard(Map<String, dynamic> json) {
-    rows = tryParse(json["rows"]);
+    rows = tryConvertToTdObject(json["rows"]);
   }
 }
 
@@ -3050,7 +3050,7 @@ class RichTextPlain extends RichText {
   };
 
   RichTextPlain(Map<String, dynamic> json) {
-    text = tryParse(json["text"]);
+    text = tryConvertToTdObject(json["text"]);
   }
 }
 
@@ -3067,7 +3067,7 @@ class RichTextBold extends RichText {
   };
 
   RichTextBold(Map<String, dynamic> json) {
-    text = tryParse(json["text"]);
+    text = tryConvertToTdObject(json["text"]);
   }
 }
 
@@ -3084,7 +3084,7 @@ class RichTextItalic extends RichText {
   };
 
   RichTextItalic(Map<String, dynamic> json) {
-    text = tryParse(json["text"]);
+    text = tryConvertToTdObject(json["text"]);
   }
 }
 
@@ -3101,7 +3101,7 @@ class RichTextUnderline extends RichText {
   };
 
   RichTextUnderline(Map<String, dynamic> json) {
-    text = tryParse(json["text"]);
+    text = tryConvertToTdObject(json["text"]);
   }
 }
 
@@ -3118,7 +3118,7 @@ class RichTextStrikethrough extends RichText {
   };
 
   RichTextStrikethrough(Map<String, dynamic> json) {
-    text = tryParse(json["text"]);
+    text = tryConvertToTdObject(json["text"]);
   }
 }
 
@@ -3135,7 +3135,7 @@ class RichTextFixed extends RichText {
   };
 
   RichTextFixed(Map<String, dynamic> json) {
-    text = tryParse(json["text"]);
+    text = tryConvertToTdObject(json["text"]);
   }
 }
 
@@ -3156,9 +3156,9 @@ class RichTextUrl extends RichText {
   };
 
   RichTextUrl(Map<String, dynamic> json) {
-    text = tryParse(json["text"]);
-    url = tryParse(json["url"]);
-    isCached = tryParse(json["is_cached"]);
+    text = tryConvertToTdObject(json["text"]);
+    url = tryConvertToTdObject(json["url"]);
+    isCached = tryConvertToTdObject(json["is_cached"]);
   }
 }
 
@@ -3177,8 +3177,8 @@ class RichTextEmailAddress extends RichText {
   };
 
   RichTextEmailAddress(Map<String, dynamic> json) {
-    text = tryParse(json["text"]);
-    emailAddress = tryParse(json["email_address"]);
+    text = tryConvertToTdObject(json["text"]);
+    emailAddress = tryConvertToTdObject(json["email_address"]);
   }
 }
 
@@ -3195,7 +3195,7 @@ class RichTextSubscript extends RichText {
   };
 
   RichTextSubscript(Map<String, dynamic> json) {
-    text = tryParse(json["text"]);
+    text = tryConvertToTdObject(json["text"]);
   }
 }
 
@@ -3212,7 +3212,7 @@ class RichTextSuperscript extends RichText {
   };
 
   RichTextSuperscript(Map<String, dynamic> json) {
-    text = tryParse(json["text"]);
+    text = tryConvertToTdObject(json["text"]);
   }
 }
 
@@ -3229,7 +3229,7 @@ class RichTextMarked extends RichText {
   };
 
   RichTextMarked(Map<String, dynamic> json) {
-    text = tryParse(json["text"]);
+    text = tryConvertToTdObject(json["text"]);
   }
 }
 
@@ -3248,8 +3248,8 @@ class RichTextPhoneNumber extends RichText {
   };
 
   RichTextPhoneNumber(Map<String, dynamic> json) {
-    text = tryParse(json["text"]);
-    phoneNumber = tryParse(json["phone_number"]);
+    text = tryConvertToTdObject(json["text"]);
+    phoneNumber = tryConvertToTdObject(json["phone_number"]);
   }
 }
 
@@ -3270,9 +3270,9 @@ class RichTextIcon extends RichText {
   };
 
   RichTextIcon(Map<String, dynamic> json) {
-    document = tryParse(json["document"]);
-    width = tryParse(json["width"]);
-    height = tryParse(json["height"]);
+    document = tryConvertToTdObject(json["document"]);
+    width = tryConvertToTdObject(json["width"]);
+    height = tryConvertToTdObject(json["height"]);
   }
 }
 
@@ -3291,8 +3291,8 @@ class RichTextAnchor extends RichText {
   };
 
   RichTextAnchor(Map<String, dynamic> json) {
-    text = tryParse(json["text"]);
-    name = tryParse(json["name"]);
+    text = tryConvertToTdObject(json["text"]);
+    name = tryConvertToTdObject(json["name"]);
   }
 }
 
@@ -3309,7 +3309,7 @@ class RichTexts extends RichText {
   };
 
   RichTexts(Map<String, dynamic> json) {
-    texts = tryParse(json["texts"]);
+    texts = tryConvertToTdObject(json["texts"]);
   }
 }
 
@@ -3328,8 +3328,8 @@ class PageBlockCaption extends TdObject {
   };
 
   PageBlockCaption(Map<String, dynamic> json) {
-    text = tryParse(json["text"]);
-    credit = tryParse(json["credit"]);
+    text = tryConvertToTdObject(json["text"]);
+    credit = tryConvertToTdObject(json["credit"]);
   }
 }
 
@@ -3348,8 +3348,8 @@ class PageBlockListItem extends TdObject {
   };
 
   PageBlockListItem(Map<String, dynamic> json) {
-    label = tryParse(json["label"]);
-    pageBlocks = tryParse(json["page_blocks"]);
+    label = tryConvertToTdObject(json["label"]);
+    pageBlocks = tryConvertToTdObject(json["page_blocks"]);
   }
 }
 
@@ -3446,12 +3446,12 @@ class PageBlockTableCell extends TdObject {
   };
 
   PageBlockTableCell(Map<String, dynamic> json) {
-    text = tryParse(json["text"]);
-    isHeader = tryParse(json["is_header"]);
-    colspan = tryParse(json["colspan"]);
-    rowspan = tryParse(json["rowspan"]);
-    align = tryParse(json["align"]);
-    valign = tryParse(json["valign"]);
+    text = tryConvertToTdObject(json["text"]);
+    isHeader = tryConvertToTdObject(json["is_header"]);
+    colspan = tryConvertToTdObject(json["colspan"]);
+    rowspan = tryConvertToTdObject(json["rowspan"]);
+    align = tryConvertToTdObject(json["align"]);
+    valign = tryConvertToTdObject(json["valign"]);
   }
 }
 
@@ -3478,12 +3478,12 @@ class PageBlockRelatedArticle extends TdObject {
   };
 
   PageBlockRelatedArticle(Map<String, dynamic> json) {
-    url = tryParse(json["url"]);
-    title = tryParse(json["title"]);
-    description = tryParse(json["description"]);
-    photo = tryParse(json["photo"]);
-    author = tryParse(json["author"]);
-    publishDate = tryParse(json["publish_date"]);
+    url = tryConvertToTdObject(json["url"]);
+    title = tryConvertToTdObject(json["title"]);
+    description = tryConvertToTdObject(json["description"]);
+    photo = tryConvertToTdObject(json["photo"]);
+    author = tryConvertToTdObject(json["author"]);
+    publishDate = tryConvertToTdObject(json["publish_date"]);
   }
 }
 
@@ -3502,7 +3502,7 @@ class PageBlockTitle extends PageBlock {
   };
 
   PageBlockTitle(Map<String, dynamic> json) {
-    title = tryParse(json["title"]);
+    title = tryConvertToTdObject(json["title"]);
   }
 }
 
@@ -3519,7 +3519,7 @@ class PageBlockSubtitle extends PageBlock {
   };
 
   PageBlockSubtitle(Map<String, dynamic> json) {
-    subtitle = tryParse(json["subtitle"]);
+    subtitle = tryConvertToTdObject(json["subtitle"]);
   }
 }
 
@@ -3538,8 +3538,8 @@ class PageBlockAuthorDate extends PageBlock {
   };
 
   PageBlockAuthorDate(Map<String, dynamic> json) {
-    author = tryParse(json["author"]);
-    publishDate = tryParse(json["publish_date"]);
+    author = tryConvertToTdObject(json["author"]);
+    publishDate = tryConvertToTdObject(json["publish_date"]);
   }
 }
 
@@ -3556,7 +3556,7 @@ class PageBlockHeader extends PageBlock {
   };
 
   PageBlockHeader(Map<String, dynamic> json) {
-    header = tryParse(json["header"]);
+    header = tryConvertToTdObject(json["header"]);
   }
 }
 
@@ -3573,7 +3573,7 @@ class PageBlockSubheader extends PageBlock {
   };
 
   PageBlockSubheader(Map<String, dynamic> json) {
-    subheader = tryParse(json["subheader"]);
+    subheader = tryConvertToTdObject(json["subheader"]);
   }
 }
 
@@ -3590,7 +3590,7 @@ class PageBlockKicker extends PageBlock {
   };
 
   PageBlockKicker(Map<String, dynamic> json) {
-    kicker = tryParse(json["kicker"]);
+    kicker = tryConvertToTdObject(json["kicker"]);
   }
 }
 
@@ -3607,7 +3607,7 @@ class PageBlockParagraph extends PageBlock {
   };
 
   PageBlockParagraph(Map<String, dynamic> json) {
-    text = tryParse(json["text"]);
+    text = tryConvertToTdObject(json["text"]);
   }
 }
 
@@ -3626,8 +3626,8 @@ class PageBlockPreformatted extends PageBlock {
   };
 
   PageBlockPreformatted(Map<String, dynamic> json) {
-    text = tryParse(json["text"]);
-    language = tryParse(json["language"]);
+    text = tryConvertToTdObject(json["text"]);
+    language = tryConvertToTdObject(json["language"]);
   }
 }
 
@@ -3644,7 +3644,7 @@ class PageBlockFooter extends PageBlock {
   };
 
   PageBlockFooter(Map<String, dynamic> json) {
-    footer = tryParse(json["footer"]);
+    footer = tryConvertToTdObject(json["footer"]);
   }
 }
 
@@ -3672,7 +3672,7 @@ class PageBlockAnchor extends PageBlock {
   };
 
   PageBlockAnchor(Map<String, dynamic> json) {
-    name = tryParse(json["name"]);
+    name = tryConvertToTdObject(json["name"]);
   }
 }
 
@@ -3689,7 +3689,7 @@ class PageBlockList extends PageBlock {
   };
 
   PageBlockList(Map<String, dynamic> json) {
-    items = tryParse(json["items"]);
+    items = tryConvertToTdObject(json["items"]);
   }
 }
 
@@ -3708,8 +3708,8 @@ class PageBlockBlockQuote extends PageBlock {
   };
 
   PageBlockBlockQuote(Map<String, dynamic> json) {
-    text = tryParse(json["text"]);
-    credit = tryParse(json["credit"]);
+    text = tryConvertToTdObject(json["text"]);
+    credit = tryConvertToTdObject(json["credit"]);
   }
 }
 
@@ -3728,8 +3728,8 @@ class PageBlockPullQuote extends PageBlock {
   };
 
   PageBlockPullQuote(Map<String, dynamic> json) {
-    text = tryParse(json["text"]);
-    credit = tryParse(json["credit"]);
+    text = tryConvertToTdObject(json["text"]);
+    credit = tryConvertToTdObject(json["credit"]);
   }
 }
 
@@ -3750,9 +3750,9 @@ class PageBlockAnimation extends PageBlock {
   };
 
   PageBlockAnimation(Map<String, dynamic> json) {
-    animation = tryParse(json["animation"]);
-    caption = tryParse(json["caption"]);
-    needAutoplay = tryParse(json["need_autoplay"]);
+    animation = tryConvertToTdObject(json["animation"]);
+    caption = tryConvertToTdObject(json["caption"]);
+    needAutoplay = tryConvertToTdObject(json["need_autoplay"]);
   }
 }
 
@@ -3771,8 +3771,8 @@ class PageBlockAudio extends PageBlock {
   };
 
   PageBlockAudio(Map<String, dynamic> json) {
-    audio = tryParse(json["audio"]);
-    caption = tryParse(json["caption"]);
+    audio = tryConvertToTdObject(json["audio"]);
+    caption = tryConvertToTdObject(json["caption"]);
   }
 }
 
@@ -3793,9 +3793,9 @@ class PageBlockPhoto extends PageBlock {
   };
 
   PageBlockPhoto(Map<String, dynamic> json) {
-    photo = tryParse(json["photo"]);
-    caption = tryParse(json["caption"]);
-    url = tryParse(json["url"]);
+    photo = tryConvertToTdObject(json["photo"]);
+    caption = tryConvertToTdObject(json["caption"]);
+    url = tryConvertToTdObject(json["url"]);
   }
 }
 
@@ -3818,10 +3818,10 @@ class PageBlockVideo extends PageBlock {
   };
 
   PageBlockVideo(Map<String, dynamic> json) {
-    video = tryParse(json["video"]);
-    caption = tryParse(json["caption"]);
-    needAutoplay = tryParse(json["need_autoplay"]);
-    isLooped = tryParse(json["is_looped"]);
+    video = tryConvertToTdObject(json["video"]);
+    caption = tryConvertToTdObject(json["caption"]);
+    needAutoplay = tryConvertToTdObject(json["need_autoplay"]);
+    isLooped = tryConvertToTdObject(json["is_looped"]);
   }
 }
 
@@ -3840,8 +3840,8 @@ class PageBlockVoiceNote extends PageBlock {
   };
 
   PageBlockVoiceNote(Map<String, dynamic> json) {
-    voiceNote = tryParse(json["voice_note"]);
-    caption = tryParse(json["caption"]);
+    voiceNote = tryConvertToTdObject(json["voice_note"]);
+    caption = tryConvertToTdObject(json["caption"]);
   }
 }
 
@@ -3858,7 +3858,7 @@ class PageBlockCover extends PageBlock {
   };
 
   PageBlockCover(Map<String, dynamic> json) {
-    cover = tryParse(json["cover"]);
+    cover = tryConvertToTdObject(json["cover"]);
   }
 }
 
@@ -3889,14 +3889,14 @@ class PageBlockEmbedded extends PageBlock {
   };
 
   PageBlockEmbedded(Map<String, dynamic> json) {
-    url = tryParse(json["url"]);
-    html = tryParse(json["html"]);
-    posterPhoto = tryParse(json["poster_photo"]);
-    width = tryParse(json["width"]);
-    height = tryParse(json["height"]);
-    caption = tryParse(json["caption"]);
-    isFullWidth = tryParse(json["is_full_width"]);
-    allowScrolling = tryParse(json["allow_scrolling"]);
+    url = tryConvertToTdObject(json["url"]);
+    html = tryConvertToTdObject(json["html"]);
+    posterPhoto = tryConvertToTdObject(json["poster_photo"]);
+    width = tryConvertToTdObject(json["width"]);
+    height = tryConvertToTdObject(json["height"]);
+    caption = tryConvertToTdObject(json["caption"]);
+    isFullWidth = tryConvertToTdObject(json["is_full_width"]);
+    allowScrolling = tryConvertToTdObject(json["allow_scrolling"]);
   }
 }
 
@@ -3923,12 +3923,12 @@ class PageBlockEmbeddedPost extends PageBlock {
   };
 
   PageBlockEmbeddedPost(Map<String, dynamic> json) {
-    url = tryParse(json["url"]);
-    author = tryParse(json["author"]);
-    authorPhoto = tryParse(json["author_photo"]);
-    date = tryParse(json["date"]);
-    pageBlocks = tryParse(json["page_blocks"]);
-    caption = tryParse(json["caption"]);
+    url = tryConvertToTdObject(json["url"]);
+    author = tryConvertToTdObject(json["author"]);
+    authorPhoto = tryConvertToTdObject(json["author_photo"]);
+    date = tryConvertToTdObject(json["date"]);
+    pageBlocks = tryConvertToTdObject(json["page_blocks"]);
+    caption = tryConvertToTdObject(json["caption"]);
   }
 }
 
@@ -3947,8 +3947,8 @@ class PageBlockCollage extends PageBlock {
   };
 
   PageBlockCollage(Map<String, dynamic> json) {
-    pageBlocks = tryParse(json["page_blocks"]);
-    caption = tryParse(json["caption"]);
+    pageBlocks = tryConvertToTdObject(json["page_blocks"]);
+    caption = tryConvertToTdObject(json["caption"]);
   }
 }
 
@@ -3967,8 +3967,8 @@ class PageBlockSlideshow extends PageBlock {
   };
 
   PageBlockSlideshow(Map<String, dynamic> json) {
-    pageBlocks = tryParse(json["page_blocks"]);
-    caption = tryParse(json["caption"]);
+    pageBlocks = tryConvertToTdObject(json["page_blocks"]);
+    caption = tryConvertToTdObject(json["caption"]);
   }
 }
 
@@ -3989,9 +3989,9 @@ class PageBlockChatLink extends PageBlock {
   };
 
   PageBlockChatLink(Map<String, dynamic> json) {
-    title = tryParse(json["title"]);
-    photo = tryParse(json["photo"]);
-    username = tryParse(json["username"]);
+    title = tryConvertToTdObject(json["title"]);
+    photo = tryConvertToTdObject(json["photo"]);
+    username = tryConvertToTdObject(json["username"]);
   }
 }
 
@@ -4014,10 +4014,10 @@ class PageBlockTable extends PageBlock {
   };
 
   PageBlockTable(Map<String, dynamic> json) {
-    caption = tryParse(json["caption"]);
-    cells = tryParse(json["cells"]);
-    isBordered = tryParse(json["is_bordered"]);
-    isStriped = tryParse(json["is_striped"]);
+    caption = tryConvertToTdObject(json["caption"]);
+    cells = tryConvertToTdObject(json["cells"]);
+    isBordered = tryConvertToTdObject(json["is_bordered"]);
+    isStriped = tryConvertToTdObject(json["is_striped"]);
   }
 }
 
@@ -4038,9 +4038,9 @@ class PageBlockDetails extends PageBlock {
   };
 
   PageBlockDetails(Map<String, dynamic> json) {
-    header = tryParse(json["header"]);
-    pageBlocks = tryParse(json["page_blocks"]);
-    isOpen = tryParse(json["is_open"]);
+    header = tryConvertToTdObject(json["header"]);
+    pageBlocks = tryConvertToTdObject(json["page_blocks"]);
+    isOpen = tryConvertToTdObject(json["is_open"]);
   }
 }
 
@@ -4059,8 +4059,8 @@ class PageBlockRelatedArticles extends PageBlock {
   };
 
   PageBlockRelatedArticles(Map<String, dynamic> json) {
-    header = tryParse(json["header"]);
-    articles = tryParse(json["articles"]);
+    header = tryConvertToTdObject(json["header"]);
+    articles = tryConvertToTdObject(json["articles"]);
   }
 }
 
@@ -4085,11 +4085,11 @@ class PageBlockMap extends PageBlock {
   };
 
   PageBlockMap(Map<String, dynamic> json) {
-    location = tryParse(json["location"]);
-    zoom = tryParse(json["zoom"]);
-    width = tryParse(json["width"]);
-    height = tryParse(json["height"]);
-    caption = tryParse(json["caption"]);
+    location = tryConvertToTdObject(json["location"]);
+    zoom = tryConvertToTdObject(json["zoom"]);
+    width = tryConvertToTdObject(json["width"]);
+    height = tryConvertToTdObject(json["height"]);
+    caption = tryConvertToTdObject(json["caption"]);
   }
 }
 
@@ -4114,11 +4114,11 @@ class WebPageInstantView extends TdObject {
   };
 
   WebPageInstantView(Map<String, dynamic> json) {
-    pageBlocks = tryParse(json["page_blocks"]);
-    version = tryParse(json["version"]);
-    url = tryParse(json["url"]);
-    isRtl = tryParse(json["is_rtl"]);
-    isFull = tryParse(json["is_full"]);
+    pageBlocks = tryConvertToTdObject(json["page_blocks"]);
+    version = tryConvertToTdObject(json["version"]);
+    url = tryConvertToTdObject(json["url"]);
+    isRtl = tryConvertToTdObject(json["is_rtl"]);
+    isFull = tryConvertToTdObject(json["is_full"]);
   }
 }
 
@@ -4175,27 +4175,27 @@ class WebPage extends TdObject {
   };
 
   WebPage(Map<String, dynamic> json) {
-    url = tryParse(json["url"]);
-    displayUrl = tryParse(json["display_url"]);
-    type = tryParse(json["type"]);
-    siteName = tryParse(json["site_name"]);
-    title = tryParse(json["title"]);
-    description = tryParse(json["description"]);
-    photo = tryParse(json["photo"]);
-    embedUrl = tryParse(json["embed_url"]);
-    embedType = tryParse(json["embed_type"]);
-    embedWidth = tryParse(json["embed_width"]);
-    embedHeight = tryParse(json["embed_height"]);
-    duration = tryParse(json["duration"]);
-    author = tryParse(json["author"]);
-    animation = tryParse(json["animation"]);
-    audio = tryParse(json["audio"]);
-    document = tryParse(json["document"]);
-    sticker = tryParse(json["sticker"]);
-    video = tryParse(json["video"]);
-    videoNote = tryParse(json["video_note"]);
-    voiceNote = tryParse(json["voice_note"]);
-    instantViewVersion = tryParse(json["instant_view_version"]);
+    url = tryConvertToTdObject(json["url"]);
+    displayUrl = tryConvertToTdObject(json["display_url"]);
+    type = tryConvertToTdObject(json["type"]);
+    siteName = tryConvertToTdObject(json["site_name"]);
+    title = tryConvertToTdObject(json["title"]);
+    description = tryConvertToTdObject(json["description"]);
+    photo = tryConvertToTdObject(json["photo"]);
+    embedUrl = tryConvertToTdObject(json["embed_url"]);
+    embedType = tryConvertToTdObject(json["embed_type"]);
+    embedWidth = tryConvertToTdObject(json["embed_width"]);
+    embedHeight = tryConvertToTdObject(json["embed_height"]);
+    duration = tryConvertToTdObject(json["duration"]);
+    author = tryConvertToTdObject(json["author"]);
+    animation = tryConvertToTdObject(json["animation"]);
+    audio = tryConvertToTdObject(json["audio"]);
+    document = tryConvertToTdObject(json["document"]);
+    sticker = tryConvertToTdObject(json["sticker"]);
+    video = tryConvertToTdObject(json["video"]);
+    videoNote = tryConvertToTdObject(json["video_note"]);
+    voiceNote = tryConvertToTdObject(json["voice_note"]);
+    instantViewVersion = tryConvertToTdObject(json["instant_view_version"]);
   }
 }
 
@@ -4222,12 +4222,12 @@ class Address extends TdObject {
   };
 
   Address(Map<String, dynamic> json) {
-    countryCode = tryParse(json["country_code"]);
-    state = tryParse(json["state"]);
-    city = tryParse(json["city"]);
-    streetLine1 = tryParse(json["street_line1"]);
-    streetLine2 = tryParse(json["street_line2"]);
-    postalCode = tryParse(json["postal_code"]);
+    countryCode = tryConvertToTdObject(json["country_code"]);
+    state = tryConvertToTdObject(json["state"]);
+    city = tryConvertToTdObject(json["city"]);
+    streetLine1 = tryConvertToTdObject(json["street_line1"]);
+    streetLine2 = tryConvertToTdObject(json["street_line2"]);
+    postalCode = tryConvertToTdObject(json["postal_code"]);
   }
 }
 
@@ -4246,8 +4246,8 @@ class LabeledPricePart extends TdObject {
   };
 
   LabeledPricePart(Map<String, dynamic> json) {
-    label = tryParse(json["label"]);
-    amount = tryParse(json["amount"]);
+    label = tryConvertToTdObject(json["label"]);
+    amount = tryConvertToTdObject(json["amount"]);
   }
 }
 
@@ -4282,16 +4282,16 @@ class Invoice extends TdObject {
   };
 
   Invoice(Map<String, dynamic> json) {
-    currency = tryParse(json["currency"]);
-    priceParts = tryParse(json["price_parts"]);
-    isTest = tryParse(json["is_test"]);
-    needName = tryParse(json["need_name"]);
-    needPhoneNumber = tryParse(json["need_phone_number"]);
-    needEmailAddress = tryParse(json["need_email_address"]);
-    needShippingAddress = tryParse(json["need_shipping_address"]);
-    sendPhoneNumberToProvider = tryParse(json["send_phone_number_to_provider"]);
-    sendEmailAddressToProvider = tryParse(json["send_email_address_to_provider"]);
-    isFlexible = tryParse(json["is_flexible"]);
+    currency = tryConvertToTdObject(json["currency"]);
+    priceParts = tryConvertToTdObject(json["price_parts"]);
+    isTest = tryConvertToTdObject(json["is_test"]);
+    needName = tryConvertToTdObject(json["need_name"]);
+    needPhoneNumber = tryConvertToTdObject(json["need_phone_number"]);
+    needEmailAddress = tryConvertToTdObject(json["need_email_address"]);
+    needShippingAddress = tryConvertToTdObject(json["need_shipping_address"]);
+    sendPhoneNumberToProvider = tryConvertToTdObject(json["send_phone_number_to_provider"]);
+    sendEmailAddressToProvider = tryConvertToTdObject(json["send_email_address_to_provider"]);
+    isFlexible = tryConvertToTdObject(json["is_flexible"]);
   }
 }
 
@@ -4314,10 +4314,10 @@ class OrderInfo extends TdObject {
   };
 
   OrderInfo(Map<String, dynamic> json) {
-    name = tryParse(json["name"]);
-    phoneNumber = tryParse(json["phone_number"]);
-    emailAddress = tryParse(json["email_address"]);
-    shippingAddress = tryParse(json["shipping_address"]);
+    name = tryConvertToTdObject(json["name"]);
+    phoneNumber = tryConvertToTdObject(json["phone_number"]);
+    emailAddress = tryConvertToTdObject(json["email_address"]);
+    shippingAddress = tryConvertToTdObject(json["shipping_address"]);
   }
 }
 
@@ -4338,9 +4338,9 @@ class ShippingOption extends TdObject {
   };
 
   ShippingOption(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    title = tryParse(json["title"]);
-    priceParts = tryParse(json["price_parts"]);
+    id = tryConvertToTdObject(json["id"]);
+    title = tryConvertToTdObject(json["title"]);
+    priceParts = tryConvertToTdObject(json["price_parts"]);
   }
 }
 
@@ -4359,8 +4359,8 @@ class SavedCredentials extends TdObject {
   };
 
   SavedCredentials(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    title = tryParse(json["title"]);
+    id = tryConvertToTdObject(json["id"]);
+    title = tryConvertToTdObject(json["title"]);
   }
 }
 
@@ -4379,7 +4379,7 @@ class InputCredentialsSaved extends InputCredentials {
   };
 
   InputCredentialsSaved(Map<String, dynamic> json) {
-    savedCredentialsId = tryParse(json["saved_credentials_id"]);
+    savedCredentialsId = tryConvertToTdObject(json["saved_credentials_id"]);
   }
 }
 
@@ -4398,8 +4398,8 @@ class InputCredentialsNew extends InputCredentials {
   };
 
   InputCredentialsNew(Map<String, dynamic> json) {
-    data = tryParse(json["data"]);
-    allowSave = tryParse(json["allow_save"]);
+    data = tryConvertToTdObject(json["data"]);
+    allowSave = tryConvertToTdObject(json["allow_save"]);
   }
 }
 
@@ -4416,7 +4416,7 @@ class InputCredentialsAndroidPay extends InputCredentials {
   };
 
   InputCredentialsAndroidPay(Map<String, dynamic> json) {
-    data = tryParse(json["data"]);
+    data = tryConvertToTdObject(json["data"]);
   }
 }
 
@@ -4433,7 +4433,7 @@ class InputCredentialsApplePay extends InputCredentials {
   };
 
   InputCredentialsApplePay(Map<String, dynamic> json) {
-    data = tryParse(json["data"]);
+    data = tryConvertToTdObject(json["data"]);
   }
 }
 
@@ -4456,10 +4456,10 @@ class PaymentsProviderStripe extends TdObject {
   };
 
   PaymentsProviderStripe(Map<String, dynamic> json) {
-    publishableKey = tryParse(json["publishable_key"]);
-    needCountry = tryParse(json["need_country"]);
-    needPostalCode = tryParse(json["need_postal_code"]);
-    needCardholderName = tryParse(json["need_cardholder_name"]);
+    publishableKey = tryConvertToTdObject(json["publishable_key"]);
+    needCountry = tryConvertToTdObject(json["need_country"]);
+    needPostalCode = tryConvertToTdObject(json["need_postal_code"]);
+    needCardholderName = tryConvertToTdObject(json["need_cardholder_name"]);
   }
 }
 
@@ -4488,13 +4488,13 @@ class PaymentForm extends TdObject {
   };
 
   PaymentForm(Map<String, dynamic> json) {
-    invoice = tryParse(json["invoice"]);
-    url = tryParse(json["url"]);
-    paymentsProvider = tryParse(json["payments_provider"]);
-    savedOrderInfo = tryParse(json["saved_order_info"]);
-    savedCredentials = tryParse(json["saved_credentials"]);
-    canSaveCredentials = tryParse(json["can_save_credentials"]);
-    needPassword = tryParse(json["need_password"]);
+    invoice = tryConvertToTdObject(json["invoice"]);
+    url = tryConvertToTdObject(json["url"]);
+    paymentsProvider = tryConvertToTdObject(json["payments_provider"]);
+    savedOrderInfo = tryConvertToTdObject(json["saved_order_info"]);
+    savedCredentials = tryConvertToTdObject(json["saved_credentials"]);
+    canSaveCredentials = tryConvertToTdObject(json["can_save_credentials"]);
+    needPassword = tryConvertToTdObject(json["need_password"]);
   }
 }
 
@@ -4513,8 +4513,8 @@ class ValidatedOrderInfo extends TdObject {
   };
 
   ValidatedOrderInfo(Map<String, dynamic> json) {
-    orderInfoId = tryParse(json["order_info_id"]);
-    shippingOptions = tryParse(json["shipping_options"]);
+    orderInfoId = tryConvertToTdObject(json["order_info_id"]);
+    shippingOptions = tryConvertToTdObject(json["shipping_options"]);
   }
 }
 
@@ -4533,8 +4533,8 @@ class PaymentResult extends TdObject {
   };
 
   PaymentResult(Map<String, dynamic> json) {
-    success = tryParse(json["success"]);
-    verificationUrl = tryParse(json["verification_url"]);
+    success = tryConvertToTdObject(json["success"]);
+    verificationUrl = tryConvertToTdObject(json["verification_url"]);
   }
 }
 
@@ -4561,12 +4561,12 @@ class PaymentReceipt extends TdObject {
   };
 
   PaymentReceipt(Map<String, dynamic> json) {
-    date = tryParse(json["date"]);
-    paymentsProviderUserId = tryParse(json["payments_provider_user_id"]);
-    invoice = tryParse(json["invoice"]);
-    orderInfo = tryParse(json["order_info"]);
-    shippingOption = tryParse(json["shipping_option"]);
-    credentialsTitle = tryParse(json["credentials_title"]);
+    date = tryConvertToTdObject(json["date"]);
+    paymentsProviderUserId = tryConvertToTdObject(json["payments_provider_user_id"]);
+    invoice = tryConvertToTdObject(json["invoice"]);
+    orderInfo = tryConvertToTdObject(json["order_info"]);
+    shippingOption = tryConvertToTdObject(json["shipping_option"]);
+    credentialsTitle = tryConvertToTdObject(json["credentials_title"]);
   }
 }
 
@@ -4585,8 +4585,8 @@ class DatedFile extends TdObject {
   };
 
   DatedFile(Map<String, dynamic> json) {
-    file = tryParse(json["file"]);
-    date = tryParse(json["date"]);
+    file = tryConvertToTdObject(json["file"]);
+    date = tryConvertToTdObject(json["date"]);
   }
 }
 
@@ -4752,9 +4752,9 @@ class Date extends TdObject {
   };
 
   Date(Map<String, dynamic> json) {
-    day = tryParse(json["day"]);
-    month = tryParse(json["month"]);
-    year = tryParse(json["year"]);
+    day = tryConvertToTdObject(json["day"]);
+    month = tryConvertToTdObject(json["month"]);
+    year = tryConvertToTdObject(json["year"]);
   }
 }
 
@@ -4789,16 +4789,16 @@ class PersonalDetails extends TdObject {
   };
 
   PersonalDetails(Map<String, dynamic> json) {
-    firstName = tryParse(json["first_name"]);
-    middleName = tryParse(json["middle_name"]);
-    lastName = tryParse(json["last_name"]);
-    nativeFirstName = tryParse(json["native_first_name"]);
-    nativeMiddleName = tryParse(json["native_middle_name"]);
-    nativeLastName = tryParse(json["native_last_name"]);
-    birthdate = tryParse(json["birthdate"]);
-    gender = tryParse(json["gender"]);
-    countryCode = tryParse(json["country_code"]);
-    residenceCountryCode = tryParse(json["residence_country_code"]);
+    firstName = tryConvertToTdObject(json["first_name"]);
+    middleName = tryConvertToTdObject(json["middle_name"]);
+    lastName = tryConvertToTdObject(json["last_name"]);
+    nativeFirstName = tryConvertToTdObject(json["native_first_name"]);
+    nativeMiddleName = tryConvertToTdObject(json["native_middle_name"]);
+    nativeLastName = tryConvertToTdObject(json["native_last_name"]);
+    birthdate = tryConvertToTdObject(json["birthdate"]);
+    gender = tryConvertToTdObject(json["gender"]);
+    countryCode = tryConvertToTdObject(json["country_code"]);
+    residenceCountryCode = tryConvertToTdObject(json["residence_country_code"]);
   }
 }
 
@@ -4825,12 +4825,12 @@ class IdentityDocument extends TdObject {
   };
 
   IdentityDocument(Map<String, dynamic> json) {
-    number = tryParse(json["number"]);
-    expiryDate = tryParse(json["expiry_date"]);
-    frontSide = tryParse(json["front_side"]);
-    reverseSide = tryParse(json["reverse_side"]);
-    selfie = tryParse(json["selfie"]);
-    translation = tryParse(json["translation"]);
+    number = tryConvertToTdObject(json["number"]);
+    expiryDate = tryConvertToTdObject(json["expiry_date"]);
+    frontSide = tryConvertToTdObject(json["front_side"]);
+    reverseSide = tryConvertToTdObject(json["reverse_side"]);
+    selfie = tryConvertToTdObject(json["selfie"]);
+    translation = tryConvertToTdObject(json["translation"]);
   }
 }
 
@@ -4857,12 +4857,12 @@ class InputIdentityDocument extends TdObject {
   };
 
   InputIdentityDocument(Map<String, dynamic> json) {
-    number = tryParse(json["number"]);
-    expiryDate = tryParse(json["expiry_date"]);
-    frontSide = tryParse(json["front_side"]);
-    reverseSide = tryParse(json["reverse_side"]);
-    selfie = tryParse(json["selfie"]);
-    translation = tryParse(json["translation"]);
+    number = tryConvertToTdObject(json["number"]);
+    expiryDate = tryConvertToTdObject(json["expiry_date"]);
+    frontSide = tryConvertToTdObject(json["front_side"]);
+    reverseSide = tryConvertToTdObject(json["reverse_side"]);
+    selfie = tryConvertToTdObject(json["selfie"]);
+    translation = tryConvertToTdObject(json["translation"]);
   }
 }
 
@@ -4881,8 +4881,8 @@ class PersonalDocument extends TdObject {
   };
 
   PersonalDocument(Map<String, dynamic> json) {
-    files = tryParse(json["files"]);
-    translation = tryParse(json["translation"]);
+    files = tryConvertToTdObject(json["files"]);
+    translation = tryConvertToTdObject(json["translation"]);
   }
 }
 
@@ -4901,8 +4901,8 @@ class InputPersonalDocument extends TdObject {
   };
 
   InputPersonalDocument(Map<String, dynamic> json) {
-    files = tryParse(json["files"]);
-    translation = tryParse(json["translation"]);
+    files = tryConvertToTdObject(json["files"]);
+    translation = tryConvertToTdObject(json["translation"]);
   }
 }
 
@@ -4921,7 +4921,7 @@ class PassportElementPersonalDetails extends PassportElement {
   };
 
   PassportElementPersonalDetails(Map<String, dynamic> json) {
-    personalDetails = tryParse(json["personal_details"]);
+    personalDetails = tryConvertToTdObject(json["personal_details"]);
   }
 }
 
@@ -4938,7 +4938,7 @@ class PassportElementPassport extends PassportElement {
   };
 
   PassportElementPassport(Map<String, dynamic> json) {
-    passport = tryParse(json["passport"]);
+    passport = tryConvertToTdObject(json["passport"]);
   }
 }
 
@@ -4955,7 +4955,7 @@ class PassportElementDriverLicense extends PassportElement {
   };
 
   PassportElementDriverLicense(Map<String, dynamic> json) {
-    driverLicense = tryParse(json["driver_license"]);
+    driverLicense = tryConvertToTdObject(json["driver_license"]);
   }
 }
 
@@ -4972,7 +4972,7 @@ class PassportElementIdentityCard extends PassportElement {
   };
 
   PassportElementIdentityCard(Map<String, dynamic> json) {
-    identityCard = tryParse(json["identity_card"]);
+    identityCard = tryConvertToTdObject(json["identity_card"]);
   }
 }
 
@@ -4989,7 +4989,7 @@ class PassportElementInternalPassport extends PassportElement {
   };
 
   PassportElementInternalPassport(Map<String, dynamic> json) {
-    internalPassport = tryParse(json["internal_passport"]);
+    internalPassport = tryConvertToTdObject(json["internal_passport"]);
   }
 }
 
@@ -5006,7 +5006,7 @@ class PassportElementAddress extends PassportElement {
   };
 
   PassportElementAddress(Map<String, dynamic> json) {
-    address = tryParse(json["address"]);
+    address = tryConvertToTdObject(json["address"]);
   }
 }
 
@@ -5023,7 +5023,7 @@ class PassportElementUtilityBill extends PassportElement {
   };
 
   PassportElementUtilityBill(Map<String, dynamic> json) {
-    utilityBill = tryParse(json["utility_bill"]);
+    utilityBill = tryConvertToTdObject(json["utility_bill"]);
   }
 }
 
@@ -5040,7 +5040,7 @@ class PassportElementBankStatement extends PassportElement {
   };
 
   PassportElementBankStatement(Map<String, dynamic> json) {
-    bankStatement = tryParse(json["bank_statement"]);
+    bankStatement = tryConvertToTdObject(json["bank_statement"]);
   }
 }
 
@@ -5057,7 +5057,7 @@ class PassportElementRentalAgreement extends PassportElement {
   };
 
   PassportElementRentalAgreement(Map<String, dynamic> json) {
-    rentalAgreement = tryParse(json["rental_agreement"]);
+    rentalAgreement = tryConvertToTdObject(json["rental_agreement"]);
   }
 }
 
@@ -5074,7 +5074,7 @@ class PassportElementPassportRegistration extends PassportElement {
   };
 
   PassportElementPassportRegistration(Map<String, dynamic> json) {
-    passportRegistration = tryParse(json["passport_registration"]);
+    passportRegistration = tryConvertToTdObject(json["passport_registration"]);
   }
 }
 
@@ -5091,7 +5091,7 @@ class PassportElementTemporaryRegistration extends PassportElement {
   };
 
   PassportElementTemporaryRegistration(Map<String, dynamic> json) {
-    temporaryRegistration = tryParse(json["temporary_registration"]);
+    temporaryRegistration = tryConvertToTdObject(json["temporary_registration"]);
   }
 }
 
@@ -5108,7 +5108,7 @@ class PassportElementPhoneNumber extends PassportElement {
   };
 
   PassportElementPhoneNumber(Map<String, dynamic> json) {
-    phoneNumber = tryParse(json["phone_number"]);
+    phoneNumber = tryConvertToTdObject(json["phone_number"]);
   }
 }
 
@@ -5125,7 +5125,7 @@ class PassportElementEmailAddress extends PassportElement {
   };
 
   PassportElementEmailAddress(Map<String, dynamic> json) {
-    emailAddress = tryParse(json["email_address"]);
+    emailAddress = tryConvertToTdObject(json["email_address"]);
   }
 }
 
@@ -5144,7 +5144,7 @@ class InputPassportElementPersonalDetails extends InputPassportElement {
   };
 
   InputPassportElementPersonalDetails(Map<String, dynamic> json) {
-    personalDetails = tryParse(json["personal_details"]);
+    personalDetails = tryConvertToTdObject(json["personal_details"]);
   }
 }
 
@@ -5161,7 +5161,7 @@ class InputPassportElementPassport extends InputPassportElement {
   };
 
   InputPassportElementPassport(Map<String, dynamic> json) {
-    passport = tryParse(json["passport"]);
+    passport = tryConvertToTdObject(json["passport"]);
   }
 }
 
@@ -5178,7 +5178,7 @@ class InputPassportElementDriverLicense extends InputPassportElement {
   };
 
   InputPassportElementDriverLicense(Map<String, dynamic> json) {
-    driverLicense = tryParse(json["driver_license"]);
+    driverLicense = tryConvertToTdObject(json["driver_license"]);
   }
 }
 
@@ -5195,7 +5195,7 @@ class InputPassportElementIdentityCard extends InputPassportElement {
   };
 
   InputPassportElementIdentityCard(Map<String, dynamic> json) {
-    identityCard = tryParse(json["identity_card"]);
+    identityCard = tryConvertToTdObject(json["identity_card"]);
   }
 }
 
@@ -5212,7 +5212,7 @@ class InputPassportElementInternalPassport extends InputPassportElement {
   };
 
   InputPassportElementInternalPassport(Map<String, dynamic> json) {
-    internalPassport = tryParse(json["internal_passport"]);
+    internalPassport = tryConvertToTdObject(json["internal_passport"]);
   }
 }
 
@@ -5229,7 +5229,7 @@ class InputPassportElementAddress extends InputPassportElement {
   };
 
   InputPassportElementAddress(Map<String, dynamic> json) {
-    address = tryParse(json["address"]);
+    address = tryConvertToTdObject(json["address"]);
   }
 }
 
@@ -5246,7 +5246,7 @@ class InputPassportElementUtilityBill extends InputPassportElement {
   };
 
   InputPassportElementUtilityBill(Map<String, dynamic> json) {
-    utilityBill = tryParse(json["utility_bill"]);
+    utilityBill = tryConvertToTdObject(json["utility_bill"]);
   }
 }
 
@@ -5263,7 +5263,7 @@ class InputPassportElementBankStatement extends InputPassportElement {
   };
 
   InputPassportElementBankStatement(Map<String, dynamic> json) {
-    bankStatement = tryParse(json["bank_statement"]);
+    bankStatement = tryConvertToTdObject(json["bank_statement"]);
   }
 }
 
@@ -5280,7 +5280,7 @@ class InputPassportElementRentalAgreement extends InputPassportElement {
   };
 
   InputPassportElementRentalAgreement(Map<String, dynamic> json) {
-    rentalAgreement = tryParse(json["rental_agreement"]);
+    rentalAgreement = tryConvertToTdObject(json["rental_agreement"]);
   }
 }
 
@@ -5297,7 +5297,7 @@ class InputPassportElementPassportRegistration extends InputPassportElement {
   };
 
   InputPassportElementPassportRegistration(Map<String, dynamic> json) {
-    passportRegistration = tryParse(json["passport_registration"]);
+    passportRegistration = tryConvertToTdObject(json["passport_registration"]);
   }
 }
 
@@ -5314,7 +5314,7 @@ class InputPassportElementTemporaryRegistration extends InputPassportElement {
   };
 
   InputPassportElementTemporaryRegistration(Map<String, dynamic> json) {
-    temporaryRegistration = tryParse(json["temporary_registration"]);
+    temporaryRegistration = tryConvertToTdObject(json["temporary_registration"]);
   }
 }
 
@@ -5331,7 +5331,7 @@ class InputPassportElementPhoneNumber extends InputPassportElement {
   };
 
   InputPassportElementPhoneNumber(Map<String, dynamic> json) {
-    phoneNumber = tryParse(json["phone_number"]);
+    phoneNumber = tryConvertToTdObject(json["phone_number"]);
   }
 }
 
@@ -5348,7 +5348,7 @@ class InputPassportElementEmailAddress extends InputPassportElement {
   };
 
   InputPassportElementEmailAddress(Map<String, dynamic> json) {
-    emailAddress = tryParse(json["email_address"]);
+    emailAddress = tryConvertToTdObject(json["email_address"]);
   }
 }
 
@@ -5365,7 +5365,7 @@ class PassportElements extends TdObject {
   };
 
   PassportElements(Map<String, dynamic> json) {
-    elements = tryParse(json["elements"]);
+    elements = tryConvertToTdObject(json["elements"]);
   }
 }
 
@@ -5395,7 +5395,7 @@ class PassportElementErrorSourceDataField extends PassportElementErrorSource {
   };
 
   PassportElementErrorSourceDataField(Map<String, dynamic> json) {
-    fieldName = tryParse(json["field_name"]);
+    fieldName = tryConvertToTdObject(json["field_name"]);
   }
 }
 
@@ -5445,7 +5445,7 @@ class PassportElementErrorSourceTranslationFile extends PassportElementErrorSour
   };
 
   PassportElementErrorSourceTranslationFile(Map<String, dynamic> json) {
-    fileIndex = tryParse(json["file_index"]);
+    fileIndex = tryConvertToTdObject(json["file_index"]);
   }
 }
 
@@ -5473,7 +5473,7 @@ class PassportElementErrorSourceFile extends PassportElementErrorSource {
   };
 
   PassportElementErrorSourceFile(Map<String, dynamic> json) {
-    fileIndex = tryParse(json["file_index"]);
+    fileIndex = tryConvertToTdObject(json["file_index"]);
   }
 }
 
@@ -5505,9 +5505,9 @@ class PassportElementError extends TdObject {
   };
 
   PassportElementError(Map<String, dynamic> json) {
-    type = tryParse(json["type"]);
-    message = tryParse(json["message"]);
-    source = tryParse(json["source"]);
+    type = tryConvertToTdObject(json["type"]);
+    message = tryConvertToTdObject(json["message"]);
+    source = tryConvertToTdObject(json["source"]);
   }
 }
 
@@ -5530,10 +5530,10 @@ class PassportSuitableElement extends TdObject {
   };
 
   PassportSuitableElement(Map<String, dynamic> json) {
-    type = tryParse(json["type"]);
-    isSelfieRequired = tryParse(json["is_selfie_required"]);
-    isTranslationRequired = tryParse(json["is_translation_required"]);
-    isNativeNameRequired = tryParse(json["is_native_name_required"]);
+    type = tryConvertToTdObject(json["type"]);
+    isSelfieRequired = tryConvertToTdObject(json["is_selfie_required"]);
+    isTranslationRequired = tryConvertToTdObject(json["is_translation_required"]);
+    isNativeNameRequired = tryConvertToTdObject(json["is_native_name_required"]);
   }
 }
 
@@ -5550,7 +5550,7 @@ class PassportRequiredElement extends TdObject {
   };
 
   PassportRequiredElement(Map<String, dynamic> json) {
-    suitableElements = tryParse(json["suitable_elements"]);
+    suitableElements = tryConvertToTdObject(json["suitable_elements"]);
   }
 }
 
@@ -5571,9 +5571,9 @@ class PassportAuthorizationForm extends TdObject {
   };
 
   PassportAuthorizationForm(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    requiredElements = tryParse(json["required_elements"]);
-    privacyPolicyUrl = tryParse(json["privacy_policy_url"]);
+    id = tryConvertToTdObject(json["id"]);
+    requiredElements = tryConvertToTdObject(json["required_elements"]);
+    privacyPolicyUrl = tryConvertToTdObject(json["privacy_policy_url"]);
   }
 }
 
@@ -5592,8 +5592,8 @@ class PassportElementsWithErrors extends TdObject {
   };
 
   PassportElementsWithErrors(Map<String, dynamic> json) {
-    elements = tryParse(json["elements"]);
-    errors = tryParse(json["errors"]);
+    elements = tryConvertToTdObject(json["elements"]);
+    errors = tryConvertToTdObject(json["errors"]);
   }
 }
 
@@ -5614,9 +5614,9 @@ class EncryptedCredentials extends TdObject {
   };
 
   EncryptedCredentials(Map<String, dynamic> json) {
-    data = tryParse(json["data"]);
-    hash = tryParse(json["hash"]);
-    secret = tryParse(json["secret"]);
+    data = tryConvertToTdObject(json["data"]);
+    hash = tryConvertToTdObject(json["hash"]);
+    secret = tryConvertToTdObject(json["secret"]);
   }
 }
 
@@ -5649,15 +5649,15 @@ class EncryptedPassportElement extends TdObject {
   };
 
   EncryptedPassportElement(Map<String, dynamic> json) {
-    type = tryParse(json["type"]);
-    data = tryParse(json["data"]);
-    frontSide = tryParse(json["front_side"]);
-    reverseSide = tryParse(json["reverse_side"]);
-    selfie = tryParse(json["selfie"]);
-    translation = tryParse(json["translation"]);
-    files = tryParse(json["files"]);
-    value = tryParse(json["value"]);
-    hash = tryParse(json["hash"]);
+    type = tryConvertToTdObject(json["type"]);
+    data = tryConvertToTdObject(json["data"]);
+    frontSide = tryConvertToTdObject(json["front_side"]);
+    reverseSide = tryConvertToTdObject(json["reverse_side"]);
+    selfie = tryConvertToTdObject(json["selfie"]);
+    translation = tryConvertToTdObject(json["translation"]);
+    files = tryConvertToTdObject(json["files"]);
+    value = tryConvertToTdObject(json["value"]);
+    hash = tryConvertToTdObject(json["hash"]);
   }
 }
 
@@ -5676,7 +5676,7 @@ class InputPassportElementErrorSourceUnspecified extends InputPassportElementErr
   };
 
   InputPassportElementErrorSourceUnspecified(Map<String, dynamic> json) {
-    elementHash = tryParse(json["element_hash"]);
+    elementHash = tryConvertToTdObject(json["element_hash"]);
   }
 }
 
@@ -5695,8 +5695,8 @@ class InputPassportElementErrorSourceDataField extends InputPassportElementError
   };
 
   InputPassportElementErrorSourceDataField(Map<String, dynamic> json) {
-    fieldName = tryParse(json["field_name"]);
-    dataHash = tryParse(json["data_hash"]);
+    fieldName = tryConvertToTdObject(json["field_name"]);
+    dataHash = tryConvertToTdObject(json["data_hash"]);
   }
 }
 
@@ -5713,7 +5713,7 @@ class InputPassportElementErrorSourceFrontSide extends InputPassportElementError
   };
 
   InputPassportElementErrorSourceFrontSide(Map<String, dynamic> json) {
-    fileHash = tryParse(json["file_hash"]);
+    fileHash = tryConvertToTdObject(json["file_hash"]);
   }
 }
 
@@ -5730,7 +5730,7 @@ class InputPassportElementErrorSourceReverseSide extends InputPassportElementErr
   };
 
   InputPassportElementErrorSourceReverseSide(Map<String, dynamic> json) {
-    fileHash = tryParse(json["file_hash"]);
+    fileHash = tryConvertToTdObject(json["file_hash"]);
   }
 }
 
@@ -5747,7 +5747,7 @@ class InputPassportElementErrorSourceSelfie extends InputPassportElementErrorSou
   };
 
   InputPassportElementErrorSourceSelfie(Map<String, dynamic> json) {
-    fileHash = tryParse(json["file_hash"]);
+    fileHash = tryConvertToTdObject(json["file_hash"]);
   }
 }
 
@@ -5764,7 +5764,7 @@ class InputPassportElementErrorSourceTranslationFile extends InputPassportElemen
   };
 
   InputPassportElementErrorSourceTranslationFile(Map<String, dynamic> json) {
-    fileHash = tryParse(json["file_hash"]);
+    fileHash = tryConvertToTdObject(json["file_hash"]);
   }
 }
 
@@ -5781,7 +5781,7 @@ class InputPassportElementErrorSourceTranslationFiles extends InputPassportEleme
   };
 
   InputPassportElementErrorSourceTranslationFiles(Map<String, dynamic> json) {
-    fileHashes = tryParse(json["file_hashes"]);
+    fileHashes = tryConvertToTdObject(json["file_hashes"]);
   }
 }
 
@@ -5798,7 +5798,7 @@ class InputPassportElementErrorSourceFile extends InputPassportElementErrorSourc
   };
 
   InputPassportElementErrorSourceFile(Map<String, dynamic> json) {
-    fileHash = tryParse(json["file_hash"]);
+    fileHash = tryConvertToTdObject(json["file_hash"]);
   }
 }
 
@@ -5815,7 +5815,7 @@ class InputPassportElementErrorSourceFiles extends InputPassportElementErrorSour
   };
 
   InputPassportElementErrorSourceFiles(Map<String, dynamic> json) {
-    fileHashes = tryParse(json["file_hashes"]);
+    fileHashes = tryConvertToTdObject(json["file_hashes"]);
   }
 }
 
@@ -5836,9 +5836,9 @@ class InputPassportElementError extends TdObject {
   };
 
   InputPassportElementError(Map<String, dynamic> json) {
-    type = tryParse(json["type"]);
-    message = tryParse(json["message"]);
-    source = tryParse(json["source"]);
+    type = tryConvertToTdObject(json["type"]);
+    message = tryConvertToTdObject(json["message"]);
+    source = tryConvertToTdObject(json["source"]);
   }
 }
 
@@ -5859,8 +5859,8 @@ class MessageText extends MessageContent {
   };
 
   MessageText(Map<String, dynamic> json) {
-    text = tryParse(json["text"]);
-    webPage = tryParse(json["web_page"]);
+    text = tryConvertToTdObject(json["text"]);
+    webPage = tryConvertToTdObject(json["web_page"]);
   }
 }
 
@@ -5881,9 +5881,9 @@ class MessageAnimation extends MessageContent {
   };
 
   MessageAnimation(Map<String, dynamic> json) {
-    animation = tryParse(json["animation"]);
-    caption = tryParse(json["caption"]);
-    isSecret = tryParse(json["is_secret"]);
+    animation = tryConvertToTdObject(json["animation"]);
+    caption = tryConvertToTdObject(json["caption"]);
+    isSecret = tryConvertToTdObject(json["is_secret"]);
   }
 }
 
@@ -5902,8 +5902,8 @@ class MessageAudio extends MessageContent {
   };
 
   MessageAudio(Map<String, dynamic> json) {
-    audio = tryParse(json["audio"]);
-    caption = tryParse(json["caption"]);
+    audio = tryConvertToTdObject(json["audio"]);
+    caption = tryConvertToTdObject(json["caption"]);
   }
 }
 
@@ -5922,8 +5922,8 @@ class MessageDocument extends MessageContent {
   };
 
   MessageDocument(Map<String, dynamic> json) {
-    document = tryParse(json["document"]);
-    caption = tryParse(json["caption"]);
+    document = tryConvertToTdObject(json["document"]);
+    caption = tryConvertToTdObject(json["caption"]);
   }
 }
 
@@ -5944,9 +5944,9 @@ class MessagePhoto extends MessageContent {
   };
 
   MessagePhoto(Map<String, dynamic> json) {
-    photo = tryParse(json["photo"]);
-    caption = tryParse(json["caption"]);
-    isSecret = tryParse(json["is_secret"]);
+    photo = tryConvertToTdObject(json["photo"]);
+    caption = tryConvertToTdObject(json["caption"]);
+    isSecret = tryConvertToTdObject(json["is_secret"]);
   }
 }
 
@@ -5974,7 +5974,7 @@ class MessageSticker extends MessageContent {
   };
 
   MessageSticker(Map<String, dynamic> json) {
-    sticker = tryParse(json["sticker"]);
+    sticker = tryConvertToTdObject(json["sticker"]);
   }
 }
 
@@ -5995,9 +5995,9 @@ class MessageVideo extends MessageContent {
   };
 
   MessageVideo(Map<String, dynamic> json) {
-    video = tryParse(json["video"]);
-    caption = tryParse(json["caption"]);
-    isSecret = tryParse(json["is_secret"]);
+    video = tryConvertToTdObject(json["video"]);
+    caption = tryConvertToTdObject(json["caption"]);
+    isSecret = tryConvertToTdObject(json["is_secret"]);
   }
 }
 
@@ -6029,9 +6029,9 @@ class MessageVideoNote extends MessageContent {
   };
 
   MessageVideoNote(Map<String, dynamic> json) {
-    videoNote = tryParse(json["video_note"]);
-    isViewed = tryParse(json["is_viewed"]);
-    isSecret = tryParse(json["is_secret"]);
+    videoNote = tryConvertToTdObject(json["video_note"]);
+    isViewed = tryConvertToTdObject(json["is_viewed"]);
+    isSecret = tryConvertToTdObject(json["is_secret"]);
   }
 }
 
@@ -6052,9 +6052,9 @@ class MessageVoiceNote extends MessageContent {
   };
 
   MessageVoiceNote(Map<String, dynamic> json) {
-    voiceNote = tryParse(json["voice_note"]);
-    caption = tryParse(json["caption"]);
-    isListened = tryParse(json["is_listened"]);
+    voiceNote = tryConvertToTdObject(json["voice_note"]);
+    caption = tryConvertToTdObject(json["caption"]);
+    isListened = tryConvertToTdObject(json["is_listened"]);
   }
 }
 
@@ -6075,9 +6075,9 @@ class MessageLocation extends MessageContent {
   };
 
   MessageLocation(Map<String, dynamic> json) {
-    location = tryParse(json["location"]);
-    livePeriod = tryParse(json["live_period"]);
-    expiresIn = tryParse(json["expires_in"]);
+    location = tryConvertToTdObject(json["location"]);
+    livePeriod = tryConvertToTdObject(json["live_period"]);
+    expiresIn = tryConvertToTdObject(json["expires_in"]);
   }
 }
 
@@ -6094,7 +6094,7 @@ class MessageVenue extends MessageContent {
   };
 
   MessageVenue(Map<String, dynamic> json) {
-    venue = tryParse(json["venue"]);
+    venue = tryConvertToTdObject(json["venue"]);
   }
 }
 
@@ -6111,7 +6111,7 @@ class MessageContact extends MessageContent {
   };
 
   MessageContact(Map<String, dynamic> json) {
-    contact = tryParse(json["contact"]);
+    contact = tryConvertToTdObject(json["contact"]);
   }
 }
 
@@ -6128,7 +6128,7 @@ class MessageGame extends MessageContent {
   };
 
   MessageGame(Map<String, dynamic> json) {
-    game = tryParse(json["game"]);
+    game = tryConvertToTdObject(json["game"]);
   }
 }
 
@@ -6145,7 +6145,7 @@ class MessagePoll extends MessageContent {
   };
 
   MessagePoll(Map<String, dynamic> json) {
-    poll = tryParse(json["poll"]);
+    poll = tryConvertToTdObject(json["poll"]);
   }
 }
 
@@ -6178,15 +6178,15 @@ class MessageInvoice extends MessageContent {
   };
 
   MessageInvoice(Map<String, dynamic> json) {
-    title = tryParse(json["title"]);
-    description = tryParse(json["description"]);
-    photo = tryParse(json["photo"]);
-    currency = tryParse(json["currency"]);
-    totalAmount = tryParse(json["total_amount"]);
-    startParameter = tryParse(json["start_parameter"]);
-    isTest = tryParse(json["is_test"]);
-    needShippingAddress = tryParse(json["need_shipping_address"]);
-    receiptMessageId = tryParse(json["receipt_message_id"]);
+    title = tryConvertToTdObject(json["title"]);
+    description = tryConvertToTdObject(json["description"]);
+    photo = tryConvertToTdObject(json["photo"]);
+    currency = tryConvertToTdObject(json["currency"]);
+    totalAmount = tryConvertToTdObject(json["total_amount"]);
+    startParameter = tryConvertToTdObject(json["start_parameter"]);
+    isTest = tryConvertToTdObject(json["is_test"]);
+    needShippingAddress = tryConvertToTdObject(json["need_shipping_address"]);
+    receiptMessageId = tryConvertToTdObject(json["receipt_message_id"]);
   }
 }
 
@@ -6205,8 +6205,8 @@ class MessageCall extends MessageContent {
   };
 
   MessageCall(Map<String, dynamic> json) {
-    discardReason = tryParse(json["discard_reason"]);
-    duration = tryParse(json["duration"]);
+    discardReason = tryConvertToTdObject(json["discard_reason"]);
+    duration = tryConvertToTdObject(json["duration"]);
   }
 }
 
@@ -6225,8 +6225,8 @@ class MessageBasicGroupChatCreate extends MessageContent {
   };
 
   MessageBasicGroupChatCreate(Map<String, dynamic> json) {
-    title = tryParse(json["title"]);
-    memberUserIds = tryParse(json["member_user_ids"]);
+    title = tryConvertToTdObject(json["title"]);
+    memberUserIds = tryConvertToTdObject(json["member_user_ids"]);
   }
 }
 
@@ -6243,7 +6243,7 @@ class MessageSupergroupChatCreate extends MessageContent {
   };
 
   MessageSupergroupChatCreate(Map<String, dynamic> json) {
-    title = tryParse(json["title"]);
+    title = tryConvertToTdObject(json["title"]);
   }
 }
 
@@ -6260,7 +6260,7 @@ class MessageChatChangeTitle extends MessageContent {
   };
 
   MessageChatChangeTitle(Map<String, dynamic> json) {
-    title = tryParse(json["title"]);
+    title = tryConvertToTdObject(json["title"]);
   }
 }
 
@@ -6277,7 +6277,7 @@ class MessageChatChangePhoto extends MessageContent {
   };
 
   MessageChatChangePhoto(Map<String, dynamic> json) {
-    photo = tryParse(json["photo"]);
+    photo = tryConvertToTdObject(json["photo"]);
   }
 }
 
@@ -6305,7 +6305,7 @@ class MessageChatAddMembers extends MessageContent {
   };
 
   MessageChatAddMembers(Map<String, dynamic> json) {
-    memberUserIds = tryParse(json["member_user_ids"]);
+    memberUserIds = tryConvertToTdObject(json["member_user_ids"]);
   }
 }
 
@@ -6333,7 +6333,7 @@ class MessageChatDeleteMember extends MessageContent {
   };
 
   MessageChatDeleteMember(Map<String, dynamic> json) {
-    userId = tryParse(json["user_id"]);
+    userId = tryConvertToTdObject(json["user_id"]);
   }
 }
 
@@ -6350,7 +6350,7 @@ class MessageChatUpgradeTo extends MessageContent {
   };
 
   MessageChatUpgradeTo(Map<String, dynamic> json) {
-    supergroupId = tryParse(json["supergroup_id"]);
+    supergroupId = tryConvertToTdObject(json["supergroup_id"]);
   }
 }
 
@@ -6369,8 +6369,8 @@ class MessageChatUpgradeFrom extends MessageContent {
   };
 
   MessageChatUpgradeFrom(Map<String, dynamic> json) {
-    title = tryParse(json["title"]);
-    basicGroupId = tryParse(json["basic_group_id"]);
+    title = tryConvertToTdObject(json["title"]);
+    basicGroupId = tryConvertToTdObject(json["basic_group_id"]);
   }
 }
 
@@ -6387,7 +6387,7 @@ class MessagePinMessage extends MessageContent {
   };
 
   MessagePinMessage(Map<String, dynamic> json) {
-    messageId = tryParse(json["message_id"]);
+    messageId = tryConvertToTdObject(json["message_id"]);
   }
 }
 
@@ -6415,7 +6415,7 @@ class MessageChatSetTtl extends MessageContent {
   };
 
   MessageChatSetTtl(Map<String, dynamic> json) {
-    ttl = tryParse(json["ttl"]);
+    ttl = tryConvertToTdObject(json["ttl"]);
   }
 }
 
@@ -6432,7 +6432,7 @@ class MessageCustomServiceAction extends MessageContent {
   };
 
   MessageCustomServiceAction(Map<String, dynamic> json) {
-    text = tryParse(json["text"]);
+    text = tryConvertToTdObject(json["text"]);
   }
 }
 
@@ -6453,9 +6453,9 @@ class MessageGameScore extends MessageContent {
   };
 
   MessageGameScore(Map<String, dynamic> json) {
-    gameMessageId = tryParse(json["game_message_id"]);
-    gameId = tryParse(json["game_id"]);
-    score = tryParse(json["score"]);
+    gameMessageId = tryConvertToTdObject(json["game_message_id"]);
+    gameId = tryConvertToTdObject(json["game_id"]);
+    score = tryConvertToTdObject(json["score"]);
   }
 }
 
@@ -6476,9 +6476,9 @@ class MessagePaymentSuccessful extends MessageContent {
   };
 
   MessagePaymentSuccessful(Map<String, dynamic> json) {
-    invoiceMessageId = tryParse(json["invoice_message_id"]);
-    currency = tryParse(json["currency"]);
-    totalAmount = tryParse(json["total_amount"]);
+    invoiceMessageId = tryConvertToTdObject(json["invoice_message_id"]);
+    currency = tryConvertToTdObject(json["currency"]);
+    totalAmount = tryConvertToTdObject(json["total_amount"]);
   }
 }
 
@@ -6509,14 +6509,14 @@ class MessagePaymentSuccessfulBot extends MessageContent {
   };
 
   MessagePaymentSuccessfulBot(Map<String, dynamic> json) {
-    invoiceMessageId = tryParse(json["invoice_message_id"]);
-    currency = tryParse(json["currency"]);
-    totalAmount = tryParse(json["total_amount"]);
-    invoicePayload = tryParse(json["invoice_payload"]);
-    shippingOptionId = tryParse(json["shipping_option_id"]);
-    orderInfo = tryParse(json["order_info"]);
-    telegramPaymentChargeId = tryParse(json["telegram_payment_charge_id"]);
-    providerPaymentChargeId = tryParse(json["provider_payment_charge_id"]);
+    invoiceMessageId = tryConvertToTdObject(json["invoice_message_id"]);
+    currency = tryConvertToTdObject(json["currency"]);
+    totalAmount = tryConvertToTdObject(json["total_amount"]);
+    invoicePayload = tryConvertToTdObject(json["invoice_payload"]);
+    shippingOptionId = tryConvertToTdObject(json["shipping_option_id"]);
+    orderInfo = tryConvertToTdObject(json["order_info"]);
+    telegramPaymentChargeId = tryConvertToTdObject(json["telegram_payment_charge_id"]);
+    providerPaymentChargeId = tryConvertToTdObject(json["provider_payment_charge_id"]);
   }
 }
 
@@ -6544,7 +6544,7 @@ class MessageWebsiteConnected extends MessageContent {
   };
 
   MessageWebsiteConnected(Map<String, dynamic> json) {
-    domainName = tryParse(json["domain_name"]);
+    domainName = tryConvertToTdObject(json["domain_name"]);
   }
 }
 
@@ -6561,7 +6561,7 @@ class MessagePassportDataSent extends MessageContent {
   };
 
   MessagePassportDataSent(Map<String, dynamic> json) {
-    types = tryParse(json["types"]);
+    types = tryConvertToTdObject(json["types"]);
   }
 }
 
@@ -6580,8 +6580,8 @@ class MessagePassportDataReceived extends MessageContent {
   };
 
   MessagePassportDataReceived(Map<String, dynamic> json) {
-    elements = tryParse(json["elements"]);
-    credentials = tryParse(json["credentials"]);
+    elements = tryConvertToTdObject(json["elements"]);
+    credentials = tryConvertToTdObject(json["credentials"]);
   }
 }
 
@@ -6721,7 +6721,7 @@ class TextEntityTypePreCode extends TextEntityType {
   };
 
   TextEntityTypePreCode(Map<String, dynamic> json) {
-    language = tryParse(json["language"]);
+    language = tryConvertToTdObject(json["language"]);
   }
 }
 
@@ -6738,7 +6738,7 @@ class TextEntityTypeTextUrl extends TextEntityType {
   };
 
   TextEntityTypeTextUrl(Map<String, dynamic> json) {
-    url = tryParse(json["url"]);
+    url = tryConvertToTdObject(json["url"]);
   }
 }
 
@@ -6755,7 +6755,7 @@ class TextEntityTypeMentionName extends TextEntityType {
   };
 
   TextEntityTypeMentionName(Map<String, dynamic> json) {
-    userId = tryParse(json["user_id"]);
+    userId = tryConvertToTdObject(json["user_id"]);
   }
 }
 
@@ -6787,9 +6787,9 @@ class InputThumbnail extends TdObject {
   };
 
   InputThumbnail(Map<String, dynamic> json) {
-    thumbnail = tryParse(json["thumbnail"]);
-    width = tryParse(json["width"]);
-    height = tryParse(json["height"]);
+    thumbnail = tryConvertToTdObject(json["thumbnail"]);
+    width = tryConvertToTdObject(json["width"]);
+    height = tryConvertToTdObject(json["height"]);
   }
 }
 
@@ -6812,9 +6812,9 @@ class InputMessageText extends InputMessageContent {
   };
 
   InputMessageText(Map<String, dynamic> json) {
-    text = tryParse(json["text"]);
-    disableWebPagePreview = tryParse(json["disable_web_page_preview"]);
-    clearDraft = tryParse(json["clear_draft"]);
+    text = tryConvertToTdObject(json["text"]);
+    disableWebPagePreview = tryConvertToTdObject(json["disable_web_page_preview"]);
+    clearDraft = tryConvertToTdObject(json["clear_draft"]);
   }
 }
 
@@ -6841,12 +6841,12 @@ class InputMessageAnimation extends InputMessageContent {
   };
 
   InputMessageAnimation(Map<String, dynamic> json) {
-    animation = tryParse(json["animation"]);
-    thumbnail = tryParse(json["thumbnail"]);
-    duration = tryParse(json["duration"]);
-    width = tryParse(json["width"]);
-    height = tryParse(json["height"]);
-    caption = tryParse(json["caption"]);
+    animation = tryConvertToTdObject(json["animation"]);
+    thumbnail = tryConvertToTdObject(json["thumbnail"]);
+    duration = tryConvertToTdObject(json["duration"]);
+    width = tryConvertToTdObject(json["width"]);
+    height = tryConvertToTdObject(json["height"]);
+    caption = tryConvertToTdObject(json["caption"]);
   }
 }
 
@@ -6873,12 +6873,12 @@ class InputMessageAudio extends InputMessageContent {
   };
 
   InputMessageAudio(Map<String, dynamic> json) {
-    audio = tryParse(json["audio"]);
-    albumCoverThumbnail = tryParse(json["album_cover_thumbnail"]);
-    duration = tryParse(json["duration"]);
-    title = tryParse(json["title"]);
-    performer = tryParse(json["performer"]);
-    caption = tryParse(json["caption"]);
+    audio = tryConvertToTdObject(json["audio"]);
+    albumCoverThumbnail = tryConvertToTdObject(json["album_cover_thumbnail"]);
+    duration = tryConvertToTdObject(json["duration"]);
+    title = tryConvertToTdObject(json["title"]);
+    performer = tryConvertToTdObject(json["performer"]);
+    caption = tryConvertToTdObject(json["caption"]);
   }
 }
 
@@ -6899,9 +6899,9 @@ class InputMessageDocument extends InputMessageContent {
   };
 
   InputMessageDocument(Map<String, dynamic> json) {
-    document = tryParse(json["document"]);
-    thumbnail = tryParse(json["thumbnail"]);
-    caption = tryParse(json["caption"]);
+    document = tryConvertToTdObject(json["document"]);
+    thumbnail = tryConvertToTdObject(json["thumbnail"]);
+    caption = tryConvertToTdObject(json["caption"]);
   }
 }
 
@@ -6930,13 +6930,13 @@ class InputMessagePhoto extends InputMessageContent {
   };
 
   InputMessagePhoto(Map<String, dynamic> json) {
-    photo = tryParse(json["photo"]);
-    thumbnail = tryParse(json["thumbnail"]);
-    addedStickerFileIds = tryParse(json["added_sticker_file_ids"]);
-    width = tryParse(json["width"]);
-    height = tryParse(json["height"]);
-    caption = tryParse(json["caption"]);
-    ttl = tryParse(json["ttl"]);
+    photo = tryConvertToTdObject(json["photo"]);
+    thumbnail = tryConvertToTdObject(json["thumbnail"]);
+    addedStickerFileIds = tryConvertToTdObject(json["added_sticker_file_ids"]);
+    width = tryConvertToTdObject(json["width"]);
+    height = tryConvertToTdObject(json["height"]);
+    caption = tryConvertToTdObject(json["caption"]);
+    ttl = tryConvertToTdObject(json["ttl"]);
   }
 }
 
@@ -6959,10 +6959,10 @@ class InputMessageSticker extends InputMessageContent {
   };
 
   InputMessageSticker(Map<String, dynamic> json) {
-    sticker = tryParse(json["sticker"]);
-    thumbnail = tryParse(json["thumbnail"]);
-    width = tryParse(json["width"]);
-    height = tryParse(json["height"]);
+    sticker = tryConvertToTdObject(json["sticker"]);
+    thumbnail = tryConvertToTdObject(json["thumbnail"]);
+    width = tryConvertToTdObject(json["width"]);
+    height = tryConvertToTdObject(json["height"]);
   }
 }
 
@@ -6995,15 +6995,15 @@ class InputMessageVideo extends InputMessageContent {
   };
 
   InputMessageVideo(Map<String, dynamic> json) {
-    video = tryParse(json["video"]);
-    thumbnail = tryParse(json["thumbnail"]);
-    addedStickerFileIds = tryParse(json["added_sticker_file_ids"]);
-    duration = tryParse(json["duration"]);
-    width = tryParse(json["width"]);
-    height = tryParse(json["height"]);
-    supportsStreaming = tryParse(json["supports_streaming"]);
-    caption = tryParse(json["caption"]);
-    ttl = tryParse(json["ttl"]);
+    video = tryConvertToTdObject(json["video"]);
+    thumbnail = tryConvertToTdObject(json["thumbnail"]);
+    addedStickerFileIds = tryConvertToTdObject(json["added_sticker_file_ids"]);
+    duration = tryConvertToTdObject(json["duration"]);
+    width = tryConvertToTdObject(json["width"]);
+    height = tryConvertToTdObject(json["height"]);
+    supportsStreaming = tryConvertToTdObject(json["supports_streaming"]);
+    caption = tryConvertToTdObject(json["caption"]);
+    ttl = tryConvertToTdObject(json["ttl"]);
   }
 }
 
@@ -7026,10 +7026,10 @@ class InputMessageVideoNote extends InputMessageContent {
   };
 
   InputMessageVideoNote(Map<String, dynamic> json) {
-    videoNote = tryParse(json["video_note"]);
-    thumbnail = tryParse(json["thumbnail"]);
-    duration = tryParse(json["duration"]);
-    length = tryParse(json["length"]);
+    videoNote = tryConvertToTdObject(json["video_note"]);
+    thumbnail = tryConvertToTdObject(json["thumbnail"]);
+    duration = tryConvertToTdObject(json["duration"]);
+    length = tryConvertToTdObject(json["length"]);
   }
 }
 
@@ -7052,10 +7052,10 @@ class InputMessageVoiceNote extends InputMessageContent {
   };
 
   InputMessageVoiceNote(Map<String, dynamic> json) {
-    voiceNote = tryParse(json["voice_note"]);
-    duration = tryParse(json["duration"]);
-    waveform = tryParse(json["waveform"]);
-    caption = tryParse(json["caption"]);
+    voiceNote = tryConvertToTdObject(json["voice_note"]);
+    duration = tryConvertToTdObject(json["duration"]);
+    waveform = tryConvertToTdObject(json["waveform"]);
+    caption = tryConvertToTdObject(json["caption"]);
   }
 }
 
@@ -7074,8 +7074,8 @@ class InputMessageLocation extends InputMessageContent {
   };
 
   InputMessageLocation(Map<String, dynamic> json) {
-    location = tryParse(json["location"]);
-    livePeriod = tryParse(json["live_period"]);
+    location = tryConvertToTdObject(json["location"]);
+    livePeriod = tryConvertToTdObject(json["live_period"]);
   }
 }
 
@@ -7092,7 +7092,7 @@ class InputMessageVenue extends InputMessageContent {
   };
 
   InputMessageVenue(Map<String, dynamic> json) {
-    venue = tryParse(json["venue"]);
+    venue = tryConvertToTdObject(json["venue"]);
   }
 }
 
@@ -7109,7 +7109,7 @@ class InputMessageContact extends InputMessageContent {
   };
 
   InputMessageContact(Map<String, dynamic> json) {
-    contact = tryParse(json["contact"]);
+    contact = tryConvertToTdObject(json["contact"]);
   }
 }
 
@@ -7128,8 +7128,8 @@ class InputMessageGame extends InputMessageContent {
   };
 
   InputMessageGame(Map<String, dynamic> json) {
-    botUserId = tryParse(json["bot_user_id"]);
-    gameShortName = tryParse(json["game_short_name"]);
+    botUserId = tryConvertToTdObject(json["bot_user_id"]);
+    gameShortName = tryConvertToTdObject(json["game_short_name"]);
   }
 }
 
@@ -7166,17 +7166,17 @@ class InputMessageInvoice extends InputMessageContent {
   };
 
   InputMessageInvoice(Map<String, dynamic> json) {
-    invoice = tryParse(json["invoice"]);
-    title = tryParse(json["title"]);
-    description = tryParse(json["description"]);
-    photoUrl = tryParse(json["photo_url"]);
-    photoSize = tryParse(json["photo_size"]);
-    photoWidth = tryParse(json["photo_width"]);
-    photoHeight = tryParse(json["photo_height"]);
-    payload = tryParse(json["payload"]);
-    providerToken = tryParse(json["provider_token"]);
-    providerData = tryParse(json["provider_data"]);
-    startParameter = tryParse(json["start_parameter"]);
+    invoice = tryConvertToTdObject(json["invoice"]);
+    title = tryConvertToTdObject(json["title"]);
+    description = tryConvertToTdObject(json["description"]);
+    photoUrl = tryConvertToTdObject(json["photo_url"]);
+    photoSize = tryConvertToTdObject(json["photo_size"]);
+    photoWidth = tryConvertToTdObject(json["photo_width"]);
+    photoHeight = tryConvertToTdObject(json["photo_height"]);
+    payload = tryConvertToTdObject(json["payload"]);
+    providerToken = tryConvertToTdObject(json["provider_token"]);
+    providerData = tryConvertToTdObject(json["provider_data"]);
+    startParameter = tryConvertToTdObject(json["start_parameter"]);
   }
 }
 
@@ -7195,8 +7195,8 @@ class InputMessagePoll extends InputMessageContent {
   };
 
   InputMessagePoll(Map<String, dynamic> json) {
-    question = tryParse(json["question"]);
-    options = tryParse(json["options"]);
+    question = tryConvertToTdObject(json["question"]);
+    options = tryConvertToTdObject(json["options"]);
   }
 }
 
@@ -7221,11 +7221,11 @@ class InputMessageForwarded extends InputMessageContent {
   };
 
   InputMessageForwarded(Map<String, dynamic> json) {
-    fromChatId = tryParse(json["from_chat_id"]);
-    messageId = tryParse(json["message_id"]);
-    inGameShare = tryParse(json["in_game_share"]);
-    sendCopy = tryParse(json["send_copy"]);
-    removeCaption = tryParse(json["remove_caption"]);
+    fromChatId = tryConvertToTdObject(json["from_chat_id"]);
+    messageId = tryConvertToTdObject(json["message_id"]);
+    inGameShare = tryConvertToTdObject(json["in_game_share"]);
+    sendCopy = tryConvertToTdObject(json["send_copy"]);
+    removeCaption = tryConvertToTdObject(json["remove_caption"]);
   }
 }
 
@@ -7444,7 +7444,7 @@ class ChatActionUploadingVideo extends ChatAction {
   };
 
   ChatActionUploadingVideo(Map<String, dynamic> json) {
-    progress = tryParse(json["progress"]);
+    progress = tryConvertToTdObject(json["progress"]);
   }
 }
 
@@ -7472,7 +7472,7 @@ class ChatActionUploadingVoiceNote extends ChatAction {
   };
 
   ChatActionUploadingVoiceNote(Map<String, dynamic> json) {
-    progress = tryParse(json["progress"]);
+    progress = tryConvertToTdObject(json["progress"]);
   }
 }
 
@@ -7489,7 +7489,7 @@ class ChatActionUploadingPhoto extends ChatAction {
   };
 
   ChatActionUploadingPhoto(Map<String, dynamic> json) {
-    progress = tryParse(json["progress"]);
+    progress = tryConvertToTdObject(json["progress"]);
   }
 }
 
@@ -7506,7 +7506,7 @@ class ChatActionUploadingDocument extends ChatAction {
   };
 
   ChatActionUploadingDocument(Map<String, dynamic> json) {
-    progress = tryParse(json["progress"]);
+    progress = tryConvertToTdObject(json["progress"]);
   }
 }
 
@@ -7567,7 +7567,7 @@ class ChatActionUploadingVideoNote extends ChatAction {
   };
 
   ChatActionUploadingVideoNote(Map<String, dynamic> json) {
-    progress = tryParse(json["progress"]);
+    progress = tryConvertToTdObject(json["progress"]);
   }
 }
 
@@ -7608,7 +7608,7 @@ class UserStatusOnline extends UserStatus {
   };
 
   UserStatusOnline(Map<String, dynamic> json) {
-    expires = tryParse(json["expires"]);
+    expires = tryConvertToTdObject(json["expires"]);
   }
 }
 
@@ -7625,7 +7625,7 @@ class UserStatusOffline extends UserStatus {
   };
 
   UserStatusOffline(Map<String, dynamic> json) {
-    wasOnline = tryParse(json["was_online"]);
+    wasOnline = tryConvertToTdObject(json["was_online"]);
   }
 }
 
@@ -7675,7 +7675,7 @@ class Stickers extends TdObject {
   };
 
   Stickers(Map<String, dynamic> json) {
-    stickers = tryParse(json["stickers"]);
+    stickers = tryConvertToTdObject(json["stickers"]);
   }
 }
 
@@ -7692,7 +7692,7 @@ class Emojis extends TdObject {
   };
 
   Emojis(Map<String, dynamic> json) {
-    emojis = tryParse(json["emojis"]);
+    emojis = tryConvertToTdObject(json["emojis"]);
   }
 }
 
@@ -7731,18 +7731,18 @@ class StickerSet extends TdObject {
   };
 
   StickerSet(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    title = tryParse(json["title"]);
-    name = tryParse(json["name"]);
-    thumbnail = tryParse(json["thumbnail"]);
-    isInstalled = tryParse(json["is_installed"]);
-    isArchived = tryParse(json["is_archived"]);
-    isOfficial = tryParse(json["is_official"]);
-    isAnimated = tryParse(json["is_animated"]);
-    isMasks = tryParse(json["is_masks"]);
-    isViewed = tryParse(json["is_viewed"]);
-    stickers = tryParse(json["stickers"]);
-    emojis = tryParse(json["emojis"]);
+    id = tryConvertToTdObject(json["id"]);
+    title = tryConvertToTdObject(json["title"]);
+    name = tryConvertToTdObject(json["name"]);
+    thumbnail = tryConvertToTdObject(json["thumbnail"]);
+    isInstalled = tryConvertToTdObject(json["is_installed"]);
+    isArchived = tryConvertToTdObject(json["is_archived"]);
+    isOfficial = tryConvertToTdObject(json["is_official"]);
+    isAnimated = tryConvertToTdObject(json["is_animated"]);
+    isMasks = tryConvertToTdObject(json["is_masks"]);
+    isViewed = tryConvertToTdObject(json["is_viewed"]);
+    stickers = tryConvertToTdObject(json["stickers"]);
+    emojis = tryConvertToTdObject(json["emojis"]);
   }
 }
 
@@ -7781,18 +7781,18 @@ class StickerSetInfo extends TdObject {
   };
 
   StickerSetInfo(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    title = tryParse(json["title"]);
-    name = tryParse(json["name"]);
-    thumbnail = tryParse(json["thumbnail"]);
-    isInstalled = tryParse(json["is_installed"]);
-    isArchived = tryParse(json["is_archived"]);
-    isOfficial = tryParse(json["is_official"]);
-    isAnimated = tryParse(json["is_animated"]);
-    isMasks = tryParse(json["is_masks"]);
-    isViewed = tryParse(json["is_viewed"]);
-    size = tryParse(json["size"]);
-    covers = tryParse(json["covers"]);
+    id = tryConvertToTdObject(json["id"]);
+    title = tryConvertToTdObject(json["title"]);
+    name = tryConvertToTdObject(json["name"]);
+    thumbnail = tryConvertToTdObject(json["thumbnail"]);
+    isInstalled = tryConvertToTdObject(json["is_installed"]);
+    isArchived = tryConvertToTdObject(json["is_archived"]);
+    isOfficial = tryConvertToTdObject(json["is_official"]);
+    isAnimated = tryConvertToTdObject(json["is_animated"]);
+    isMasks = tryConvertToTdObject(json["is_masks"]);
+    isViewed = tryConvertToTdObject(json["is_viewed"]);
+    size = tryConvertToTdObject(json["size"]);
+    covers = tryConvertToTdObject(json["covers"]);
   }
 }
 
@@ -7811,8 +7811,8 @@ class StickerSets extends TdObject {
   };
 
   StickerSets(Map<String, dynamic> json) {
-    totalCount = tryParse(json["total_count"]);
-    sets = tryParse(json["sets"]);
+    totalCount = tryConvertToTdObject(json["total_count"]);
+    sets = tryConvertToTdObject(json["sets"]);
   }
 }
 
@@ -7892,10 +7892,10 @@ class CallProtocol extends TdObject {
   };
 
   CallProtocol(Map<String, dynamic> json) {
-    udpP2p = tryParse(json["udp_p2p"]);
-    udpReflector = tryParse(json["udp_reflector"]);
-    minLayer = tryParse(json["min_layer"]);
-    maxLayer = tryParse(json["max_layer"]);
+    udpP2p = tryConvertToTdObject(json["udp_p2p"]);
+    udpReflector = tryConvertToTdObject(json["udp_reflector"]);
+    minLayer = tryConvertToTdObject(json["min_layer"]);
+    maxLayer = tryConvertToTdObject(json["max_layer"]);
   }
 }
 
@@ -7920,11 +7920,11 @@ class CallConnection extends TdObject {
   };
 
   CallConnection(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    ip = tryParse(json["ip"]);
-    ipv6 = tryParse(json["ipv6"]);
-    port = tryParse(json["port"]);
-    peerTag = tryParse(json["peer_tag"]);
+    id = tryConvertToTdObject(json["id"]);
+    ip = tryConvertToTdObject(json["ip"]);
+    ipv6 = tryConvertToTdObject(json["ipv6"]);
+    port = tryConvertToTdObject(json["port"]);
+    peerTag = tryConvertToTdObject(json["peer_tag"]);
   }
 }
 
@@ -7941,7 +7941,7 @@ class CallId extends TdObject {
   };
 
   CallId(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
+    id = tryConvertToTdObject(json["id"]);
   }
 }
 
@@ -7962,8 +7962,8 @@ class CallStatePending extends CallState {
   };
 
   CallStatePending(Map<String, dynamic> json) {
-    isCreated = tryParse(json["is_created"]);
-    isReceived = tryParse(json["is_received"]);
+    isCreated = tryConvertToTdObject(json["is_created"]);
+    isReceived = tryConvertToTdObject(json["is_received"]);
   }
 }
 
@@ -8001,12 +8001,12 @@ class CallStateReady extends CallState {
   };
 
   CallStateReady(Map<String, dynamic> json) {
-    protocol = tryParse(json["protocol"]);
-    connections = tryParse(json["connections"]);
-    config = tryParse(json["config"]);
-    encryptionKey = tryParse(json["encryption_key"]);
-    emojis = tryParse(json["emojis"]);
-    allowP2p = tryParse(json["allow_p2p"]);
+    protocol = tryConvertToTdObject(json["protocol"]);
+    connections = tryConvertToTdObject(json["connections"]);
+    config = tryConvertToTdObject(json["config"]);
+    encryptionKey = tryConvertToTdObject(json["encryption_key"]);
+    emojis = tryConvertToTdObject(json["emojis"]);
+    allowP2p = tryConvertToTdObject(json["allow_p2p"]);
   }
 }
 
@@ -8038,9 +8038,9 @@ class CallStateDiscarded extends CallState {
   };
 
   CallStateDiscarded(Map<String, dynamic> json) {
-    reason = tryParse(json["reason"]);
-    needRating = tryParse(json["need_rating"]);
-    needDebugInformation = tryParse(json["need_debug_information"]);
+    reason = tryConvertToTdObject(json["reason"]);
+    needRating = tryConvertToTdObject(json["need_rating"]);
+    needDebugInformation = tryConvertToTdObject(json["need_debug_information"]);
   }
 }
 
@@ -8057,7 +8057,7 @@ class CallStateError extends CallState {
   };
 
   CallStateError(Map<String, dynamic> json) {
-    error = tryParse(json["error"]);
+    error = tryConvertToTdObject(json["error"]);
   }
 }
 
@@ -8159,10 +8159,10 @@ class Call extends TdObject {
   };
 
   Call(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    userId = tryParse(json["user_id"]);
-    isOutgoing = tryParse(json["is_outgoing"]);
-    state = tryParse(json["state"]);
+    id = tryConvertToTdObject(json["id"]);
+    userId = tryConvertToTdObject(json["user_id"]);
+    isOutgoing = tryConvertToTdObject(json["is_outgoing"]);
+    state = tryConvertToTdObject(json["state"]);
   }
 }
 
@@ -8183,9 +8183,9 @@ class PhoneNumberAuthenticationSettings extends TdObject {
   };
 
   PhoneNumberAuthenticationSettings(Map<String, dynamic> json) {
-    allowFlashCall = tryParse(json["allow_flash_call"]);
-    isCurrentPhoneNumber = tryParse(json["is_current_phone_number"]);
-    allowSmsRetrieverApi = tryParse(json["allow_sms_retriever_api"]);
+    allowFlashCall = tryConvertToTdObject(json["allow_flash_call"]);
+    isCurrentPhoneNumber = tryConvertToTdObject(json["is_current_phone_number"]);
+    allowSmsRetrieverApi = tryConvertToTdObject(json["allow_sms_retriever_api"]);
   }
 }
 
@@ -8202,7 +8202,7 @@ class Animations extends TdObject {
   };
 
   Animations(Map<String, dynamic> json) {
-    animations = tryParse(json["animations"]);
+    animations = tryConvertToTdObject(json["animations"]);
   }
 }
 
@@ -8221,8 +8221,8 @@ class ImportedContacts extends TdObject {
   };
 
   ImportedContacts(Map<String, dynamic> json) {
-    userIds = tryParse(json["user_ids"]);
-    importerCount = tryParse(json["importer_count"]);
+    userIds = tryConvertToTdObject(json["user_ids"]);
+    importerCount = tryConvertToTdObject(json["importer_count"]);
   }
 }
 
@@ -8239,7 +8239,7 @@ class HttpUrl extends TdObject {
   };
 
   HttpUrl(Map<String, dynamic> json) {
-    url = tryParse(json["url"]);
+    url = tryConvertToTdObject(json["url"]);
   }
 }
 
@@ -8274,15 +8274,15 @@ class InputInlineQueryResultAnimatedGif extends InputInlineQueryResult {
   };
 
   InputInlineQueryResultAnimatedGif(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    title = tryParse(json["title"]);
-    thumbnailUrl = tryParse(json["thumbnail_url"]);
-    gifUrl = tryParse(json["gif_url"]);
-    gifDuration = tryParse(json["gif_duration"]);
-    gifWidth = tryParse(json["gif_width"]);
-    gifHeight = tryParse(json["gif_height"]);
-    replyMarkup = tryParse(json["reply_markup"]);
-    inputMessageContent = tryParse(json["input_message_content"]);
+    id = tryConvertToTdObject(json["id"]);
+    title = tryConvertToTdObject(json["title"]);
+    thumbnailUrl = tryConvertToTdObject(json["thumbnail_url"]);
+    gifUrl = tryConvertToTdObject(json["gif_url"]);
+    gifDuration = tryConvertToTdObject(json["gif_duration"]);
+    gifWidth = tryConvertToTdObject(json["gif_width"]);
+    gifHeight = tryConvertToTdObject(json["gif_height"]);
+    replyMarkup = tryConvertToTdObject(json["reply_markup"]);
+    inputMessageContent = tryConvertToTdObject(json["input_message_content"]);
   }
 }
 
@@ -8315,15 +8315,15 @@ class InputInlineQueryResultAnimatedMpeg4 extends InputInlineQueryResult {
   };
 
   InputInlineQueryResultAnimatedMpeg4(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    title = tryParse(json["title"]);
-    thumbnailUrl = tryParse(json["thumbnail_url"]);
-    mpeg4Url = tryParse(json["mpeg4_url"]);
-    mpeg4Duration = tryParse(json["mpeg4_duration"]);
-    mpeg4Width = tryParse(json["mpeg4_width"]);
-    mpeg4Height = tryParse(json["mpeg4_height"]);
-    replyMarkup = tryParse(json["reply_markup"]);
-    inputMessageContent = tryParse(json["input_message_content"]);
+    id = tryConvertToTdObject(json["id"]);
+    title = tryConvertToTdObject(json["title"]);
+    thumbnailUrl = tryConvertToTdObject(json["thumbnail_url"]);
+    mpeg4Url = tryConvertToTdObject(json["mpeg4_url"]);
+    mpeg4Duration = tryConvertToTdObject(json["mpeg4_duration"]);
+    mpeg4Width = tryConvertToTdObject(json["mpeg4_width"]);
+    mpeg4Height = tryConvertToTdObject(json["mpeg4_height"]);
+    replyMarkup = tryConvertToTdObject(json["reply_markup"]);
+    inputMessageContent = tryConvertToTdObject(json["input_message_content"]);
   }
 }
 
@@ -8358,16 +8358,16 @@ class InputInlineQueryResultArticle extends InputInlineQueryResult {
   };
 
   InputInlineQueryResultArticle(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    url = tryParse(json["url"]);
-    hideUrl = tryParse(json["hide_url"]);
-    title = tryParse(json["title"]);
-    description = tryParse(json["description"]);
-    thumbnailUrl = tryParse(json["thumbnail_url"]);
-    thumbnailWidth = tryParse(json["thumbnail_width"]);
-    thumbnailHeight = tryParse(json["thumbnail_height"]);
-    replyMarkup = tryParse(json["reply_markup"]);
-    inputMessageContent = tryParse(json["input_message_content"]);
+    id = tryConvertToTdObject(json["id"]);
+    url = tryConvertToTdObject(json["url"]);
+    hideUrl = tryConvertToTdObject(json["hide_url"]);
+    title = tryConvertToTdObject(json["title"]);
+    description = tryConvertToTdObject(json["description"]);
+    thumbnailUrl = tryConvertToTdObject(json["thumbnail_url"]);
+    thumbnailWidth = tryConvertToTdObject(json["thumbnail_width"]);
+    thumbnailHeight = tryConvertToTdObject(json["thumbnail_height"]);
+    replyMarkup = tryConvertToTdObject(json["reply_markup"]);
+    inputMessageContent = tryConvertToTdObject(json["input_message_content"]);
   }
 }
 
@@ -8396,13 +8396,13 @@ class InputInlineQueryResultAudio extends InputInlineQueryResult {
   };
 
   InputInlineQueryResultAudio(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    title = tryParse(json["title"]);
-    performer = tryParse(json["performer"]);
-    audioUrl = tryParse(json["audio_url"]);
-    audioDuration = tryParse(json["audio_duration"]);
-    replyMarkup = tryParse(json["reply_markup"]);
-    inputMessageContent = tryParse(json["input_message_content"]);
+    id = tryConvertToTdObject(json["id"]);
+    title = tryConvertToTdObject(json["title"]);
+    performer = tryConvertToTdObject(json["performer"]);
+    audioUrl = tryConvertToTdObject(json["audio_url"]);
+    audioDuration = tryConvertToTdObject(json["audio_duration"]);
+    replyMarkup = tryConvertToTdObject(json["reply_markup"]);
+    inputMessageContent = tryConvertToTdObject(json["input_message_content"]);
   }
 }
 
@@ -8431,13 +8431,13 @@ class InputInlineQueryResultContact extends InputInlineQueryResult {
   };
 
   InputInlineQueryResultContact(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    contact = tryParse(json["contact"]);
-    thumbnailUrl = tryParse(json["thumbnail_url"]);
-    thumbnailWidth = tryParse(json["thumbnail_width"]);
-    thumbnailHeight = tryParse(json["thumbnail_height"]);
-    replyMarkup = tryParse(json["reply_markup"]);
-    inputMessageContent = tryParse(json["input_message_content"]);
+    id = tryConvertToTdObject(json["id"]);
+    contact = tryConvertToTdObject(json["contact"]);
+    thumbnailUrl = tryConvertToTdObject(json["thumbnail_url"]);
+    thumbnailWidth = tryConvertToTdObject(json["thumbnail_width"]);
+    thumbnailHeight = tryConvertToTdObject(json["thumbnail_height"]);
+    replyMarkup = tryConvertToTdObject(json["reply_markup"]);
+    inputMessageContent = tryConvertToTdObject(json["input_message_content"]);
   }
 }
 
@@ -8472,16 +8472,16 @@ class InputInlineQueryResultDocument extends InputInlineQueryResult {
   };
 
   InputInlineQueryResultDocument(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    title = tryParse(json["title"]);
-    description = tryParse(json["description"]);
-    documentUrl = tryParse(json["document_url"]);
-    mimeType = tryParse(json["mime_type"]);
-    thumbnailUrl = tryParse(json["thumbnail_url"]);
-    thumbnailWidth = tryParse(json["thumbnail_width"]);
-    thumbnailHeight = tryParse(json["thumbnail_height"]);
-    replyMarkup = tryParse(json["reply_markup"]);
-    inputMessageContent = tryParse(json["input_message_content"]);
+    id = tryConvertToTdObject(json["id"]);
+    title = tryConvertToTdObject(json["title"]);
+    description = tryConvertToTdObject(json["description"]);
+    documentUrl = tryConvertToTdObject(json["document_url"]);
+    mimeType = tryConvertToTdObject(json["mime_type"]);
+    thumbnailUrl = tryConvertToTdObject(json["thumbnail_url"]);
+    thumbnailWidth = tryConvertToTdObject(json["thumbnail_width"]);
+    thumbnailHeight = tryConvertToTdObject(json["thumbnail_height"]);
+    replyMarkup = tryConvertToTdObject(json["reply_markup"]);
+    inputMessageContent = tryConvertToTdObject(json["input_message_content"]);
   }
 }
 
@@ -8502,9 +8502,9 @@ class InputInlineQueryResultGame extends InputInlineQueryResult {
   };
 
   InputInlineQueryResultGame(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    gameShortName = tryParse(json["game_short_name"]);
-    replyMarkup = tryParse(json["reply_markup"]);
+    id = tryConvertToTdObject(json["id"]);
+    gameShortName = tryConvertToTdObject(json["game_short_name"]);
+    replyMarkup = tryConvertToTdObject(json["reply_markup"]);
   }
 }
 
@@ -8537,15 +8537,15 @@ class InputInlineQueryResultLocation extends InputInlineQueryResult {
   };
 
   InputInlineQueryResultLocation(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    location = tryParse(json["location"]);
-    livePeriod = tryParse(json["live_period"]);
-    title = tryParse(json["title"]);
-    thumbnailUrl = tryParse(json["thumbnail_url"]);
-    thumbnailWidth = tryParse(json["thumbnail_width"]);
-    thumbnailHeight = tryParse(json["thumbnail_height"]);
-    replyMarkup = tryParse(json["reply_markup"]);
-    inputMessageContent = tryParse(json["input_message_content"]);
+    id = tryConvertToTdObject(json["id"]);
+    location = tryConvertToTdObject(json["location"]);
+    livePeriod = tryConvertToTdObject(json["live_period"]);
+    title = tryConvertToTdObject(json["title"]);
+    thumbnailUrl = tryConvertToTdObject(json["thumbnail_url"]);
+    thumbnailWidth = tryConvertToTdObject(json["thumbnail_width"]);
+    thumbnailHeight = tryConvertToTdObject(json["thumbnail_height"]);
+    replyMarkup = tryConvertToTdObject(json["reply_markup"]);
+    inputMessageContent = tryConvertToTdObject(json["input_message_content"]);
   }
 }
 
@@ -8578,15 +8578,15 @@ class InputInlineQueryResultPhoto extends InputInlineQueryResult {
   };
 
   InputInlineQueryResultPhoto(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    title = tryParse(json["title"]);
-    description = tryParse(json["description"]);
-    thumbnailUrl = tryParse(json["thumbnail_url"]);
-    photoUrl = tryParse(json["photo_url"]);
-    photoWidth = tryParse(json["photo_width"]);
-    photoHeight = tryParse(json["photo_height"]);
-    replyMarkup = tryParse(json["reply_markup"]);
-    inputMessageContent = tryParse(json["input_message_content"]);
+    id = tryConvertToTdObject(json["id"]);
+    title = tryConvertToTdObject(json["title"]);
+    description = tryConvertToTdObject(json["description"]);
+    thumbnailUrl = tryConvertToTdObject(json["thumbnail_url"]);
+    photoUrl = tryConvertToTdObject(json["photo_url"]);
+    photoWidth = tryConvertToTdObject(json["photo_width"]);
+    photoHeight = tryConvertToTdObject(json["photo_height"]);
+    replyMarkup = tryConvertToTdObject(json["reply_markup"]);
+    inputMessageContent = tryConvertToTdObject(json["input_message_content"]);
   }
 }
 
@@ -8615,13 +8615,13 @@ class InputInlineQueryResultSticker extends InputInlineQueryResult {
   };
 
   InputInlineQueryResultSticker(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    thumbnailUrl = tryParse(json["thumbnail_url"]);
-    stickerUrl = tryParse(json["sticker_url"]);
-    stickerWidth = tryParse(json["sticker_width"]);
-    stickerHeight = tryParse(json["sticker_height"]);
-    replyMarkup = tryParse(json["reply_markup"]);
-    inputMessageContent = tryParse(json["input_message_content"]);
+    id = tryConvertToTdObject(json["id"]);
+    thumbnailUrl = tryConvertToTdObject(json["thumbnail_url"]);
+    stickerUrl = tryConvertToTdObject(json["sticker_url"]);
+    stickerWidth = tryConvertToTdObject(json["sticker_width"]);
+    stickerHeight = tryConvertToTdObject(json["sticker_height"]);
+    replyMarkup = tryConvertToTdObject(json["reply_markup"]);
+    inputMessageContent = tryConvertToTdObject(json["input_message_content"]);
   }
 }
 
@@ -8650,13 +8650,13 @@ class InputInlineQueryResultVenue extends InputInlineQueryResult {
   };
 
   InputInlineQueryResultVenue(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    venue = tryParse(json["venue"]);
-    thumbnailUrl = tryParse(json["thumbnail_url"]);
-    thumbnailWidth = tryParse(json["thumbnail_width"]);
-    thumbnailHeight = tryParse(json["thumbnail_height"]);
-    replyMarkup = tryParse(json["reply_markup"]);
-    inputMessageContent = tryParse(json["input_message_content"]);
+    id = tryConvertToTdObject(json["id"]);
+    venue = tryConvertToTdObject(json["venue"]);
+    thumbnailUrl = tryConvertToTdObject(json["thumbnail_url"]);
+    thumbnailWidth = tryConvertToTdObject(json["thumbnail_width"]);
+    thumbnailHeight = tryConvertToTdObject(json["thumbnail_height"]);
+    replyMarkup = tryConvertToTdObject(json["reply_markup"]);
+    inputMessageContent = tryConvertToTdObject(json["input_message_content"]);
   }
 }
 
@@ -8693,17 +8693,17 @@ class InputInlineQueryResultVideo extends InputInlineQueryResult {
   };
 
   InputInlineQueryResultVideo(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    title = tryParse(json["title"]);
-    description = tryParse(json["description"]);
-    thumbnailUrl = tryParse(json["thumbnail_url"]);
-    videoUrl = tryParse(json["video_url"]);
-    mimeType = tryParse(json["mime_type"]);
-    videoWidth = tryParse(json["video_width"]);
-    videoHeight = tryParse(json["video_height"]);
-    videoDuration = tryParse(json["video_duration"]);
-    replyMarkup = tryParse(json["reply_markup"]);
-    inputMessageContent = tryParse(json["input_message_content"]);
+    id = tryConvertToTdObject(json["id"]);
+    title = tryConvertToTdObject(json["title"]);
+    description = tryConvertToTdObject(json["description"]);
+    thumbnailUrl = tryConvertToTdObject(json["thumbnail_url"]);
+    videoUrl = tryConvertToTdObject(json["video_url"]);
+    mimeType = tryConvertToTdObject(json["mime_type"]);
+    videoWidth = tryConvertToTdObject(json["video_width"]);
+    videoHeight = tryConvertToTdObject(json["video_height"]);
+    videoDuration = tryConvertToTdObject(json["video_duration"]);
+    replyMarkup = tryConvertToTdObject(json["reply_markup"]);
+    inputMessageContent = tryConvertToTdObject(json["input_message_content"]);
   }
 }
 
@@ -8730,12 +8730,12 @@ class InputInlineQueryResultVoiceNote extends InputInlineQueryResult {
   };
 
   InputInlineQueryResultVoiceNote(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    title = tryParse(json["title"]);
-    voiceNoteUrl = tryParse(json["voice_note_url"]);
-    voiceNoteDuration = tryParse(json["voice_note_duration"]);
-    replyMarkup = tryParse(json["reply_markup"]);
-    inputMessageContent = tryParse(json["input_message_content"]);
+    id = tryConvertToTdObject(json["id"]);
+    title = tryConvertToTdObject(json["title"]);
+    voiceNoteUrl = tryConvertToTdObject(json["voice_note_url"]);
+    voiceNoteDuration = tryConvertToTdObject(json["voice_note_duration"]);
+    replyMarkup = tryConvertToTdObject(json["reply_markup"]);
+    inputMessageContent = tryConvertToTdObject(json["input_message_content"]);
   }
 }
 
@@ -8764,12 +8764,12 @@ class InlineQueryResultArticle extends InlineQueryResult {
   };
 
   InlineQueryResultArticle(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    url = tryParse(json["url"]);
-    hideUrl = tryParse(json["hide_url"]);
-    title = tryParse(json["title"]);
-    description = tryParse(json["description"]);
-    thumbnail = tryParse(json["thumbnail"]);
+    id = tryConvertToTdObject(json["id"]);
+    url = tryConvertToTdObject(json["url"]);
+    hideUrl = tryConvertToTdObject(json["hide_url"]);
+    title = tryConvertToTdObject(json["title"]);
+    description = tryConvertToTdObject(json["description"]);
+    thumbnail = tryConvertToTdObject(json["thumbnail"]);
   }
 }
 
@@ -8790,9 +8790,9 @@ class InlineQueryResultContact extends InlineQueryResult {
   };
 
   InlineQueryResultContact(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    contact = tryParse(json["contact"]);
-    thumbnail = tryParse(json["thumbnail"]);
+    id = tryConvertToTdObject(json["id"]);
+    contact = tryConvertToTdObject(json["contact"]);
+    thumbnail = tryConvertToTdObject(json["thumbnail"]);
   }
 }
 
@@ -8815,10 +8815,10 @@ class InlineQueryResultLocation extends InlineQueryResult {
   };
 
   InlineQueryResultLocation(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    location = tryParse(json["location"]);
-    title = tryParse(json["title"]);
-    thumbnail = tryParse(json["thumbnail"]);
+    id = tryConvertToTdObject(json["id"]);
+    location = tryConvertToTdObject(json["location"]);
+    title = tryConvertToTdObject(json["title"]);
+    thumbnail = tryConvertToTdObject(json["thumbnail"]);
   }
 }
 
@@ -8839,9 +8839,9 @@ class InlineQueryResultVenue extends InlineQueryResult {
   };
 
   InlineQueryResultVenue(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    venue = tryParse(json["venue"]);
-    thumbnail = tryParse(json["thumbnail"]);
+    id = tryConvertToTdObject(json["id"]);
+    venue = tryConvertToTdObject(json["venue"]);
+    thumbnail = tryConvertToTdObject(json["thumbnail"]);
   }
 }
 
@@ -8860,8 +8860,8 @@ class InlineQueryResultGame extends InlineQueryResult {
   };
 
   InlineQueryResultGame(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    game = tryParse(json["game"]);
+    id = tryConvertToTdObject(json["id"]);
+    game = tryConvertToTdObject(json["game"]);
   }
 }
 
@@ -8882,9 +8882,9 @@ class InlineQueryResultAnimation extends InlineQueryResult {
   };
 
   InlineQueryResultAnimation(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    animation = tryParse(json["animation"]);
-    title = tryParse(json["title"]);
+    id = tryConvertToTdObject(json["id"]);
+    animation = tryConvertToTdObject(json["animation"]);
+    title = tryConvertToTdObject(json["title"]);
   }
 }
 
@@ -8903,8 +8903,8 @@ class InlineQueryResultAudio extends InlineQueryResult {
   };
 
   InlineQueryResultAudio(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    audio = tryParse(json["audio"]);
+    id = tryConvertToTdObject(json["id"]);
+    audio = tryConvertToTdObject(json["audio"]);
   }
 }
 
@@ -8927,10 +8927,10 @@ class InlineQueryResultDocument extends InlineQueryResult {
   };
 
   InlineQueryResultDocument(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    document = tryParse(json["document"]);
-    title = tryParse(json["title"]);
-    description = tryParse(json["description"]);
+    id = tryConvertToTdObject(json["id"]);
+    document = tryConvertToTdObject(json["document"]);
+    title = tryConvertToTdObject(json["title"]);
+    description = tryConvertToTdObject(json["description"]);
   }
 }
 
@@ -8953,10 +8953,10 @@ class InlineQueryResultPhoto extends InlineQueryResult {
   };
 
   InlineQueryResultPhoto(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    photo = tryParse(json["photo"]);
-    title = tryParse(json["title"]);
-    description = tryParse(json["description"]);
+    id = tryConvertToTdObject(json["id"]);
+    photo = tryConvertToTdObject(json["photo"]);
+    title = tryConvertToTdObject(json["title"]);
+    description = tryConvertToTdObject(json["description"]);
   }
 }
 
@@ -8975,8 +8975,8 @@ class InlineQueryResultSticker extends InlineQueryResult {
   };
 
   InlineQueryResultSticker(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    sticker = tryParse(json["sticker"]);
+    id = tryConvertToTdObject(json["id"]);
+    sticker = tryConvertToTdObject(json["sticker"]);
   }
 }
 
@@ -8999,10 +8999,10 @@ class InlineQueryResultVideo extends InlineQueryResult {
   };
 
   InlineQueryResultVideo(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    video = tryParse(json["video"]);
-    title = tryParse(json["title"]);
-    description = tryParse(json["description"]);
+    id = tryConvertToTdObject(json["id"]);
+    video = tryConvertToTdObject(json["video"]);
+    title = tryConvertToTdObject(json["title"]);
+    description = tryConvertToTdObject(json["description"]);
   }
 }
 
@@ -9023,9 +9023,9 @@ class InlineQueryResultVoiceNote extends InlineQueryResult {
   };
 
   InlineQueryResultVoiceNote(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    voiceNote = tryParse(json["voice_note"]);
-    title = tryParse(json["title"]);
+    id = tryConvertToTdObject(json["id"]);
+    voiceNote = tryConvertToTdObject(json["voice_note"]);
+    title = tryConvertToTdObject(json["title"]);
   }
 }
 
@@ -9050,11 +9050,11 @@ class InlineQueryResults extends TdObject {
   };
 
   InlineQueryResults(Map<String, dynamic> json) {
-    inlineQueryId = tryParse(json["inline_query_id"]);
-    nextOffset = tryParse(json["next_offset"]);
-    results = tryParse(json["results"]);
-    switchPmText = tryParse(json["switch_pm_text"]);
-    switchPmParameter = tryParse(json["switch_pm_parameter"]);
+    inlineQueryId = tryConvertToTdObject(json["inline_query_id"]);
+    nextOffset = tryConvertToTdObject(json["next_offset"]);
+    results = tryConvertToTdObject(json["results"]);
+    switchPmText = tryConvertToTdObject(json["switch_pm_text"]);
+    switchPmParameter = tryConvertToTdObject(json["switch_pm_parameter"]);
   }
 }
 
@@ -9073,7 +9073,7 @@ class CallbackQueryPayloadData extends CallbackQueryPayload {
   };
 
   CallbackQueryPayloadData(Map<String, dynamic> json) {
-    data = tryParse(json["data"]);
+    data = tryConvertToTdObject(json["data"]);
   }
 }
 
@@ -9090,7 +9090,7 @@ class CallbackQueryPayloadGame extends CallbackQueryPayload {
   };
 
   CallbackQueryPayloadGame(Map<String, dynamic> json) {
-    gameShortName = tryParse(json["game_short_name"]);
+    gameShortName = tryConvertToTdObject(json["game_short_name"]);
   }
 }
 
@@ -9111,9 +9111,9 @@ class CallbackQueryAnswer extends TdObject {
   };
 
   CallbackQueryAnswer(Map<String, dynamic> json) {
-    text = tryParse(json["text"]);
-    showAlert = tryParse(json["show_alert"]);
-    url = tryParse(json["url"]);
+    text = tryConvertToTdObject(json["text"]);
+    showAlert = tryConvertToTdObject(json["show_alert"]);
+    url = tryConvertToTdObject(json["url"]);
   }
 }
 
@@ -9130,7 +9130,7 @@ class CustomRequestResult extends TdObject {
   };
 
   CustomRequestResult(Map<String, dynamic> json) {
-    result = tryParse(json["result"]);
+    result = tryConvertToTdObject(json["result"]);
   }
 }
 
@@ -9151,9 +9151,9 @@ class GameHighScore extends TdObject {
   };
 
   GameHighScore(Map<String, dynamic> json) {
-    position = tryParse(json["position"]);
-    userId = tryParse(json["user_id"]);
-    score = tryParse(json["score"]);
+    position = tryConvertToTdObject(json["position"]);
+    userId = tryConvertToTdObject(json["user_id"]);
+    score = tryConvertToTdObject(json["score"]);
   }
 }
 
@@ -9170,7 +9170,7 @@ class GameHighScores extends TdObject {
   };
 
   GameHighScores(Map<String, dynamic> json) {
-    scores = tryParse(json["scores"]);
+    scores = tryConvertToTdObject(json["scores"]);
   }
 }
 
@@ -9187,7 +9187,7 @@ class TonLiteServerResponse extends TdObject {
   };
 
   TonLiteServerResponse(Map<String, dynamic> json) {
-    response = tryParse(json["response"]);
+    response = tryConvertToTdObject(json["response"]);
   }
 }
 
@@ -9204,7 +9204,7 @@ class TonWalletPasswordSalt extends TdObject {
   };
 
   TonWalletPasswordSalt(Map<String, dynamic> json) {
-    salt = tryParse(json["salt"]);
+    salt = tryConvertToTdObject(json["salt"]);
   }
 }
 
@@ -9225,8 +9225,8 @@ class ChatEventMessageEdited extends ChatEventAction {
   };
 
   ChatEventMessageEdited(Map<String, dynamic> json) {
-    oldMessage = tryParse(json["old_message"]);
-    newMessage = tryParse(json["new_message"]);
+    oldMessage = tryConvertToTdObject(json["old_message"]);
+    newMessage = tryConvertToTdObject(json["new_message"]);
   }
 }
 
@@ -9243,7 +9243,7 @@ class ChatEventMessageDeleted extends ChatEventAction {
   };
 
   ChatEventMessageDeleted(Map<String, dynamic> json) {
-    message = tryParse(json["message"]);
+    message = tryConvertToTdObject(json["message"]);
   }
 }
 
@@ -9260,7 +9260,7 @@ class ChatEventPollStopped extends ChatEventAction {
   };
 
   ChatEventPollStopped(Map<String, dynamic> json) {
-    message = tryParse(json["message"]);
+    message = tryConvertToTdObject(json["message"]);
   }
 }
 
@@ -9277,7 +9277,7 @@ class ChatEventMessagePinned extends ChatEventAction {
   };
 
   ChatEventMessagePinned(Map<String, dynamic> json) {
-    message = tryParse(json["message"]);
+    message = tryConvertToTdObject(json["message"]);
   }
 }
 
@@ -9329,8 +9329,8 @@ class ChatEventMemberInvited extends ChatEventAction {
   };
 
   ChatEventMemberInvited(Map<String, dynamic> json) {
-    userId = tryParse(json["user_id"]);
-    status = tryParse(json["status"]);
+    userId = tryConvertToTdObject(json["user_id"]);
+    status = tryConvertToTdObject(json["status"]);
   }
 }
 
@@ -9351,9 +9351,9 @@ class ChatEventMemberPromoted extends ChatEventAction {
   };
 
   ChatEventMemberPromoted(Map<String, dynamic> json) {
-    userId = tryParse(json["user_id"]);
-    oldStatus = tryParse(json["old_status"]);
-    newStatus = tryParse(json["new_status"]);
+    userId = tryConvertToTdObject(json["user_id"]);
+    oldStatus = tryConvertToTdObject(json["old_status"]);
+    newStatus = tryConvertToTdObject(json["new_status"]);
   }
 }
 
@@ -9374,9 +9374,9 @@ class ChatEventMemberRestricted extends ChatEventAction {
   };
 
   ChatEventMemberRestricted(Map<String, dynamic> json) {
-    userId = tryParse(json["user_id"]);
-    oldStatus = tryParse(json["old_status"]);
-    newStatus = tryParse(json["new_status"]);
+    userId = tryConvertToTdObject(json["user_id"]);
+    oldStatus = tryConvertToTdObject(json["old_status"]);
+    newStatus = tryConvertToTdObject(json["new_status"]);
   }
 }
 
@@ -9395,8 +9395,8 @@ class ChatEventTitleChanged extends ChatEventAction {
   };
 
   ChatEventTitleChanged(Map<String, dynamic> json) {
-    oldTitle = tryParse(json["old_title"]);
-    newTitle = tryParse(json["new_title"]);
+    oldTitle = tryConvertToTdObject(json["old_title"]);
+    newTitle = tryConvertToTdObject(json["new_title"]);
   }
 }
 
@@ -9415,8 +9415,8 @@ class ChatEventPermissionsChanged extends ChatEventAction {
   };
 
   ChatEventPermissionsChanged(Map<String, dynamic> json) {
-    oldPermissions = tryParse(json["old_permissions"]);
-    newPermissions = tryParse(json["new_permissions"]);
+    oldPermissions = tryConvertToTdObject(json["old_permissions"]);
+    newPermissions = tryConvertToTdObject(json["new_permissions"]);
   }
 }
 
@@ -9435,8 +9435,8 @@ class ChatEventDescriptionChanged extends ChatEventAction {
   };
 
   ChatEventDescriptionChanged(Map<String, dynamic> json) {
-    oldDescription = tryParse(json["old_description"]);
-    newDescription = tryParse(json["new_description"]);
+    oldDescription = tryConvertToTdObject(json["old_description"]);
+    newDescription = tryConvertToTdObject(json["new_description"]);
   }
 }
 
@@ -9455,8 +9455,8 @@ class ChatEventUsernameChanged extends ChatEventAction {
   };
 
   ChatEventUsernameChanged(Map<String, dynamic> json) {
-    oldUsername = tryParse(json["old_username"]);
-    newUsername = tryParse(json["new_username"]);
+    oldUsername = tryConvertToTdObject(json["old_username"]);
+    newUsername = tryConvertToTdObject(json["new_username"]);
   }
 }
 
@@ -9475,8 +9475,8 @@ class ChatEventPhotoChanged extends ChatEventAction {
   };
 
   ChatEventPhotoChanged(Map<String, dynamic> json) {
-    oldPhoto = tryParse(json["old_photo"]);
-    newPhoto = tryParse(json["new_photo"]);
+    oldPhoto = tryConvertToTdObject(json["old_photo"]);
+    newPhoto = tryConvertToTdObject(json["new_photo"]);
   }
 }
 
@@ -9493,7 +9493,7 @@ class ChatEventInvitesToggled extends ChatEventAction {
   };
 
   ChatEventInvitesToggled(Map<String, dynamic> json) {
-    canInviteUsers = tryParse(json["can_invite_users"]);
+    canInviteUsers = tryConvertToTdObject(json["can_invite_users"]);
   }
 }
 
@@ -9510,7 +9510,7 @@ class ChatEventSignMessagesToggled extends ChatEventAction {
   };
 
   ChatEventSignMessagesToggled(Map<String, dynamic> json) {
-    signMessages = tryParse(json["sign_messages"]);
+    signMessages = tryConvertToTdObject(json["sign_messages"]);
   }
 }
 
@@ -9529,8 +9529,8 @@ class ChatEventStickerSetChanged extends ChatEventAction {
   };
 
   ChatEventStickerSetChanged(Map<String, dynamic> json) {
-    oldStickerSetId = tryParse(json["old_sticker_set_id"]);
-    newStickerSetId = tryParse(json["new_sticker_set_id"]);
+    oldStickerSetId = tryConvertToTdObject(json["old_sticker_set_id"]);
+    newStickerSetId = tryConvertToTdObject(json["new_sticker_set_id"]);
   }
 }
 
@@ -9547,7 +9547,7 @@ class ChatEventIsAllHistoryAvailableToggled extends ChatEventAction {
   };
 
   ChatEventIsAllHistoryAvailableToggled(Map<String, dynamic> json) {
-    isAllHistoryAvailable = tryParse(json["is_all_history_available"]);
+    isAllHistoryAvailable = tryConvertToTdObject(json["is_all_history_available"]);
   }
 }
 
@@ -9570,10 +9570,10 @@ class ChatEvent extends TdObject {
   };
 
   ChatEvent(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    date = tryParse(json["date"]);
-    userId = tryParse(json["user_id"]);
-    action = tryParse(json["action"]);
+    id = tryConvertToTdObject(json["id"]);
+    date = tryConvertToTdObject(json["date"]);
+    userId = tryConvertToTdObject(json["user_id"]);
+    action = tryConvertToTdObject(json["action"]);
   }
 }
 
@@ -9590,7 +9590,7 @@ class ChatEvents extends TdObject {
   };
 
   ChatEvents(Map<String, dynamic> json) {
-    events = tryParse(json["events"]);
+    events = tryConvertToTdObject(json["events"]);
   }
 }
 
@@ -9625,16 +9625,16 @@ class ChatEventLogFilters extends TdObject {
   };
 
   ChatEventLogFilters(Map<String, dynamic> json) {
-    messageEdits = tryParse(json["message_edits"]);
-    messageDeletions = tryParse(json["message_deletions"]);
-    messagePins = tryParse(json["message_pins"]);
-    memberJoins = tryParse(json["member_joins"]);
-    memberLeaves = tryParse(json["member_leaves"]);
-    memberInvites = tryParse(json["member_invites"]);
-    memberPromotions = tryParse(json["member_promotions"]);
-    memberRestrictions = tryParse(json["member_restrictions"]);
-    infoChanges = tryParse(json["info_changes"]);
-    settingChanges = tryParse(json["setting_changes"]);
+    messageEdits = tryConvertToTdObject(json["message_edits"]);
+    messageDeletions = tryConvertToTdObject(json["message_deletions"]);
+    messagePins = tryConvertToTdObject(json["message_pins"]);
+    memberJoins = tryConvertToTdObject(json["member_joins"]);
+    memberLeaves = tryConvertToTdObject(json["member_leaves"]);
+    memberInvites = tryConvertToTdObject(json["member_invites"]);
+    memberPromotions = tryConvertToTdObject(json["member_promotions"]);
+    memberRestrictions = tryConvertToTdObject(json["member_restrictions"]);
+    infoChanges = tryConvertToTdObject(json["info_changes"]);
+    settingChanges = tryConvertToTdObject(json["setting_changes"]);
   }
 }
 
@@ -9653,7 +9653,7 @@ class LanguagePackStringValueOrdinary extends LanguagePackStringValue {
   };
 
   LanguagePackStringValueOrdinary(Map<String, dynamic> json) {
-    value = tryParse(json["value"]);
+    value = tryConvertToTdObject(json["value"]);
   }
 }
 
@@ -9680,12 +9680,12 @@ class LanguagePackStringValuePluralized extends LanguagePackStringValue {
   };
 
   LanguagePackStringValuePluralized(Map<String, dynamic> json) {
-    zeroValue = tryParse(json["zero_value"]);
-    oneValue = tryParse(json["one_value"]);
-    twoValue = tryParse(json["two_value"]);
-    fewValue = tryParse(json["few_value"]);
-    manyValue = tryParse(json["many_value"]);
-    otherValue = tryParse(json["other_value"]);
+    zeroValue = tryConvertToTdObject(json["zero_value"]);
+    oneValue = tryConvertToTdObject(json["one_value"]);
+    twoValue = tryConvertToTdObject(json["two_value"]);
+    fewValue = tryConvertToTdObject(json["few_value"]);
+    manyValue = tryConvertToTdObject(json["many_value"]);
+    otherValue = tryConvertToTdObject(json["other_value"]);
   }
 }
 
@@ -9715,8 +9715,8 @@ class LanguagePackString extends TdObject {
   };
 
   LanguagePackString(Map<String, dynamic> json) {
-    key = tryParse(json["key"]);
-    value = tryParse(json["value"]);
+    key = tryConvertToTdObject(json["key"]);
+    value = tryConvertToTdObject(json["value"]);
   }
 }
 
@@ -9733,7 +9733,7 @@ class LanguagePackStrings extends TdObject {
   };
 
   LanguagePackStrings(Map<String, dynamic> json) {
-    strings = tryParse(json["strings"]);
+    strings = tryConvertToTdObject(json["strings"]);
   }
 }
 
@@ -9774,19 +9774,19 @@ class LanguagePackInfo extends TdObject {
   };
 
   LanguagePackInfo(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    baseLanguagePackId = tryParse(json["base_language_pack_id"]);
-    name = tryParse(json["name"]);
-    nativeName = tryParse(json["native_name"]);
-    pluralCode = tryParse(json["plural_code"]);
-    isOfficial = tryParse(json["is_official"]);
-    isRtl = tryParse(json["is_rtl"]);
-    isBeta = tryParse(json["is_beta"]);
-    isInstalled = tryParse(json["is_installed"]);
-    totalStringCount = tryParse(json["total_string_count"]);
-    translatedStringCount = tryParse(json["translated_string_count"]);
-    localStringCount = tryParse(json["local_string_count"]);
-    translationUrl = tryParse(json["translation_url"]);
+    id = tryConvertToTdObject(json["id"]);
+    baseLanguagePackId = tryConvertToTdObject(json["base_language_pack_id"]);
+    name = tryConvertToTdObject(json["name"]);
+    nativeName = tryConvertToTdObject(json["native_name"]);
+    pluralCode = tryConvertToTdObject(json["plural_code"]);
+    isOfficial = tryConvertToTdObject(json["is_official"]);
+    isRtl = tryConvertToTdObject(json["is_rtl"]);
+    isBeta = tryConvertToTdObject(json["is_beta"]);
+    isInstalled = tryConvertToTdObject(json["is_installed"]);
+    totalStringCount = tryConvertToTdObject(json["total_string_count"]);
+    translatedStringCount = tryConvertToTdObject(json["translated_string_count"]);
+    localStringCount = tryConvertToTdObject(json["local_string_count"]);
+    translationUrl = tryConvertToTdObject(json["translation_url"]);
   }
 }
 
@@ -9803,7 +9803,7 @@ class LocalizationTargetInfo extends TdObject {
   };
 
   LocalizationTargetInfo(Map<String, dynamic> json) {
-    languagePacks = tryParse(json["language_packs"]);
+    languagePacks = tryConvertToTdObject(json["language_packs"]);
   }
 }
 
@@ -9824,8 +9824,8 @@ class DeviceTokenFirebaseCloudMessaging extends DeviceToken {
   };
 
   DeviceTokenFirebaseCloudMessaging(Map<String, dynamic> json) {
-    token = tryParse(json["token"]);
-    encrypt = tryParse(json["encrypt"]);
+    token = tryConvertToTdObject(json["token"]);
+    encrypt = tryConvertToTdObject(json["encrypt"]);
   }
 }
 
@@ -9844,8 +9844,8 @@ class DeviceTokenApplePush extends DeviceToken {
   };
 
   DeviceTokenApplePush(Map<String, dynamic> json) {
-    deviceToken = tryParse(json["device_token"]);
-    isAppSandbox = tryParse(json["is_app_sandbox"]);
+    deviceToken = tryConvertToTdObject(json["device_token"]);
+    isAppSandbox = tryConvertToTdObject(json["is_app_sandbox"]);
   }
 }
 
@@ -9866,9 +9866,9 @@ class DeviceTokenApplePushVoIP extends DeviceToken {
   };
 
   DeviceTokenApplePushVoIP(Map<String, dynamic> json) {
-    deviceToken = tryParse(json["device_token"]);
-    isAppSandbox = tryParse(json["is_app_sandbox"]);
-    encrypt = tryParse(json["encrypt"]);
+    deviceToken = tryConvertToTdObject(json["device_token"]);
+    isAppSandbox = tryConvertToTdObject(json["is_app_sandbox"]);
+    encrypt = tryConvertToTdObject(json["encrypt"]);
   }
 }
 
@@ -9885,7 +9885,7 @@ class DeviceTokenWindowsPush extends DeviceToken {
   };
 
   DeviceTokenWindowsPush(Map<String, dynamic> json) {
-    accessToken = tryParse(json["access_token"]);
+    accessToken = tryConvertToTdObject(json["access_token"]);
   }
 }
 
@@ -9902,7 +9902,7 @@ class DeviceTokenMicrosoftPush extends DeviceToken {
   };
 
   DeviceTokenMicrosoftPush(Map<String, dynamic> json) {
-    channelUri = tryParse(json["channel_uri"]);
+    channelUri = tryConvertToTdObject(json["channel_uri"]);
   }
 }
 
@@ -9919,7 +9919,7 @@ class DeviceTokenMicrosoftPushVoIP extends DeviceToken {
   };
 
   DeviceTokenMicrosoftPushVoIP(Map<String, dynamic> json) {
-    channelUri = tryParse(json["channel_uri"]);
+    channelUri = tryConvertToTdObject(json["channel_uri"]);
   }
 }
 
@@ -9940,9 +9940,9 @@ class DeviceTokenWebPush extends DeviceToken {
   };
 
   DeviceTokenWebPush(Map<String, dynamic> json) {
-    endpoint = tryParse(json["endpoint"]);
-    p256dhBase64url = tryParse(json["p256dh_base64url"]);
-    authBase64url = tryParse(json["auth_base64url"]);
+    endpoint = tryConvertToTdObject(json["endpoint"]);
+    p256dhBase64url = tryConvertToTdObject(json["p256dh_base64url"]);
+    authBase64url = tryConvertToTdObject(json["auth_base64url"]);
   }
 }
 
@@ -9959,7 +9959,7 @@ class DeviceTokenSimplePush extends DeviceToken {
   };
 
   DeviceTokenSimplePush(Map<String, dynamic> json) {
-    endpoint = tryParse(json["endpoint"]);
+    endpoint = tryConvertToTdObject(json["endpoint"]);
   }
 }
 
@@ -9976,7 +9976,7 @@ class DeviceTokenUbuntuPush extends DeviceToken {
   };
 
   DeviceTokenUbuntuPush(Map<String, dynamic> json) {
-    token = tryParse(json["token"]);
+    token = tryConvertToTdObject(json["token"]);
   }
 }
 
@@ -9993,7 +9993,7 @@ class DeviceTokenBlackBerryPush extends DeviceToken {
   };
 
   DeviceTokenBlackBerryPush(Map<String, dynamic> json) {
-    token = tryParse(json["token"]);
+    token = tryConvertToTdObject(json["token"]);
   }
 }
 
@@ -10010,7 +10010,7 @@ class DeviceTokenTizenPush extends DeviceToken {
   };
 
   DeviceTokenTizenPush(Map<String, dynamic> json) {
-    regId = tryParse(json["reg_id"]);
+    regId = tryConvertToTdObject(json["reg_id"]);
   }
 }
 
@@ -10027,7 +10027,7 @@ class PushReceiverId extends TdObject {
   };
 
   PushReceiverId(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
+    id = tryConvertToTdObject(json["id"]);
   }
 }
 
@@ -10048,8 +10048,8 @@ class BackgroundTypeWallpaper extends BackgroundType {
   };
 
   BackgroundTypeWallpaper(Map<String, dynamic> json) {
-    isBlurred = tryParse(json["is_blurred"]);
-    isMoving = tryParse(json["is_moving"]);
+    isBlurred = tryConvertToTdObject(json["is_blurred"]);
+    isMoving = tryConvertToTdObject(json["is_moving"]);
   }
 }
 
@@ -10070,9 +10070,9 @@ class BackgroundTypePattern extends BackgroundType {
   };
 
   BackgroundTypePattern(Map<String, dynamic> json) {
-    isMoving = tryParse(json["is_moving"]);
-    color = tryParse(json["color"]);
-    intensity = tryParse(json["intensity"]);
+    isMoving = tryConvertToTdObject(json["is_moving"]);
+    color = tryConvertToTdObject(json["color"]);
+    intensity = tryConvertToTdObject(json["intensity"]);
   }
 }
 
@@ -10089,7 +10089,7 @@ class BackgroundTypeSolid extends BackgroundType {
   };
 
   BackgroundTypeSolid(Map<String, dynamic> json) {
-    color = tryParse(json["color"]);
+    color = tryConvertToTdObject(json["color"]);
   }
 }
 
@@ -10116,12 +10116,12 @@ class Background extends TdObject {
   };
 
   Background(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    isDefault = tryParse(json["is_default"]);
-    isDark = tryParse(json["is_dark"]);
-    name = tryParse(json["name"]);
-    document = tryParse(json["document"]);
-    type = tryParse(json["type"]);
+    id = tryConvertToTdObject(json["id"]);
+    isDefault = tryConvertToTdObject(json["is_default"]);
+    isDark = tryConvertToTdObject(json["is_dark"]);
+    name = tryConvertToTdObject(json["name"]);
+    document = tryConvertToTdObject(json["document"]);
+    type = tryConvertToTdObject(json["type"]);
   }
 }
 
@@ -10138,7 +10138,7 @@ class Backgrounds extends TdObject {
   };
 
   Backgrounds(Map<String, dynamic> json) {
-    backgrounds = tryParse(json["backgrounds"]);
+    backgrounds = tryConvertToTdObject(json["backgrounds"]);
   }
 }
 
@@ -10157,7 +10157,7 @@ class InputBackgroundLocal extends InputBackground {
   };
 
   InputBackgroundLocal(Map<String, dynamic> json) {
-    background = tryParse(json["background"]);
+    background = tryConvertToTdObject(json["background"]);
   }
 }
 
@@ -10174,7 +10174,7 @@ class InputBackgroundRemote extends InputBackground {
   };
 
   InputBackgroundRemote(Map<String, dynamic> json) {
-    backgroundId = tryParse(json["background_id"]);
+    backgroundId = tryConvertToTdObject(json["background_id"]);
   }
 }
 
@@ -10191,7 +10191,7 @@ class Hashtags extends TdObject {
   };
 
   Hashtags(Map<String, dynamic> json) {
-    hashtags = tryParse(json["hashtags"]);
+    hashtags = tryConvertToTdObject(json["hashtags"]);
   }
 }
 
@@ -10267,7 +10267,7 @@ class PushMessageContentHidden extends PushMessageContent {
   };
 
   PushMessageContentHidden(Map<String, dynamic> json) {
-    isPinned = tryParse(json["is_pinned"]);
+    isPinned = tryConvertToTdObject(json["is_pinned"]);
   }
 }
 
@@ -10288,9 +10288,9 @@ class PushMessageContentAnimation extends PushMessageContent {
   };
 
   PushMessageContentAnimation(Map<String, dynamic> json) {
-    animation = tryParse(json["animation"]);
-    caption = tryParse(json["caption"]);
-    isPinned = tryParse(json["is_pinned"]);
+    animation = tryConvertToTdObject(json["animation"]);
+    caption = tryConvertToTdObject(json["caption"]);
+    isPinned = tryConvertToTdObject(json["is_pinned"]);
   }
 }
 
@@ -10309,8 +10309,8 @@ class PushMessageContentAudio extends PushMessageContent {
   };
 
   PushMessageContentAudio(Map<String, dynamic> json) {
-    audio = tryParse(json["audio"]);
-    isPinned = tryParse(json["is_pinned"]);
+    audio = tryConvertToTdObject(json["audio"]);
+    isPinned = tryConvertToTdObject(json["is_pinned"]);
   }
 }
 
@@ -10329,8 +10329,8 @@ class PushMessageContentContact extends PushMessageContent {
   };
 
   PushMessageContentContact(Map<String, dynamic> json) {
-    name = tryParse(json["name"]);
-    isPinned = tryParse(json["is_pinned"]);
+    name = tryConvertToTdObject(json["name"]);
+    isPinned = tryConvertToTdObject(json["is_pinned"]);
   }
 }
 
@@ -10360,8 +10360,8 @@ class PushMessageContentDocument extends PushMessageContent {
   };
 
   PushMessageContentDocument(Map<String, dynamic> json) {
-    document = tryParse(json["document"]);
-    isPinned = tryParse(json["is_pinned"]);
+    document = tryConvertToTdObject(json["document"]);
+    isPinned = tryConvertToTdObject(json["is_pinned"]);
   }
 }
 
@@ -10380,8 +10380,8 @@ class PushMessageContentGame extends PushMessageContent {
   };
 
   PushMessageContentGame(Map<String, dynamic> json) {
-    title = tryParse(json["title"]);
-    isPinned = tryParse(json["is_pinned"]);
+    title = tryConvertToTdObject(json["title"]);
+    isPinned = tryConvertToTdObject(json["is_pinned"]);
   }
 }
 
@@ -10402,9 +10402,9 @@ class PushMessageContentGameScore extends PushMessageContent {
   };
 
   PushMessageContentGameScore(Map<String, dynamic> json) {
-    title = tryParse(json["title"]);
-    score = tryParse(json["score"]);
-    isPinned = tryParse(json["is_pinned"]);
+    title = tryConvertToTdObject(json["title"]);
+    score = tryConvertToTdObject(json["score"]);
+    isPinned = tryConvertToTdObject(json["is_pinned"]);
   }
 }
 
@@ -10423,8 +10423,8 @@ class PushMessageContentInvoice extends PushMessageContent {
   };
 
   PushMessageContentInvoice(Map<String, dynamic> json) {
-    price = tryParse(json["price"]);
-    isPinned = tryParse(json["is_pinned"]);
+    price = tryConvertToTdObject(json["price"]);
+    isPinned = tryConvertToTdObject(json["is_pinned"]);
   }
 }
 
@@ -10443,8 +10443,8 @@ class PushMessageContentLocation extends PushMessageContent {
   };
 
   PushMessageContentLocation(Map<String, dynamic> json) {
-    isLive = tryParse(json["is_live"]);
-    isPinned = tryParse(json["is_pinned"]);
+    isLive = tryConvertToTdObject(json["is_live"]);
+    isPinned = tryConvertToTdObject(json["is_pinned"]);
   }
 }
 
@@ -10467,10 +10467,10 @@ class PushMessageContentPhoto extends PushMessageContent {
   };
 
   PushMessageContentPhoto(Map<String, dynamic> json) {
-    photo = tryParse(json["photo"]);
-    caption = tryParse(json["caption"]);
-    isSecret = tryParse(json["is_secret"]);
-    isPinned = tryParse(json["is_pinned"]);
+    photo = tryConvertToTdObject(json["photo"]);
+    caption = tryConvertToTdObject(json["caption"]);
+    isSecret = tryConvertToTdObject(json["is_secret"]);
+    isPinned = tryConvertToTdObject(json["is_pinned"]);
   }
 }
 
@@ -10489,8 +10489,8 @@ class PushMessageContentPoll extends PushMessageContent {
   };
 
   PushMessageContentPoll(Map<String, dynamic> json) {
-    question = tryParse(json["question"]);
-    isPinned = tryParse(json["is_pinned"]);
+    question = tryConvertToTdObject(json["question"]);
+    isPinned = tryConvertToTdObject(json["is_pinned"]);
   }
 }
 
@@ -10522,9 +10522,9 @@ class PushMessageContentSticker extends PushMessageContent {
   };
 
   PushMessageContentSticker(Map<String, dynamic> json) {
-    sticker = tryParse(json["sticker"]);
-    emoji = tryParse(json["emoji"]);
-    isPinned = tryParse(json["is_pinned"]);
+    sticker = tryConvertToTdObject(json["sticker"]);
+    emoji = tryConvertToTdObject(json["emoji"]);
+    isPinned = tryConvertToTdObject(json["is_pinned"]);
   }
 }
 
@@ -10543,8 +10543,8 @@ class PushMessageContentText extends PushMessageContent {
   };
 
   PushMessageContentText(Map<String, dynamic> json) {
-    text = tryParse(json["text"]);
-    isPinned = tryParse(json["is_pinned"]);
+    text = tryConvertToTdObject(json["text"]);
+    isPinned = tryConvertToTdObject(json["is_pinned"]);
   }
 }
 
@@ -10567,10 +10567,10 @@ class PushMessageContentVideo extends PushMessageContent {
   };
 
   PushMessageContentVideo(Map<String, dynamic> json) {
-    video = tryParse(json["video"]);
-    caption = tryParse(json["caption"]);
-    isSecret = tryParse(json["is_secret"]);
-    isPinned = tryParse(json["is_pinned"]);
+    video = tryConvertToTdObject(json["video"]);
+    caption = tryConvertToTdObject(json["caption"]);
+    isSecret = tryConvertToTdObject(json["is_secret"]);
+    isPinned = tryConvertToTdObject(json["is_pinned"]);
   }
 }
 
@@ -10589,8 +10589,8 @@ class PushMessageContentVideoNote extends PushMessageContent {
   };
 
   PushMessageContentVideoNote(Map<String, dynamic> json) {
-    videoNote = tryParse(json["video_note"]);
-    isPinned = tryParse(json["is_pinned"]);
+    videoNote = tryConvertToTdObject(json["video_note"]);
+    isPinned = tryConvertToTdObject(json["is_pinned"]);
   }
 }
 
@@ -10609,8 +10609,8 @@ class PushMessageContentVoiceNote extends PushMessageContent {
   };
 
   PushMessageContentVoiceNote(Map<String, dynamic> json) {
-    voiceNote = tryParse(json["voice_note"]);
-    isPinned = tryParse(json["is_pinned"]);
+    voiceNote = tryConvertToTdObject(json["voice_note"]);
+    isPinned = tryConvertToTdObject(json["is_pinned"]);
   }
 }
 
@@ -10642,9 +10642,9 @@ class PushMessageContentChatAddMembers extends PushMessageContent {
   };
 
   PushMessageContentChatAddMembers(Map<String, dynamic> json) {
-    memberName = tryParse(json["member_name"]);
-    isCurrentUser = tryParse(json["is_current_user"]);
-    isReturned = tryParse(json["is_returned"]);
+    memberName = tryConvertToTdObject(json["member_name"]);
+    isCurrentUser = tryConvertToTdObject(json["is_current_user"]);
+    isReturned = tryConvertToTdObject(json["is_returned"]);
   }
 }
 
@@ -10672,7 +10672,7 @@ class PushMessageContentChatChangeTitle extends PushMessageContent {
   };
 
   PushMessageContentChatChangeTitle(Map<String, dynamic> json) {
-    title = tryParse(json["title"]);
+    title = tryConvertToTdObject(json["title"]);
   }
 }
 
@@ -10693,9 +10693,9 @@ class PushMessageContentChatDeleteMember extends PushMessageContent {
   };
 
   PushMessageContentChatDeleteMember(Map<String, dynamic> json) {
-    memberName = tryParse(json["member_name"]);
-    isCurrentUser = tryParse(json["is_current_user"]);
-    isLeft = tryParse(json["is_left"]);
+    memberName = tryConvertToTdObject(json["member_name"]);
+    isCurrentUser = tryConvertToTdObject(json["is_current_user"]);
+    isLeft = tryConvertToTdObject(json["is_left"]);
   }
 }
 
@@ -10723,7 +10723,7 @@ class PushMessageContentMessageForwards extends PushMessageContent {
   };
 
   PushMessageContentMessageForwards(Map<String, dynamic> json) {
-    totalCount = tryParse(json["total_count"]);
+    totalCount = tryConvertToTdObject(json["total_count"]);
   }
 }
 
@@ -10744,9 +10744,9 @@ class PushMessageContentMediaAlbum extends PushMessageContent {
   };
 
   PushMessageContentMediaAlbum(Map<String, dynamic> json) {
-    totalCount = tryParse(json["total_count"]);
-    hasPhotos = tryParse(json["has_photos"]);
-    hasVideos = tryParse(json["has_videos"]);
+    totalCount = tryConvertToTdObject(json["total_count"]);
+    hasPhotos = tryConvertToTdObject(json["has_photos"]);
+    hasVideos = tryConvertToTdObject(json["has_videos"]);
   }
 }
 
@@ -10765,7 +10765,7 @@ class NotificationTypeNewMessage extends NotificationType {
   };
 
   NotificationTypeNewMessage(Map<String, dynamic> json) {
-    message = tryParse(json["message"]);
+    message = tryConvertToTdObject(json["message"]);
   }
 }
 
@@ -10793,7 +10793,7 @@ class NotificationTypeNewCall extends NotificationType {
   };
 
   NotificationTypeNewCall(Map<String, dynamic> json) {
-    callId = tryParse(json["call_id"]);
+    callId = tryConvertToTdObject(json["call_id"]);
   }
 }
 
@@ -10814,9 +10814,9 @@ class NotificationTypeNewPushMessage extends NotificationType {
   };
 
   NotificationTypeNewPushMessage(Map<String, dynamic> json) {
-    messageId = tryParse(json["message_id"]);
-    senderUserId = tryParse(json["sender_user_id"]);
-    content = tryParse(json["content"]);
+    messageId = tryConvertToTdObject(json["message_id"]);
+    senderUserId = tryConvertToTdObject(json["sender_user_id"]);
+    content = tryConvertToTdObject(json["content"]);
   }
 }
 
@@ -10885,10 +10885,10 @@ class Notification extends TdObject {
   };
 
   Notification(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    date = tryParse(json["date"]);
-    isSilent = tryParse(json["is_silent"]);
-    type = tryParse(json["type"]);
+    id = tryConvertToTdObject(json["id"]);
+    date = tryConvertToTdObject(json["date"]);
+    isSilent = tryConvertToTdObject(json["is_silent"]);
+    type = tryConvertToTdObject(json["type"]);
   }
 }
 
@@ -10913,11 +10913,11 @@ class NotificationGroup extends TdObject {
   };
 
   NotificationGroup(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    type = tryParse(json["type"]);
-    chatId = tryParse(json["chat_id"]);
-    totalCount = tryParse(json["total_count"]);
-    notifications = tryParse(json["notifications"]);
+    id = tryConvertToTdObject(json["id"]);
+    type = tryConvertToTdObject(json["type"]);
+    chatId = tryConvertToTdObject(json["chat_id"]);
+    totalCount = tryConvertToTdObject(json["total_count"]);
+    notifications = tryConvertToTdObject(json["notifications"]);
   }
 }
 
@@ -10936,7 +10936,7 @@ class OptionValueBoolean extends OptionValue {
   };
 
   OptionValueBoolean(Map<String, dynamic> json) {
-    value = tryParse(json["value"]);
+    value = tryConvertToTdObject(json["value"]);
   }
 }
 
@@ -10964,7 +10964,7 @@ class OptionValueInteger extends OptionValue {
   };
 
   OptionValueInteger(Map<String, dynamic> json) {
-    value = tryParse(json["value"]);
+    value = tryConvertToTdObject(json["value"]);
   }
 }
 
@@ -10981,7 +10981,7 @@ class OptionValueString extends OptionValue {
   };
 
   OptionValueString(Map<String, dynamic> json) {
-    value = tryParse(json["value"]);
+    value = tryConvertToTdObject(json["value"]);
   }
 }
 
@@ -11000,8 +11000,8 @@ class JsonObjectMember extends TdObject {
   };
 
   JsonObjectMember(Map<String, dynamic> json) {
-    key = tryParse(json["key"]);
-    value = tryParse(json["value"]);
+    key = tryConvertToTdObject(json["key"]);
+    value = tryConvertToTdObject(json["value"]);
   }
 }
 
@@ -11031,7 +11031,7 @@ class JsonValueBoolean extends JsonValue {
   };
 
   JsonValueBoolean(Map<String, dynamic> json) {
-    value = tryParse(json["value"]);
+    value = tryConvertToTdObject(json["value"]);
   }
 }
 
@@ -11048,7 +11048,7 @@ class JsonValueNumber extends JsonValue {
   };
 
   JsonValueNumber(Map<String, dynamic> json) {
-    value = tryParse(json["value"]);
+    value = tryConvertToTdObject(json["value"]);
   }
 }
 
@@ -11065,7 +11065,7 @@ class JsonValueString extends JsonValue {
   };
 
   JsonValueString(Map<String, dynamic> json) {
-    value = tryParse(json["value"]);
+    value = tryConvertToTdObject(json["value"]);
   }
 }
 
@@ -11082,7 +11082,7 @@ class JsonValueArray extends JsonValue {
   };
 
   JsonValueArray(Map<String, dynamic> json) {
-    values = tryParse(json["values"]);
+    values = tryConvertToTdObject(json["values"]);
   }
 }
 
@@ -11099,7 +11099,7 @@ class JsonValueObject extends JsonValue {
   };
 
   JsonValueObject(Map<String, dynamic> json) {
-    members = tryParse(json["members"]);
+    members = tryConvertToTdObject(json["members"]);
   }
 }
 
@@ -11140,7 +11140,7 @@ class UserPrivacySettingRuleAllowUsers extends UserPrivacySettingRule {
   };
 
   UserPrivacySettingRuleAllowUsers(Map<String, dynamic> json) {
-    userIds = tryParse(json["user_ids"]);
+    userIds = tryConvertToTdObject(json["user_ids"]);
   }
 }
 
@@ -11179,7 +11179,7 @@ class UserPrivacySettingRuleRestrictUsers extends UserPrivacySettingRule {
   };
 
   UserPrivacySettingRuleRestrictUsers(Map<String, dynamic> json) {
-    userIds = tryParse(json["user_ids"]);
+    userIds = tryConvertToTdObject(json["user_ids"]);
   }
 }
 
@@ -11196,7 +11196,7 @@ class UserPrivacySettingRules extends TdObject {
   };
 
   UserPrivacySettingRules(Map<String, dynamic> json) {
-    rules = tryParse(json["rules"]);
+    rules = tryConvertToTdObject(json["rules"]);
   }
 }
 
@@ -11281,7 +11281,7 @@ class AccountTtl extends TdObject {
   };
 
   AccountTtl(Map<String, dynamic> json) {
-    days = tryParse(json["days"]);
+    days = tryConvertToTdObject(json["days"]);
   }
 }
 
@@ -11326,21 +11326,21 @@ class Session extends TdObject {
   };
 
   Session(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    isCurrent = tryParse(json["is_current"]);
-    isPasswordPending = tryParse(json["is_password_pending"]);
-    apiId = tryParse(json["api_id"]);
-    applicationName = tryParse(json["application_name"]);
-    applicationVersion = tryParse(json["application_version"]);
-    isOfficialApplication = tryParse(json["is_official_application"]);
-    deviceModel = tryParse(json["device_model"]);
-    platform = tryParse(json["platform"]);
-    systemVersion = tryParse(json["system_version"]);
-    logInDate = tryParse(json["log_in_date"]);
-    lastActiveDate = tryParse(json["last_active_date"]);
-    ip = tryParse(json["ip"]);
-    country = tryParse(json["country"]);
-    region = tryParse(json["region"]);
+    id = tryConvertToTdObject(json["id"]);
+    isCurrent = tryConvertToTdObject(json["is_current"]);
+    isPasswordPending = tryConvertToTdObject(json["is_password_pending"]);
+    apiId = tryConvertToTdObject(json["api_id"]);
+    applicationName = tryConvertToTdObject(json["application_name"]);
+    applicationVersion = tryConvertToTdObject(json["application_version"]);
+    isOfficialApplication = tryConvertToTdObject(json["is_official_application"]);
+    deviceModel = tryConvertToTdObject(json["device_model"]);
+    platform = tryConvertToTdObject(json["platform"]);
+    systemVersion = tryConvertToTdObject(json["system_version"]);
+    logInDate = tryConvertToTdObject(json["log_in_date"]);
+    lastActiveDate = tryConvertToTdObject(json["last_active_date"]);
+    ip = tryConvertToTdObject(json["ip"]);
+    country = tryConvertToTdObject(json["country"]);
+    region = tryConvertToTdObject(json["region"]);
   }
 }
 
@@ -11357,7 +11357,7 @@ class Sessions extends TdObject {
   };
 
   Sessions(Map<String, dynamic> json) {
-    sessions = tryParse(json["sessions"]);
+    sessions = tryConvertToTdObject(json["sessions"]);
   }
 }
 
@@ -11390,15 +11390,15 @@ class ConnectedWebsite extends TdObject {
   };
 
   ConnectedWebsite(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    domainName = tryParse(json["domain_name"]);
-    botUserId = tryParse(json["bot_user_id"]);
-    browser = tryParse(json["browser"]);
-    platform = tryParse(json["platform"]);
-    logInDate = tryParse(json["log_in_date"]);
-    lastActiveDate = tryParse(json["last_active_date"]);
-    ip = tryParse(json["ip"]);
-    location = tryParse(json["location"]);
+    id = tryConvertToTdObject(json["id"]);
+    domainName = tryConvertToTdObject(json["domain_name"]);
+    botUserId = tryConvertToTdObject(json["bot_user_id"]);
+    browser = tryConvertToTdObject(json["browser"]);
+    platform = tryConvertToTdObject(json["platform"]);
+    logInDate = tryConvertToTdObject(json["log_in_date"]);
+    lastActiveDate = tryConvertToTdObject(json["last_active_date"]);
+    ip = tryConvertToTdObject(json["ip"]);
+    location = tryConvertToTdObject(json["location"]);
   }
 }
 
@@ -11415,7 +11415,7 @@ class ConnectedWebsites extends TdObject {
   };
 
   ConnectedWebsites(Map<String, dynamic> json) {
-    websites = tryParse(json["websites"]);
+    websites = tryConvertToTdObject(json["websites"]);
   }
 }
 
@@ -11432,7 +11432,7 @@ class ChatReportSpamState extends TdObject {
   };
 
   ChatReportSpamState(Map<String, dynamic> json) {
-    canReportSpam = tryParse(json["can_report_spam"]);
+    canReportSpam = tryConvertToTdObject(json["can_report_spam"]);
   }
 }
 
@@ -11506,7 +11506,7 @@ class ChatReportReasonCustom extends ChatReportReason {
   };
 
   ChatReportReasonCustom(Map<String, dynamic> json) {
-    text = tryParse(json["text"]);
+    text = tryConvertToTdObject(json["text"]);
   }
 }
 
@@ -11525,8 +11525,8 @@ class PublicMessageLink extends TdObject {
   };
 
   PublicMessageLink(Map<String, dynamic> json) {
-    link = tryParse(json["link"]);
-    html = tryParse(json["html"]);
+    link = tryConvertToTdObject(json["link"]);
+    html = tryConvertToTdObject(json["html"]);
   }
 }
 
@@ -11549,10 +11549,10 @@ class MessageLinkInfo extends TdObject {
   };
 
   MessageLinkInfo(Map<String, dynamic> json) {
-    isPublic = tryParse(json["is_public"]);
-    chatId = tryParse(json["chat_id"]);
-    message = tryParse(json["message"]);
-    forAlbum = tryParse(json["for_album"]);
+    isPublic = tryConvertToTdObject(json["is_public"]);
+    chatId = tryConvertToTdObject(json["chat_id"]);
+    message = tryConvertToTdObject(json["message"]);
+    forAlbum = tryConvertToTdObject(json["for_album"]);
   }
 }
 
@@ -11569,7 +11569,7 @@ class FilePart extends TdObject {
   };
 
   FilePart(Map<String, dynamic> json) {
-    data = tryParse(json["data"]);
+    data = tryConvertToTdObject(json["data"]);
   }
 }
 
@@ -11768,9 +11768,9 @@ class StorageStatisticsByFileType extends TdObject {
   };
 
   StorageStatisticsByFileType(Map<String, dynamic> json) {
-    fileType = tryParse(json["file_type"]);
-    size = tryParse(json["size"]);
-    count = tryParse(json["count"]);
+    fileType = tryConvertToTdObject(json["file_type"]);
+    size = tryConvertToTdObject(json["size"]);
+    count = tryConvertToTdObject(json["count"]);
   }
 }
 
@@ -11793,10 +11793,10 @@ class StorageStatisticsByChat extends TdObject {
   };
 
   StorageStatisticsByChat(Map<String, dynamic> json) {
-    chatId = tryParse(json["chat_id"]);
-    size = tryParse(json["size"]);
-    count = tryParse(json["count"]);
-    byFileType = tryParse(json["by_file_type"]);
+    chatId = tryConvertToTdObject(json["chat_id"]);
+    size = tryConvertToTdObject(json["size"]);
+    count = tryConvertToTdObject(json["count"]);
+    byFileType = tryConvertToTdObject(json["by_file_type"]);
   }
 }
 
@@ -11817,9 +11817,9 @@ class StorageStatistics extends TdObject {
   };
 
   StorageStatistics(Map<String, dynamic> json) {
-    size = tryParse(json["size"]);
-    count = tryParse(json["count"]);
-    byChat = tryParse(json["by_chat"]);
+    size = tryConvertToTdObject(json["size"]);
+    count = tryConvertToTdObject(json["count"]);
+    byChat = tryConvertToTdObject(json["by_chat"]);
   }
 }
 
@@ -11844,11 +11844,11 @@ class StorageStatisticsFast extends TdObject {
   };
 
   StorageStatisticsFast(Map<String, dynamic> json) {
-    filesSize = tryParse(json["files_size"]);
-    fileCount = tryParse(json["file_count"]);
-    databaseSize = tryParse(json["database_size"]);
-    languagePackDatabaseSize = tryParse(json["language_pack_database_size"]);
-    logSize = tryParse(json["log_size"]);
+    filesSize = tryConvertToTdObject(json["files_size"]);
+    fileCount = tryConvertToTdObject(json["file_count"]);
+    databaseSize = tryConvertToTdObject(json["database_size"]);
+    languagePackDatabaseSize = tryConvertToTdObject(json["language_pack_database_size"]);
+    logSize = tryConvertToTdObject(json["log_size"]);
   }
 }
 
@@ -11865,7 +11865,7 @@ class DatabaseStatistics extends TdObject {
   };
 
   DatabaseStatistics(Map<String, dynamic> json) {
-    statistics = tryParse(json["statistics"]);
+    statistics = tryConvertToTdObject(json["statistics"]);
   }
 }
 
@@ -11947,10 +11947,10 @@ class NetworkStatisticsEntryFile extends NetworkStatisticsEntry {
   };
 
   NetworkStatisticsEntryFile(Map<String, dynamic> json) {
-    fileType = tryParse(json["file_type"]);
-    networkType = tryParse(json["network_type"]);
-    sentBytes = tryParse(json["sent_bytes"]);
-    receivedBytes = tryParse(json["received_bytes"]);
+    fileType = tryConvertToTdObject(json["file_type"]);
+    networkType = tryConvertToTdObject(json["network_type"]);
+    sentBytes = tryConvertToTdObject(json["sent_bytes"]);
+    receivedBytes = tryConvertToTdObject(json["received_bytes"]);
   }
 }
 
@@ -11973,10 +11973,10 @@ class NetworkStatisticsEntryCall extends NetworkStatisticsEntry {
   };
 
   NetworkStatisticsEntryCall(Map<String, dynamic> json) {
-    networkType = tryParse(json["network_type"]);
-    sentBytes = tryParse(json["sent_bytes"]);
-    receivedBytes = tryParse(json["received_bytes"]);
-    duration = tryParse(json["duration"]);
+    networkType = tryConvertToTdObject(json["network_type"]);
+    sentBytes = tryConvertToTdObject(json["sent_bytes"]);
+    receivedBytes = tryConvertToTdObject(json["received_bytes"]);
+    duration = tryConvertToTdObject(json["duration"]);
   }
 }
 
@@ -11995,8 +11995,8 @@ class NetworkStatistics extends TdObject {
   };
 
   NetworkStatistics(Map<String, dynamic> json) {
-    sinceDate = tryParse(json["since_date"]);
-    entries = tryParse(json["entries"]);
+    sinceDate = tryConvertToTdObject(json["since_date"]);
+    entries = tryConvertToTdObject(json["entries"]);
   }
 }
 
@@ -12025,13 +12025,13 @@ class AutoDownloadSettings extends TdObject {
   };
 
   AutoDownloadSettings(Map<String, dynamic> json) {
-    isAutoDownloadEnabled = tryParse(json["is_auto_download_enabled"]);
-    maxPhotoFileSize = tryParse(json["max_photo_file_size"]);
-    maxVideoFileSize = tryParse(json["max_video_file_size"]);
-    maxOtherFileSize = tryParse(json["max_other_file_size"]);
-    preloadLargeVideos = tryParse(json["preload_large_videos"]);
-    preloadNextAudio = tryParse(json["preload_next_audio"]);
-    useLessDataForCalls = tryParse(json["use_less_data_for_calls"]);
+    isAutoDownloadEnabled = tryConvertToTdObject(json["is_auto_download_enabled"]);
+    maxPhotoFileSize = tryConvertToTdObject(json["max_photo_file_size"]);
+    maxVideoFileSize = tryConvertToTdObject(json["max_video_file_size"]);
+    maxOtherFileSize = tryConvertToTdObject(json["max_other_file_size"]);
+    preloadLargeVideos = tryConvertToTdObject(json["preload_large_videos"]);
+    preloadNextAudio = tryConvertToTdObject(json["preload_next_audio"]);
+    useLessDataForCalls = tryConvertToTdObject(json["use_less_data_for_calls"]);
   }
 }
 
@@ -12052,9 +12052,9 @@ class AutoDownloadSettingsPresets extends TdObject {
   };
 
   AutoDownloadSettingsPresets(Map<String, dynamic> json) {
-    low = tryParse(json["low"]);
-    medium = tryParse(json["medium"]);
-    high = tryParse(json["high"]);
+    low = tryConvertToTdObject(json["low"]);
+    medium = tryConvertToTdObject(json["medium"]);
+    high = tryConvertToTdObject(json["high"]);
   }
 }
 
@@ -12198,7 +12198,7 @@ class TMeUrlTypeUser extends TMeUrlType {
   };
 
   TMeUrlTypeUser(Map<String, dynamic> json) {
-    userId = tryParse(json["user_id"]);
+    userId = tryConvertToTdObject(json["user_id"]);
   }
 }
 
@@ -12215,7 +12215,7 @@ class TMeUrlTypeSupergroup extends TMeUrlType {
   };
 
   TMeUrlTypeSupergroup(Map<String, dynamic> json) {
-    supergroupId = tryParse(json["supergroup_id"]);
+    supergroupId = tryConvertToTdObject(json["supergroup_id"]);
   }
 }
 
@@ -12232,7 +12232,7 @@ class TMeUrlTypeChatInvite extends TMeUrlType {
   };
 
   TMeUrlTypeChatInvite(Map<String, dynamic> json) {
-    info = tryParse(json["info"]);
+    info = tryConvertToTdObject(json["info"]);
   }
 }
 
@@ -12249,7 +12249,7 @@ class TMeUrlTypeStickerSet extends TMeUrlType {
   };
 
   TMeUrlTypeStickerSet(Map<String, dynamic> json) {
-    stickerSetId = tryParse(json["sticker_set_id"]);
+    stickerSetId = tryConvertToTdObject(json["sticker_set_id"]);
   }
 }
 
@@ -12268,8 +12268,8 @@ class TMeUrl extends TdObject {
   };
 
   TMeUrl(Map<String, dynamic> json) {
-    url = tryParse(json["url"]);
-    type = tryParse(json["type"]);
+    url = tryConvertToTdObject(json["url"]);
+    type = tryConvertToTdObject(json["type"]);
   }
 }
 
@@ -12286,7 +12286,7 @@ class TMeUrls extends TdObject {
   };
 
   TMeUrls(Map<String, dynamic> json) {
-    urls = tryParse(json["urls"]);
+    urls = tryConvertToTdObject(json["urls"]);
   }
 }
 
@@ -12303,7 +12303,7 @@ class Count extends TdObject {
   };
 
   Count(Map<String, dynamic> json) {
-    count = tryParse(json["count"]);
+    count = tryConvertToTdObject(json["count"]);
   }
 }
 
@@ -12320,7 +12320,7 @@ class Text extends TdObject {
   };
 
   Text(Map<String, dynamic> json) {
-    text = tryParse(json["text"]);
+    text = tryConvertToTdObject(json["text"]);
   }
 }
 
@@ -12337,7 +12337,7 @@ class Seconds extends TdObject {
   };
 
   Seconds(Map<String, dynamic> json) {
-    seconds = tryParse(json["seconds"]);
+    seconds = tryConvertToTdObject(json["seconds"]);
   }
 }
 
@@ -12356,8 +12356,8 @@ class DeepLinkInfo extends TdObject {
   };
 
   DeepLinkInfo(Map<String, dynamic> json) {
-    text = tryParse(json["text"]);
-    needUpdateApplication = tryParse(json["need_update_application"]);
+    text = tryConvertToTdObject(json["text"]);
+    needUpdateApplication = tryConvertToTdObject(json["need_update_application"]);
   }
 }
 
@@ -12402,8 +12402,8 @@ class ProxyTypeSocks5 extends ProxyType {
   };
 
   ProxyTypeSocks5(Map<String, dynamic> json) {
-    username = tryParse(json["username"]);
-    password = tryParse(json["password"]);
+    username = tryConvertToTdObject(json["username"]);
+    password = tryConvertToTdObject(json["password"]);
   }
 }
 
@@ -12424,9 +12424,9 @@ class ProxyTypeHttp extends ProxyType {
   };
 
   ProxyTypeHttp(Map<String, dynamic> json) {
-    username = tryParse(json["username"]);
-    password = tryParse(json["password"]);
-    httpOnly = tryParse(json["http_only"]);
+    username = tryConvertToTdObject(json["username"]);
+    password = tryConvertToTdObject(json["password"]);
+    httpOnly = tryConvertToTdObject(json["http_only"]);
   }
 }
 
@@ -12443,7 +12443,7 @@ class ProxyTypeMtproto extends ProxyType {
   };
 
   ProxyTypeMtproto(Map<String, dynamic> json) {
-    secret = tryParse(json["secret"]);
+    secret = tryConvertToTdObject(json["secret"]);
   }
 }
 
@@ -12470,12 +12470,12 @@ class Proxy extends TdObject {
   };
 
   Proxy(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    server = tryParse(json["server"]);
-    port = tryParse(json["port"]);
-    lastUsedDate = tryParse(json["last_used_date"]);
-    isEnabled = tryParse(json["is_enabled"]);
-    type = tryParse(json["type"]);
+    id = tryConvertToTdObject(json["id"]);
+    server = tryConvertToTdObject(json["server"]);
+    port = tryConvertToTdObject(json["port"]);
+    lastUsedDate = tryConvertToTdObject(json["last_used_date"]);
+    isEnabled = tryConvertToTdObject(json["is_enabled"]);
+    type = tryConvertToTdObject(json["type"]);
   }
 }
 
@@ -12492,7 +12492,7 @@ class Proxies extends TdObject {
   };
 
   Proxies(Map<String, dynamic> json) {
-    proxies = tryParse(json["proxies"]);
+    proxies = tryConvertToTdObject(json["proxies"]);
   }
 }
 
@@ -12513,9 +12513,9 @@ class InputSticker extends TdObject {
   };
 
   InputSticker(Map<String, dynamic> json) {
-    pngSticker = tryParse(json["png_sticker"]);
-    emojis = tryParse(json["emojis"]);
-    maskPosition = tryParse(json["mask_position"]);
+    pngSticker = tryConvertToTdObject(json["png_sticker"]);
+    emojis = tryConvertToTdObject(json["emojis"]);
+    maskPosition = tryConvertToTdObject(json["mask_position"]);
   }
 }
 
@@ -12534,7 +12534,7 @@ class UpdateAuthorizationState extends Update {
   };
 
   UpdateAuthorizationState(Map<String, dynamic> json) {
-    authorizationState = tryParse(json["authorization_state"]);
+    authorizationState = tryConvertToTdObject(json["authorization_state"]);
   }
 }
 
@@ -12551,7 +12551,7 @@ class UpdateNewMessage extends Update {
   };
 
   UpdateNewMessage(Map<String, dynamic> json) {
-    message = tryParse(json["message"]);
+    message = tryConvertToTdObject(json["message"]);
   }
 }
 
@@ -12570,8 +12570,8 @@ class UpdateMessageSendAcknowledged extends Update {
   };
 
   UpdateMessageSendAcknowledged(Map<String, dynamic> json) {
-    chatId = tryParse(json["chat_id"]);
-    messageId = tryParse(json["message_id"]);
+    chatId = tryConvertToTdObject(json["chat_id"]);
+    messageId = tryConvertToTdObject(json["message_id"]);
   }
 }
 
@@ -12590,8 +12590,8 @@ class UpdateMessageSendSucceeded extends Update {
   };
 
   UpdateMessageSendSucceeded(Map<String, dynamic> json) {
-    message = tryParse(json["message"]);
-    oldMessageId = tryParse(json["old_message_id"]);
+    message = tryConvertToTdObject(json["message"]);
+    oldMessageId = tryConvertToTdObject(json["old_message_id"]);
   }
 }
 
@@ -12614,10 +12614,10 @@ class UpdateMessageSendFailed extends Update {
   };
 
   UpdateMessageSendFailed(Map<String, dynamic> json) {
-    message = tryParse(json["message"]);
-    oldMessageId = tryParse(json["old_message_id"]);
-    errorCode = tryParse(json["error_code"]);
-    errorMessage = tryParse(json["error_message"]);
+    message = tryConvertToTdObject(json["message"]);
+    oldMessageId = tryConvertToTdObject(json["old_message_id"]);
+    errorCode = tryConvertToTdObject(json["error_code"]);
+    errorMessage = tryConvertToTdObject(json["error_message"]);
   }
 }
 
@@ -12638,9 +12638,9 @@ class UpdateMessageContent extends Update {
   };
 
   UpdateMessageContent(Map<String, dynamic> json) {
-    chatId = tryParse(json["chat_id"]);
-    messageId = tryParse(json["message_id"]);
-    newContent = tryParse(json["new_content"]);
+    chatId = tryConvertToTdObject(json["chat_id"]);
+    messageId = tryConvertToTdObject(json["message_id"]);
+    newContent = tryConvertToTdObject(json["new_content"]);
   }
 }
 
@@ -12663,10 +12663,10 @@ class UpdateMessageEdited extends Update {
   };
 
   UpdateMessageEdited(Map<String, dynamic> json) {
-    chatId = tryParse(json["chat_id"]);
-    messageId = tryParse(json["message_id"]);
-    editDate = tryParse(json["edit_date"]);
-    replyMarkup = tryParse(json["reply_markup"]);
+    chatId = tryConvertToTdObject(json["chat_id"]);
+    messageId = tryConvertToTdObject(json["message_id"]);
+    editDate = tryConvertToTdObject(json["edit_date"]);
+    replyMarkup = tryConvertToTdObject(json["reply_markup"]);
   }
 }
 
@@ -12687,9 +12687,9 @@ class UpdateMessageViews extends Update {
   };
 
   UpdateMessageViews(Map<String, dynamic> json) {
-    chatId = tryParse(json["chat_id"]);
-    messageId = tryParse(json["message_id"]);
-    views = tryParse(json["views"]);
+    chatId = tryConvertToTdObject(json["chat_id"]);
+    messageId = tryConvertToTdObject(json["message_id"]);
+    views = tryConvertToTdObject(json["views"]);
   }
 }
 
@@ -12708,8 +12708,8 @@ class UpdateMessageContentOpened extends Update {
   };
 
   UpdateMessageContentOpened(Map<String, dynamic> json) {
-    chatId = tryParse(json["chat_id"]);
-    messageId = tryParse(json["message_id"]);
+    chatId = tryConvertToTdObject(json["chat_id"]);
+    messageId = tryConvertToTdObject(json["message_id"]);
   }
 }
 
@@ -12730,9 +12730,9 @@ class UpdateMessageMentionRead extends Update {
   };
 
   UpdateMessageMentionRead(Map<String, dynamic> json) {
-    chatId = tryParse(json["chat_id"]);
-    messageId = tryParse(json["message_id"]);
-    unreadMentionCount = tryParse(json["unread_mention_count"]);
+    chatId = tryConvertToTdObject(json["chat_id"]);
+    messageId = tryConvertToTdObject(json["message_id"]);
+    unreadMentionCount = tryConvertToTdObject(json["unread_mention_count"]);
   }
 }
 
@@ -12749,7 +12749,7 @@ class UpdateNewChat extends Update {
   };
 
   UpdateNewChat(Map<String, dynamic> json) {
-    chat = tryParse(json["chat"]);
+    chat = tryConvertToTdObject(json["chat"]);
   }
 }
 
@@ -12768,8 +12768,8 @@ class UpdateChatTitle extends Update {
   };
 
   UpdateChatTitle(Map<String, dynamic> json) {
-    chatId = tryParse(json["chat_id"]);
-    title = tryParse(json["title"]);
+    chatId = tryConvertToTdObject(json["chat_id"]);
+    title = tryConvertToTdObject(json["title"]);
   }
 }
 
@@ -12788,8 +12788,8 @@ class UpdateChatPhoto extends Update {
   };
 
   UpdateChatPhoto(Map<String, dynamic> json) {
-    chatId = tryParse(json["chat_id"]);
-    photo = tryParse(json["photo"]);
+    chatId = tryConvertToTdObject(json["chat_id"]);
+    photo = tryConvertToTdObject(json["photo"]);
   }
 }
 
@@ -12808,8 +12808,8 @@ class UpdateChatPermissions extends Update {
   };
 
   UpdateChatPermissions(Map<String, dynamic> json) {
-    chatId = tryParse(json["chat_id"]);
-    permissions = tryParse(json["permissions"]);
+    chatId = tryConvertToTdObject(json["chat_id"]);
+    permissions = tryConvertToTdObject(json["permissions"]);
   }
 }
 
@@ -12830,9 +12830,9 @@ class UpdateChatLastMessage extends Update {
   };
 
   UpdateChatLastMessage(Map<String, dynamic> json) {
-    chatId = tryParse(json["chat_id"]);
-    lastMessage = tryParse(json["last_message"]);
-    order = tryParse(json["order"]);
+    chatId = tryConvertToTdObject(json["chat_id"]);
+    lastMessage = tryConvertToTdObject(json["last_message"]);
+    order = tryConvertToTdObject(json["order"]);
   }
 }
 
@@ -12851,8 +12851,8 @@ class UpdateChatOrder extends Update {
   };
 
   UpdateChatOrder(Map<String, dynamic> json) {
-    chatId = tryParse(json["chat_id"]);
-    order = tryParse(json["order"]);
+    chatId = tryConvertToTdObject(json["chat_id"]);
+    order = tryConvertToTdObject(json["order"]);
   }
 }
 
@@ -12873,9 +12873,9 @@ class UpdateChatIsPinned extends Update {
   };
 
   UpdateChatIsPinned(Map<String, dynamic> json) {
-    chatId = tryParse(json["chat_id"]);
-    isPinned = tryParse(json["is_pinned"]);
-    order = tryParse(json["order"]);
+    chatId = tryConvertToTdObject(json["chat_id"]);
+    isPinned = tryConvertToTdObject(json["is_pinned"]);
+    order = tryConvertToTdObject(json["order"]);
   }
 }
 
@@ -12894,8 +12894,8 @@ class UpdateChatIsMarkedAsUnread extends Update {
   };
 
   UpdateChatIsMarkedAsUnread(Map<String, dynamic> json) {
-    chatId = tryParse(json["chat_id"]);
-    isMarkedAsUnread = tryParse(json["is_marked_as_unread"]);
+    chatId = tryConvertToTdObject(json["chat_id"]);
+    isMarkedAsUnread = tryConvertToTdObject(json["is_marked_as_unread"]);
   }
 }
 
@@ -12916,9 +12916,9 @@ class UpdateChatIsSponsored extends Update {
   };
 
   UpdateChatIsSponsored(Map<String, dynamic> json) {
-    chatId = tryParse(json["chat_id"]);
-    isSponsored = tryParse(json["is_sponsored"]);
-    order = tryParse(json["order"]);
+    chatId = tryConvertToTdObject(json["chat_id"]);
+    isSponsored = tryConvertToTdObject(json["is_sponsored"]);
+    order = tryConvertToTdObject(json["order"]);
   }
 }
 
@@ -12937,8 +12937,8 @@ class UpdateChatDefaultDisableNotification extends Update {
   };
 
   UpdateChatDefaultDisableNotification(Map<String, dynamic> json) {
-    chatId = tryParse(json["chat_id"]);
-    defaultDisableNotification = tryParse(json["default_disable_notification"]);
+    chatId = tryConvertToTdObject(json["chat_id"]);
+    defaultDisableNotification = tryConvertToTdObject(json["default_disable_notification"]);
   }
 }
 
@@ -12959,9 +12959,9 @@ class UpdateChatReadInbox extends Update {
   };
 
   UpdateChatReadInbox(Map<String, dynamic> json) {
-    chatId = tryParse(json["chat_id"]);
-    lastReadInboxMessageId = tryParse(json["last_read_inbox_message_id"]);
-    unreadCount = tryParse(json["unread_count"]);
+    chatId = tryConvertToTdObject(json["chat_id"]);
+    lastReadInboxMessageId = tryConvertToTdObject(json["last_read_inbox_message_id"]);
+    unreadCount = tryConvertToTdObject(json["unread_count"]);
   }
 }
 
@@ -12980,8 +12980,8 @@ class UpdateChatReadOutbox extends Update {
   };
 
   UpdateChatReadOutbox(Map<String, dynamic> json) {
-    chatId = tryParse(json["chat_id"]);
-    lastReadOutboxMessageId = tryParse(json["last_read_outbox_message_id"]);
+    chatId = tryConvertToTdObject(json["chat_id"]);
+    lastReadOutboxMessageId = tryConvertToTdObject(json["last_read_outbox_message_id"]);
   }
 }
 
@@ -13000,8 +13000,8 @@ class UpdateChatUnreadMentionCount extends Update {
   };
 
   UpdateChatUnreadMentionCount(Map<String, dynamic> json) {
-    chatId = tryParse(json["chat_id"]);
-    unreadMentionCount = tryParse(json["unread_mention_count"]);
+    chatId = tryConvertToTdObject(json["chat_id"]);
+    unreadMentionCount = tryConvertToTdObject(json["unread_mention_count"]);
   }
 }
 
@@ -13020,8 +13020,8 @@ class UpdateChatNotificationSettings extends Update {
   };
 
   UpdateChatNotificationSettings(Map<String, dynamic> json) {
-    chatId = tryParse(json["chat_id"]);
-    notificationSettings = tryParse(json["notification_settings"]);
+    chatId = tryConvertToTdObject(json["chat_id"]);
+    notificationSettings = tryConvertToTdObject(json["notification_settings"]);
   }
 }
 
@@ -13040,8 +13040,8 @@ class UpdateScopeNotificationSettings extends Update {
   };
 
   UpdateScopeNotificationSettings(Map<String, dynamic> json) {
-    scope = tryParse(json["scope"]);
-    notificationSettings = tryParse(json["notification_settings"]);
+    scope = tryConvertToTdObject(json["scope"]);
+    notificationSettings = tryConvertToTdObject(json["notification_settings"]);
   }
 }
 
@@ -13060,8 +13060,8 @@ class UpdateChatPinnedMessage extends Update {
   };
 
   UpdateChatPinnedMessage(Map<String, dynamic> json) {
-    chatId = tryParse(json["chat_id"]);
-    pinnedMessageId = tryParse(json["pinned_message_id"]);
+    chatId = tryConvertToTdObject(json["chat_id"]);
+    pinnedMessageId = tryConvertToTdObject(json["pinned_message_id"]);
   }
 }
 
@@ -13080,8 +13080,8 @@ class UpdateChatReplyMarkup extends Update {
   };
 
   UpdateChatReplyMarkup(Map<String, dynamic> json) {
-    chatId = tryParse(json["chat_id"]);
-    replyMarkupMessageId = tryParse(json["reply_markup_message_id"]);
+    chatId = tryConvertToTdObject(json["chat_id"]);
+    replyMarkupMessageId = tryConvertToTdObject(json["reply_markup_message_id"]);
   }
 }
 
@@ -13102,9 +13102,9 @@ class UpdateChatDraftMessage extends Update {
   };
 
   UpdateChatDraftMessage(Map<String, dynamic> json) {
-    chatId = tryParse(json["chat_id"]);
-    draftMessage = tryParse(json["draft_message"]);
-    order = tryParse(json["order"]);
+    chatId = tryConvertToTdObject(json["chat_id"]);
+    draftMessage = tryConvertToTdObject(json["draft_message"]);
+    order = tryConvertToTdObject(json["order"]);
   }
 }
 
@@ -13123,8 +13123,8 @@ class UpdateChatOnlineMemberCount extends Update {
   };
 
   UpdateChatOnlineMemberCount(Map<String, dynamic> json) {
-    chatId = tryParse(json["chat_id"]);
-    onlineMemberCount = tryParse(json["online_member_count"]);
+    chatId = tryConvertToTdObject(json["chat_id"]);
+    onlineMemberCount = tryConvertToTdObject(json["online_member_count"]);
   }
 }
 
@@ -13143,8 +13143,8 @@ class UpdateNotification extends Update {
   };
 
   UpdateNotification(Map<String, dynamic> json) {
-    notificationGroupId = tryParse(json["notification_group_id"]);
-    notification = tryParse(json["notification"]);
+    notificationGroupId = tryConvertToTdObject(json["notification_group_id"]);
+    notification = tryConvertToTdObject(json["notification"]);
   }
 }
 
@@ -13175,14 +13175,14 @@ class UpdateNotificationGroup extends Update {
   };
 
   UpdateNotificationGroup(Map<String, dynamic> json) {
-    notificationGroupId = tryParse(json["notification_group_id"]);
-    type = tryParse(json["type"]);
-    chatId = tryParse(json["chat_id"]);
-    notificationSettingsChatId = tryParse(json["notification_settings_chat_id"]);
-    isSilent = tryParse(json["is_silent"]);
-    totalCount = tryParse(json["total_count"]);
-    addedNotifications = tryParse(json["added_notifications"]);
-    removedNotificationIds = tryParse(json["removed_notification_ids"]);
+    notificationGroupId = tryConvertToTdObject(json["notification_group_id"]);
+    type = tryConvertToTdObject(json["type"]);
+    chatId = tryConvertToTdObject(json["chat_id"]);
+    notificationSettingsChatId = tryConvertToTdObject(json["notification_settings_chat_id"]);
+    isSilent = tryConvertToTdObject(json["is_silent"]);
+    totalCount = tryConvertToTdObject(json["total_count"]);
+    addedNotifications = tryConvertToTdObject(json["added_notifications"]);
+    removedNotificationIds = tryConvertToTdObject(json["removed_notification_ids"]);
   }
 }
 
@@ -13199,7 +13199,7 @@ class UpdateActiveNotifications extends Update {
   };
 
   UpdateActiveNotifications(Map<String, dynamic> json) {
-    groups = tryParse(json["groups"]);
+    groups = tryConvertToTdObject(json["groups"]);
   }
 }
 
@@ -13218,8 +13218,8 @@ class UpdateHavePendingNotifications extends Update {
   };
 
   UpdateHavePendingNotifications(Map<String, dynamic> json) {
-    haveDelayedNotifications = tryParse(json["have_delayed_notifications"]);
-    haveUnreceivedNotifications = tryParse(json["have_unreceived_notifications"]);
+    haveDelayedNotifications = tryConvertToTdObject(json["have_delayed_notifications"]);
+    haveUnreceivedNotifications = tryConvertToTdObject(json["have_unreceived_notifications"]);
   }
 }
 
@@ -13242,10 +13242,10 @@ class UpdateDeleteMessages extends Update {
   };
 
   UpdateDeleteMessages(Map<String, dynamic> json) {
-    chatId = tryParse(json["chat_id"]);
-    messageIds = tryParse(json["message_ids"]);
-    isPermanent = tryParse(json["is_permanent"]);
-    fromCache = tryParse(json["from_cache"]);
+    chatId = tryConvertToTdObject(json["chat_id"]);
+    messageIds = tryConvertToTdObject(json["message_ids"]);
+    isPermanent = tryConvertToTdObject(json["is_permanent"]);
+    fromCache = tryConvertToTdObject(json["from_cache"]);
   }
 }
 
@@ -13266,9 +13266,9 @@ class UpdateUserChatAction extends Update {
   };
 
   UpdateUserChatAction(Map<String, dynamic> json) {
-    chatId = tryParse(json["chat_id"]);
-    userId = tryParse(json["user_id"]);
-    action = tryParse(json["action"]);
+    chatId = tryConvertToTdObject(json["chat_id"]);
+    userId = tryConvertToTdObject(json["user_id"]);
+    action = tryConvertToTdObject(json["action"]);
   }
 }
 
@@ -13287,8 +13287,8 @@ class UpdateUserStatus extends Update {
   };
 
   UpdateUserStatus(Map<String, dynamic> json) {
-    userId = tryParse(json["user_id"]);
-    status = tryParse(json["status"]);
+    userId = tryConvertToTdObject(json["user_id"]);
+    status = tryConvertToTdObject(json["status"]);
   }
 }
 
@@ -13305,7 +13305,7 @@ class UpdateUser extends Update {
   };
 
   UpdateUser(Map<String, dynamic> json) {
-    user = tryParse(json["user"]);
+    user = tryConvertToTdObject(json["user"]);
   }
 }
 
@@ -13322,7 +13322,7 @@ class UpdateBasicGroup extends Update {
   };
 
   UpdateBasicGroup(Map<String, dynamic> json) {
-    basicGroup = tryParse(json["basic_group"]);
+    basicGroup = tryConvertToTdObject(json["basic_group"]);
   }
 }
 
@@ -13339,7 +13339,7 @@ class UpdateSupergroup extends Update {
   };
 
   UpdateSupergroup(Map<String, dynamic> json) {
-    supergroup = tryParse(json["supergroup"]);
+    supergroup = tryConvertToTdObject(json["supergroup"]);
   }
 }
 
@@ -13356,7 +13356,7 @@ class UpdateSecretChat extends Update {
   };
 
   UpdateSecretChat(Map<String, dynamic> json) {
-    secretChat = tryParse(json["secret_chat"]);
+    secretChat = tryConvertToTdObject(json["secret_chat"]);
   }
 }
 
@@ -13375,8 +13375,8 @@ class UpdateUserFullInfo extends Update {
   };
 
   UpdateUserFullInfo(Map<String, dynamic> json) {
-    userId = tryParse(json["user_id"]);
-    userFullInfo = tryParse(json["user_full_info"]);
+    userId = tryConvertToTdObject(json["user_id"]);
+    userFullInfo = tryConvertToTdObject(json["user_full_info"]);
   }
 }
 
@@ -13395,8 +13395,8 @@ class UpdateBasicGroupFullInfo extends Update {
   };
 
   UpdateBasicGroupFullInfo(Map<String, dynamic> json) {
-    basicGroupId = tryParse(json["basic_group_id"]);
-    basicGroupFullInfo = tryParse(json["basic_group_full_info"]);
+    basicGroupId = tryConvertToTdObject(json["basic_group_id"]);
+    basicGroupFullInfo = tryConvertToTdObject(json["basic_group_full_info"]);
   }
 }
 
@@ -13415,8 +13415,8 @@ class UpdateSupergroupFullInfo extends Update {
   };
 
   UpdateSupergroupFullInfo(Map<String, dynamic> json) {
-    supergroupId = tryParse(json["supergroup_id"]);
-    supergroupFullInfo = tryParse(json["supergroup_full_info"]);
+    supergroupId = tryConvertToTdObject(json["supergroup_id"]);
+    supergroupFullInfo = tryConvertToTdObject(json["supergroup_full_info"]);
   }
 }
 
@@ -13435,8 +13435,8 @@ class UpdateServiceNotification extends Update {
   };
 
   UpdateServiceNotification(Map<String, dynamic> json) {
-    type = tryParse(json["type"]);
-    content = tryParse(json["content"]);
+    type = tryConvertToTdObject(json["type"]);
+    content = tryConvertToTdObject(json["content"]);
   }
 }
 
@@ -13453,7 +13453,7 @@ class UpdateFile extends Update {
   };
 
   UpdateFile(Map<String, dynamic> json) {
-    file = tryParse(json["file"]);
+    file = tryConvertToTdObject(json["file"]);
   }
 }
 
@@ -13476,10 +13476,10 @@ class UpdateFileGenerationStart extends Update {
   };
 
   UpdateFileGenerationStart(Map<String, dynamic> json) {
-    generationId = tryParse(json["generation_id"]);
-    originalPath = tryParse(json["original_path"]);
-    destinationPath = tryParse(json["destination_path"]);
-    conversion = tryParse(json["conversion"]);
+    generationId = tryConvertToTdObject(json["generation_id"]);
+    originalPath = tryConvertToTdObject(json["original_path"]);
+    destinationPath = tryConvertToTdObject(json["destination_path"]);
+    conversion = tryConvertToTdObject(json["conversion"]);
   }
 }
 
@@ -13496,7 +13496,7 @@ class UpdateFileGenerationStop extends Update {
   };
 
   UpdateFileGenerationStop(Map<String, dynamic> json) {
-    generationId = tryParse(json["generation_id"]);
+    generationId = tryConvertToTdObject(json["generation_id"]);
   }
 }
 
@@ -13513,7 +13513,7 @@ class UpdateCall extends Update {
   };
 
   UpdateCall(Map<String, dynamic> json) {
-    call = tryParse(json["call"]);
+    call = tryConvertToTdObject(json["call"]);
   }
 }
 
@@ -13532,8 +13532,8 @@ class UpdateUserPrivacySettingRules extends Update {
   };
 
   UpdateUserPrivacySettingRules(Map<String, dynamic> json) {
-    setting = tryParse(json["setting"]);
-    rules = tryParse(json["rules"]);
+    setting = tryConvertToTdObject(json["setting"]);
+    rules = tryConvertToTdObject(json["rules"]);
   }
 }
 
@@ -13552,8 +13552,8 @@ class UpdateUnreadMessageCount extends Update {
   };
 
   UpdateUnreadMessageCount(Map<String, dynamic> json) {
-    unreadCount = tryParse(json["unread_count"]);
-    unreadUnmutedCount = tryParse(json["unread_unmuted_count"]);
+    unreadCount = tryConvertToTdObject(json["unread_count"]);
+    unreadUnmutedCount = tryConvertToTdObject(json["unread_unmuted_count"]);
   }
 }
 
@@ -13576,10 +13576,10 @@ class UpdateUnreadChatCount extends Update {
   };
 
   UpdateUnreadChatCount(Map<String, dynamic> json) {
-    unreadCount = tryParse(json["unread_count"]);
-    unreadUnmutedCount = tryParse(json["unread_unmuted_count"]);
-    markedAsUnreadCount = tryParse(json["marked_as_unread_count"]);
-    markedAsUnreadUnmutedCount = tryParse(json["marked_as_unread_unmuted_count"]);
+    unreadCount = tryConvertToTdObject(json["unread_count"]);
+    unreadUnmutedCount = tryConvertToTdObject(json["unread_unmuted_count"]);
+    markedAsUnreadCount = tryConvertToTdObject(json["marked_as_unread_count"]);
+    markedAsUnreadUnmutedCount = tryConvertToTdObject(json["marked_as_unread_unmuted_count"]);
   }
 }
 
@@ -13598,8 +13598,8 @@ class UpdateOption extends Update {
   };
 
   UpdateOption(Map<String, dynamic> json) {
-    name = tryParse(json["name"]);
-    value = tryParse(json["value"]);
+    name = tryConvertToTdObject(json["name"]);
+    value = tryConvertToTdObject(json["value"]);
   }
 }
 
@@ -13618,8 +13618,8 @@ class UpdateInstalledStickerSets extends Update {
   };
 
   UpdateInstalledStickerSets(Map<String, dynamic> json) {
-    isMasks = tryParse(json["is_masks"]);
-    stickerSetIds = tryParse(json["sticker_set_ids"]);
+    isMasks = tryConvertToTdObject(json["is_masks"]);
+    stickerSetIds = tryConvertToTdObject(json["sticker_set_ids"]);
   }
 }
 
@@ -13636,7 +13636,7 @@ class UpdateTrendingStickerSets extends Update {
   };
 
   UpdateTrendingStickerSets(Map<String, dynamic> json) {
-    stickerSets = tryParse(json["sticker_sets"]);
+    stickerSets = tryConvertToTdObject(json["sticker_sets"]);
   }
 }
 
@@ -13655,8 +13655,8 @@ class UpdateRecentStickers extends Update {
   };
 
   UpdateRecentStickers(Map<String, dynamic> json) {
-    isAttached = tryParse(json["is_attached"]);
-    stickerIds = tryParse(json["sticker_ids"]);
+    isAttached = tryConvertToTdObject(json["is_attached"]);
+    stickerIds = tryConvertToTdObject(json["sticker_ids"]);
   }
 }
 
@@ -13673,7 +13673,7 @@ class UpdateFavoriteStickers extends Update {
   };
 
   UpdateFavoriteStickers(Map<String, dynamic> json) {
-    stickerIds = tryParse(json["sticker_ids"]);
+    stickerIds = tryConvertToTdObject(json["sticker_ids"]);
   }
 }
 
@@ -13690,7 +13690,7 @@ class UpdateSavedAnimations extends Update {
   };
 
   UpdateSavedAnimations(Map<String, dynamic> json) {
-    animationIds = tryParse(json["animation_ids"]);
+    animationIds = tryConvertToTdObject(json["animation_ids"]);
   }
 }
 
@@ -13709,8 +13709,8 @@ class UpdateSelectedBackground extends Update {
   };
 
   UpdateSelectedBackground(Map<String, dynamic> json) {
-    forDarkTheme = tryParse(json["for_dark_theme"]);
-    background = tryParse(json["background"]);
+    forDarkTheme = tryConvertToTdObject(json["for_dark_theme"]);
+    background = tryConvertToTdObject(json["background"]);
   }
 }
 
@@ -13731,9 +13731,9 @@ class UpdateLanguagePackStrings extends Update {
   };
 
   UpdateLanguagePackStrings(Map<String, dynamic> json) {
-    localizationTarget = tryParse(json["localization_target"]);
-    languagePackId = tryParse(json["language_pack_id"]);
-    strings = tryParse(json["strings"]);
+    localizationTarget = tryConvertToTdObject(json["localization_target"]);
+    languagePackId = tryConvertToTdObject(json["language_pack_id"]);
+    strings = tryConvertToTdObject(json["strings"]);
   }
 }
 
@@ -13750,7 +13750,7 @@ class UpdateConnectionState extends Update {
   };
 
   UpdateConnectionState(Map<String, dynamic> json) {
-    state = tryParse(json["state"]);
+    state = tryConvertToTdObject(json["state"]);
   }
 }
 
@@ -13769,8 +13769,8 @@ class UpdateTermsOfService extends Update {
   };
 
   UpdateTermsOfService(Map<String, dynamic> json) {
-    termsOfServiceId = tryParse(json["terms_of_service_id"]);
-    termsOfService = tryParse(json["terms_of_service"]);
+    termsOfServiceId = tryConvertToTdObject(json["terms_of_service_id"]);
+    termsOfService = tryConvertToTdObject(json["terms_of_service"]);
   }
 }
 
@@ -13795,11 +13795,11 @@ class UpdateNewInlineQuery extends Update {
   };
 
   UpdateNewInlineQuery(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    senderUserId = tryParse(json["sender_user_id"]);
-    userLocation = tryParse(json["user_location"]);
-    query = tryParse(json["query"]);
-    offset = tryParse(json["offset"]);
+    id = tryConvertToTdObject(json["id"]);
+    senderUserId = tryConvertToTdObject(json["sender_user_id"]);
+    userLocation = tryConvertToTdObject(json["user_location"]);
+    query = tryConvertToTdObject(json["query"]);
+    offset = tryConvertToTdObject(json["offset"]);
   }
 }
 
@@ -13824,11 +13824,11 @@ class UpdateNewChosenInlineResult extends Update {
   };
 
   UpdateNewChosenInlineResult(Map<String, dynamic> json) {
-    senderUserId = tryParse(json["sender_user_id"]);
-    userLocation = tryParse(json["user_location"]);
-    query = tryParse(json["query"]);
-    resultId = tryParse(json["result_id"]);
-    inlineMessageId = tryParse(json["inline_message_id"]);
+    senderUserId = tryConvertToTdObject(json["sender_user_id"]);
+    userLocation = tryConvertToTdObject(json["user_location"]);
+    query = tryConvertToTdObject(json["query"]);
+    resultId = tryConvertToTdObject(json["result_id"]);
+    inlineMessageId = tryConvertToTdObject(json["inline_message_id"]);
   }
 }
 
@@ -13855,12 +13855,12 @@ class UpdateNewCallbackQuery extends Update {
   };
 
   UpdateNewCallbackQuery(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    senderUserId = tryParse(json["sender_user_id"]);
-    chatId = tryParse(json["chat_id"]);
-    messageId = tryParse(json["message_id"]);
-    chatInstance = tryParse(json["chat_instance"]);
-    payload = tryParse(json["payload"]);
+    id = tryConvertToTdObject(json["id"]);
+    senderUserId = tryConvertToTdObject(json["sender_user_id"]);
+    chatId = tryConvertToTdObject(json["chat_id"]);
+    messageId = tryConvertToTdObject(json["message_id"]);
+    chatInstance = tryConvertToTdObject(json["chat_instance"]);
+    payload = tryConvertToTdObject(json["payload"]);
   }
 }
 
@@ -13885,11 +13885,11 @@ class UpdateNewInlineCallbackQuery extends Update {
   };
 
   UpdateNewInlineCallbackQuery(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    senderUserId = tryParse(json["sender_user_id"]);
-    inlineMessageId = tryParse(json["inline_message_id"]);
-    chatInstance = tryParse(json["chat_instance"]);
-    payload = tryParse(json["payload"]);
+    id = tryConvertToTdObject(json["id"]);
+    senderUserId = tryConvertToTdObject(json["sender_user_id"]);
+    inlineMessageId = tryConvertToTdObject(json["inline_message_id"]);
+    chatInstance = tryConvertToTdObject(json["chat_instance"]);
+    payload = tryConvertToTdObject(json["payload"]);
   }
 }
 
@@ -13912,10 +13912,10 @@ class UpdateNewShippingQuery extends Update {
   };
 
   UpdateNewShippingQuery(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    senderUserId = tryParse(json["sender_user_id"]);
-    invoicePayload = tryParse(json["invoice_payload"]);
-    shippingAddress = tryParse(json["shipping_address"]);
+    id = tryConvertToTdObject(json["id"]);
+    senderUserId = tryConvertToTdObject(json["sender_user_id"]);
+    invoicePayload = tryConvertToTdObject(json["invoice_payload"]);
+    shippingAddress = tryConvertToTdObject(json["shipping_address"]);
   }
 }
 
@@ -13944,13 +13944,13 @@ class UpdateNewPreCheckoutQuery extends Update {
   };
 
   UpdateNewPreCheckoutQuery(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    senderUserId = tryParse(json["sender_user_id"]);
-    currency = tryParse(json["currency"]);
-    totalAmount = tryParse(json["total_amount"]);
-    invoicePayload = tryParse(json["invoice_payload"]);
-    shippingOptionId = tryParse(json["shipping_option_id"]);
-    orderInfo = tryParse(json["order_info"]);
+    id = tryConvertToTdObject(json["id"]);
+    senderUserId = tryConvertToTdObject(json["sender_user_id"]);
+    currency = tryConvertToTdObject(json["currency"]);
+    totalAmount = tryConvertToTdObject(json["total_amount"]);
+    invoicePayload = tryConvertToTdObject(json["invoice_payload"]);
+    shippingOptionId = tryConvertToTdObject(json["shipping_option_id"]);
+    orderInfo = tryConvertToTdObject(json["order_info"]);
   }
 }
 
@@ -13967,7 +13967,7 @@ class UpdateNewCustomEvent extends Update {
   };
 
   UpdateNewCustomEvent(Map<String, dynamic> json) {
-    event = tryParse(json["event"]);
+    event = tryConvertToTdObject(json["event"]);
   }
 }
 
@@ -13988,9 +13988,9 @@ class UpdateNewCustomQuery extends Update {
   };
 
   UpdateNewCustomQuery(Map<String, dynamic> json) {
-    id = tryParse(json["id"]);
-    data = tryParse(json["data"]);
-    timeout = tryParse(json["timeout"]);
+    id = tryConvertToTdObject(json["id"]);
+    data = tryConvertToTdObject(json["data"]);
+    timeout = tryConvertToTdObject(json["timeout"]);
   }
 }
 
@@ -14007,7 +14007,7 @@ class UpdatePoll extends Update {
   };
 
   UpdatePoll(Map<String, dynamic> json) {
-    poll = tryParse(json["poll"]);
+    poll = tryConvertToTdObject(json["poll"]);
   }
 }
 
@@ -14024,7 +14024,7 @@ class Updates extends TdObject {
   };
 
   Updates(Map<String, dynamic> json) {
-    updates = tryParse(json["updates"]);
+    updates = tryConvertToTdObject(json["updates"]);
   }
 }
 
@@ -14056,8 +14056,8 @@ class LogStreamFile extends LogStream {
   };
 
   LogStreamFile(Map<String, dynamic> json) {
-    path = tryParse(json["path"]);
-    maxFileSize = tryParse(json["max_file_size"]);
+    path = tryConvertToTdObject(json["path"]);
+    maxFileSize = tryConvertToTdObject(json["max_file_size"]);
   }
 }
 
@@ -14085,7 +14085,7 @@ class LogVerbosityLevel extends TdObject {
   };
 
   LogVerbosityLevel(Map<String, dynamic> json) {
-    verbosityLevel = tryParse(json["verbosity_level"]);
+    verbosityLevel = tryConvertToTdObject(json["verbosity_level"]);
   }
 }
 
@@ -14102,7 +14102,7 @@ class LogTags extends TdObject {
   };
 
   LogTags(Map<String, dynamic> json) {
-    tags = tryParse(json["tags"]);
+    tags = tryConvertToTdObject(json["tags"]);
   }
 }
 
@@ -14119,7 +14119,7 @@ class TestInt extends TdObject {
   };
 
   TestInt(Map<String, dynamic> json) {
-    value = tryParse(json["value"]);
+    value = tryConvertToTdObject(json["value"]);
   }
 }
 
@@ -14136,7 +14136,7 @@ class TestString extends TdObject {
   };
 
   TestString(Map<String, dynamic> json) {
-    value = tryParse(json["value"]);
+    value = tryConvertToTdObject(json["value"]);
   }
 }
 
@@ -14153,7 +14153,7 @@ class TestBytes extends TdObject {
   };
 
   TestBytes(Map<String, dynamic> json) {
-    value = tryParse(json["value"]);
+    value = tryConvertToTdObject(json["value"]);
   }
 }
 
@@ -14170,7 +14170,7 @@ class TestVectorInt extends TdObject {
   };
 
   TestVectorInt(Map<String, dynamic> json) {
-    value = tryParse(json["value"]);
+    value = tryConvertToTdObject(json["value"]);
   }
 }
 
@@ -14187,7 +14187,7 @@ class TestVectorIntObject extends TdObject {
   };
 
   TestVectorIntObject(Map<String, dynamic> json) {
-    value = tryParse(json["value"]);
+    value = tryConvertToTdObject(json["value"]);
   }
 }
 
@@ -14204,7 +14204,7 @@ class TestVectorString extends TdObject {
   };
 
   TestVectorString(Map<String, dynamic> json) {
-    value = tryParse(json["value"]);
+    value = tryConvertToTdObject(json["value"]);
   }
 }
 
@@ -14221,6 +14221,6 @@ class TestVectorStringObject extends TdObject {
   };
 
   TestVectorStringObject(Map<String, dynamic> json) {
-    value = tryParse(json["value"]);
+    value = tryConvertToTdObject(json["value"]);
   }
 }

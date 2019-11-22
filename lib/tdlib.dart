@@ -1,6 +1,7 @@
 library tdlib;
 
 import "dart:async";
+import "package:rxdart/rxdart.dart" as rx;
 
 import "src/td_json_client.dart" show JsonClient;
 import "src/api/base_classes.dart";
@@ -9,6 +10,7 @@ import "src/api/objects.dart" as td_objs show Error;
 import "src/api/functions.dart";
 import "src/api/utils.dart";
 
+export "client.dart" show TelegramClient;
 export "src/td_json_client.dart" show JsonClient;
 export "src/api/base_classes.dart";
 export "src/api/objects.dart";
@@ -17,6 +19,8 @@ export "src/api/utils.dart" show classIndex;
 
 class Client {
   final JsonClient _jsonClient;
+  rx.BehaviorSubject<AuthorizationState> _authorizationState;
+  Stream<AuthorizationState> get authorizationState => _authorizationState.stream;
 
   Client(String dlDir) : _jsonClient = JsonClient.create(dlDir);
   Client.fromExisting(this._jsonClient);
@@ -81,7 +85,7 @@ class Client {
   }
 
   Future<TdObject> receive([double timeout = 2.0]) async =>
-    await tryParse(_jsonClient.receive(timeout)) as TdObject;
+    tryConvertToTdObject(_jsonClient.receive(timeout)) as TdObject;
 
   /// TODO
   Stream<TdObject> incoming([double timeout = 2.0]) async* {
@@ -95,6 +99,8 @@ class Client {
     _jsonClient.execute(request.serialize());
 
   Future<void> close() async => _jsonClient.destroy();
+
+
 }
 
 class TlError extends Error {

@@ -57,28 +57,21 @@ main() async {
   initializeReflectable();
   
   // Create a client
-  final client = td.Client("path/to/td");
-  
-  // Starts the client, performing some basic authentication
-  client.start(
-    // Put TDLib parameters here
+  final client = td.TelegramClient("path/to/td");
+  client.setTdlibParams(
+    // TDLib params go here
   );
   
   try {
-    while (true) {
-      // Fetch a request
-      update = client.receive();
-      if (update is td.UpdateAuthorizationState) {
-        // The following are some common authorization requests
-        switch (update.authorizationState.runtimeType) {
-          case td.AuthorizationStateWaitPhoneNumber:
-            var setPhoneNumber = td.SetAuthenticationPhoneNumber("+16175551234");
-            await client.execute(setPhoneNumber);
-          break;
-          
-          // Handle other cases
-        }
-      } // Handle other updates
+    // Get a stream to handle changes to the authentication state
+    client.authenticationState.listen((state) {
+      if (state is td.AuthenticationStateWaitTdLibParameters) {
+        await client.send(client.tdlibParams);
+      }
+    });
+    
+    await for (var update in client.incoming()) {
+      // Handle each incoming update
     }
   } finally {
     // Be sure to close the client

@@ -83,7 +83,7 @@ class JsonClient {
     active = true;
   }
 
-  /// If the client is not [active] then this throws an exception.
+  /// If the client is not [active] then this throws an [Exception].
   void assertActive() {
     if (!active) {
       throw Exception("Telegram JSON client has been closed.");

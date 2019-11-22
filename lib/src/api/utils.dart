@@ -8,7 +8,9 @@ class Reflector extends Reflectable {
 
 const reflector = Reflector();
 
-dynamic tryParse(dynamic obj) {
+/// Attempts to parse an object as a [TdObject], or else returns the object
+/// as is
+dynamic tryConvertToTdObject(dynamic obj) {
   if (obj is Map) {
     return obj.containsKey("@type") ?
       (reflector.reflectType(classIndex[obj["@type"]]) as ClassMirror)

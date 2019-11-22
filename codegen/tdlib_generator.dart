@@ -80,7 +80,7 @@ class ApiClass {
         "  };",
         "",
         "  $name(Map<String, dynamic> json) {",
-        ...members.map((field) => "    ${field.fieldName} = tryParse(json[\"${field.paramName}\"]);"),
+        ...members.map((field) => "    ${field.fieldName} = tryConvertToTdObject(json[\"${field.paramName}\"]);"),
         "  }",
         "}",
         "",

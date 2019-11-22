@@ -1,3 +1,7 @@
+## 0.2.0
+
+Created an even nicer Telegram client that uses streams
+
 ## 0.1.2
 
 Used code generation to create all of the classes from the TDLib API documentation.
