@@ -63,9 +63,9 @@ main() async {
   );
   
   try {
-    // Get a stream to handle changes to the authentication state
-    client.authenticationState.listen((state) {
-      if (state is td.AuthenticationStateWaitTdLibParameters) {
+    // Get a stream to handle changes to the authorization state
+    client.authorizationState.listen((state) {
+      if (state is td.AuthorizationStateWaitTdLibParameters) {
         await client.send(client.tdlibParams);
       }
     });
