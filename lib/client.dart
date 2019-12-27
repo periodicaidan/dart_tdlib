@@ -5,15 +5,16 @@ import "package:rxdart/rxdart.dart";
 
 import "src/td_json_client.dart" show JsonClient;
 import "src/api/base_classes.dart";
-import "src/api/functions.dart";
 import "src/api/objects.dart";
 import "src/api/utils.dart" show tryConvertToTdObject;
 
 /// A controller that handles incoming requests asynchronously and exposes
 /// [Observable]s that stream data to their listeners.
 class TelegramClient with AsyncClient {
+  @override
   final JsonClient _client;
-  BehaviorSubject<Update> _updates = BehaviorSubject();
+
+  final BehaviorSubject<Update> _updates = BehaviorSubject();
 
   /// All [Update] objects received by the client are put into a
   /// [BehaviorSubject] whose [Stream] is exposed to other parts of the
@@ -55,37 +56,69 @@ class TelegramClient with AsyncClient {
     await destroy();
   }
 
-  /// Sets this client's [tdlibParams] by taking keyword-arguments (some of
-  /// which have defaults) that represent the fields of [TdlibParameters].
+  @Deprecated('Use [defineTdlibParams] instead')
   void setTdLibParams({
     @required int apiId,
     @required String apiHash,
     bool useMessageDatabase = true,
-    String databaseDirectory,
-    String systemLanguageCode = "en-US", // TODO: l10n
+    String databaseDirectory = 'tdb',
+    String systemLanguageCode = 'en-US',
     @required String deviceModel,
     @required String systemVersion,
-    String applicationVersion = "0.0.1",
+    String applicationVersion = '0.0.1',
     bool enableStorageOptimizer = true,
     bool useSecretChats = true,
   }) {
-    // Sets the default path for the databaseDirectory
-    if (databaseDirectory == null && useMessageDatabase) {
-      databaseDirectory = "tdb";
-    }
+    tdlibParams = TdlibParameters(
+      apiId: apiId,
+      apiHash: apiHash,
+      useMessageDatabase: useMessageDatabase,
+      databaseDirectory: databaseDirectory,
+      systemLanguageCode: systemLanguageCode,
+      deviceModel: deviceModel,
+      systemVersion: systemVersion,
+      applicationVersion: applicationVersion,
+      enableStorageOptimizer: enableStorageOptimizer,
+      useSecretChats: useSecretChats,
+    );
+  }
 
-    tdlibParams = TdlibParameters({
-      "api_id": apiId,
-      "api_hash": apiHash,
-      "use_message_database": useMessageDatabase,
-      "database_directory": databaseDirectory,
-      "system_language_code": systemLanguageCode,
-      "device_model": deviceModel,
-      "system_version": systemVersion,
-      "application_version": applicationVersion,
-      "enable_storage_optimizer": enableStorageOptimizer,
-      "use_secret_chats": useSecretChats,
-    });
+  /// Defines this client's [tdlibParams] by taking keyword-arguments (some of
+  /// which have defaults) that represent the fields of [TdlibParameters].
+  void defineTdlibParams({
+    @required int apiId,
+    @required String apiHash,
+    bool useMessageDatabase = true,
+    String databaseDirectory = 'tdb',
+    String systemLanguageCode = 'en-US', // TODO: l10n
+    @required String deviceModel,
+    @required String systemVersion,
+    String applicationVersion = '0.0.1',
+    bool enableStorageOptimizer = true,
+    bool useSecretChats = true,
+    bool useChatInfoDatabase,
+    bool useFileDatabase,
+    String filesDirectory,
+    bool ignoreFileNames,
+    bool useTestDc,
+  }) {
+    tdlibParams = TdlibParameters(
+      apiId: apiId,
+      apiHash: apiHash,
+      useMessageDatabase: useMessageDatabase,
+      databaseDirectory: databaseDirectory,
+      systemLanguageCode: systemLanguageCode,
+      deviceModel: deviceModel,
+      systemVersion: systemVersion,
+      applicationVersion: applicationVersion,
+      enableStorageOptimizer: enableStorageOptimizer,
+      useSecretChats: useSecretChats,
+      useChatInfoDatabase: useChatInfoDatabase,
+      useFileDatabase: useFileDatabase,
+      useTestDc: useTestDc,
+      filesDirectory: filesDirectory,
+      ignoreFileNames: ignoreFileNames,
+    );
   }
 }
 

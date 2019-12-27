@@ -14,5 +14,6 @@ doc/api/
 *.iml
 
 lib/td
+td
 example
 

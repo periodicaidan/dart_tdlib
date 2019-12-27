@@ -1,6 +1,6 @@
 name: tdlib
 description: Dart port of the Telegram Database Library (TDLib)
-version: 0.2.0
+version: 0.3.0
 author:  Aidan T. Manning <periodicaidan@gmail.com>
 
 # Since dart:ffi isn't a stable feature yet you have to be on the latest dev channel

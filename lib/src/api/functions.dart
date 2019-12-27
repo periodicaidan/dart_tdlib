@@ -1,6 +1,6 @@
-import "base_classes.dart";
-import "objects.dart";
-import "utils.dart";
+import 'base_classes.dart';
+import 'objects.dart';
+import 'utils.dart';
 
 @reflector
 class GetAuthorizationState extends TdFunction {
@@ -8,11 +8,14 @@ class GetAuthorizationState extends TdFunction {
   Type get returnType => AuthorizationState;
 
   @override
-  String get tdType => "getAuthorizationState";
+  String get tdType => 'getAuthorizationState';
+
   @override
   Map<String, dynamic> get params => {};
 
   GetAuthorizationState();
+
+  GetAuthorizationState.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -21,17 +24,22 @@ class SetTdlibParameters extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "setTdlibParameters";
-  final TdlibParameters parameters;
+  String get tdType => 'setTdlibParameters';
+
+  TdlibParameters parameters;
 
   @override
   Map<String, dynamic> get params => {
-    "parameters": parameters,
+    'parameters': parameters,
   };
 
   SetTdlibParameters(
     this.parameters,
   );
+
+  SetTdlibParameters.fromJson(Map<String, dynamic> json) {
+    parameters = tryConvertToTdObject(json['parameters']);
+  }
 }
 
 @reflector
@@ -40,17 +48,22 @@ class CheckDatabaseEncryptionKey extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "checkDatabaseEncryptionKey";
-  final String encryptionKey;
+  String get tdType => 'checkDatabaseEncryptionKey';
+
+  String encryptionKey;
 
   @override
   Map<String, dynamic> get params => {
-    "encryption_key": encryptionKey,
+    'encryption_key': encryptionKey,
   };
 
   CheckDatabaseEncryptionKey(
     this.encryptionKey,
   );
+
+  CheckDatabaseEncryptionKey.fromJson(Map<String, dynamic> json) {
+    encryptionKey = tryConvertToTdObject(json['encryption_key']);
+  }
 }
 
 @reflector
@@ -59,20 +72,26 @@ class SetAuthenticationPhoneNumber extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "setAuthenticationPhoneNumber";
-  final String phoneNumber;
-  final PhoneNumberAuthenticationSettings settings;
+  String get tdType => 'setAuthenticationPhoneNumber';
+
+  String phoneNumber;
+  PhoneNumberAuthenticationSettings settings;
 
   @override
   Map<String, dynamic> get params => {
-    "phone_number": phoneNumber,
-    "settings": settings,
+    'phone_number': phoneNumber,
+    'settings': settings,
   };
 
   SetAuthenticationPhoneNumber(
     this.phoneNumber,
     this.settings,
   );
+
+  SetAuthenticationPhoneNumber.fromJson(Map<String, dynamic> json) {
+    phoneNumber = tryConvertToTdObject(json['phone_number']);
+    settings = tryConvertToTdObject(json['settings']);
+  }
 }
 
 @reflector
@@ -81,11 +100,14 @@ class ResendAuthenticationCode extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "resendAuthenticationCode";
+  String get tdType => 'resendAuthenticationCode';
+
   @override
   Map<String, dynamic> get params => {};
 
   ResendAuthenticationCode();
+
+  ResendAuthenticationCode.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -94,17 +116,22 @@ class CheckAuthenticationCode extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "checkAuthenticationCode";
-  final String code;
+  String get tdType => 'checkAuthenticationCode';
+
+  String code;
 
   @override
   Map<String, dynamic> get params => {
-    "code": code,
+    'code': code,
   };
 
   CheckAuthenticationCode(
     this.code,
   );
+
+  CheckAuthenticationCode.fromJson(Map<String, dynamic> json) {
+    code = tryConvertToTdObject(json['code']);
+  }
 }
 
 @reflector
@@ -113,20 +140,26 @@ class RegisterUser extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "registerUser";
-  final String firstName;
-  final String lastName;
+  String get tdType => 'registerUser';
+
+  String firstName;
+  String lastName;
 
   @override
   Map<String, dynamic> get params => {
-    "first_name": firstName,
-    "last_name": lastName,
+    'first_name': firstName,
+    'last_name': lastName,
   };
 
   RegisterUser(
     this.firstName,
     this.lastName,
   );
+
+  RegisterUser.fromJson(Map<String, dynamic> json) {
+    firstName = tryConvertToTdObject(json['first_name']);
+    lastName = tryConvertToTdObject(json['last_name']);
+  }
 }
 
 @reflector
@@ -135,17 +168,22 @@ class CheckAuthenticationPassword extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "checkAuthenticationPassword";
-  final String password;
+  String get tdType => 'checkAuthenticationPassword';
+
+  String password;
 
   @override
   Map<String, dynamic> get params => {
-    "password": password,
+    'password': password,
   };
 
   CheckAuthenticationPassword(
     this.password,
   );
+
+  CheckAuthenticationPassword.fromJson(Map<String, dynamic> json) {
+    password = tryConvertToTdObject(json['password']);
+  }
 }
 
 @reflector
@@ -154,11 +192,14 @@ class RequestAuthenticationPasswordRecovery extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "requestAuthenticationPasswordRecovery";
+  String get tdType => 'requestAuthenticationPasswordRecovery';
+
   @override
   Map<String, dynamic> get params => {};
 
   RequestAuthenticationPasswordRecovery();
+
+  RequestAuthenticationPasswordRecovery.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -167,17 +208,22 @@ class RecoverAuthenticationPassword extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "recoverAuthenticationPassword";
-  final String recoveryCode;
+  String get tdType => 'recoverAuthenticationPassword';
+
+  String recoveryCode;
 
   @override
   Map<String, dynamic> get params => {
-    "recovery_code": recoveryCode,
+    'recovery_code': recoveryCode,
   };
 
   RecoverAuthenticationPassword(
     this.recoveryCode,
   );
+
+  RecoverAuthenticationPassword.fromJson(Map<String, dynamic> json) {
+    recoveryCode = tryConvertToTdObject(json['recovery_code']);
+  }
 }
 
 @reflector
@@ -186,17 +232,22 @@ class CheckAuthenticationBotToken extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "checkAuthenticationBotToken";
-  final String token;
+  String get tdType => 'checkAuthenticationBotToken';
+
+  String token;
 
   @override
   Map<String, dynamic> get params => {
-    "token": token,
+    'token': token,
   };
 
   CheckAuthenticationBotToken(
     this.token,
   );
+
+  CheckAuthenticationBotToken.fromJson(Map<String, dynamic> json) {
+    token = tryConvertToTdObject(json['token']);
+  }
 }
 
 @reflector
@@ -205,11 +256,14 @@ class LogOut extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "logOut";
+  String get tdType => 'logOut';
+
   @override
   Map<String, dynamic> get params => {};
 
   LogOut();
+
+  LogOut.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -218,11 +272,14 @@ class Close extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "close";
+  String get tdType => 'close';
+
   @override
   Map<String, dynamic> get params => {};
 
   Close();
+
+  Close.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -231,11 +288,14 @@ class Destroy extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "destroy";
+  String get tdType => 'destroy';
+
   @override
   Map<String, dynamic> get params => {};
 
   Destroy();
+
+  Destroy.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -244,17 +304,22 @@ class SetDatabaseEncryptionKey extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "setDatabaseEncryptionKey";
-  final String newEncryptionKey;
+  String get tdType => 'setDatabaseEncryptionKey';
+
+  String newEncryptionKey;
 
   @override
   Map<String, dynamic> get params => {
-    "new_encryption_key": newEncryptionKey,
+    'new_encryption_key': newEncryptionKey,
   };
 
   SetDatabaseEncryptionKey(
     this.newEncryptionKey,
   );
+
+  SetDatabaseEncryptionKey.fromJson(Map<String, dynamic> json) {
+    newEncryptionKey = tryConvertToTdObject(json['new_encryption_key']);
+  }
 }
 
 @reflector
@@ -263,20 +328,26 @@ class RemoveTopChat extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "removeTopChat";
-  final TopChatCategory category;
-  final int chatId;
+  String get tdType => 'removeTopChat';
+
+  TopChatCategory category;
+  int chatId;
 
   @override
   Map<String, dynamic> get params => {
-    "category": category,
-    "chat_id": chatId,
+    'category': category,
+    'chat_id': chatId,
   };
 
   RemoveTopChat(
     this.category,
     this.chatId,
   );
+
+  RemoveTopChat.fromJson(Map<String, dynamic> json) {
+    category = tryConvertToTdObject(json['category']);
+    chatId = tryConvertToTdObject(json['chat_id']);
+  }
 }
 
 @reflector
@@ -285,17 +356,22 @@ class AddRecentlyFoundChat extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "addRecentlyFoundChat";
-  final int chatId;
+  String get tdType => 'addRecentlyFoundChat';
+
+  int chatId;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
+    'chat_id': chatId,
   };
 
   AddRecentlyFoundChat(
     this.chatId,
   );
+
+  AddRecentlyFoundChat.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+  }
 }
 
 @reflector
@@ -304,17 +380,22 @@ class RemoveRecentlyFoundChat extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "removeRecentlyFoundChat";
-  final int chatId;
+  String get tdType => 'removeRecentlyFoundChat';
+
+  int chatId;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
+    'chat_id': chatId,
   };
 
   RemoveRecentlyFoundChat(
     this.chatId,
   );
+
+  RemoveRecentlyFoundChat.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+  }
 }
 
 @reflector
@@ -323,11 +404,14 @@ class ClearRecentlyFoundChats extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "clearRecentlyFoundChats";
+  String get tdType => 'clearRecentlyFoundChats';
+
   @override
   Map<String, dynamic> get params => {};
 
   ClearRecentlyFoundChats();
+
+  ClearRecentlyFoundChats.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -336,16 +420,17 @@ class DeleteChatHistory extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "deleteChatHistory";
-  final int chatId;
-  final bool removeFromChatList;
-  final bool revoke;
+  String get tdType => 'deleteChatHistory';
+
+  int chatId;
+  bool removeFromChatList;
+  bool revoke;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "remove_from_chat_list": removeFromChatList,
-    "revoke": revoke,
+    'chat_id': chatId,
+    'remove_from_chat_list': removeFromChatList,
+    'revoke': revoke,
   };
 
   DeleteChatHistory(
@@ -353,6 +438,12 @@ class DeleteChatHistory extends TdFunction {
     this.removeFromChatList,
     this.revoke,
   );
+
+  DeleteChatHistory.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    removeFromChatList = tryConvertToTdObject(json['remove_from_chat_list']);
+    revoke = tryConvertToTdObject(json['revoke']);
+  }
 }
 
 @reflector
@@ -361,20 +452,26 @@ class RemoveNotification extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "removeNotification";
-  final int notificationGroupId;
-  final int notificationId;
+  String get tdType => 'removeNotification';
+
+  int notificationGroupId;
+  int notificationId;
 
   @override
   Map<String, dynamic> get params => {
-    "notification_group_id": notificationGroupId,
-    "notification_id": notificationId,
+    'notification_group_id': notificationGroupId,
+    'notification_id': notificationId,
   };
 
   RemoveNotification(
     this.notificationGroupId,
     this.notificationId,
   );
+
+  RemoveNotification.fromJson(Map<String, dynamic> json) {
+    notificationGroupId = tryConvertToTdObject(json['notification_group_id']);
+    notificationId = tryConvertToTdObject(json['notification_id']);
+  }
 }
 
 @reflector
@@ -383,20 +480,26 @@ class RemoveNotificationGroup extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "removeNotificationGroup";
-  final int notificationGroupId;
-  final int maxNotificationId;
+  String get tdType => 'removeNotificationGroup';
+
+  int notificationGroupId;
+  int maxNotificationId;
 
   @override
   Map<String, dynamic> get params => {
-    "notification_group_id": notificationGroupId,
-    "max_notification_id": maxNotificationId,
+    'notification_group_id': notificationGroupId,
+    'max_notification_id': maxNotificationId,
   };
 
   RemoveNotificationGroup(
     this.notificationGroupId,
     this.maxNotificationId,
   );
+
+  RemoveNotificationGroup.fromJson(Map<String, dynamic> json) {
+    notificationGroupId = tryConvertToTdObject(json['notification_group_id']);
+    maxNotificationId = tryConvertToTdObject(json['max_notification_id']);
+  }
 }
 
 @reflector
@@ -405,17 +508,22 @@ class SendChatScreenshotTakenNotification extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "sendChatScreenshotTakenNotification";
-  final int chatId;
+  String get tdType => 'sendChatScreenshotTakenNotification';
+
+  int chatId;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
+    'chat_id': chatId,
   };
 
   SendChatScreenshotTakenNotification(
     this.chatId,
   );
+
+  SendChatScreenshotTakenNotification.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+  }
 }
 
 @reflector
@@ -424,16 +532,17 @@ class DeleteMessages extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "deleteMessages";
-  final int chatId;
-  final List<int> messageIds;
-  final bool revoke;
+  String get tdType => 'deleteMessages';
+
+  int chatId;
+  List<int> messageIds;
+  bool revoke;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "message_ids": messageIds,
-    "revoke": revoke,
+    'chat_id': chatId,
+    'message_ids': messageIds,
+    'revoke': revoke,
   };
 
   DeleteMessages(
@@ -441,6 +550,12 @@ class DeleteMessages extends TdFunction {
     this.messageIds,
     this.revoke,
   );
+
+  DeleteMessages.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    messageIds = tryConvertToTdObject(json['message_ids']);
+    revoke = tryConvertToTdObject(json['revoke']);
+  }
 }
 
 @reflector
@@ -449,20 +564,26 @@ class DeleteChatMessagesFromUser extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "deleteChatMessagesFromUser";
-  final int chatId;
-  final int userId;
+  String get tdType => 'deleteChatMessagesFromUser';
+
+  int chatId;
+  int userId;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "user_id": userId,
+    'chat_id': chatId,
+    'user_id': userId,
   };
 
   DeleteChatMessagesFromUser(
     this.chatId,
     this.userId,
   );
+
+  DeleteChatMessagesFromUser.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    userId = tryConvertToTdObject(json['user_id']);
+  }
 }
 
 @reflector
@@ -471,16 +592,17 @@ class EditInlineMessageText extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "editInlineMessageText";
-  final String inlineMessageId;
-  final ReplyMarkup replyMarkup;
-  final InputMessageContent inputMessageContent;
+  String get tdType => 'editInlineMessageText';
+
+  String inlineMessageId;
+  ReplyMarkup replyMarkup;
+  InputMessageContent inputMessageContent;
 
   @override
   Map<String, dynamic> get params => {
-    "inline_message_id": inlineMessageId,
-    "reply_markup": replyMarkup,
-    "input_message_content": inputMessageContent,
+    'inline_message_id': inlineMessageId,
+    'reply_markup': replyMarkup,
+    'input_message_content': inputMessageContent,
   };
 
   EditInlineMessageText(
@@ -488,6 +610,12 @@ class EditInlineMessageText extends TdFunction {
     this.replyMarkup,
     this.inputMessageContent,
   );
+
+  EditInlineMessageText.fromJson(Map<String, dynamic> json) {
+    inlineMessageId = tryConvertToTdObject(json['inline_message_id']);
+    replyMarkup = tryConvertToTdObject(json['reply_markup']);
+    inputMessageContent = tryConvertToTdObject(json['input_message_content']);
+  }
 }
 
 @reflector
@@ -496,16 +624,17 @@ class EditInlineMessageLiveLocation extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "editInlineMessageLiveLocation";
-  final String inlineMessageId;
-  final ReplyMarkup replyMarkup;
-  final Location location;
+  String get tdType => 'editInlineMessageLiveLocation';
+
+  String inlineMessageId;
+  ReplyMarkup replyMarkup;
+  Location location;
 
   @override
   Map<String, dynamic> get params => {
-    "inline_message_id": inlineMessageId,
-    "reply_markup": replyMarkup,
-    "location": location,
+    'inline_message_id': inlineMessageId,
+    'reply_markup': replyMarkup,
+    'location': location,
   };
 
   EditInlineMessageLiveLocation(
@@ -513,6 +642,12 @@ class EditInlineMessageLiveLocation extends TdFunction {
     this.replyMarkup,
     this.location,
   );
+
+  EditInlineMessageLiveLocation.fromJson(Map<String, dynamic> json) {
+    inlineMessageId = tryConvertToTdObject(json['inline_message_id']);
+    replyMarkup = tryConvertToTdObject(json['reply_markup']);
+    location = tryConvertToTdObject(json['location']);
+  }
 }
 
 @reflector
@@ -521,16 +656,17 @@ class EditInlineMessageMedia extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "editInlineMessageMedia";
-  final String inlineMessageId;
-  final ReplyMarkup replyMarkup;
-  final InputMessageContent inputMessageContent;
+  String get tdType => 'editInlineMessageMedia';
+
+  String inlineMessageId;
+  ReplyMarkup replyMarkup;
+  InputMessageContent inputMessageContent;
 
   @override
   Map<String, dynamic> get params => {
-    "inline_message_id": inlineMessageId,
-    "reply_markup": replyMarkup,
-    "input_message_content": inputMessageContent,
+    'inline_message_id': inlineMessageId,
+    'reply_markup': replyMarkup,
+    'input_message_content': inputMessageContent,
   };
 
   EditInlineMessageMedia(
@@ -538,6 +674,12 @@ class EditInlineMessageMedia extends TdFunction {
     this.replyMarkup,
     this.inputMessageContent,
   );
+
+  EditInlineMessageMedia.fromJson(Map<String, dynamic> json) {
+    inlineMessageId = tryConvertToTdObject(json['inline_message_id']);
+    replyMarkup = tryConvertToTdObject(json['reply_markup']);
+    inputMessageContent = tryConvertToTdObject(json['input_message_content']);
+  }
 }
 
 @reflector
@@ -546,16 +688,17 @@ class EditInlineMessageCaption extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "editInlineMessageCaption";
-  final String inlineMessageId;
-  final ReplyMarkup replyMarkup;
-  final FormattedText caption;
+  String get tdType => 'editInlineMessageCaption';
+
+  String inlineMessageId;
+  ReplyMarkup replyMarkup;
+  FormattedText caption;
 
   @override
   Map<String, dynamic> get params => {
-    "inline_message_id": inlineMessageId,
-    "reply_markup": replyMarkup,
-    "caption": caption,
+    'inline_message_id': inlineMessageId,
+    'reply_markup': replyMarkup,
+    'caption': caption,
   };
 
   EditInlineMessageCaption(
@@ -563,6 +706,12 @@ class EditInlineMessageCaption extends TdFunction {
     this.replyMarkup,
     this.caption,
   );
+
+  EditInlineMessageCaption.fromJson(Map<String, dynamic> json) {
+    inlineMessageId = tryConvertToTdObject(json['inline_message_id']);
+    replyMarkup = tryConvertToTdObject(json['reply_markup']);
+    caption = tryConvertToTdObject(json['caption']);
+  }
 }
 
 @reflector
@@ -571,20 +720,26 @@ class EditInlineMessageReplyMarkup extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "editInlineMessageReplyMarkup";
-  final String inlineMessageId;
-  final ReplyMarkup replyMarkup;
+  String get tdType => 'editInlineMessageReplyMarkup';
+
+  String inlineMessageId;
+  ReplyMarkup replyMarkup;
 
   @override
   Map<String, dynamic> get params => {
-    "inline_message_id": inlineMessageId,
-    "reply_markup": replyMarkup,
+    'inline_message_id': inlineMessageId,
+    'reply_markup': replyMarkup,
   };
 
   EditInlineMessageReplyMarkup(
     this.inlineMessageId,
     this.replyMarkup,
   );
+
+  EditInlineMessageReplyMarkup.fromJson(Map<String, dynamic> json) {
+    inlineMessageId = tryConvertToTdObject(json['inline_message_id']);
+    replyMarkup = tryConvertToTdObject(json['reply_markup']);
+  }
 }
 
 @reflector
@@ -593,16 +748,17 @@ class SetPollAnswer extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "setPollAnswer";
-  final int chatId;
-  final int messageId;
-  final List<int> optionIds;
+  String get tdType => 'setPollAnswer';
+
+  int chatId;
+  int messageId;
+  List<int> optionIds;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "message_id": messageId,
-    "option_ids": optionIds,
+    'chat_id': chatId,
+    'message_id': messageId,
+    'option_ids': optionIds,
   };
 
   SetPollAnswer(
@@ -610,6 +766,12 @@ class SetPollAnswer extends TdFunction {
     this.messageId,
     this.optionIds,
   );
+
+  SetPollAnswer.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    messageId = tryConvertToTdObject(json['message_id']);
+    optionIds = tryConvertToTdObject(json['option_ids']);
+  }
 }
 
 @reflector
@@ -618,16 +780,17 @@ class StopPoll extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "stopPoll";
-  final int chatId;
-  final int messageId;
-  final ReplyMarkup replyMarkup;
+  String get tdType => 'stopPoll';
+
+  int chatId;
+  int messageId;
+  ReplyMarkup replyMarkup;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "message_id": messageId,
-    "reply_markup": replyMarkup,
+    'chat_id': chatId,
+    'message_id': messageId,
+    'reply_markup': replyMarkup,
   };
 
   StopPoll(
@@ -635,6 +798,12 @@ class StopPoll extends TdFunction {
     this.messageId,
     this.replyMarkup,
   );
+
+  StopPoll.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    messageId = tryConvertToTdObject(json['message_id']);
+    replyMarkup = tryConvertToTdObject(json['reply_markup']);
+  }
 }
 
 @reflector
@@ -643,24 +812,25 @@ class AnswerInlineQuery extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "answerInlineQuery";
-  final int inlineQueryId;
-  final bool isPersonal;
-  final List<InputInlineQueryResult> results;
-  final int cacheTime;
-  final String nextOffset;
-  final String switchPmText;
-  final String switchPmParameter;
+  String get tdType => 'answerInlineQuery';
+
+  int inlineQueryId;
+  bool isPersonal;
+  List<InputInlineQueryResult> results;
+  int cacheTime;
+  String nextOffset;
+  String switchPmText;
+  String switchPmParameter;
 
   @override
   Map<String, dynamic> get params => {
-    "inline_query_id": inlineQueryId,
-    "is_personal": isPersonal,
-    "results": results,
-    "cache_time": cacheTime,
-    "next_offset": nextOffset,
-    "switch_pm_text": switchPmText,
-    "switch_pm_parameter": switchPmParameter,
+    'inline_query_id': inlineQueryId,
+    'is_personal': isPersonal,
+    'results': results,
+    'cache_time': cacheTime,
+    'next_offset': nextOffset,
+    'switch_pm_text': switchPmText,
+    'switch_pm_parameter': switchPmParameter,
   };
 
   AnswerInlineQuery(
@@ -672,6 +842,16 @@ class AnswerInlineQuery extends TdFunction {
     this.switchPmText,
     this.switchPmParameter,
   );
+
+  AnswerInlineQuery.fromJson(Map<String, dynamic> json) {
+    inlineQueryId = tryConvertToTdObject(json['inline_query_id']);
+    isPersonal = tryConvertToTdObject(json['is_personal']);
+    results = tryConvertToTdObject(json['results']);
+    cacheTime = tryConvertToTdObject(json['cache_time']);
+    nextOffset = tryConvertToTdObject(json['next_offset']);
+    switchPmText = tryConvertToTdObject(json['switch_pm_text']);
+    switchPmParameter = tryConvertToTdObject(json['switch_pm_parameter']);
+  }
 }
 
 @reflector
@@ -680,20 +860,21 @@ class AnswerCallbackQuery extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "answerCallbackQuery";
-  final int callbackQueryId;
-  final String text;
-  final bool showAlert;
-  final String url;
-  final int cacheTime;
+  String get tdType => 'answerCallbackQuery';
+
+  int callbackQueryId;
+  String text;
+  bool showAlert;
+  String url;
+  int cacheTime;
 
   @override
   Map<String, dynamic> get params => {
-    "callback_query_id": callbackQueryId,
-    "text": text,
-    "show_alert": showAlert,
-    "url": url,
-    "cache_time": cacheTime,
+    'callback_query_id': callbackQueryId,
+    'text': text,
+    'show_alert': showAlert,
+    'url': url,
+    'cache_time': cacheTime,
   };
 
   AnswerCallbackQuery(
@@ -703,6 +884,14 @@ class AnswerCallbackQuery extends TdFunction {
     this.url,
     this.cacheTime,
   );
+
+  AnswerCallbackQuery.fromJson(Map<String, dynamic> json) {
+    callbackQueryId = tryConvertToTdObject(json['callback_query_id']);
+    text = tryConvertToTdObject(json['text']);
+    showAlert = tryConvertToTdObject(json['show_alert']);
+    url = tryConvertToTdObject(json['url']);
+    cacheTime = tryConvertToTdObject(json['cache_time']);
+  }
 }
 
 @reflector
@@ -711,16 +900,17 @@ class AnswerShippingQuery extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "answerShippingQuery";
-  final int shippingQueryId;
-  final List<ShippingOption> shippingOptions;
-  final String errorMessage;
+  String get tdType => 'answerShippingQuery';
+
+  int shippingQueryId;
+  List<ShippingOption> shippingOptions;
+  String errorMessage;
 
   @override
   Map<String, dynamic> get params => {
-    "shipping_query_id": shippingQueryId,
-    "shipping_options": shippingOptions,
-    "error_message": errorMessage,
+    'shipping_query_id': shippingQueryId,
+    'shipping_options': shippingOptions,
+    'error_message': errorMessage,
   };
 
   AnswerShippingQuery(
@@ -728,6 +918,12 @@ class AnswerShippingQuery extends TdFunction {
     this.shippingOptions,
     this.errorMessage,
   );
+
+  AnswerShippingQuery.fromJson(Map<String, dynamic> json) {
+    shippingQueryId = tryConvertToTdObject(json['shipping_query_id']);
+    shippingOptions = tryConvertToTdObject(json['shipping_options']);
+    errorMessage = tryConvertToTdObject(json['error_message']);
+  }
 }
 
 @reflector
@@ -736,20 +932,26 @@ class AnswerPreCheckoutQuery extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "answerPreCheckoutQuery";
-  final int preCheckoutQueryId;
-  final String errorMessage;
+  String get tdType => 'answerPreCheckoutQuery';
+
+  int preCheckoutQueryId;
+  String errorMessage;
 
   @override
   Map<String, dynamic> get params => {
-    "pre_checkout_query_id": preCheckoutQueryId,
-    "error_message": errorMessage,
+    'pre_checkout_query_id': preCheckoutQueryId,
+    'error_message': errorMessage,
   };
 
   AnswerPreCheckoutQuery(
     this.preCheckoutQueryId,
     this.errorMessage,
   );
+
+  AnswerPreCheckoutQuery.fromJson(Map<String, dynamic> json) {
+    preCheckoutQueryId = tryConvertToTdObject(json['pre_checkout_query_id']);
+    errorMessage = tryConvertToTdObject(json['error_message']);
+  }
 }
 
 @reflector
@@ -758,20 +960,21 @@ class SetInlineGameScore extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "setInlineGameScore";
-  final String inlineMessageId;
-  final bool editMessage;
-  final int userId;
-  final int score;
-  final bool force;
+  String get tdType => 'setInlineGameScore';
+
+  String inlineMessageId;
+  bool editMessage;
+  int userId;
+  int score;
+  bool force;
 
   @override
   Map<String, dynamic> get params => {
-    "inline_message_id": inlineMessageId,
-    "edit_message": editMessage,
-    "user_id": userId,
-    "score": score,
-    "force": force,
+    'inline_message_id': inlineMessageId,
+    'edit_message': editMessage,
+    'user_id': userId,
+    'score': score,
+    'force': force,
   };
 
   SetInlineGameScore(
@@ -781,6 +984,14 @@ class SetInlineGameScore extends TdFunction {
     this.score,
     this.force,
   );
+
+  SetInlineGameScore.fromJson(Map<String, dynamic> json) {
+    inlineMessageId = tryConvertToTdObject(json['inline_message_id']);
+    editMessage = tryConvertToTdObject(json['edit_message']);
+    userId = tryConvertToTdObject(json['user_id']);
+    score = tryConvertToTdObject(json['score']);
+    force = tryConvertToTdObject(json['force']);
+  }
 }
 
 @reflector
@@ -789,20 +1000,26 @@ class DeleteChatReplyMarkup extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "deleteChatReplyMarkup";
-  final int chatId;
-  final int messageId;
+  String get tdType => 'deleteChatReplyMarkup';
+
+  int chatId;
+  int messageId;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "message_id": messageId,
+    'chat_id': chatId,
+    'message_id': messageId,
   };
 
   DeleteChatReplyMarkup(
     this.chatId,
     this.messageId,
   );
+
+  DeleteChatReplyMarkup.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    messageId = tryConvertToTdObject(json['message_id']);
+  }
 }
 
 @reflector
@@ -811,20 +1028,26 @@ class SendChatAction extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "sendChatAction";
-  final int chatId;
-  final ChatAction action;
+  String get tdType => 'sendChatAction';
+
+  int chatId;
+  ChatAction action;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "action": action,
+    'chat_id': chatId,
+    'action': action,
   };
 
   SendChatAction(
     this.chatId,
     this.action,
   );
+
+  SendChatAction.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    action = tryConvertToTdObject(json['action']);
+  }
 }
 
 @reflector
@@ -833,17 +1056,22 @@ class OpenChat extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "openChat";
-  final int chatId;
+  String get tdType => 'openChat';
+
+  int chatId;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
+    'chat_id': chatId,
   };
 
   OpenChat(
     this.chatId,
   );
+
+  OpenChat.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+  }
 }
 
 @reflector
@@ -852,17 +1080,22 @@ class CloseChat extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "closeChat";
-  final int chatId;
+  String get tdType => 'closeChat';
+
+  int chatId;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
+    'chat_id': chatId,
   };
 
   CloseChat(
     this.chatId,
   );
+
+  CloseChat.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+  }
 }
 
 @reflector
@@ -871,16 +1104,17 @@ class ViewMessages extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "viewMessages";
-  final int chatId;
-  final List<int> messageIds;
-  final bool forceRead;
+  String get tdType => 'viewMessages';
+
+  int chatId;
+  List<int> messageIds;
+  bool forceRead;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "message_ids": messageIds,
-    "force_read": forceRead,
+    'chat_id': chatId,
+    'message_ids': messageIds,
+    'force_read': forceRead,
   };
 
   ViewMessages(
@@ -888,6 +1122,12 @@ class ViewMessages extends TdFunction {
     this.messageIds,
     this.forceRead,
   );
+
+  ViewMessages.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    messageIds = tryConvertToTdObject(json['message_ids']);
+    forceRead = tryConvertToTdObject(json['force_read']);
+  }
 }
 
 @reflector
@@ -896,20 +1136,26 @@ class OpenMessageContent extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "openMessageContent";
-  final int chatId;
-  final int messageId;
+  String get tdType => 'openMessageContent';
+
+  int chatId;
+  int messageId;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "message_id": messageId,
+    'chat_id': chatId,
+    'message_id': messageId,
   };
 
   OpenMessageContent(
     this.chatId,
     this.messageId,
   );
+
+  OpenMessageContent.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    messageId = tryConvertToTdObject(json['message_id']);
+  }
 }
 
 @reflector
@@ -918,17 +1164,22 @@ class ReadAllChatMentions extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "readAllChatMentions";
-  final int chatId;
+  String get tdType => 'readAllChatMentions';
+
+  int chatId;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
+    'chat_id': chatId,
   };
 
   ReadAllChatMentions(
     this.chatId,
   );
+
+  ReadAllChatMentions.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+  }
 }
 
 @reflector
@@ -937,20 +1188,26 @@ class SetChatTitle extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "setChatTitle";
-  final int chatId;
-  final String title;
+  String get tdType => 'setChatTitle';
+
+  int chatId;
+  String title;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "title": title,
+    'chat_id': chatId,
+    'title': title,
   };
 
   SetChatTitle(
     this.chatId,
     this.title,
   );
+
+  SetChatTitle.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    title = tryConvertToTdObject(json['title']);
+  }
 }
 
 @reflector
@@ -959,20 +1216,26 @@ class SetChatPhoto extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "setChatPhoto";
-  final int chatId;
-  final InputFile photo;
+  String get tdType => 'setChatPhoto';
+
+  int chatId;
+  InputFile photo;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "photo": photo,
+    'chat_id': chatId,
+    'photo': photo,
   };
 
   SetChatPhoto(
     this.chatId,
     this.photo,
   );
+
+  SetChatPhoto.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    photo = tryConvertToTdObject(json['photo']);
+  }
 }
 
 @reflector
@@ -981,20 +1244,26 @@ class SetChatPermissions extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "setChatPermissions";
-  final int chatId;
-  final ChatPermissions permissions;
+  String get tdType => 'setChatPermissions';
+
+  int chatId;
+  ChatPermissions permissions;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "permissions": permissions,
+    'chat_id': chatId,
+    'permissions': permissions,
   };
 
   SetChatPermissions(
     this.chatId,
     this.permissions,
   );
+
+  SetChatPermissions.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    permissions = tryConvertToTdObject(json['permissions']);
+  }
 }
 
 @reflector
@@ -1003,20 +1272,26 @@ class SetChatDraftMessage extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "setChatDraftMessage";
-  final int chatId;
-  final DraftMessage draftMessage;
+  String get tdType => 'setChatDraftMessage';
+
+  int chatId;
+  DraftMessage draftMessage;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "draft_message": draftMessage,
+    'chat_id': chatId,
+    'draft_message': draftMessage,
   };
 
   SetChatDraftMessage(
     this.chatId,
     this.draftMessage,
   );
+
+  SetChatDraftMessage.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    draftMessage = tryConvertToTdObject(json['draft_message']);
+  }
 }
 
 @reflector
@@ -1025,20 +1300,26 @@ class SetChatNotificationSettings extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "setChatNotificationSettings";
-  final int chatId;
-  final ChatNotificationSettings notificationSettings;
+  String get tdType => 'setChatNotificationSettings';
+
+  int chatId;
+  ChatNotificationSettings notificationSettings;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "notification_settings": notificationSettings,
+    'chat_id': chatId,
+    'notification_settings': notificationSettings,
   };
 
   SetChatNotificationSettings(
     this.chatId,
     this.notificationSettings,
   );
+
+  SetChatNotificationSettings.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    notificationSettings = tryConvertToTdObject(json['notification_settings']);
+  }
 }
 
 @reflector
@@ -1047,20 +1328,26 @@ class ToggleChatIsPinned extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "toggleChatIsPinned";
-  final int chatId;
-  final bool isPinned;
+  String get tdType => 'toggleChatIsPinned';
+
+  int chatId;
+  bool isPinned;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "is_pinned": isPinned,
+    'chat_id': chatId,
+    'is_pinned': isPinned,
   };
 
   ToggleChatIsPinned(
     this.chatId,
     this.isPinned,
   );
+
+  ToggleChatIsPinned.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    isPinned = tryConvertToTdObject(json['is_pinned']);
+  }
 }
 
 @reflector
@@ -1069,20 +1356,26 @@ class ToggleChatIsMarkedAsUnread extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "toggleChatIsMarkedAsUnread";
-  final int chatId;
-  final bool isMarkedAsUnread;
+  String get tdType => 'toggleChatIsMarkedAsUnread';
+
+  int chatId;
+  bool isMarkedAsUnread;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "is_marked_as_unread": isMarkedAsUnread,
+    'chat_id': chatId,
+    'is_marked_as_unread': isMarkedAsUnread,
   };
 
   ToggleChatIsMarkedAsUnread(
     this.chatId,
     this.isMarkedAsUnread,
   );
+
+  ToggleChatIsMarkedAsUnread.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    isMarkedAsUnread = tryConvertToTdObject(json['is_marked_as_unread']);
+  }
 }
 
 @reflector
@@ -1091,20 +1384,26 @@ class ToggleChatDefaultDisableNotification extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "toggleChatDefaultDisableNotification";
-  final int chatId;
-  final bool defaultDisableNotification;
+  String get tdType => 'toggleChatDefaultDisableNotification';
+
+  int chatId;
+  bool defaultDisableNotification;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "default_disable_notification": defaultDisableNotification,
+    'chat_id': chatId,
+    'default_disable_notification': defaultDisableNotification,
   };
 
   ToggleChatDefaultDisableNotification(
     this.chatId,
     this.defaultDisableNotification,
   );
+
+  ToggleChatDefaultDisableNotification.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    defaultDisableNotification = tryConvertToTdObject(json['default_disable_notification']);
+  }
 }
 
 @reflector
@@ -1113,20 +1412,26 @@ class SetChatClientData extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "setChatClientData";
-  final int chatId;
-  final String clientData;
+  String get tdType => 'setChatClientData';
+
+  int chatId;
+  String clientData;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "client_data": clientData,
+    'chat_id': chatId,
+    'client_data': clientData,
   };
 
   SetChatClientData(
     this.chatId,
     this.clientData,
   );
+
+  SetChatClientData.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    clientData = tryConvertToTdObject(json['client_data']);
+  }
 }
 
 @reflector
@@ -1135,20 +1440,26 @@ class SetChatDescription extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "setChatDescription";
-  final int chatId;
-  final String description;
+  String get tdType => 'setChatDescription';
+
+  int chatId;
+  String description;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "description": description,
+    'chat_id': chatId,
+    'description': description,
   };
 
   SetChatDescription(
     this.chatId,
     this.description,
   );
+
+  SetChatDescription.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    description = tryConvertToTdObject(json['description']);
+  }
 }
 
 @reflector
@@ -1157,16 +1468,17 @@ class PinChatMessage extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "pinChatMessage";
-  final int chatId;
-  final int messageId;
-  final bool disableNotification;
+  String get tdType => 'pinChatMessage';
+
+  int chatId;
+  int messageId;
+  bool disableNotification;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "message_id": messageId,
-    "disable_notification": disableNotification,
+    'chat_id': chatId,
+    'message_id': messageId,
+    'disable_notification': disableNotification,
   };
 
   PinChatMessage(
@@ -1174,6 +1486,12 @@ class PinChatMessage extends TdFunction {
     this.messageId,
     this.disableNotification,
   );
+
+  PinChatMessage.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    messageId = tryConvertToTdObject(json['message_id']);
+    disableNotification = tryConvertToTdObject(json['disable_notification']);
+  }
 }
 
 @reflector
@@ -1182,17 +1500,22 @@ class UnpinChatMessage extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "unpinChatMessage";
-  final int chatId;
+  String get tdType => 'unpinChatMessage';
+
+  int chatId;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
+    'chat_id': chatId,
   };
 
   UnpinChatMessage(
     this.chatId,
   );
+
+  UnpinChatMessage.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+  }
 }
 
 @reflector
@@ -1201,17 +1524,22 @@ class JoinChat extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "joinChat";
-  final int chatId;
+  String get tdType => 'joinChat';
+
+  int chatId;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
+    'chat_id': chatId,
   };
 
   JoinChat(
     this.chatId,
   );
+
+  JoinChat.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+  }
 }
 
 @reflector
@@ -1220,17 +1548,22 @@ class LeaveChat extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "leaveChat";
-  final int chatId;
+  String get tdType => 'leaveChat';
+
+  int chatId;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
+    'chat_id': chatId,
   };
 
   LeaveChat(
     this.chatId,
   );
+
+  LeaveChat.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+  }
 }
 
 @reflector
@@ -1239,16 +1572,17 @@ class AddChatMember extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "addChatMember";
-  final int chatId;
-  final int userId;
-  final int forwardLimit;
+  String get tdType => 'addChatMember';
+
+  int chatId;
+  int userId;
+  int forwardLimit;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "user_id": userId,
-    "forward_limit": forwardLimit,
+    'chat_id': chatId,
+    'user_id': userId,
+    'forward_limit': forwardLimit,
   };
 
   AddChatMember(
@@ -1256,6 +1590,12 @@ class AddChatMember extends TdFunction {
     this.userId,
     this.forwardLimit,
   );
+
+  AddChatMember.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    userId = tryConvertToTdObject(json['user_id']);
+    forwardLimit = tryConvertToTdObject(json['forward_limit']);
+  }
 }
 
 @reflector
@@ -1264,20 +1604,26 @@ class AddChatMembers extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "addChatMembers";
-  final int chatId;
-  final List<int> userIds;
+  String get tdType => 'addChatMembers';
+
+  int chatId;
+  List<int> userIds;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "user_ids": userIds,
+    'chat_id': chatId,
+    'user_ids': userIds,
   };
 
   AddChatMembers(
     this.chatId,
     this.userIds,
   );
+
+  AddChatMembers.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    userIds = tryConvertToTdObject(json['user_ids']);
+  }
 }
 
 @reflector
@@ -1286,16 +1632,17 @@ class SetChatMemberStatus extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "setChatMemberStatus";
-  final int chatId;
-  final int userId;
-  final ChatMemberStatus status;
+  String get tdType => 'setChatMemberStatus';
+
+  int chatId;
+  int userId;
+  ChatMemberStatus status;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "user_id": userId,
-    "status": status,
+    'chat_id': chatId,
+    'user_id': userId,
+    'status': status,
   };
 
   SetChatMemberStatus(
@@ -1303,6 +1650,12 @@ class SetChatMemberStatus extends TdFunction {
     this.userId,
     this.status,
   );
+
+  SetChatMemberStatus.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    userId = tryConvertToTdObject(json['user_id']);
+    status = tryConvertToTdObject(json['status']);
+  }
 }
 
 @reflector
@@ -1311,17 +1664,22 @@ class ClearAllDraftMessages extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "clearAllDraftMessages";
-  final bool excludeSecretChats;
+  String get tdType => 'clearAllDraftMessages';
+
+  bool excludeSecretChats;
 
   @override
   Map<String, dynamic> get params => {
-    "exclude_secret_chats": excludeSecretChats,
+    'exclude_secret_chats': excludeSecretChats,
   };
 
   ClearAllDraftMessages(
     this.excludeSecretChats,
   );
+
+  ClearAllDraftMessages.fromJson(Map<String, dynamic> json) {
+    excludeSecretChats = tryConvertToTdObject(json['exclude_secret_chats']);
+  }
 }
 
 @reflector
@@ -1330,20 +1688,26 @@ class SetScopeNotificationSettings extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "setScopeNotificationSettings";
-  final NotificationSettingsScope scope;
-  final ScopeNotificationSettings notificationSettings;
+  String get tdType => 'setScopeNotificationSettings';
+
+  NotificationSettingsScope scope;
+  ScopeNotificationSettings notificationSettings;
 
   @override
   Map<String, dynamic> get params => {
-    "scope": scope,
-    "notification_settings": notificationSettings,
+    'scope': scope,
+    'notification_settings': notificationSettings,
   };
 
   SetScopeNotificationSettings(
     this.scope,
     this.notificationSettings,
   );
+
+  SetScopeNotificationSettings.fromJson(Map<String, dynamic> json) {
+    scope = tryConvertToTdObject(json['scope']);
+    notificationSettings = tryConvertToTdObject(json['notification_settings']);
+  }
 }
 
 @reflector
@@ -1352,11 +1716,14 @@ class ResetAllNotificationSettings extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "resetAllNotificationSettings";
+  String get tdType => 'resetAllNotificationSettings';
+
   @override
   Map<String, dynamic> get params => {};
 
   ResetAllNotificationSettings();
+
+  ResetAllNotificationSettings.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -1365,17 +1732,22 @@ class SetPinnedChats extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "setPinnedChats";
-  final List<int> chatIds;
+  String get tdType => 'setPinnedChats';
+
+  List<int> chatIds;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_ids": chatIds,
+    'chat_ids': chatIds,
   };
 
   SetPinnedChats(
     this.chatIds,
   );
+
+  SetPinnedChats.fromJson(Map<String, dynamic> json) {
+    chatIds = tryConvertToTdObject(json['chat_ids']);
+  }
 }
 
 @reflector
@@ -1384,20 +1756,26 @@ class CancelDownloadFile extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "cancelDownloadFile";
-  final int fileId;
-  final bool onlyIfPending;
+  String get tdType => 'cancelDownloadFile';
+
+  int fileId;
+  bool onlyIfPending;
 
   @override
   Map<String, dynamic> get params => {
-    "file_id": fileId,
-    "only_if_pending": onlyIfPending,
+    'file_id': fileId,
+    'only_if_pending': onlyIfPending,
   };
 
   CancelDownloadFile(
     this.fileId,
     this.onlyIfPending,
   );
+
+  CancelDownloadFile.fromJson(Map<String, dynamic> json) {
+    fileId = tryConvertToTdObject(json['file_id']);
+    onlyIfPending = tryConvertToTdObject(json['only_if_pending']);
+  }
 }
 
 @reflector
@@ -1406,17 +1784,22 @@ class CancelUploadFile extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "cancelUploadFile";
-  final int fileId;
+  String get tdType => 'cancelUploadFile';
+
+  int fileId;
 
   @override
   Map<String, dynamic> get params => {
-    "file_id": fileId,
+    'file_id': fileId,
   };
 
   CancelUploadFile(
     this.fileId,
   );
+
+  CancelUploadFile.fromJson(Map<String, dynamic> json) {
+    fileId = tryConvertToTdObject(json['file_id']);
+  }
 }
 
 @reflector
@@ -1425,16 +1808,17 @@ class WriteGeneratedFilePart extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "writeGeneratedFilePart";
-  final int generationId;
-  final int offset;
-  final String data;
+  String get tdType => 'writeGeneratedFilePart';
+
+  int generationId;
+  int offset;
+  String data;
 
   @override
   Map<String, dynamic> get params => {
-    "generation_id": generationId,
-    "offset": offset,
-    "data": data,
+    'generation_id': generationId,
+    'offset': offset,
+    'data': data,
   };
 
   WriteGeneratedFilePart(
@@ -1442,6 +1826,12 @@ class WriteGeneratedFilePart extends TdFunction {
     this.offset,
     this.data,
   );
+
+  WriteGeneratedFilePart.fromJson(Map<String, dynamic> json) {
+    generationId = tryConvertToTdObject(json['generation_id']);
+    offset = tryConvertToTdObject(json['offset']);
+    data = tryConvertToTdObject(json['data']);
+  }
 }
 
 @reflector
@@ -1450,16 +1840,17 @@ class SetFileGenerationProgress extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "setFileGenerationProgress";
-  final int generationId;
-  final int expectedSize;
-  final int localPrefixSize;
+  String get tdType => 'setFileGenerationProgress';
+
+  int generationId;
+  int expectedSize;
+  int localPrefixSize;
 
   @override
   Map<String, dynamic> get params => {
-    "generation_id": generationId,
-    "expected_size": expectedSize,
-    "local_prefix_size": localPrefixSize,
+    'generation_id': generationId,
+    'expected_size': expectedSize,
+    'local_prefix_size': localPrefixSize,
   };
 
   SetFileGenerationProgress(
@@ -1467,6 +1858,12 @@ class SetFileGenerationProgress extends TdFunction {
     this.expectedSize,
     this.localPrefixSize,
   );
+
+  SetFileGenerationProgress.fromJson(Map<String, dynamic> json) {
+    generationId = tryConvertToTdObject(json['generation_id']);
+    expectedSize = tryConvertToTdObject(json['expected_size']);
+    localPrefixSize = tryConvertToTdObject(json['local_prefix_size']);
+  }
 }
 
 @reflector
@@ -1475,20 +1872,26 @@ class FinishFileGeneration extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "finishFileGeneration";
-  final int generationId;
-  final Error error;
+  String get tdType => 'finishFileGeneration';
+
+  int generationId;
+  Error error;
 
   @override
   Map<String, dynamic> get params => {
-    "generation_id": generationId,
-    "error": error,
+    'generation_id': generationId,
+    'error': error,
   };
 
   FinishFileGeneration(
     this.generationId,
     this.error,
   );
+
+  FinishFileGeneration.fromJson(Map<String, dynamic> json) {
+    generationId = tryConvertToTdObject(json['generation_id']);
+    error = tryConvertToTdObject(json['error']);
+  }
 }
 
 @reflector
@@ -1497,17 +1900,22 @@ class DeleteFile extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "deleteFile";
-  final int fileId;
+  String get tdType => 'deleteFile';
+
+  int fileId;
 
   @override
   Map<String, dynamic> get params => {
-    "file_id": fileId,
+    'file_id': fileId,
   };
 
   DeleteFile(
     this.fileId,
   );
+
+  DeleteFile.fromJson(Map<String, dynamic> json) {
+    fileId = tryConvertToTdObject(json['file_id']);
+  }
 }
 
 @reflector
@@ -1516,20 +1924,26 @@ class AcceptCall extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "acceptCall";
-  final int callId;
-  final CallProtocol protocol;
+  String get tdType => 'acceptCall';
+
+  int callId;
+  CallProtocol protocol;
 
   @override
   Map<String, dynamic> get params => {
-    "call_id": callId,
-    "protocol": protocol,
+    'call_id': callId,
+    'protocol': protocol,
   };
 
   AcceptCall(
     this.callId,
     this.protocol,
   );
+
+  AcceptCall.fromJson(Map<String, dynamic> json) {
+    callId = tryConvertToTdObject(json['call_id']);
+    protocol = tryConvertToTdObject(json['protocol']);
+  }
 }
 
 @reflector
@@ -1538,18 +1952,19 @@ class DiscardCall extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "discardCall";
-  final int callId;
-  final bool isDisconnected;
-  final int duration;
-  final int connectionId;
+  String get tdType => 'discardCall';
+
+  int callId;
+  bool isDisconnected;
+  int duration;
+  int connectionId;
 
   @override
   Map<String, dynamic> get params => {
-    "call_id": callId,
-    "is_disconnected": isDisconnected,
-    "duration": duration,
-    "connection_id": connectionId,
+    'call_id': callId,
+    'is_disconnected': isDisconnected,
+    'duration': duration,
+    'connection_id': connectionId,
   };
 
   DiscardCall(
@@ -1558,6 +1973,13 @@ class DiscardCall extends TdFunction {
     this.duration,
     this.connectionId,
   );
+
+  DiscardCall.fromJson(Map<String, dynamic> json) {
+    callId = tryConvertToTdObject(json['call_id']);
+    isDisconnected = tryConvertToTdObject(json['is_disconnected']);
+    duration = tryConvertToTdObject(json['duration']);
+    connectionId = tryConvertToTdObject(json['connection_id']);
+  }
 }
 
 @reflector
@@ -1566,18 +1988,19 @@ class SendCallRating extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "sendCallRating";
-  final int callId;
-  final int rating;
-  final String comment;
-  final List<CallProblem> problems;
+  String get tdType => 'sendCallRating';
+
+  int callId;
+  int rating;
+  String comment;
+  List<CallProblem> problems;
 
   @override
   Map<String, dynamic> get params => {
-    "call_id": callId,
-    "rating": rating,
-    "comment": comment,
-    "problems": problems,
+    'call_id': callId,
+    'rating': rating,
+    'comment': comment,
+    'problems': problems,
   };
 
   SendCallRating(
@@ -1586,6 +2009,13 @@ class SendCallRating extends TdFunction {
     this.comment,
     this.problems,
   );
+
+  SendCallRating.fromJson(Map<String, dynamic> json) {
+    callId = tryConvertToTdObject(json['call_id']);
+    rating = tryConvertToTdObject(json['rating']);
+    comment = tryConvertToTdObject(json['comment']);
+    problems = tryConvertToTdObject(json['problems']);
+  }
 }
 
 @reflector
@@ -1594,20 +2024,26 @@ class SendCallDebugInformation extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "sendCallDebugInformation";
-  final int callId;
-  final String debugInformation;
+  String get tdType => 'sendCallDebugInformation';
+
+  int callId;
+  String debugInformation;
 
   @override
   Map<String, dynamic> get params => {
-    "call_id": callId,
-    "debug_information": debugInformation,
+    'call_id': callId,
+    'debug_information': debugInformation,
   };
 
   SendCallDebugInformation(
     this.callId,
     this.debugInformation,
   );
+
+  SendCallDebugInformation.fromJson(Map<String, dynamic> json) {
+    callId = tryConvertToTdObject(json['call_id']);
+    debugInformation = tryConvertToTdObject(json['debug_information']);
+  }
 }
 
 @reflector
@@ -1616,17 +2052,22 @@ class BlockUser extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "blockUser";
-  final int userId;
+  String get tdType => 'blockUser';
+
+  int userId;
 
   @override
   Map<String, dynamic> get params => {
-    "user_id": userId,
+    'user_id': userId,
   };
 
   BlockUser(
     this.userId,
   );
+
+  BlockUser.fromJson(Map<String, dynamic> json) {
+    userId = tryConvertToTdObject(json['user_id']);
+  }
 }
 
 @reflector
@@ -1635,17 +2076,22 @@ class UnblockUser extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "unblockUser";
-  final int userId;
+  String get tdType => 'unblockUser';
+
+  int userId;
 
   @override
   Map<String, dynamic> get params => {
-    "user_id": userId,
+    'user_id': userId,
   };
 
   UnblockUser(
     this.userId,
   );
+
+  UnblockUser.fromJson(Map<String, dynamic> json) {
+    userId = tryConvertToTdObject(json['user_id']);
+  }
 }
 
 @reflector
@@ -1654,17 +2100,22 @@ class RemoveContacts extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "removeContacts";
-  final List<int> userIds;
+  String get tdType => 'removeContacts';
+
+  List<int> userIds;
 
   @override
   Map<String, dynamic> get params => {
-    "user_ids": userIds,
+    'user_ids': userIds,
   };
 
   RemoveContacts(
     this.userIds,
   );
+
+  RemoveContacts.fromJson(Map<String, dynamic> json) {
+    userIds = tryConvertToTdObject(json['user_ids']);
+  }
 }
 
 @reflector
@@ -1673,11 +2124,14 @@ class ClearImportedContacts extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "clearImportedContacts";
+  String get tdType => 'clearImportedContacts';
+
   @override
   Map<String, dynamic> get params => {};
 
   ClearImportedContacts();
+
+  ClearImportedContacts.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -1686,16 +2140,17 @@ class ChangeStickerSet extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "changeStickerSet";
-  final int setId;
-  final bool isInstalled;
-  final bool isArchived;
+  String get tdType => 'changeStickerSet';
+
+  int setId;
+  bool isInstalled;
+  bool isArchived;
 
   @override
   Map<String, dynamic> get params => {
-    "set_id": setId,
-    "is_installed": isInstalled,
-    "is_archived": isArchived,
+    'set_id': setId,
+    'is_installed': isInstalled,
+    'is_archived': isArchived,
   };
 
   ChangeStickerSet(
@@ -1703,6 +2158,12 @@ class ChangeStickerSet extends TdFunction {
     this.isInstalled,
     this.isArchived,
   );
+
+  ChangeStickerSet.fromJson(Map<String, dynamic> json) {
+    setId = tryConvertToTdObject(json['set_id']);
+    isInstalled = tryConvertToTdObject(json['is_installed']);
+    isArchived = tryConvertToTdObject(json['is_archived']);
+  }
 }
 
 @reflector
@@ -1711,17 +2172,22 @@ class ViewTrendingStickerSets extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "viewTrendingStickerSets";
-  final List<int> stickerSetIds;
+  String get tdType => 'viewTrendingStickerSets';
+
+  List<int> stickerSetIds;
 
   @override
   Map<String, dynamic> get params => {
-    "sticker_set_ids": stickerSetIds,
+    'sticker_set_ids': stickerSetIds,
   };
 
   ViewTrendingStickerSets(
     this.stickerSetIds,
   );
+
+  ViewTrendingStickerSets.fromJson(Map<String, dynamic> json) {
+    stickerSetIds = tryConvertToTdObject(json['sticker_set_ids']);
+  }
 }
 
 @reflector
@@ -1730,20 +2196,26 @@ class ReorderInstalledStickerSets extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "reorderInstalledStickerSets";
-  final bool isMasks;
-  final List<int> stickerSetIds;
+  String get tdType => 'reorderInstalledStickerSets';
+
+  bool isMasks;
+  List<int> stickerSetIds;
 
   @override
   Map<String, dynamic> get params => {
-    "is_masks": isMasks,
-    "sticker_set_ids": stickerSetIds,
+    'is_masks': isMasks,
+    'sticker_set_ids': stickerSetIds,
   };
 
   ReorderInstalledStickerSets(
     this.isMasks,
     this.stickerSetIds,
   );
+
+  ReorderInstalledStickerSets.fromJson(Map<String, dynamic> json) {
+    isMasks = tryConvertToTdObject(json['is_masks']);
+    stickerSetIds = tryConvertToTdObject(json['sticker_set_ids']);
+  }
 }
 
 @reflector
@@ -1752,20 +2224,26 @@ class RemoveRecentSticker extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "removeRecentSticker";
-  final bool isAttached;
-  final InputFile sticker;
+  String get tdType => 'removeRecentSticker';
+
+  bool isAttached;
+  InputFile sticker;
 
   @override
   Map<String, dynamic> get params => {
-    "is_attached": isAttached,
-    "sticker": sticker,
+    'is_attached': isAttached,
+    'sticker': sticker,
   };
 
   RemoveRecentSticker(
     this.isAttached,
     this.sticker,
   );
+
+  RemoveRecentSticker.fromJson(Map<String, dynamic> json) {
+    isAttached = tryConvertToTdObject(json['is_attached']);
+    sticker = tryConvertToTdObject(json['sticker']);
+  }
 }
 
 @reflector
@@ -1774,17 +2252,22 @@ class ClearRecentStickers extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "clearRecentStickers";
-  final bool isAttached;
+  String get tdType => 'clearRecentStickers';
+
+  bool isAttached;
 
   @override
   Map<String, dynamic> get params => {
-    "is_attached": isAttached,
+    'is_attached': isAttached,
   };
 
   ClearRecentStickers(
     this.isAttached,
   );
+
+  ClearRecentStickers.fromJson(Map<String, dynamic> json) {
+    isAttached = tryConvertToTdObject(json['is_attached']);
+  }
 }
 
 @reflector
@@ -1793,17 +2276,22 @@ class AddFavoriteSticker extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "addFavoriteSticker";
-  final InputFile sticker;
+  String get tdType => 'addFavoriteSticker';
+
+  InputFile sticker;
 
   @override
   Map<String, dynamic> get params => {
-    "sticker": sticker,
+    'sticker': sticker,
   };
 
   AddFavoriteSticker(
     this.sticker,
   );
+
+  AddFavoriteSticker.fromJson(Map<String, dynamic> json) {
+    sticker = tryConvertToTdObject(json['sticker']);
+  }
 }
 
 @reflector
@@ -1812,17 +2300,22 @@ class RemoveFavoriteSticker extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "removeFavoriteSticker";
-  final InputFile sticker;
+  String get tdType => 'removeFavoriteSticker';
+
+  InputFile sticker;
 
   @override
   Map<String, dynamic> get params => {
-    "sticker": sticker,
+    'sticker': sticker,
   };
 
   RemoveFavoriteSticker(
     this.sticker,
   );
+
+  RemoveFavoriteSticker.fromJson(Map<String, dynamic> json) {
+    sticker = tryConvertToTdObject(json['sticker']);
+  }
 }
 
 @reflector
@@ -1831,17 +2324,22 @@ class AddSavedAnimation extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "addSavedAnimation";
-  final InputFile animation;
+  String get tdType => 'addSavedAnimation';
+
+  InputFile animation;
 
   @override
   Map<String, dynamic> get params => {
-    "animation": animation,
+    'animation': animation,
   };
 
   AddSavedAnimation(
     this.animation,
   );
+
+  AddSavedAnimation.fromJson(Map<String, dynamic> json) {
+    animation = tryConvertToTdObject(json['animation']);
+  }
 }
 
 @reflector
@@ -1850,17 +2348,22 @@ class RemoveSavedAnimation extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "removeSavedAnimation";
-  final InputFile animation;
+  String get tdType => 'removeSavedAnimation';
+
+  InputFile animation;
 
   @override
   Map<String, dynamic> get params => {
-    "animation": animation,
+    'animation': animation,
   };
 
   RemoveSavedAnimation(
     this.animation,
   );
+
+  RemoveSavedAnimation.fromJson(Map<String, dynamic> json) {
+    animation = tryConvertToTdObject(json['animation']);
+  }
 }
 
 @reflector
@@ -1869,17 +2372,22 @@ class RemoveRecentHashtag extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "removeRecentHashtag";
-  final String hashtag;
+  String get tdType => 'removeRecentHashtag';
+
+  String hashtag;
 
   @override
   Map<String, dynamic> get params => {
-    "hashtag": hashtag,
+    'hashtag': hashtag,
   };
 
   RemoveRecentHashtag(
     this.hashtag,
   );
+
+  RemoveRecentHashtag.fromJson(Map<String, dynamic> json) {
+    hashtag = tryConvertToTdObject(json['hashtag']);
+  }
 }
 
 @reflector
@@ -1888,17 +2396,22 @@ class SetProfilePhoto extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "setProfilePhoto";
-  final InputFile photo;
+  String get tdType => 'setProfilePhoto';
+
+  InputFile photo;
 
   @override
   Map<String, dynamic> get params => {
-    "photo": photo,
+    'photo': photo,
   };
 
   SetProfilePhoto(
     this.photo,
   );
+
+  SetProfilePhoto.fromJson(Map<String, dynamic> json) {
+    photo = tryConvertToTdObject(json['photo']);
+  }
 }
 
 @reflector
@@ -1907,17 +2420,22 @@ class DeleteProfilePhoto extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "deleteProfilePhoto";
-  final int profilePhotoId;
+  String get tdType => 'deleteProfilePhoto';
+
+  int profilePhotoId;
 
   @override
   Map<String, dynamic> get params => {
-    "profile_photo_id": profilePhotoId,
+    'profile_photo_id': profilePhotoId,
   };
 
   DeleteProfilePhoto(
     this.profilePhotoId,
   );
+
+  DeleteProfilePhoto.fromJson(Map<String, dynamic> json) {
+    profilePhotoId = tryConvertToTdObject(json['profile_photo_id']);
+  }
 }
 
 @reflector
@@ -1926,20 +2444,26 @@ class SetName extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "setName";
-  final String firstName;
-  final String lastName;
+  String get tdType => 'setName';
+
+  String firstName;
+  String lastName;
 
   @override
   Map<String, dynamic> get params => {
-    "first_name": firstName,
-    "last_name": lastName,
+    'first_name': firstName,
+    'last_name': lastName,
   };
 
   SetName(
     this.firstName,
     this.lastName,
   );
+
+  SetName.fromJson(Map<String, dynamic> json) {
+    firstName = tryConvertToTdObject(json['first_name']);
+    lastName = tryConvertToTdObject(json['last_name']);
+  }
 }
 
 @reflector
@@ -1948,17 +2472,22 @@ class SetBio extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "setBio";
-  final String bio;
+  String get tdType => 'setBio';
+
+  String bio;
 
   @override
   Map<String, dynamic> get params => {
-    "bio": bio,
+    'bio': bio,
   };
 
   SetBio(
     this.bio,
   );
+
+  SetBio.fromJson(Map<String, dynamic> json) {
+    bio = tryConvertToTdObject(json['bio']);
+  }
 }
 
 @reflector
@@ -1967,17 +2496,22 @@ class SetUsername extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "setUsername";
-  final String username;
+  String get tdType => 'setUsername';
+
+  String username;
 
   @override
   Map<String, dynamic> get params => {
-    "username": username,
+    'username': username,
   };
 
   SetUsername(
     this.username,
   );
+
+  SetUsername.fromJson(Map<String, dynamic> json) {
+    username = tryConvertToTdObject(json['username']);
+  }
 }
 
 @reflector
@@ -1986,17 +2520,22 @@ class CheckChangePhoneNumberCode extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "checkChangePhoneNumberCode";
-  final String code;
+  String get tdType => 'checkChangePhoneNumberCode';
+
+  String code;
 
   @override
   Map<String, dynamic> get params => {
-    "code": code,
+    'code': code,
   };
 
   CheckChangePhoneNumberCode(
     this.code,
   );
+
+  CheckChangePhoneNumberCode.fromJson(Map<String, dynamic> json) {
+    code = tryConvertToTdObject(json['code']);
+  }
 }
 
 @reflector
@@ -2005,17 +2544,22 @@ class TerminateSession extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "terminateSession";
-  final int sessionId;
+  String get tdType => 'terminateSession';
+
+  int sessionId;
 
   @override
   Map<String, dynamic> get params => {
-    "session_id": sessionId,
+    'session_id': sessionId,
   };
 
   TerminateSession(
     this.sessionId,
   );
+
+  TerminateSession.fromJson(Map<String, dynamic> json) {
+    sessionId = tryConvertToTdObject(json['session_id']);
+  }
 }
 
 @reflector
@@ -2024,11 +2568,14 @@ class TerminateAllOtherSessions extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "terminateAllOtherSessions";
+  String get tdType => 'terminateAllOtherSessions';
+
   @override
   Map<String, dynamic> get params => {};
 
   TerminateAllOtherSessions();
+
+  TerminateAllOtherSessions.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -2037,17 +2584,22 @@ class DisconnectWebsite extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "disconnectWebsite";
-  final int websiteId;
+  String get tdType => 'disconnectWebsite';
+
+  int websiteId;
 
   @override
   Map<String, dynamic> get params => {
-    "website_id": websiteId,
+    'website_id': websiteId,
   };
 
   DisconnectWebsite(
     this.websiteId,
   );
+
+  DisconnectWebsite.fromJson(Map<String, dynamic> json) {
+    websiteId = tryConvertToTdObject(json['website_id']);
+  }
 }
 
 @reflector
@@ -2056,11 +2608,14 @@ class DisconnectAllWebsites extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "disconnectAllWebsites";
+  String get tdType => 'disconnectAllWebsites';
+
   @override
   Map<String, dynamic> get params => {};
 
   DisconnectAllWebsites();
+
+  DisconnectAllWebsites.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -2069,20 +2624,26 @@ class SetSupergroupUsername extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "setSupergroupUsername";
-  final int supergroupId;
-  final String username;
+  String get tdType => 'setSupergroupUsername';
+
+  int supergroupId;
+  String username;
 
   @override
   Map<String, dynamic> get params => {
-    "supergroup_id": supergroupId,
-    "username": username,
+    'supergroup_id': supergroupId,
+    'username': username,
   };
 
   SetSupergroupUsername(
     this.supergroupId,
     this.username,
   );
+
+  SetSupergroupUsername.fromJson(Map<String, dynamic> json) {
+    supergroupId = tryConvertToTdObject(json['supergroup_id']);
+    username = tryConvertToTdObject(json['username']);
+  }
 }
 
 @reflector
@@ -2091,20 +2652,26 @@ class SetSupergroupStickerSet extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "setSupergroupStickerSet";
-  final int supergroupId;
-  final int stickerSetId;
+  String get tdType => 'setSupergroupStickerSet';
+
+  int supergroupId;
+  int stickerSetId;
 
   @override
   Map<String, dynamic> get params => {
-    "supergroup_id": supergroupId,
-    "sticker_set_id": stickerSetId,
+    'supergroup_id': supergroupId,
+    'sticker_set_id': stickerSetId,
   };
 
   SetSupergroupStickerSet(
     this.supergroupId,
     this.stickerSetId,
   );
+
+  SetSupergroupStickerSet.fromJson(Map<String, dynamic> json) {
+    supergroupId = tryConvertToTdObject(json['supergroup_id']);
+    stickerSetId = tryConvertToTdObject(json['sticker_set_id']);
+  }
 }
 
 @reflector
@@ -2113,20 +2680,26 @@ class ToggleSupergroupSignMessages extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "toggleSupergroupSignMessages";
-  final int supergroupId;
-  final bool signMessages;
+  String get tdType => 'toggleSupergroupSignMessages';
+
+  int supergroupId;
+  bool signMessages;
 
   @override
   Map<String, dynamic> get params => {
-    "supergroup_id": supergroupId,
-    "sign_messages": signMessages,
+    'supergroup_id': supergroupId,
+    'sign_messages': signMessages,
   };
 
   ToggleSupergroupSignMessages(
     this.supergroupId,
     this.signMessages,
   );
+
+  ToggleSupergroupSignMessages.fromJson(Map<String, dynamic> json) {
+    supergroupId = tryConvertToTdObject(json['supergroup_id']);
+    signMessages = tryConvertToTdObject(json['sign_messages']);
+  }
 }
 
 @reflector
@@ -2135,20 +2708,26 @@ class ToggleSupergroupIsAllHistoryAvailable extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "toggleSupergroupIsAllHistoryAvailable";
-  final int supergroupId;
-  final bool isAllHistoryAvailable;
+  String get tdType => 'toggleSupergroupIsAllHistoryAvailable';
+
+  int supergroupId;
+  bool isAllHistoryAvailable;
 
   @override
   Map<String, dynamic> get params => {
-    "supergroup_id": supergroupId,
-    "is_all_history_available": isAllHistoryAvailable,
+    'supergroup_id': supergroupId,
+    'is_all_history_available': isAllHistoryAvailable,
   };
 
   ToggleSupergroupIsAllHistoryAvailable(
     this.supergroupId,
     this.isAllHistoryAvailable,
   );
+
+  ToggleSupergroupIsAllHistoryAvailable.fromJson(Map<String, dynamic> json) {
+    supergroupId = tryConvertToTdObject(json['supergroup_id']);
+    isAllHistoryAvailable = tryConvertToTdObject(json['is_all_history_available']);
+  }
 }
 
 @reflector
@@ -2157,16 +2736,17 @@ class ReportSupergroupSpam extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "reportSupergroupSpam";
-  final int supergroupId;
-  final int userId;
-  final List<int> messageIds;
+  String get tdType => 'reportSupergroupSpam';
+
+  int supergroupId;
+  int userId;
+  List<int> messageIds;
 
   @override
   Map<String, dynamic> get params => {
-    "supergroup_id": supergroupId,
-    "user_id": userId,
-    "message_ids": messageIds,
+    'supergroup_id': supergroupId,
+    'user_id': userId,
+    'message_ids': messageIds,
   };
 
   ReportSupergroupSpam(
@@ -2174,6 +2754,12 @@ class ReportSupergroupSpam extends TdFunction {
     this.userId,
     this.messageIds,
   );
+
+  ReportSupergroupSpam.fromJson(Map<String, dynamic> json) {
+    supergroupId = tryConvertToTdObject(json['supergroup_id']);
+    userId = tryConvertToTdObject(json['user_id']);
+    messageIds = tryConvertToTdObject(json['message_ids']);
+  }
 }
 
 @reflector
@@ -2182,17 +2768,22 @@ class DeleteSupergroup extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "deleteSupergroup";
-  final int supergroupId;
+  String get tdType => 'deleteSupergroup';
+
+  int supergroupId;
 
   @override
   Map<String, dynamic> get params => {
-    "supergroup_id": supergroupId,
+    'supergroup_id': supergroupId,
   };
 
   DeleteSupergroup(
     this.supergroupId,
   );
+
+  DeleteSupergroup.fromJson(Map<String, dynamic> json) {
+    supergroupId = tryConvertToTdObject(json['supergroup_id']);
+  }
 }
 
 @reflector
@@ -2201,17 +2792,22 @@ class CloseSecretChat extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "closeSecretChat";
-  final int secretChatId;
+  String get tdType => 'closeSecretChat';
+
+  int secretChatId;
 
   @override
   Map<String, dynamic> get params => {
-    "secret_chat_id": secretChatId,
+    'secret_chat_id': secretChatId,
   };
 
   CloseSecretChat(
     this.secretChatId,
   );
+
+  CloseSecretChat.fromJson(Map<String, dynamic> json) {
+    secretChatId = tryConvertToTdObject(json['secret_chat_id']);
+  }
 }
 
 @reflector
@@ -2220,11 +2816,14 @@ class DeleteSavedOrderInfo extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "deleteSavedOrderInfo";
+  String get tdType => 'deleteSavedOrderInfo';
+
   @override
   Map<String, dynamic> get params => {};
 
   DeleteSavedOrderInfo();
+
+  DeleteSavedOrderInfo.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -2233,11 +2832,14 @@ class DeleteSavedCredentials extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "deleteSavedCredentials";
+  String get tdType => 'deleteSavedCredentials';
+
   @override
   Map<String, dynamic> get params => {};
 
   DeleteSavedCredentials();
+
+  DeleteSavedCredentials.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -2246,17 +2848,22 @@ class RemoveBackground extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "removeBackground";
-  final int backgroundId;
+  String get tdType => 'removeBackground';
+
+  int backgroundId;
 
   @override
   Map<String, dynamic> get params => {
-    "background_id": backgroundId,
+    'background_id': backgroundId,
   };
 
   RemoveBackground(
     this.backgroundId,
   );
+
+  RemoveBackground.fromJson(Map<String, dynamic> json) {
+    backgroundId = tryConvertToTdObject(json['background_id']);
+  }
 }
 
 @reflector
@@ -2265,11 +2872,14 @@ class ResetBackgrounds extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "resetBackgrounds";
+  String get tdType => 'resetBackgrounds';
+
   @override
   Map<String, dynamic> get params => {};
 
   ResetBackgrounds();
+
+  ResetBackgrounds.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -2278,17 +2888,22 @@ class SynchronizeLanguagePack extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "synchronizeLanguagePack";
-  final String languagePackId;
+  String get tdType => 'synchronizeLanguagePack';
+
+  String languagePackId;
 
   @override
   Map<String, dynamic> get params => {
-    "language_pack_id": languagePackId,
+    'language_pack_id': languagePackId,
   };
 
   SynchronizeLanguagePack(
     this.languagePackId,
   );
+
+  SynchronizeLanguagePack.fromJson(Map<String, dynamic> json) {
+    languagePackId = tryConvertToTdObject(json['language_pack_id']);
+  }
 }
 
 @reflector
@@ -2297,17 +2912,22 @@ class AddCustomServerLanguagePack extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "addCustomServerLanguagePack";
-  final String languagePackId;
+  String get tdType => 'addCustomServerLanguagePack';
+
+  String languagePackId;
 
   @override
   Map<String, dynamic> get params => {
-    "language_pack_id": languagePackId,
+    'language_pack_id': languagePackId,
   };
 
   AddCustomServerLanguagePack(
     this.languagePackId,
   );
+
+  AddCustomServerLanguagePack.fromJson(Map<String, dynamic> json) {
+    languagePackId = tryConvertToTdObject(json['language_pack_id']);
+  }
 }
 
 @reflector
@@ -2316,20 +2936,26 @@ class SetCustomLanguagePack extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "setCustomLanguagePack";
-  final LanguagePackInfo info;
-  final List<LanguagePackString> strings;
+  String get tdType => 'setCustomLanguagePack';
+
+  LanguagePackInfo info;
+  List<LanguagePackString> strings;
 
   @override
   Map<String, dynamic> get params => {
-    "info": info,
-    "strings": strings,
+    'info': info,
+    'strings': strings,
   };
 
   SetCustomLanguagePack(
     this.info,
     this.strings,
   );
+
+  SetCustomLanguagePack.fromJson(Map<String, dynamic> json) {
+    info = tryConvertToTdObject(json['info']);
+    strings = tryConvertToTdObject(json['strings']);
+  }
 }
 
 @reflector
@@ -2338,17 +2964,22 @@ class EditCustomLanguagePackInfo extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "editCustomLanguagePackInfo";
-  final LanguagePackInfo info;
+  String get tdType => 'editCustomLanguagePackInfo';
+
+  LanguagePackInfo info;
 
   @override
   Map<String, dynamic> get params => {
-    "info": info,
+    'info': info,
   };
 
   EditCustomLanguagePackInfo(
     this.info,
   );
+
+  EditCustomLanguagePackInfo.fromJson(Map<String, dynamic> json) {
+    info = tryConvertToTdObject(json['info']);
+  }
 }
 
 @reflector
@@ -2357,20 +2988,26 @@ class SetCustomLanguagePackString extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "setCustomLanguagePackString";
-  final String languagePackId;
-  final LanguagePackString newString;
+  String get tdType => 'setCustomLanguagePackString';
+
+  String languagePackId;
+  LanguagePackString newString;
 
   @override
   Map<String, dynamic> get params => {
-    "language_pack_id": languagePackId,
-    "new_string": newString,
+    'language_pack_id': languagePackId,
+    'new_string': newString,
   };
 
   SetCustomLanguagePackString(
     this.languagePackId,
     this.newString,
   );
+
+  SetCustomLanguagePackString.fromJson(Map<String, dynamic> json) {
+    languagePackId = tryConvertToTdObject(json['language_pack_id']);
+    newString = tryConvertToTdObject(json['new_string']);
+  }
 }
 
 @reflector
@@ -2379,17 +3016,22 @@ class DeleteLanguagePack extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "deleteLanguagePack";
-  final String languagePackId;
+  String get tdType => 'deleteLanguagePack';
+
+  String languagePackId;
 
   @override
   Map<String, dynamic> get params => {
-    "language_pack_id": languagePackId,
+    'language_pack_id': languagePackId,
   };
 
   DeleteLanguagePack(
     this.languagePackId,
   );
+
+  DeleteLanguagePack.fromJson(Map<String, dynamic> json) {
+    languagePackId = tryConvertToTdObject(json['language_pack_id']);
+  }
 }
 
 @reflector
@@ -2398,17 +3040,22 @@ class ProcessPushNotification extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "processPushNotification";
-  final String payload;
+  String get tdType => 'processPushNotification';
+
+  String payload;
 
   @override
   Map<String, dynamic> get params => {
-    "payload": payload,
+    'payload': payload,
   };
 
   ProcessPushNotification(
     this.payload,
   );
+
+  ProcessPushNotification.fromJson(Map<String, dynamic> json) {
+    payload = tryConvertToTdObject(json['payload']);
+  }
 }
 
 @reflector
@@ -2417,20 +3064,26 @@ class SetUserPrivacySettingRules extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "setUserPrivacySettingRules";
-  final UserPrivacySetting setting;
-  final UserPrivacySettingRules rules;
+  String get tdType => 'setUserPrivacySettingRules';
+
+  UserPrivacySetting setting;
+  UserPrivacySettingRules rules;
 
   @override
   Map<String, dynamic> get params => {
-    "setting": setting,
-    "rules": rules,
+    'setting': setting,
+    'rules': rules,
   };
 
   SetUserPrivacySettingRules(
     this.setting,
     this.rules,
   );
+
+  SetUserPrivacySettingRules.fromJson(Map<String, dynamic> json) {
+    setting = tryConvertToTdObject(json['setting']);
+    rules = tryConvertToTdObject(json['rules']);
+  }
 }
 
 @reflector
@@ -2439,20 +3092,26 @@ class SetOption extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "setOption";
-  final String name;
-  final OptionValue value;
+  String get tdType => 'setOption';
+
+  String name;
+  OptionValue value;
 
   @override
   Map<String, dynamic> get params => {
-    "name": name,
-    "value": value,
+    'name': name,
+    'value': value,
   };
 
   SetOption(
     this.name,
     this.value,
   );
+
+  SetOption.fromJson(Map<String, dynamic> json) {
+    name = tryConvertToTdObject(json['name']);
+    value = tryConvertToTdObject(json['value']);
+  }
 }
 
 @reflector
@@ -2461,17 +3120,22 @@ class SetAccountTtl extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "setAccountTtl";
-  final AccountTtl ttl;
+  String get tdType => 'setAccountTtl';
+
+  AccountTtl ttl;
 
   @override
   Map<String, dynamic> get params => {
-    "ttl": ttl,
+    'ttl': ttl,
   };
 
   SetAccountTtl(
     this.ttl,
   );
+
+  SetAccountTtl.fromJson(Map<String, dynamic> json) {
+    ttl = tryConvertToTdObject(json['ttl']);
+  }
 }
 
 @reflector
@@ -2480,17 +3144,22 @@ class DeleteAccount extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "deleteAccount";
-  final String reason;
+  String get tdType => 'deleteAccount';
+
+  String reason;
 
   @override
   Map<String, dynamic> get params => {
-    "reason": reason,
+    'reason': reason,
   };
 
   DeleteAccount(
     this.reason,
   );
+
+  DeleteAccount.fromJson(Map<String, dynamic> json) {
+    reason = tryConvertToTdObject(json['reason']);
+  }
 }
 
 @reflector
@@ -2499,20 +3168,26 @@ class ChangeChatReportSpamState extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "changeChatReportSpamState";
-  final int chatId;
-  final bool isSpamChat;
+  String get tdType => 'changeChatReportSpamState';
+
+  int chatId;
+  bool isSpamChat;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "is_spam_chat": isSpamChat,
+    'chat_id': chatId,
+    'is_spam_chat': isSpamChat,
   };
 
   ChangeChatReportSpamState(
     this.chatId,
     this.isSpamChat,
   );
+
+  ChangeChatReportSpamState.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    isSpamChat = tryConvertToTdObject(json['is_spam_chat']);
+  }
 }
 
 @reflector
@@ -2521,16 +3196,17 @@ class ReportChat extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "reportChat";
-  final int chatId;
-  final ChatReportReason reason;
-  final List<int> messageIds;
+  String get tdType => 'reportChat';
+
+  int chatId;
+  ChatReportReason reason;
+  List<int> messageIds;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "reason": reason,
-    "message_ids": messageIds,
+    'chat_id': chatId,
+    'reason': reason,
+    'message_ids': messageIds,
   };
 
   ReportChat(
@@ -2538,6 +3214,12 @@ class ReportChat extends TdFunction {
     this.reason,
     this.messageIds,
   );
+
+  ReportChat.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    reason = tryConvertToTdObject(json['reason']);
+    messageIds = tryConvertToTdObject(json['message_ids']);
+  }
 }
 
 @reflector
@@ -2546,17 +3228,22 @@ class SetNetworkType extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "setNetworkType";
-  final NetworkType type;
+  String get tdType => 'setNetworkType';
+
+  NetworkType type;
 
   @override
   Map<String, dynamic> get params => {
-    "type": type,
+    'type': type,
   };
 
   SetNetworkType(
     this.type,
   );
+
+  SetNetworkType.fromJson(Map<String, dynamic> json) {
+    type = tryConvertToTdObject(json['type']);
+  }
 }
 
 @reflector
@@ -2565,17 +3252,22 @@ class AddNetworkStatistics extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "addNetworkStatistics";
-  final NetworkStatisticsEntry entry;
+  String get tdType => 'addNetworkStatistics';
+
+  NetworkStatisticsEntry entry;
 
   @override
   Map<String, dynamic> get params => {
-    "entry": entry,
+    'entry': entry,
   };
 
   AddNetworkStatistics(
     this.entry,
   );
+
+  AddNetworkStatistics.fromJson(Map<String, dynamic> json) {
+    entry = tryConvertToTdObject(json['entry']);
+  }
 }
 
 @reflector
@@ -2584,11 +3276,14 @@ class ResetNetworkStatistics extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "resetNetworkStatistics";
+  String get tdType => 'resetNetworkStatistics';
+
   @override
   Map<String, dynamic> get params => {};
 
   ResetNetworkStatistics();
+
+  ResetNetworkStatistics.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -2597,20 +3292,26 @@ class SetAutoDownloadSettings extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "setAutoDownloadSettings";
-  final AutoDownloadSettings settings;
-  final NetworkType type;
+  String get tdType => 'setAutoDownloadSettings';
+
+  AutoDownloadSettings settings;
+  NetworkType type;
 
   @override
   Map<String, dynamic> get params => {
-    "settings": settings,
-    "type": type,
+    'settings': settings,
+    'type': type,
   };
 
   SetAutoDownloadSettings(
     this.settings,
     this.type,
   );
+
+  SetAutoDownloadSettings.fromJson(Map<String, dynamic> json) {
+    settings = tryConvertToTdObject(json['settings']);
+    type = tryConvertToTdObject(json['type']);
+  }
 }
 
 @reflector
@@ -2619,17 +3320,22 @@ class DeletePassportElement extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "deletePassportElement";
-  final PassportElementType type;
+  String get tdType => 'deletePassportElement';
+
+  PassportElementType type;
 
   @override
   Map<String, dynamic> get params => {
-    "type": type,
+    'type': type,
   };
 
   DeletePassportElement(
     this.type,
   );
+
+  DeletePassportElement.fromJson(Map<String, dynamic> json) {
+    type = tryConvertToTdObject(json['type']);
+  }
 }
 
 @reflector
@@ -2638,20 +3344,26 @@ class SetPassportElementErrors extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "setPassportElementErrors";
-  final int userId;
-  final List<InputPassportElementError> errors;
+  String get tdType => 'setPassportElementErrors';
+
+  int userId;
+  List<InputPassportElementError> errors;
 
   @override
   Map<String, dynamic> get params => {
-    "user_id": userId,
-    "errors": errors,
+    'user_id': userId,
+    'errors': errors,
   };
 
   SetPassportElementErrors(
     this.userId,
     this.errors,
   );
+
+  SetPassportElementErrors.fromJson(Map<String, dynamic> json) {
+    userId = tryConvertToTdObject(json['user_id']);
+    errors = tryConvertToTdObject(json['errors']);
+  }
 }
 
 @reflector
@@ -2660,17 +3372,22 @@ class CheckPhoneNumberVerificationCode extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "checkPhoneNumberVerificationCode";
-  final String code;
+  String get tdType => 'checkPhoneNumberVerificationCode';
+
+  String code;
 
   @override
   Map<String, dynamic> get params => {
-    "code": code,
+    'code': code,
   };
 
   CheckPhoneNumberVerificationCode(
     this.code,
   );
+
+  CheckPhoneNumberVerificationCode.fromJson(Map<String, dynamic> json) {
+    code = tryConvertToTdObject(json['code']);
+  }
 }
 
 @reflector
@@ -2679,17 +3396,22 @@ class CheckEmailAddressVerificationCode extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "checkEmailAddressVerificationCode";
-  final String code;
+  String get tdType => 'checkEmailAddressVerificationCode';
+
+  String code;
 
   @override
   Map<String, dynamic> get params => {
-    "code": code,
+    'code': code,
   };
 
   CheckEmailAddressVerificationCode(
     this.code,
   );
+
+  CheckEmailAddressVerificationCode.fromJson(Map<String, dynamic> json) {
+    code = tryConvertToTdObject(json['code']);
+  }
 }
 
 @reflector
@@ -2698,20 +3420,26 @@ class SendPassportAuthorizationForm extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "sendPassportAuthorizationForm";
-  final int autorizationFormId;
-  final List<PassportElementType> types;
+  String get tdType => 'sendPassportAuthorizationForm';
+
+  int autorizationFormId;
+  List<PassportElementType> types;
 
   @override
   Map<String, dynamic> get params => {
-    "autorization_form_id": autorizationFormId,
-    "types": types,
+    'autorization_form_id': autorizationFormId,
+    'types': types,
   };
 
   SendPassportAuthorizationForm(
     this.autorizationFormId,
     this.types,
   );
+
+  SendPassportAuthorizationForm.fromJson(Map<String, dynamic> json) {
+    autorizationFormId = tryConvertToTdObject(json['autorization_form_id']);
+    types = tryConvertToTdObject(json['types']);
+  }
 }
 
 @reflector
@@ -2720,17 +3448,22 @@ class CheckPhoneNumberConfirmationCode extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "checkPhoneNumberConfirmationCode";
-  final String code;
+  String get tdType => 'checkPhoneNumberConfirmationCode';
+
+  String code;
 
   @override
   Map<String, dynamic> get params => {
-    "code": code,
+    'code': code,
   };
 
   CheckPhoneNumberConfirmationCode(
     this.code,
   );
+
+  CheckPhoneNumberConfirmationCode.fromJson(Map<String, dynamic> json) {
+    code = tryConvertToTdObject(json['code']);
+  }
 }
 
 @reflector
@@ -2739,20 +3472,26 @@ class SetBotUpdatesStatus extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "setBotUpdatesStatus";
-  final int pendingUpdateCount;
-  final String errorMessage;
+  String get tdType => 'setBotUpdatesStatus';
+
+  int pendingUpdateCount;
+  String errorMessage;
 
   @override
   Map<String, dynamic> get params => {
-    "pending_update_count": pendingUpdateCount,
-    "error_message": errorMessage,
+    'pending_update_count': pendingUpdateCount,
+    'error_message': errorMessage,
   };
 
   SetBotUpdatesStatus(
     this.pendingUpdateCount,
     this.errorMessage,
   );
+
+  SetBotUpdatesStatus.fromJson(Map<String, dynamic> json) {
+    pendingUpdateCount = tryConvertToTdObject(json['pending_update_count']);
+    errorMessage = tryConvertToTdObject(json['error_message']);
+  }
 }
 
 @reflector
@@ -2761,20 +3500,26 @@ class SetStickerPositionInSet extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "setStickerPositionInSet";
-  final InputFile sticker;
-  final int position;
+  String get tdType => 'setStickerPositionInSet';
+
+  InputFile sticker;
+  int position;
 
   @override
   Map<String, dynamic> get params => {
-    "sticker": sticker,
-    "position": position,
+    'sticker': sticker,
+    'position': position,
   };
 
   SetStickerPositionInSet(
     this.sticker,
     this.position,
   );
+
+  SetStickerPositionInSet.fromJson(Map<String, dynamic> json) {
+    sticker = tryConvertToTdObject(json['sticker']);
+    position = tryConvertToTdObject(json['position']);
+  }
 }
 
 @reflector
@@ -2783,17 +3528,22 @@ class RemoveStickerFromSet extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "removeStickerFromSet";
-  final InputFile sticker;
+  String get tdType => 'removeStickerFromSet';
+
+  InputFile sticker;
 
   @override
   Map<String, dynamic> get params => {
-    "sticker": sticker,
+    'sticker': sticker,
   };
 
   RemoveStickerFromSet(
     this.sticker,
   );
+
+  RemoveStickerFromSet.fromJson(Map<String, dynamic> json) {
+    sticker = tryConvertToTdObject(json['sticker']);
+  }
 }
 
 @reflector
@@ -2802,17 +3552,22 @@ class AcceptTermsOfService extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "acceptTermsOfService";
-  final String termsOfServiceId;
+  String get tdType => 'acceptTermsOfService';
+
+  String termsOfServiceId;
 
   @override
   Map<String, dynamic> get params => {
-    "terms_of_service_id": termsOfServiceId,
+    'terms_of_service_id': termsOfServiceId,
   };
 
   AcceptTermsOfService(
     this.termsOfServiceId,
   );
+
+  AcceptTermsOfService.fromJson(Map<String, dynamic> json) {
+    termsOfServiceId = tryConvertToTdObject(json['terms_of_service_id']);
+  }
 }
 
 @reflector
@@ -2821,20 +3576,26 @@ class AnswerCustomQuery extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "answerCustomQuery";
-  final int customQueryId;
-  final String data;
+  String get tdType => 'answerCustomQuery';
+
+  int customQueryId;
+  String data;
 
   @override
   Map<String, dynamic> get params => {
-    "custom_query_id": customQueryId,
-    "data": data,
+    'custom_query_id': customQueryId,
+    'data': data,
   };
 
   AnswerCustomQuery(
     this.customQueryId,
     this.data,
   );
+
+  AnswerCustomQuery.fromJson(Map<String, dynamic> json) {
+    customQueryId = tryConvertToTdObject(json['custom_query_id']);
+    data = tryConvertToTdObject(json['data']);
+  }
 }
 
 @reflector
@@ -2843,17 +3604,22 @@ class SetAlarm extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "setAlarm";
-  final double seconds;
+  String get tdType => 'setAlarm';
+
+  double seconds;
 
   @override
   Map<String, dynamic> get params => {
-    "seconds": seconds,
+    'seconds': seconds,
   };
 
   SetAlarm(
     this.seconds,
   );
+
+  SetAlarm.fromJson(Map<String, dynamic> json) {
+    seconds = tryConvertToTdObject(json['seconds']);
+  }
 }
 
 @reflector
@@ -2862,16 +3628,17 @@ class SaveApplicationLogEvent extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "saveApplicationLogEvent";
-  final String type;
-  final int chatId;
-  final JsonValue data;
+  String get tdType => 'saveApplicationLogEvent';
+
+  String type;
+  int chatId;
+  JsonValue data;
 
   @override
   Map<String, dynamic> get params => {
-    "type": type,
-    "chat_id": chatId,
-    "data": data,
+    'type': type,
+    'chat_id': chatId,
+    'data': data,
   };
 
   SaveApplicationLogEvent(
@@ -2879,6 +3646,12 @@ class SaveApplicationLogEvent extends TdFunction {
     this.chatId,
     this.data,
   );
+
+  SaveApplicationLogEvent.fromJson(Map<String, dynamic> json) {
+    type = tryConvertToTdObject(json['type']);
+    chatId = tryConvertToTdObject(json['chat_id']);
+    data = tryConvertToTdObject(json['data']);
+  }
 }
 
 @reflector
@@ -2887,17 +3660,22 @@ class EnableProxy extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "enableProxy";
-  final int proxyId;
+  String get tdType => 'enableProxy';
+
+  int proxyId;
 
   @override
   Map<String, dynamic> get params => {
-    "proxy_id": proxyId,
+    'proxy_id': proxyId,
   };
 
   EnableProxy(
     this.proxyId,
   );
+
+  EnableProxy.fromJson(Map<String, dynamic> json) {
+    proxyId = tryConvertToTdObject(json['proxy_id']);
+  }
 }
 
 @reflector
@@ -2906,11 +3684,14 @@ class DisableProxy extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "disableProxy";
+  String get tdType => 'disableProxy';
+
   @override
   Map<String, dynamic> get params => {};
 
   DisableProxy();
+
+  DisableProxy.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -2919,17 +3700,22 @@ class RemoveProxy extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "removeProxy";
-  final int proxyId;
+  String get tdType => 'removeProxy';
+
+  int proxyId;
 
   @override
   Map<String, dynamic> get params => {
-    "proxy_id": proxyId,
+    'proxy_id': proxyId,
   };
 
   RemoveProxy(
     this.proxyId,
   );
+
+  RemoveProxy.fromJson(Map<String, dynamic> json) {
+    proxyId = tryConvertToTdObject(json['proxy_id']);
+  }
 }
 
 @reflector
@@ -2938,17 +3724,22 @@ class SetLogStream extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "setLogStream";
-  final LogStream logStream;
+  String get tdType => 'setLogStream';
+
+  LogStream logStream;
 
   @override
   Map<String, dynamic> get params => {
-    "log_stream": logStream,
+    'log_stream': logStream,
   };
 
   SetLogStream(
     this.logStream,
   );
+
+  SetLogStream.fromJson(Map<String, dynamic> json) {
+    logStream = tryConvertToTdObject(json['log_stream']);
+  }
 }
 
 @reflector
@@ -2957,17 +3748,22 @@ class SetLogVerbosityLevel extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "setLogVerbosityLevel";
-  final int newVerbosityLevel;
+  String get tdType => 'setLogVerbosityLevel';
+
+  int newVerbosityLevel;
 
   @override
   Map<String, dynamic> get params => {
-    "new_verbosity_level": newVerbosityLevel,
+    'new_verbosity_level': newVerbosityLevel,
   };
 
   SetLogVerbosityLevel(
     this.newVerbosityLevel,
   );
+
+  SetLogVerbosityLevel.fromJson(Map<String, dynamic> json) {
+    newVerbosityLevel = tryConvertToTdObject(json['new_verbosity_level']);
+  }
 }
 
 @reflector
@@ -2976,20 +3772,26 @@ class SetLogTagVerbosityLevel extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "setLogTagVerbosityLevel";
-  final String tag;
-  final int newVerbosityLevel;
+  String get tdType => 'setLogTagVerbosityLevel';
+
+  String tag;
+  int newVerbosityLevel;
 
   @override
   Map<String, dynamic> get params => {
-    "tag": tag,
-    "new_verbosity_level": newVerbosityLevel,
+    'tag': tag,
+    'new_verbosity_level': newVerbosityLevel,
   };
 
   SetLogTagVerbosityLevel(
     this.tag,
     this.newVerbosityLevel,
   );
+
+  SetLogTagVerbosityLevel.fromJson(Map<String, dynamic> json) {
+    tag = tryConvertToTdObject(json['tag']);
+    newVerbosityLevel = tryConvertToTdObject(json['new_verbosity_level']);
+  }
 }
 
 @reflector
@@ -2998,20 +3800,26 @@ class AddLogMessage extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "addLogMessage";
-  final int verbosityLevel;
-  final String text;
+  String get tdType => 'addLogMessage';
+
+  int verbosityLevel;
+  String text;
 
   @override
   Map<String, dynamic> get params => {
-    "verbosity_level": verbosityLevel,
-    "text": text,
+    'verbosity_level': verbosityLevel,
+    'text': text,
   };
 
   AddLogMessage(
     this.verbosityLevel,
     this.text,
   );
+
+  AddLogMessage.fromJson(Map<String, dynamic> json) {
+    verbosityLevel = tryConvertToTdObject(json['verbosity_level']);
+    text = tryConvertToTdObject(json['text']);
+  }
 }
 
 @reflector
@@ -3020,11 +3828,14 @@ class TestCallEmpty extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "testCallEmpty";
+  String get tdType => 'testCallEmpty';
+
   @override
   Map<String, dynamic> get params => {};
 
   TestCallEmpty();
+
+  TestCallEmpty.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -3033,11 +3844,14 @@ class TestNetwork extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "testNetwork";
+  String get tdType => 'testNetwork';
+
   @override
   Map<String, dynamic> get params => {};
 
   TestNetwork();
+
+  TestNetwork.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -3046,20 +3860,21 @@ class TestProxy extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "testProxy";
-  final String server;
-  final int port;
-  final ProxyType type;
-  final int dcId;
-  final double timeout;
+  String get tdType => 'testProxy';
+
+  String server;
+  int port;
+  ProxyType type;
+  int dcId;
+  double timeout;
 
   @override
   Map<String, dynamic> get params => {
-    "server": server,
-    "port": port,
-    "type": type,
-    "dc_id": dcId,
-    "timeout": timeout,
+    'server': server,
+    'port': port,
+    'type': type,
+    'dc_id': dcId,
+    'timeout': timeout,
   };
 
   TestProxy(
@@ -3069,6 +3884,14 @@ class TestProxy extends TdFunction {
     this.dcId,
     this.timeout,
   );
+
+  TestProxy.fromJson(Map<String, dynamic> json) {
+    server = tryConvertToTdObject(json['server']);
+    port = tryConvertToTdObject(json['port']);
+    type = tryConvertToTdObject(json['type']);
+    dcId = tryConvertToTdObject(json['dc_id']);
+    timeout = tryConvertToTdObject(json['timeout']);
+  }
 }
 
 @reflector
@@ -3077,11 +3900,14 @@ class TestGetDifference extends TdFunction {
   Type get returnType => Ok;
 
   @override
-  String get tdType => "testGetDifference";
+  String get tdType => 'testGetDifference';
+
   @override
   Map<String, dynamic> get params => {};
 
   TestGetDifference();
+
+  TestGetDifference.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -3090,11 +3916,14 @@ class GetCurrentState extends TdFunction {
   Type get returnType => Updates;
 
   @override
-  String get tdType => "getCurrentState";
+  String get tdType => 'getCurrentState';
+
   @override
   Map<String, dynamic> get params => {};
 
   GetCurrentState();
+
+  GetCurrentState.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -3103,11 +3932,14 @@ class GetPasswordState extends TdFunction {
   Type get returnType => PasswordState;
 
   @override
-  String get tdType => "getPasswordState";
+  String get tdType => 'getPasswordState';
+
   @override
   Map<String, dynamic> get params => {};
 
   GetPasswordState();
+
+  GetPasswordState.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -3116,20 +3948,21 @@ class SetPassword extends TdFunction {
   Type get returnType => PasswordState;
 
   @override
-  String get tdType => "setPassword";
-  final String oldPassword;
-  final String newPassword;
-  final String newHint;
-  final bool setRecoveryEmailAddress;
-  final String newRecoveryEmailAddress;
+  String get tdType => 'setPassword';
+
+  String oldPassword;
+  String newPassword;
+  String newHint;
+  bool setRecoveryEmailAddress;
+  String newRecoveryEmailAddress;
 
   @override
   Map<String, dynamic> get params => {
-    "old_password": oldPassword,
-    "new_password": newPassword,
-    "new_hint": newHint,
-    "set_recovery_email_address": setRecoveryEmailAddress,
-    "new_recovery_email_address": newRecoveryEmailAddress,
+    'old_password': oldPassword,
+    'new_password': newPassword,
+    'new_hint': newHint,
+    'set_recovery_email_address': setRecoveryEmailAddress,
+    'new_recovery_email_address': newRecoveryEmailAddress,
   };
 
   SetPassword(
@@ -3139,6 +3972,14 @@ class SetPassword extends TdFunction {
     this.setRecoveryEmailAddress,
     this.newRecoveryEmailAddress,
   );
+
+  SetPassword.fromJson(Map<String, dynamic> json) {
+    oldPassword = tryConvertToTdObject(json['old_password']);
+    newPassword = tryConvertToTdObject(json['new_password']);
+    newHint = tryConvertToTdObject(json['new_hint']);
+    setRecoveryEmailAddress = tryConvertToTdObject(json['set_recovery_email_address']);
+    newRecoveryEmailAddress = tryConvertToTdObject(json['new_recovery_email_address']);
+  }
 }
 
 @reflector
@@ -3147,20 +3988,26 @@ class SetRecoveryEmailAddress extends TdFunction {
   Type get returnType => PasswordState;
 
   @override
-  String get tdType => "setRecoveryEmailAddress";
-  final String password;
-  final String newRecoveryEmailAddress;
+  String get tdType => 'setRecoveryEmailAddress';
+
+  String password;
+  String newRecoveryEmailAddress;
 
   @override
   Map<String, dynamic> get params => {
-    "password": password,
-    "new_recovery_email_address": newRecoveryEmailAddress,
+    'password': password,
+    'new_recovery_email_address': newRecoveryEmailAddress,
   };
 
   SetRecoveryEmailAddress(
     this.password,
     this.newRecoveryEmailAddress,
   );
+
+  SetRecoveryEmailAddress.fromJson(Map<String, dynamic> json) {
+    password = tryConvertToTdObject(json['password']);
+    newRecoveryEmailAddress = tryConvertToTdObject(json['new_recovery_email_address']);
+  }
 }
 
 @reflector
@@ -3169,17 +4016,22 @@ class CheckRecoveryEmailAddressCode extends TdFunction {
   Type get returnType => PasswordState;
 
   @override
-  String get tdType => "checkRecoveryEmailAddressCode";
-  final String code;
+  String get tdType => 'checkRecoveryEmailAddressCode';
+
+  String code;
 
   @override
   Map<String, dynamic> get params => {
-    "code": code,
+    'code': code,
   };
 
   CheckRecoveryEmailAddressCode(
     this.code,
   );
+
+  CheckRecoveryEmailAddressCode.fromJson(Map<String, dynamic> json) {
+    code = tryConvertToTdObject(json['code']);
+  }
 }
 
 @reflector
@@ -3188,11 +4040,14 @@ class ResendRecoveryEmailAddressCode extends TdFunction {
   Type get returnType => PasswordState;
 
   @override
-  String get tdType => "resendRecoveryEmailAddressCode";
+  String get tdType => 'resendRecoveryEmailAddressCode';
+
   @override
   Map<String, dynamic> get params => {};
 
   ResendRecoveryEmailAddressCode();
+
+  ResendRecoveryEmailAddressCode.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -3201,17 +4056,22 @@ class RecoverPassword extends TdFunction {
   Type get returnType => PasswordState;
 
   @override
-  String get tdType => "recoverPassword";
-  final String recoveryCode;
+  String get tdType => 'recoverPassword';
+
+  String recoveryCode;
 
   @override
   Map<String, dynamic> get params => {
-    "recovery_code": recoveryCode,
+    'recovery_code': recoveryCode,
   };
 
   RecoverPassword(
     this.recoveryCode,
   );
+
+  RecoverPassword.fromJson(Map<String, dynamic> json) {
+    recoveryCode = tryConvertToTdObject(json['recovery_code']);
+  }
 }
 
 @reflector
@@ -3220,17 +4080,22 @@ class GetRecoveryEmailAddress extends TdFunction {
   Type get returnType => RecoveryEmailAddress;
 
   @override
-  String get tdType => "getRecoveryEmailAddress";
-  final String password;
+  String get tdType => 'getRecoveryEmailAddress';
+
+  String password;
 
   @override
   Map<String, dynamic> get params => {
-    "password": password,
+    'password': password,
   };
 
   GetRecoveryEmailAddress(
     this.password,
   );
+
+  GetRecoveryEmailAddress.fromJson(Map<String, dynamic> json) {
+    password = tryConvertToTdObject(json['password']);
+  }
 }
 
 @reflector
@@ -3239,11 +4104,14 @@ class RequestPasswordRecovery extends TdFunction {
   Type get returnType => EmailAddressAuthenticationCodeInfo;
 
   @override
-  String get tdType => "requestPasswordRecovery";
+  String get tdType => 'requestPasswordRecovery';
+
   @override
   Map<String, dynamic> get params => {};
 
   RequestPasswordRecovery();
+
+  RequestPasswordRecovery.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -3252,17 +4120,22 @@ class SendEmailAddressVerificationCode extends TdFunction {
   Type get returnType => EmailAddressAuthenticationCodeInfo;
 
   @override
-  String get tdType => "sendEmailAddressVerificationCode";
-  final String emailAddress;
+  String get tdType => 'sendEmailAddressVerificationCode';
+
+  String emailAddress;
 
   @override
   Map<String, dynamic> get params => {
-    "email_address": emailAddress,
+    'email_address': emailAddress,
   };
 
   SendEmailAddressVerificationCode(
     this.emailAddress,
   );
+
+  SendEmailAddressVerificationCode.fromJson(Map<String, dynamic> json) {
+    emailAddress = tryConvertToTdObject(json['email_address']);
+  }
 }
 
 @reflector
@@ -3271,11 +4144,14 @@ class ResendEmailAddressVerificationCode extends TdFunction {
   Type get returnType => EmailAddressAuthenticationCodeInfo;
 
   @override
-  String get tdType => "resendEmailAddressVerificationCode";
+  String get tdType => 'resendEmailAddressVerificationCode';
+
   @override
   Map<String, dynamic> get params => {};
 
   ResendEmailAddressVerificationCode();
+
+  ResendEmailAddressVerificationCode.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -3284,20 +4160,26 @@ class CreateTemporaryPassword extends TdFunction {
   Type get returnType => TemporaryPasswordState;
 
   @override
-  String get tdType => "createTemporaryPassword";
-  final String password;
-  final int validFor;
+  String get tdType => 'createTemporaryPassword';
+
+  String password;
+  int validFor;
 
   @override
   Map<String, dynamic> get params => {
-    "password": password,
-    "valid_for": validFor,
+    'password': password,
+    'valid_for': validFor,
   };
 
   CreateTemporaryPassword(
     this.password,
     this.validFor,
   );
+
+  CreateTemporaryPassword.fromJson(Map<String, dynamic> json) {
+    password = tryConvertToTdObject(json['password']);
+    validFor = tryConvertToTdObject(json['valid_for']);
+  }
 }
 
 @reflector
@@ -3306,11 +4188,14 @@ class GetTemporaryPasswordState extends TdFunction {
   Type get returnType => TemporaryPasswordState;
 
   @override
-  String get tdType => "getTemporaryPasswordState";
+  String get tdType => 'getTemporaryPasswordState';
+
   @override
   Map<String, dynamic> get params => {};
 
   GetTemporaryPasswordState();
+
+  GetTemporaryPasswordState.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -3319,11 +4204,14 @@ class GetMe extends TdFunction {
   Type get returnType => User;
 
   @override
-  String get tdType => "getMe";
+  String get tdType => 'getMe';
+
   @override
   Map<String, dynamic> get params => {};
 
   GetMe();
+
+  GetMe.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -3332,17 +4220,22 @@ class GetUser extends TdFunction {
   Type get returnType => User;
 
   @override
-  String get tdType => "getUser";
-  final int userId;
+  String get tdType => 'getUser';
+
+  int userId;
 
   @override
   Map<String, dynamic> get params => {
-    "user_id": userId,
+    'user_id': userId,
   };
 
   GetUser(
     this.userId,
   );
+
+  GetUser.fromJson(Map<String, dynamic> json) {
+    userId = tryConvertToTdObject(json['user_id']);
+  }
 }
 
 @reflector
@@ -3351,11 +4244,14 @@ class GetSupportUser extends TdFunction {
   Type get returnType => User;
 
   @override
-  String get tdType => "getSupportUser";
+  String get tdType => 'getSupportUser';
+
   @override
   Map<String, dynamic> get params => {};
 
   GetSupportUser();
+
+  GetSupportUser.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -3364,17 +4260,22 @@ class GetUserFullInfo extends TdFunction {
   Type get returnType => UserFullInfo;
 
   @override
-  String get tdType => "getUserFullInfo";
-  final int userId;
+  String get tdType => 'getUserFullInfo';
+
+  int userId;
 
   @override
   Map<String, dynamic> get params => {
-    "user_id": userId,
+    'user_id': userId,
   };
 
   GetUserFullInfo(
     this.userId,
   );
+
+  GetUserFullInfo.fromJson(Map<String, dynamic> json) {
+    userId = tryConvertToTdObject(json['user_id']);
+  }
 }
 
 @reflector
@@ -3383,17 +4284,22 @@ class GetBasicGroup extends TdFunction {
   Type get returnType => BasicGroup;
 
   @override
-  String get tdType => "getBasicGroup";
-  final int basicGroupId;
+  String get tdType => 'getBasicGroup';
+
+  int basicGroupId;
 
   @override
   Map<String, dynamic> get params => {
-    "basic_group_id": basicGroupId,
+    'basic_group_id': basicGroupId,
   };
 
   GetBasicGroup(
     this.basicGroupId,
   );
+
+  GetBasicGroup.fromJson(Map<String, dynamic> json) {
+    basicGroupId = tryConvertToTdObject(json['basic_group_id']);
+  }
 }
 
 @reflector
@@ -3402,17 +4308,22 @@ class GetBasicGroupFullInfo extends TdFunction {
   Type get returnType => BasicGroupFullInfo;
 
   @override
-  String get tdType => "getBasicGroupFullInfo";
-  final int basicGroupId;
+  String get tdType => 'getBasicGroupFullInfo';
+
+  int basicGroupId;
 
   @override
   Map<String, dynamic> get params => {
-    "basic_group_id": basicGroupId,
+    'basic_group_id': basicGroupId,
   };
 
   GetBasicGroupFullInfo(
     this.basicGroupId,
   );
+
+  GetBasicGroupFullInfo.fromJson(Map<String, dynamic> json) {
+    basicGroupId = tryConvertToTdObject(json['basic_group_id']);
+  }
 }
 
 @reflector
@@ -3421,17 +4332,22 @@ class GetSupergroup extends TdFunction {
   Type get returnType => Supergroup;
 
   @override
-  String get tdType => "getSupergroup";
-  final int supergroupId;
+  String get tdType => 'getSupergroup';
+
+  int supergroupId;
 
   @override
   Map<String, dynamic> get params => {
-    "supergroup_id": supergroupId,
+    'supergroup_id': supergroupId,
   };
 
   GetSupergroup(
     this.supergroupId,
   );
+
+  GetSupergroup.fromJson(Map<String, dynamic> json) {
+    supergroupId = tryConvertToTdObject(json['supergroup_id']);
+  }
 }
 
 @reflector
@@ -3440,17 +4356,22 @@ class GetSupergroupFullInfo extends TdFunction {
   Type get returnType => SupergroupFullInfo;
 
   @override
-  String get tdType => "getSupergroupFullInfo";
-  final int supergroupId;
+  String get tdType => 'getSupergroupFullInfo';
+
+  int supergroupId;
 
   @override
   Map<String, dynamic> get params => {
-    "supergroup_id": supergroupId,
+    'supergroup_id': supergroupId,
   };
 
   GetSupergroupFullInfo(
     this.supergroupId,
   );
+
+  GetSupergroupFullInfo.fromJson(Map<String, dynamic> json) {
+    supergroupId = tryConvertToTdObject(json['supergroup_id']);
+  }
 }
 
 @reflector
@@ -3459,17 +4380,22 @@ class GetSecretChat extends TdFunction {
   Type get returnType => SecretChat;
 
   @override
-  String get tdType => "getSecretChat";
-  final int secretChatId;
+  String get tdType => 'getSecretChat';
+
+  int secretChatId;
 
   @override
   Map<String, dynamic> get params => {
-    "secret_chat_id": secretChatId,
+    'secret_chat_id': secretChatId,
   };
 
   GetSecretChat(
     this.secretChatId,
   );
+
+  GetSecretChat.fromJson(Map<String, dynamic> json) {
+    secretChatId = tryConvertToTdObject(json['secret_chat_id']);
+  }
 }
 
 @reflector
@@ -3478,17 +4404,22 @@ class GetChat extends TdFunction {
   Type get returnType => Chat;
 
   @override
-  String get tdType => "getChat";
-  final int chatId;
+  String get tdType => 'getChat';
+
+  int chatId;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
+    'chat_id': chatId,
   };
 
   GetChat(
     this.chatId,
   );
+
+  GetChat.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+  }
 }
 
 @reflector
@@ -3497,17 +4428,22 @@ class SearchPublicChat extends TdFunction {
   Type get returnType => Chat;
 
   @override
-  String get tdType => "searchPublicChat";
-  final String username;
+  String get tdType => 'searchPublicChat';
+
+  String username;
 
   @override
   Map<String, dynamic> get params => {
-    "username": username,
+    'username': username,
   };
 
   SearchPublicChat(
     this.username,
   );
+
+  SearchPublicChat.fromJson(Map<String, dynamic> json) {
+    username = tryConvertToTdObject(json['username']);
+  }
 }
 
 @reflector
@@ -3516,20 +4452,26 @@ class CreatePrivateChat extends TdFunction {
   Type get returnType => Chat;
 
   @override
-  String get tdType => "createPrivateChat";
-  final int userId;
-  final bool force;
+  String get tdType => 'createPrivateChat';
+
+  int userId;
+  bool force;
 
   @override
   Map<String, dynamic> get params => {
-    "user_id": userId,
-    "force": force,
+    'user_id': userId,
+    'force': force,
   };
 
   CreatePrivateChat(
     this.userId,
     this.force,
   );
+
+  CreatePrivateChat.fromJson(Map<String, dynamic> json) {
+    userId = tryConvertToTdObject(json['user_id']);
+    force = tryConvertToTdObject(json['force']);
+  }
 }
 
 @reflector
@@ -3538,20 +4480,26 @@ class CreateBasicGroupChat extends TdFunction {
   Type get returnType => Chat;
 
   @override
-  String get tdType => "createBasicGroupChat";
-  final int basicGroupId;
-  final bool force;
+  String get tdType => 'createBasicGroupChat';
+
+  int basicGroupId;
+  bool force;
 
   @override
   Map<String, dynamic> get params => {
-    "basic_group_id": basicGroupId,
-    "force": force,
+    'basic_group_id': basicGroupId,
+    'force': force,
   };
 
   CreateBasicGroupChat(
     this.basicGroupId,
     this.force,
   );
+
+  CreateBasicGroupChat.fromJson(Map<String, dynamic> json) {
+    basicGroupId = tryConvertToTdObject(json['basic_group_id']);
+    force = tryConvertToTdObject(json['force']);
+  }
 }
 
 @reflector
@@ -3560,20 +4508,26 @@ class CreateSupergroupChat extends TdFunction {
   Type get returnType => Chat;
 
   @override
-  String get tdType => "createSupergroupChat";
-  final int supergroupId;
-  final bool force;
+  String get tdType => 'createSupergroupChat';
+
+  int supergroupId;
+  bool force;
 
   @override
   Map<String, dynamic> get params => {
-    "supergroup_id": supergroupId,
-    "force": force,
+    'supergroup_id': supergroupId,
+    'force': force,
   };
 
   CreateSupergroupChat(
     this.supergroupId,
     this.force,
   );
+
+  CreateSupergroupChat.fromJson(Map<String, dynamic> json) {
+    supergroupId = tryConvertToTdObject(json['supergroup_id']);
+    force = tryConvertToTdObject(json['force']);
+  }
 }
 
 @reflector
@@ -3582,17 +4536,22 @@ class CreateSecretChat extends TdFunction {
   Type get returnType => Chat;
 
   @override
-  String get tdType => "createSecretChat";
-  final int secretChatId;
+  String get tdType => 'createSecretChat';
+
+  int secretChatId;
 
   @override
   Map<String, dynamic> get params => {
-    "secret_chat_id": secretChatId,
+    'secret_chat_id': secretChatId,
   };
 
   CreateSecretChat(
     this.secretChatId,
   );
+
+  CreateSecretChat.fromJson(Map<String, dynamic> json) {
+    secretChatId = tryConvertToTdObject(json['secret_chat_id']);
+  }
 }
 
 @reflector
@@ -3601,20 +4560,26 @@ class CreateNewBasicGroupChat extends TdFunction {
   Type get returnType => Chat;
 
   @override
-  String get tdType => "createNewBasicGroupChat";
-  final List<int> userIds;
-  final String title;
+  String get tdType => 'createNewBasicGroupChat';
+
+  List<int> userIds;
+  String title;
 
   @override
   Map<String, dynamic> get params => {
-    "user_ids": userIds,
-    "title": title,
+    'user_ids': userIds,
+    'title': title,
   };
 
   CreateNewBasicGroupChat(
     this.userIds,
     this.title,
   );
+
+  CreateNewBasicGroupChat.fromJson(Map<String, dynamic> json) {
+    userIds = tryConvertToTdObject(json['user_ids']);
+    title = tryConvertToTdObject(json['title']);
+  }
 }
 
 @reflector
@@ -3623,16 +4588,17 @@ class CreateNewSupergroupChat extends TdFunction {
   Type get returnType => Chat;
 
   @override
-  String get tdType => "createNewSupergroupChat";
-  final String title;
-  final bool isChannel;
-  final String description;
+  String get tdType => 'createNewSupergroupChat';
+
+  String title;
+  bool isChannel;
+  String description;
 
   @override
   Map<String, dynamic> get params => {
-    "title": title,
-    "is_channel": isChannel,
-    "description": description,
+    'title': title,
+    'is_channel': isChannel,
+    'description': description,
   };
 
   CreateNewSupergroupChat(
@@ -3640,6 +4606,12 @@ class CreateNewSupergroupChat extends TdFunction {
     this.isChannel,
     this.description,
   );
+
+  CreateNewSupergroupChat.fromJson(Map<String, dynamic> json) {
+    title = tryConvertToTdObject(json['title']);
+    isChannel = tryConvertToTdObject(json['is_channel']);
+    description = tryConvertToTdObject(json['description']);
+  }
 }
 
 @reflector
@@ -3648,17 +4620,22 @@ class CreateNewSecretChat extends TdFunction {
   Type get returnType => Chat;
 
   @override
-  String get tdType => "createNewSecretChat";
-  final int userId;
+  String get tdType => 'createNewSecretChat';
+
+  int userId;
 
   @override
   Map<String, dynamic> get params => {
-    "user_id": userId,
+    'user_id': userId,
   };
 
   CreateNewSecretChat(
     this.userId,
   );
+
+  CreateNewSecretChat.fromJson(Map<String, dynamic> json) {
+    userId = tryConvertToTdObject(json['user_id']);
+  }
 }
 
 @reflector
@@ -3667,17 +4644,22 @@ class UpgradeBasicGroupChatToSupergroupChat extends TdFunction {
   Type get returnType => Chat;
 
   @override
-  String get tdType => "upgradeBasicGroupChatToSupergroupChat";
-  final int chatId;
+  String get tdType => 'upgradeBasicGroupChatToSupergroupChat';
+
+  int chatId;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
+    'chat_id': chatId,
   };
 
   UpgradeBasicGroupChatToSupergroupChat(
     this.chatId,
   );
+
+  UpgradeBasicGroupChatToSupergroupChat.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+  }
 }
 
 @reflector
@@ -3686,17 +4668,22 @@ class JoinChatByInviteLink extends TdFunction {
   Type get returnType => Chat;
 
   @override
-  String get tdType => "joinChatByInviteLink";
-  final String inviteLink;
+  String get tdType => 'joinChatByInviteLink';
+
+  String inviteLink;
 
   @override
   Map<String, dynamic> get params => {
-    "invite_link": inviteLink,
+    'invite_link': inviteLink,
   };
 
   JoinChatByInviteLink(
     this.inviteLink,
   );
+
+  JoinChatByInviteLink.fromJson(Map<String, dynamic> json) {
+    inviteLink = tryConvertToTdObject(json['invite_link']);
+  }
 }
 
 @reflector
@@ -3705,20 +4692,26 @@ class GetMessage extends TdFunction {
   Type get returnType => Message;
 
   @override
-  String get tdType => "getMessage";
-  final int chatId;
-  final int messageId;
+  String get tdType => 'getMessage';
+
+  int chatId;
+  int messageId;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "message_id": messageId,
+    'chat_id': chatId,
+    'message_id': messageId,
   };
 
   GetMessage(
     this.chatId,
     this.messageId,
   );
+
+  GetMessage.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    messageId = tryConvertToTdObject(json['message_id']);
+  }
 }
 
 @reflector
@@ -3727,20 +4720,26 @@ class GetMessageLocally extends TdFunction {
   Type get returnType => Message;
 
   @override
-  String get tdType => "getMessageLocally";
-  final int chatId;
-  final int messageId;
+  String get tdType => 'getMessageLocally';
+
+  int chatId;
+  int messageId;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "message_id": messageId,
+    'chat_id': chatId,
+    'message_id': messageId,
   };
 
   GetMessageLocally(
     this.chatId,
     this.messageId,
   );
+
+  GetMessageLocally.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    messageId = tryConvertToTdObject(json['message_id']);
+  }
 }
 
 @reflector
@@ -3749,20 +4748,26 @@ class GetRepliedMessage extends TdFunction {
   Type get returnType => Message;
 
   @override
-  String get tdType => "getRepliedMessage";
-  final int chatId;
-  final int messageId;
+  String get tdType => 'getRepliedMessage';
+
+  int chatId;
+  int messageId;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "message_id": messageId,
+    'chat_id': chatId,
+    'message_id': messageId,
   };
 
   GetRepliedMessage(
     this.chatId,
     this.messageId,
   );
+
+  GetRepliedMessage.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    messageId = tryConvertToTdObject(json['message_id']);
+  }
 }
 
 @reflector
@@ -3771,17 +4776,22 @@ class GetChatPinnedMessage extends TdFunction {
   Type get returnType => Message;
 
   @override
-  String get tdType => "getChatPinnedMessage";
-  final int chatId;
+  String get tdType => 'getChatPinnedMessage';
+
+  int chatId;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
+    'chat_id': chatId,
   };
 
   GetChatPinnedMessage(
     this.chatId,
   );
+
+  GetChatPinnedMessage.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+  }
 }
 
 @reflector
@@ -3790,20 +4800,26 @@ class GetChatMessageByDate extends TdFunction {
   Type get returnType => Message;
 
   @override
-  String get tdType => "getChatMessageByDate";
-  final int chatId;
-  final int date;
+  String get tdType => 'getChatMessageByDate';
+
+  int chatId;
+  int date;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "date": date,
+    'chat_id': chatId,
+    'date': date,
   };
 
   GetChatMessageByDate(
     this.chatId,
     this.date,
   );
+
+  GetChatMessageByDate.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    date = tryConvertToTdObject(json['date']);
+  }
 }
 
 @reflector
@@ -3812,22 +4828,23 @@ class SendMessage extends TdFunction {
   Type get returnType => Message;
 
   @override
-  String get tdType => "sendMessage";
-  final int chatId;
-  final int replyToMessageId;
-  final bool disableNotification;
-  final bool fromBackground;
-  final ReplyMarkup replyMarkup;
-  final InputMessageContent inputMessageContent;
+  String get tdType => 'sendMessage';
+
+  int chatId;
+  int replyToMessageId;
+  bool disableNotification;
+  bool fromBackground;
+  ReplyMarkup replyMarkup;
+  InputMessageContent inputMessageContent;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "reply_to_message_id": replyToMessageId,
-    "disable_notification": disableNotification,
-    "from_background": fromBackground,
-    "reply_markup": replyMarkup,
-    "input_message_content": inputMessageContent,
+    'chat_id': chatId,
+    'reply_to_message_id': replyToMessageId,
+    'disable_notification': disableNotification,
+    'from_background': fromBackground,
+    'reply_markup': replyMarkup,
+    'input_message_content': inputMessageContent,
   };
 
   SendMessage(
@@ -3838,6 +4855,15 @@ class SendMessage extends TdFunction {
     this.replyMarkup,
     this.inputMessageContent,
   );
+
+  SendMessage.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    replyToMessageId = tryConvertToTdObject(json['reply_to_message_id']);
+    disableNotification = tryConvertToTdObject(json['disable_notification']);
+    fromBackground = tryConvertToTdObject(json['from_background']);
+    replyMarkup = tryConvertToTdObject(json['reply_markup']);
+    inputMessageContent = tryConvertToTdObject(json['input_message_content']);
+  }
 }
 
 @reflector
@@ -3846,16 +4872,17 @@ class SendBotStartMessage extends TdFunction {
   Type get returnType => Message;
 
   @override
-  String get tdType => "sendBotStartMessage";
-  final int botUserId;
-  final int chatId;
-  final String parameter;
+  String get tdType => 'sendBotStartMessage';
+
+  int botUserId;
+  int chatId;
+  String parameter;
 
   @override
   Map<String, dynamic> get params => {
-    "bot_user_id": botUserId,
-    "chat_id": chatId,
-    "parameter": parameter,
+    'bot_user_id': botUserId,
+    'chat_id': chatId,
+    'parameter': parameter,
   };
 
   SendBotStartMessage(
@@ -3863,6 +4890,12 @@ class SendBotStartMessage extends TdFunction {
     this.chatId,
     this.parameter,
   );
+
+  SendBotStartMessage.fromJson(Map<String, dynamic> json) {
+    botUserId = tryConvertToTdObject(json['bot_user_id']);
+    chatId = tryConvertToTdObject(json['chat_id']);
+    parameter = tryConvertToTdObject(json['parameter']);
+  }
 }
 
 @reflector
@@ -3871,24 +4904,25 @@ class SendInlineQueryResultMessage extends TdFunction {
   Type get returnType => Message;
 
   @override
-  String get tdType => "sendInlineQueryResultMessage";
-  final int chatId;
-  final int replyToMessageId;
-  final bool disableNotification;
-  final bool fromBackground;
-  final int queryId;
-  final String resultId;
-  final bool hideViaBot;
+  String get tdType => 'sendInlineQueryResultMessage';
+
+  int chatId;
+  int replyToMessageId;
+  bool disableNotification;
+  bool fromBackground;
+  int queryId;
+  String resultId;
+  bool hideViaBot;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "reply_to_message_id": replyToMessageId,
-    "disable_notification": disableNotification,
-    "from_background": fromBackground,
-    "query_id": queryId,
-    "result_id": resultId,
-    "hide_via_bot": hideViaBot,
+    'chat_id': chatId,
+    'reply_to_message_id': replyToMessageId,
+    'disable_notification': disableNotification,
+    'from_background': fromBackground,
+    'query_id': queryId,
+    'result_id': resultId,
+    'hide_via_bot': hideViaBot,
   };
 
   SendInlineQueryResultMessage(
@@ -3900,6 +4934,16 @@ class SendInlineQueryResultMessage extends TdFunction {
     this.resultId,
     this.hideViaBot,
   );
+
+  SendInlineQueryResultMessage.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    replyToMessageId = tryConvertToTdObject(json['reply_to_message_id']);
+    disableNotification = tryConvertToTdObject(json['disable_notification']);
+    fromBackground = tryConvertToTdObject(json['from_background']);
+    queryId = tryConvertToTdObject(json['query_id']);
+    resultId = tryConvertToTdObject(json['result_id']);
+    hideViaBot = tryConvertToTdObject(json['hide_via_bot']);
+  }
 }
 
 @reflector
@@ -3908,20 +4952,26 @@ class SendChatSetTtlMessage extends TdFunction {
   Type get returnType => Message;
 
   @override
-  String get tdType => "sendChatSetTtlMessage";
-  final int chatId;
-  final int ttl;
+  String get tdType => 'sendChatSetTtlMessage';
+
+  int chatId;
+  int ttl;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "ttl": ttl,
+    'chat_id': chatId,
+    'ttl': ttl,
   };
 
   SendChatSetTtlMessage(
     this.chatId,
     this.ttl,
   );
+
+  SendChatSetTtlMessage.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    ttl = tryConvertToTdObject(json['ttl']);
+  }
 }
 
 @reflector
@@ -3930,20 +4980,21 @@ class AddLocalMessage extends TdFunction {
   Type get returnType => Message;
 
   @override
-  String get tdType => "addLocalMessage";
-  final int chatId;
-  final int senderUserId;
-  final int replyToMessageId;
-  final bool disableNotification;
-  final InputMessageContent inputMessageContent;
+  String get tdType => 'addLocalMessage';
+
+  int chatId;
+  int senderUserId;
+  int replyToMessageId;
+  bool disableNotification;
+  InputMessageContent inputMessageContent;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "sender_user_id": senderUserId,
-    "reply_to_message_id": replyToMessageId,
-    "disable_notification": disableNotification,
-    "input_message_content": inputMessageContent,
+    'chat_id': chatId,
+    'sender_user_id': senderUserId,
+    'reply_to_message_id': replyToMessageId,
+    'disable_notification': disableNotification,
+    'input_message_content': inputMessageContent,
   };
 
   AddLocalMessage(
@@ -3953,6 +5004,14 @@ class AddLocalMessage extends TdFunction {
     this.disableNotification,
     this.inputMessageContent,
   );
+
+  AddLocalMessage.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    senderUserId = tryConvertToTdObject(json['sender_user_id']);
+    replyToMessageId = tryConvertToTdObject(json['reply_to_message_id']);
+    disableNotification = tryConvertToTdObject(json['disable_notification']);
+    inputMessageContent = tryConvertToTdObject(json['input_message_content']);
+  }
 }
 
 @reflector
@@ -3961,18 +5020,19 @@ class EditMessageText extends TdFunction {
   Type get returnType => Message;
 
   @override
-  String get tdType => "editMessageText";
-  final int chatId;
-  final int messageId;
-  final ReplyMarkup replyMarkup;
-  final InputMessageContent inputMessageContent;
+  String get tdType => 'editMessageText';
+
+  int chatId;
+  int messageId;
+  ReplyMarkup replyMarkup;
+  InputMessageContent inputMessageContent;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "message_id": messageId,
-    "reply_markup": replyMarkup,
-    "input_message_content": inputMessageContent,
+    'chat_id': chatId,
+    'message_id': messageId,
+    'reply_markup': replyMarkup,
+    'input_message_content': inputMessageContent,
   };
 
   EditMessageText(
@@ -3981,6 +5041,13 @@ class EditMessageText extends TdFunction {
     this.replyMarkup,
     this.inputMessageContent,
   );
+
+  EditMessageText.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    messageId = tryConvertToTdObject(json['message_id']);
+    replyMarkup = tryConvertToTdObject(json['reply_markup']);
+    inputMessageContent = tryConvertToTdObject(json['input_message_content']);
+  }
 }
 
 @reflector
@@ -3989,18 +5056,19 @@ class EditMessageLiveLocation extends TdFunction {
   Type get returnType => Message;
 
   @override
-  String get tdType => "editMessageLiveLocation";
-  final int chatId;
-  final int messageId;
-  final ReplyMarkup replyMarkup;
-  final Location location;
+  String get tdType => 'editMessageLiveLocation';
+
+  int chatId;
+  int messageId;
+  ReplyMarkup replyMarkup;
+  Location location;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "message_id": messageId,
-    "reply_markup": replyMarkup,
-    "location": location,
+    'chat_id': chatId,
+    'message_id': messageId,
+    'reply_markup': replyMarkup,
+    'location': location,
   };
 
   EditMessageLiveLocation(
@@ -4009,6 +5077,13 @@ class EditMessageLiveLocation extends TdFunction {
     this.replyMarkup,
     this.location,
   );
+
+  EditMessageLiveLocation.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    messageId = tryConvertToTdObject(json['message_id']);
+    replyMarkup = tryConvertToTdObject(json['reply_markup']);
+    location = tryConvertToTdObject(json['location']);
+  }
 }
 
 @reflector
@@ -4017,18 +5092,19 @@ class EditMessageMedia extends TdFunction {
   Type get returnType => Message;
 
   @override
-  String get tdType => "editMessageMedia";
-  final int chatId;
-  final int messageId;
-  final ReplyMarkup replyMarkup;
-  final InputMessageContent inputMessageContent;
+  String get tdType => 'editMessageMedia';
+
+  int chatId;
+  int messageId;
+  ReplyMarkup replyMarkup;
+  InputMessageContent inputMessageContent;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "message_id": messageId,
-    "reply_markup": replyMarkup,
-    "input_message_content": inputMessageContent,
+    'chat_id': chatId,
+    'message_id': messageId,
+    'reply_markup': replyMarkup,
+    'input_message_content': inputMessageContent,
   };
 
   EditMessageMedia(
@@ -4037,6 +5113,13 @@ class EditMessageMedia extends TdFunction {
     this.replyMarkup,
     this.inputMessageContent,
   );
+
+  EditMessageMedia.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    messageId = tryConvertToTdObject(json['message_id']);
+    replyMarkup = tryConvertToTdObject(json['reply_markup']);
+    inputMessageContent = tryConvertToTdObject(json['input_message_content']);
+  }
 }
 
 @reflector
@@ -4045,18 +5128,19 @@ class EditMessageCaption extends TdFunction {
   Type get returnType => Message;
 
   @override
-  String get tdType => "editMessageCaption";
-  final int chatId;
-  final int messageId;
-  final ReplyMarkup replyMarkup;
-  final FormattedText caption;
+  String get tdType => 'editMessageCaption';
+
+  int chatId;
+  int messageId;
+  ReplyMarkup replyMarkup;
+  FormattedText caption;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "message_id": messageId,
-    "reply_markup": replyMarkup,
-    "caption": caption,
+    'chat_id': chatId,
+    'message_id': messageId,
+    'reply_markup': replyMarkup,
+    'caption': caption,
   };
 
   EditMessageCaption(
@@ -4065,6 +5149,13 @@ class EditMessageCaption extends TdFunction {
     this.replyMarkup,
     this.caption,
   );
+
+  EditMessageCaption.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    messageId = tryConvertToTdObject(json['message_id']);
+    replyMarkup = tryConvertToTdObject(json['reply_markup']);
+    caption = tryConvertToTdObject(json['caption']);
+  }
 }
 
 @reflector
@@ -4073,16 +5164,17 @@ class EditMessageReplyMarkup extends TdFunction {
   Type get returnType => Message;
 
   @override
-  String get tdType => "editMessageReplyMarkup";
-  final int chatId;
-  final int messageId;
-  final ReplyMarkup replyMarkup;
+  String get tdType => 'editMessageReplyMarkup';
+
+  int chatId;
+  int messageId;
+  ReplyMarkup replyMarkup;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "message_id": messageId,
-    "reply_markup": replyMarkup,
+    'chat_id': chatId,
+    'message_id': messageId,
+    'reply_markup': replyMarkup,
   };
 
   EditMessageReplyMarkup(
@@ -4090,6 +5182,12 @@ class EditMessageReplyMarkup extends TdFunction {
     this.messageId,
     this.replyMarkup,
   );
+
+  EditMessageReplyMarkup.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    messageId = tryConvertToTdObject(json['message_id']);
+    replyMarkup = tryConvertToTdObject(json['reply_markup']);
+  }
 }
 
 @reflector
@@ -4098,22 +5196,23 @@ class SetGameScore extends TdFunction {
   Type get returnType => Message;
 
   @override
-  String get tdType => "setGameScore";
-  final int chatId;
-  final int messageId;
-  final bool editMessage;
-  final int userId;
-  final int score;
-  final bool force;
+  String get tdType => 'setGameScore';
+
+  int chatId;
+  int messageId;
+  bool editMessage;
+  int userId;
+  int score;
+  bool force;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "message_id": messageId,
-    "edit_message": editMessage,
-    "user_id": userId,
-    "score": score,
-    "force": force,
+    'chat_id': chatId,
+    'message_id': messageId,
+    'edit_message': editMessage,
+    'user_id': userId,
+    'score': score,
+    'force': force,
   };
 
   SetGameScore(
@@ -4124,6 +5223,15 @@ class SetGameScore extends TdFunction {
     this.score,
     this.force,
   );
+
+  SetGameScore.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    messageId = tryConvertToTdObject(json['message_id']);
+    editMessage = tryConvertToTdObject(json['edit_message']);
+    userId = tryConvertToTdObject(json['user_id']);
+    score = tryConvertToTdObject(json['score']);
+    force = tryConvertToTdObject(json['force']);
+  }
 }
 
 @reflector
@@ -4132,20 +5240,26 @@ class GetMessages extends TdFunction {
   Type get returnType => Messages;
 
   @override
-  String get tdType => "getMessages";
-  final int chatId;
-  final List<int> messageIds;
+  String get tdType => 'getMessages';
+
+  int chatId;
+  List<int> messageIds;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "message_ids": messageIds,
+    'chat_id': chatId,
+    'message_ids': messageIds,
   };
 
   GetMessages(
     this.chatId,
     this.messageIds,
   );
+
+  GetMessages.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    messageIds = tryConvertToTdObject(json['message_ids']);
+  }
 }
 
 @reflector
@@ -4154,20 +5268,21 @@ class GetChatHistory extends TdFunction {
   Type get returnType => Messages;
 
   @override
-  String get tdType => "getChatHistory";
-  final int chatId;
-  final int fromMessageId;
-  final int offset;
-  final int limit;
-  final bool onlyLocal;
+  String get tdType => 'getChatHistory';
+
+  int chatId;
+  int fromMessageId;
+  int offset;
+  int limit;
+  bool onlyLocal;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "from_message_id": fromMessageId,
-    "offset": offset,
-    "limit": limit,
-    "only_local": onlyLocal,
+    'chat_id': chatId,
+    'from_message_id': fromMessageId,
+    'offset': offset,
+    'limit': limit,
+    'only_local': onlyLocal,
   };
 
   GetChatHistory(
@@ -4177,6 +5292,14 @@ class GetChatHistory extends TdFunction {
     this.limit,
     this.onlyLocal,
   );
+
+  GetChatHistory.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    fromMessageId = tryConvertToTdObject(json['from_message_id']);
+    offset = tryConvertToTdObject(json['offset']);
+    limit = tryConvertToTdObject(json['limit']);
+    onlyLocal = tryConvertToTdObject(json['only_local']);
+  }
 }
 
 @reflector
@@ -4185,24 +5308,25 @@ class SearchChatMessages extends TdFunction {
   Type get returnType => Messages;
 
   @override
-  String get tdType => "searchChatMessages";
-  final int chatId;
-  final String query;
-  final int senderUserId;
-  final int fromMessageId;
-  final int offset;
-  final int limit;
-  final SearchMessagesFilter filter;
+  String get tdType => 'searchChatMessages';
+
+  int chatId;
+  String query;
+  int senderUserId;
+  int fromMessageId;
+  int offset;
+  int limit;
+  SearchMessagesFilter filter;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "query": query,
-    "sender_user_id": senderUserId,
-    "from_message_id": fromMessageId,
-    "offset": offset,
-    "limit": limit,
-    "filter": filter,
+    'chat_id': chatId,
+    'query': query,
+    'sender_user_id': senderUserId,
+    'from_message_id': fromMessageId,
+    'offset': offset,
+    'limit': limit,
+    'filter': filter,
   };
 
   SearchChatMessages(
@@ -4214,6 +5338,16 @@ class SearchChatMessages extends TdFunction {
     this.limit,
     this.filter,
   );
+
+  SearchChatMessages.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    query = tryConvertToTdObject(json['query']);
+    senderUserId = tryConvertToTdObject(json['sender_user_id']);
+    fromMessageId = tryConvertToTdObject(json['from_message_id']);
+    offset = tryConvertToTdObject(json['offset']);
+    limit = tryConvertToTdObject(json['limit']);
+    filter = tryConvertToTdObject(json['filter']);
+  }
 }
 
 @reflector
@@ -4222,20 +5356,21 @@ class SearchMessages extends TdFunction {
   Type get returnType => Messages;
 
   @override
-  String get tdType => "searchMessages";
-  final String query;
-  final int offsetDate;
-  final int offsetChatId;
-  final int offsetMessageId;
-  final int limit;
+  String get tdType => 'searchMessages';
+
+  String query;
+  int offsetDate;
+  int offsetChatId;
+  int offsetMessageId;
+  int limit;
 
   @override
   Map<String, dynamic> get params => {
-    "query": query,
-    "offset_date": offsetDate,
-    "offset_chat_id": offsetChatId,
-    "offset_message_id": offsetMessageId,
-    "limit": limit,
+    'query': query,
+    'offset_date': offsetDate,
+    'offset_chat_id': offsetChatId,
+    'offset_message_id': offsetMessageId,
+    'limit': limit,
   };
 
   SearchMessages(
@@ -4245,6 +5380,14 @@ class SearchMessages extends TdFunction {
     this.offsetMessageId,
     this.limit,
   );
+
+  SearchMessages.fromJson(Map<String, dynamic> json) {
+    query = tryConvertToTdObject(json['query']);
+    offsetDate = tryConvertToTdObject(json['offset_date']);
+    offsetChatId = tryConvertToTdObject(json['offset_chat_id']);
+    offsetMessageId = tryConvertToTdObject(json['offset_message_id']);
+    limit = tryConvertToTdObject(json['limit']);
+  }
 }
 
 @reflector
@@ -4253,16 +5396,17 @@ class SearchCallMessages extends TdFunction {
   Type get returnType => Messages;
 
   @override
-  String get tdType => "searchCallMessages";
-  final int fromMessageId;
-  final int limit;
-  final bool onlyMissed;
+  String get tdType => 'searchCallMessages';
+
+  int fromMessageId;
+  int limit;
+  bool onlyMissed;
 
   @override
   Map<String, dynamic> get params => {
-    "from_message_id": fromMessageId,
-    "limit": limit,
-    "only_missed": onlyMissed,
+    'from_message_id': fromMessageId,
+    'limit': limit,
+    'only_missed': onlyMissed,
   };
 
   SearchCallMessages(
@@ -4270,6 +5414,12 @@ class SearchCallMessages extends TdFunction {
     this.limit,
     this.onlyMissed,
   );
+
+  SearchCallMessages.fromJson(Map<String, dynamic> json) {
+    fromMessageId = tryConvertToTdObject(json['from_message_id']);
+    limit = tryConvertToTdObject(json['limit']);
+    onlyMissed = tryConvertToTdObject(json['only_missed']);
+  }
 }
 
 @reflector
@@ -4278,20 +5428,26 @@ class SearchChatRecentLocationMessages extends TdFunction {
   Type get returnType => Messages;
 
   @override
-  String get tdType => "searchChatRecentLocationMessages";
-  final int chatId;
-  final int limit;
+  String get tdType => 'searchChatRecentLocationMessages';
+
+  int chatId;
+  int limit;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "limit": limit,
+    'chat_id': chatId,
+    'limit': limit,
   };
 
   SearchChatRecentLocationMessages(
     this.chatId,
     this.limit,
   );
+
+  SearchChatRecentLocationMessages.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    limit = tryConvertToTdObject(json['limit']);
+  }
 }
 
 @reflector
@@ -4300,11 +5456,14 @@ class GetActiveLiveLocationMessages extends TdFunction {
   Type get returnType => Messages;
 
   @override
-  String get tdType => "getActiveLiveLocationMessages";
+  String get tdType => 'getActiveLiveLocationMessages';
+
   @override
   Map<String, dynamic> get params => {};
 
   GetActiveLiveLocationMessages();
+
+  GetActiveLiveLocationMessages.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -4313,20 +5472,21 @@ class SendMessageAlbum extends TdFunction {
   Type get returnType => Messages;
 
   @override
-  String get tdType => "sendMessageAlbum";
-  final int chatId;
-  final int replyToMessageId;
-  final bool disableNotification;
-  final bool fromBackground;
-  final List<InputMessageContent> inputMessageContents;
+  String get tdType => 'sendMessageAlbum';
+
+  int chatId;
+  int replyToMessageId;
+  bool disableNotification;
+  bool fromBackground;
+  List<InputMessageContent> inputMessageContents;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "reply_to_message_id": replyToMessageId,
-    "disable_notification": disableNotification,
-    "from_background": fromBackground,
-    "input_message_contents": inputMessageContents,
+    'chat_id': chatId,
+    'reply_to_message_id': replyToMessageId,
+    'disable_notification': disableNotification,
+    'from_background': fromBackground,
+    'input_message_contents': inputMessageContents,
   };
 
   SendMessageAlbum(
@@ -4336,6 +5496,14 @@ class SendMessageAlbum extends TdFunction {
     this.fromBackground,
     this.inputMessageContents,
   );
+
+  SendMessageAlbum.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    replyToMessageId = tryConvertToTdObject(json['reply_to_message_id']);
+    disableNotification = tryConvertToTdObject(json['disable_notification']);
+    fromBackground = tryConvertToTdObject(json['from_background']);
+    inputMessageContents = tryConvertToTdObject(json['input_message_contents']);
+  }
 }
 
 @reflector
@@ -4344,26 +5512,27 @@ class ForwardMessages extends TdFunction {
   Type get returnType => Messages;
 
   @override
-  String get tdType => "forwardMessages";
-  final int chatId;
-  final int fromChatId;
-  final List<int> messageIds;
-  final bool disableNotification;
-  final bool fromBackground;
-  final bool asAlbum;
-  final bool sendCopy;
-  final bool removeCaption;
+  String get tdType => 'forwardMessages';
+
+  int chatId;
+  int fromChatId;
+  List<int> messageIds;
+  bool disableNotification;
+  bool fromBackground;
+  bool asAlbum;
+  bool sendCopy;
+  bool removeCaption;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "from_chat_id": fromChatId,
-    "message_ids": messageIds,
-    "disable_notification": disableNotification,
-    "from_background": fromBackground,
-    "as_album": asAlbum,
-    "send_copy": sendCopy,
-    "remove_caption": removeCaption,
+    'chat_id': chatId,
+    'from_chat_id': fromChatId,
+    'message_ids': messageIds,
+    'disable_notification': disableNotification,
+    'from_background': fromBackground,
+    'as_album': asAlbum,
+    'send_copy': sendCopy,
+    'remove_caption': removeCaption,
   };
 
   ForwardMessages(
@@ -4376,6 +5545,17 @@ class ForwardMessages extends TdFunction {
     this.sendCopy,
     this.removeCaption,
   );
+
+  ForwardMessages.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    fromChatId = tryConvertToTdObject(json['from_chat_id']);
+    messageIds = tryConvertToTdObject(json['message_ids']);
+    disableNotification = tryConvertToTdObject(json['disable_notification']);
+    fromBackground = tryConvertToTdObject(json['from_background']);
+    asAlbum = tryConvertToTdObject(json['as_album']);
+    sendCopy = tryConvertToTdObject(json['send_copy']);
+    removeCaption = tryConvertToTdObject(json['remove_caption']);
+  }
 }
 
 @reflector
@@ -4384,20 +5564,26 @@ class ResendMessages extends TdFunction {
   Type get returnType => Messages;
 
   @override
-  String get tdType => "resendMessages";
-  final int chatId;
-  final List<int> messageIds;
+  String get tdType => 'resendMessages';
+
+  int chatId;
+  List<int> messageIds;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "message_ids": messageIds,
+    'chat_id': chatId,
+    'message_ids': messageIds,
   };
 
   ResendMessages(
     this.chatId,
     this.messageIds,
   );
+
+  ResendMessages.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    messageIds = tryConvertToTdObject(json['message_ids']);
+  }
 }
 
 @reflector
@@ -4406,17 +5592,22 @@ class GetFile extends TdFunction {
   Type get returnType => File;
 
   @override
-  String get tdType => "getFile";
-  final int fileId;
+  String get tdType => 'getFile';
+
+  int fileId;
 
   @override
   Map<String, dynamic> get params => {
-    "file_id": fileId,
+    'file_id': fileId,
   };
 
   GetFile(
     this.fileId,
   );
+
+  GetFile.fromJson(Map<String, dynamic> json) {
+    fileId = tryConvertToTdObject(json['file_id']);
+  }
 }
 
 @reflector
@@ -4425,20 +5616,26 @@ class GetRemoteFile extends TdFunction {
   Type get returnType => File;
 
   @override
-  String get tdType => "getRemoteFile";
-  final String remoteFileId;
-  final FileType fileType;
+  String get tdType => 'getRemoteFile';
+
+  String remoteFileId;
+  FileType fileType;
 
   @override
   Map<String, dynamic> get params => {
-    "remote_file_id": remoteFileId,
-    "file_type": fileType,
+    'remote_file_id': remoteFileId,
+    'file_type': fileType,
   };
 
   GetRemoteFile(
     this.remoteFileId,
     this.fileType,
   );
+
+  GetRemoteFile.fromJson(Map<String, dynamic> json) {
+    remoteFileId = tryConvertToTdObject(json['remote_file_id']);
+    fileType = tryConvertToTdObject(json['file_type']);
+  }
 }
 
 @reflector
@@ -4447,20 +5644,21 @@ class DownloadFile extends TdFunction {
   Type get returnType => File;
 
   @override
-  String get tdType => "downloadFile";
-  final int fileId;
-  final int priority;
-  final int offset;
-  final int limit;
-  final bool synchronous;
+  String get tdType => 'downloadFile';
+
+  int fileId;
+  int priority;
+  int offset;
+  int limit;
+  bool synchronous;
 
   @override
   Map<String, dynamic> get params => {
-    "file_id": fileId,
-    "priority": priority,
-    "offset": offset,
-    "limit": limit,
-    "synchronous": synchronous,
+    'file_id': fileId,
+    'priority': priority,
+    'offset': offset,
+    'limit': limit,
+    'synchronous': synchronous,
   };
 
   DownloadFile(
@@ -4470,6 +5668,14 @@ class DownloadFile extends TdFunction {
     this.limit,
     this.synchronous,
   );
+
+  DownloadFile.fromJson(Map<String, dynamic> json) {
+    fileId = tryConvertToTdObject(json['file_id']);
+    priority = tryConvertToTdObject(json['priority']);
+    offset = tryConvertToTdObject(json['offset']);
+    limit = tryConvertToTdObject(json['limit']);
+    synchronous = tryConvertToTdObject(json['synchronous']);
+  }
 }
 
 @reflector
@@ -4478,16 +5684,17 @@ class UploadFile extends TdFunction {
   Type get returnType => File;
 
   @override
-  String get tdType => "uploadFile";
-  final InputFile file;
-  final FileType fileType;
-  final int priority;
+  String get tdType => 'uploadFile';
+
+  InputFile file;
+  FileType fileType;
+  int priority;
 
   @override
   Map<String, dynamic> get params => {
-    "file": file,
-    "file_type": fileType,
-    "priority": priority,
+    'file': file,
+    'file_type': fileType,
+    'priority': priority,
   };
 
   UploadFile(
@@ -4495,6 +5702,12 @@ class UploadFile extends TdFunction {
     this.fileType,
     this.priority,
   );
+
+  UploadFile.fromJson(Map<String, dynamic> json) {
+    file = tryConvertToTdObject(json['file']);
+    fileType = tryConvertToTdObject(json['file_type']);
+    priority = tryConvertToTdObject(json['priority']);
+  }
 }
 
 @reflector
@@ -4503,20 +5716,26 @@ class UploadStickerFile extends TdFunction {
   Type get returnType => File;
 
   @override
-  String get tdType => "uploadStickerFile";
-  final int userId;
-  final InputFile pngSticker;
+  String get tdType => 'uploadStickerFile';
+
+  int userId;
+  InputFile pngSticker;
 
   @override
   Map<String, dynamic> get params => {
-    "user_id": userId,
-    "png_sticker": pngSticker,
+    'user_id': userId,
+    'png_sticker': pngSticker,
   };
 
   UploadStickerFile(
     this.userId,
     this.pngSticker,
   );
+
+  UploadStickerFile.fromJson(Map<String, dynamic> json) {
+    userId = tryConvertToTdObject(json['user_id']);
+    pngSticker = tryConvertToTdObject(json['png_sticker']);
+  }
 }
 
 @reflector
@@ -4525,22 +5744,23 @@ class GetMapThumbnailFile extends TdFunction {
   Type get returnType => File;
 
   @override
-  String get tdType => "getMapThumbnailFile";
-  final Location location;
-  final int zoom;
-  final int width;
-  final int height;
-  final int scale;
-  final int chatId;
+  String get tdType => 'getMapThumbnailFile';
+
+  Location location;
+  int zoom;
+  int width;
+  int height;
+  int scale;
+  int chatId;
 
   @override
   Map<String, dynamic> get params => {
-    "location": location,
-    "zoom": zoom,
-    "width": width,
-    "height": height,
-    "scale": scale,
-    "chat_id": chatId,
+    'location': location,
+    'zoom': zoom,
+    'width': width,
+    'height': height,
+    'scale': scale,
+    'chat_id': chatId,
   };
 
   GetMapThumbnailFile(
@@ -4551,6 +5771,15 @@ class GetMapThumbnailFile extends TdFunction {
     this.scale,
     this.chatId,
   );
+
+  GetMapThumbnailFile.fromJson(Map<String, dynamic> json) {
+    location = tryConvertToTdObject(json['location']);
+    zoom = tryConvertToTdObject(json['zoom']);
+    width = tryConvertToTdObject(json['width']);
+    height = tryConvertToTdObject(json['height']);
+    scale = tryConvertToTdObject(json['scale']);
+    chatId = tryConvertToTdObject(json['chat_id']);
+  }
 }
 
 @reflector
@@ -4559,16 +5788,17 @@ class GetChats extends TdFunction {
   Type get returnType => Chats;
 
   @override
-  String get tdType => "getChats";
-  final int offsetOrder;
-  final int offsetChatId;
-  final int limit;
+  String get tdType => 'getChats';
+
+  int offsetOrder;
+  int offsetChatId;
+  int limit;
 
   @override
   Map<String, dynamic> get params => {
-    "offset_order": offsetOrder,
-    "offset_chat_id": offsetChatId,
-    "limit": limit,
+    'offset_order': offsetOrder,
+    'offset_chat_id': offsetChatId,
+    'limit': limit,
   };
 
   GetChats(
@@ -4576,6 +5806,12 @@ class GetChats extends TdFunction {
     this.offsetChatId,
     this.limit,
   );
+
+  GetChats.fromJson(Map<String, dynamic> json) {
+    offsetOrder = tryConvertToTdObject(json['offset_order']);
+    offsetChatId = tryConvertToTdObject(json['offset_chat_id']);
+    limit = tryConvertToTdObject(json['limit']);
+  }
 }
 
 @reflector
@@ -4584,17 +5820,22 @@ class SearchPublicChats extends TdFunction {
   Type get returnType => Chats;
 
   @override
-  String get tdType => "searchPublicChats";
-  final String query;
+  String get tdType => 'searchPublicChats';
+
+  String query;
 
   @override
   Map<String, dynamic> get params => {
-    "query": query,
+    'query': query,
   };
 
   SearchPublicChats(
     this.query,
   );
+
+  SearchPublicChats.fromJson(Map<String, dynamic> json) {
+    query = tryConvertToTdObject(json['query']);
+  }
 }
 
 @reflector
@@ -4603,20 +5844,26 @@ class SearchChats extends TdFunction {
   Type get returnType => Chats;
 
   @override
-  String get tdType => "searchChats";
-  final String query;
-  final int limit;
+  String get tdType => 'searchChats';
+
+  String query;
+  int limit;
 
   @override
   Map<String, dynamic> get params => {
-    "query": query,
-    "limit": limit,
+    'query': query,
+    'limit': limit,
   };
 
   SearchChats(
     this.query,
     this.limit,
   );
+
+  SearchChats.fromJson(Map<String, dynamic> json) {
+    query = tryConvertToTdObject(json['query']);
+    limit = tryConvertToTdObject(json['limit']);
+  }
 }
 
 @reflector
@@ -4625,20 +5872,26 @@ class SearchChatsOnServer extends TdFunction {
   Type get returnType => Chats;
 
   @override
-  String get tdType => "searchChatsOnServer";
-  final String query;
-  final int limit;
+  String get tdType => 'searchChatsOnServer';
+
+  String query;
+  int limit;
 
   @override
   Map<String, dynamic> get params => {
-    "query": query,
-    "limit": limit,
+    'query': query,
+    'limit': limit,
   };
 
   SearchChatsOnServer(
     this.query,
     this.limit,
   );
+
+  SearchChatsOnServer.fromJson(Map<String, dynamic> json) {
+    query = tryConvertToTdObject(json['query']);
+    limit = tryConvertToTdObject(json['limit']);
+  }
 }
 
 @reflector
@@ -4647,20 +5900,26 @@ class GetTopChats extends TdFunction {
   Type get returnType => Chats;
 
   @override
-  String get tdType => "getTopChats";
-  final TopChatCategory category;
-  final int limit;
+  String get tdType => 'getTopChats';
+
+  TopChatCategory category;
+  int limit;
 
   @override
   Map<String, dynamic> get params => {
-    "category": category,
-    "limit": limit,
+    'category': category,
+    'limit': limit,
   };
 
   GetTopChats(
     this.category,
     this.limit,
   );
+
+  GetTopChats.fromJson(Map<String, dynamic> json) {
+    category = tryConvertToTdObject(json['category']);
+    limit = tryConvertToTdObject(json['limit']);
+  }
 }
 
 @reflector
@@ -4669,11 +5928,14 @@ class GetCreatedPublicChats extends TdFunction {
   Type get returnType => Chats;
 
   @override
-  String get tdType => "getCreatedPublicChats";
+  String get tdType => 'getCreatedPublicChats';
+
   @override
   Map<String, dynamic> get params => {};
 
   GetCreatedPublicChats();
+
+  GetCreatedPublicChats.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -4682,16 +5944,17 @@ class GetGroupsInCommon extends TdFunction {
   Type get returnType => Chats;
 
   @override
-  String get tdType => "getGroupsInCommon";
-  final int userId;
-  final int offsetChatId;
-  final int limit;
+  String get tdType => 'getGroupsInCommon';
+
+  int userId;
+  int offsetChatId;
+  int limit;
 
   @override
   Map<String, dynamic> get params => {
-    "user_id": userId,
-    "offset_chat_id": offsetChatId,
-    "limit": limit,
+    'user_id': userId,
+    'offset_chat_id': offsetChatId,
+    'limit': limit,
   };
 
   GetGroupsInCommon(
@@ -4699,6 +5962,12 @@ class GetGroupsInCommon extends TdFunction {
     this.offsetChatId,
     this.limit,
   );
+
+  GetGroupsInCommon.fromJson(Map<String, dynamic> json) {
+    userId = tryConvertToTdObject(json['user_id']);
+    offsetChatId = tryConvertToTdObject(json['offset_chat_id']);
+    limit = tryConvertToTdObject(json['limit']);
+  }
 }
 
 @reflector
@@ -4707,20 +5976,26 @@ class GetChatNotificationSettingsExceptions extends TdFunction {
   Type get returnType => Chats;
 
   @override
-  String get tdType => "getChatNotificationSettingsExceptions";
-  final NotificationSettingsScope scope;
-  final bool compareSound;
+  String get tdType => 'getChatNotificationSettingsExceptions';
+
+  NotificationSettingsScope scope;
+  bool compareSound;
 
   @override
   Map<String, dynamic> get params => {
-    "scope": scope,
-    "compare_sound": compareSound,
+    'scope': scope,
+    'compare_sound': compareSound,
   };
 
   GetChatNotificationSettingsExceptions(
     this.scope,
     this.compareSound,
   );
+
+  GetChatNotificationSettingsExceptions.fromJson(Map<String, dynamic> json) {
+    scope = tryConvertToTdObject(json['scope']);
+    compareSound = tryConvertToTdObject(json['compare_sound']);
+  }
 }
 
 @reflector
@@ -4729,20 +6004,26 @@ class CheckChatUsername extends TdFunction {
   Type get returnType => CheckChatUsernameResult;
 
   @override
-  String get tdType => "checkChatUsername";
-  final int chatId;
-  final String username;
+  String get tdType => 'checkChatUsername';
+
+  int chatId;
+  String username;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "username": username,
+    'chat_id': chatId,
+    'username': username,
   };
 
   CheckChatUsername(
     this.chatId,
     this.username,
   );
+
+  CheckChatUsername.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    username = tryConvertToTdObject(json['username']);
+  }
 }
 
 @reflector
@@ -4751,20 +6032,21 @@ class SearchSecretMessages extends TdFunction {
   Type get returnType => FoundMessages;
 
   @override
-  String get tdType => "searchSecretMessages";
-  final int chatId;
-  final String query;
-  final int fromSearchId;
-  final int limit;
-  final SearchMessagesFilter filter;
+  String get tdType => 'searchSecretMessages';
+
+  int chatId;
+  String query;
+  int fromSearchId;
+  int limit;
+  SearchMessagesFilter filter;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "query": query,
-    "from_search_id": fromSearchId,
-    "limit": limit,
-    "filter": filter,
+    'chat_id': chatId,
+    'query': query,
+    'from_search_id': fromSearchId,
+    'limit': limit,
+    'filter': filter,
   };
 
   SearchSecretMessages(
@@ -4774,6 +6056,14 @@ class SearchSecretMessages extends TdFunction {
     this.limit,
     this.filter,
   );
+
+  SearchSecretMessages.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    query = tryConvertToTdObject(json['query']);
+    fromSearchId = tryConvertToTdObject(json['from_search_id']);
+    limit = tryConvertToTdObject(json['limit']);
+    filter = tryConvertToTdObject(json['filter']);
+  }
 }
 
 @reflector
@@ -4782,16 +6072,17 @@ class GetChatMessageCount extends TdFunction {
   Type get returnType => Count;
 
   @override
-  String get tdType => "getChatMessageCount";
-  final int chatId;
-  final SearchMessagesFilter filter;
-  final bool returnLocal;
+  String get tdType => 'getChatMessageCount';
+
+  int chatId;
+  SearchMessagesFilter filter;
+  bool returnLocal;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "filter": filter,
-    "return_local": returnLocal,
+    'chat_id': chatId,
+    'filter': filter,
+    'return_local': returnLocal,
   };
 
   GetChatMessageCount(
@@ -4799,6 +6090,12 @@ class GetChatMessageCount extends TdFunction {
     this.filter,
     this.returnLocal,
   );
+
+  GetChatMessageCount.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    filter = tryConvertToTdObject(json['filter']);
+    returnLocal = tryConvertToTdObject(json['return_local']);
+  }
 }
 
 @reflector
@@ -4807,20 +6104,26 @@ class GetFileDownloadedPrefixSize extends TdFunction {
   Type get returnType => Count;
 
   @override
-  String get tdType => "getFileDownloadedPrefixSize";
-  final int fileId;
-  final int offset;
+  String get tdType => 'getFileDownloadedPrefixSize';
+
+  int fileId;
+  int offset;
 
   @override
   Map<String, dynamic> get params => {
-    "file_id": fileId,
-    "offset": offset,
+    'file_id': fileId,
+    'offset': offset,
   };
 
   GetFileDownloadedPrefixSize(
     this.fileId,
     this.offset,
   );
+
+  GetFileDownloadedPrefixSize.fromJson(Map<String, dynamic> json) {
+    fileId = tryConvertToTdObject(json['file_id']);
+    offset = tryConvertToTdObject(json['offset']);
+  }
 }
 
 @reflector
@@ -4829,11 +6132,14 @@ class GetImportedContactCount extends TdFunction {
   Type get returnType => Count;
 
   @override
-  String get tdType => "getImportedContactCount";
+  String get tdType => 'getImportedContactCount';
+
   @override
   Map<String, dynamic> get params => {};
 
   GetImportedContactCount();
+
+  GetImportedContactCount.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -4842,16 +6148,17 @@ class GetPublicMessageLink extends TdFunction {
   Type get returnType => PublicMessageLink;
 
   @override
-  String get tdType => "getPublicMessageLink";
-  final int chatId;
-  final int messageId;
-  final bool forAlbum;
+  String get tdType => 'getPublicMessageLink';
+
+  int chatId;
+  int messageId;
+  bool forAlbum;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "message_id": messageId,
-    "for_album": forAlbum,
+    'chat_id': chatId,
+    'message_id': messageId,
+    'for_album': forAlbum,
   };
 
   GetPublicMessageLink(
@@ -4859,6 +6166,12 @@ class GetPublicMessageLink extends TdFunction {
     this.messageId,
     this.forAlbum,
   );
+
+  GetPublicMessageLink.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    messageId = tryConvertToTdObject(json['message_id']);
+    forAlbum = tryConvertToTdObject(json['for_album']);
+  }
 }
 
 @reflector
@@ -4867,20 +6180,26 @@ class GetMessageLink extends TdFunction {
   Type get returnType => HttpUrl;
 
   @override
-  String get tdType => "getMessageLink";
-  final int chatId;
-  final int messageId;
+  String get tdType => 'getMessageLink';
+
+  int chatId;
+  int messageId;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "message_id": messageId,
+    'chat_id': chatId,
+    'message_id': messageId,
   };
 
   GetMessageLink(
     this.chatId,
     this.messageId,
   );
+
+  GetMessageLink.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    messageId = tryConvertToTdObject(json['message_id']);
+  }
 }
 
 @reflector
@@ -4889,17 +6208,22 @@ class GetEmojiSuggestionsUrl extends TdFunction {
   Type get returnType => HttpUrl;
 
   @override
-  String get tdType => "getEmojiSuggestionsUrl";
-  final String languageCode;
+  String get tdType => 'getEmojiSuggestionsUrl';
+
+  String languageCode;
 
   @override
   Map<String, dynamic> get params => {
-    "language_code": languageCode,
+    'language_code': languageCode,
   };
 
   GetEmojiSuggestionsUrl(
     this.languageCode,
   );
+
+  GetEmojiSuggestionsUrl.fromJson(Map<String, dynamic> json) {
+    languageCode = tryConvertToTdObject(json['language_code']);
+  }
 }
 
 @reflector
@@ -4908,20 +6232,26 @@ class GetBackgroundUrl extends TdFunction {
   Type get returnType => HttpUrl;
 
   @override
-  String get tdType => "getBackgroundUrl";
-  final String name;
-  final BackgroundType type;
+  String get tdType => 'getBackgroundUrl';
+
+  String name;
+  BackgroundType type;
 
   @override
   Map<String, dynamic> get params => {
-    "name": name,
-    "type": type,
+    'name': name,
+    'type': type,
   };
 
   GetBackgroundUrl(
     this.name,
     this.type,
   );
+
+  GetBackgroundUrl.fromJson(Map<String, dynamic> json) {
+    name = tryConvertToTdObject(json['name']);
+    type = tryConvertToTdObject(json['type']);
+  }
 }
 
 @reflector
@@ -4930,16 +6260,17 @@ class GetChatStatisticsUrl extends TdFunction {
   Type get returnType => HttpUrl;
 
   @override
-  String get tdType => "getChatStatisticsUrl";
-  final int chatId;
-  final String parameters;
-  final bool isDark;
+  String get tdType => 'getChatStatisticsUrl';
+
+  int chatId;
+  String parameters;
+  bool isDark;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "parameters": parameters,
-    "is_dark": isDark,
+    'chat_id': chatId,
+    'parameters': parameters,
+    'is_dark': isDark,
   };
 
   GetChatStatisticsUrl(
@@ -4947,6 +6278,12 @@ class GetChatStatisticsUrl extends TdFunction {
     this.parameters,
     this.isDark,
   );
+
+  GetChatStatisticsUrl.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    parameters = tryConvertToTdObject(json['parameters']);
+    isDark = tryConvertToTdObject(json['is_dark']);
+  }
 }
 
 @reflector
@@ -4955,17 +6292,22 @@ class GetMessageLinkInfo extends TdFunction {
   Type get returnType => MessageLinkInfo;
 
   @override
-  String get tdType => "getMessageLinkInfo";
-  final String url;
+  String get tdType => 'getMessageLinkInfo';
+
+  String url;
 
   @override
   Map<String, dynamic> get params => {
-    "url": url,
+    'url': url,
   };
 
   GetMessageLinkInfo(
     this.url,
   );
+
+  GetMessageLinkInfo.fromJson(Map<String, dynamic> json) {
+    url = tryConvertToTdObject(json['url']);
+  }
 }
 
 @reflector
@@ -4974,17 +6316,22 @@ class GetTextEntities extends TdFunction {
   Type get returnType => TextEntities;
 
   @override
-  String get tdType => "getTextEntities";
-  final String text;
+  String get tdType => 'getTextEntities';
+
+  String text;
 
   @override
   Map<String, dynamic> get params => {
-    "text": text,
+    'text': text,
   };
 
   GetTextEntities(
     this.text,
   );
+
+  GetTextEntities.fromJson(Map<String, dynamic> json) {
+    text = tryConvertToTdObject(json['text']);
+  }
 }
 
 @reflector
@@ -4993,20 +6340,26 @@ class ParseTextEntities extends TdFunction {
   Type get returnType => FormattedText;
 
   @override
-  String get tdType => "parseTextEntities";
-  final String text;
-  final TextParseMode parseMode;
+  String get tdType => 'parseTextEntities';
+
+  String text;
+  TextParseMode parseMode;
 
   @override
   Map<String, dynamic> get params => {
-    "text": text,
-    "parse_mode": parseMode,
+    'text': text,
+    'parse_mode': parseMode,
   };
 
   ParseTextEntities(
     this.text,
     this.parseMode,
   );
+
+  ParseTextEntities.fromJson(Map<String, dynamic> json) {
+    text = tryConvertToTdObject(json['text']);
+    parseMode = tryConvertToTdObject(json['parse_mode']);
+  }
 }
 
 @reflector
@@ -5015,17 +6368,22 @@ class GetFileMimeType extends TdFunction {
   Type get returnType => Text;
 
   @override
-  String get tdType => "getFileMimeType";
-  final String fileName;
+  String get tdType => 'getFileMimeType';
+
+  String fileName;
 
   @override
   Map<String, dynamic> get params => {
-    "file_name": fileName,
+    'file_name': fileName,
   };
 
   GetFileMimeType(
     this.fileName,
   );
+
+  GetFileMimeType.fromJson(Map<String, dynamic> json) {
+    fileName = tryConvertToTdObject(json['file_name']);
+  }
 }
 
 @reflector
@@ -5034,17 +6392,22 @@ class GetFileExtension extends TdFunction {
   Type get returnType => Text;
 
   @override
-  String get tdType => "getFileExtension";
-  final String mimeType;
+  String get tdType => 'getFileExtension';
+
+  String mimeType;
 
   @override
   Map<String, dynamic> get params => {
-    "mime_type": mimeType,
+    'mime_type': mimeType,
   };
 
   GetFileExtension(
     this.mimeType,
   );
+
+  GetFileExtension.fromJson(Map<String, dynamic> json) {
+    mimeType = tryConvertToTdObject(json['mime_type']);
+  }
 }
 
 @reflector
@@ -5053,17 +6416,22 @@ class CleanFileName extends TdFunction {
   Type get returnType => Text;
 
   @override
-  String get tdType => "cleanFileName";
-  final String fileName;
+  String get tdType => 'cleanFileName';
+
+  String fileName;
 
   @override
   Map<String, dynamic> get params => {
-    "file_name": fileName,
+    'file_name': fileName,
   };
 
   CleanFileName(
     this.fileName,
   );
+
+  CleanFileName.fromJson(Map<String, dynamic> json) {
+    fileName = tryConvertToTdObject(json['file_name']);
+  }
 }
 
 @reflector
@@ -5072,17 +6440,22 @@ class GetJsonString extends TdFunction {
   Type get returnType => Text;
 
   @override
-  String get tdType => "getJsonString";
-  final JsonValue jsonValue;
+  String get tdType => 'getJsonString';
+
+  JsonValue jsonValue;
 
   @override
   Map<String, dynamic> get params => {
-    "json_value": jsonValue,
+    'json_value': jsonValue,
   };
 
   GetJsonString(
     this.jsonValue,
   );
+
+  GetJsonString.fromJson(Map<String, dynamic> json) {
+    jsonValue = tryConvertToTdObject(json['json_value']);
+  }
 }
 
 @reflector
@@ -5091,17 +6464,22 @@ class GetPreferredCountryLanguage extends TdFunction {
   Type get returnType => Text;
 
   @override
-  String get tdType => "getPreferredCountryLanguage";
-  final String countryCode;
+  String get tdType => 'getPreferredCountryLanguage';
+
+  String countryCode;
 
   @override
   Map<String, dynamic> get params => {
-    "country_code": countryCode,
+    'country_code': countryCode,
   };
 
   GetPreferredCountryLanguage(
     this.countryCode,
   );
+
+  GetPreferredCountryLanguage.fromJson(Map<String, dynamic> json) {
+    countryCode = tryConvertToTdObject(json['country_code']);
+  }
 }
 
 @reflector
@@ -5110,11 +6488,14 @@ class GetCountryCode extends TdFunction {
   Type get returnType => Text;
 
   @override
-  String get tdType => "getCountryCode";
+  String get tdType => 'getCountryCode';
+
   @override
   Map<String, dynamic> get params => {};
 
   GetCountryCode();
+
+  GetCountryCode.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -5123,11 +6504,14 @@ class GetInviteText extends TdFunction {
   Type get returnType => Text;
 
   @override
-  String get tdType => "getInviteText";
+  String get tdType => 'getInviteText';
+
   @override
   Map<String, dynamic> get params => {};
 
   GetInviteText();
+
+  GetInviteText.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -5136,17 +6520,22 @@ class GetProxyLink extends TdFunction {
   Type get returnType => Text;
 
   @override
-  String get tdType => "getProxyLink";
-  final int proxyId;
+  String get tdType => 'getProxyLink';
+
+  int proxyId;
 
   @override
   Map<String, dynamic> get params => {
-    "proxy_id": proxyId,
+    'proxy_id': proxyId,
   };
 
   GetProxyLink(
     this.proxyId,
   );
+
+  GetProxyLink.fromJson(Map<String, dynamic> json) {
+    proxyId = tryConvertToTdObject(json['proxy_id']);
+  }
 }
 
 @reflector
@@ -5155,18 +6544,19 @@ class GetLanguagePackString extends TdFunction {
   Type get returnType => LanguagePackStringValue;
 
   @override
-  String get tdType => "getLanguagePackString";
-  final String languagePackDatabasePath;
-  final String localizationTarget;
-  final String languagePackId;
-  final String key;
+  String get tdType => 'getLanguagePackString';
+
+  String languagePackDatabasePath;
+  String localizationTarget;
+  String languagePackId;
+  String key;
 
   @override
   Map<String, dynamic> get params => {
-    "language_pack_database_path": languagePackDatabasePath,
-    "localization_target": localizationTarget,
-    "language_pack_id": languagePackId,
-    "key": key,
+    'language_pack_database_path': languagePackDatabasePath,
+    'localization_target': localizationTarget,
+    'language_pack_id': languagePackId,
+    'key': key,
   };
 
   GetLanguagePackString(
@@ -5175,6 +6565,13 @@ class GetLanguagePackString extends TdFunction {
     this.languagePackId,
     this.key,
   );
+
+  GetLanguagePackString.fromJson(Map<String, dynamic> json) {
+    languagePackDatabasePath = tryConvertToTdObject(json['language_pack_database_path']);
+    localizationTarget = tryConvertToTdObject(json['localization_target']);
+    languagePackId = tryConvertToTdObject(json['language_pack_id']);
+    key = tryConvertToTdObject(json['key']);
+  }
 }
 
 @reflector
@@ -5183,17 +6580,22 @@ class GetJsonValue extends TdFunction {
   Type get returnType => JsonValue;
 
   @override
-  String get tdType => "getJsonValue";
-  final String json;
+  String get tdType => 'getJsonValue';
+
+  String json;
 
   @override
   Map<String, dynamic> get params => {
-    "json": json,
+    'json': json,
   };
 
   GetJsonValue(
     this.json,
   );
+
+  GetJsonValue.fromJson(Map<String, dynamic> json) {
+    json = tryConvertToTdObject(json['json']);
+  }
 }
 
 @reflector
@@ -5202,11 +6604,14 @@ class GetApplicationConfig extends TdFunction {
   Type get returnType => JsonValue;
 
   @override
-  String get tdType => "getApplicationConfig";
+  String get tdType => 'getApplicationConfig';
+
   @override
   Map<String, dynamic> get params => {};
 
   GetApplicationConfig();
+
+  GetApplicationConfig.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -5215,20 +6620,21 @@ class GetInlineQueryResults extends TdFunction {
   Type get returnType => InlineQueryResults;
 
   @override
-  String get tdType => "getInlineQueryResults";
-  final int botUserId;
-  final int chatId;
-  final Location userLocation;
-  final String query;
-  final String offset;
+  String get tdType => 'getInlineQueryResults';
+
+  int botUserId;
+  int chatId;
+  Location userLocation;
+  String query;
+  String offset;
 
   @override
   Map<String, dynamic> get params => {
-    "bot_user_id": botUserId,
-    "chat_id": chatId,
-    "user_location": userLocation,
-    "query": query,
-    "offset": offset,
+    'bot_user_id': botUserId,
+    'chat_id': chatId,
+    'user_location': userLocation,
+    'query': query,
+    'offset': offset,
   };
 
   GetInlineQueryResults(
@@ -5238,6 +6644,14 @@ class GetInlineQueryResults extends TdFunction {
     this.query,
     this.offset,
   );
+
+  GetInlineQueryResults.fromJson(Map<String, dynamic> json) {
+    botUserId = tryConvertToTdObject(json['bot_user_id']);
+    chatId = tryConvertToTdObject(json['chat_id']);
+    userLocation = tryConvertToTdObject(json['user_location']);
+    query = tryConvertToTdObject(json['query']);
+    offset = tryConvertToTdObject(json['offset']);
+  }
 }
 
 @reflector
@@ -5246,16 +6660,17 @@ class GetCallbackQueryAnswer extends TdFunction {
   Type get returnType => CallbackQueryAnswer;
 
   @override
-  String get tdType => "getCallbackQueryAnswer";
-  final int chatId;
-  final int messageId;
-  final CallbackQueryPayload payload;
+  String get tdType => 'getCallbackQueryAnswer';
+
+  int chatId;
+  int messageId;
+  CallbackQueryPayload payload;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "message_id": messageId,
-    "payload": payload,
+    'chat_id': chatId,
+    'message_id': messageId,
+    'payload': payload,
   };
 
   GetCallbackQueryAnswer(
@@ -5263,6 +6678,12 @@ class GetCallbackQueryAnswer extends TdFunction {
     this.messageId,
     this.payload,
   );
+
+  GetCallbackQueryAnswer.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    messageId = tryConvertToTdObject(json['message_id']);
+    payload = tryConvertToTdObject(json['payload']);
+  }
 }
 
 @reflector
@@ -5271,16 +6692,17 @@ class GetGameHighScores extends TdFunction {
   Type get returnType => GameHighScores;
 
   @override
-  String get tdType => "getGameHighScores";
-  final int chatId;
-  final int messageId;
-  final int userId;
+  String get tdType => 'getGameHighScores';
+
+  int chatId;
+  int messageId;
+  int userId;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "message_id": messageId,
-    "user_id": userId,
+    'chat_id': chatId,
+    'message_id': messageId,
+    'user_id': userId,
   };
 
   GetGameHighScores(
@@ -5288,6 +6710,12 @@ class GetGameHighScores extends TdFunction {
     this.messageId,
     this.userId,
   );
+
+  GetGameHighScores.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    messageId = tryConvertToTdObject(json['message_id']);
+    userId = tryConvertToTdObject(json['user_id']);
+  }
 }
 
 @reflector
@@ -5296,20 +6724,26 @@ class GetInlineGameHighScores extends TdFunction {
   Type get returnType => GameHighScores;
 
   @override
-  String get tdType => "getInlineGameHighScores";
-  final String inlineMessageId;
-  final int userId;
+  String get tdType => 'getInlineGameHighScores';
+
+  String inlineMessageId;
+  int userId;
 
   @override
   Map<String, dynamic> get params => {
-    "inline_message_id": inlineMessageId,
-    "user_id": userId,
+    'inline_message_id': inlineMessageId,
+    'user_id': userId,
   };
 
   GetInlineGameHighScores(
     this.inlineMessageId,
     this.userId,
   );
+
+  GetInlineGameHighScores.fromJson(Map<String, dynamic> json) {
+    inlineMessageId = tryConvertToTdObject(json['inline_message_id']);
+    userId = tryConvertToTdObject(json['user_id']);
+  }
 }
 
 @reflector
@@ -5318,20 +6752,26 @@ class GetChatMember extends TdFunction {
   Type get returnType => ChatMember;
 
   @override
-  String get tdType => "getChatMember";
-  final int chatId;
-  final int userId;
+  String get tdType => 'getChatMember';
+
+  int chatId;
+  int userId;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "user_id": userId,
+    'chat_id': chatId,
+    'user_id': userId,
   };
 
   GetChatMember(
     this.chatId,
     this.userId,
   );
+
+  GetChatMember.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    userId = tryConvertToTdObject(json['user_id']);
+  }
 }
 
 @reflector
@@ -5340,18 +6780,19 @@ class SearchChatMembers extends TdFunction {
   Type get returnType => ChatMembers;
 
   @override
-  String get tdType => "searchChatMembers";
-  final int chatId;
-  final String query;
-  final int limit;
-  final ChatMembersFilter filter;
+  String get tdType => 'searchChatMembers';
+
+  int chatId;
+  String query;
+  int limit;
+  ChatMembersFilter filter;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "query": query,
-    "limit": limit,
-    "filter": filter,
+    'chat_id': chatId,
+    'query': query,
+    'limit': limit,
+    'filter': filter,
   };
 
   SearchChatMembers(
@@ -5360,6 +6801,13 @@ class SearchChatMembers extends TdFunction {
     this.limit,
     this.filter,
   );
+
+  SearchChatMembers.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    query = tryConvertToTdObject(json['query']);
+    limit = tryConvertToTdObject(json['limit']);
+    filter = tryConvertToTdObject(json['filter']);
+  }
 }
 
 @reflector
@@ -5368,18 +6816,19 @@ class GetSupergroupMembers extends TdFunction {
   Type get returnType => ChatMembers;
 
   @override
-  String get tdType => "getSupergroupMembers";
-  final int supergroupId;
-  final SupergroupMembersFilter filter;
-  final int offset;
-  final int limit;
+  String get tdType => 'getSupergroupMembers';
+
+  int supergroupId;
+  SupergroupMembersFilter filter;
+  int offset;
+  int limit;
 
   @override
   Map<String, dynamic> get params => {
-    "supergroup_id": supergroupId,
-    "filter": filter,
-    "offset": offset,
-    "limit": limit,
+    'supergroup_id': supergroupId,
+    'filter': filter,
+    'offset': offset,
+    'limit': limit,
   };
 
   GetSupergroupMembers(
@@ -5388,6 +6837,13 @@ class GetSupergroupMembers extends TdFunction {
     this.offset,
     this.limit,
   );
+
+  GetSupergroupMembers.fromJson(Map<String, dynamic> json) {
+    supergroupId = tryConvertToTdObject(json['supergroup_id']);
+    filter = tryConvertToTdObject(json['filter']);
+    offset = tryConvertToTdObject(json['offset']);
+    limit = tryConvertToTdObject(json['limit']);
+  }
 }
 
 @reflector
@@ -5396,17 +6852,22 @@ class GetChatAdministrators extends TdFunction {
   Type get returnType => Users;
 
   @override
-  String get tdType => "getChatAdministrators";
-  final int chatId;
+  String get tdType => 'getChatAdministrators';
+
+  int chatId;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
+    'chat_id': chatId,
   };
 
   GetChatAdministrators(
     this.chatId,
   );
+
+  GetChatAdministrators.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+  }
 }
 
 @reflector
@@ -5415,20 +6876,26 @@ class GetBlockedUsers extends TdFunction {
   Type get returnType => Users;
 
   @override
-  String get tdType => "getBlockedUsers";
-  final int offset;
-  final int limit;
+  String get tdType => 'getBlockedUsers';
+
+  int offset;
+  int limit;
 
   @override
   Map<String, dynamic> get params => {
-    "offset": offset,
-    "limit": limit,
+    'offset': offset,
+    'limit': limit,
   };
 
   GetBlockedUsers(
     this.offset,
     this.limit,
   );
+
+  GetBlockedUsers.fromJson(Map<String, dynamic> json) {
+    offset = tryConvertToTdObject(json['offset']);
+    limit = tryConvertToTdObject(json['limit']);
+  }
 }
 
 @reflector
@@ -5437,11 +6904,14 @@ class GetContacts extends TdFunction {
   Type get returnType => Users;
 
   @override
-  String get tdType => "getContacts";
+  String get tdType => 'getContacts';
+
   @override
   Map<String, dynamic> get params => {};
 
   GetContacts();
+
+  GetContacts.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -5450,20 +6920,26 @@ class SearchContacts extends TdFunction {
   Type get returnType => Users;
 
   @override
-  String get tdType => "searchContacts";
-  final String query;
-  final int limit;
+  String get tdType => 'searchContacts';
+
+  String query;
+  int limit;
 
   @override
   Map<String, dynamic> get params => {
-    "query": query,
-    "limit": limit,
+    'query': query,
+    'limit': limit,
   };
 
   SearchContacts(
     this.query,
     this.limit,
   );
+
+  SearchContacts.fromJson(Map<String, dynamic> json) {
+    query = tryConvertToTdObject(json['query']);
+    limit = tryConvertToTdObject(json['limit']);
+  }
 }
 
 @reflector
@@ -5472,11 +6948,14 @@ class GetRecentInlineBots extends TdFunction {
   Type get returnType => Users;
 
   @override
-  String get tdType => "getRecentInlineBots";
+  String get tdType => 'getRecentInlineBots';
+
   @override
   Map<String, dynamic> get params => {};
 
   GetRecentInlineBots();
+
+  GetRecentInlineBots.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -5485,17 +6964,22 @@ class GetScopeNotificationSettings extends TdFunction {
   Type get returnType => ScopeNotificationSettings;
 
   @override
-  String get tdType => "getScopeNotificationSettings";
-  final NotificationSettingsScope scope;
+  String get tdType => 'getScopeNotificationSettings';
+
+  NotificationSettingsScope scope;
 
   @override
   Map<String, dynamic> get params => {
-    "scope": scope,
+    'scope': scope,
   };
 
   GetScopeNotificationSettings(
     this.scope,
   );
+
+  GetScopeNotificationSettings.fromJson(Map<String, dynamic> json) {
+    scope = tryConvertToTdObject(json['scope']);
+  }
 }
 
 @reflector
@@ -5504,16 +6988,17 @@ class ReadFilePart extends TdFunction {
   Type get returnType => FilePart;
 
   @override
-  String get tdType => "readFilePart";
-  final int fileId;
-  final int offset;
-  final int count;
+  String get tdType => 'readFilePart';
+
+  int fileId;
+  int offset;
+  int count;
 
   @override
   Map<String, dynamic> get params => {
-    "file_id": fileId,
-    "offset": offset,
-    "count": count,
+    'file_id': fileId,
+    'offset': offset,
+    'count': count,
   };
 
   ReadFilePart(
@@ -5521,6 +7006,12 @@ class ReadFilePart extends TdFunction {
     this.offset,
     this.count,
   );
+
+  ReadFilePart.fromJson(Map<String, dynamic> json) {
+    fileId = tryConvertToTdObject(json['file_id']);
+    offset = tryConvertToTdObject(json['offset']);
+    count = tryConvertToTdObject(json['count']);
+  }
 }
 
 @reflector
@@ -5529,17 +7020,22 @@ class GenerateChatInviteLink extends TdFunction {
   Type get returnType => ChatInviteLink;
 
   @override
-  String get tdType => "generateChatInviteLink";
-  final int chatId;
+  String get tdType => 'generateChatInviteLink';
+
+  int chatId;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
+    'chat_id': chatId,
   };
 
   GenerateChatInviteLink(
     this.chatId,
   );
+
+  GenerateChatInviteLink.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+  }
 }
 
 @reflector
@@ -5548,17 +7044,22 @@ class CheckChatInviteLink extends TdFunction {
   Type get returnType => ChatInviteLinkInfo;
 
   @override
-  String get tdType => "checkChatInviteLink";
-  final String inviteLink;
+  String get tdType => 'checkChatInviteLink';
+
+  String inviteLink;
 
   @override
   Map<String, dynamic> get params => {
-    "invite_link": inviteLink,
+    'invite_link': inviteLink,
   };
 
   CheckChatInviteLink(
     this.inviteLink,
   );
+
+  CheckChatInviteLink.fromJson(Map<String, dynamic> json) {
+    inviteLink = tryConvertToTdObject(json['invite_link']);
+  }
 }
 
 @reflector
@@ -5567,20 +7068,26 @@ class CreateCall extends TdFunction {
   Type get returnType => CallId;
 
   @override
-  String get tdType => "createCall";
-  final int userId;
-  final CallProtocol protocol;
+  String get tdType => 'createCall';
+
+  int userId;
+  CallProtocol protocol;
 
   @override
   Map<String, dynamic> get params => {
-    "user_id": userId,
-    "protocol": protocol,
+    'user_id': userId,
+    'protocol': protocol,
   };
 
   CreateCall(
     this.userId,
     this.protocol,
   );
+
+  CreateCall.fromJson(Map<String, dynamic> json) {
+    userId = tryConvertToTdObject(json['user_id']);
+    protocol = tryConvertToTdObject(json['protocol']);
+  }
 }
 
 @reflector
@@ -5589,17 +7096,22 @@ class ImportContacts extends TdFunction {
   Type get returnType => ImportedContacts;
 
   @override
-  String get tdType => "importContacts";
-  final List<Contact> contacts;
+  String get tdType => 'importContacts';
+
+  List<Contact> contacts;
 
   @override
   Map<String, dynamic> get params => {
-    "contacts": contacts,
+    'contacts': contacts,
   };
 
   ImportContacts(
     this.contacts,
   );
+
+  ImportContacts.fromJson(Map<String, dynamic> json) {
+    contacts = tryConvertToTdObject(json['contacts']);
+  }
 }
 
 @reflector
@@ -5608,17 +7120,22 @@ class ChangeImportedContacts extends TdFunction {
   Type get returnType => ImportedContacts;
 
   @override
-  String get tdType => "changeImportedContacts";
-  final List<Contact> contacts;
+  String get tdType => 'changeImportedContacts';
+
+  List<Contact> contacts;
 
   @override
   Map<String, dynamic> get params => {
-    "contacts": contacts,
+    'contacts': contacts,
   };
 
   ChangeImportedContacts(
     this.contacts,
   );
+
+  ChangeImportedContacts.fromJson(Map<String, dynamic> json) {
+    contacts = tryConvertToTdObject(json['contacts']);
+  }
 }
 
 @reflector
@@ -5627,16 +7144,17 @@ class GetUserProfilePhotos extends TdFunction {
   Type get returnType => UserProfilePhotos;
 
   @override
-  String get tdType => "getUserProfilePhotos";
-  final int userId;
-  final int offset;
-  final int limit;
+  String get tdType => 'getUserProfilePhotos';
+
+  int userId;
+  int offset;
+  int limit;
 
   @override
   Map<String, dynamic> get params => {
-    "user_id": userId,
-    "offset": offset,
-    "limit": limit,
+    'user_id': userId,
+    'offset': offset,
+    'limit': limit,
   };
 
   GetUserProfilePhotos(
@@ -5644,6 +7162,12 @@ class GetUserProfilePhotos extends TdFunction {
     this.offset,
     this.limit,
   );
+
+  GetUserProfilePhotos.fromJson(Map<String, dynamic> json) {
+    userId = tryConvertToTdObject(json['user_id']);
+    offset = tryConvertToTdObject(json['offset']);
+    limit = tryConvertToTdObject(json['limit']);
+  }
 }
 
 @reflector
@@ -5652,20 +7176,26 @@ class GetStickers extends TdFunction {
   Type get returnType => Stickers;
 
   @override
-  String get tdType => "getStickers";
-  final String emoji;
-  final int limit;
+  String get tdType => 'getStickers';
+
+  String emoji;
+  int limit;
 
   @override
   Map<String, dynamic> get params => {
-    "emoji": emoji,
-    "limit": limit,
+    'emoji': emoji,
+    'limit': limit,
   };
 
   GetStickers(
     this.emoji,
     this.limit,
   );
+
+  GetStickers.fromJson(Map<String, dynamic> json) {
+    emoji = tryConvertToTdObject(json['emoji']);
+    limit = tryConvertToTdObject(json['limit']);
+  }
 }
 
 @reflector
@@ -5674,20 +7204,26 @@ class SearchStickers extends TdFunction {
   Type get returnType => Stickers;
 
   @override
-  String get tdType => "searchStickers";
-  final String emoji;
-  final int limit;
+  String get tdType => 'searchStickers';
+
+  String emoji;
+  int limit;
 
   @override
   Map<String, dynamic> get params => {
-    "emoji": emoji,
-    "limit": limit,
+    'emoji': emoji,
+    'limit': limit,
   };
 
   SearchStickers(
     this.emoji,
     this.limit,
   );
+
+  SearchStickers.fromJson(Map<String, dynamic> json) {
+    emoji = tryConvertToTdObject(json['emoji']);
+    limit = tryConvertToTdObject(json['limit']);
+  }
 }
 
 @reflector
@@ -5696,17 +7232,22 @@ class GetRecentStickers extends TdFunction {
   Type get returnType => Stickers;
 
   @override
-  String get tdType => "getRecentStickers";
-  final bool isAttached;
+  String get tdType => 'getRecentStickers';
+
+  bool isAttached;
 
   @override
   Map<String, dynamic> get params => {
-    "is_attached": isAttached,
+    'is_attached': isAttached,
   };
 
   GetRecentStickers(
     this.isAttached,
   );
+
+  GetRecentStickers.fromJson(Map<String, dynamic> json) {
+    isAttached = tryConvertToTdObject(json['is_attached']);
+  }
 }
 
 @reflector
@@ -5715,20 +7256,26 @@ class AddRecentSticker extends TdFunction {
   Type get returnType => Stickers;
 
   @override
-  String get tdType => "addRecentSticker";
-  final bool isAttached;
-  final InputFile sticker;
+  String get tdType => 'addRecentSticker';
+
+  bool isAttached;
+  InputFile sticker;
 
   @override
   Map<String, dynamic> get params => {
-    "is_attached": isAttached,
-    "sticker": sticker,
+    'is_attached': isAttached,
+    'sticker': sticker,
   };
 
   AddRecentSticker(
     this.isAttached,
     this.sticker,
   );
+
+  AddRecentSticker.fromJson(Map<String, dynamic> json) {
+    isAttached = tryConvertToTdObject(json['is_attached']);
+    sticker = tryConvertToTdObject(json['sticker']);
+  }
 }
 
 @reflector
@@ -5737,11 +7284,14 @@ class GetFavoriteStickers extends TdFunction {
   Type get returnType => Stickers;
 
   @override
-  String get tdType => "getFavoriteStickers";
+  String get tdType => 'getFavoriteStickers';
+
   @override
   Map<String, dynamic> get params => {};
 
   GetFavoriteStickers();
+
+  GetFavoriteStickers.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -5750,17 +7300,22 @@ class GetInstalledStickerSets extends TdFunction {
   Type get returnType => StickerSets;
 
   @override
-  String get tdType => "getInstalledStickerSets";
-  final bool isMasks;
+  String get tdType => 'getInstalledStickerSets';
+
+  bool isMasks;
 
   @override
   Map<String, dynamic> get params => {
-    "is_masks": isMasks,
+    'is_masks': isMasks,
   };
 
   GetInstalledStickerSets(
     this.isMasks,
   );
+
+  GetInstalledStickerSets.fromJson(Map<String, dynamic> json) {
+    isMasks = tryConvertToTdObject(json['is_masks']);
+  }
 }
 
 @reflector
@@ -5769,16 +7324,17 @@ class GetArchivedStickerSets extends TdFunction {
   Type get returnType => StickerSets;
 
   @override
-  String get tdType => "getArchivedStickerSets";
-  final bool isMasks;
-  final int offsetStickerSetId;
-  final int limit;
+  String get tdType => 'getArchivedStickerSets';
+
+  bool isMasks;
+  int offsetStickerSetId;
+  int limit;
 
   @override
   Map<String, dynamic> get params => {
-    "is_masks": isMasks,
-    "offset_sticker_set_id": offsetStickerSetId,
-    "limit": limit,
+    'is_masks': isMasks,
+    'offset_sticker_set_id': offsetStickerSetId,
+    'limit': limit,
   };
 
   GetArchivedStickerSets(
@@ -5786,6 +7342,12 @@ class GetArchivedStickerSets extends TdFunction {
     this.offsetStickerSetId,
     this.limit,
   );
+
+  GetArchivedStickerSets.fromJson(Map<String, dynamic> json) {
+    isMasks = tryConvertToTdObject(json['is_masks']);
+    offsetStickerSetId = tryConvertToTdObject(json['offset_sticker_set_id']);
+    limit = tryConvertToTdObject(json['limit']);
+  }
 }
 
 @reflector
@@ -5794,11 +7356,14 @@ class GetTrendingStickerSets extends TdFunction {
   Type get returnType => StickerSets;
 
   @override
-  String get tdType => "getTrendingStickerSets";
+  String get tdType => 'getTrendingStickerSets';
+
   @override
   Map<String, dynamic> get params => {};
 
   GetTrendingStickerSets();
+
+  GetTrendingStickerSets.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -5807,17 +7372,22 @@ class GetAttachedStickerSets extends TdFunction {
   Type get returnType => StickerSets;
 
   @override
-  String get tdType => "getAttachedStickerSets";
-  final int fileId;
+  String get tdType => 'getAttachedStickerSets';
+
+  int fileId;
 
   @override
   Map<String, dynamic> get params => {
-    "file_id": fileId,
+    'file_id': fileId,
   };
 
   GetAttachedStickerSets(
     this.fileId,
   );
+
+  GetAttachedStickerSets.fromJson(Map<String, dynamic> json) {
+    fileId = tryConvertToTdObject(json['file_id']);
+  }
 }
 
 @reflector
@@ -5826,16 +7396,17 @@ class SearchInstalledStickerSets extends TdFunction {
   Type get returnType => StickerSets;
 
   @override
-  String get tdType => "searchInstalledStickerSets";
-  final bool isMasks;
-  final String query;
-  final int limit;
+  String get tdType => 'searchInstalledStickerSets';
+
+  bool isMasks;
+  String query;
+  int limit;
 
   @override
   Map<String, dynamic> get params => {
-    "is_masks": isMasks,
-    "query": query,
-    "limit": limit,
+    'is_masks': isMasks,
+    'query': query,
+    'limit': limit,
   };
 
   SearchInstalledStickerSets(
@@ -5843,6 +7414,12 @@ class SearchInstalledStickerSets extends TdFunction {
     this.query,
     this.limit,
   );
+
+  SearchInstalledStickerSets.fromJson(Map<String, dynamic> json) {
+    isMasks = tryConvertToTdObject(json['is_masks']);
+    query = tryConvertToTdObject(json['query']);
+    limit = tryConvertToTdObject(json['limit']);
+  }
 }
 
 @reflector
@@ -5851,17 +7428,22 @@ class SearchStickerSets extends TdFunction {
   Type get returnType => StickerSets;
 
   @override
-  String get tdType => "searchStickerSets";
-  final String query;
+  String get tdType => 'searchStickerSets';
+
+  String query;
 
   @override
   Map<String, dynamic> get params => {
-    "query": query,
+    'query': query,
   };
 
   SearchStickerSets(
     this.query,
   );
+
+  SearchStickerSets.fromJson(Map<String, dynamic> json) {
+    query = tryConvertToTdObject(json['query']);
+  }
 }
 
 @reflector
@@ -5870,17 +7452,22 @@ class GetStickerSet extends TdFunction {
   Type get returnType => StickerSet;
 
   @override
-  String get tdType => "getStickerSet";
-  final int setId;
+  String get tdType => 'getStickerSet';
+
+  int setId;
 
   @override
   Map<String, dynamic> get params => {
-    "set_id": setId,
+    'set_id': setId,
   };
 
   GetStickerSet(
     this.setId,
   );
+
+  GetStickerSet.fromJson(Map<String, dynamic> json) {
+    setId = tryConvertToTdObject(json['set_id']);
+  }
 }
 
 @reflector
@@ -5889,17 +7476,22 @@ class SearchStickerSet extends TdFunction {
   Type get returnType => StickerSet;
 
   @override
-  String get tdType => "searchStickerSet";
-  final String name;
+  String get tdType => 'searchStickerSet';
+
+  String name;
 
   @override
   Map<String, dynamic> get params => {
-    "name": name,
+    'name': name,
   };
 
   SearchStickerSet(
     this.name,
   );
+
+  SearchStickerSet.fromJson(Map<String, dynamic> json) {
+    name = tryConvertToTdObject(json['name']);
+  }
 }
 
 @reflector
@@ -5908,20 +7500,21 @@ class CreateNewStickerSet extends TdFunction {
   Type get returnType => StickerSet;
 
   @override
-  String get tdType => "createNewStickerSet";
-  final int userId;
-  final String title;
-  final String name;
-  final bool isMasks;
-  final List<InputSticker> stickers;
+  String get tdType => 'createNewStickerSet';
+
+  int userId;
+  String title;
+  String name;
+  bool isMasks;
+  List<InputSticker> stickers;
 
   @override
   Map<String, dynamic> get params => {
-    "user_id": userId,
-    "title": title,
-    "name": name,
-    "is_masks": isMasks,
-    "stickers": stickers,
+    'user_id': userId,
+    'title': title,
+    'name': name,
+    'is_masks': isMasks,
+    'stickers': stickers,
   };
 
   CreateNewStickerSet(
@@ -5931,6 +7524,14 @@ class CreateNewStickerSet extends TdFunction {
     this.isMasks,
     this.stickers,
   );
+
+  CreateNewStickerSet.fromJson(Map<String, dynamic> json) {
+    userId = tryConvertToTdObject(json['user_id']);
+    title = tryConvertToTdObject(json['title']);
+    name = tryConvertToTdObject(json['name']);
+    isMasks = tryConvertToTdObject(json['is_masks']);
+    stickers = tryConvertToTdObject(json['stickers']);
+  }
 }
 
 @reflector
@@ -5939,16 +7540,17 @@ class AddStickerToSet extends TdFunction {
   Type get returnType => StickerSet;
 
   @override
-  String get tdType => "addStickerToSet";
-  final int userId;
-  final String name;
-  final InputSticker sticker;
+  String get tdType => 'addStickerToSet';
+
+  int userId;
+  String name;
+  InputSticker sticker;
 
   @override
   Map<String, dynamic> get params => {
-    "user_id": userId,
-    "name": name,
-    "sticker": sticker,
+    'user_id': userId,
+    'name': name,
+    'sticker': sticker,
   };
 
   AddStickerToSet(
@@ -5956,6 +7558,12 @@ class AddStickerToSet extends TdFunction {
     this.name,
     this.sticker,
   );
+
+  AddStickerToSet.fromJson(Map<String, dynamic> json) {
+    userId = tryConvertToTdObject(json['user_id']);
+    name = tryConvertToTdObject(json['name']);
+    sticker = tryConvertToTdObject(json['sticker']);
+  }
 }
 
 @reflector
@@ -5964,17 +7572,22 @@ class GetStickerEmojis extends TdFunction {
   Type get returnType => Emojis;
 
   @override
-  String get tdType => "getStickerEmojis";
-  final InputFile sticker;
+  String get tdType => 'getStickerEmojis';
+
+  InputFile sticker;
 
   @override
   Map<String, dynamic> get params => {
-    "sticker": sticker,
+    'sticker': sticker,
   };
 
   GetStickerEmojis(
     this.sticker,
   );
+
+  GetStickerEmojis.fromJson(Map<String, dynamic> json) {
+    sticker = tryConvertToTdObject(json['sticker']);
+  }
 }
 
 @reflector
@@ -5983,20 +7596,26 @@ class SearchEmojis extends TdFunction {
   Type get returnType => Emojis;
 
   @override
-  String get tdType => "searchEmojis";
-  final String text;
-  final bool exactMatch;
+  String get tdType => 'searchEmojis';
+
+  String text;
+  bool exactMatch;
 
   @override
   Map<String, dynamic> get params => {
-    "text": text,
-    "exact_match": exactMatch,
+    'text': text,
+    'exact_match': exactMatch,
   };
 
   SearchEmojis(
     this.text,
     this.exactMatch,
   );
+
+  SearchEmojis.fromJson(Map<String, dynamic> json) {
+    text = tryConvertToTdObject(json['text']);
+    exactMatch = tryConvertToTdObject(json['exact_match']);
+  }
 }
 
 @reflector
@@ -6005,11 +7624,14 @@ class GetSavedAnimations extends TdFunction {
   Type get returnType => Animations;
 
   @override
-  String get tdType => "getSavedAnimations";
+  String get tdType => 'getSavedAnimations';
+
   @override
   Map<String, dynamic> get params => {};
 
   GetSavedAnimations();
+
+  GetSavedAnimations.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -6018,20 +7640,26 @@ class SearchHashtags extends TdFunction {
   Type get returnType => Hashtags;
 
   @override
-  String get tdType => "searchHashtags";
-  final String prefix;
-  final int limit;
+  String get tdType => 'searchHashtags';
+
+  String prefix;
+  int limit;
 
   @override
   Map<String, dynamic> get params => {
-    "prefix": prefix,
-    "limit": limit,
+    'prefix': prefix,
+    'limit': limit,
   };
 
   SearchHashtags(
     this.prefix,
     this.limit,
   );
+
+  SearchHashtags.fromJson(Map<String, dynamic> json) {
+    prefix = tryConvertToTdObject(json['prefix']);
+    limit = tryConvertToTdObject(json['limit']);
+  }
 }
 
 @reflector
@@ -6040,17 +7668,22 @@ class GetWebPagePreview extends TdFunction {
   Type get returnType => WebPage;
 
   @override
-  String get tdType => "getWebPagePreview";
-  final FormattedText text;
+  String get tdType => 'getWebPagePreview';
+
+  FormattedText text;
 
   @override
   Map<String, dynamic> get params => {
-    "text": text,
+    'text': text,
   };
 
   GetWebPagePreview(
     this.text,
   );
+
+  GetWebPagePreview.fromJson(Map<String, dynamic> json) {
+    text = tryConvertToTdObject(json['text']);
+  }
 }
 
 @reflector
@@ -6059,20 +7692,26 @@ class GetWebPageInstantView extends TdFunction {
   Type get returnType => WebPageInstantView;
 
   @override
-  String get tdType => "getWebPageInstantView";
-  final String url;
-  final bool forceFull;
+  String get tdType => 'getWebPageInstantView';
+
+  String url;
+  bool forceFull;
 
   @override
   Map<String, dynamic> get params => {
-    "url": url,
-    "force_full": forceFull,
+    'url': url,
+    'force_full': forceFull,
   };
 
   GetWebPageInstantView(
     this.url,
     this.forceFull,
   );
+
+  GetWebPageInstantView.fromJson(Map<String, dynamic> json) {
+    url = tryConvertToTdObject(json['url']);
+    forceFull = tryConvertToTdObject(json['force_full']);
+  }
 }
 
 @reflector
@@ -6081,20 +7720,26 @@ class ChangePhoneNumber extends TdFunction {
   Type get returnType => AuthenticationCodeInfo;
 
   @override
-  String get tdType => "changePhoneNumber";
-  final String phoneNumber;
-  final PhoneNumberAuthenticationSettings settings;
+  String get tdType => 'changePhoneNumber';
+
+  String phoneNumber;
+  PhoneNumberAuthenticationSettings settings;
 
   @override
   Map<String, dynamic> get params => {
-    "phone_number": phoneNumber,
-    "settings": settings,
+    'phone_number': phoneNumber,
+    'settings': settings,
   };
 
   ChangePhoneNumber(
     this.phoneNumber,
     this.settings,
   );
+
+  ChangePhoneNumber.fromJson(Map<String, dynamic> json) {
+    phoneNumber = tryConvertToTdObject(json['phone_number']);
+    settings = tryConvertToTdObject(json['settings']);
+  }
 }
 
 @reflector
@@ -6103,11 +7748,14 @@ class ResendChangePhoneNumberCode extends TdFunction {
   Type get returnType => AuthenticationCodeInfo;
 
   @override
-  String get tdType => "resendChangePhoneNumberCode";
+  String get tdType => 'resendChangePhoneNumberCode';
+
   @override
   Map<String, dynamic> get params => {};
 
   ResendChangePhoneNumberCode();
+
+  ResendChangePhoneNumberCode.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -6116,20 +7764,26 @@ class SendPhoneNumberVerificationCode extends TdFunction {
   Type get returnType => AuthenticationCodeInfo;
 
   @override
-  String get tdType => "sendPhoneNumberVerificationCode";
-  final String phoneNumber;
-  final PhoneNumberAuthenticationSettings settings;
+  String get tdType => 'sendPhoneNumberVerificationCode';
+
+  String phoneNumber;
+  PhoneNumberAuthenticationSettings settings;
 
   @override
   Map<String, dynamic> get params => {
-    "phone_number": phoneNumber,
-    "settings": settings,
+    'phone_number': phoneNumber,
+    'settings': settings,
   };
 
   SendPhoneNumberVerificationCode(
     this.phoneNumber,
     this.settings,
   );
+
+  SendPhoneNumberVerificationCode.fromJson(Map<String, dynamic> json) {
+    phoneNumber = tryConvertToTdObject(json['phone_number']);
+    settings = tryConvertToTdObject(json['settings']);
+  }
 }
 
 @reflector
@@ -6138,11 +7792,14 @@ class ResendPhoneNumberVerificationCode extends TdFunction {
   Type get returnType => AuthenticationCodeInfo;
 
   @override
-  String get tdType => "resendPhoneNumberVerificationCode";
+  String get tdType => 'resendPhoneNumberVerificationCode';
+
   @override
   Map<String, dynamic> get params => {};
 
   ResendPhoneNumberVerificationCode();
+
+  ResendPhoneNumberVerificationCode.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -6151,16 +7808,17 @@ class SendPhoneNumberConfirmationCode extends TdFunction {
   Type get returnType => AuthenticationCodeInfo;
 
   @override
-  String get tdType => "sendPhoneNumberConfirmationCode";
-  final String hash;
-  final String phoneNumber;
-  final PhoneNumberAuthenticationSettings settings;
+  String get tdType => 'sendPhoneNumberConfirmationCode';
+
+  String hash;
+  String phoneNumber;
+  PhoneNumberAuthenticationSettings settings;
 
   @override
   Map<String, dynamic> get params => {
-    "hash": hash,
-    "phone_number": phoneNumber,
-    "settings": settings,
+    'hash': hash,
+    'phone_number': phoneNumber,
+    'settings': settings,
   };
 
   SendPhoneNumberConfirmationCode(
@@ -6168,6 +7826,12 @@ class SendPhoneNumberConfirmationCode extends TdFunction {
     this.phoneNumber,
     this.settings,
   );
+
+  SendPhoneNumberConfirmationCode.fromJson(Map<String, dynamic> json) {
+    hash = tryConvertToTdObject(json['hash']);
+    phoneNumber = tryConvertToTdObject(json['phone_number']);
+    settings = tryConvertToTdObject(json['settings']);
+  }
 }
 
 @reflector
@@ -6176,11 +7840,14 @@ class ResendPhoneNumberConfirmationCode extends TdFunction {
   Type get returnType => AuthenticationCodeInfo;
 
   @override
-  String get tdType => "resendPhoneNumberConfirmationCode";
+  String get tdType => 'resendPhoneNumberConfirmationCode';
+
   @override
   Map<String, dynamic> get params => {};
 
   ResendPhoneNumberConfirmationCode();
+
+  ResendPhoneNumberConfirmationCode.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -6189,11 +7856,14 @@ class GetActiveSessions extends TdFunction {
   Type get returnType => Sessions;
 
   @override
-  String get tdType => "getActiveSessions";
+  String get tdType => 'getActiveSessions';
+
   @override
   Map<String, dynamic> get params => {};
 
   GetActiveSessions();
+
+  GetActiveSessions.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -6202,11 +7872,14 @@ class GetConnectedWebsites extends TdFunction {
   Type get returnType => ConnectedWebsites;
 
   @override
-  String get tdType => "getConnectedWebsites";
+  String get tdType => 'getConnectedWebsites';
+
   @override
   Map<String, dynamic> get params => {};
 
   GetConnectedWebsites();
+
+  GetConnectedWebsites.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -6215,22 +7888,23 @@ class GetChatEventLog extends TdFunction {
   Type get returnType => ChatEvents;
 
   @override
-  String get tdType => "getChatEventLog";
-  final int chatId;
-  final String query;
-  final int fromEventId;
-  final int limit;
-  final ChatEventLogFilters filters;
-  final List<int> userIds;
+  String get tdType => 'getChatEventLog';
+
+  int chatId;
+  String query;
+  int fromEventId;
+  int limit;
+  ChatEventLogFilters filters;
+  List<int> userIds;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "query": query,
-    "from_event_id": fromEventId,
-    "limit": limit,
-    "filters": filters,
-    "user_ids": userIds,
+    'chat_id': chatId,
+    'query': query,
+    'from_event_id': fromEventId,
+    'limit': limit,
+    'filters': filters,
+    'user_ids': userIds,
   };
 
   GetChatEventLog(
@@ -6241,6 +7915,15 @@ class GetChatEventLog extends TdFunction {
     this.filters,
     this.userIds,
   );
+
+  GetChatEventLog.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    query = tryConvertToTdObject(json['query']);
+    fromEventId = tryConvertToTdObject(json['from_event_id']);
+    limit = tryConvertToTdObject(json['limit']);
+    filters = tryConvertToTdObject(json['filters']);
+    userIds = tryConvertToTdObject(json['user_ids']);
+  }
 }
 
 @reflector
@@ -6249,20 +7932,26 @@ class GetPaymentForm extends TdFunction {
   Type get returnType => PaymentForm;
 
   @override
-  String get tdType => "getPaymentForm";
-  final int chatId;
-  final int messageId;
+  String get tdType => 'getPaymentForm';
+
+  int chatId;
+  int messageId;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "message_id": messageId,
+    'chat_id': chatId,
+    'message_id': messageId,
   };
 
   GetPaymentForm(
     this.chatId,
     this.messageId,
   );
+
+  GetPaymentForm.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    messageId = tryConvertToTdObject(json['message_id']);
+  }
 }
 
 @reflector
@@ -6271,18 +7960,19 @@ class ValidateOrderInfo extends TdFunction {
   Type get returnType => ValidatedOrderInfo;
 
   @override
-  String get tdType => "validateOrderInfo";
-  final int chatId;
-  final int messageId;
-  final OrderInfo orderInfo;
-  final bool allowSave;
+  String get tdType => 'validateOrderInfo';
+
+  int chatId;
+  int messageId;
+  OrderInfo orderInfo;
+  bool allowSave;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "message_id": messageId,
-    "order_info": orderInfo,
-    "allow_save": allowSave,
+    'chat_id': chatId,
+    'message_id': messageId,
+    'order_info': orderInfo,
+    'allow_save': allowSave,
   };
 
   ValidateOrderInfo(
@@ -6291,6 +7981,13 @@ class ValidateOrderInfo extends TdFunction {
     this.orderInfo,
     this.allowSave,
   );
+
+  ValidateOrderInfo.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    messageId = tryConvertToTdObject(json['message_id']);
+    orderInfo = tryConvertToTdObject(json['order_info']);
+    allowSave = tryConvertToTdObject(json['allow_save']);
+  }
 }
 
 @reflector
@@ -6299,20 +7996,21 @@ class SendPaymentForm extends TdFunction {
   Type get returnType => PaymentResult;
 
   @override
-  String get tdType => "sendPaymentForm";
-  final int chatId;
-  final int messageId;
-  final String orderInfoId;
-  final String shippingOptionId;
-  final InputCredentials credentials;
+  String get tdType => 'sendPaymentForm';
+
+  int chatId;
+  int messageId;
+  String orderInfoId;
+  String shippingOptionId;
+  InputCredentials credentials;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "message_id": messageId,
-    "order_info_id": orderInfoId,
-    "shipping_option_id": shippingOptionId,
-    "credentials": credentials,
+    'chat_id': chatId,
+    'message_id': messageId,
+    'order_info_id': orderInfoId,
+    'shipping_option_id': shippingOptionId,
+    'credentials': credentials,
   };
 
   SendPaymentForm(
@@ -6322,6 +8020,14 @@ class SendPaymentForm extends TdFunction {
     this.shippingOptionId,
     this.credentials,
   );
+
+  SendPaymentForm.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    messageId = tryConvertToTdObject(json['message_id']);
+    orderInfoId = tryConvertToTdObject(json['order_info_id']);
+    shippingOptionId = tryConvertToTdObject(json['shipping_option_id']);
+    credentials = tryConvertToTdObject(json['credentials']);
+  }
 }
 
 @reflector
@@ -6330,20 +8036,26 @@ class GetPaymentReceipt extends TdFunction {
   Type get returnType => PaymentReceipt;
 
   @override
-  String get tdType => "getPaymentReceipt";
-  final int chatId;
-  final int messageId;
+  String get tdType => 'getPaymentReceipt';
+
+  int chatId;
+  int messageId;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
-    "message_id": messageId,
+    'chat_id': chatId,
+    'message_id': messageId,
   };
 
   GetPaymentReceipt(
     this.chatId,
     this.messageId,
   );
+
+  GetPaymentReceipt.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+    messageId = tryConvertToTdObject(json['message_id']);
+  }
 }
 
 @reflector
@@ -6352,11 +8064,14 @@ class GetSavedOrderInfo extends TdFunction {
   Type get returnType => OrderInfo;
 
   @override
-  String get tdType => "getSavedOrderInfo";
+  String get tdType => 'getSavedOrderInfo';
+
   @override
   Map<String, dynamic> get params => {};
 
   GetSavedOrderInfo();
+
+  GetSavedOrderInfo.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -6365,17 +8080,22 @@ class GetBackgrounds extends TdFunction {
   Type get returnType => Backgrounds;
 
   @override
-  String get tdType => "getBackgrounds";
-  final bool forDarkTheme;
+  String get tdType => 'getBackgrounds';
+
+  bool forDarkTheme;
 
   @override
   Map<String, dynamic> get params => {
-    "for_dark_theme": forDarkTheme,
+    'for_dark_theme': forDarkTheme,
   };
 
   GetBackgrounds(
     this.forDarkTheme,
   );
+
+  GetBackgrounds.fromJson(Map<String, dynamic> json) {
+    forDarkTheme = tryConvertToTdObject(json['for_dark_theme']);
+  }
 }
 
 @reflector
@@ -6384,17 +8104,22 @@ class SearchBackground extends TdFunction {
   Type get returnType => Background;
 
   @override
-  String get tdType => "searchBackground";
-  final String name;
+  String get tdType => 'searchBackground';
+
+  String name;
 
   @override
   Map<String, dynamic> get params => {
-    "name": name,
+    'name': name,
   };
 
   SearchBackground(
     this.name,
   );
+
+  SearchBackground.fromJson(Map<String, dynamic> json) {
+    name = tryConvertToTdObject(json['name']);
+  }
 }
 
 @reflector
@@ -6403,16 +8128,17 @@ class SetBackground extends TdFunction {
   Type get returnType => Background;
 
   @override
-  String get tdType => "setBackground";
-  final InputBackground background;
-  final BackgroundType type;
-  final bool forDarkTheme;
+  String get tdType => 'setBackground';
+
+  InputBackground background;
+  BackgroundType type;
+  bool forDarkTheme;
 
   @override
   Map<String, dynamic> get params => {
-    "background": background,
-    "type": type,
-    "for_dark_theme": forDarkTheme,
+    'background': background,
+    'type': type,
+    'for_dark_theme': forDarkTheme,
   };
 
   SetBackground(
@@ -6420,6 +8146,12 @@ class SetBackground extends TdFunction {
     this.type,
     this.forDarkTheme,
   );
+
+  SetBackground.fromJson(Map<String, dynamic> json) {
+    background = tryConvertToTdObject(json['background']);
+    type = tryConvertToTdObject(json['type']);
+    forDarkTheme = tryConvertToTdObject(json['for_dark_theme']);
+  }
 }
 
 @reflector
@@ -6428,17 +8160,22 @@ class GetLocalizationTargetInfo extends TdFunction {
   Type get returnType => LocalizationTargetInfo;
 
   @override
-  String get tdType => "getLocalizationTargetInfo";
-  final bool onlyLocal;
+  String get tdType => 'getLocalizationTargetInfo';
+
+  bool onlyLocal;
 
   @override
   Map<String, dynamic> get params => {
-    "only_local": onlyLocal,
+    'only_local': onlyLocal,
   };
 
   GetLocalizationTargetInfo(
     this.onlyLocal,
   );
+
+  GetLocalizationTargetInfo.fromJson(Map<String, dynamic> json) {
+    onlyLocal = tryConvertToTdObject(json['only_local']);
+  }
 }
 
 @reflector
@@ -6447,17 +8184,22 @@ class GetLanguagePackInfo extends TdFunction {
   Type get returnType => LanguagePackInfo;
 
   @override
-  String get tdType => "getLanguagePackInfo";
-  final String languagePackId;
+  String get tdType => 'getLanguagePackInfo';
+
+  String languagePackId;
 
   @override
   Map<String, dynamic> get params => {
-    "language_pack_id": languagePackId,
+    'language_pack_id': languagePackId,
   };
 
   GetLanguagePackInfo(
     this.languagePackId,
   );
+
+  GetLanguagePackInfo.fromJson(Map<String, dynamic> json) {
+    languagePackId = tryConvertToTdObject(json['language_pack_id']);
+  }
 }
 
 @reflector
@@ -6466,20 +8208,26 @@ class GetLanguagePackStrings extends TdFunction {
   Type get returnType => LanguagePackStrings;
 
   @override
-  String get tdType => "getLanguagePackStrings";
-  final String languagePackId;
-  final List<String> keys;
+  String get tdType => 'getLanguagePackStrings';
+
+  String languagePackId;
+  List<String> keys;
 
   @override
   Map<String, dynamic> get params => {
-    "language_pack_id": languagePackId,
-    "keys": keys,
+    'language_pack_id': languagePackId,
+    'keys': keys,
   };
 
   GetLanguagePackStrings(
     this.languagePackId,
     this.keys,
   );
+
+  GetLanguagePackStrings.fromJson(Map<String, dynamic> json) {
+    languagePackId = tryConvertToTdObject(json['language_pack_id']);
+    keys = tryConvertToTdObject(json['keys']);
+  }
 }
 
 @reflector
@@ -6488,20 +8236,26 @@ class RegisterDevice extends TdFunction {
   Type get returnType => PushReceiverId;
 
   @override
-  String get tdType => "registerDevice";
-  final DeviceToken deviceToken;
-  final List<int> otherUserIds;
+  String get tdType => 'registerDevice';
+
+  DeviceToken deviceToken;
+  List<int> otherUserIds;
 
   @override
   Map<String, dynamic> get params => {
-    "device_token": deviceToken,
-    "other_user_ids": otherUserIds,
+    'device_token': deviceToken,
+    'other_user_ids': otherUserIds,
   };
 
   RegisterDevice(
     this.deviceToken,
     this.otherUserIds,
   );
+
+  RegisterDevice.fromJson(Map<String, dynamic> json) {
+    deviceToken = tryConvertToTdObject(json['device_token']);
+    otherUserIds = tryConvertToTdObject(json['other_user_ids']);
+  }
 }
 
 @reflector
@@ -6510,17 +8264,22 @@ class GetPushReceiverId extends TdFunction {
   Type get returnType => PushReceiverId;
 
   @override
-  String get tdType => "getPushReceiverId";
-  final String payload;
+  String get tdType => 'getPushReceiverId';
+
+  String payload;
 
   @override
   Map<String, dynamic> get params => {
-    "payload": payload,
+    'payload': payload,
   };
 
   GetPushReceiverId(
     this.payload,
   );
+
+  GetPushReceiverId.fromJson(Map<String, dynamic> json) {
+    payload = tryConvertToTdObject(json['payload']);
+  }
 }
 
 @reflector
@@ -6529,17 +8288,22 @@ class GetRecentlyVisitedTMeUrls extends TdFunction {
   Type get returnType => TMeUrls;
 
   @override
-  String get tdType => "getRecentlyVisitedTMeUrls";
-  final String referrer;
+  String get tdType => 'getRecentlyVisitedTMeUrls';
+
+  String referrer;
 
   @override
   Map<String, dynamic> get params => {
-    "referrer": referrer,
+    'referrer': referrer,
   };
 
   GetRecentlyVisitedTMeUrls(
     this.referrer,
   );
+
+  GetRecentlyVisitedTMeUrls.fromJson(Map<String, dynamic> json) {
+    referrer = tryConvertToTdObject(json['referrer']);
+  }
 }
 
 @reflector
@@ -6548,17 +8312,22 @@ class GetUserPrivacySettingRules extends TdFunction {
   Type get returnType => UserPrivacySettingRules;
 
   @override
-  String get tdType => "getUserPrivacySettingRules";
-  final UserPrivacySetting setting;
+  String get tdType => 'getUserPrivacySettingRules';
+
+  UserPrivacySetting setting;
 
   @override
   Map<String, dynamic> get params => {
-    "setting": setting,
+    'setting': setting,
   };
 
   GetUserPrivacySettingRules(
     this.setting,
   );
+
+  GetUserPrivacySettingRules.fromJson(Map<String, dynamic> json) {
+    setting = tryConvertToTdObject(json['setting']);
+  }
 }
 
 @reflector
@@ -6567,17 +8336,22 @@ class GetOption extends TdFunction {
   Type get returnType => OptionValue;
 
   @override
-  String get tdType => "getOption";
-  final String name;
+  String get tdType => 'getOption';
+
+  String name;
 
   @override
   Map<String, dynamic> get params => {
-    "name": name,
+    'name': name,
   };
 
   GetOption(
     this.name,
   );
+
+  GetOption.fromJson(Map<String, dynamic> json) {
+    name = tryConvertToTdObject(json['name']);
+  }
 }
 
 @reflector
@@ -6586,11 +8360,14 @@ class GetAccountTtl extends TdFunction {
   Type get returnType => AccountTtl;
 
   @override
-  String get tdType => "getAccountTtl";
+  String get tdType => 'getAccountTtl';
+
   @override
   Map<String, dynamic> get params => {};
 
   GetAccountTtl();
+
+  GetAccountTtl.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -6599,17 +8376,22 @@ class GetChatReportSpamState extends TdFunction {
   Type get returnType => ChatReportSpamState;
 
   @override
-  String get tdType => "getChatReportSpamState";
-  final int chatId;
+  String get tdType => 'getChatReportSpamState';
+
+  int chatId;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_id": chatId,
+    'chat_id': chatId,
   };
 
   GetChatReportSpamState(
     this.chatId,
   );
+
+  GetChatReportSpamState.fromJson(Map<String, dynamic> json) {
+    chatId = tryConvertToTdObject(json['chat_id']);
+  }
 }
 
 @reflector
@@ -6618,17 +8400,22 @@ class GetStorageStatistics extends TdFunction {
   Type get returnType => StorageStatistics;
 
   @override
-  String get tdType => "getStorageStatistics";
-  final int chatLimit;
+  String get tdType => 'getStorageStatistics';
+
+  int chatLimit;
 
   @override
   Map<String, dynamic> get params => {
-    "chat_limit": chatLimit,
+    'chat_limit': chatLimit,
   };
 
   GetStorageStatistics(
     this.chatLimit,
   );
+
+  GetStorageStatistics.fromJson(Map<String, dynamic> json) {
+    chatLimit = tryConvertToTdObject(json['chat_limit']);
+  }
 }
 
 @reflector
@@ -6637,26 +8424,27 @@ class OptimizeStorage extends TdFunction {
   Type get returnType => StorageStatistics;
 
   @override
-  String get tdType => "optimizeStorage";
-  final int size;
-  final int ttl;
-  final int count;
-  final int immunityDelay;
-  final List<FileType> fileTypes;
-  final List<int> chatIds;
-  final List<int> excludeChatIds;
-  final int chatLimit;
+  String get tdType => 'optimizeStorage';
+
+  int size;
+  int ttl;
+  int count;
+  int immunityDelay;
+  List<FileType> fileTypes;
+  List<int> chatIds;
+  List<int> excludeChatIds;
+  int chatLimit;
 
   @override
   Map<String, dynamic> get params => {
-    "size": size,
-    "ttl": ttl,
-    "count": count,
-    "immunity_delay": immunityDelay,
-    "file_types": fileTypes,
-    "chat_ids": chatIds,
-    "exclude_chat_ids": excludeChatIds,
-    "chat_limit": chatLimit,
+    'size': size,
+    'ttl': ttl,
+    'count': count,
+    'immunity_delay': immunityDelay,
+    'file_types': fileTypes,
+    'chat_ids': chatIds,
+    'exclude_chat_ids': excludeChatIds,
+    'chat_limit': chatLimit,
   };
 
   OptimizeStorage(
@@ -6669,6 +8457,17 @@ class OptimizeStorage extends TdFunction {
     this.excludeChatIds,
     this.chatLimit,
   );
+
+  OptimizeStorage.fromJson(Map<String, dynamic> json) {
+    size = tryConvertToTdObject(json['size']);
+    ttl = tryConvertToTdObject(json['ttl']);
+    count = tryConvertToTdObject(json['count']);
+    immunityDelay = tryConvertToTdObject(json['immunity_delay']);
+    fileTypes = tryConvertToTdObject(json['file_types']);
+    chatIds = tryConvertToTdObject(json['chat_ids']);
+    excludeChatIds = tryConvertToTdObject(json['exclude_chat_ids']);
+    chatLimit = tryConvertToTdObject(json['chat_limit']);
+  }
 }
 
 @reflector
@@ -6677,11 +8476,14 @@ class GetStorageStatisticsFast extends TdFunction {
   Type get returnType => StorageStatisticsFast;
 
   @override
-  String get tdType => "getStorageStatisticsFast";
+  String get tdType => 'getStorageStatisticsFast';
+
   @override
   Map<String, dynamic> get params => {};
 
   GetStorageStatisticsFast();
+
+  GetStorageStatisticsFast.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -6690,11 +8492,14 @@ class GetDatabaseStatistics extends TdFunction {
   Type get returnType => DatabaseStatistics;
 
   @override
-  String get tdType => "getDatabaseStatistics";
+  String get tdType => 'getDatabaseStatistics';
+
   @override
   Map<String, dynamic> get params => {};
 
   GetDatabaseStatistics();
+
+  GetDatabaseStatistics.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -6703,17 +8508,22 @@ class GetNetworkStatistics extends TdFunction {
   Type get returnType => NetworkStatistics;
 
   @override
-  String get tdType => "getNetworkStatistics";
-  final bool onlyCurrent;
+  String get tdType => 'getNetworkStatistics';
+
+  bool onlyCurrent;
 
   @override
   Map<String, dynamic> get params => {
-    "only_current": onlyCurrent,
+    'only_current': onlyCurrent,
   };
 
   GetNetworkStatistics(
     this.onlyCurrent,
   );
+
+  GetNetworkStatistics.fromJson(Map<String, dynamic> json) {
+    onlyCurrent = tryConvertToTdObject(json['only_current']);
+  }
 }
 
 @reflector
@@ -6722,11 +8532,14 @@ class GetAutoDownloadSettingsPresets extends TdFunction {
   Type get returnType => AutoDownloadSettingsPresets;
 
   @override
-  String get tdType => "getAutoDownloadSettingsPresets";
+  String get tdType => 'getAutoDownloadSettingsPresets';
+
   @override
   Map<String, dynamic> get params => {};
 
   GetAutoDownloadSettingsPresets();
+
+  GetAutoDownloadSettingsPresets.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -6735,20 +8548,26 @@ class GetPassportElement extends TdFunction {
   Type get returnType => PassportElement;
 
   @override
-  String get tdType => "getPassportElement";
-  final PassportElementType type;
-  final String password;
+  String get tdType => 'getPassportElement';
+
+  PassportElementType type;
+  String password;
 
   @override
   Map<String, dynamic> get params => {
-    "type": type,
-    "password": password,
+    'type': type,
+    'password': password,
   };
 
   GetPassportElement(
     this.type,
     this.password,
   );
+
+  GetPassportElement.fromJson(Map<String, dynamic> json) {
+    type = tryConvertToTdObject(json['type']);
+    password = tryConvertToTdObject(json['password']);
+  }
 }
 
 @reflector
@@ -6757,20 +8576,26 @@ class SetPassportElement extends TdFunction {
   Type get returnType => PassportElement;
 
   @override
-  String get tdType => "setPassportElement";
-  final InputPassportElement element;
-  final String password;
+  String get tdType => 'setPassportElement';
+
+  InputPassportElement element;
+  String password;
 
   @override
   Map<String, dynamic> get params => {
-    "element": element,
-    "password": password,
+    'element': element,
+    'password': password,
   };
 
   SetPassportElement(
     this.element,
     this.password,
   );
+
+  SetPassportElement.fromJson(Map<String, dynamic> json) {
+    element = tryConvertToTdObject(json['element']);
+    password = tryConvertToTdObject(json['password']);
+  }
 }
 
 @reflector
@@ -6779,17 +8604,22 @@ class GetAllPassportElements extends TdFunction {
   Type get returnType => PassportElements;
 
   @override
-  String get tdType => "getAllPassportElements";
-  final String password;
+  String get tdType => 'getAllPassportElements';
+
+  String password;
 
   @override
   Map<String, dynamic> get params => {
-    "password": password,
+    'password': password,
   };
 
   GetAllPassportElements(
     this.password,
   );
+
+  GetAllPassportElements.fromJson(Map<String, dynamic> json) {
+    password = tryConvertToTdObject(json['password']);
+  }
 }
 
 @reflector
@@ -6798,18 +8628,19 @@ class GetPassportAuthorizationForm extends TdFunction {
   Type get returnType => PassportAuthorizationForm;
 
   @override
-  String get tdType => "getPassportAuthorizationForm";
-  final int botUserId;
-  final String scope;
-  final String publicKey;
-  final String nonce;
+  String get tdType => 'getPassportAuthorizationForm';
+
+  int botUserId;
+  String scope;
+  String publicKey;
+  String nonce;
 
   @override
   Map<String, dynamic> get params => {
-    "bot_user_id": botUserId,
-    "scope": scope,
-    "public_key": publicKey,
-    "nonce": nonce,
+    'bot_user_id': botUserId,
+    'scope': scope,
+    'public_key': publicKey,
+    'nonce': nonce,
   };
 
   GetPassportAuthorizationForm(
@@ -6818,6 +8649,13 @@ class GetPassportAuthorizationForm extends TdFunction {
     this.publicKey,
     this.nonce,
   );
+
+  GetPassportAuthorizationForm.fromJson(Map<String, dynamic> json) {
+    botUserId = tryConvertToTdObject(json['bot_user_id']);
+    scope = tryConvertToTdObject(json['scope']);
+    publicKey = tryConvertToTdObject(json['public_key']);
+    nonce = tryConvertToTdObject(json['nonce']);
+  }
 }
 
 @reflector
@@ -6826,20 +8664,26 @@ class GetPassportAuthorizationFormAvailableElements extends TdFunction {
   Type get returnType => PassportElementsWithErrors;
 
   @override
-  String get tdType => "getPassportAuthorizationFormAvailableElements";
-  final int autorizationFormId;
-  final String password;
+  String get tdType => 'getPassportAuthorizationFormAvailableElements';
+
+  int autorizationFormId;
+  String password;
 
   @override
   Map<String, dynamic> get params => {
-    "autorization_form_id": autorizationFormId,
-    "password": password,
+    'autorization_form_id': autorizationFormId,
+    'password': password,
   };
 
   GetPassportAuthorizationFormAvailableElements(
     this.autorizationFormId,
     this.password,
   );
+
+  GetPassportAuthorizationFormAvailableElements.fromJson(Map<String, dynamic> json) {
+    autorizationFormId = tryConvertToTdObject(json['autorization_form_id']);
+    password = tryConvertToTdObject(json['password']);
+  }
 }
 
 @reflector
@@ -6848,20 +8692,26 @@ class SendCustomRequest extends TdFunction {
   Type get returnType => CustomRequestResult;
 
   @override
-  String get tdType => "sendCustomRequest";
-  final String method;
-  final String parameters;
+  String get tdType => 'sendCustomRequest';
+
+  String method;
+  String parameters;
 
   @override
   Map<String, dynamic> get params => {
-    "method": method,
-    "parameters": parameters,
+    'method': method,
+    'parameters': parameters,
   };
 
   SendCustomRequest(
     this.method,
     this.parameters,
   );
+
+  SendCustomRequest.fromJson(Map<String, dynamic> json) {
+    method = tryConvertToTdObject(json['method']);
+    parameters = tryConvertToTdObject(json['parameters']);
+  }
 }
 
 @reflector
@@ -6870,17 +8720,22 @@ class SendTonLiteServerRequest extends TdFunction {
   Type get returnType => TonLiteServerResponse;
 
   @override
-  String get tdType => "sendTonLiteServerRequest";
-  final String request;
+  String get tdType => 'sendTonLiteServerRequest';
+
+  String request;
 
   @override
   Map<String, dynamic> get params => {
-    "request": request,
+    'request': request,
   };
 
   SendTonLiteServerRequest(
     this.request,
   );
+
+  SendTonLiteServerRequest.fromJson(Map<String, dynamic> json) {
+    request = tryConvertToTdObject(json['request']);
+  }
 }
 
 @reflector
@@ -6889,11 +8744,14 @@ class GetTonWalletPasswordSalt extends TdFunction {
   Type get returnType => TonWalletPasswordSalt;
 
   @override
-  String get tdType => "getTonWalletPasswordSalt";
+  String get tdType => 'getTonWalletPasswordSalt';
+
   @override
   Map<String, dynamic> get params => {};
 
   GetTonWalletPasswordSalt();
+
+  GetTonWalletPasswordSalt.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -6902,17 +8760,22 @@ class GetDeepLinkInfo extends TdFunction {
   Type get returnType => DeepLinkInfo;
 
   @override
-  String get tdType => "getDeepLinkInfo";
-  final String link;
+  String get tdType => 'getDeepLinkInfo';
+
+  String link;
 
   @override
   Map<String, dynamic> get params => {
-    "link": link,
+    'link': link,
   };
 
   GetDeepLinkInfo(
     this.link,
   );
+
+  GetDeepLinkInfo.fromJson(Map<String, dynamic> json) {
+    link = tryConvertToTdObject(json['link']);
+  }
 }
 
 @reflector
@@ -6921,18 +8784,19 @@ class AddProxy extends TdFunction {
   Type get returnType => Proxy;
 
   @override
-  String get tdType => "addProxy";
-  final String server;
-  final int port;
-  final bool enable;
-  final ProxyType type;
+  String get tdType => 'addProxy';
+
+  String server;
+  int port;
+  bool enable;
+  ProxyType type;
 
   @override
   Map<String, dynamic> get params => {
-    "server": server,
-    "port": port,
-    "enable": enable,
-    "type": type,
+    'server': server,
+    'port': port,
+    'enable': enable,
+    'type': type,
   };
 
   AddProxy(
@@ -6941,6 +8805,13 @@ class AddProxy extends TdFunction {
     this.enable,
     this.type,
   );
+
+  AddProxy.fromJson(Map<String, dynamic> json) {
+    server = tryConvertToTdObject(json['server']);
+    port = tryConvertToTdObject(json['port']);
+    enable = tryConvertToTdObject(json['enable']);
+    type = tryConvertToTdObject(json['type']);
+  }
 }
 
 @reflector
@@ -6949,20 +8820,21 @@ class EditProxy extends TdFunction {
   Type get returnType => Proxy;
 
   @override
-  String get tdType => "editProxy";
-  final int proxyId;
-  final String server;
-  final int port;
-  final bool enable;
-  final ProxyType type;
+  String get tdType => 'editProxy';
+
+  int proxyId;
+  String server;
+  int port;
+  bool enable;
+  ProxyType type;
 
   @override
   Map<String, dynamic> get params => {
-    "proxy_id": proxyId,
-    "server": server,
-    "port": port,
-    "enable": enable,
-    "type": type,
+    'proxy_id': proxyId,
+    'server': server,
+    'port': port,
+    'enable': enable,
+    'type': type,
   };
 
   EditProxy(
@@ -6972,6 +8844,14 @@ class EditProxy extends TdFunction {
     this.enable,
     this.type,
   );
+
+  EditProxy.fromJson(Map<String, dynamic> json) {
+    proxyId = tryConvertToTdObject(json['proxy_id']);
+    server = tryConvertToTdObject(json['server']);
+    port = tryConvertToTdObject(json['port']);
+    enable = tryConvertToTdObject(json['enable']);
+    type = tryConvertToTdObject(json['type']);
+  }
 }
 
 @reflector
@@ -6980,11 +8860,14 @@ class GetProxies extends TdFunction {
   Type get returnType => Proxies;
 
   @override
-  String get tdType => "getProxies";
+  String get tdType => 'getProxies';
+
   @override
   Map<String, dynamic> get params => {};
 
   GetProxies();
+
+  GetProxies.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -6993,17 +8876,22 @@ class PingProxy extends TdFunction {
   Type get returnType => Seconds;
 
   @override
-  String get tdType => "pingProxy";
-  final int proxyId;
+  String get tdType => 'pingProxy';
+
+  int proxyId;
 
   @override
   Map<String, dynamic> get params => {
-    "proxy_id": proxyId,
+    'proxy_id': proxyId,
   };
 
   PingProxy(
     this.proxyId,
   );
+
+  PingProxy.fromJson(Map<String, dynamic> json) {
+    proxyId = tryConvertToTdObject(json['proxy_id']);
+  }
 }
 
 @reflector
@@ -7012,11 +8900,14 @@ class GetLogStream extends TdFunction {
   Type get returnType => LogStream;
 
   @override
-  String get tdType => "getLogStream";
+  String get tdType => 'getLogStream';
+
   @override
   Map<String, dynamic> get params => {};
 
   GetLogStream();
+
+  GetLogStream.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -7025,11 +8916,14 @@ class GetLogVerbosityLevel extends TdFunction {
   Type get returnType => LogVerbosityLevel;
 
   @override
-  String get tdType => "getLogVerbosityLevel";
+  String get tdType => 'getLogVerbosityLevel';
+
   @override
   Map<String, dynamic> get params => {};
 
   GetLogVerbosityLevel();
+
+  GetLogVerbosityLevel.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -7038,17 +8932,22 @@ class GetLogTagVerbosityLevel extends TdFunction {
   Type get returnType => LogVerbosityLevel;
 
   @override
-  String get tdType => "getLogTagVerbosityLevel";
-  final String tag;
+  String get tdType => 'getLogTagVerbosityLevel';
+
+  String tag;
 
   @override
   Map<String, dynamic> get params => {
-    "tag": tag,
+    'tag': tag,
   };
 
   GetLogTagVerbosityLevel(
     this.tag,
   );
+
+  GetLogTagVerbosityLevel.fromJson(Map<String, dynamic> json) {
+    tag = tryConvertToTdObject(json['tag']);
+  }
 }
 
 @reflector
@@ -7057,11 +8956,14 @@ class GetLogTags extends TdFunction {
   Type get returnType => LogTags;
 
   @override
-  String get tdType => "getLogTags";
+  String get tdType => 'getLogTags';
+
   @override
   Map<String, dynamic> get params => {};
 
   GetLogTags();
+
+  GetLogTags.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -7070,17 +8972,22 @@ class TestCallString extends TdFunction {
   Type get returnType => TestString;
 
   @override
-  String get tdType => "testCallString";
-  final String x;
+  String get tdType => 'testCallString';
+
+  String x;
 
   @override
   Map<String, dynamic> get params => {
-    "x": x,
+    'x': x,
   };
 
   TestCallString(
     this.x,
   );
+
+  TestCallString.fromJson(Map<String, dynamic> json) {
+    x = tryConvertToTdObject(json['x']);
+  }
 }
 
 @reflector
@@ -7089,17 +8996,22 @@ class TestCallBytes extends TdFunction {
   Type get returnType => TestBytes;
 
   @override
-  String get tdType => "testCallBytes";
-  final String x;
+  String get tdType => 'testCallBytes';
+
+  String x;
 
   @override
   Map<String, dynamic> get params => {
-    "x": x,
+    'x': x,
   };
 
   TestCallBytes(
     this.x,
   );
+
+  TestCallBytes.fromJson(Map<String, dynamic> json) {
+    x = tryConvertToTdObject(json['x']);
+  }
 }
 
 @reflector
@@ -7108,17 +9020,22 @@ class TestCallVectorInt extends TdFunction {
   Type get returnType => TestVectorInt;
 
   @override
-  String get tdType => "testCallVectorInt";
-  final List<int> x;
+  String get tdType => 'testCallVectorInt';
+
+  List<int> x;
 
   @override
   Map<String, dynamic> get params => {
-    "x": x,
+    'x': x,
   };
 
   TestCallVectorInt(
     this.x,
   );
+
+  TestCallVectorInt.fromJson(Map<String, dynamic> json) {
+    x = tryConvertToTdObject(json['x']);
+  }
 }
 
 @reflector
@@ -7127,17 +9044,22 @@ class TestCallVectorIntObject extends TdFunction {
   Type get returnType => TestVectorIntObject;
 
   @override
-  String get tdType => "testCallVectorIntObject";
-  final List<TestInt> x;
+  String get tdType => 'testCallVectorIntObject';
+
+  List<TestInt> x;
 
   @override
   Map<String, dynamic> get params => {
-    "x": x,
+    'x': x,
   };
 
   TestCallVectorIntObject(
     this.x,
   );
+
+  TestCallVectorIntObject.fromJson(Map<String, dynamic> json) {
+    x = tryConvertToTdObject(json['x']);
+  }
 }
 
 @reflector
@@ -7146,17 +9068,22 @@ class TestCallVectorString extends TdFunction {
   Type get returnType => TestVectorString;
 
   @override
-  String get tdType => "testCallVectorString";
-  final List<String> x;
+  String get tdType => 'testCallVectorString';
+
+  List<String> x;
 
   @override
   Map<String, dynamic> get params => {
-    "x": x,
+    'x': x,
   };
 
   TestCallVectorString(
     this.x,
   );
+
+  TestCallVectorString.fromJson(Map<String, dynamic> json) {
+    x = tryConvertToTdObject(json['x']);
+  }
 }
 
 @reflector
@@ -7165,17 +9092,22 @@ class TestCallVectorStringObject extends TdFunction {
   Type get returnType => TestVectorStringObject;
 
   @override
-  String get tdType => "testCallVectorStringObject";
-  final List<TestString> x;
+  String get tdType => 'testCallVectorStringObject';
+
+  List<TestString> x;
 
   @override
   Map<String, dynamic> get params => {
-    "x": x,
+    'x': x,
   };
 
   TestCallVectorStringObject(
     this.x,
   );
+
+  TestCallVectorStringObject.fromJson(Map<String, dynamic> json) {
+    x = tryConvertToTdObject(json['x']);
+  }
 }
 
 @reflector
@@ -7184,17 +9116,22 @@ class TestSquareInt extends TdFunction {
   Type get returnType => TestInt;
 
   @override
-  String get tdType => "testSquareInt";
-  final int x;
+  String get tdType => 'testSquareInt';
+
+  int x;
 
   @override
   Map<String, dynamic> get params => {
-    "x": x,
+    'x': x,
   };
 
   TestSquareInt(
     this.x,
   );
+
+  TestSquareInt.fromJson(Map<String, dynamic> json) {
+    x = tryConvertToTdObject(json['x']);
+  }
 }
 
 @reflector
@@ -7203,11 +9140,14 @@ class TestUseUpdate extends TdFunction {
   Type get returnType => Update;
 
   @override
-  String get tdType => "testUseUpdate";
+  String get tdType => 'testUseUpdate';
+
   @override
   Map<String, dynamic> get params => {};
 
   TestUseUpdate();
+
+  TestUseUpdate.fromJson(Map<String, dynamic> json);
 }
 
 @reflector
@@ -7216,15 +9156,20 @@ class TestReturnError extends TdFunction {
   Type get returnType => Error;
 
   @override
-  String get tdType => "testReturnError";
-  final Error error;
+  String get tdType => 'testReturnError';
+
+  Error error;
 
   @override
   Map<String, dynamic> get params => {
-    "error": error,
+    'error': error,
   };
 
   TestReturnError(
     this.error,
   );
+
+  TestReturnError.fromJson(Map<String, dynamic> json) {
+    error = tryConvertToTdObject(json['error']);
+  }
 }

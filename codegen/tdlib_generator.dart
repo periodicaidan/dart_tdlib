@@ -2,9 +2,9 @@
 ///
 /// Automatically generates classes for TDLib
 
-import "dart:io";
-import "dart:convert";
-import "utils.dart";
+import 'dart:io';
+import 'dart:convert';
+import 'utils.dart';
 
 /// Represents a class constructor in the TD API
 class ApiClass {
@@ -50,41 +50,47 @@ class ApiClass {
   String toDart() {
     var buf = StringBuffer();
     if (isAbstract) {
-      buf.write("abstract class $name extends $superclass {}\n");
+      buf.write('abstract class $name extends $superclass {}\n');
     } else if (members.isEmpty) {
       buf.writeAll([
-        "@reflector",
-        "class $name extends $superclass {",
-        "  @override",
-        "  String get tdType => \"$type\";",
-        "",
-        "  @override",
-        "  Map<String, dynamic> get params => {};",
-        "",
-        "  $name(Map<String, dynamic> json);", // Still has params for consistency
-        "}",
-        "",
-      ], "\n");
+        '@reflector',
+        'class $name extends $superclass {',
+        '  @override',
+        '  String get tdType => \'$type\';',
+        '',
+        '  @override',
+        '  Map<String, dynamic> get params => {};',
+        '',
+        '  $name();',
+        '',
+        '  $name.fromJson(Map<String, dynamic> json);', // Still has params for consistency
+        '}',
+        '',
+      ], '\n');
     } else {
       buf.writeAll([
-        "@reflector",
-        "class $name extends $superclass {",
-        "  @override",
-        "  String get tdType => \"$type\";",
-        "",
-        ...members.map((field) => "  ${field.type} ${field.fieldName};"),
-        "",
-        "  @override",
-        "  Map<String, dynamic> get params => {",
-        ...members.map((param) => "    \"${param.paramName}\": ${param.fieldName},"),
-        "  };",
-        "",
-        "  $name(Map<String, dynamic> json) {",
-        ...members.map((field) => "    ${field.fieldName} = tryConvertToTdObject(json[\"${field.paramName}\"]);"),
-        "  }",
-        "}",
-        "",
-      ], "\n");
+        '@reflector',
+        'class $name extends $superclass {',
+        '  @override',
+        '  String get tdType => \'$type\';',
+        '',
+        ...members.map((field) => '  ${field.type} ${field.fieldName};'),
+        '',
+        '  @override',
+        '  Map<String, dynamic> get params => {',
+        ...members.map((param) => '    \'${param.paramName}\': ${param.fieldName},'),
+        '  };',
+        '',
+        '  $name({',
+        ...members.map((field) => '    this.${field.fieldName},'),
+        '  });',
+        '',
+        '  $name.fromJson(Map<String, dynamic> json) {',
+        ...members.map((field) => '    ${field.fieldName} = tryConvertToTdObject(json[\'${field.paramName}\']);'),
+        '  }',
+        '}',
+        '',
+      ], '\n');
     }
 
     return buf.toString();
@@ -131,44 +137,50 @@ class ApiFunction {
     var buf = StringBuffer();
     if (params.isEmpty) {
       buf.writeAll([
-        "@reflector",
-        "class $name extends TdFunction {",
-        "  @override",
-        "  Type get returnType => $returnType;",
-        "",
-        "  @override",
-        "  String get tdType => \"${pascalToCamelCase(name)}\";"
-        "",
-        "  @override",
-        "  Map<String, dynamic> get params => {};",
-        "",
-        "  $name();",
-        "}",
-        "",
-      ], "\n");
+        '@reflector',
+        'class $name extends TdFunction {',
+        '  @override',
+        '  Type get returnType => $returnType;',
+        '',
+        '  @override',
+        '  String get tdType => \'${pascalToCamelCase(name)}\';',
+        '',
+        '  @override',
+        '  Map<String, dynamic> get params => {};',
+        '',
+        '  $name();',
+        '',
+        '  $name.fromJson(Map<String, dynamic> json);',
+        '}',
+        '',
+      ], '\n');
     } else {
       buf.writeAll([
-        "@reflector",
-        "class $name extends TdFunction {",
-        "  @override",
-        "  Type get returnType => $returnType;",
-        "",
-        "  @override",
-        "  String get tdType => \"${pascalToCamelCase(name)}\";"
-        "",
-        ...params.map((field) => "  final ${field.type} ${field.fieldName};"),
-        "",
-        "  @override",
-        "  Map<String, dynamic> get params => {",
-        ...params.map((param) => "    \"${param.paramName}\": ${param.fieldName},"),
-        "  };",
-        "",
-        "  $name(",
-        ...params.map((param) => "    this.${param.fieldName},"),
-        "  );",
-        "}",
-        "",
-      ], "\n");
+        '@reflector',
+        'class $name extends TdFunction {',
+        '  @override',
+        '  Type get returnType => $returnType;',
+        '',
+        '  @override',
+        '  String get tdType => \'${pascalToCamelCase(name)}\';',
+        '',
+        ...params.map((field) => '  ${field.type} ${field.fieldName};'),
+        '',
+        '  @override',
+        '  Map<String, dynamic> get params => {',
+        ...params.map((param) => '    \'${param.paramName}\': ${param.fieldName},'),
+        '  };',
+        '',
+        '  $name(',
+        ...params.map((param) => '    this.${param.fieldName},'),
+        '  );',
+        '',
+        '  $name.fromJson(Map<String, dynamic> json) {',
+        ...params.map((param) => '    ${param.fieldName} = tryConvertToTdObject(json[\'${param.paramName}\']);'),
+        '  }',
+        '}',
+        '',
+      ], '\n');
     }
 
     return buf.toString();
@@ -183,42 +195,33 @@ class ApiParam {
   const ApiParam(this.type, this.paramName);
 }
 
-const apiSpec = <ApiClass>[
-  ApiClass(
-    name: "OptionValueString",
-    superclass: "OptionValue",
-    isAbstract: false,
-    members: [ApiParam("String", "value")]
-  ),
-];
-
 main() async {
-  Map<String, dynamic> api = await File("./tl_api.json").openRead()
+  Map<String, dynamic> api = await File('./tl_api.json').openRead()
     .transform(Utf8Decoder())
     .transform(JsonDecoder())
     .first;
 
-  List<ApiClass> classes = [];
-  List<ApiFunction> functions = [];
+  var classes = <ApiClass>[];
+  var functions = <ApiFunction>[];
 
   // TODO: Clean up whatever the hell this is, or at least document it
-  (api["types"] as Map).forEach((k, v) {
+  (api['types'] as Map).forEach((k, v) {
     if ((v as Map).length == 1 && (v as Map).containsKey(pascalToCamelCase(k))) {
       classes.add(ApiClass(
         name: k,
-        superclass: "TdObject",
+        superclass: 'TdObject',
         isAbstract: false,
-        members: (v[pascalToCamelCase(k)]["fields"] as Map).entries.map((e) => ApiParam(e.value, e.key)).toList(),
-        extra: "",
+        members: (v[pascalToCamelCase(k)]['fields'] as Map).entries.map((e) => ApiParam(e.value, e.key)).toList(),
+        extra: '',
       ));
       return;
     } else {
       classes.add(ApiClass(
         name: k,
-        superclass: "TdObject",
+        superclass: 'TdObject',
         isAbstract: true,
         members: [],
-        extra: "",
+        extra: '',
       ));
     }
 
@@ -226,24 +229,24 @@ main() async {
       var name = camelToPascalCase(k);
       classes.add(ApiClass(
         name: name,
-        superclass: name == v["superclass"] ? "TdObject" : v["superclass"],
+        superclass: name == v['superclass'] ? 'TdObject' : v['superclass'],
         isAbstract: false,
-        members: (v["fields"] as Map).entries
+        members: (v['fields'] as Map).entries
           .toList()
           .map((e) => ApiParam(e.value, e.key))
           .toList(),
-        extra: ""
+        extra: '',
       ));
     });
   });
 
-  (api["functions"] as Map).forEach((k, v) {
+  (api['functions'] as Map).forEach((k, v) {
     (v as Map).forEach((k, v) {
       var name = camelToPascalCase(k);
       functions.add(ApiFunction(
         name,
-        v["superclass"],
-        (v["fields"] as Map).entries
+        v['superclass'],
+        (v['fields'] as Map).entries
           .toList()
           .map((e) => ApiParam(e.value, e.key))
           .toList(),
@@ -251,22 +254,22 @@ main() async {
     });
   });
 
-  File("../lib/src/api/objects.dart")
+  File('../lib/src/api/objects.dart')
     .openWrite()
     .writeAll([
-      "import \"base_classes.dart\";",
-      "import \"utils.dart\";",
-      "",
+      'import \'base_classes.dart\';',
+      'import \'utils.dart\';',
+      '',
       ...classes.map((c) => c.toDart()),
-    ], "\n");
+    ], '\n');
 
-  File("../lib/src/api/functions.dart")
+  File('../lib/src/api/functions.dart')
     .openWrite()
     .writeAll([
-      "import \"base_classes.dart\";",
-      "import \"objects.dart\";",
-      "import \"utils.dart\";",
-      "",
+      'import \'base_classes.dart\';',
+      'import \'objects.dart\';',
+      'import \'utils.dart\';',
+      '',
       ...functions.map((f) => f.toDart()),
-    ], "\n");
+    ], '\n');
 }

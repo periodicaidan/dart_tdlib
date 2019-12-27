@@ -1,5 +1,5 @@
-import "objects.dart";
-import "package:reflectable/reflectable.dart";
+import 'objects.dart';
+import 'package:reflectable/reflectable.dart';
 
 class Reflector extends Reflectable {
   const Reflector() :
@@ -12,9 +12,9 @@ const reflector = Reflector();
 /// as is
 dynamic tryConvertToTdObject(dynamic obj) {
   if (obj is Map) {
-    return obj.containsKey("@type") ?
-      (reflector.reflectType(classIndex[obj["@type"]]) as ClassMirror)
-        .newInstance("", [obj]) :
+    return obj.containsKey('@type') ?
+      (reflector.reflectType(classIndex[obj['@type']]) as ClassMirror)
+        .newInstance('fromJson', [obj]) :
       obj;
   }
 

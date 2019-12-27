@@ -1,3 +1,9 @@
+## 0.3.0
+
+Refactored tons of code, deleted a lot of old code. `TelegramClient.setTdLibParams()` is now deprecated in favor of `TelegramClient.defineTdlibParams()`.
+All `TdObjects` now accept keyword arguments in the default constructor, instead of `Map<String, dynmaic>`s, which they now only accept through a named `fromJson` constructor. 
+A `fromJson` constructor has been added to all the `TdFunction`s as well.
+
 ## 0.2.0
 
 Created an even nicer Telegram client that uses streams
