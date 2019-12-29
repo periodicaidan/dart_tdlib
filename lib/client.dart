@@ -1,7 +1,7 @@
-import "dart:async";
+import 'dart:async';
 
 import 'package:meta/meta.dart';
-import "package:rxdart/rxdart.dart";
+import 'package:rxdart/rxdart.dart';
 
 import "src/td_json_client.dart" show JsonClient;
 import "src/api/base_classes.dart";
