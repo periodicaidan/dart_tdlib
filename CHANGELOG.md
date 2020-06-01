@@ -1,3 +1,7 @@
+## 0.3.1
+
+You must now pass a path to the parent directory of the `tdlib` dylib file when creating a new `TelegramClient`.
+
 ## 0.3.0
 
 Refactored tons of code, deleted a lot of old code. `TelegramClient.setTdLibParams()` is now deprecated in favor of `TelegramClient.defineTdlibParams()`.

@@ -32,7 +32,7 @@ class TelegramClient with AsyncClient {
 
   TdlibParameters tdlibParams;
 
-  TelegramClient(String tdLibDir): _client = JsonClient.create(tdLibDir);
+  TelegramClient([String dlDir]): _client = JsonClient.create(dlDir);
 
   /// Generates a [Stream] of incoming [TdObject]s that the client receives.
   /// Objects of the appropriate type are added to their respective

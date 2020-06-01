@@ -29,7 +29,7 @@ typedef void JsonClientSend(Pointer<Void> client, Pointer<Utf8> request);
 
 /// Receives incoming updates and request responses from the TDLib client.
 ///
-/// const char *td_json_client_receive(void *client, double timeout);
+/// const char *td_json_client_receive(void *client, double timeout)
 typedef Pointer<Utf8> td_json_client_receive(Pointer<Void> client, Double timeout);
 typedef Pointer<Utf8> JsonClientReceive(Pointer<Void> client, double timeout);
 
@@ -84,7 +84,7 @@ class JsonClient {
   }
 
   /// If the client is not [active] then this throws an [Exception].
-  void assertActive() {
+  void _assertActive() {
     if (!active) {
       throw Exception("Telegram JSON client has been closed.");
     }
@@ -94,14 +94,14 @@ class JsonClient {
   /// This is an async version of [execute], which the TDLib docs don't make
   /// immediately clear :p
   void send(Map<String, dynamic> request) {
-    assertActive();
+    _assertActive();
     var reqJson = json.encode(request);
     _jsonClientSend(_client, Utf8.toUtf8(reqJson));
   }
 
   /// Receive the API's response
   Map<String, dynamic> receive([double timeout = 2.0]) {
-    assertActive();
+    _assertActive();
     final response = _jsonClientReceive(_client, timeout);
     final resString = Utf8.fromUtf8(response);
     return json.decode(resString);
@@ -112,7 +112,7 @@ class JsonClient {
   /// error along the lines of "Function can't be executed synchronously"), use
   /// [send] instead.
   Map<String, dynamic> execute(Map<String, dynamic> request) {
-    assertActive();
+    _assertActive();
     final result = _jsonClientExecute(_client, Utf8.toUtf8(json.encode(request)));
     var resJson = Utf8.fromUtf8(result);
     return json.decode(resJson);
@@ -120,7 +120,7 @@ class JsonClient {
 
   /// Destroy the client
   void destroy() {
-    assertActive();
+    _assertActive();
     _jsonClientDestroy(_client);
     active = false;
   }
